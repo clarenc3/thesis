@@ -1,0 +1,68 @@
+\chapter{ND280 fits}
+\label{chap:ND280}
+
+\section{T2K}
+The T2K experiment
+
+\section{ND280}
+Describe me
+
+\section{Super-Kamiokande}
+
+\section{Oscillation analysis chain}
+external, beam, nd280, xsec, ndfits, skfits
+
+T2K has two separate groups fitting near-detector data with the intent of maximising model likelihood for the oscillation analyses: BANFF \red{INSERT ACRONYM} and MaCh3 \red{INSERT ACRONYM}. The two frameworks use identical event selections and systematic parameters, outlined below in \autoref{subsec:ND280:sel} and \autoref{subsec:ND280:syst}, but entirely different methods of evaluating the model goodness and exploring the parameter space.
+
+BANFF interfaces to the popular gradient-descent minimizer MINUIT \red{CITE} and MaCh3 uses a custom Markov Chain Monte Carlo sampler to sample the high dimensional parameter space. Importantly, the BANFF attempts to find the global minimum of the test-statistic given the data and the model, whereas MaCh3 explores an area around the minimum. Therefore, MaCh3 does not necessarily locate a set of ``best-fit'' parameters with covariances, assuming a parabolic minimum: instead it provides a full high-dimensional posterior with arbitrary shape. The T2K oscillation analysis chain can then proceed using the model proposed by the near-detector data and model and include oscillation effects.
+
+However, providing a high-dimensional posterior of arbitrary shape is cumbersome, so oscillation groups often use the BANFF output. MaCh3 has the advantage of a near and far detector implementation, meaning a simultaneous fit of data from both detectors can be done. This avoids assumptions on the underlying probability distribution functions in the parameter space, and correlates the models at both detectors, allowing one to affect the other.
+
+The following sections detail the near-detector implementation of the MaCh3 framework. It also includes comparisons and validations using the BANFF framework.
+
+\section{Need for ND280 fits}
+As statistics increase at Super-Kamiokande, there is more and more need for well-controlled systematics. The T2K oscillation analysis uses \red{CITEME}
+
+SK without constraints
+Share same beam, use near detector complex
+
+\section{Setting up the fit}
+
+\subsection{Defining the test-statistic}
+
+\subsection{Selections}
+\label{subsec:ND280:sel}
+Selections are developed by the T2K \numu and \nue groups.
+
+\subsection{Systematics}
+\label{subsec:ND280:syst}
+\subsubsection{Flux}
+\subsubsection{Detector}
+\subsubsection{Cross-section}
+
+\subsection{Parameters of interest}
+
+\subsection{Fitting method: MCMC}
+
+\section{Nominal model}
+
+\section{Asimov results}
+
+\subsection{Prior and posterior predictive}
+
+\subsection{LLH scan and 1 sigma variations}
+
+\section{Datafit results}
+
+\subsection{Results}
+
+\subsection{Statistical analysis}
+
+\subsection{Compatibility}
+
+\section{Validating to BANFF}
+
+\section{Impact on SK oscillation analyses}
+
+
+\section{Adding new selections at ND280}
