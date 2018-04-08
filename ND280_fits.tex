@@ -9,16 +9,16 @@ Describe me
 
 \section{Super-Kamiokande}
 
-\section{Oscillation analysis chain}
-external, beam, nd280, xsec, ndfits, skfits
+\section{T2K oscillation analysis chain overview}
+The T2K oscillation analyses have a myriad of input groups providing central values and covariances for the systematic parameters. The ND280 beam group provides data on the neutrino beam, the NuMu and Nue systematics and selections groups provide ND280 systematics and suggested binning, the Neutrino Interactions Working Group (NIWG) provide neutrino interaction systematics, and the T2K-SK group provides systematics and selections for SK. Since ND280 and SK are in the same neutrino beam, the high-statistics neutrino samples at ND280 can be used to constrain the simulation prior to seeing data at SK. At the near-detector the flux model, neutrino interaction model and ND280 model is fit. Details on these systematics will be provided in \autoref{subsec:ND280:syst:xsec, subsec:ND280:syst:flux, subsec:ND280:syst:det}. 
 
-T2K has two separate groups fitting near-detector data with the intent of maximising model likelihood for the oscillation analyses: BANFF \red{INSERT ACRONYM} and MaCh3 \red{INSERT ACRONYM}. The two frameworks use identical event selections and systematic parameters, outlined below in \autoref{subsec:ND280:sel} and \autoref{subsec:ND280:syst}, but entirely different methods of evaluating the model goodness and exploring the parameter space.
+T2K has two separate groups fitting near-detector data with the intent of maximising model likelihood: BANFF \red{INSERT ACRONYM} and MaCh3 \red{INSERT ACRONYM}. The two frameworks use identical event selections and systematic parameters, outlined below in \autoref{subsec:ND280:sel} and \autoref{subsec:ND280:syst}, but entirely different methods of evaluating the model goodness and exploring the parameter space.
 
-BANFF interfaces to the popular gradient-descent minimizer MINUIT \red{CITE} and MaCh3 uses a custom Markov Chain Monte Carlo sampler to sample the high dimensional parameter space. Importantly, the BANFF attempts to find the global minimum of the test-statistic given the data and the model, whereas MaCh3 explores an area around the minimum. Therefore, MaCh3 does not necessarily locate a set of ``best-fit'' parameters with covariances, assuming a parabolic minimum: instead it provides a full high-dimensional posterior with arbitrary shape. The T2K oscillation analysis chain can then proceed using the model proposed by the near-detector data and model and include oscillation effects.
+BANFF interfaces to the popular gradient-descent minimizer MINUIT \red{CITE} and MaCh3 uses a custom Markov Chain Monte Carlo sampler to sample the high dimensional parameter space. Importantly, the BANFF attempts to find the global minimum of the test-statistic given the data and the model, whereas MaCh3 explores an area around the minimum test-statistic with the intent of sampling the Bayesian posterior. Therefore, MaCh3 does not necessarily locate a set of ``best-fit'' parameters with covariances assuming a parabolic minimum: instead it provides a full high-dimensional posterior with arbitrary shape. Once the model is constrained by near-detector data, the T2K oscillation analysis chain can then proceed using the model proposed by the near-detector data and model and include oscillation effects.
 
-However, providing a high-dimensional posterior of arbitrary shape is cumbersome, so oscillation groups often use the BANFF output. MaCh3 has the advantage of a near and far detector implementation, meaning a simultaneous fit of data from both detectors can be done. This avoids assumptions on the underlying probability distribution functions in the parameter space, and correlates the models at both detectors, allowing one to affect the other.
+However, providing a high-dimensional posterior of arbitrary shape is cumbersome, so oscillation groups often use the BANFF output. MaCh3 has the advantage of a near and far detector implementation, meaning a simultaneous fit of data from both detectors can be done. This avoids assumptions on the underlying probability distribution functions of the parameters and the likelihood surface, and additionally benefits from fully correlating the models at both detectors, allowing one to affect the other as the fit proceeds.
 
-The following sections detail the near-detector implementation of the MaCh3 framework. It also includes comparisons and validations using the BANFF framework.
+The following sections detail the near-detector implementation of the MaCh3 framework. It also includes comparisons and validations to the BANFF framework. It finishes with the 2017 round fit to data.
 
 \section{Need for ND280 fits}
 As statistics increase at Super-Kamiokande, there is more and more need for well-controlled systematics. The T2K oscillation analysis uses \red{CITEME}
@@ -28,25 +28,300 @@ Share same beam, use near detector complex
 
 \section{Setting up the fit}
 
-\subsection{Defining the test-statistic}
+
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{ l c c c }
+		\hline
+                Run & Good data POT (e+19) & Generated MC POT (e+19) & Generated Sand POT (e+19) \\
+		\hline
+		\hline
+		2a  & 3.59337    & 92.15       & 10 \\
+		2w  & 4.33934    & 120.15      & 10 \\
+		\hline
+		3b  & 2.17273    & 44.8        & 5 \\
+		3c  & 13.6447    & 263         & 25 \\
+		\hline
+		4a  & 17.8271    & 349.9       & 30 \\
+		4w  & 16.4277    & 349.65      & 29.15 \\
+		\hline
+		5   & 4.3468     & 208.25      & 20 \\
+		\hline
+		6b  & 12.8838    & 141.03      & 40 \\
+		6c  & 5.07819    & 53.21       & 15 \\
+		6d  & 7.75302    & 69.41       & 20 \\
+		6e  & 8.51668    & 86.72       & 23 \\
+		\hline
+		Total FHC & 58.00494 & 1219.65 & 109.15\\
+		Total RHC & 38.57849 & 558.62  & 118 \\
+		Total & 96.58343 & 1778.27 & 227.15 \\
+		\hline
+	\end{tabular}
+	\caption{Counted and generated proton-on-targets for the T2K ND280 2017 analysis. FHC denotes Forward Horn Current (neutrino dominated mode), RHC denotes Reverse Horn Current (anti-neutrino dominated mode).}
+	\label{tab:pot_2017}
+\end{table}
+
+
+
 
 \subsection{Selections}
 \label{subsec:ND280:sel}
-Selections are developed by the T2K \numu and \nue groups.
+Selections are developed by the T2K \numu and \nue groups. \red{INSERT STUFF ON SELECTIONS}
+
+\red{Talk about anti-neutrino binning update}
+
+\begin{itemize}
+	\item FHC $\nu_{\mu}$~CC0$\pi$ bin edges: \\
+	$p$ (MeV/c): 0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 3000, 5000, 30000 \\
+	$\cos\theta$:  -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
+	\item FHC $\nu_{\mu}$~CC1$\pi$  bin edges: \\
+	$p$ (MeV/c):  0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 5000, 30000 \\
+	$\cos\theta$: -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
+	\item FHC $\nu_{\mu}$~CCOther bin edges: \\
+	$p$ (MeV/c): 0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 3000, 5000, 30000 \\
+	$\cos\theta$:  -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
+	\item RHC $\bar{\nu}_{\mu}$~CC 1-Track bin edges: \\
+	$p$ (MeV/c): 0, 400, 500, 600, 700, 800, 900, 1100, 1400, 2000, 10000 \\
+	$\cos\theta$: -1.0, 0.6, 0.7, 0.8, 0.85, 0.88, 0.91, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+	\item RHC $\bar{\nu}_{\mu}$~CC N-Track bin edges: \\
+	$p$ (MeV/c): 0, 700, 950, 1200, 1500, 2000, 3000, 10000 \\
+	$\cos\theta$: -1.0, 0.75, 0.85, 0.88, 0.91, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+	\item RHC $\nu_{\mu}$~CC 1-Track bin edges: \\
+	$p$ (MeV/c): 0, 400, 600, 800, 1100, 2000, 10000 \\
+	$\cos\theta$: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+	\item RHC $\nu_{\mu}$~CC N-Track bin edges: \\
+	$p$ (MeV/c): 0, 500, 700, 1000, 1500, 2000, 3000, 10000 \\
+	$\cos\theta$: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+\end{itemize}
+
+Similar numbers of events are expected in both FGDs with similar kinematics, so the same binning in observed muon momentum, $p$, and cosine of the muon angle, $\cos\theta$, is used for both sets of samples.  The event selections are described in more detail in TN-212~\cite{tn_212}, TN-224~\cite{tn_224}, TN-227~\cite{tn_227}, TN-246~\cite{tn_246} and TN-248~\cite{tn_248}.
+
+\red{INSERT reference to plots and bin merging}
 
 \subsection{Systematics}
-\label{subsec:ND280:syst}
+
+
 \subsubsection{Flux}
-\subsubsection{Detector}
+\label{subsec:ND280:syst:det}
+The flux systematics are evaluated by varying underlying parameters in the flux model and using NA61/SHINE \red{CITE} data. [7] N. Antoniou et al. CERN-SPSC-2006-034, 2006.
+
+The NA61 data comes from runs using the thin target, whereas the T2K target is roughly 2 interaction lenghts. The data is $\pi^\pm$, $K^\pm$, $K^0_S$ and $\rho^+$.
+
+HARP data used for pion rescattering.
+
+Talk about the corrections in psyche
+\begin{itemize}
+  \item ND280 FHC $\nu_\mu$:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+
+  \item ND280 FHC $\bar{\nu}_\mu$:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+
+  \item ND280 FHC $\nu_e$:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30 \\
+
+  \item ND280 FHC $\bar{\nu}_e$:\\
+    $E_\nu^{true}$: 0, 2.5, 30 \\
+
+  \item ND280 RHC $\nu_\mu$:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+
+  \item ND280 RHC $\bar{\nu}_\mu$:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+
+  \item ND280 RHC $\nu_e$:\\
+    $E_\nu^{true}$: 0, 2.5, 30 \\
+
+  \item ND280 RHC $\bar{\nu}_e$:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30 \\
+
+  \item SK FHC $\nu_\mu$:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+
+  \item SK FHC $\bar{\nu}_\mu$:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+
+  \item SK FHC $\nu_e$:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30 \\
+
+  \item SK FHC $\bar{\nu}_e$:\\
+    $E_\nu^{true}$: 0, 2.5, 30 \\
+
+  \item SK RHC $\nu_\mu$:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+
+  \item SK RHC $\bar{\nu}_\mu$:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+
+  \item SK RHC $\nu_e$:\\
+    $E_\nu^{true}$: 0, 2.5, 30 \\
+
+  \item SK RHC $\bar{\nu}_e$:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30\\
+\end{itemize}
+
+
+\subsection{Detector systematics}
+\label{subsec:ND280:syst:flux}
+The treatment of detector systematic uncertainties is unchanged from TN-230~\cite{tn_230}, Section 3.1, page 26.
+The number of detector systematics still decreased slightly from 580 to 556 due to merging bins with similar detector systematic effects for the rebinned samples.
+All the consecutive bins with similar systematic values have been merged in order to reach a lower number of parameters (556) while the number of bins in the fit increased a lot (1624 bins), keeping the number of parameters under control.
+It has been demonstrated with Asimov fits, the results of which are shown in \autoref{fig:2017_rebin_asimov}, that the effect of this rebinning was small.
+
+The effect of changing the ND280 systematics binning was done with an older cross-section model than which the fit was completed in. This was due to a late delivery of the cross-section model \red{write an appendix on this model}. The flux parameters were entirely consistent.
+\begin{table}
+	\centering
+	\begin{tabular}{ l c c }
+		Parameter & Fit binning & Similar syst. merge \\
+		\hline
+		FSI INEL LO & $0.0 \pm 0.202$ & $0.0\pm0.200$ \\
+		FSI INEL HI & $0.0 \pm 0.235$ & $0.0\pm0.233$ \\
+		FSI PI PROD & $0.0 \pm 0.347$ & $0.0\pm0.344$ \\
+		FSI CEX LO  & $0.0 \pm 0.416$ & $0.0\pm0.412$ \\
+		FSI CEX HI  & $0.0 \pm 0.193$ & $0.0\pm0.191$ \\
+		$M_A^{QE}$  & $1.2 \pm 0.0517$ & $1.2\pm0.0512$ \\
+		$p_F^{C}$   & $217 \pm 36.96$ & $217\pm36.021$ \\
+		2p2h norm C & $100 \pm 30.79$ & $100\pm30.56$ \\
+		$E_B^{C}$   & $25.0 \pm 8.57$ & $25.0\pm8.56$ \\
+		$p_F^{O}$   & $225 \pm 57.61$  & $225\pm56.16$ \\
+		2p2h norm O & $100 \pm 277.98$ & $0.0\pm272.62$ \\
+		$E_B^{C}$   & $27.0 \pm 9.00$ & $27.0\pm9.00$ \\
+		$C_5^A$		& $1.01 \pm 0.066$ & $1.01\pm0.064$ \\
+		$M_A^{1\pi}$ & $0.95 \pm 0.060$ & $0.95\pm0.059$ \\
+		$I_{1/2}$ non-res & $1.30 \pm 0.180$ & $1.30\pm0.180$ \\
+		CC $\nu_e$ norm & $1.00 \pm 0.030$ & $1.00\pm0.030$ \\
+		DIS Shape	& $0.00 \pm 0.208$ & $0.0\pm0.208$ \\
+		CC Coherent norm & $1.0 \pm 0.258$ & $1.0\pm0.257$ \\
+		NC Coherent norm & $1.0 \pm 0.299$ & $1.0\pm0.299$ \\
+		NC Other & $1.0 \pm 0.182$ & $1.0\pm0.181$ \\
+		2p2h $\bar{\nu}$ & $1.0 \pm 0.332$ & $1.0\pm0.329$ \\
+	\end{tabular}
+	\caption{Cross-section parameter results from comparisons using fit binning and a merged binning for the 2015 cross-section model.}
+\label{fig:2017_rebin_asimov}
+\end{table}
+
+The merged systematics binning was improved to:
+\begin{itemize}
+	\item FHC $\nu_{\mu}$~CC0$\pi$ bin edges: \\
+	$p$ (MeV/c): 0, 1000, 1250, 2000, 3000, 5000, 30000 \\
+	$\cos\theta$:  -1, 0.6, 0.7, 0.8, 0.85,0.94, 0.96, 1
+	\item FHC $\nu_{\mu}$~CC1$\pi$  bin edges: \\
+	$p$ (MeV/c):  0, 300, 1250, 1500, 5000, 30000 \\
+	$\cos\theta$: -1, 0.7, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\item FHC $\nu_{\mu}$~CCOther bin edges: \\
+	$p$ (MeV/c): 0, 1500, 2000, 3000, 5000, 30000 \\
+	$\cos\theta$:  -1, 0.8, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\item RHC $\bar{\nu}_{\mu}$~CC 1-Track bin edges: \\
+	$p$ (MeV/c): 0, 400, 900, 1100, 2000, 10000 \\
+	$\cos\theta$:  -1, 0.6, 0.7, 0.88, 0.95, 0.97, 0.98, 0.99, 1.00
+	\item RHC $\bar{\nu}_{\mu}$~CC N-Track bin edges: \\
+	$p$ (MeV/c):  0, 700, 1200, 1500, 2000, 3000, 10000 \\
+	$\cos\theta$: -1, 0.85, 0.88, 0.93, 0.98, 0.99, 1.00
+	\item RHC $\nu_{\mu}$~CC 1-Track bin edges: \\
+	$p$ (MeV/c):  0, 400, 800, 1100, 2000, 10000 \\
+	$\cos\theta$:   -1, 0.7, 0.85, 0.90, 0.93, 0.96, 0.98, 0.99, 1.00
+	\item RHC $\nu_{\mu}$~CC N-Track bin edges: \\
+	$p$ (MeV/c):  0, 1000, 1500, 2000, 3000, 10000 \\
+	$\cos\theta$: -1, 0.8, 0.90, 0.93, 0.95, 0.96, 0.97, 0.99, 1.00
+\end{itemize}
+
 \subsubsection{Cross-section}
+\label{subsec:ND280:syst:xsec}
+splines vs normalisation parameter, Maybe extra bit on BeRPA because of involvement
+
+\subsection{Building the Monte-Carlo prediction}
+The fit proceeds by binning events in the two reconstructed muon variables $p_\mu$ and $\cos\theta_\mu$. The muon variables are chosen primarily due to excellent detector resolution of muons, and also because \sk analyses are performed in these variables. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino. The fit uses the reconstructed variables for data and MC and does not unfold into true space.
+
+Inspecting the POT table in \autoref{tab:pot_2017}, MC is generated with POT $\sim\times10$ data POT to avoid uncertainty from Monte Carlo statistics. To build the nominal distribution equivalent for comparison to data a number of weights are applied:
+\begin{itemize}
+	\item \textbf{POT weight:} \\
+	A run-by-run scaling factor taking the ratio of total good flagged data to the generated Monte-Carlo POT. An event receives a one-time weight depending on what run it was from and how much MC was generated in the production. These numbers can be read off directly from \autoref{tab:pot_2017}. \\ 
+	\item \textbf{Flux weight:} \\
+	A run-by-run correction to the nominal neutrino flux which the production was made in. The weight is applied as a function of $E_\nu^{true}$ \red{show example of this, psycheND280utils/data/tuned13av2}, detailed in \autoref{subsec:ND280:syst:det}. An event receives a weight depending on what run it was from and it's $E_\nu^{true}$. \\
+	\item \textbf{Cross-section weight:} \\
+	An event-by-event weight taking the full generated event through the neutrino interaction simulation again, calculating a weight to apply to the event. The weight can be described as $w=\sigma(\textbf{x'})/\sigma(\textbf{x})$ for the neutrino interaction systematic parameter set $\textbf{x}$. The event may receive a normalisation and a shape parameter depending on its interaction type and the interaction model considered for the analysis. For example, for this analysis a $\nu_\mu$ 2p2h event on Carbon would receive both a normalisation parameter weight (2p2h Carbon) and a shape parameter weight (2p2h shape C), whereas a CC coherent event on Carbon would recieve only a normalisation weight (CC Coherent C). \\
+	\item \textbf{Detector weight:} \\
+	\item \textbf{Detector covariance weight:} \\
+	\item \textbf{Beam covariance weight:} \\
+\end{itemize}
+
+\subsection{Defining the test-statistic}
+
 
 \subsection{Parameters of interest}
+flux and cross-section
 
 \subsection{Fitting method: MCMC}
+tests
 
 \section{Nominal model}
 
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{ l c c }
+		\hline
+		Sample & Data & \nd~pre-fit MC prediction \\ \hline
+		\hline
+		FGD1 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 17136 & 16724    \\% \hline
+		FGD1 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 3954  & 4381  \\% \hline
+		FGD1 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 4149  & 3944  \\% \hline
+		\hline
+		FGD1 $\bar{\nu}_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)    & 3527 & 3588  \\% \hline
+		FGD1 $\bar{\nu}_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)   & 1054 & 1067  \\% \hline
+		\hline
+		FGD1 $\nu_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)          & 1363 & 1272   \\% \hline
+		FGD1 $\nu_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)         & 1370 & 1357   \\% \hline
+		\hline
+		FGD2 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 17443 & 16959 \\% \hline
+		FGD2 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 3366  & 3564  \\% \hline
+		FGD2 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 4075  & 3571  \\% \hline
+		\hline
+		FGD2 $\bar{\nu}_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)    & 3732 &  3618  \\% \hline
+		FGD2 $\bar{\nu}_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)   & 1026 &  1077  \\% \hline
+		\hline
+		FGD2 $\nu_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)          & 1320 & 1263  \\% \hline
+		FGD2 $\nu_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)         & 1253 & 1247  \\% \hline
+		\hline
+		\hline
+		Total & 64768 & 63633 \\
+		\hline
+		\hline
+		FHC POT & $58.00\times10^{19}$ & $1219.65\times10^{19}$  \\% \hline
+		RHC POT & $38.58\times10^{19}$ & $558.62\times10^{19}$   \\% \hline
+	\end{tabular}
+	\caption{Observed and predicted event rates for the different \nd~samples in the BANFF/MaCh3 fits. N.B. the MC rates are rounded to nearest integer in this table, for higher precision see \autoref{tab:eventrate}.}
+	\label{tab:event_rates}
+\end{table}
+
+\begin{sidewaystable}
+	\resizebox{\textwidth}{!}{
+		\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c |}
+			\hline
+			Sample & Data  & Raw MC & POT only & POT+flux & POT+xsec & POT+det & POT + flux + xsec & POT + flux + det & POT + flux + xsec + det & MaCh3 & (BANFF-MaCh3)/BANFF \\ \hline
+			FGD1 CC0$\pi$ &  17136.00 &  337436.00 &  16090.83 &  17535.92 &  15340.11 &  15905.24 &  16748.19 &  17333.49 &  16723.69 & 16723.8 & -6.60E-6 \\ \hline
+			FGD1 CC1$\pi$ &  3954.00 &  84982.00 &  4058.36 &  4606.61 &  3819.31 &  4011.58 &  4352.83 &  4553.49 &  4381.48 & 4381.47 & 2.28E-6\\ \hline
+			FGD1 CCOther &  4149.00 &  65286.00 &  3107.04 &  3703.69 &  3078.52 &  3071.21 &  3673.94 &  3660.96 &  3943.95 & 3943.95 & 0.00E0\\ \hline
+			FGD1 Anu-CCQE &  3527.00 &  54419.00 &  3773.79 &  3881.64 &  3430.04 &  3744.02 &  3527.03 &  3851.02 &  3587.65 & 3587.77 & -3.34E-5\\ \hline
+			FGD1 Anu-CCNQE &  1054.00 &  15392.00 &  1065.20 &  1101.04 &  986.32 &  1056.80 &  1021.05 &  1092.37 &  1066.91 & 1066.91 & 0.00E0\\ \hline
+			FGD1 Nu-CCQE &  1363.00 &  18146.00 &  1255.92 &  1340.43 &  1194.72 &  1246.03 &  1275.92 &  1329.88 &  1272.17 & 1272.17 & 0.00E0\\ \hline
+			FGD1 Nu-CCNQE &  1370.00 &  17156.00 &  1190.94 &  1316.59 &  1172.13 &  1181.54 &  1297.36 &  1306.21 &  1357.45 & 1357.45 & 0.00E0 \\ \hline
+			FGD2 CC0$\pi$ &  17443.00 &  345467.00 &  16449.22 &  17921.83 &  15749.71 &  16259.57 &  17189.12 &  17715.02 &  16959.19 & 16959.3 & -6.49E-6 \\ \hline
+			FGD2 CC1$\pi$ &  3366.00 &  70444.00 &  3356.97 &  3820.22 &  3190.10 &  3318.26 &  3644.01 &  3776.14 &  3564.23 & 3564.23 & 0.00E0\\ \hline
+			FGD2 CCOther &  4075.00 &  63402.00 &  3018.22 &  3595.45 &  2995.68 &  2983.43 &  3572.61 &  3553.98 &  3570.95 & 3570.94 & 2.80E-6 \\ \hline
+			FGD2 Anu-CCQE &  3732.00 &  55732.00 &  3864.24 &  3978.31 &  3506.34 &  3833.73 &  3608.17 &  3946.91 &  3618.27 & 3618.29 & -5.53E-6 \\ \hline
+			FGD2 Anu-CCNQE &  1026.00 &  15808.00 &  1096.81 &  1134.09 &  1024.77 &  1088.15 &  1061.38 &  1125.14 &  1077.24 & 1077.24 & 0.00E0 \\ \hline
+			FGD2 Nu-CCQE &  1320.00 &  18052.00 &  1241.02 &  1324.16 &  1189.64 &  1231.24 &  1269.94 &  1313.72 &  1262.63 & 1262.63 & 0.00E0 \\ \hline
+			FGD2 Nu-CCNQE &  1253.00 &  16339.00 &  1136.62 &  1256.01 &  1121.38 &  1127.64 &  1240.99 &  1246.09 &  1246.71 & 1246.71 & 0.00E0 \\ \hline
+			Total &  64768.00 &  1178061.00 &  60705.16 &  66516.01 &  57798.77 &  60058.44 &  63482.54 &  65804.42 &  63632.53 & 63632.9 & -5.81E-6 \\ \hline
+		\end{tabular}
+	}
+	\caption{Event rates broken by type of weight applied for BANFF with a comparison to MaCh3. N.B. ``POT+flux+xsec+det'' is the final BANFF prediction.}
+	\label{tab:eventrate}
+\end{sidewaystable}
+
 \section{Asimov results}
+
 
 \subsection{Prior and posterior predictive}
 
@@ -63,6 +338,3 @@ Selections are developed by the T2K \numu and \nue groups.
 \section{Validating to BANFF}
 
 \section{Impact on SK oscillation analyses}
-
-
-\section{Adding new selections at ND280}
