@@ -1,0 +1,332 @@
+\chapter{Updating the ND280 fit for the future}
+
+\section{Adding run 7 and 8 data}
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{ l c c c c }
+		\hline
+		Run & Good Data POT (e+19) & Generated MC POT (e+19) & Generated Sand POT (e+19) \\
+		\hline
+		\hline
+		2a  & 3.59337    & 92.3937     & 3.7132  \\
+		2w  & 4.33765    & 120.341     & 4.00035 \\
+		\hline
+		3b  & 2.1705     & 44.7864     & 2.35053 \\
+		3c  & 13.6398    & 263.227     & 13.1337 \\
+		\hline
+		4a  & 17.8271    & 349.96      & 17.4125 \\
+		4w  & 16.4277    & 226.216     & 15.9801 \\
+		\hline
+		5   & 4.3468     & 229.627     & 9.07403 \\
+		\hline
+		6b  & 12.7301    & 141.74      & 25.9187 \\
+		6c  & 5.07819    & 52.7562     & 10.4626 \\
+		6d  & 7.75302    & 68.83       & 15.8059 \\
+		6e  & 8.51429    & 85.9439     & 17.2691 \\
+		\hline
+		7   & 24.3683	 & 337.059     & 50.3961 \\
+		\hline
+		8a  & 41.4909	 & 363.054	   & 40.1875 \\
+		8w  & 15.8053    & 264.115 	   & 16.1263 \\
+		\hline
+		Total FHC & 115.29232 & 1724.0931 &  112.09418 \\
+		Total RHC & 62.791 	  & 915.9561  &  127.92643 \\
+		Total 	  & 178.08332 & 2640.0492 &  240.83061 \\
+		\hline
+		x2017 FHC   & 1.9876 \\
+		x2017 RHC   & 1.6276 \\
+		x2017 Total & 1.8438 \\
+	\end{tabular}
+	\caption{Counted and generated proton-on-targets for the T2K ND280 2018+ analysis. FHC denotes Forward Horn Current (neutrino dominated mode), RHC denotes Reverse Horn Current (anti-neutrino dominated mode).}
+	\label{tab:pot_2017}
+\end{table}
+
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{ l c c }
+		\hline
+		Sample & Data & \nd~pre-fit MC prediction \\ \hline
+		\hline
+		FGD1 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 33553 & 31529.2    \\% \hline
+		FGD1 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 7757  & 7997.52  \\% \hline
+		FGD1 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 8068  & 6793.45  \\% \hline
+		\hline
+		FGD2 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 17443 & 31732.1 \\% \hline
+		FGD2 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 6133  & 6418.42  \\% \hline
+		FGD2 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 7664  & 6562.61  \\% \hline
+		\hline
+		FGD1 $\bar{\nu}_{\mu}$ CC0$\pi$ ($\nu$ mode)            & 6368 & 6370.47    \\% \hline
+		FGD1 $\bar{\nu}_{\mu}$ CC1$\pi$ ($\nu$ mode)            & 535  & 533.342  \\% \hline
+		FGD1 $\bar{\nu}_{\mu}$ CC Other ($\nu$ mode)            & 1032 & 1023.3  \\% \hline
+		\hline
+		FGD2 $\bar{\nu}_{\mu}$ CC0$\pi$ ($\nu$ mode)            & 6451 & 6283.55    \\% \hline
+		FGD2 $\bar{\nu}_{\mu}$ CC1$\pi$ ($\nu$ mode)            & 465  & 483.358  \\% \hline
+		FGD2 $\bar{\nu}_{\mu}$ CC Other ($\nu$ mode)            & 8068 & 944.017  \\% \hline
+		\hline
+		FGD1 RHC $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)              & 2707 & 2500.77  \\% \hline
+		FGD1 RHC $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)              & 847  & 845.922 \\% \hline
+		FGD1 RHC $\nu_{\mu}$ CC Other ($\nu$ mode)              & 1015 & 800.914  \\% \hline
+		\hline
+		FGD2 RHC $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)              & 2648 & 2554.46  \\% \hline
+		FGD2 RHC $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)              & 693  & 670.813  \\% \hline
+		FGD2 RHC $\nu_{\mu}$ CC Other ($\nu$ mode)              & 932  & 785.661 \\% \hline
+		Total & 121432 & 114830 \\
+		Total x2017 & 1.87 & 1.80 \\
+		\hline
+	\end{tabular}
+	\caption{Observed and predicted event rates for the different \nd~samples in the MaCh3 fits. N.B. the MC rates are rounded to nearest integer in this table, for higher precision see \autoref{tab:eventrate}.}
+	\label{tab:detailed_eventrate_2018}
+\end{table}
+BASED ON /tmp/ts-out.Md7erS on heppc205 7 apr
+
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{ l c c }
+		\hline
+		Sample & Data & \nd~pre-fit MC prediction \\ \hline
+		\hline
+		FGD1 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 33553 & 31530.5    \\% \hline
+		FGD1 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 7757  & 7997.96  \\% \hline
+		FGD1 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 8068  & 6793.11  \\% \hline
+		\hline
+		FGD2 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 17443 & 31736.7 \\% \hline
+		FGD2 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 6133  & 6419.23  \\% \hline
+		FGD2 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 7664  & 6563.14  \\% \hline
+		\hline
+		FGD1 $\bar{\nu}_{\mu}$ CC0$\pi$ ($\nu$ mode)            & 6368 & 6371.09    \\% \hline
+		FGD1 $\bar{\nu}_{\mu}$ CC1$\pi$ ($\nu$ mode)            & 535  & 533.187  \\% \hline
+		FGD1 $\bar{\nu}_{\mu}$ CC Other ($\nu$ mode)            & 1032 & 1023.2  \\% \hline
+		\hline
+		FGD2 $\bar{\nu}_{\mu}$ CC0$\pi$ ($\nu$ mode)            & 6451 & 6284.65    \\% \hline
+		FGD2 $\bar{\nu}_{\mu}$ CC1$\pi$ ($\nu$ mode)            & 465  & 483.469  \\% \hline
+		FGD2 $\bar{\nu}_{\mu}$ CC Other ($\nu$ mode)            & 8068 & 944.175  \\% \hline
+		\hline
+		FGD1 RHC $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)              & 2707 & 2497.71  \\% \hline
+		FGD1 RHC $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)              & 847  & 860.675 \\% \hline
+		FGD1 RHC $\nu_{\mu}$ CC Other ($\nu$ mode)              & 1015 & 797.499  \\% \hline
+		\hline
+		FGD2 RHC $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)              & 2648 & 2553.51  \\% \hline
+		FGD2 RHC $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)              & 693  & 679.99  \\% \hline
+		FGD2 RHC $\nu_{\mu}$ CC Other ($\nu$ mode)              & 932  & 792.166 \\% \hline
+		Total & 121432 & 114862 \\
+		Total x2017 & 1.87 & 1.80 \\
+		\hline
+	\end{tabular}
+	\caption{Observed and predicted event rates for the different \nd~samples in the BANFF/MaCh3 fits. N.B. the MC rates are rounded to nearest integer in this table, for higher precision see \autoref{tab:eventrate}.}
+	\label{tab:detailed_eventrate_2018}
+\end{table}
+Based on full matrix /tmp/ts-out/hAdNOT heppc205 8 Apr
+
+
+Based on final matrix /tmp/ts-out.86tzSy on hepp105 8Apr
+FGD1 numuCC 0pi                    33553     31529.3   593.559   |     
+FGD1 numuCC 1pi                    7757      7998.1    200.965   |     
+FGD1 numuCC other                  8068      6793.68   376.623   |     
+FGD2 numuCC 0pi                    33462     31734     613.019   |     
+FGD2 numuCC 1pi                    6133      6419.04   201.759   |     
+FGD2 numuCC other                  7664      6562.75   339.344   |     
+FGD1 anti-numuCC 0pi               6368      6371.34   202.958   |     
+FGD1 anti-numuCC 1pi               535       533.253   26.3027   |     
+FGD1 anti-numuCC other             1102      1023.36   44.7771   |     
+FGD2 anti-numuCC 0pi               6451      6283.35   221.72    |     
+FGD2 anti-numuCC 1pi               465       483.508   22.4051   |     
+FGD2 anti-numuCC other             1032      943.956   61.3131   |     
+FGD1 NuMuBkg CC0pi in AntiNu Mode  2707      2485.51   82.6989   |     
+FGD1 NuMuBkg CC1pi in AntiNu Mode  847       855.911   28.7885   |     
+FGD1 NuMuBkg CCother in AntiNu Mode1015      804.647   58.6913   |     
+FGD2 NuMuBkg CC0pi in AntiNu Mode  2648      2553.51   88.5485   |     
+FGD2 NuMuBkg CC1pi in AntiNu Mode  693       679.99    38.5698   |     
+FGD2 NuMuBkg CCother in AntiNu Mode932       792.166   41.2255   |     
+Total                              121432    114847    3243.27   | 
+
+Sample                             Binned    Unbinned
+FGD1 numuCC 0pi                    33553     33615
+FGD1 numuCC 1pi                    7757      7774
+FGD1 numuCC other                  8068      8139
+FGD2 numuCC 0pi                    33462     33543
+FGD2 numuCC 1pi                    6133      6159
+FGD2 numuCC other                  7664      7734
+FGD1 anti-numuCC 0pi               6368      6380
+FGD1 anti-numuCC 1pi               535       536
+FGD1 anti-numuCC other             1102      1110
+FGD2 anti-numuCC 0pi               6451      6464
+FGD2 anti-numuCC 1pi               465       465
+FGD2 anti-numuCC other             1032      1046
+FGD1 NuMuBkg CC0pi in AntiNu Mode  2707      2728
+FGD1 NuMuBkg CC1pi in AntiNu Mode  847       852
+FGD1 NuMuBkg CCother in AntiNu Mode1015      1030
+FGD2 NuMuBkg CC0pi in AntiNu Mode  2648      2667
+FGD2 NuMuBkg CC1pi in AntiNu Mode  693       697
+FGD2 NuMuBkg CCother in AntiNu Mode932       946
+Total:                             121432    121885
+
+Events by mode:
+CCQE                720451
+CC1pi               393646
+CCcoh               45278
+CCMpi               153787
+CCDIS               190313
+NC1pi0              3593
+NC1pipm             15172
+NCcoh               537
+NCoth               55607
+2p2h                116771
+NC1gam              21
+
+from /tmp/ts-out.uV5Ksu /tmp/ts-out.86tzSy on heppc105 (using v6 matrix)
+\begin{sidewaystable}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{| l | c | c | c | c | c | c | c | c |}
+      Sample  & MC  & POT  & Flux  & Xsec & Det & ND280 Cov & Beam Cov  & All \\
+      \hline
+      FGD1 numuCC 0pi & 470176 & 31464.6 & 34153.7 & 30106.3 & 30298 & 31487.9 & 31464.6 & 31529.3\\
+      FGD1 numuCC 1pi & 119835 & 8059.92 & 9106.99 & 7496.3 & 7690.07 & 7959.59 & 8059.92 & 7998.1 \\
+      FGD1 numuCC other & 92630 & 6224.1 & 7389.73 & 6096.03 & 5917.31 & 6144.95 & 6224.1 & 6793.68 \\
+
+      FGD2 numuCC 0pi & 471140 & 31215.4 & 33881.4 & 30017.8 & 30361.4 & 31198.7 & 31215.4 & 31734 \\
+      FGD2 numuCC 1pi & 95498 & 6303.05 & 7148.91 & 5919.55 & 6121.38 & 6184.34 & 6303.05 & 6419.04 \\
+      FGD2 numuCC other & 87931 & 5839.17 & 6933.53 & 5723.31 & 5697.16 & 5773.49 & 5839.17 & 6562.75 \\
+
+      FGD1 anti-numuCC 0pi & 96602 & 6784.14 & 6983.08 & 6247.83 & 6723.77 & 6794.13 & 6784.14 & 6371.34 \\
+      FGD1 anti-numuCC 1pi & 9133 & 639.595 & 658.426 & 536.293 & 623.687 & 635.372 & 639.595 & 533.253 \\
+      FGD1 anti-numuCC other & 15046 & 1066.91 & 1113.12 & 1012.08 & 1044.37 & 1055.12 & 1066.91 & 1023.36 \\
+
+      FGD2 anti-numuCC 0pi & 95597 & 6692.82 & 6897.34 & 6185.55 & 6578.7 & 6715.93 & 6692.82 & 6283.35 \\
+      FGD2 anti-numuCC 1pi & 8165 & 568.917 & 587.274 & 491.61 & 553.376 & 557.22 & 568.917 & 483.508 \\
+      FGD2 anti-numuCC other & 13849 & 970.796 & 1015.05 & 927.283 & 954.657 & 961.134 & 970.796 & 943.956 \\
+
+      FGD1 NuMuBkg CC0pi in AntiNu Mode & 34950 & 2457.88 & 2646.97 & 2392.37 & 2379.95 & 2449.2 & 2457.88 & 2485.51 \\
+      FGD1 NuMuBkg CC1pi in AntiNu Mode & 12352 & 871.792 & 952.669 & 814.909 & 838.532 & 871.141 & 871.792 & 855.911 \\
+      FGD1 NuMuBkg CCother in AntiNu Mode & 10894 & 764.374 & 854.448 & 750.775 & 733.571 & 764.374 & 764.374 & 804.647 \\
+
+      FGD2 NuMuBkg CC0pi in AntiNu Mode & 35180 & 2458.01 & 2645.96 & 2408.41 & 2419.07 & 2458.01 & 2458.01 & 2553.51 \\
+      FGD2 NuMuBkg CC1pi in AntiNu Mode & 9714 & 676.737 & 740.521 & 632.743 & 662.563 & 676.737 & 676.737 & 679.99 \\
+      FGD2 NuMuBkg CCother in AntiNu Mode & 10421 & 732.441 & 819.628 & 718.565 & 720.726 & 732.441 & 732.441 & 792.166 \\
+      \hline
+      Total & 1689110 & 113791 & 124529 & 108478 & 110318 & 113420 & 113420 & 114847 \\
+      
+
+    \end{tabular}
+        }
+        \caption{Event rates broken by type of weight applied}
+  \label{tab:detailed_eventrate_2018}
+\end{sidewaystable}
+
+
+
+
+\subsection{Rebinning}
+The T2K run 7 and run 8 data took \red{INSERT POT} protons on target in 2015 and 2016. Run 7 was a anti-neutrino dominated run (reverse horn current, or RHC) and run 8 was a neutrino dominated run (forward horn current, or FHC). Comparing to previous runs used in analyses (run 2 to 6), run 7 and 8 roughly doubled the amount of data in both neutrino and anti-neutrino selections. \red{insert table from psyche}
+% % % % % % % % % % % % % % % % % %
+% FIT BINNING
+
+\begin{itemize}
+  \item FGD1 and FGD2 CC0$\pi$: 841 fit bins\\
+    $p_\mu$ (MeV/c) = 0., 200., 300., 400., 450., 500., 550., 600., 650., 700., 750., 800., 850., 900., 950., 1000., 1050., 1100., 1200., 1300., 1400., 1500., 1600., 1700., 1800., 2000., 2500., 3000., 5000., 30000. \\
+    $\cos\theta_\mu$ = -1., 0.5, 0.6, 0.7, 0.76, 0.78, 0.8, 0.83, 0.85, 0.88, 0.89, 0.9, 0.91, 0.92, 0.925, 0.93, 0.935, 0.94, 0.945, 0.95, 0.955, 0.96, 0.965, 0.97, 0.975, 0.98, 0.985, 0.99, 0.995, 1.\\
+
+  \item FGD1 and FGD2 CC1$\pi$: 288 fit bins\\
+    $p_\mu$ (MeV/c) = 0., 300., 350., 400., 500., 600., 650., 700., 750., 800., 900., 1000., 1100., 1200., 1500., 2000., 3000., 5000., 30000. \\
+    $\cos\theta_\mu$ = -1., 0.6, 0.7, 0.8, 0.85, 0.88, 0.9, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 0.995, 1. \\
+
+  \item FGD1 and FGD2 CCOther: 342 fit bins\\
+    $p_\mu$ (MeV/c) = 0., 300., 400., 500., 600., 650., 700., 750., 800., 900., 1000., 1100., 1250., 1500., 1750., 2000., 3000., 5000., 30000. \\
+    $\cos\theta_\mu$ = -1., 0.6, 0.7, 0.76, 0.8, 0.85, 0.88, 0.89, 0.9, 0.91, 0.92, 0.93, 0.94, 0.95, 0.96, 0.97, 0.98, 0.99, 0.995, 1. \\
+
+  \item FGD1 and FGD2 CC0$\pi$ RHC: 306 fit bins\\
+    $p_\mu$ (MeV/c) = 0., 300., 400., 500., 550., 600., 650., 700., 750., 800., 900., 1000., 1100., 1200., 1500., 2000., 4000., 30000.\\
+    $\cos\theta_\mu$ = -1., 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.93, 0.94, 0.95, 0.96, 0.965, 0.97, 0.975, 0.98, 0.985, 0.99, 0.995, 1.\\
+
+  \item FGD1 and FGD2 CC1$\pi$ RHC: 48 fit bins \\
+    $p_\mu$ (MeV/c) = 0., 500., 700., 900., 1300., 2500., 30000.\\
+    $\cos\theta_\mu$ = -1, 0.7, 0.8, 0.9, 0.94, 0.96, 0.98, 0.99, 1\\
+
+  \item FGD1 and FGD2 CCOther RHC: 80 fit bins \\
+    $p_\mu$ (MeV/c) = 0., 600., 800., 1000., 1250., 1500., 2000., 4000., 30000.\\
+    $\cos\theta_\mu$ = -1., 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.97, 0.98, 0.99, 1.\\
+
+  \item FGD1 and FGD2 CC0$\pi$ $\nu$ RHC: 120 fit bins \\
+    $p_\mu$ (MeV/c) = 0., 300., 500., 700., 800., 900., 1250., 1500., 2000., 4000., 30000.\\
+     $\cos\theta_\mu$ = -1., 0.7, 0.8, 0.85, 0.88, 0.9, 0.92, 0.94, 0.96, 0.97, 0.98, 0.99, 1.\\
+
+   \item FGD1 and FGD2 CC1$\pi$ $\nu$ RHC: 40 fit bins \\
+     $p_\mu$ (MeV/c) = 0., 600., 800., 1500., 30000.\\
+      $\cos\theta_\mu$ = -1, 0.7, 0.8, 0.86, 0.9, 0.94, 0.96, 0.97, 0.98, 0.99, 1\\
+
+    \item FGD1 and FGD2 CCOther $\nu$ RHC: 80 fit bins \\
+      $p_\mu$ (MeV/c) = 0., 600., 1000., 1250., 2000., 4000., 30000.;\\
+       $\cos\theta_\mu$ = -1., 0.7, 0.8, 0.86, 0.9, 0.93, 0.95, 0.97, 0.99, 1.;\\
+\end{itemize}
+
+% % % % % % % % % % % % % % % % % %
+% DET BINNING
+    Deciding on detector binning: 
+    Check how similar percentage effect on systematics: if the percentage change is more than 5\% and the percentage effect of the systematics on the bin is greater than 5\% and the bin content in the bin is at least one and the effect of the systematics on the bin changes the number of events in that bin by at least one.
+    Will favour high-statistics bins and disfavour low-statistics bins.
+
+\begin{itemize}
+  \item FGD1 and FGD2 CC0$\pi$: 272 detector bins (841) \\
+    $p_\mu$ (GeV/c): 0., 200., 300., 400., 450., 550., 600., 650., 700., 750., 800., 850., 900., 950., 1000., 1400., 5000., 30000. \\
+    $\cos\theta_\mu$: -1., 0.5, 0.6, 0.7, 0.76, 0.8, 0.83, 0.85, 0.88, 0.965, 0.97, 0.975, 0.98, 0.985, 0.99, 0.995, 1. \\
+
+  \item FGD1 and FGD2 CC1$\pi$: 100 detector bins (288) \\
+    $p_\mu$ (GeV/c): 0., 300., 350., 400., 500., 600., 650., 700., 1100., 3000., 5000., 30000. \\
+    $\cos\theta_\mu$: -1., 0.6, 0.7, 0.8, 0.85, 0.88, 0.9, 0.92, 0.93, 0.94, 1. \\
+
+  \item FGD1 and FGD2 CCOther: 72 detector bins (342) \\
+    $p_\mu$ (GeV/c): 0., 300., 400., 600., 650., 1750., 2000., 5000., 30000. \\
+    $\cos\theta_\mu$: -1., 0.6, 0.93, 0.94, 0.95, 0.96, 0.98, 0.99, 0.995, 1. \\
+
+  \item FGD1 and FGD2 CC0$\pi$ RHC: 49 detector bins (306) \\
+    $p_\mu$ (GeV/c): 0., 300., 400., 500., 550., 2000., 4000., 30000. \\
+    $\cos\theta_\mu$: -1., 0.6, 0.7, 0.8, 0.85, 0.9, 0.96, 1. \\
+
+  \item FGD1 and FGD2 CC1$\pi$ RHC: 4 detector bins (48) \\
+    $p_\mu$ (GeV/c): 0., 500., 30000. \\
+    $\cos\theta_\mu$: -1, 0.7, 1 \\
+
+  \item FGD1 and FGD2 CCOther RHC: 6 detector bins (80) \\
+    $p_\mu$ (GeV/c): 0., 600., 800., 30000. \\
+    $\cos\theta_\mu$: -1., 0.7, 1. \\
+
+  \item FGD1 and FGD2 CC0$\pi$ RHC $\nu$: 15 detector bins (120) \\
+    $p_\mu$ (GeV/c): 0., 300., 500., 700., 800., 30000. \\
+    $\cos\theta_\mu$: -1., 0.7, 0.8, 1. \\
+
+  \item FGD1 and FGD2 CC1$\pi$ RHC $\nu$: 6 detector bins (40) \\
+    $p_\mu$ (GeV/c): 0., 600., 800., 30000. \\
+    $\cos\theta_\mu$: -1, 0.7, 1 \\
+
+  \item FGD1 and FGD2 CCOther RHC $\nu$: 4 detector bins (54)\\
+    $p_\mu$ (GeV/c): 0., 600., 30000. \\
+    $\cos\theta_\mu$: -1., 0.7, 1. \\
+\end{itemize}
+
+\subsection{efficiency?}
+
+\section{Cross-section}
+\subsection{Only new thing is FSI central values}
+and the CC norm nu nubar
+\section{Updating reconstruction framework}
+\subsection{Reconstruction improvements}
+\subsection{RHC Multi-pi}
+\subsection{4pi selection}
+
+\subsection{Making new detector systematics}
+
+show raw 4238 plots, binning choices for data
+
+try to rebin with justification, show ndof etc, some canvases
+
+
+
+\section{Asimov}
+\subsection{Likelihood scan}
+\subsection{Comparison to multi-track}
+\subsection{One sigma variations}
+\subsection{Comparison to poorly binned}
+
+\subsection{Comparison to multi-track with run 7+8 without rebinning}
