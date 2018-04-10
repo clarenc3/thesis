@@ -28,6 +28,9 @@ Share same beam, use near detector complex
 
 \section{Setting up the fit}
 
+Water in, water out
+
+Generate MC in different run-periods to account for beam power, beam conditions, dead channel configurations, different calibrations, etc.
 
 
 \begin{table}[htbp]
@@ -62,40 +65,186 @@ Share same beam, use near detector complex
 	\label{tab:pot_2017}
 \end{table}
 
-
-
-
 \subsection{Selections}
 \label{subsec:ND280:sel}
-Selections are developed by the T2K \numu and \nue groups. \red{INSERT STUFF ON SELECTIONS}
+The selections are based on the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for energy loss and/or missed and/or misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions (FSI).
+
+The end goal of the selection is to separate the main interaction modes so that various theory parameters in the fit receive large portions of their constraint from each sample. Equivalent FGD1 and FGD2 selections are separated due to the difference in systematics (e.g. forward-going tracks emanating in FGD1 leaves a track in FGD1, TPC2, FGD2 and TPC3 so has more hits recorded than the FGD2 equivalence, which only passes through FGD2 and TPC3). Furthermore, FGD2 contains plastic scintillator and passive water layers whereas FGD1 is fully plastic scintillator, so different systematics and reconstruction applies. Separating FGD1 and FGD2 also allows the constraints on water interactions to come strictly from the FGD2 selections.
+
+\red{Show diagrams or even event displays}
+
+\begin{itemize}
+\item \textbf{CC$0\pi$}: Defines events as having one true negative muon without any charged or neutral pion in the final state of the interaction. It is developed to contain CCQE and 2p2h events and is the largest sample at ND280 \red{show plots of cross-sections at ND280 from NEUT?}
+
+\item \textbf{CC$1\pi$}: Defines events as having one true negative muon and one positive pion with no negative or neutral pions in the final state of the interaction. It is developed to contain mostly CC1$\pi^{+}$ events from resonant interactions\red{refer to previous sections maybe}
+
+\item \textbf{CC Other}: Defines events as having one negative muon and at least one neutral or negative pion, and events with one negative muon and more than one positive pion with any number of neutral or negative pions. Furthermore there are no constraints on the number of reconstructed heavier mesons (e.g. kaons or etas). It is developed to contain mostly DIS interactions and CC$1\pi^0$.
+\end{itemize}
+
+\subsubsection{Event selection cuts, \numu}
+\label{sec:numu_sel}
+The different topological selections all start by isolating CC-inclusive candidates in FGD1 or FGD2. Firstly is required to contain one reconstructed track candidate of negative charge crossing the TPC downstream of either FGD (TPC2 for interactions starting in FGD1, TPC3 for interactions starting in FGD2). The event also needs to fulfil data quality and fiducial volume requirements. The muon is then assumed to be the highest momentum negative track (HMNT) found in the event, and it is required that the track is identified as a muon.
+
+The detailed general selection criteria for the CC-inclusive sample is:
+\begin{itemize}
+	\item \textbf{Event quality cut}: The full beam spill has a good global ND280 data quality flag, meaning all ND280 sub-detectors and magnet were operational and reading out data. The event must occur within the bunch time window of the neutrino beam. Event pile-up is mitigated by associating each event to a beam bunch within a beam spill.
+	
+	\item \textbf{Quality and fiducial volume cut}: At least one reconstructed track is present in the FGD1 or FGD2 fiducial volume. The fiducial volume for FGD1 is $|x|<874.51\text{ mm}$, $|y-55|<874.51\text{ mm}$, $136.875 < z < 446.955\text{ mm}$ and for FGD2 $|x|<874.51\text{ mm}$, $|y-55|<874.51\text{ mm}$, $1481.45< z < 1807.05\text{ mm}$\footnote{The 55mm offset in $y$ reflects the shift in XY modules relative the center of the ND280 coordinate system.}.
+	
+	The $x$ and $y$ cuts are designed to accept interactions which have their vertex five bars from the edge of the XY module of each FGD. The $z$ cut excludes the first XY module of each FGD and includes the remaining (14 for FGD1, 7 for FGD2). To reject short tracks, for which the TPC reconstruction is unreliable, tracks are required to have more than 18 TPC clusters.
+	
+	\item \textbf{Upstream background veto}: If the second highest momentum track starts at least 150 mm upstream of the selected muon candidate (highest momentum negative track with muon PID), the event is rejected. This cut eliminates events in which the muon candidate might be the second part of a broken track which started further upstream (e.g. in the P0D). For events with a reconstructed vertex in FGD2 there is the added criterion of having no reconstructed tracks in FGD1.
+	
+	\item \textbf{Broken track cut}: The start position of the muon candidate track needs to be less than 425 mm away from the FGD upstream edge if the event has at least one reconstructed FGD-only track. The cut vetoes events where the reconstruction has cut a muon candidate track into two tracks: one of which is fully contained in the FGD and the second starting downstream of the fully contained track in the FGD and enters the TPC, causing the second track to be the selected as the muon candidate, misplacing the vertex.
+	
+	\item \textbf{Muon PID cut}: Once a particle is considered a muon candidate (fulfilling the above criteria), the particle identification is applied based on the $dE/dx$ measurement of the track in the TPC. The measured energy deposit $E$ in the TPC is compared with the expected energy deposit under muon, pion, electron and proton hypotheses and pulls and discrimination functions are then applied.
+	
+	The pull $\chi^2_i$ for particle type $i$ are defined as
+	\begin{equation}
+	\label{eq:tpc_track_chi2}
+	\chi^2_i = \frac{dE/dx_{Obs} - dE/dx_{Exp, i}}{\sigma_{dE/dx_{Obs} - dE/dx_{Exp, i}}}
+	\end{equation}
+	The likelihoods $\mathcal{L}_i$ are then defined as
+	\begin{equation}
+	\label{eq:tpc_track_likelihood}
+		\mathcal{L}_i = \frac{e^{-\chi^2_i}}{\sum_n e^{-\chi^2_n}}
+	\end{equation}
+	where the denominator is over $n$, which are the particles $n=\mu,\pi,e,p$. 
+	
+	In the PID algorithm, electrons are rejected by requiring
+	\begin{equation}
+		\label{eq:tpc_track_mip}
+		\mathcal{L}_{MIP} = \frac{\mathcal{L}_\mu + \mathcal{L}_\pi}{1-\mathcal{L}_p} > 0.8
+	\end{equation}
+	for tracks with $p<500\text{ MeV/c}$. To remove protons and pions, it is required that
+	\begin{equation}
+	\label{eq:tpc_track_mu}
+		\mathcal{L}_\mu > 0.05
+	\end{equation}
+	The constants 0.8, 0.05 and 500 MeV/c are chosen from particle gun studies in the TPC and test-beam data.
+	
+	Importantly, TPC segments need to pass the TPC track quality cut contribute to the likelihood: bad quality tracks do not.
+\end{itemize}
+
+The selection criteria then proceeds to split the CC-inclusive sample into the three subsamples: CC$0\pi$, CC$1\pi$ and CCOther. This is based entirely on pion identification in the TPCs and FGDs.
+
+To identify pion candidate(s) a number of cuts are applied:
+\begin{itemize}
+	\item \textbf{Muon candidate}: The track can not be identified as the above muon candidate.
+	
+	\item \textbf{Matching beam spill and bunch}: The pion candidate is required to originate from the same beam bunch and spill to the identified muon candidate.
+	
+	\item \textbf{Track origin}: The pion candidate is required to start in the same FGD fiducial volume as the muon candidate and enter the downstream TPC for PID purposes. The same FGD and TPC track quality and fiducial volume cut is applied for the pion candidate as for the muon candidate.
+	
+	\item \textbf{Pion PID}: For positive tracks in the TPC, pion, positron and proton hypotheses are tested. For negative tracks, pion and electron hypotheses are tested. 
+	
+	As for the muon candidate, \autoref{eq:tpc_track_chi2} and \autoref{eq:tpc_track_likelihood} defines the particle likelihoods. For the pion PID, the MIP likelihood in \autoref{eq:tpc_track_mip} is required and in addition a cut on the pion likelihood is invoked,
+	\begin{equation}
+	\label{tpc_track_pi}
+		\mathcal{L}_\pi > 0.3
+	\end{equation}
+	
+	When there is no particle track in the TPC, the FGD PID can be used to count the number of charged pions. However, it can not be used for neutral pions because there is currently no electron or positron reconstruction available. The FGD pion PID proceeds either by:
+	\begin{itemize}
+		\item \textbf{Michel electron tag}: For low-momentum pion tracks that fail to leave enough hits for track reconstruction, a search for a Michel electron tag is made. It looks for a time-delayed FGD hit cluster out of time with a beam bunch window (so has no associated beam spill or bunch). The number of hits in the delayed time bin should be greater than six for FGD1 and five for FGD2\footnote{Roughly corresponding to 200 photoelectrons, but can't be used as a criteria in FGD2 due to the water layers}. Since no measurement of the track is made, this selection does not give rise to a pion momentum.
+		
+		\item \textbf{FGD reconstruction}: For higher momentum pions it is required they leave fully contained tracks in the FGD and that the track belongs to the same bunch as the muon candidate. Furthermore, there can only be one pion track reconstructed in the FGD, which eliminates the possibility of a broken track being reconstructed as two pions. The pion candidate is required to be upwards or downwards-going by invoking $|\cos\theta_{\pi,\nu}| > 0.3$, which limits the possibility of traveling along the FGD bars. Finally it is required the pion pull (as a function of track length) $P_\pi$ be $-2 < P_\pi < 2.5$ from simulation studies.
+	\end{itemize}
+\end{itemize}
+
+Then finally the remaining particles can be identified using the TPC PID: 
+\begin{itemize}
+	\item For a positive particle, it is tagged with type of highest probability. If the most likely particle is a positron but the $p_{reco} > 900\text{ MeV}$ it's tagged as a proton, otherwise a positron
+	
+	\item For a negative particle, if the probability of a pion is $P_\pi>0.8$ it is tagged as a negative pion, and if not it is assumed an electron
+\end{itemize}
+
+Now using information from the TPC PID, FGD Michel electron and FGD PID algorithms the CC-inclusive sample can be categorised into the CC$0\pi$, CC$1\pi$ and CCOther samples:
+\begin{itemize}
+	\item \textbf{CC0$\pi$}: Contains events with no identified pions, electrons or positrons using the TPC PID. There are no Michel electrons and/or charged pions found in the FGD
+	\item \textbf{CC$1\pi$}: Contains events with one reconstructed positively charged pion. The sum of the number of positive pions found in the TPC and the number of Michel electrons is one. If there are no Michel electrons the sum of positive pions in the TPC and fully contained in the FGD is one. If there is a negative pion or electron/positron reconstructed in the TPC it is rejected.
+	\item \textbf{CCOther}: All events which are not classified as CC0$\pi$ or CC$1\pi$ fall into this sample. Events with one or more reconstructed negative pions, or neutral pions reconstructed as electron or positron candidates, in the TPC are thereby selected. Event with more than one positive pion based on the TPC and FGD pion counting criteria will also enter into this sample.
+\end{itemize}
+
+\red{Maybe put in the plots of the Pion pull FGD and TPC pulls?}
+
+\red{Maybe make a flow chart}
+
+\begin{equation}
+C_T^{exp} = \frac{53.87 \text{ ADC}}{\beta^{2.283}} \left( 5.551 - \beta^{2.283} - \log\left[0.001913 + \frac{1}{\left(\beta\gamma\right)^{1.249}}\right]\right)
+\end{equation}
+
+\subsubsection{Event selection cuts, \numubar in RHC}
+\label{sec:numubar_sel}
+The anti-neutrino selections CC1Track and CCNTrack have the same event quality and fiducial volume cut as the neutrino selection, and the muon candidate track is required to pass through the TPC downstream of the struck FGD. However, its highest momentum track is required to be the highest momentum positive track for its muon PID (a $\mu^+$ coming from a \numubar interaction). Furthermore, it has a larger background of ``wrong-sign'' events: \numu interactions producing $\mu^-$, but also \numu interactions producing $\pi^+$ which may be identified as the lepton candidate.\red{SHOW PLOT OF THIS, e.g. numubar flux with numu background in there} Hence, the selection cuts proceed marginally differently:
+\begin{itemize}
+	\item \textbf{Positive multiplicity}: The muon candidate track charge is required to be a highest momentum positive track, which removes a large amount of \numu background interactions
+	
+	\item \textbf{TPC veto}: Veto backwards-going events starting in the FGD and events coming from the P0D and the magnet by utilising the upstream TPCs. If the upstream TPC of an FGD has hits the event is rejected
+	
+	\item \textbf{Positive muon identification}: The TPC PID outlined for the \numu selections are used to select the positive muon candidate, with the cuts optimised for $\mu^+$. 
+	
+	$\mathcal{L}_{MIP}$ is defined identically to \autoref{eq:tpc_track_mip} although the cut is now placed at 0.9, and still only applies to particle with $p < 500\text{ MeV}$.
+		
+	The muon likelihood $\mathcal{L}_\mu$ is also modified so that $0.1 < \mathcal{L}_\mu < 0.7$ removes protons and positive pions from the \numu background. The upper bound at 0.7 is present to reject low energy wrong-sign muons ($\mu^-$), which are misidentified as positive tracks.\red{REMEMBER THAT THIS IS NOT PRESENT FOR PSYCHE V3}
+\end{itemize}
+
+Once the \numubar CC-inclusive selection is run the aforementioned pion reconstruction is applied. The \numubar CC1Track selection has one positive muon and does not have any charged or neutral pions in the final state. Importantly, the \numubar CC1Track selection has a higher efficiency in selecting the muon candidate than the \numu CC0$\pi$ selection due to the \numubar resonant interactions producing a $\pi^-$, not a $\pi^+$, which are promptly absorbed in the nucleus and so do not leave a track to be (falsely) identified as a muon candidate. The \numubar CCNTrack selection contains the remaining particles passing the \numubar CC-inclusive selection, containing at least one neutral or charged pion and/or any number of heavier mesons.
+
+\subsubsection{Event selection, \numu in RHC}
+\label{sec:numu_in_nubar_sel}
+In anti-neutrino mode there is a large fraction of \numu interactions, owing partly to the larger \numu cross-section and partly due to the higher flux background. \red{show plots of this}. The same pre-selection cuts apply for the \numu in RHC selection as for the previous selections presented in \autoref{sec:numu_sel} and \autoref{sec:numubar_sel}.
+
+The CC-inclusive selection proceeds by:
+\begin{itemize}
+	\item \textbf{Negative multiplicity}: The highest momentum track is required to be the highest momentum negative track, which starts the seeding track. The $\mu^-$ identification uses the TPC PID on the highest momentum negative track. 
+	
+	\item \textbf{TPC PID}: The PID proceeds by the MIP requirement in \autoref{eq:tpc_track_mip} for particles with $p_\mu < 500 \text{ MeV/c}$, accepting candidate tracks with $\mathcal{L}_{MIP} > 0.7$.
+	
+	Similar to \autoref{sec:numubar_sel}, a lower and upper bound is set $0.1 < \mathcal{L}_\mu < 0.8$, which rejects protons and mis-reconstructed $\mu^+$.
+\end{itemize}
+The \numu in RHC selection then breaks down the CC-inclusive selection into CC1Track and CCNTrack, based entirely on the number of TPC-FGD matched tracks. Events with one such reconstructed track enters the CC1Track selection, and events with any other number of tracks regardless of PID, enter the CCNTrack selection. Hence the \numu RHC selection is analogous to the \numubar RHC selection.
+
+
+\red{show some efficiency plots from TN246 (224) (anti-neutrino) and TN212(154)}
+
+\red{Talk about the importance of FGD1 and FGD2}
 
 \red{Talk about anti-neutrino binning update}
 
+Binning for data
+
+Similar numbers of events are expected in both FGDs with similar kinematics, so the same binning in observed muon momentum, \pmu, and cosine of the muon angle, \cosmu, is used for both sets of samples.  The event selections are described in more detail in TN-212~\cite{tn_212}, TN-224~\cite{tn_224}, TN-227~\cite{tn_227}, TN-246~\cite{tn_246} and TN-248~\cite{tn_248}.
 \begin{itemize}
-	\item FHC $\nu_{\mu}$~CC0$\pi$ bin edges: \\
-	$p$ (MeV/c): 0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 3000, 5000, 30000 \\
-	$\cos\theta$:  -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
-	\item FHC $\nu_{\mu}$~CC1$\pi$  bin edges: \\
-	$p$ (MeV/c):  0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 5000, 30000 \\
-	$\cos\theta$: -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
-	\item FHC $\nu_{\mu}$~CCOther bin edges: \\
-	$p$ (MeV/c): 0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 3000, 5000, 30000 \\
-	$\cos\theta$:  -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
-	\item RHC $\bar{\nu}_{\mu}$~CC 1-Track bin edges: \\
-	$p$ (MeV/c): 0, 400, 500, 600, 700, 800, 900, 1100, 1400, 2000, 10000 \\
-	$\cos\theta$: -1.0, 0.6, 0.7, 0.8, 0.85, 0.88, 0.91, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
-	\item RHC $\bar{\nu}_{\mu}$~CC N-Track bin edges: \\
-	$p$ (MeV/c): 0, 700, 950, 1200, 1500, 2000, 3000, 10000 \\
-	$\cos\theta$: -1.0, 0.75, 0.85, 0.88, 0.91, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
-	\item RHC $\nu_{\mu}$~CC 1-Track bin edges: \\
-	$p$ (MeV/c): 0, 400, 600, 800, 1100, 2000, 10000 \\
-	$\cos\theta$: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
-	\item RHC $\nu_{\mu}$~CC N-Track bin edges: \\
-	$p$ (MeV/c): 0, 500, 700, 1000, 1500, 2000, 3000, 10000 \\
-	$\cos\theta$: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+	\item \FGDCCNoPi{1+2}{\numu}: \\
+	\pmu: 0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 3000, 5000, 30000\\
+	\cosmu:  -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
+	
+	\item \FGDCCOnePi{1+2}{\numu}: \\
+	\pmu:  0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 5000, 30000\\
+	\cosmu: -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
+	
+	\item \FGDCCOther{1+2}{\numu}: \\
+	\pmu: 0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 3000, 5000, 30000\\
+	\cosmu:  -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.92, 0.94, 0.96, 0.98, 0.99, 1
+	
+	\item \FGDCCOneTrk{1+2}{\numubar}: \\
+	\pmu: 0, 400, 500, 600, 700, 800, 900, 1100, 1400, 2000, 10000\\
+	\cosmu: -1.0, 0.6, 0.7, 0.8, 0.85, 0.88, 0.91, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+	
+	\item \FGDCCNTrk{1+2}{\numubar}: \\
+	\pmu: 0, 700, 950, 1200, 1500, 2000, 3000, 10000\\
+	\cosmu: -1.0, 0.75, 0.85, 0.88, 0.91, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+	
+	\item \FGDCCnuOneTrk{1+2}{\numu} in RHC: \\
+	\pmu: 0, 400, 600, 800, 1100, 2000, 10000 \\
+	\cosmu: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
+	
+	\item \FGDCCnuNTrk{1+2}{\numu} in RHC: \\
+	\pmu: 0, 500, 700, 1000, 1500, 2000, 3000, 10000\\
+	\cosmu: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
 \end{itemize}
 
-Similar numbers of events are expected in both FGDs with similar kinematics, so the same binning in observed muon momentum, $p$, and cosine of the muon angle, $\cos\theta$, is used for both sets of samples.  The event selections are described in more detail in TN-212~\cite{tn_212}, TN-224~\cite{tn_224}, TN-227~\cite{tn_227}, TN-246~\cite{tn_246} and TN-248~\cite{tn_248}.
 
 \red{INSERT reference to plots and bin merging}
 
@@ -106,59 +255,59 @@ Similar numbers of events are expected in both FGDs with similar kinematics, so 
 \label{subsec:ND280:syst:det}
 The flux systematics are evaluated by varying underlying parameters in the flux model and using NA61/SHINE \red{CITE} data. [7] N. Antoniou et al. CERN-SPSC-2006-034, 2006.
 
-The NA61 data comes from runs using the thin target, whereas the T2K target is roughly 2 interaction lenghts. The data is $\pi^\pm$, $K^\pm$, $K^0_S$ and $\rho^+$.
+The NA61 data comes from runs using the thin target, whereas the T2K target is roughly 2 interaction lengths The data is $\pi^\pm$, $K^\pm$, $K^0_S$ and $\rho^+$.
 
 HARP data used for pion rescattering.
 
 Talk about the corrections in psyche
 \begin{itemize}
-  \item ND280 FHC $\nu_\mu$:\\
-    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+  \item ND280 FHC \numu:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
 
-  \item ND280 FHC $\bar{\nu}_\mu$:\\
-    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+  \item ND280 FHC \numubar:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30
 
-  \item ND280 FHC $\nu_e$:\\
-    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30 \\
+  \item ND280 FHC \nue:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30
 
-  \item ND280 FHC $\bar{\nu}_e$:\\
-    $E_\nu^{true}$: 0, 2.5, 30 \\
+  \item ND280 FHC \nuebar:\\
+    $E_\nu^{true}$: 0, 2.5, 30
 
-  \item ND280 RHC $\nu_\mu$:\\
-    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+  \item ND280 RHC \numu:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30
 
-  \item ND280 RHC $\bar{\nu}_\mu$:\\
-    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+  \item ND280 RHC \numubar:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
 
-  \item ND280 RHC $\nu_e$:\\
-    $E_\nu^{true}$: 0, 2.5, 30 \\
+  \item ND280 RHC \nue:\\
+    $E_\nu^{true}$: 0, 2.5, 30
 
-  \item ND280 RHC $\bar{\nu}_e$:\\
-    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30 \\
+  \item ND280 RHC \nuebar:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30
 
-  \item SK FHC $\nu_\mu$:\\
-    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+  \item SK FHC \numu:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
 
-  \item SK FHC $\bar{\nu}_\mu$:\\
-    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+  \item SK FHC \numubar:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30
 
-  \item SK FHC $\nu_e$:\\
-    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30 \\
+  \item SK FHC \nue:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30
 
-  \item SK FHC $\bar{\nu}_e$:\\
-    $E_\nu^{true}$: 0, 2.5, 30 \\
+  \item SK FHC \nuebar:\\
+    $E_\nu^{true}$: 0, 2.5, 30
+    
+  \item SK RHC \numu:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30
 
-  \item SK RHC $\nu_\mu$:\\
-    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30 \\
+  \item SK RHC \numubar:\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
 
-  \item SK RHC $\bar{\nu}_\mu$:\\
-    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30 \\
+  \item SK RHC \nue:\\
+    $E_\nu^{true}$: 0, 2.5, 30
 
-  \item SK RHC $\nu_e$:\\
-    $E_\nu^{true}$: 0, 2.5, 30 \\
-
-  \item SK RHC $\bar{\nu}_e$:\\
-    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30\\
+  \item SK RHC \nuebar:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30
 \end{itemize}
 
 
@@ -204,47 +353,62 @@ The effect of changing the ND280 systematics binning was done with an older cros
 The merged systematics binning was improved to:
 \begin{itemize}
 	\item FHC $\nu_{\mu}$~CC0$\pi$ bin edges: \\
-	$p$ (MeV/c): 0, 1000, 1250, 2000, 3000, 5000, 30000 \\
-	$\cos\theta$:  -1, 0.6, 0.7, 0.8, 0.85,0.94, 0.96, 1
+	\pmu (MeV/c): 0, 1000, 1250, 2000, 3000, 5000, 30000 \\
+	\cosmu:  -1, 0.6, 0.7, 0.8, 0.85,0.94, 0.96, 1
 	\item FHC $\nu_{\mu}$~CC1$\pi$  bin edges: \\
-	$p$ (MeV/c):  0, 300, 1250, 1500, 5000, 30000 \\
-	$\cos\theta$: -1, 0.7, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\pmu (MeV/c):  0, 300, 1250, 1500, 5000, 30000 \\
+	\cosmu: -1, 0.7, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
 	\item FHC $\nu_{\mu}$~CCOther bin edges: \\
-	$p$ (MeV/c): 0, 1500, 2000, 3000, 5000, 30000 \\
-	$\cos\theta$:  -1, 0.8, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\pmu (MeV/c): 0, 1500, 2000, 3000, 5000, 30000 \\
+	\cosmu:  -1, 0.8, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
 	\item RHC $\bar{\nu}_{\mu}$~CC 1-Track bin edges: \\
-	$p$ (MeV/c): 0, 400, 900, 1100, 2000, 10000 \\
-	$\cos\theta$:  -1, 0.6, 0.7, 0.88, 0.95, 0.97, 0.98, 0.99, 1.00
+	\pmu (MeV/c): 0, 400, 900, 1100, 2000, 10000 \\
+	\cosmu:  -1, 0.6, 0.7, 0.88, 0.95, 0.97, 0.98, 0.99, 1.00
 	\item RHC $\bar{\nu}_{\mu}$~CC N-Track bin edges: \\
-	$p$ (MeV/c):  0, 700, 1200, 1500, 2000, 3000, 10000 \\
-	$\cos\theta$: -1, 0.85, 0.88, 0.93, 0.98, 0.99, 1.00
+	\pmu (MeV/c):  0, 700, 1200, 1500, 2000, 3000, 10000 \\
+	\cosmu: -1, 0.85, 0.88, 0.93, 0.98, 0.99, 1.00
 	\item RHC $\nu_{\mu}$~CC 1-Track bin edges: \\
-	$p$ (MeV/c):  0, 400, 800, 1100, 2000, 10000 \\
-	$\cos\theta$:   -1, 0.7, 0.85, 0.90, 0.93, 0.96, 0.98, 0.99, 1.00
+	\pmu (MeV/c):  0, 400, 800, 1100, 2000, 10000 \\
+	\cosmu:   -1, 0.7, 0.85, 0.90, 0.93, 0.96, 0.98, 0.99, 1.00
 	\item RHC $\nu_{\mu}$~CC N-Track bin edges: \\
-	$p$ (MeV/c):  0, 1000, 1500, 2000, 3000, 10000 \\
-	$\cos\theta$: -1, 0.8, 0.90, 0.93, 0.95, 0.96, 0.97, 0.99, 1.00
+	\pmu (MeV/c):  0, 1000, 1500, 2000, 3000, 10000 \\
+	\cosmu: -1, 0.8, 0.90, 0.93, 0.95, 0.96, 0.97, 0.99, 1.00
 \end{itemize}
+Be mega clear that each of these above make up one parameter
 
 \subsubsection{Cross-section}
 \label{subsec:ND280:syst:xsec}
 splines vs normalisation parameter, Maybe extra bit on BeRPA because of involvement
 
-\subsection{Building the Monte-Carlo prediction}
-The fit proceeds by binning events in the two reconstructed muon variables $p_\mu$ and $\cos\theta_\mu$. The muon variables are chosen primarily due to excellent detector resolution of muons, and also because \sk analyses are performed in these variables. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino. The fit uses the reconstructed variables for data and MC and does not unfold into true space.
+\subsection{Building and varying the Monte-Carlo prediction}
+The fit proceeds by binning events in the two reconstructed muon variables \pmu and \cosmu. The muon variables are chosen primarily due to excellent detector resolution of muons\red{CITE THIS}, and also because \sk analyses are performed in these variables. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino, but these will not be presented here. The fit uses the reconstructed variables for data and MC and does not unfold into ``true'' space.
 
-Inspecting the POT table in \autoref{tab:pot_2017}, MC is generated with POT $\sim\times10$ data POT to avoid uncertainty from Monte Carlo statistics. To build the nominal distribution equivalent for comparison to data a number of weights are applied:
+Inspecting the POT table in \autoref{tab:pot_2017}, MC is generated with POT $\times10$ data POT to avoid uncertainty from Monte Carlo statistics. To build the nominal distribution for comparison to data a number of scalings and weights are applied. For the near-detector portion of MaCh3 and BANFF, all weights are applied on an event-by-event basis:
 \begin{itemize}
 	\item \textbf{POT weight:} \\
-	A run-by-run scaling factor taking the ratio of total good flagged data to the generated Monte-Carlo POT. An event receives a one-time weight depending on what run it was from and how much MC was generated in the production. These numbers can be read off directly from \autoref{tab:pot_2017}. \\ 
+	A run-by-run scaling factor taking the ratio of total good flagged data to the generated Monte-Carlo POT. An event receives a one-time weight depending on what run it was from and how much MC was generated in the production. These numbers can be read off directly from \autoref{tab:pot_2017}. This weight is only applied once and is not varied in the fit.
+	
 	\item \textbf{Flux weight:} \\
-	A run-by-run correction to the nominal neutrino flux which the production was made in. The weight is applied as a function of $E_\nu^{true}$ \red{show example of this, psycheND280utils/data/tuned13av2}, detailed in \autoref{subsec:ND280:syst:det}. An event receives a weight depending on what run it was from and it's $E_\nu^{true}$. \\
+	A run-by-run correction to the nominal neutrino flux which the production was made in. The weight is applied as a function of $E_\nu^{true}$ with~$0 < E_\nu^{true} < 30 \text{ GeV}$~\red{show example of this, psycheND280utils/data/tuned13av2}, detailed in \autoref{subsec:ND280:syst:flux}. An event receives a weight depending on what run it was from and its $E_\nu^{true}$. This weight is only applied once and is not varied in the fit.
+	
 	\item \textbf{Cross-section weight:} \\
-	An event-by-event weight taking the full generated event through the neutrino interaction simulation again, calculating a weight to apply to the event. The weight can be described as $w=\sigma(\textbf{x'})/\sigma(\textbf{x})$ for the neutrino interaction systematic parameter set $\textbf{x}$. The event may receive a normalisation and a shape parameter depending on its interaction type and the interaction model considered for the analysis. For example, for this analysis a $\nu_\mu$ 2p2h event on Carbon would receive both a normalisation parameter weight (2p2h Carbon) and a shape parameter weight (2p2h shape C), whereas a CC coherent event on Carbon would recieve only a normalisation weight (CC Coherent C). \\
-	\item \textbf{Detector weight:} \\
+	An event-by-event weight taking the full generated event through the neutrino interaction simulation again, calculating a weight to apply to the event. The weight can be described as $w=\sigma(\textbf{x'})/\sigma(\textbf{x})$ for the neutrino interaction systematic parameter set $\textbf{x}$. The event may receive a normalisation and a shape parameter depending on its interaction type and the interaction model considered for the analysis. Details of the model are found in \autoref{subsec:ND280:syst:xsec}.
+	
+	For example, for this analysis a $\nu_\mu$ 2p2h event on carbon would receive both a normalisation parameter weight (2p2h normalisation $\nu$) and a shape parameter weight (2p2h shape C), whereas a CC coherent event on carbon would receive only a normalisation weight (CC Coherent C).
+	
+	These weights are applied once to weight the simulation to nominal, and are then varied during the fit, so are recalculated for every iteration.
+	
 	\item \textbf{Detector covariance weight:} \\
+	An event-by-event weight from the reconstruction and selection package to vary the impact of the detector simulation. It is applied as a function of the event's topology and detector (e.g. FGD1 CC0$\pi$) and which detector covariance bin the event bin falls into (e.g. $p_\mu=350\text{ MeV}, \cos\theta_\mu=0.99$). The weight is simply a normalisation parameter for each bin in the detector covariance matrix scheme, explained in detail in \autoref{subsec:ND280:syst:det}.
+	
+	These weights are applied once to weight the simulation to nominal, and are then varied during the fit, so are recalculated for every iteration.
+	
 	\item \textbf{Beam covariance weight:} \\
+	An event-by-event weight to vary the impact of the flux simulation. An event gets weighted as a function of the neutrino running mode (FHC or RHC), the flavour of neutrino ($\nu_\mu$, $\bar{\nu}_\mu$, $\nu_e$ or $\bar{\nu}_e$) and the neutrino energy. There are 100 parameters in the fit---although only 50 being constrained directly by ND280 data, the remaining 50 being the SK flux parameters, constrained solely by their correlations with the ND280 flux parameters---outlined in detail in \autoref{subsec:ND280:syst:flux}.
+	
+	These weights are applied once to weight the simulation to nominal, and are then varied during the fit, so are recalculated for every iteration.
 \end{itemize}
+
 
 \subsection{Defining the test-statistic}
 
@@ -263,25 +427,25 @@ tests
 		\hline
 		Sample & Data & \nd~pre-fit MC prediction \\ \hline
 		\hline
-		FGD1 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 17136 & 16724    \\% \hline
-		FGD1 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 3954  & 4381  \\% \hline
-		FGD1 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 4149  & 3944  \\% \hline
+		\FGDCCNoPi{1}{\numu}           & 17136 & 16724    \\% \hline
+		\FGDCCOnePi{1}{\numu}          & 3954  & 4381  \\% \hline
+		\FGDCCOther{1}{\numu}          & 4149  & 3944  \\% \hline
 		\hline
-		FGD1 $\bar{\nu}_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)    & 3527 & 3588  \\% \hline
-		FGD1 $\bar{\nu}_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)   & 1054 & 1067  \\% \hline
+		\FGDCCOneTrk{1}{\numubar}      & 3527 & 3588  \\% \hline
+		\FGDCCNTrk{1}{\numubar}   	   & 1054 & 1067  \\% \hline
 		\hline
-		FGD1 $\nu_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)          & 1363 & 1272   \\% \hline
-		FGD1 $\nu_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)         & 1370 & 1357   \\% \hline
+		\FGDCCOneTrk{1}{\numu} in RHC  & 1363 & 1272   \\% \hline
+		\FGDCCNTrk{1}{\numu} in RHC    & 1370 & 1357   \\% \hline
 		\hline
-		FGD2 $\nu_{\mu}$ CC0$\pi$ ($\nu$ mode)                  & 17443 & 16959 \\% \hline
-		FGD2 $\nu_{\mu}$ CC1$\pi$ ($\nu$ mode)                  & 3366  & 3564  \\% \hline
-		FGD2 $\nu_{\mu}$ CC Other ($\nu$ mode)                  & 4075  & 3571  \\% \hline
+		\FGDCCNoPi{2}{\numu}           & 17443 & 16959 \\% \hline
+		\FGDCCOnePi{2}{\numu}          & 3366  & 3564  \\% \hline
+		\FGDCCOther{2}{\numu}          & 4075  & 3571  \\% \hline
 		\hline
-		FGD2 $\bar{\nu}_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)    & 3732 &  3618  \\% \hline
-		FGD2 $\bar{\nu}_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)   & 1026 &  1077  \\% \hline
+		\FGDCCOneTrk{2}{\numubar}      & 3732 &  3618  \\% \hline
+		\FGDCCNTrk{2}{\numubar}        & 1026 &  1077  \\% \hline
 		\hline
-		FGD2 $\nu_{\mu}$ CC 1-Track ($\bar{\nu}$ mode)          & 1320 & 1263  \\% \hline
-		FGD2 $\nu_{\mu}$ CC N-Tracks ($\bar{\nu}$ mode)         & 1253 & 1247  \\% \hline
+		\FGDCCOneTrk{2}{\numu} in RHC  & 1320 & 1263  \\% \hline
+		\FGDCCNTrk{2}{\numu} in RHC    & 1253 & 1247  \\% \hline
 		\hline
 		\hline
 		Total & 64768 & 63633 \\
@@ -320,12 +484,16 @@ tests
 	\label{tab:eventrate}
 \end{sidewaystable}
 
+Put in the nominal event distribution
+
 \section{Asimov results}
 
 
 \subsection{Prior and posterior predictive}
 
+
 \subsection{LLH scan and 1 sigma variations}
+Show effect of some distributions on variations
 
 \section{Datafit results}
 
