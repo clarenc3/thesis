@@ -1,8 +1,14 @@
 \usepackage{xspace}
 \usepackage{tikz}
-\usepackage{morefloats,subfig,afterpage}
+\usepackage{morefloats,afterpage}
 \usepackage{mathrsfs} % script font
 \usepackage{verbatim}
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{mathpazo}
+\usepackage{rotating}
+\usepackage{tabularx}
 
 %% Using Babel allows other languages to be used and mixed-in easily
 %\usepackage[ngerman,english]{babel}
@@ -38,6 +44,8 @@
 \DeclareRobustCommand{\Rate}{\mymath{\Gamma}\xspace}
 \DeclareRobustCommand{\RateOf}[1]{\mymath{\Gamma}\parenths{#1}\xspace}
 
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
 % T2K specific
 \newcommand{\nue}{$\nu_{e}$}
 \newcommand{\nueb}{$\bar{\nu}_{e}$}
@@ -50,8 +58,8 @@
 \newcommand{\sk}{SK}
 \newcommand{\nd}{ND280}
 
-\newcommand\red[1]{{\color{red}#1}}
-\newcommand\blue[1]{{\color{blue}#1}}
+\newcommand\red[1]{{\textit{\Large{\textbf{\color{red}#1}}}}}
+\newcommand\blue[1]{{\textit{\Large{\textbf{\color{blue}#1}}}}}
 
 \newcommand{\FGDCCNoPi}[2]{FGD{#1} CC$0\pi$ {#2}}
 \newcommand{\FGDCCOnePi}[2]{FGD{#1} CC$1\pi$ {#2}}
