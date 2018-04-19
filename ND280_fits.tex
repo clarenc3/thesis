@@ -26,55 +26,13 @@ As statistics increase at Super-Kamiokande, there is more and more need for well
 SK without constraints
 Share same beam, use near detector complex
 
-\section{Setting up the fit}
+\section{Selections}
+\label{sec:ND280:sel}
+The goal of the selection is to map theory interaction modes (e.g. CCQE, CC1$\pi^+$, CC DIS) to ND280 selections, so that theory parameters receive largest constraints from fewest exclusive samples. Equivalent FGD1 and FGD2 selections are separated due to differences in systematics and reconstruction: forward-going tracks emanating in FGD1 leaves a track in FGD1, TPC2, FGD2 and TPC3 so has more hits recorded than the FGD2 equivalence, which only passes through FGD2 and TPC3. Furthermore, FGD2 contains plastic scintillator interleaved with passive water layers whereas FGD1 is fully plastic scintillator. Separating FGD1 and FGD2 also allows constraints on water interactions to come strictly from the FGD2 selections.
 
-Water in, water out
-
-Generate MC in different run-periods to account for beam power, beam conditions, dead channel configurations, different calibrations, etc.
-
-
-\begin{table}[htbp]
-	\centering
-	\begin{tabular}{ l c c c }
-		\hline
-        Run & Data POT (e+19) & MC POT (e+19) & Sand POT (e+19) \\
-		\hline
-		\hline
-		2a  & 3.59337    & 92.15       & 10 \\
-		2w  & 4.33934    & 120.15      & 10 \\
-		\hline
-		3b  & 2.17273    & 44.8        & 5 \\
-		3c  & 13.6447    & 263         & 25 \\
-		\hline
-		4a  & 17.8271    & 349.9       & 30 \\
-		4w  & 16.4277    & 349.65      & 29.15 \\
-		\hline
-		5   & 4.3468     & 208.25      & 20 \\
-		\hline
-		6b  & 12.8838    & 141.03      & 40 \\
-		6c  & 5.07819    & 53.21       & 15 \\
-		6d  & 7.75302    & 69.41       & 20 \\
-		6e  & 8.51668    & 86.72       & 23 \\
-		\hline
-		\hline
-		Total FHC & 58.00494 & 1219.65 & 109.15\\
-		Total RHC & 38.57849 & 558.62  & 118 \\
-		\hline
-		Total & 96.58343 & 1778.27 & 227.15 \\
-		\hline
-	\end{tabular}
-	\caption{Counted and generated proton-on-targets for the T2K ND280 2017 analysis. FHC denotes Forward Horn Current (neutrino dominated mode), RHC denotes Reverse Horn Current (anti-neutrino dominated mode)}
-	\label{tab:pot_2017}
-\end{table}
-
-\subsection{Selections}
-\label{subsec:ND280:sel}
-The selections are based on the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for energy loss and/or missed and/or misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions (FSI).
-
-The end goal of the selection is to separate the main interaction modes so that various theory parameters in the fit receive large portions of their constraint from each sample. Equivalent FGD1 and FGD2 selections are separated due to the difference in systematics (e.g. forward-going tracks emanating in FGD1 leaves a track in FGD1, TPC2, FGD2 and TPC3 so has more hits recorded than the FGD2 equivalence, which only passes through FGD2 and TPC3). Furthermore, FGD2 contains plastic scintillator and passive water layers whereas FGD1 is fully plastic scintillator, so different systematics and reconstruction applies. Separating FGD1 and FGD2 also allows the constraints on water interactions to come strictly from the FGD2 selections.
-
+The selections are entirely defined by the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for energy loss and/or missed and/or misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions.
 \begin{itemize}
-\item \textbf{CC$0\pi$}: Defines events as having one true negative muon without any charged or neutral pion in the final state of the interaction. It is developed to contain CCQE and 2p2h events and is the largest sample at ND280. An example event display is shown in \autoref{fig:cc0pi_evtdisplay}. \red{show plots of cross-sections at ND280 from NEUT?}
+\item \textbf{CC$0\pi$}: Events with one negative muon without any charged or neutral pions in the final state. It is developed to contain CCQE and 2p2h events and is the largest sample at ND280. An example event display is shown in \autoref{fig:cc0pi_evtdisplay}. \red{show plots of cross-sections at ND280 from NEUT?}
 \begin{figure}[htbp]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={1cm 2.8cm 0 1cm}, clip]{figures/numu/evtdisplay/CC0pi_7423_34_179070_perX0Z_all}
@@ -88,7 +46,7 @@ The end goal of the selection is to separate the main interaction modes so that 
 	\label{fig:cc0pi_evtdisplay}
 \end{figure}
 
-\item \textbf{CC$1\pi$}: Defines events as having one true negative muon and one positive pion with no negative or neutral pions in the final state of the interaction. It is developed to contain mostly CC1$\pi^{+}$ events from resonant interactions\red{refer to previous sections maybe} An example event display is shown in \autoref{fig:cc1pi_evtdisplay}. 
+\item \textbf{CC$1\pi$}: Events with one negative muon and one positive pion with no negative or neutral pions in the final state. It is developed to contain mostly CC1$\pi^{+}$ events from resonant interactions\red{refer to previous sections maybe}. An example event display is shown in \autoref{fig:cc1pi_evtdisplay}. 
 \begin{figure}[htbp]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={4cm 2cm 4cm 3cm}, clip]{figures/numu/evtdisplay/CC1pi_7508_22_119769_perpX0Z_all}
@@ -102,7 +60,7 @@ The end goal of the selection is to separate the main interaction modes so that 
 	\label{fig:cc1pi_evtdisplay}
 \end{figure}
 
-\item \textbf{CC Other}: Defines events as having one negative muon and at least one neutral or negative pion, and events with one negative muon and more than one positive pion with any number of neutral or negative pions. Furthermore there are no constraints on the number of reconstructed heavier mesons (e.g. kaons or etas). It is developed to contain mostly DIS interactions and CC$1\pi^0$. An example event display is shown in \autoref{fig:ccoth_evtdisplay}.
+\item \textbf{CC Other}: Events with one negative muon and any number of neutral or negative pions which does not satisfy CC1$\pi$ selection. The presence of one $\pi^{-,0}$ or more than one $\pi^+$ in an event makes this possible. There are no constraints on the number of reconstructed heavier mesons (e.g. kaons or etas). It is developed to contain mostly DIS interactions and CC$1\pi^0$. An example event display is shown in \autoref{fig:ccoth_evtdisplay}.
 \end{itemize}
 \begin{figure}[htbp]
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -117,7 +75,7 @@ The end goal of the selection is to separate the main interaction modes so that 
 	\label{fig:ccoth_evtdisplay}
 \end{figure}
 
-\subsubsection{Event selection cuts, \numu}
+\subsection{Event selection cuts, \numu}
 \label{sec:numu_sel}
 The different topological selections all start by isolating CC-inclusive candidates in FGD1 or FGD2. Firstly is required to contain one reconstructed track candidate of negative charge crossing the TPC downstream of either FGD (TPC2 for interactions starting in FGD1, TPC3 for interactions starting in FGD2). The event also needs to fulfil data quality and fiducial volume requirements. The muon is then assumed to be the highest momentum negative track (HMNT) found in the event, and it is required that the track is identified as a muon.
 
@@ -317,8 +275,6 @@ Using the aforementioned cuts we can study the lepton tagging efficiency and pur
 
 \red{Add part looking at how the pion is tagged and number of events}
 
-\red{Add event distributions with unweighted MC}
-
 \red{Show plots for \cosmu?}
 
 \autoref{fig:ccoth_topology} shows the topology purity for the CCOther selection. As expected from the other purities, CCOther increases with $p_{reco}$ due to the increase in the CC DIS cross-section. The CC0$\pi$ and CC1$\pi$ topology seeps in to this selection by creating $\pi^{\pm,0}$ after exiting the nucleus that become(s) wrongly associated with the primary interaction vertex, or by the reconstruction falsely identifying an outgoing proton as a $\pi^+$. In the NC case, it is enough to have a interaction which produces a \{$\pi^-, \pi^0$\} combination, which can happen directly through NC DIS or indirectly with NC$1\pi$ via resonances, in which a secondary interaction occurs and the new track gets wrongly associated to the primary vertex. Initially, the purity starts at 35-40\% and plateaus around 80\% at $p_{reco} \sim 1.5\text{ GeV/c}$. Overall, the purity of the selection is 65\% for both FGDs over the entire range, with $\sim10\%$ each from NC, CC0$\pi$ and CC1$\pi$.
@@ -349,7 +305,7 @@ Using the aforementioned cuts we can study the lepton tagging efficiency and pur
 	\label{fig:ccoth_muon}
 \end{figure}
 
-\subsubsection{Event selection cuts, \numubar in RHC}
+\subsection{Event selection cuts, \numubar in RHC}
 \label{sec:numubar_sel}
 The anti-neutrino selections CC1Track and CCNTrack have the same event quality and fiducial volume cut as the neutrino selection, and the muon candidate track is required to pass through the TPC downstream of the struck FGD. However, its highest momentum track is required to be the highest momentum positive track for its muon PID (a $\mu^+$ coming from a \numubar interaction). Furthermore, it has a larger background of ``wrong-sign'' events: \numu interactions producing $\mu^-$, but also \numu interactions producing $\pi^+$ which may be identified as the lepton candidate.\red{SHOW PLOT OF THIS, e.g. numubar flux with numu background in there} Hence, the selection cuts proceed marginally differently:
 \begin{itemize}
@@ -466,7 +422,7 @@ As with the \numu samples, the CCNTrack selection purity in \autoref{fig:ccnubar
 	\label{fig:ccnubarNtrk_muon}
 \end{figure}
 
-\subsubsection{Event selection, \numu in RHC}
+\subsection{Event selection, \numu in RHC}
 \label{sec:numu_in_nubar_sel}
 In anti-neutrino mode there is a large fraction of \numu interactions, owing partly to the larger \numu cross-section and partly due to the higher flux background. \red{show plots of this}. The same pre-selection cuts apply for the \numu in RHC selection as for the previous selections presented in \autoref{sec:numu_sel} and \autoref{sec:numubar_sel}.
 
@@ -584,7 +540,7 @@ A summary of all selections' efficiency and purities is shown in \autoref{tab:ef
 	\label{tab:eff_pur_summary}
 \end{table}
 
-\subsubsection{Binning}
+\subsection{Binning}
 We expect largely similar kinematics across the two FGDs so apply the same binning in reconstructed muon momentum, \pmu, and cosine of the neutrino-muon angle, \cosmu. The binning for the fit is primarily influenced by MC statistics: we require $\sim 20$ raw MC events per bin (roughly equivalent to 1-2 data events). The momentum resolution is $\sim50\text{ MeV}$ up to 1 GeV and the angular resolution $\sim 2\degree$.
 \begin{itemize}
 	\item FGD1+2  CC$0\pi$, CC1$\pi$ and CCOther \numu: \\
@@ -608,8 +564,15 @@ We expect largely similar kinematics across the two FGDs so apply the same binni
 	\cosmu: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
 \end{itemize}
 
-The raw Monte-Carlo event distributions with aforementioned binning is shown in \autoref{fig:nominal_mc}.
-
+The raw Monte-Carlo \pmu \cosmu event distributions with aforementioned binning is shown in \autoref{fig:nominal_mc2d} with the projections and by-mode distributions in \autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu}. The 2D plots include lines of constant $Q^2_{\text{reco}}$ defined as the reconstructed (observed) $Q^2$:
+\begin{equation}
+Q^2_{\text{reco}} = -m^2_\mu + 2E_\nu \left( E_\mu-p_\mu\cos\theta_\mu \right)
+\end{equation}
+which if looking at constant $Q^2_{\text{reco}}$ surfaces with fixed $E_\nu$ leads to a simple update scheme of
+\begin{equation}
+\cos\theta_{\mu, 2} = \frac{\sqrt{p_{\mu,2}^2+m_{\mu,2}^2} - \sqrt{p_{\mu,1}^2+m_{\mu,1}^2}+p_{\mu,1}\cos\theta_{\mu,1}}{p_{\mu,2}}
+\end{equation}
+As expected from the neutrino flux at ND280 and neutrino interaction cross-sections, the CC0$\pi$ selection is an order of magnitude more populated than the other \numu selections. CC1$\pi$ and CCOther have similar statistics, and FGD1 generally has marginally more events than FGD2, owing to the reconstruction effects discussed in \autoref{sec:ND280:sel}. The \numubar CC1Track selections have similar statistics to \numu CC1$\pi$ and CCOther, a factor five higher than \numubar CCNTrack. The \numu in RHC selections have similar statistics to the \numubar CCNTrack and roughly the same for 1Track and NTrack.
 \begin{figure}[!h]
 \begin{subfigure}[t]{0.32\textwidth}
 \includegraphics[width=\textwidth,page=1]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
@@ -656,15 +619,157 @@ The raw Monte-Carlo event distributions with aforementioned binning is shown in 
 \begin{subfigure}[t]{0.24\textwidth}
 \includegraphics[width=\textwidth,page=14]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
 \end{subfigure}
-\caption{Raw Monte-Carlo event distributions for the 6\numu, 4\numubar and 4\numu in RHC selections at ND280 in \{\pmu \cosmu\}}
-\label{fig:nominal_mc}
+\caption{Raw Monte-Carlo event distributions for the 6CC\numu, 4CC\numubar and 4CC\numu in RHC, selections at ND280 in \pmu \cosmu. Red lines are regions of constant $Q^2_{\text{reco}}$ with fixed $E_\nu=0.6\text{ GeV}$.}
+\label{fig:nominal_mc2d}
 \end{figure}
 
-\subsection{Systematics}
-The fit's main goal is to minimise impact of systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between the ND280 and SK are the neutrino flux parameters (since T2K and SK are in the same neutrino ``beamline''), and neutrino-nucleus interaction parameters. As such, there are a high number of ``parameters of interest'' to parameterise, which the following sections cover.
+\autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu} show the projections onto \pmu and \cosmu along with the composition by mode. \autoref{tab:nominal_mode} gives the mode breakdown of the histograms binned into 2D. The CC0$\pi$ samples have sizeable contributions from single pion interactions which is more than an effect from misreconstruction: in \autoref{fig:cc0pi_topology} the fraction of CC1$\pi$ topology events reconstructed as CC0$\pi$ was $\sim11\%$, whereas for the true interaction mode we have $\sim20\%$. This effect is almost entirely driven by final-state-interactions, in which nucleons and pions exit the nucleon-level interaction and are propagated through the nucleus with a probability of re-interaction with surrounding nucleons. A CC1$\pi^{0,+}$ interaction can see a pion absorbed, leaving only the outgoing muon, classifying it (correctly) as a CC0$\pi$ topology. This applies to all samples: feed-down occurs from pion absorption and feed-up occurs from inelastic nucleon or pion interactions, in which additional pions exit the nucleus. There is no effort to disentangle the effects of the fundamental interaction to that of final-state-interaction in this fit, as doing so is very model dependent\red{maybe cite some model dependence?}. In general, the selections perform well in separating the interaction models achieving above 65\% content for all samples. 
 
-\subsubsection{Flux}
-\label{subsec:ND280:syst:det}
+\autoref{fig:nominal_mcpmu} shows the fraction of single pion events in 0$\pi$ is highest at low momentum, reaching 50\% in the first bin. We also note the NC contribution is primarily focused in the 500-1000 MeV/c region for the 1$\pi$ and Other samples. It is also clear that the Other sample produces higher momentum muons, and mostly contains multi-$\pi$ and DIS events, as intended. 
+
+Looking at the \cosmu projection in \autoref{fig:nominal_mccosmu}, the forward region of the CC0$\pi$ selection contains a large fraction of CC1$\pi$ events (50\%) and the highest amount of 2p2h. For the 1$\pi$ selection we note the CC coherent contribution almost exclusively in the most forward-going bin, as expected.
+\begin{table}
+	\begin{tabular}{l | c c c c c c | c}
+		\hline
+		Sample 			& CCQE & 2p2h & CC1$\pi^{\pm,0}$ 	& CC coh 	& CC multi-$\pi$ & CC DIS  	& NC \\
+		\hline
+		\hline
+		FGD1 0$\pi$	    & \textbf{58.0} & \textbf{10.1} & 19.6 & 0.3 & 4.2 & 4.6 & 3.1 \\
+		FGD2 0$\pi$	    & \textbf{56.5} & \textbf{9.5}  & 21.3 & 0.3 & 4.6 & 4.7 & 3.1 \\
+		FGD1 1$\pi$	    & 5.6 & 0.9 & \textbf{50.8} & \textbf{2.8} & \textbf{17.7} & 16.1 & 6.0 \\
+		FGD2 1$\pi$	    & 5.7 & 0.8 & \textbf{50.1} & \textbf{2.9} & \textbf{17.9} & 16.5 & 5.9 \\
+		FGD1 Other	    & 5.0 & 1.0 & 15.6 & 0.4 & \textbf{26.3} & \textbf{43.7} & 7.9 \\
+		FGD2 Other	    & 5.3 & 1.1 & 16.3 & 0.4 & \textbf{25.8} & \textbf{43.6} & 7.6 \\
+		\hline
+		FGD1 1Trk	    	& \textbf{64.2} & \textbf{10.1} & 15.0 & 0.7 & 2.9 & 2.5 & 4.5 \\
+		FGD2 1Trk	    	& \textbf{64.4} & \textbf{9.9} & 15.0 & 0.7 & 2.9 & 2.5 & 4.6 \\
+		FGD1 NTrk	    	& 7.8 & 2.7 & \textbf{29.3} & \textbf{3.4} & \textbf{20.3} & \textbf{26.0} & 10.5 \\ 
+		FGD2 NTrk	  		& 8.7 & 2.6 & \textbf{29.0} & \textbf{3.3} & \textbf{20.5} & \textbf{25.4} & 10.5 \\
+		\hline
+		FGD1 1Trk   \numu 	& \textbf{44.5} & \textbf{8.5} & 25.4 & 0.9 & 7.2 & 6.2 & 7.5 \\
+		FGD2 1Trk	\numu   & \textbf{43.8} & \textbf{8.3} & 25.5 & 0.8 & 7.7 & 6.6 & 7.2 \\
+		FGD1 NTrk	\numu   & 12.6 & 3.1 & \textbf{29.3} & \textbf{1.8} & \textbf{20.9} & \textbf{25.6} & 6.6 \\ 
+		FGD2 NTrk	\numu   & 12.2 & 2.8 & \textbf{30.0} & \textbf{1.9} & \textbf{21.3} & \textbf{25.6} & 6.2 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Percentage mode breakdown for the binned nominal unscaled Monte-Carlo samples, \textbf{boldface} indicates interactions targeted by specific selections. The distributions are \textbf{not} bin-width normalised.}
+	\label{tab:nominal_mode}
+\end{table}
+
+\begin{figure}[!h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=15]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=16]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=18]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=20]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=22]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=24]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=26]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=28]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=30]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=32]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=34]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=36]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=38]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=40]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=42]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\caption{Raw Monte-Carlo event distributions for the 6CC\numu, 4CC\numubar and 4CC\numu in RHC, selections at ND280 projected onto \pmu and bin-width normalised}
+	\label{fig:nominal_mcpmu}
+\end{figure}
+
+\begin{figure}[!h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=15]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=17]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=19]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=21]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=23]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=25]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=27]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=29]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=31]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=33]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=35]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=37]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=39]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=41]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=43]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
+	\end{subfigure}
+	\caption{Raw Monte-Carlo event distributions for the 6CC\numu, 4CC\numubar and 4CC\numu in RHC, selections at ND280 projected onto \cosmu and bin-width normalised}
+	\label{fig:nominal_mccosmu}
+\end{figure}
+
+
+\section{Systematics}
+\label{sec:syst}
+The fit's main goal is to minimise impact of systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between ND280 and SK are the neutrino flux parameters (since T2K and SK are in the same neutrino ``beamline''), and neutrino-nucleus interaction parameters. Nuisance parameters are mostly ND280 detector parameters and cross-section parameters that are parametrised as only effective on Carbon. As such, there are many ``parameters of interest'', which the following sections cover.
+
+\subsection{Flux}
+\label{subsec:syst_flux}
 The flux systematics are evaluated by varying underlying parameters in the flux model and using NA61/SHINE \red{CITE} data. [7] N. Antoniou et al. CERN-SPSC-2006-034, 2006.
 
 The NA61 data comes from runs using the thin target, whereas the T2K target is roughly 2 interaction lengths The data is $\pi^\pm$, $K^\pm$, $K^0_S$ and $\rho^+$.
@@ -687,8 +792,38 @@ Talk about the corrections in psyche
 \end{itemize}
 
 \subsection{Detector systematics}
-\label{subsec:ND280:syst:flux}
-The treatment of detector systematic uncertainties is unchanged from TN-230~\cite{tn_230}, Section 3.1, page 26.
+\label{subsec:syst_nd280}
+The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics, such as TPC PID, FGD PID, TPC Momentum scale\red{talk about all the detector systematics in summary} and study the impact on the number of predicted events in each \pmu \cosmu bin. 
+
+There are three categories of underlying ND280 systematics: observable-variation systematics, efficiency like systematics, normalisation systematic
+
+The event variation in each \pmu \cosmu bin is assumed to be Gaussian \red{show examples of good Gaussian bins and bad ones} 
+
+see TN 212 p 95
+Field distortions
+Momentum resolution
+Momentum scale
+TPC PID
+FGD PID
+Time of flight
+
+charge ID efficiency
+tpc cluster eff
+tpc track eff
+fgd track eff
+tpc-fgd matching eff
+michel electron
+oofv bckg
+pile-up
+fgd mass
+pion SI
+
+all magnet
+sand muon bkgd
+total
+
+read p39 onwards about syst
+
 The number of detector systematics still decreased slightly from 580 to 556 due to merging bins with similar detector systematic effects for the rebinned samples.
 All the consecutive bins with similar systematic values have been merged in order to reach a lower number of parameters (556) while the number of bins in the fit increased a lot (1624 bins), keeping the number of parameters under control.
 It has been demonstrated with Asimov fits, the results of which are shown in \autoref{fig:2017_rebin_asimov}, that the effect of this rebinning was small.
@@ -754,11 +889,47 @@ The merged systematics binning was improved to:
 \end{itemize}
 Be mega clear that each of these above make up one parameter
 
-\subsubsection{Cross-section}
-\label{subsec:ND280:syst:xsec}
+\subsection{Cross-section}
+\label{subsec:syst_xsec}
 splines vs normalisation parameter, Maybe extra bit on BeRPA because of involvement
 
 \subsection{Building and varying the Monte-Carlo prediction}
+Generate MC in different run-periods to account for beam power, beam conditions, dead channel configurations, different calibrations, etc. Water in, water out
+
+\begin{table}[htbp]
+	\centering
+	\begin{tabular}{ l c c c }
+		\hline
+		Run & Data POT (e+19) & MC POT (e+19) & Sand POT (e+19) \\
+		\hline
+		\hline
+		2a  & 3.59337    & 92.15       & 10 \\
+		2w  & 4.33934    & 120.15      & 10 \\
+		\hline
+		3b  & 2.17273    & 44.8        & 5 \\
+		3c  & 13.6447    & 263         & 25 \\
+		\hline
+		4a  & 17.8271    & 349.9       & 30 \\
+		4w  & 16.4277    & 349.65      & 29.15 \\
+		\hline
+		5   & 4.3468     & 208.25      & 20 \\
+		\hline
+		6b  & 12.8838    & 141.03      & 40 \\
+		6c  & 5.07819    & 53.21       & 15 \\
+		6d  & 7.75302    & 69.41       & 20 \\
+		6e  & 8.51668    & 86.72       & 23 \\
+		\hline
+		\hline
+		Total FHC & 58.00494 & 1219.65 & 109.15\\
+		Total RHC & 38.57849 & 558.62  & 118 \\
+		\hline
+		Total & 96.58343 & 1778.27 & 227.15 \\
+		\hline
+	\end{tabular}
+	\caption{Counted and generated proton-on-targets for the T2K ND280 2017 analysis. FHC denotes Forward Horn Current (neutrino dominated mode), RHC denotes Reverse Horn Current (anti-neutrino dominated mode)}
+	\label{tab:pot_2017}
+\end{table}
+
 The fit proceeds by binning events in the two reconstructed muon variables \pmu and \cosmu. The muon variables are chosen primarily due to excellent detector resolution of muons\red{CITE THIS}, and also because \sk analyses are performed in these variables. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino, but these will not be presented here. The fit uses the reconstructed variables for data and MC and does not unfold into ``true'' space.
 
 Inspecting the POT table in \autoref{tab:pot_2017}, MC is generated with POT $\times10$ data POT to avoid uncertainty from Monte Carlo statistics. To build the nominal distribution for comparison to data a number of scalings and weights are applied. For the near-detector portion of MaCh3 and BANFF, all weights are applied on an event-by-event basis:
@@ -787,14 +958,39 @@ Inspecting the POT table in \autoref{tab:pot_2017}, MC is generated with POT $\t
 	These weights are applied once to weight the simulation to nominal, and are then varied during the fit, so are recalculated for every iteration.
 \end{itemize}
 
+\section{Defining the test-statistic}
+As previously mentioned, the fit bins data and simulation events in \pmu and \cosmu for 14 different selections (seven per FGD), explained in detail in \autoref{sec:ND280:sel}: \numu CC0$\pi$, \numu CC1$\pi$, \numu CCOther, \numubar CC1Track, \numubar CCNTrack, \numu in RHC CC1Track and \numubar in RHC CCNTrack. It is assumed that the data in each bin of each sample, $n$, is a statistical fluctuation of the simulation in that bin, $\lambda$, and the probability distribution to observe $n$ given $\lambda$ in each \pmu \cosmu bin is Poissonian:
+\begin{equation}
+P(n|\lambda) = \frac{e^{-\lambda} \lambda^n}{n!}
+\end{equation}
+The Monte-Carlo prediction $\lambda$ is influenced by the parameters of the simulation, $\vec{x}$, outlined in \autoref{sec:syst}, or formally $\lambda = \lambda(\vec{x})$. Then our negative log-likelihood contribution per \pmu \cosmu bin is
+\begin{equation}
+-\log\mathcal{L_\text{Sample}} = \lambda(\vec{x}) - n + n\log\frac{n}{\lambda(\vec{x})}
+\end{equation}
 
-\subsection{Defining the test-statistic}
+\red{talk about how $\lambda$ is built?}
 
+The majority of systematics in \autoref{sec:syst} are constrained by prior information outside of the ND280 data used in the fit. The constraints may come from calibration studies, external cross-section data, beam simulations, and so on. A covariance matrix $V_{i,j}$ encoding the correlations and uncertainties of parameters $i$ to $j$ is used for the separate sources of systematics. If the central values from external constraints (priors) is $\vec{\mu}$ and the parameter values varied in the fit are $\vec{x}$, we assume a Gaussian probability density function for each parameter, giving rise to a negative log-likelihood contribution for systematic $K$
+\begin{equation}
+-\log\mathcal{L_\text{K}} = \frac{1}{2}( x - \mu )_i V_{i,j}^{-1} ( x - \mu )_j
+\end{equation}
+and for our three separate sources of systematics we then have in total
+\begin{equation}
+-\log\mathcal{L_\text{Syst}} = -\left(\log\mathcal{L_\text{Flux}} + \log\mathcal{L_\text{Interaction}} + \log\mathcal{L_\text{ND280}}\right)
+\end{equation}
+Finally, our combined test-statistic for \{\pmu, \cosmu\} bins \{$\alpha, \beta$\} and samples $S$, using our categories of systematics $K$ (flux, cross-section, ND280) with parameters $\vec{x}$, correlated for each $K$ through the covariance matrix $V_{i,j}$ for 
+\begin{equation}
+\begin{split}
+-\log\mathcal{L_\text{Total}} & = \sum_S^\text{Samples} \left( \sum_{\alpha,\beta}^\text{Bins} \left( \lambda(\vec{x}) - n + n\log\frac{n}{\lambda(\vec{x})} \right)_{\alpha,\beta} \right)_S \\
+&+ \frac{1}{2} \sum_K^\text{Systematics} \left( \sum_{i,j}^\text{Parameters} ( x_i - \mu_i ) V_{i,j}^{-1} ( x_j - \mu_j ) \right)_K
+\end{split}
+\end{equation}
+\red{think more about making this clearer. $x_i$ is not really $\vec{x}$ since $\vec{x}$ is the full set of systematics but $x_i$ is a subset of the Kth group of $\vec{x}$}
 
-\subsection{Parameters of interest}
+\section{Parameters of interest}
 flux and cross-section
 
-\subsection{Fitting method: MCMC}
+\section{Fitting method: MCMC}
 tests
 
 \section{Nominal model}
