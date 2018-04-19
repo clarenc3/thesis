@@ -1,0 +1,808 @@
+run2w
+Initial POT........... 7.07787e+19 Spills 997575
+|-- Bad Beam.......... 1.69701e+17 Spills 20521
+|-- Bad ND280......... 2.72156e+19 Spills 378437
+|-- Total Good POT.... 4.33934e+19 Spills 598617
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 4.33934e+19
+|-- @ Other power... 0
+magnet
+Initial POT........... 1.2015e+21 Spills 15038245
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 1.2015e+21 Spills 15038245
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 1e+20 Spills 990592
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 1e+20 Spills 990592
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run3b
+Initial POT........... 2.18516e+19 Spills 657110
+|-- Bad Beam.......... 3.16472e+16 Spills 395893
+|-- Bad ND280......... 9.26725e+16 Spills 1024
+|-- Total Good POT.... 2.17273e+19 Spills 260193
+|-- @ 0KA........... 3.40632e+17
+|-- @ 200KA......... 2.13809e+19
+|-- @ 250KA......... 5.71301e+15
+|-- @ Other power... 0
+magnet
+Initial POT........... 4.48e+20 Spills 4733152
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 4.48e+20 Spills 4733152
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 5e+19 Spills 497664
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 5e+19 Spills 497664
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run3c
+Initial POT........... 1.37483e+20 Spills 1839949
+|-- Bad Beam.......... 4.94634e+16 Spills 349273
+|-- Bad ND280......... 9.8674e+17 Spills 10376
+|-- Total Good POT.... 1.36447e+20 Spills 1480300
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 1.36447e+20
+|-- @ Other power... 0
+magnet
+Initial POT........... 2.63e+21 Spills 27796183
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 2.63e+21 Spills 27796183
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 2.5e+20 Spills 2484201
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 2.5e+20 Spills 2484201
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run4a
+Initial POT........... 1.8348e+20 Spills 1831989
+|-- Bad Beam.......... 3.78656e+16 Spills 259921
+|-- Bad ND280......... 5.17123e+18 Spills 43272
+|-- Total Good POT.... 1.78271e+20 Spills 1528796
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 1.78271e+20
+|-- @ Other power... 0
+magnet
+Initial POT........... 3.499e+21 Spills 36979225
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 3.499e+21 Spills 36979225
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 3e+20 Spills 2979028
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 3e+20 Spills 2979028
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run4w
+Initial POT........... 1.66541e+20 Spills 1725905
+|-- Bad Beam.......... 1.28971e+17 Spills 103798
+|-- Bad ND280......... 2.13498e+18 Spills 20763
+|-- Total Good POT.... 1.64277e+20 Spills 1601344
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 1.64277e+20
+|-- @ Other power... 0
+magnet
+Initial POT........... 3.4965e+21 Spills 43762701
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 3.4965e+21 Spills 43762701
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 2.915e+20 Spills 2899970
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 2.915e+20 Spills 2899970
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run5
+Initial POT........... 4.72377e+19 Spills 569280
+|-- Bad Beam.......... 4.93337e+16 Spills 137822
+|-- Bad ND280......... 3.72029e+18 Spills 34704
+|-- Total Good POT.... 4.3468e+19 Spills 396754
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+magnet
+Initial POT........... 2.0825e+21 Spills 24076085
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 2.0825e+21 Spills 24076085
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 2e+20 Spills 2304536
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 2e+20 Spills 2304536
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run6b
+Initial POT........... 1.29868e+20 Spills 1350523
+|-- Bad Beam.......... 1.42228e+17 Spills 321407
+|-- Bad ND280......... 8.86989e+17 Spills 7830
+|-- Total Good POT.... 1.28838e+20 Spills 1021286
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+magnet
+Initial POT........... 1.4103e+21 Spills 11281439
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 1.4103e+21 Spills 11281439
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 4e+20 Spills 4632791
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 4e+20 Spills 4632791
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run6c
+Initial POT........... 5.29294e+19 Spills 410629
+|-- Bad Beam.......... 8.23353e+16 Spills 88845
+|-- Bad ND280......... 2.06516e+18 Spills 12455
+|-- Total Good POT.... 5.07819e+19 Spills 309329
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+magnet
+Initial POT........... 5.321e+20 Spills 4257115
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 5.321e+20 Spills 4257115
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 1.5e+20 Spills 1739628
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 1.5e+20 Spills 1739628
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run6d
+Initial POT........... 7.87729e+19 Spills 605918
+|-- Bad Beam.......... 6.48448e+16 Spills 118455
+|-- Bad ND280......... 1.17787e+18 Spills 7340
+|-- Total Good POT.... 7.75302e+19 Spills 480123
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+magnet
+Initial POT........... 6.941e+20 Spills 5553475
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 6.941e+20 Spills 5553475
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 2e+20 Spills 2320384
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 2e+20 Spills 2320384
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+run6e
+Initial POT........... 9.32595e+19 Spills 670123
+|-- Bad Beam.......... 5.76467e+16 Spills 128962
+|-- Bad ND280......... 8.03513e+18 Spills 46205
+|-- Total Good POT.... 8.51668e+19 Spills 494956
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+magnet
+Initial POT........... 8.672e+20 Spills 6933964
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 8.672e+20 Spills 6933964
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+sand
+Initial POT........... 2.3e+20 Spills 2667652
+|-- Bad Beam.......... 0 Spills 0
+|-- Bad ND280......... 0 Spills 0
+|-- Total Good POT.... 2.3e+20 Spills 2667652
+|-- @ 0KA........... 0
+|-- @ 200KA......... 0
+|-- @ 250KA......... 0
+|-- @ Other power... 0
+
+
+======================================
+======================================
+======================================
+======================================
+======================================
+======================================
+
+
+2018:
+Sample group run2a
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun2a_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 3.63637e+19 Spills 428004
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 4.30002e+17 Spills 4817
+|-- Total Good POT...... 3.59337e+19 Spills 423187
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 3.59337e+19
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun2a_NewMAQE.root POT:
+Initial POT (per File).. 9.24e+20
+Initial POT............. 9.23937e+20 Spills 11564972
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 9.23937e+20 Spills 11564972
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun2a_NewMAQE.root POT:
+Initial POT (per File).. 4e+19
+Initial POT............. 3.7132e+19 Spills 392391
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 3.7132e+19 Spills 392391
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run2w
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun2w_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 7.05922e+19 Spills 976835
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 2.72156e+19 Spills 378437
+|-- Total Good POT...... 4.33765e+19 Spills 598398
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 4.33765e+19
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun2w_NewMAQE.root POT:
+Initial POT (per File).. 1.2035e+21
+Initial POT............. 1.20341e+21 Spills 15063176
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.20341e+21 Spills 15063176
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun2w_NewMAQE.root POT:
+Initial POT (per File).. 4.25e+19
+Initial POT............. 4.00035e+19 Spills 422736
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 4.00035e+19 Spills 422736
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run3b
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun3b_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 2.17977e+19 Spills 260956
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 9.26725e+16 Spills 1024
+|-- Total Good POT...... 2.1705e+19 Spills 259932
+|-- @  0KA............ 3.40632e+17
+|-- @  200KA.......... 2.13587e+19
+|-- @  250KA.......... 5.71301e+15
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun3b_NewMAQE.root POT:
+Initial POT (per File).. 4.48e+20
+Initial POT............. 4.47864e+20 Spills 4733027
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 4.47864e+20 Spills 4733027
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun3b_NewMAQE.root POT:
+Initial POT (per File).. 2.5e+19
+Initial POT............. 2.35053e+19 Spills 248392
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 2.35053e+19 Spills 248392
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run3c
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun3c_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 1.37385e+20 Spills 1490116
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 9.8674e+17 Spills 10376
+|-- Total Good POT...... 1.36398e+20 Spills 1479740
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 1.36398e+20
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun3c_NewMAQE.root POT:
+Initial POT (per File).. 2.632e+21
+Initial POT............. 2.63227e+21 Spills 27817795
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 2.63227e+21 Spills 27817795
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun3c_NewMAQE.root POT:
+Initial POT (per File).. 1.4e+20
+Initial POT............. 1.31337e+20 Spills 1387898
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.31337e+20 Spills 1387898
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run4a
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun4a_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 1.83442e+20 Spills 1572068
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 5.17123e+18 Spills 43272
+|-- Total Good POT...... 1.78271e+20 Spills 1528796
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 1.78271e+20
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun4a_NewMAQE.root POT:
+Initial POT (per File).. 3.4995e+21
+Initial POT............. 3.4996e+21 Spills 36983821
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 3.4996e+21 Spills 36983821
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun4a_NewMAQE.root POT:
+Initial POT (per File).. 1.85e+20
+Initial POT............. 1.74125e+20 Spills 1840062
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.74125e+20 Spills 1840062
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run4w
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun4w_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 1.66412e+20 Spills 1622107
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 2.13498e+18 Spills 20763
+|-- Total Good POT...... 1.64277e+20 Spills 1601344
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 1.64277e+20
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun4w_NewMAQE.root POT:
+Initial POT (per File).. 2.2625e+21
+Initial POT............. 2.26216e+21 Spills 23906473
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 2.26216e+21 Spills 23906473
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun4w_NewMAQE.root POT:
+Initial POT (per File).. 1.7e+20
+Initial POT............. 1.59801e+20 Spills 1688697
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.59801e+20 Spills 1688697
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run5w
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun5_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 4.71883e+19 Spills 431458
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 3.7203e+18 Spills 34704
+|-- Total Good POT...... 4.3468e+19 Spills 396754
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 4.3468e+19
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun5_NewMAQE.root POT:
+Initial POT (per File).. 2.099e+21
+Initial POT............. 2.29627e+21 Spills 24266982
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 2.29627e+21 Spills 24266982
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun5_NewMAQE.root POT:
+Initial POT (per File).. 8.25e+19
+Initial POT............. 9.07403e+19 Spills 958896
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 9.07403e+19 Spills 958896
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run6b
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun6b_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 1.28188e+20 Spills 1016841
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 8.86989e+17 Spills 7830
+|-- Total Good POT...... 1.27301e+20 Spills 1009011
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 1.27301e+20
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun6b_NewMAQE.root POT:
+Initial POT (per File).. 1.4309e+21
+Initial POT............. 1.4174e+21 Spills 11446188
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.4174e+21 Spills 11446188
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun6b_NewMAQE.root POT:
+Initial POT (per File).. 2.375e+20
+Initial POT............. 2.59187e+20 Spills 2738955
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 2.59187e+20 Spills 2738955
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run6c
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun6c_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 5.28471e+19 Spills 321784
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 2.06516e+18 Spills 12455
+|-- Total Good POT...... 5.07819e+19 Spills 309329
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 5.07819e+19
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun6c_NewMAQE.root POT:
+Initial POT (per File).. 5.325e+20
+Initial POT............. 5.27562e+20 Spills 4260306
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 5.27562e+20 Spills 4260306
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun6c_NewMAQE.root POT:
+Initial POT (per File).. 9.5e+19
+Initial POT............. 1.04626e+20 Spills 1105632
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.04626e+20 Spills 1105632
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run6d
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun6d_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 7.8708e+19 Spills 487463
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 1.17787e+18 Spills 7340
+|-- Total Good POT...... 7.75302e+19 Spills 480123
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 7.75302e+19
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun6d_NewMAQE.root POT:
+Initial POT (per File).. 6.947e+20
+Initial POT............. 6.883e+20 Spills 5558339
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 6.883e+20 Spills 5558339
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun6d_NewMAQE.root POT:
+Initial POT (per File).. 1.45e+20
+Initial POT............. 1.58059e+20 Spills 1670289
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.58059e+20 Spills 1670289
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run6e
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun6e_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 9.3178e+19 Spills 541024
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 8.03513e+18 Spills 46205
+|-- Total Good POT...... 8.51429e+19 Spills 494819
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 8.51429e+19
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun6e_NewMAQE.root POT:
+Initial POT (per File).. 8.68e+20
+Initial POT............. 8.59439e+20 Spills 6940366
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 8.59439e+20 Spills 6940366
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun6e_NewMAQE.root POT:
+Initial POT (per File).. 1.575e+20
+Initial POT............. 1.72691e+20 Spills 1824907
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.72691e+20 Spills 1824907
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run7
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun7_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 3.39554e+20 Spills 1740742
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 9.58707e+19 Spills 497103
+|-- Total Good POT...... 2.43683e+20 Spills 1243639
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 2.43683e+20
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun7_NewMAQE.root POT:
+Initial POT (per File).. 3.371e+21
+Initial POT............. 3.37059e+21 Spills 16967820
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 3.37059e+21 Spills 16967820
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun7_NewMAQE.root POT:
+Initial POT (per File).. 4.59e+20
+Initial POT............. 5.03961e+20 Spills 5325598
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 5.03961e+20 Spills 5325598
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run8a
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun8a_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 4.79011e+20 Spills 2044856
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 6.41025e+19 Spills 279101
+|-- Total Good POT...... 4.14909e+20 Spills 1765755
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 4.14909e+20
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun8a_NewMAQE.root POT:
+Initial POT (per File).. 3.63e+21
+Initial POT............. 3.63054e+21 Spills 15991896
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 3.63054e+21 Spills 15991896
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun8a_NewMAQE.root POT:
+Initial POT (per File).. 4.275e+20
+Initial POT............. 4.01875e+20 Spills 4246807
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 4.01875e+20 Spills 4246807
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+-------------------------
+Sample group run8w
+Data:
+/vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/DataRun8w_NewMAQE.root POT:
+Initial POT (per File).. 0
+Initial POT............. 2.03265e+20 Spills 1066120
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 4.52117e+19 Spills 287913
+|-- Total Good POT...... 1.58053e+20 Spills 778207
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 1.58053e+20
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+MC:
+magnet from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/MCRun8w_NewMAQE.root POT:
+Initial POT (per File).. 2.6405e+21
+Initial POT............. 2.64115e+21 Spills 11633781
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 2.64115e+21 Spills 11633781
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+sand from /vols/t2k/users/cvw09/software/T2KReWeight_OA2018/app/CCMultiPi_MAQEfix/SANDRun8w_NewMAQE.root POT:
+Initial POT (per File).. 1.465e+20
+Initial POT............. 1.61263e+20 Spills 1704142
+|-- Bad Beam............ 0 Spills 0
+|-- Bad ND280........... 0 Spills 0
+|-- Total Good POT...... 1.61263e+20 Spills 1704142
+|-- @  0KA............ 0
+|-- @  200KA.......... 0
+|-- @  250KA.......... 0
+|-- @ -250KA.......... 0
+|-- @  Other power.... 0
+
