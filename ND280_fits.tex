@@ -30,7 +30,9 @@ Share same beam, use near detector complex
 \label{sec:ND280:sel}
 The goal of the selection is to map theory interaction modes (e.g. CCQE, CC1$\pi^+$, CC DIS) to ND280 selections, so that theory parameters receive largest constraints from fewest exclusive samples. Equivalent FGD1 and FGD2 selections are separated due to differences in systematics and reconstruction: forward-going tracks emanating in FGD1 leaves a track in FGD1, TPC2, FGD2 and TPC3 so has more hits recorded than the FGD2 equivalence, which only passes through FGD2 and TPC3. Furthermore, FGD2 contains plastic scintillator interleaved with passive water layers whereas FGD1 is fully plastic scintillator. Separating FGD1 and FGD2 also allows constraints on water interactions to come strictly from the FGD2 selections.
 
-The selections are entirely defined by the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for energy loss and/or missed and/or misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions.
+The fit bins events in the two reconstructed muon variables \pmu and \cosmu. The muon variables are chosen primarily due to excellent detector resolution of muons and because this is what T2K oscillation analyses observe at \sk. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino, but these will not be presented here.
+
+The selections are entirely defined by the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions.
 \begin{itemize}
 \item \textbf{CC$0\pi$}: Events with one negative muon without any charged or neutral pions in the final state. It is developed to contain CCQE and 2p2h events and is the largest sample at ND280. An example event display is shown in \autoref{fig:cc0pi_evtdisplay}. \red{show plots of cross-sections at ND280 from NEUT?}
 \begin{figure}[htbp]
@@ -540,7 +542,7 @@ A summary of all selections' efficiency and purities is shown in \autoref{tab:ef
 	\label{tab:eff_pur_summary}
 \end{table}
 
-\subsection{Binning}
+\section{Binning}
 We expect largely similar kinematics across the two FGDs so apply the same binning in reconstructed muon momentum, \pmu, and cosine of the neutrino-muon angle, \cosmu. The binning for the fit is primarily influenced by MC statistics: we require $\sim 20$ raw MC events per bin (roughly equivalent to 1-2 data events). The momentum resolution is $\sim50\text{ MeV}$ up to 1 GeV and the angular resolution $\sim 2\degree$.
 \begin{itemize}
 	\item FGD1+2  CC$0\pi$, CC1$\pi$ and CCOther \numu: \\
@@ -564,7 +566,7 @@ We expect largely similar kinematics across the two FGDs so apply the same binni
 	\cosmu: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
 \end{itemize}
 
-The raw Monte-Carlo \pmu \cosmu event distributions with aforementioned binning is shown in \autoref{fig:nominal_mc2d} with the projections and by-mode distributions in \autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu}. The 2D plots include lines of constant $Q^2_{\text{reco}}$ defined as the reconstructed (observed) $Q^2$:
+The raw Monte-Carlo \pmu \cosmu event distributions with aforementioned binning is shown in \autoref{fig:nominal_mc2d} with the projections and by-mode distributions in \autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu}. The 2D plots include lines of constant $Q^2_{\text{reco}}$, for $E_\nu = 0.6 \text{ GeV}$, defined as the reconstructed (observed) $Q^2$:
 \begin{equation}
 Q^2_{\text{reco}} = -m^2_\mu + 2E_\nu \left( E_\mu-p_\mu\cos\theta_\mu \right)
 \end{equation}
@@ -572,7 +574,7 @@ which if looking at constant $Q^2_{\text{reco}}$ surfaces with fixed $E_\nu$ lea
 \begin{equation}
 \cos\theta_{\mu, 2} = \frac{\sqrt{p_{\mu,2}^2+m_{\mu,2}^2} - \sqrt{p_{\mu,1}^2+m_{\mu,1}^2}+p_{\mu,1}\cos\theta_{\mu,1}}{p_{\mu,2}}
 \end{equation}
-As expected from the neutrino flux at ND280 and neutrino interaction cross-sections, the CC0$\pi$ selection is an order of magnitude more populated than the other \numu selections. CC1$\pi$ and CCOther have similar statistics, and FGD1 generally has marginally more events than FGD2, owing to the reconstruction effects discussed in \autoref{sec:ND280:sel}. The \numubar CC1Track selections have similar statistics to \numu CC1$\pi$ and CCOther, a factor five higher than \numubar CCNTrack. The \numu in RHC selections have similar statistics to the \numubar CCNTrack and roughly the same for 1Track and NTrack.
+As expected from the neutrino flux at ND280 and neutrino interaction cross-sections, the CC0$\pi$ selection is an order of magnitude more populated than the other \numu selections. CC1$\pi$ and CCOther have similar statistics, and FGD1 generally has marginally more events than FGD2, owing to the reconstruction effects discussed in \autoref{sec:ND280:sel}. The \numubar CC1Track selections have similar statistics to \numu CC1$\pi$ and CCOther, a factor five higher than \numubar CCNTrack. The \numu in RHC selections have similar statistics to the \numubar CCNTrack and roughly the same for 1Track and NTrack. All the selections focus in on the $Q^2$ range of $0.1 < Q^2 < 0.5 \text{ GeV}^2$.
 \begin{figure}[!h]
 \begin{subfigure}[t]{0.32\textwidth}
 \includegraphics[width=\textwidth,page=1]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_noweightsapplied_onlyMCnom}}
@@ -893,31 +895,39 @@ Be mega clear that each of these above make up one parameter
 \label{subsec:syst_xsec}
 splines vs normalisation parameter, Maybe extra bit on BeRPA because of involvement
 
-\subsection{Building and varying the Monte-Carlo prediction}
-Generate MC in different run-periods to account for beam power, beam conditions, dead channel configurations, different calibrations, etc. Water in, water out
+\section{Building and varying the Monte-Carlo prediction}
+T2K has been taking data since 2010 with steadily increasing beam power and protons on target (POT), and is currently on ``run 9'', shown in \autoref{fig:t2k_pot}. This analysis uses data from runs 2 to 6: run 1 was omitted because parts of the detector was uninstrumented (and is only $\sim4\%$ of the run 1-6 data), and run 7 and beyond had not gone through full Monte-Carlo production until summer 2017. 
+
+The overall efficiency of ND280 in runs 2 to 6 was approximately 85\%, collecting 9.7E20 POT out of 12E20 POT. The good POT\footnote{Defined as POT collected when all ND280 sub-detectors and global DAQ are flagged online} per run used in this analysis is listed in \autoref{tab:pot_2017}.
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth, trim={5mm 100mm 5mm 90mm}, clip]{{figures/pow_t2k_all_toRun77full}}
+	\caption{T2K protons on target and beam power for run 1-9}
+	\label{fig:t2k_pot}
+\end{figure}
 
 \begin{table}[htbp]
 	\centering
 	\begin{tabular}{ l c c c }
 		\hline
-		Run & Data POT (e+19) & MC POT (e+19) & Sand POT (e+19) \\
+		Run & Data POT (E19) & MC POT (E19) & Sand POT (E19) \\
 		\hline
 		\hline
-		2a  & 3.59337    & 92.15       & 10 \\
-		2w  & 4.33934    & 120.15      & 10 \\
+		2a  FHC & 3.59337    & 92.15       & 10 \\
+		2w  FHC & 4.33934    & 120.15      & 10 \\
 		\hline
-		3b  & 2.17273    & 44.8        & 5 \\
-		3c  & 13.6447    & 263         & 25 \\
+		3b FHC  & 2.17273    & 44.8        & 5 \\
+		3c FHC  & 13.6447    & 263         & 25 \\
 		\hline
-		4a  & 17.8271    & 349.9       & 30 \\
-		4w  & 16.4277    & 349.65      & 29.15 \\
+		4a FHC  & 17.8271    & 349.9       & 30 \\
+		4w FHC  & 16.4277    & 349.65      & 29.15 \\
 		\hline
-		5   & 4.3468     & 208.25      & 20 \\
+		5 RHC & 4.3468     & 208.25      & 20 \\
 		\hline
-		6b  & 12.8838    & 141.03      & 40 \\
-		6c  & 5.07819    & 53.21       & 15 \\
-		6d  & 7.75302    & 69.41       & 20 \\
-		6e  & 8.51668    & 86.72       & 23 \\
+		6b RHC & 12.8838    & 141.03      & 40 \\
+		6c RHC & 5.07819    & 53.21       & 15 \\
+		6d RHC & 7.75302    & 69.41       & 20 \\
+		6e RHC & 8.51668    & 86.72       & 23 \\
 		\hline
 		\hline
 		Total FHC & 58.00494 & 1219.65 & 109.15\\
@@ -929,63 +939,72 @@ Generate MC in different run-periods to account for beam power, beam conditions,
 	\caption{Counted and generated proton-on-targets for the T2K ND280 2017 analysis. FHC denotes Forward Horn Current (neutrino dominated mode), RHC denotes Reverse Horn Current (anti-neutrino dominated mode)}
 	\label{tab:pot_2017}
 \end{table}
+The Monte-Carlo is generated for the different run-periods to account for beam configurations, ND280 configurations, run-dependent calibrations, and so on. Runs marked ``a'' and ``w'' refer to the P0D detector's removable water bags being air filled (a) or water filled (w), which require different ND280 geometries in simulation.
 
-The fit proceeds by binning events in the two reconstructed muon variables \pmu and \cosmu. The muon variables are chosen primarily due to excellent detector resolution of muons\red{CITE THIS}, and also because \sk analyses are performed in these variables. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino, but these will not be presented here. The fit uses the reconstructed variables for data and MC and does not unfold into ``true'' space.
-
-Inspecting the POT table in \autoref{tab:pot_2017}, MC is generated with POT $\times10$ data POT to avoid uncertainty from Monte Carlo statistics. To build the nominal distribution for comparison to data a number of scalings and weights are applied. For the near-detector portion of MaCh3 and BANFF, all weights are applied on an event-by-event basis:
+To build the nominal distribution for direct comparison to data, a number of scalings and weights are applied. For the near-detector portion of MaCh3 and BANFF, all weights are applied on an event-by-event basis:
 \begin{itemize}
 	\item \textbf{POT weight:} \\
-	A run-by-run scaling factor taking the ratio of total good flagged data to the generated Monte-Carlo POT. An event receives a one-time weight depending on what run it was from and how much MC was generated in the production. These numbers can be read off directly from \autoref{tab:pot_2017}. This weight is only applied once and is not varied in the fit.
+	A run-by-run scaling factor taking the ratio of total good flagged data to the generated Monte-Carlo POT. An event receives a one-time weight depending on what run it was from and how much MC was generated in the production. These numbers can be read off directly from \autoref{tab:pot_2017}. This weight $w_\text{POT}$ is only applied once and is not varied in the fit.
 	
 	\item \textbf{Flux weight:} \\
-	A run-by-run correction to the nominal neutrino flux which the production was made in. The weight is applied as a function of $E_\nu^{true}$ with~$0 < E_\nu^{true} < 30 \text{ GeV}$~\red{show example of this, psycheND280utils/data/tuned13av2}, detailed in \autoref{subsec:ND280:syst:flux}. An event receives a weight depending on what run it was from and its $E_\nu^{true}$. This weight is only applied once and is not varied in the fit.
-	
-	\item \textbf{Cross-section weight:} \\
-	An event-by-event weight taking the full generated event through the neutrino interaction simulation again, calculating a weight to apply to the event. The weight can be described as $w=\sigma(\textbf{x'})/\sigma(\textbf{x})$ for the neutrino interaction systematic parameter set $\textbf{x}$. The event may receive a normalisation and a shape parameter depending on its interaction type and the interaction model considered for the analysis. Details of the model are found in \autoref{subsec:ND280:syst:xsec}.
-	
-	For example, for this analysis a $\nu_\mu$ 2p2h event on carbon would receive both a normalisation parameter weight (2p2h normalisation $\nu$) and a shape parameter weight (2p2h shape C), whereas a CC coherent event on carbon would receive only a normalisation weight (CC Coherent C).
-	
-	These weights are applied once to weight the simulation to nominal, and are then varied during the fit, so are recalculated for every iteration.
-	
-	\item \textbf{Detector covariance weight:} \\
-	An event-by-event weight from the reconstruction and selection package to vary the impact of the detector simulation. It is applied as a function of the event's topology and detector (e.g. FGD1 CC0$\pi$) and which detector covariance bin the event bin falls into (e.g. $p_\mu=350\text{ MeV}, \cos\theta_\mu=0.99$). The weight is simply a normalisation parameter for each bin in the detector covariance matrix scheme, explained in detail in \autoref{subsec:ND280:syst:det}.
-	
-	These weights are applied once to weight the simulation to nominal, and are then varied during the fit, so are recalculated for every iteration.
+	A run-by-run correction to the nominal neutrino flux which the production was made in. The weight is applied as a function of $E_\nu^{true}$ with~$0 < E_\nu^{true} < 30 \text{ GeV}$~\red{show example of this, psycheND280utils/data/tuned13av2}, detailed in \autoref{subsec:syst_flux}. An event receives a weight depending on what run it was from and its $E_\nu^{true}$. The weight $w_\text{Flux}$ is only applied once and is not varied in the fit.
 	
 	\item \textbf{Beam covariance weight:} \\
-	An event-by-event weight to vary the impact of the flux simulation. An event gets weighted as a function of the neutrino running mode (FHC or RHC), the flavour of neutrino ($\nu_\mu$, $\bar{\nu}_\mu$, $\nu_e$ or $\bar{\nu}_e$) and the neutrino energy. There are 100 parameters in the fit---although only 50 being constrained directly by ND280 data, the remaining 50 being the SK flux parameters, constrained solely by their correlations with the ND280 flux parameters---outlined in detail in \autoref{subsec:ND280:syst:flux}.
+	An event-by-event weight to vary the impact of the flux simulation. An event gets weighted as a function of the neutrino running mode (FHC or RHC), the flavour of neutrino ($\nu_\mu$, $\bar{\nu}_\mu$, $\nu_e$ or $\bar{\nu}_e$) and the neutrino energy. There are 100 parameters $\vec{b}$ in the fit---although only 50 being constrained directly by ND280 data, the remaining 50 being the SK flux parameters, constrained solely by their correlations with the ND280 flux parameters---outlined in detail in \autoref{subsec:syst_flux}.
 	
-	These weights are applied once to weight the simulation to nominal, and are then varied during the fit, so are recalculated for every iteration.
+	The weight $w_{\vec{b}\rightarrow \vec{b}'}$ is applied once to weight the simulation to nominal, and is recalculated for every iteration of the fit.
+	
+	\item \textbf{Cross-section weight:} \\
+	An event-by-event weight taking the full generated event through the neutrino interaction simulation, calculating a weight to apply to the event. The applied weight is calculated as $w_{\vec{x} \rightarrow \vec{x}'}=\sigma(\vec{x}')/\sigma(\vec{x})$ for the generated neutrino interaction systematic parameter values $\vec{x}$ and the modified parameter values $\vec{x}'$. The event can receive a normalisation and a shape parameter depending on its interaction type and the interaction model considered in the analysis. Details of the model are found in \autoref{subsec:syst_xsec}.
+	
+	The weight $w_{\vec{x}\rightarrow \vec{x}'}$ is applied once to weight the simulation to nominal, and is recalculated for every iteration of the fit.
+	
+	\item \textbf{Detector covariance weight:} \\
+	An event-by-event weight from the reconstruction and selection package to vary the impact of the detector simulation. It is applied as a function of the event's topology and detector (e.g. FGD1 CC0$\pi$) and which detector covariance bin the event bin falls into (e.g. $p_\mu=350\text{ MeV}, \cos\theta_\mu=0.99$). The weight is a normalisation parameter $\vec{d}$ for each bin in the detector covariance matrix scheme, explained in detail in \autoref{subsec:syst_nd280}.
+	
+	The weight $w_{\vec{d}\rightarrow \vec{d}'}$ is applied once to weight the simulation to nominal, and is recalculated for every iteration of the fit.
+	
 \end{itemize}
 
-\section{Defining the test-statistic}
-As previously mentioned, the fit bins data and simulation events in \pmu and \cosmu for 14 different selections (seven per FGD), explained in detail in \autoref{sec:ND280:sel}: \numu CC0$\pi$, \numu CC1$\pi$, \numu CCOther, \numubar CC1Track, \numubar CCNTrack, \numu in RHC CC1Track and \numubar in RHC CCNTrack. It is assumed that the data in each bin of each sample, $n$, is a statistical fluctuation of the simulation in that bin, $\lambda$, and the probability distribution to observe $n$ given $\lambda$ in each \pmu \cosmu bin is Poissonian:
+All weights are parameterised as multiplicative, so for a two parameter variation $x \rightarrow x'$ and $y \rightarrow y'$ we have the total weight 
 \begin{equation}
-P(n|\lambda) = \frac{e^{-\lambda} \lambda^n}{n!}
-\end{equation}
-The Monte-Carlo prediction $\lambda$ is influenced by the parameters of the simulation, $\vec{x}$, outlined in \autoref{sec:syst}, or formally $\lambda = \lambda(\vec{x})$. Then our negative log-likelihood contribution per \pmu \cosmu bin is
-\begin{equation}
--\log\mathcal{L_\text{Sample}} = \lambda(\vec{x}) - n + n\log\frac{n}{\lambda(\vec{x})}
+w_{x \rightarrow x', y \rightarrow y'} = w_{x \rightarrow x', y \rightarrow y} \times w_{x \rightarrow x, y\rightarrow y'}
 \end{equation}
 
-\red{talk about how $\lambda$ is built?}
+Defining the beam parameters as $\vec{b}$, cross-section parameters as $\vec{x}$ and detector parameters as $\vec{d}$, we express one rescaled Monte-Carlo event $i$ as
 
-The majority of systematics in \autoref{sec:syst} are constrained by prior information outside of the ND280 data used in the fit. The constraints may come from calibration studies, external cross-section data, beam simulations, and so on. A covariance matrix $V_{i,j}$ encoding the correlations and uncertainties of parameters $i$ to $j$ is used for the separate sources of systematics. If the central values from external constraints (priors) is $\vec{\mu}$ and the parameter values varied in the fit are $\vec{x}$, we assume a Gaussian probability density function for each parameter, giving rise to a negative log-likelihood contribution for systematic $K$
 \begin{equation}
--\log\mathcal{L_\text{K}} = \frac{1}{2}( x - \mu )_i V_{i,j}^{-1} ( x - \mu )_j
+\lambda_i\left(\vec{b}, \vec{x}, \vec{d}\right) = 1 \times w_i^\text{POT} \times w_i^\text{Flux} \times w^{\vec{b}\rightarrow \vec{b}'}_i \times w^{\vec{x} \rightarrow \vec{x}'}_i \times w^{\vec{d}\rightarrow \vec{d}'}_i
+\label{eq:mc_scale}
+\end{equation}
+
+\subsection{Defining the test-statistic}
+As mentioned in \autoref{sec:ND280:sel}, data and simulation events are binned in \pmu, \cosmu for 14 different selections (seven per FGD): \numu CC0$\pi$, \numu CC1$\pi$, \numu CCOther, \numubar CC1Track, \numubar CCNTrack, \numu in RHC CC1Track and \numu in RHC CCNTrack. It is assumed that the data $n^{\alpha}$ in each bin $\alpha$, is a statistical fluctuation of the simulation in that bin, $\lambda^{\alpha}$, and the probability distribution to observe $n^{\alpha}$ given $\lambda^\alpha$ is Poissonian:
+\begin{equation}
+P(n^\alpha|\lambda^\alpha) = \frac{e^{-\lambda^\alpha} \left(\lambda^\alpha\right)^n}{\left(n^\alpha\right)!}
+\end{equation}
+The Monte-Carlo prediction $\lambda$ is influenced by the beam parameters $\vec{b}$, the cross-section parameters $\vec{x}$ and the ND280 detector parameters $vec{d}$ outlined in \autoref{eq:mc_scale}. Then the statistical contribution to the negative log-likelihood per \pmu \cosmu bin $\alpha$ is
+\begin{equation}
+-\log\mathcal{L}^\alpha_\text{Sample} = \lambda^\alpha(\vec{b},\vec{x},\vec{d}) - n^\alpha + n^\alpha\log\frac{n^\alpha}{\lambda^\alpha(\vec{b},\vec{x},\vec{d})}
+\end{equation}
+
+The majority of systematics in \autoref{sec:syst} are constrained by prior information outside of the ND280 data used in the fit. The constraints may come from calibration studies, external cross-section data, beam simulations, and so on. A covariance matrix $\boldsymbol{V}_{i,j}$ encoding the correlations and uncertainties of parameters $i$ to $j$ is used for the separate sources of systematics. If the central values from external constraints (priors) is $\vec{\mu}$ and the parameter values varied in the fit are $\vec{X}$, we assume a Gaussian probability density function for each parameter, giving rise to a negative log-likelihood contribution for systematic $K$
+\begin{equation}
+-\log\mathcal{L}^K_\text{Syst} = \frac{1}{2}( X_i - \mu_i ) \left(\boldsymbol{V}^K\right)^{-1}_{i,j} ( X_j - \mu_j )
 \end{equation}
 and for our three separate sources of systematics we then have in total
 \begin{equation}
 -\log\mathcal{L_\text{Syst}} = -\left(\log\mathcal{L_\text{Flux}} + \log\mathcal{L_\text{Interaction}} + \log\mathcal{L_\text{ND280}}\right)
 \end{equation}
-Finally, our combined test-statistic for \{\pmu, \cosmu\} bins \{$\alpha, \beta$\} and samples $S$, using our categories of systematics $K$ (flux, cross-section, ND280) with parameters $\vec{x}$, correlated for each $K$ through the covariance matrix $V_{i,j}$ for 
+Finally, our combined test-statistic for \pmu, \cosmu bins $\alpha$ over samples $S$, using our three sets of systematics (flux with parameters $\vec{b}$, cross-section with parameters $\vec{x}$, ND280 with parameters $\vec{d}$), is
 \begin{equation}
 \begin{split}
--\log\mathcal{L_\text{Total}} & = \sum_S^\text{Samples} \left( \sum_{\alpha,\beta}^\text{Bins} \left( \lambda(\vec{x}) - n + n\log\frac{n}{\lambda(\vec{x})} \right)_{\alpha,\beta} \right)_S \\
-&+ \frac{1}{2} \sum_K^\text{Systematics} \left( \sum_{i,j}^\text{Parameters} ( x_i - \mu_i ) V_{i,j}^{-1} ( x_j - \mu_j ) \right)_K
+-\log\mathcal{L_\text{Total}} & =  \sum_S^\text{Samples} \left( \sum_{\alpha}^\text{Bins} \left( \lambda^\alpha(\vec{b},\vec{x},\vec{d}) - n^\alpha + n^\alpha\log\frac{n^\alpha}{\lambda^\alpha(\vec{b},\vec{x},\vec{d})} \right) \right)_S \\
+ & + \frac{1}{2} \left( \sum_{i,j}^\text{Flux} ( b_i - \mu_i ) \left(\boldsymbol{V}^b\right)^{-1}_{i,j} ( b_j - \mu_j ) \right) \\
+ & + \frac{1}{2} \left( \sum_{i,j}^\text{Interaction} ( x_i - \mu_i ) \left(\boldsymbol{V}^x\right)^{-1}_{i,j} ( x_j - \mu_j ) \right) \\
+ & + \frac{1}{2} \left( \sum_{i,j}^\text{ND280} ( d_i - \mu_i ) \left(\boldsymbol{V}^d\right)^{-1}_{i,j} ( d_j - \mu_j ) \right)
 \end{split}
 \end{equation}
-\red{think more about making this clearer. $x_i$ is not really $\vec{x}$ since $\vec{x}$ is the full set of systematics but $x_i$ is a subset of the Kth group of $\vec{x}$}
 
 \section{Parameters of interest}
 flux and cross-section
@@ -994,71 +1013,373 @@ flux and cross-section
 tests
 
 \section{Nominal model}
-
-\begin{table}[h]
+The rates for the data and nominal model with all mentioned Monte-Carlo scalings and selections are presented in \autoref{tab:event_rates_2017}. We note that generally the Monte-Carlo rates of the CC0$\pi$ and CC1Track are underestimated (2-3\%) , CC$1\pi$ is overestimated (6-11\%) and CCOther is under-estimated (5-15\%). \numubar selections except FGD2 CC1Track \numubar are overestimated by 5\%, with FGD1 being 2\%. The \numu in RHC selections are mildly underestimated. The rates across the FGDs are consistent for all selections.
+\begin{table}[!h]
 	\centering
-	\begin{tabular}{ l c c }
+	\begin{tabular}{ l | c c c }
 		\hline
-		Sample & Data & \nd~pre-fit MC prediction \\ \hline
+		Sample & Data & Nominal MC & Data/MC \\ \hline
 		\hline
-		\FGDCCNoPi{1}{\numu}           & 17136 & 16724    \\% \hline
-		\FGDCCOnePi{1}{\numu}          & 3954  & 4381  \\% \hline
-		\FGDCCOther{1}{\numu}          & 4149  & 3944  \\% \hline
+		\FGDCCNoPi{1}{\numu}           & 17136 & 16723.80 & 1.02 \\% \hline
+		\FGDCCOnePi{1}{\numu}          & 3954  & 4381.47 & 0.90 \\% \hline
+		\FGDCCOther{1}{\numu}          & 4149  & 3943.95 & 1.05\\% \hline
 		\hline
-		\FGDCCOneTrk{1}{\numubar}      & 3527 & 3588  \\% \hline
-		\FGDCCNTrk{1}{\numubar}   	   & 1054 & 1067  \\% \hline
+		\FGDCCNoPi{2}{\numu}           & 17443 & 16959.30 & 1.03 \\% \hline
+		\FGDCCOnePi{2}{\numu}          & 3366  & 3564.23  & 0.94\\% \hline
+		\FGDCCOther{2}{\numu}          & 4075  & 3570.94  & 1.14 \\% \hline
 		\hline
-		\FGDCCOneTrk{1}{\numu} in RHC  & 1363 & 1272   \\% \hline
-		\FGDCCNTrk{1}{\numu} in RHC    & 1370 & 1357   \\% \hline
+		\FGDCCOneTrk{1}{\numubar}      & 3527 & 3587.77 & 0.98 \\% \hline
+		\FGDCCNTrk{1}{\numubar}   	   & 1054 & 1066.91 & 0.99 \\% \hline
 		\hline
-		\FGDCCNoPi{2}{\numu}           & 17443 & 16959 \\% \hline
-		\FGDCCOnePi{2}{\numu}          & 3366  & 3564  \\% \hline
-		\FGDCCOther{2}{\numu}          & 4075  & 3571  \\% \hline
+		\FGDCCOneTrk{2}{\numubar}      & 3732 & 3618.29 & 1.03 \\% \hline
+		\FGDCCNTrk{2}{\numubar}        & 1026 & 1077.24 & 0.95\\% \hline
 		\hline
-		\FGDCCOneTrk{2}{\numubar}      & 3732 &  3618  \\% \hline
-		\FGDCCNTrk{2}{\numubar}        & 1026 &  1077  \\% \hline
+		\FGDCCOneTrk{1}{\numu} in RHC  & 1363 & 1272.17 & 1.07 \\% \hline
+		\FGDCCNTrk{1}{\numu} in RHC    & 1370 & 1357.45 & 1.01 \\% \hline
 		\hline
-		\FGDCCOneTrk{2}{\numu} in RHC  & 1320 & 1263  \\% \hline
-		\FGDCCNTrk{2}{\numu} in RHC    & 1253 & 1247  \\% \hline
-		\hline
-		\hline
-		Total & 64768 & 63633 \\
+		\FGDCCOneTrk{2}{\numu} in RHC  & 1320 & 1262.63 & 1.05 \\% \hline
+		\FGDCCNTrk{2}{\numu} in RHC    & 1253 & 1246.71 & 1.01\\% \hline
 		\hline
 		\hline
-		FHC POT & $58.00\times10^{19}$ & $1219.65\times10^{19}$  \\% \hline
-		RHC POT & $38.58\times10^{19}$ & $558.62\times10^{19}$   \\% \hline
+		Total & 64768 & 63632.86 & 0.98 \\
+		\hline
 	\end{tabular}
-	\caption{Observed and predicted event rates for the different \nd~samples in the BANFF/MaCh3 fits. N.B. the MC rates are rounded to nearest integer in this table, for higher precision see \autoref{tab:eventrate}.}
-	\label{tab:event_rates}
+	\caption{Observed and predicted event rates for the different \nd~samples in the near-detector}
+	\label{tab:event_rates_2017}
 \end{table}
 
-\begin{sidewaystable}
-	\resizebox{\textwidth}{!}{
-		\begin{tabular}{| c | c | c | c | c | c | c | c | c | c | c | c |}
-			\hline
-			Sample & Data  & Raw MC & POT only & POT+flux & POT+xsec & POT+det & POT + flux + xsec & POT + flux + det & POT + flux + xsec + det & MaCh3 & (BANFF-MaCh3)/BANFF \\ \hline
-			FGD1 CC0$\pi$ &  17136.00 &  337436.00 &  16090.83 &  17535.92 &  15340.11 &  15905.24 &  16748.19 &  17333.49 &  16723.69 & 16723.8 & -6.60E-6 \\ \hline
-			FGD1 CC1$\pi$ &  3954.00 &  84982.00 &  4058.36 &  4606.61 &  3819.31 &  4011.58 &  4352.83 &  4553.49 &  4381.48 & 4381.47 & 2.28E-6\\ \hline
-			FGD1 CCOther &  4149.00 &  65286.00 &  3107.04 &  3703.69 &  3078.52 &  3071.21 &  3673.94 &  3660.96 &  3943.95 & 3943.95 & 0.00E0\\ \hline
-			FGD1 Anu-CCQE &  3527.00 &  54419.00 &  3773.79 &  3881.64 &  3430.04 &  3744.02 &  3527.03 &  3851.02 &  3587.65 & 3587.77 & -3.34E-5\\ \hline
-			FGD1 Anu-CCNQE &  1054.00 &  15392.00 &  1065.20 &  1101.04 &  986.32 &  1056.80 &  1021.05 &  1092.37 &  1066.91 & 1066.91 & 0.00E0\\ \hline
-			FGD1 Nu-CCQE &  1363.00 &  18146.00 &  1255.92 &  1340.43 &  1194.72 &  1246.03 &  1275.92 &  1329.88 &  1272.17 & 1272.17 & 0.00E0\\ \hline
-			FGD1 Nu-CCNQE &  1370.00 &  17156.00 &  1190.94 &  1316.59 &  1172.13 &  1181.54 &  1297.36 &  1306.21 &  1357.45 & 1357.45 & 0.00E0 \\ \hline
-			FGD2 CC0$\pi$ &  17443.00 &  345467.00 &  16449.22 &  17921.83 &  15749.71 &  16259.57 &  17189.12 &  17715.02 &  16959.19 & 16959.3 & -6.49E-6 \\ \hline
-			FGD2 CC1$\pi$ &  3366.00 &  70444.00 &  3356.97 &  3820.22 &  3190.10 &  3318.26 &  3644.01 &  3776.14 &  3564.23 & 3564.23 & 0.00E0\\ \hline
-			FGD2 CCOther &  4075.00 &  63402.00 &  3018.22 &  3595.45 &  2995.68 &  2983.43 &  3572.61 &  3553.98 &  3570.95 & 3570.94 & 2.80E-6 \\ \hline
-			FGD2 Anu-CCQE &  3732.00 &  55732.00 &  3864.24 &  3978.31 &  3506.34 &  3833.73 &  3608.17 &  3946.91 &  3618.27 & 3618.29 & -5.53E-6 \\ \hline
-			FGD2 Anu-CCNQE &  1026.00 &  15808.00 &  1096.81 &  1134.09 &  1024.77 &  1088.15 &  1061.38 &  1125.14 &  1077.24 & 1077.24 & 0.00E0 \\ \hline
-			FGD2 Nu-CCQE &  1320.00 &  18052.00 &  1241.02 &  1324.16 &  1189.64 &  1231.24 &  1269.94 &  1313.72 &  1262.63 & 1262.63 & 0.00E0 \\ \hline
-			FGD2 Nu-CCNQE &  1253.00 &  16339.00 &  1136.62 &  1256.01 &  1121.38 &  1127.64 &  1240.99 &  1246.09 &  1246.71 & 1246.71 & 0.00E0 \\ \hline
-			Total &  64768.00 &  1178061.00 &  60705.16 &  66516.01 &  57798.77 &  60058.44 &  63482.54 &  65804.42 &  63632.53 & 63632.9 & -5.81E-6 \\ \hline
-		\end{tabular}
-	}
-	\caption{Event rates broken by type of weight applied for BANFF with a comparison to MaCh3. N.B. ``POT+flux+xsec+det'' is the final BANFF prediction.}
-	\label{tab:eventrate}
-\end{sidewaystable}
+\autoref{fig:nominal2D_FGD1numu} shows the \pmu \cosmu distributions and their ratios for FGD1, normalised to bin width. For FGD1 CC0$\pi$, the largest Data/MC discrepancies are in the very forward region around 500-1000 MeV/c, with some areas of low cross-section  (e.g. \pmu 2-5 GeV/c, \cosmu 0.85-0.9) mismodelled. The lines of constant $Q^2$ suggest high $Q^2$ behaviour is over-estimated in Monte-Carlo, whereas for $0.05 < Q^2 < 0.15 \text{ GeV}^2$ it is under-estimated. For CC1$\pi$ the most forward-goign bins are almost consistently under-estimated. As for CC0$\pi$, the $Q^2 >0.1 \text{GeV}^2$ region is over-estimated, but it is less clear at lower $Q^2$. For CCOther there is a band-like behaviour in $Q^2$ going from over estimation to underestimation up until $Q^2\sim0.1\text{ GeV}^2$. The high-momentum areas are mostly under-estimated in Monte-Carlo. It is also clear that ND280 are dominated by $0.05 < Q^2 < 0.30\text{ GeV}^2$ events.
 
-Put in the nominal event distribution
+\begin{figure}[!t]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=1]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=2]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=3]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=4]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=5]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=6]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=7]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=8]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=9]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+\caption{Data and nominal MC distributions and the Data/MC ratio for FGD1 \numu selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
+\label{fig:nominal2D_FGD1numu}
+\end{figure}
+
+\autoref{fig:nominal2D_FGD2numu} shows the same \numu selections for FGD2. The CC0$\pi$ selection is very similar to the FGD1 CC0$\pi$ selection, whereas the CC1$\pi$ selection appears better modelled for FGD2 than FGD1, although the opposite is true for CCOther.
+
+\begin{figure}[!t]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=10]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=11]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=12]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=13]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=14]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=15]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=16]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=17]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=18]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+\caption{Data and nominal MC distributions and the Data/MC ratio for FGD2 \numu selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
+\label{fig:nominal2D_FGD2numu}
+\end{figure}
+
+\autoref{fig:nominal2D_FGD12numubar} shows the \pmu \cosmu for the \numubar selection, which again sees mostly consistent behaviour for the two FGDs for both the 1Track and NTracks selection. The event are mostly underestimated at low \pmu and become overestimated as we go up in \cosmu. The $Q^2$ bands appear present, notably in the 1 Track selections for $0.05 < Q^2 < 0.10 \text{ GeV}^2$.
+
+\begin{figure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=19]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=20]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=21]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=22]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=23]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=24]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=25]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=26]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=27]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=28]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=29]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=30]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+\caption{Data and nominal MC distributions and the Data/MC ratio for FGD1 and FGD2 \numubar selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
+\label{fig:nominal2D_FGD12numubar}
+\end{figure}
+
+\autoref{fig:nominal2D_FGD12numuRHC} shows the \numu in RHC selections, which generally populate higher \pmu due to the \numu flux in RHC mode. The samples are also statistically small so are more prone to larger statistical fluctuations. The CC1Track selection appears to have a pattern of underestimation at low \pmu, following the $Q^2$ band to high \pmu and high \cosmu.
+
+\begin{figure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=31]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=32]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=33]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=34]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=35]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=36]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=37]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=38]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=39]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=40]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=41]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=42]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+\caption{Data and nominal MC distributions and the Data/MC ratio for FGD1 and FGD2 \numu in RHC selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
+\label{fig:nominal2D_FGD12numurhc}
+\end{figure}
+
+\red{fix z axis is \autoref{fig:nominal2D_FGD12numurhc}}
+
+\autoref{fig:nominal1D_pmu} shows the projections of the 2D distributions onto \pmu, where we note generally good modelling. The CC0$\pi$ selections have a clear oscillation from underprediction to overprediction for FGD1 and FGD2 in $0 < p_\mu < 1 \text{ GeV}$. The FGD1 \numubar CC1Track selection appears to show similar behaviour although without the under-prediction at low \pmu, although FGD2 \numu CC1Track does not. The CC1$\pi$ selection shows a nearly consistent over-estimation of $\sim10\%$ in every bin for both FGDs. The CCOther selection is instead underestimated at the event distribution peak, into the tail ($0.5<p_\mu <1.5\text{ GeV}$). The CCNtrack distributions consistent with good modelling due to their large statistical errors.
+
+\begin{figure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=43]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=44]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=46]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=48]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=50]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=52]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=54]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=56]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=58]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=60]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=62]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=64]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=66]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=68]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=70]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+\end{subfigure}
+\caption{Data and nominal MC distributions selections projected onto \pmu, showing contributions by interaction mode. Bin content is normalised to bin width.}
+\label{fig:nominal1D_pmu}
+\end{figure}
+
+\autoref{fig:nominal1D_cosmu} shows the projections of the 2D distributions onto \cosmu. Again we see consistency across the FGDs, with CC0$\pi$ showing another oscillatory behaviour, going from underestimation at low \cosmu to a good prediction until $\cos \theta_\mu \sim 0.93$, in which the underestimation is back, similar in magnitude. For CC1$\pi$ we see a similar oscillation but shifted by 10\% over-estimation. For \numu CCOther we have less consistency, although the bin above $\cos \theta_\mu = 0.93$ are all underestimated, and for FGD2 this continues as \cosmu decreases. The most forward bin appears to be good modelled for all \numu samples except FGD2 CCOther. For the RHC selections
+
+\begin{figure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=43]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=45]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=47]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=49]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=51]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=53]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=55]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=57]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=59]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=61]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=63]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=65]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=67]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=69]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=71]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
+	\end{subfigure}
+	\caption{Data and nominal MC distributions selections projected onto \cosmu, showing contributions by interaction mode. Bin content is normalised to bin width.}
+	\label{fig:nominal1D_cosmu}
+\end{figure}
+
+\begin{table}
+          \begin{tabular}{ l | c c c c }
+			\hline
+            Sample & Data  & BANFF & MaCh3 & (BANFF-MaCh3)/BANFF \\ \hline
+			FGD1 CC0$\pi$ &  17136 &  16723.69 & 16723.8 & -6.60E-6 \\ \hline
+			FGD1 CC1$\pi$ &  3954 &  4381.48 & 4381.47 & 2.28E-6\\ \hline
+			FGD1 CCOther &  4149 &  3943.95 & 3943.95 & 0E0\\ \hline
+			FGD1 Anu-CCQE &  3527 &  3587.65 & 3587.77 & -3.34E-5\\ \hline
+			FGD1 Anu-CCNQE &  1054 &  1066.91 & 1066.91 & 0E0\\ \hline
+			FGD1 Nu-CCQE &  1363 &  1272.17 & 1272.17 & 0E0\\ \hline
+			FGD1 Nu-CCNQE &  1370 &  1357.45 & 1357.45 & 0E0 \\ \hline
+			FGD2 CC0$\pi$ &  17443 &  16959.19 & 16959.3 & -6.49E-6 \\ \hline
+			FGD2 CC1$\pi$ &  3366 &  3564.23 & 3564.23 & 0E0\\ \hline
+			FGD2 CCOther &  4075 &  3570.95 & 3570.94 & 2.80E-6 \\ \hline
+			FGD2 Anu-CCQE &  3732 &  3618.27 & 3618.29 & -5.53E-6 \\ \hline
+			FGD2 Anu-CCNQE &  1026 &  1077.24 & 1077.24 & 0E0 \\ \hline
+			FGD2 Nu-CCQE &  1320 &  1262.63 & 1262.63 & 0E0 \\ \hline
+			FGD2 Nu-CCNQE &  1253 &  1246.71 & 1246.71 & 0E0 \\ \hline
+			Total &  64768 &  63632.53 & 63632.9 & -5.81E-6 \\ \hline
+		\end{tabular}
+	\caption{BANFF and MaCh3 comparison of final event rates for the nominal model and data}
+	\label{tab:eventrate_banff_mach3}
+\end{table}
+
+\red{talk about contamination of samples}
+
+\begin{sidewaystable}
+		\begin{tabular}{ l | c | c | c | c | c | c | c }
+                  \hline
+                  Sample & Raw MC & POT only & POT+flux & POT+xsec & POT+det & POT+NDCov & POT+BeamCov \\ 
+                  \hline
+                  \hline
+                  \FGDCCNoPi{1}{\numu}& 337436 & 15905.2 & 15905.2 & 15340.2 & 15905.2 & 16246.1 & 16090.8 \\
+                  \FGDCCOnePi{1}{\numu}& 84982 & 4011.58 & 4011.58 & 3819.3 & 4011.58 & 4131.35 & 4058.36 \\
+                  \FGDCCOther{1}{\numu}& 65286 & 3071.21 & 3071.21 & 3078.52 & 3071.21 & 3374.21 & 3107.04 \\
+                  \FGDCCNoPi{2}{\numu}& 345467 & 16259.6 & 16259.6 & 15749.8 & 16259.6 & 16415 & 16449.2 \\
+                  \FGDCCOnePi{2}{\numu}& 70444 & 3318.26 & 3318.26 & 3190.09 & 3318.26 & 3321.4 & 3356.97 \\
+                  \FGDCCOther{2}{\numu}& 63402 & 2983.43 & 2983.43 & 2995.68 & 2983.43 & 3051.48 & 3018.22 \\
+                  \FGDCCOneTrk{1}{\numubar}& 54419 & 3744.02 & 3744.02 & 3430.15 & 3744.02 & 3872.18 & 3773.79 \\
+                  \FGDCCNTrk{1}{\numubar}& 15392 & 1056.8 & 1056.8 & 986.32 & 1056.8 & 1121.1 & 1065.2 \\
+                  \FGDCCOneTrk{2}{\numubar}& 55732 & 3833.73 & 3833.73 & 3506.36 & 3833.73 & 3906.32 & 3864.24 \\
+                  \FGDCCNTrk{2}{\numubar}& 15808 & 1088.15 & 1088.15 & 1024.77 & 1088.15 & 1122.73 & 1096.81 \\
+                  \FGDCCOneTrk{1}{\numu} in RHC& 18146 & 1246.03 & 1246.03 & 1194.72 & 1246.03 & 1262.00 & 1255.92 \\
+                  \FGDCCNTrk{1}{\numu} in RHC& 17156 & 1181.54 & 1181.54 & 1172.13 & 1181.54 & 1257.34 & 1190.94 \\
+                  \FGDCCOneTrk{2}{\numu} in RHC& 18052 & 1231.24 & 1231.24 & 1189.64 & 1231.24 & 1245.3 & 1241.02 \\
+                  \FGDCCNTrk{2}{\numu} in RHC& 16339 & 1127.64 & 1127.64 & 1121.37 & 1127.64 & 1150.7 & 1136.62 \\
+                  \hline
+                  \hline
+                \end{tabular}
+        \caption{Event rates broken by type of weight applied}
+        \label{tab:eventrate_mach3}
+\end{sidewaystable}
 
 \section{Asimov results}
 
