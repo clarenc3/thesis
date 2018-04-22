@@ -1038,6 +1038,7 @@ and for our three separate sources of systematics we then have in total
 \end{equation}
 Finally, our combined test-statistic for \pmu, \cosmu bins $\alpha$ over samples $S$, using our three sets of systematics (flux with parameters $\vec{b}$, cross-section with parameters $\vec{x}$, ND280 with parameters $\vec{d}$), is
 \begin{equation}
+\label{eq:test_stat}
 \begin{split}
 -\log\mathcal{L_\text{Total}} & =  \sum_S^\text{Samples} \left( \sum_{\alpha}^\text{Bins} \left( \lambda^\alpha(\vec{b},\vec{x},\vec{d}) - n^\alpha + n^\alpha\log\frac{n^\alpha}{\lambda^\alpha(\vec{b},\vec{x},\vec{d})} \right) \right)_S \\
  & + \frac{1}{2} \left( \sum_{i,j}^\text{Flux} ( b_i - \mu_i ) \left(\boldsymbol{V}^b\right)^{-1}_{i,j} ( b_j - \mu_j ) \right) \\
@@ -1408,7 +1409,92 @@ The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autor
 To internally validate the implementation and evaluate the effectiveness of the fitting framework we perform studies in which the nominal Monte-Carlo predictions presented in \autoref{sec:nom_model} are set to be the data.
 
 \subsection{Log-likelihood scan}
-For the log-likelihood scans
+For the log-likelihood scans each parameter is set to the values recommended by the priors: the same parameter set which produces the nominal model in \autoref{sec:nom_model}. The parameters are then varied one at a time from -2$\sigma$ to +2$\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$, where $\mathbf{V}_{i,i}$ is the $i^{\text{th}}$ diagonal entry of each group of parameters' covariance matrix\footnote{So the bounds are unaffected by the correlation when getting the lower and upper bounds of the scan}. The minimum of the test-statistic occurs when the parameter is equal to the prior, as this sets prior constraint term to zero and produces a MC sample which perfectly matches the Asimov set, giving a zero contribution from the sample too. When a parameter has been scanned it is reset to the prior value. It is expected that most parameters produces a Gaussian response since the prior probability density function is set to such, and few parameters produce asymmetric responses in the event rate of a given bin\footnote{Although there are some, mentioned later.}.
+
+The scan splits the likelihood into each of the individual contributions presented in \autoref{eq:test_stat} and shows the total likelihood. For any given likelihood scan, there should only be contributions from the likelihood terms that are being varied: the sample likelihood (since the MC event $\lambda=\lambda(\vec{b},\vec{x},\vec{d})$) and the group of systematics which the parameter belongs to (e.g. the flux likelihood should vary when any of the $\vec{b}$ parameters are varied).
+
+\begin{figure}[!h]
+	\centering
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=5]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{ND280 FHC \numu 0.6-0.7 GeV}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=13]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{ND280 FHC \numubar 0.7-1.0 GeV}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=30]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{ND280 RHC \numubar 0.5-0.6 GeV}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=18]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{ND280 FHC \nue 0.5-0.7 GeV}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=45]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{ND280 RHC \nuebar 0.5-0.7 GeV}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=55]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{SK FHC \numu 0.6-0.7 GeV}
+\end{subfigure}
+\caption{Asimov likelihood scans for selected beam parameters in the fit}
+\label{fig:beam_asimov}
+\end{figure}
+
+\autoref{fig:beam_asimov} shows a selected number of beam parameters. Using the Asimov data set, it's clear that the prior term is dominant, even for the high-statistics ND280 FHC \numu $E_\nu = 0.6-0.7\text{ GeV}$ parameter. Many parameters see barely any constraint from the samples---e.g. \numubar in FHC running (due to very low wrong-sign events in \numu running) and \nue in FHC (due to no dedicated \nue selection being included). As expected, the SK flux parameters are only being constrained by the prior and see no direction contribution from any ND280 samples.
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=107]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{$M_A^{QE}$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=110]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{2p2h norm $\nu$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=113]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{2p2h shape C}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=118]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{BeRPA E}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=122]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{$I_{1/2}^\text{bkg} 	$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=105]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FSI CEX LO}
+	\end{subfigure}
+	\caption{Asimov likelihood scans for selected cross-section parameters in the fit}
+	\label{fig:xsec_asimov}
+\end{figure}
+
+\autoref{fig:xsec_asimov} shows the likelihood scans for a selected few cross-section parameters. $M_A^{QE}$ and 2p2h norm $\nu$ are both fit without a prior, so only sees constraint from the sample likelihood, and 2p2h shape C has an almost flat prior likelihood, largely constrained by the samples. Some cross-section parameters, like BeRPA E, have a weaker constraint from the MC samples than from the prior, largely due to its effect being limited to high $Q^2$, of which ND280 have few. We also observe some non-Gaussian responses, such as the pion final-state-interaction charge exchange at low pion momentum (FSI CEX LO) and the single pion production non-resonant background parameter, $I_{1/2}^\text{bkg}$.
+
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=132]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FGD1 CC0$\pi$ 	\{0-1 GeV, 0.6-0.7\}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=239]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FGD1 CCOther \{1.5-2 GeV, 0.8-0.85\}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=264]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FGD1 \numubar CC1Trk \{0.4-0.9, 0.6-0.7\}}
+	\end{subfigure}
+\caption{Asimov likelihood scans for selected ND280 parameters in the fit}
+\label{fig:nd280_asimov}
+\end{figure}
 
 \subsection{Parameter variations}
 Show effect of some distributions on variations
