@@ -514,25 +514,29 @@ Inspecting the muon tagging efficiency in \autoref{fig:ccnubarnuNtrk_muon}, we o
 A summary of all selections' efficiency and purities is shown in \autoref{tab:eff_pur_summary}.
 \begin{table}[!h]
 	\centering
-	\begin{tabular}{ l c c }
+	\begin{tabular}{ l | c c }
+		\hline
 		\hline
 		Selection 					   & Efficiency (\%) & Purity (\%) \\ 
 		\hline
-		\hline
 		\FGDCCNoPi{1}{\numu}           & 93.8  & 75.5  \\% \hline
 		\FGDCCNoPi{2}{\numu}           & 93.2  & 73.5  \\% \hline
+		\hline
 		\FGDCCOnePi{1}{\numu}          & 83.3  & 58.0  \\% \hline
 		\FGDCCOnePi{2}{\numu}          & 83.1  & 57.1  \\% \hline
+		\hline
 		\FGDCCOther{1}{\numu}          & 73.0  & 65.3  \\% \hline
 		\FGDCCOther{2}{\numu}          & 73.4  & 64.9  \\% \hline
 		\hline
 		\FGDCCOneTrk{1}{\numubar}      & 90.0  & 76.7  \\% \hline
 		\FGDCCOneTrk{2}{\numubar}      & 89.6  & 76.7  \\% \hline
+		\hline
 		\FGDCCNTrk{1}{\numubar}   	   & 54.1  & 45.1  \\% \hline
 		\FGDCCNTrk{2}{\numubar}        & 53.8  & 43.9  \\% \hline
 		\hline
 		\FGDCCOneTrk{1}{\numu} in RHC  & 76.5  & 52.2  \\% \hline
 		\FGDCCOneTrk{2}{\numu} in RHC  & 74.9  & 51.8  \\% \hline
+		\hline
 		\FGDCCNTrk{1}{\numu} in RHC    & 73.9  & 60.9  \\% \hline
 		\FGDCCNTrk{2}{\numu} in RHC    & 74.2  & 61.4  \\% \hline
 		\hline
@@ -633,29 +637,33 @@ Looking at the \cosmu projection in \autoref{fig:nominal_mccosmu}, the forward r
 \begin{table}
 	\begin{tabular}{l | c c c c c c | c}
 		\hline
-		Sample 			& CCQE & 2p2h & CC1$\pi^{\pm,0}$ 	& CC coh 	& CC multi-$\pi$ & CC DIS  	& NC \\
 		\hline
+		Sample 			& CCQE & 2p2h & CC1$\pi^{\pm,0}$ 	& CC coh 	& CC multi-$\pi$ & CC DIS  	& NC \\
 		\hline
 		FGD1 0$\pi$	    & \textbf{58.0} & \textbf{10.1} & 19.6 & 0.3 & 4.2 & 4.6 & 3.1 \\
 		FGD2 0$\pi$	    & \textbf{56.5} & \textbf{9.5}  & 21.3 & 0.3 & 4.6 & 4.7 & 3.1 \\
+		\hline
 		FGD1 1$\pi$	    & 5.6 & 0.9 & \textbf{50.8} & \textbf{2.8} & \textbf{17.7} & 16.1 & 6.0 \\
 		FGD2 1$\pi$	    & 5.7 & 0.8 & \textbf{50.1} & \textbf{2.9} & \textbf{17.9} & 16.5 & 5.9 \\
+		\hline
 		FGD1 Other	    & 5.0 & 1.0 & 15.6 & 0.4 & \textbf{26.3} & \textbf{43.7} & 7.9 \\
 		FGD2 Other	    & 5.3 & 1.1 & 16.3 & 0.4 & \textbf{25.8} & \textbf{43.6} & 7.6 \\
 		\hline
 		FGD1 1Trk	    	& \textbf{64.2} & \textbf{10.1} & 15.0 & 0.7 & 2.9 & 2.5 & 4.5 \\
 		FGD2 1Trk	    	& \textbf{64.4} & \textbf{9.9} & 15.0 & 0.7 & 2.9 & 2.5 & 4.6 \\
+		\hline
 		FGD1 NTrk	    	& 7.8 & 2.7 & \textbf{29.3} & \textbf{3.4} & \textbf{20.3} & \textbf{26.0} & 10.5 \\ 
 		FGD2 NTrk	  		& 8.7 & 2.6 & \textbf{29.0} & \textbf{3.3} & \textbf{20.5} & \textbf{25.4} & 10.5 \\
 		\hline
 		FGD1 1Trk   \numu 	& \textbf{44.5} & \textbf{8.5} & 25.4 & 0.9 & 7.2 & 6.2 & 7.5 \\
 		FGD2 1Trk	\numu   & \textbf{43.8} & \textbf{8.3} & 25.5 & 0.8 & 7.7 & 6.6 & 7.2 \\
 		FGD1 NTrk	\numu   & 12.6 & 3.1 & \textbf{29.3} & \textbf{1.8} & \textbf{20.9} & \textbf{25.6} & 6.6 \\ 
+		\hline
 		FGD2 NTrk	\numu   & 12.2 & 2.8 & \textbf{30.0} & \textbf{1.9} & \textbf{21.3} & \textbf{25.6} & 6.2 \\
 		\hline
 		\hline
 	\end{tabular}
-	\caption{Percentage mode breakdown for the binned nominal unscaled Monte-Carlo samples, \textbf{boldface} indicates interactions targeted by specific selections. The distributions are \textbf{not} bin-width normalised.}
+	\caption{Percentage mode breakdown for the binned nominal \textbf{unscaled} Monte-Carlo samples, \textbf{boldface} indicates interactions targeted by specific selections. The distributions are \textbf{not} bin-width normalised. Compare to \autoref{tab:nominal_mode_afterscale} for effect of weights.}
 	\label{tab:nominal_mode}
 \end{table}
 
@@ -978,6 +986,38 @@ Defining the beam parameters as $\vec{b}$, cross-section parameters as $\vec{x}$
 \label{eq:mc_scale}
 \end{equation}
 
+The effect of each weight on the MC sample statistics is shown in \autoref{tab:eventrate_mach3}. The nominal flux and detector weights are 1.0, so are not included in the table
+
+
+\begin{table}[!h]
+	\resizebox{\textwidth}{!}{
+	\begin{tabular}{ l | c | c | c | c | c }
+		\hline
+		Sample & Raw MC & POT only & POT+xsec & POT+NDCov & POT+BeamCov \\ 
+		\hline
+		\hline
+		\FGDCCNoPi{1}{\numu}& 337436 & 15905.2 & 15340.2 & 16246.1 & 16090.8 \\
+		\FGDCCOnePi{1}{\numu}& 84982  & 4011.58 & 3819.3 & 4131.35 & 4058.36 \\
+		\FGDCCOther{1}{\numu}& 65286 & 3071.21 & 3078.52 & 3374.21 & 3107.04 \\
+		\FGDCCNoPi{2}{\numu}& 345467 & 16259.6 & 15749.8 & 16415 & 16449.2 \\
+		\FGDCCOnePi{2}{\numu}& 70444  & 3318.26 & 3190.09 & 3321.4 & 3356.97 \\
+		\FGDCCOther{2}{\numu}& 63402  & 2983.43 & 2995.68 & 3051.48 & 3018.22 \\
+		\FGDCCOneTrk{1}{\numubar}& 54419  & 3744.02 & 3430.15 & 3872.18 & 3773.79 \\
+		\FGDCCNTrk{1}{\numubar}& 15392  & 1056.8 & 986.32 & 1121.1 & 1065.2 \\
+		\FGDCCOneTrk{2}{\numubar}& 55732  & 3833.73 & 3506.36 & 3906.32 & 3864.24 \\
+		\FGDCCNTrk{2}{\numubar}& 15808  & 1088.15 & 1024.77 & 1122.73 & 1096.81 \\
+		\FGDCCOneTrk{1}{\numu} in RHC& 18146 & 1246.03 & 1194.72 & 1262.00 & 1255.92 \\
+		\FGDCCNTrk{1}{\numu} in RHC& 17156 & 1181.54 & 1172.13 & 1257.34 & 1190.94 \\
+		\FGDCCOneTrk{2}{\numu} in RHC& 18052 & 1231.24 & 1189.64 & 1245.3 & 1241.02 \\
+		\FGDCCNTrk{2}{\numu} in RHC& 16339 & 1127.64 & 1121.37 & 1150.7 & 1136.62 \\
+		\hline
+		\hline
+	\end{tabular}
+}
+	\caption{Event rates broken by type of weight applied for the nominal MC samples}
+	\label{tab:eventrate_mach3}
+\end{table}
+
 \subsection{Defining the test-statistic}
 As mentioned in \autoref{sec:ND280:sel}, data and simulation events are binned in \pmu, \cosmu for 14 different selections (seven per FGD): \numu CC0$\pi$, \numu CC1$\pi$, \numu CCOther, \numubar CC1Track, \numubar CCNTrack, \numu in RHC CC1Track and \numu in RHC CCNTrack. It is assumed that the data $n^{\alpha}$ in each bin $\alpha$, is a statistical fluctuation of the simulation in that bin, $\lambda^{\alpha}$, and the probability distribution to observe $n^{\alpha}$ given $\lambda^\alpha$ is Poissonian:
 \begin{equation}
@@ -1013,6 +1053,7 @@ flux and cross-section
 tests
 
 \section{Nominal model}
+\label{sec:nom_model}
 The rates for the data and nominal model with all mentioned Monte-Carlo scalings and selections are presented in \autoref{tab:event_rates_2017}. We note that generally the Monte-Carlo rates of the CC0$\pi$ and CC1Track are underestimated (2-3\%) , CC$1\pi$ is overestimated (6-11\%) and CCOther is under-estimated (5-15\%). \numubar selections except FGD2 CC1Track \numubar are overestimated by 5\%, with FGD1 being 2\%. The \numu in RHC selections are mildly underestimated. The rates across the FGDs are consistent for all selections.
 \begin{table}[!h]
 	\centering
@@ -1272,7 +1313,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \label{fig:nominal1D_pmu}
 \end{figure}
 
-\autoref{fig:nominal1D_cosmu} shows the projections of the 2D distributions onto \cosmu. Again we see consistency across the FGDs, with CC0$\pi$ showing another oscillatory behaviour, going from underestimation at low \cosmu to a good prediction until $\cos \theta_\mu \sim 0.93$, in which the underestimation is back, similar in magnitude. For CC1$\pi$ we see a similar oscillation but shifted by 10\% over-estimation. For \numu CCOther we have less consistency, although the bin above $\cos \theta_\mu = 0.93$ are all underestimated, and for FGD2 this continues as \cosmu decreases. The most forward bin appears to be good modelled for all \numu samples except FGD2 CCOther. For the RHC selections
+\autoref{fig:nominal1D_cosmu} shows the projections of the 2D distributions onto \cosmu. Again we see consistency across the FGDs, with CC0$\pi$ showing another oscillatory behaviour, going from underestimation at low \cosmu to a good prediction until $\cos \theta_\mu \sim 0.93$, in which the underestimation is back, similar in magnitude. For CC1$\pi$ we see a similar oscillation but shifted by 10\% over-estimation. For \numu CCOther we have less consistency, although the bin above $\cos \theta_\mu = 0.93$ are all underestimated, and for FGD2 this continues as \cosmu decreases. The most forward bin appears to be good modelled for all \numu samples except FGD2 CCOther. For the RHC 1 track selections, we note FGD2 looking similar to the CC0$\pi$ selection, where FGD1 less so. The NTracks selections look similar for FGD1 and FGD2 with overestimates at high \cosmu. For RHC \numu selections, the NTrack selections appear more consistent than 1 track, with underestimates in the highest \cosmu bin. The 1 track appears consistently underestimated in $0.9 < \cos\theta_\mu < 1$.
 
 \begin{figure}
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -1328,67 +1369,56 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 	\label{fig:nominal1D_cosmu}
 \end{figure}
 
+The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autoref{fig:nominal1D_cosmu} after applying the weights scaling show no noticeable differences to the raw MC distributions in \autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu}. Comparing the sample breakdown in \autoref{tab:nominal_mode_afterscale} to \autoref{tab:nominal_mode} shows the largest effect being CCQE 1.3\% units for FGD1 0$\pi$ and CCDIS for FGD1 and FGD2 (also impacting the NTrk selections).
+
 \begin{table}
-          \begin{tabular}{ l | c c c c }
-			\hline
-            Sample & Data  & BANFF & MaCh3 & (BANFF-MaCh3)/BANFF \\ \hline
-			FGD1 CC0$\pi$ &  17136 &  16723.69 & 16723.8 & -6.60E-6 \\ \hline
-			FGD1 CC1$\pi$ &  3954 &  4381.48 & 4381.47 & 2.28E-6\\ \hline
-			FGD1 CCOther &  4149 &  3943.95 & 3943.95 & 0E0\\ \hline
-			FGD1 Anu-CCQE &  3527 &  3587.65 & 3587.77 & -3.34E-5\\ \hline
-			FGD1 Anu-CCNQE &  1054 &  1066.91 & 1066.91 & 0E0\\ \hline
-			FGD1 Nu-CCQE &  1363 &  1272.17 & 1272.17 & 0E0\\ \hline
-			FGD1 Nu-CCNQE &  1370 &  1357.45 & 1357.45 & 0E0 \\ \hline
-			FGD2 CC0$\pi$ &  17443 &  16959.19 & 16959.3 & -6.49E-6 \\ \hline
-			FGD2 CC1$\pi$ &  3366 &  3564.23 & 3564.23 & 0E0\\ \hline
-			FGD2 CCOther &  4075 &  3570.95 & 3570.94 & 2.80E-6 \\ \hline
-			FGD2 Anu-CCQE &  3732 &  3618.27 & 3618.29 & -5.53E-6 \\ \hline
-			FGD2 Anu-CCNQE &  1026 &  1077.24 & 1077.24 & 0E0 \\ \hline
-			FGD2 Nu-CCQE &  1320 &  1262.63 & 1262.63 & 0E0 \\ \hline
-			FGD2 Nu-CCNQE &  1253 &  1246.71 & 1246.71 & 0E0 \\ \hline
-			Total &  64768 &  63632.53 & 63632.9 & -5.81E-6 \\ \hline
-		\end{tabular}
-	\caption{BANFF and MaCh3 comparison of final event rates for the nominal model and data}
-	\label{tab:eventrate_banff_mach3}
+  \begin{tabular}{l | c c c c c c c }
+    \hline
+    \hline
+      Sample	      & CCQE & 2p2h & CC1$\pi^{\pm,0}$ 	& CC coh 	& CC multi-$\pi$ & CC DIS  	& NC \\
+      \hline
+      FGD1 $0\pi$     & \textbf{56.7} & \textbf{10.0} & 19.8 & 0.3 & 4.5 & 5.1 & 3.6 \\
+      FGD2 0$\pi$     & \textbf{55.2} & \textbf{9.4} & 21.5 & 0.3 & 4.9 & 5.2 & 3.4 \\
+      \hline
+      FGD1 $1\pi$     & 5.5 & 0.8 & \textbf{49.2} & \textbf{2.7} & \textbf{18.1} & 17.2 & 6.6 \\
+      FGD2 1$\pi$     & 5.6 & 0.7 & \textbf{48.5} & \textbf{2.8} & \textbf{18.3} & 17.6 & 6.4 \\
+      \hline
+      FGD1 Other      & 4.7 & 1.0 & 14.9 & 0.4 & \textbf{26.1} & \textbf{45.0} & 8.1 \\
+      FGD2 Other      & 4.9 & 1.0 & \textbf{15.5} & \textbf{0.3} & \textbf{25.5} & 44.9 & 7.9 \\
+      \hline
+      FGD1 1Trk     & \textbf{64.0} & \textbf{10.0} & 14.7 & 0.7 & 2.8 & 2.5 & 5.1 \\
+      FGD2 1Trk     & \textbf{64.4} & \textbf{9.9} & 14.7 & 0.7 & 2.8 & 2.6 & 4.9 \\
+      \hline
+      FGD1 NTrk     & 7.6 & 2.6 & \textbf{28.4} & \textbf{3.3} & \textbf{19.8} & \textbf{26.9} & 11.3 \\
+      FGD2 NTrk     & 8.3 & 2.7 & \textbf{28.3} & \textbf{3.2} & \textbf{19.8} & \textbf{26.2} & 11.6 \\
+      \hline
+      FGD1 1Trk \numu & \textbf{43.5} & \textbf{8.2} & 25.2 & 0.9 & 7.2 & 6.6 & 8.5 \\
+      FGD2 1Trk \numu & \textbf{43.3} & \textbf{8.2} & 25.2 & 0.8 & 7.8 & 7.1 & 7.7 \\
+      \hline
+      FGD1 NTrk \numu & 12.1 & 3.1 & \textbf{28.5} & \textbf{1.8} & \textbf{20.8} & \textbf{26.6} & 7.0 \\
+      FGD2 1Trk \numu & 11.9 & 2.7 & \textbf{29.8} & \textbf{1.8} & \textbf{21.1} & \textbf{26.4} & 6.4 \\
+      \hline
+      \hline
+  \end{tabular}
+\caption{Percentage mode breakdown for the binned nominal \textbf{scaled} Monte-Carlo samples, \textbf{boldface} indicates interactions targeted by specific selections. The distributions are \textbf{not} bin-width normalised. Compare to \autoref{tab:nominal_mode} for effect of weights.}
+\label{tab:nominal_mode_afterscale}
 \end{table}
 
-\red{talk about contamination of samples}
-
-\begin{sidewaystable}
-		\begin{tabular}{ l | c | c | c | c | c | c | c }
-                  \hline
-                  Sample & Raw MC & POT only & POT+flux & POT+xsec & POT+det & POT+NDCov & POT+BeamCov \\ 
-                  \hline
-                  \hline
-                  \FGDCCNoPi{1}{\numu}& 337436 & 15905.2 & 15905.2 & 15340.2 & 15905.2 & 16246.1 & 16090.8 \\
-                  \FGDCCOnePi{1}{\numu}& 84982 & 4011.58 & 4011.58 & 3819.3 & 4011.58 & 4131.35 & 4058.36 \\
-                  \FGDCCOther{1}{\numu}& 65286 & 3071.21 & 3071.21 & 3078.52 & 3071.21 & 3374.21 & 3107.04 \\
-                  \FGDCCNoPi{2}{\numu}& 345467 & 16259.6 & 16259.6 & 15749.8 & 16259.6 & 16415 & 16449.2 \\
-                  \FGDCCOnePi{2}{\numu}& 70444 & 3318.26 & 3318.26 & 3190.09 & 3318.26 & 3321.4 & 3356.97 \\
-                  \FGDCCOther{2}{\numu}& 63402 & 2983.43 & 2983.43 & 2995.68 & 2983.43 & 3051.48 & 3018.22 \\
-                  \FGDCCOneTrk{1}{\numubar}& 54419 & 3744.02 & 3744.02 & 3430.15 & 3744.02 & 3872.18 & 3773.79 \\
-                  \FGDCCNTrk{1}{\numubar}& 15392 & 1056.8 & 1056.8 & 986.32 & 1056.8 & 1121.1 & 1065.2 \\
-                  \FGDCCOneTrk{2}{\numubar}& 55732 & 3833.73 & 3833.73 & 3506.36 & 3833.73 & 3906.32 & 3864.24 \\
-                  \FGDCCNTrk{2}{\numubar}& 15808 & 1088.15 & 1088.15 & 1024.77 & 1088.15 & 1122.73 & 1096.81 \\
-                  \FGDCCOneTrk{1}{\numu} in RHC& 18146 & 1246.03 & 1246.03 & 1194.72 & 1246.03 & 1262.00 & 1255.92 \\
-                  \FGDCCNTrk{1}{\numu} in RHC& 17156 & 1181.54 & 1181.54 & 1172.13 & 1181.54 & 1257.34 & 1190.94 \\
-                  \FGDCCOneTrk{2}{\numu} in RHC& 18052 & 1231.24 & 1231.24 & 1189.64 & 1231.24 & 1245.3 & 1241.02 \\
-                  \FGDCCNTrk{2}{\numu} in RHC& 16339 & 1127.64 & 1127.64 & 1121.37 & 1127.64 & 1150.7 & 1136.62 \\
-                  \hline
-                  \hline
-                \end{tabular}
-        \caption{Event rates broken by type of weight applied}
-        \label{tab:eventrate_mach3}
-\end{sidewaystable}
-
 \section{Asimov results}
+To internally validate the implementation and evaluate the effectiveness of the fitting framework we perform studies in which the nominal Monte-Carlo predictions presented in \autoref{sec:nom_model} are set to be the data.
 
+\subsection{Log-likelihood scan}
+For the log-likelihood scans
 
-\subsection{Prior and posterior predictive}
-
-
-\subsection{LLH scan and 1 sigma variations}
+\subsection{Parameter variations}
 Show effect of some distributions on variations
+
+\subsection{Asimov fit}
+
+\subsubsection{Marginalisation effects}
+
+\subsection{Prior predictive spectrum}
+
 
 \section{Datafit results}
 
@@ -1400,4 +1430,36 @@ Show effect of some distributions on variations
 
 \section{Validating to BANFF}
 
+\begin{table}[h]
+  \begin{tabular}{ l | c c c | c }
+    \hline \hline 
+                Sample & Data  & BANFF & MaCh3 & (BANFF-MaCh3)/BANFF \\ 
+                \hline
+                FGD1 CC0$\pi$ &  17136 &  16723.69 & 16723.8 & -6.60E-6 \\
+                FGD1 CC1$\pi$ &  3954 &  4381.48 & 4381.47 & 2.28E-6\\ 
+                FGD1 CCOther &  4149 &  3943.95 & 3943.95 & 0E0\\ 
+                \hline
+                FGD2 CC0$\pi$ &  17443 &  16959.19 & 16959.3 & -6.49E-6 \\
+                FGD2 CC1$\pi$ &  3366 &  3564.23 & 3564.23 & 0E0\\
+                FGD2 CCOther &  4075 &  3570.95 & 3570.94 & 2.80E-6 \\
+                \hline
+                FGD1 Anu-CCQE &  3527 &  3587.65 & 3587.77 & -3.34E-5\\ 
+                FGD1 Anu-CCNQE &  1054 &  1066.91 & 1066.91 & 0E0\\
+                \hline
+                FGD2 Anu-CCQE &  3732 &  3618.27 & 3618.29 & -5.53E-6 \\
+                FGD2 Anu-CCNQE &  1026 &  1077.24 & 1077.24 & 0E0 \\
+                \hline
+                FGD1 Nu-CCQE &  1363 &  1272.17 & 1272.17 & 0E0\\
+                FGD1 Nu-CCNQE &  1370 &  1357.45 & 1357.45 & 0E0 \\
+                \hline
+                FGD2 Nu-CCQE &  1320 &  1262.63 & 1262.63 & 0E0 \\
+                FGD2 Nu-CCNQE &  1253 &  1246.71 & 1246.71 & 0E0 \\
+                \hline
+                Total &  64768 &  63632.53 & 63632.9 & -5.81E-6 \\
+                \hline
+                \hline
+  \end{tabular}
+        \caption{BANFF and MaCh3 comparison of final event rates for the nominal model and data}
+        \label{tab:eventrate_banff_mach3}
+\end{table}
 \section{Impact on SK oscillation analyses}
