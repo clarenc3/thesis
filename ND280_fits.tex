@@ -971,7 +971,6 @@ To build the nominal distribution for direct comparison to data, a number of sca
 	An event-by-event weight from the reconstruction and selection package to vary the impact of the detector simulation. It is applied as a function of the event's topology and detector (e.g. FGD1 CC0$\pi$) and which detector covariance bin the event bin falls into (e.g. $p_\mu=350\text{ MeV}, \cos\theta_\mu=0.99$). The weight is a normalisation parameter $\vec{d}$ for each bin in the detector covariance matrix scheme, explained in detail in \autoref{subsec:syst_nd280}.
 	
 	The weight $w_{\vec{d}\rightarrow \vec{d}'}$ is applied once to weight the simulation to nominal, and is recalculated for every iteration of the fit.
-	
 \end{itemize}
 
 All weights are parameterised as multiplicative, so for a two parameter variation $x \rightarrow x'$ and $y \rightarrow y'$ we have the total weight 
@@ -987,7 +986,6 @@ Defining the beam parameters as $\vec{b}$, cross-section parameters as $\vec{x}$
 \end{equation}
 
 The effect of each weight on the MC sample statistics is shown in \autoref{tab:eventrate_mach3}. The nominal flux and detector weights are 1.0, so are not included in the table
-
 
 \begin{table}[!h]
 	\resizebox{\textwidth}{!}{
@@ -1385,7 +1383,7 @@ The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autor
       FGD2 1$\pi$     & 5.6 & 0.7 & \textbf{48.5} & \textbf{2.8} & \textbf{18.3} & 17.6 & 6.4 \\
       \hline
       FGD1 Other      & 4.7 & 1.0 & 14.9 & 0.4 & \textbf{26.1} & \textbf{45.0} & 8.1 \\
-      FGD2 Other      & 4.9 & 1.0 & \textbf{15.5} & \textbf{0.3} & \textbf{25.5} & 44.9 & 7.9 \\
+      FGD2 Other      & 4.9 & 1.0 & 15.5 & 0.3 & \textbf{25.5} & \textbf{44.9} & 7.9 \\
       \hline
       FGD1 1Trk     & \textbf{64.0} & \textbf{10.0} & 14.7 & 0.7 & 2.8 & 2.5 & 5.1 \\
       FGD2 1Trk     & \textbf{64.4} & \textbf{9.9} & 14.7 & 0.7 & 2.8 & 2.6 & 4.9 \\
@@ -1406,12 +1404,16 @@ The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autor
 \end{table}
 
 \section{Asimov results}
+\label{sec:asimov}
 To internally validate the implementation and evaluate the effectiveness of the fitting framework we perform studies in which the nominal Monte-Carlo predictions presented in \autoref{sec:nom_model} are set to be the data.
 
 \subsection{Log-likelihood scan}
+\label{sec:llh_scan}
 For the log-likelihood scans each parameter is set to the values recommended by the priors: the same parameter set which produces the nominal model in \autoref{sec:nom_model}. The parameters are then varied one at a time from -2$\sigma$ to +2$\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$, where $\mathbf{V}_{i,i}$ is the $i^{\text{th}}$ diagonal entry of each group of parameters' covariance matrix\footnote{So the bounds are unaffected by the correlation when getting the lower and upper bounds of the scan}. The minimum of the test-statistic occurs when the parameter is equal to the prior, as this sets prior constraint term to zero and produces a MC sample which perfectly matches the Asimov set, giving a zero contribution from the sample too. When a parameter has been scanned it is reset to the prior value. It is expected that most parameters produces a Gaussian response since the prior probability density function is set to such, and few parameters produce asymmetric responses in the event rate of a given bin\footnote{Although there are some, mentioned later.}.
 
 The scan splits the likelihood into each of the individual contributions presented in \autoref{eq:test_stat} and shows the total likelihood. For any given likelihood scan, there should only be contributions from the likelihood terms that are being varied: the sample likelihood (since the MC event $\lambda=\lambda(\vec{b},\vec{x},\vec{d})$) and the group of systematics which the parameter belongs to (e.g. the flux likelihood should vary when any of the $\vec{b}$ parameters are varied).
+
+In practice, the estimated constraints from the one dimensional log-likelihood are not accurate due to the large correlations in the beam and ND280 parameters in the prior covariance matrices; hence $\chi^2\sim1$ does not indicate the typical $1\sigma$ sensitivity. For sensitivity estimates, it is more appropriate to vary the correlated parameters simultaneously, as is done in the Asimov fit presented later in \autoref{sec:asimov_fit}. The likelihood scans are considered more of a closure test to inspect implementation.
 
 \begin{figure}[!h]
 	\centering
@@ -1477,8 +1479,7 @@ The scan splits the likelihood into each of the individual contributions present
 \end{figure}
 
 \autoref{fig:xsec_asimov} shows the likelihood scans for a selected few cross-section parameters. $M_A^{QE}$ and 2p2h norm $\nu$ are both fit without a prior, so only sees constraint from the sample likelihood, and 2p2h shape C has an almost flat prior likelihood, largely constrained by the samples. Some cross-section parameters, like BeRPA E, have a weaker constraint from the MC samples than from the prior, largely due to its effect being limited to high $Q^2$, of which ND280 have few. We also observe some non-Gaussian responses, such as the pion final-state-interaction charge exchange at low pion momentum (FSI CEX LO) and the single pion production non-resonant background parameter, $I_{1/2}^\text{bkg}$.
-
-\begin{figure}[h]
+\begin{figure}[!h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=132]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
@@ -1490,21 +1491,204 @@ The scan splits the likelihood into each of the individual contributions present
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=264]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
-		\caption{FGD1 \numubar CC1Trk \{0.4-0.9, 0.6-0.7\}}
+		\caption{FGD1 \numubar CC1Trk \{0.4-0.9 GeV, 0.6-0.7\}}
 	\end{subfigure}
+
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=410]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{FGD2 CC0$\pi$ 	\{0-1 GeV, 0.6-0.7\}}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=517]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{FGD2 CCOther \{1.5-2 GeV, 0.8-0.85\}}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=542]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+	\caption{FGD2 \numubar CC1Trk \{0.4-0.9 GeV, 0.6-0.7\}}
+\end{subfigure}
 \caption{Asimov likelihood scans for selected ND280 parameters in the fit}
 \label{fig:nd280_asimov}
 \end{figure}
 
+\autoref{fig:nd280_asimov} shows a selected number of the ND280 parameters for FGD1 and FGD2. Generally, the ND280 parameters are more balanced between prior and sample likelihoods. The effect is by design, since the underlying MC events that are being varied when making the detector covariance are the same as those being varied in the fit: the only difference is the fit binning and the binning used to make the ND280 covariance matrix, covered in \autoref{subsec:syst_nd280}.
+
+As expected, the ND280 parameters covering high statistics samples and regions of phase space---such as CC0$\pi$, $0<p_\mu<1.0\text{ GeV}$, $0.6 < \cos\theta_\mu < 0.7$---have higher constraints than low ones---such as CCOther $1.5 < p_\mu < 2.0\text{ GeV}$, $0.8 < \cos\theta_\mu < 0.85$.
+
+Comparing top and bottom panels, the responses for equivalent FGD1 and FGD2 parameters are compatible and have similar strength.
+
 \subsection{Parameter variations}
-Show effect of some distributions on variations
+\label{sec:sigmavar}
+To finally inspect the effects of the parameterisation we vary the parameters one at a time over one unit of $\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$ as before, now looking at the impact on the event distributions for each selection.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=1]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=2]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=3]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=4]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=7]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=8]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=9]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth,page=10]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=5]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=6]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=13]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=14]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=11]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=12]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=17]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=18]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+	\end{subfigure}
+
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=15]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=16]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=21]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=22]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=19]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=20]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=25]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=26]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\caption{The largest effect of the 1-$\sigma$ variations on selections' \pmu \cosmu}
+\label{fig:onesigma}
+\end{figure}
+\red{Cut out the title and add subcaptions}
+
+\begin{table}[!h]
+	\begin{tabular}{l | c | c c c }
+		\hline
+		\hline
+          Sample & Parameter & +1$\sigma$ & Nominal & -1$\sigma$ \\
+          \hline
+          FGD1 0$\pi$ & 2p2h norm $\nu$ & 15139.1 & 16723.8 & 18308.6 \\
+          FGD2 0$\pi$ & 2p2h norm $\nu$ & 15420.4 & 16959.3 & 18498.2 \\
+          FGD1 1$\pi$ & CA5 & 4056.67 & 4381.47 & 4746.83 \\
+          FGD2 1$\pi$ & CA5 & 3307.92 & 3564.23 & 3852.44 \\
+          FGD1 Other & CCDIS & 3691.18 & 3943.95 & 4196.72 \\
+          FGD2 Other & CCDIS & 3343.41 & 3570.94 & 3798.47 \\
+\hline
+          FGD1 1Trk & 2p2h norm $\bar{\nu}$ & 3245.72 & 3587.77 & 3929.83 \\ 
+          FGD2 1Trk & 2p2h norm $\bar{\nu}$ & 3272.86 & 3618.29 & 3963.73 \\
+          FGD1 NTrk & MARES & 1019.96 & 1066.91 & 1126.26 \\
+          FGD2 NTrk & MARES & 1028.7 & 1077.24 & 1138.62 \\
+          
+          \hline
+          FGD1 1Trk \numu & 2p2h norm $\nu$ & 1178.79 & 1272.17 & 1365.55 \\
+          FGD2 1Trk \numu & 2p2h norm $\nu$ & 1170.3 & 1262.63 & 1354.97 \\
+          FGD1 NTrk \numu & b29 & 1282.3 & 1357.45 & 1432.61 \\
+          FGD2 NTrk \numu & MARES & 1184.42 & 1246.71 & 1317.25 \\
+          \hline
+          \hline
+	\end{tabular}
+\caption{The largest effect of the 1-$\sigma$ variations on each sample on the event selections}
+\label{tab:onesiga}
+\end{table}
+%beam+ND280+xsec
+%Largest difference for FGD1_numuCC_0pi: 1584.73 (FGD1_numuCC_0pi_2p2h_norm_nu)
+%Largest difference for FGD1_numuCC_1pi: 365.358 (FGD1_numuCC_1pi_CA5)
+%Largest difference for FGD1_numuCC_other: 252.769 (FGD1_numuCC_other_CC_DIS)
+%Largest difference for FGD2_numuCC_0pi: 1538.91 (FGD2_numuCC_0pi_2p2h_norm_nu)
+%Largest difference for FGD2_numuCC_1pi: 288.216 (FGD2_numuCC_1pi_CA5)
+%Largest difference for FGD2_numuCC_other: 227.53 (FGD2_numuCC_other_CC_DIS)
+%Largest difference for FGD1_anti-numuCC_QE: 342.054 (FGD1_anti-numuCC_QE_2p2h_norm_nubar)
+%Largest difference for FGD1_anti-numuCC_nQE: 59.3502 (FGD1_anti-numuCC_nQE_MARES)
+%Largest difference for FGD2_anti-numuCC_1_track: 345.436 (FGD2_anti-numuCC_1_track_2p2h_norm_nubar)
+%Largest difference for FGD2_anti-numuCC_N_tracks: 61.3828 (FGD2_anti-numuCC_N_tracks_MARES)
+%Largest difference for FGD1_NuMuBkg_CCQE_in_AntiNu_Mode_: 93.3766 (FGD1_NuMuBkg_CCQE_in_AntiNu_Mode__2p2h_norm_nu)
+%Largest difference for FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode: 75.1545 (FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode_b_29)
+%Largest difference for FGD2_NuMuBkg_CCQE_in_AntiNu_Mode_: 92.3373 (FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__2p2h_norm_nu)
+%Largest difference for FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode: 70.5455 (FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_MARES)
+
+%beam+ND280
+%Largest difference for FGD1_numuCC_0pi: 419.944 (FGD1_numuCC_0pi_b_4)
+%Largest difference for FGD1_numuCC_1pi: 64.8746 (FGD1_numuCC_1pi_b_8)
+%Largest difference for FGD1_numuCC_other: 104.927 (FGD1_numuCC_other_b_10)
+%Largest difference for FGD2_numuCC_0pi: 428.013 (FGD2_numuCC_0pi_b_4)
+%Largest difference for FGD2_numuCC_1pi: 54.6989 (FGD2_numuCC_1pi_b_8)
+%Largest difference for FGD2_numuCC_other: 91.9717 (FGD2_numuCC_other_b_10)
+%Largest difference for FGD1_anti-numuCC_QE: 95.0237 (FGD1_anti-numuCC_QE_b_34)
+%Largest difference for FGD1_anti-numuCC_nQE: 29.915 (FGD1_anti-numuCC_nQE_b_29)
+%Largest difference for FGD2_anti-numuCC_1_track: 95.1625 (FGD2_anti-numuCC_1_track_b_34)
+%Largest difference for FGD2_anti-numuCC_N_tracks: 29.4032 (FGD2_anti-numuCC_N_tracks_b_29)
+%Largest difference for FGD1_NuMuBkg_CCQE_in_AntiNu_Mode_: 37.1494 (FGD1_NuMuBkg_CCQE_in_AntiNu_Mode__b_29)
+%Largest difference for FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode: 75.1545 (FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode_b_29)
+%Largest difference for FGD2_NuMuBkg_CCQE_in_AntiNu_Mode_: 35.9022 (FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__b_29)
+%Largest difference for FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode: 68.9212 (FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_b_29)
+
+%ND280
+%Largest difference for FGD1_numuCC_0pi: 306.549 (FGD1_numuCC_0pi_ndd_0)
+%Largest difference for FGD1_numuCC_1pi: 31.2325 (FGD1_numuCC_1pi_ndd_50)
+%Largest difference for FGD1_numuCC_other: 88.7887 (FGD1_numuCC_other_ndd_82)
+%Largest difference for FGD2_numuCC_0pi: 354.861 (FGD2_numuCC_0pi_ndd_278)
+%Largest difference for FGD2_numuCC_1pi: 31.2562 (FGD2_numuCC_1pi_ndd_328)
+%Largest difference for FGD2_numuCC_other: 89.0011 (FGD2_numuCC_other_ndd_360)
+%Largest difference for FGD1_anti-numuCC_QE: 43.0114 (FGD1_anti-numuCC_QE_ndd_133)
+%Largest difference for FGD1_anti-numuCC_nQE: 12.409 (FGD1_anti-numuCC_nQE_ndd_183)
+%Largest difference for FGD2_anti-numuCC_1_track: 46.6356 (FGD2_anti-numuCC_1_track_ndd_411)
+%Largest difference for FGD2_anti-numuCC_N_tracks: 11.855 (FGD2_anti-numuCC_N_tracks_ndd_467)
+%Largest difference for FGD1_NuMuBkg_CCQE_in_AntiNu_Mode_: 11.0608 (FGD1_NuMuBkg_CCQE_in_AntiNu_Mode__ndd_198)
+%Largest difference for FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode: 14.1052 (FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode_ndd_239)
+%Largest difference for FGD2_NuMuBkg_CCQE_in_AntiNu_Mode_: 10.5504 (FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__ndd_476)
+%Largest difference for FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode: 15.3709 (FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_ndd_554)
 
 \subsection{Asimov fit}
+\label{sec:asimov_fit}
 
 \subsubsection{Marginalisation effects}
 
 \subsection{Prior predictive spectrum}
 
+\subsection{Posterior predictive spectrum}
 
 \section{Datafit results}
 
@@ -1549,3 +1733,5 @@ Show effect of some distributions on variations
         \label{tab:eventrate_banff_mach3}
 \end{table}
 \section{Impact on SK oscillation analyses}
+
+\section{MCMC stability}
