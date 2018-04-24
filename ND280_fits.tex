@@ -1520,7 +1520,43 @@ Comparing top and bottom panels, the responses for equivalent FGD1 and FGD2 para
 \label{sec:sigmavar}
 To finally inspect the effects of the parameterisation we vary the parameters one at a time over one unit of $\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$ as before, now looking at the impact on the event distributions for each selection.
 
-\begin{figure}[h]
+The largest effects of the variations on the event rates in each sample is shown in \autoref{tab:onesigma}. For the CC0$\pi$ or 1 track selections the 2p2h normalisation parameters has the largest effect. This is expected because of the uncertainty applied is conservative at $\pm100\%$, so the lower event rate (15139.1 for FGD1 0$\pi$) is the event rate without any 2p2h $\nu$ events. For CC1$\pi$ selections, the largest effect is the $C_5^A$ parameter, which controls the single pion production model. For the CCOther selections the CC DIS parameter has the largest effect. For the RHC NTrack selections the $M_A^{RES}$ parameter is instead dominant, controlling the single pion production model of which the NTrack selections is dominated by (e.g. FGD1 NTrack 28.4\% CC1$\pi^{\pm,0}$ vs 26.9\% CCDIS in \autoref{tab:nominal_mode_afterscale}). The only selection which is does not have an interaction parameter as its largest uncertainity on event rate is FGD1 NTrk \numu, where the 29th beam parameter (RHC \numubar, $E_\nu = 0.7-1.0 \text{ GeV}$)--- the second largest effect is from $M_A^{RES}$, which predicts event rates from +1$\sigma$:1291.84 to -1$\sigma$: 1432.51. 
+
+\begin{table}[!h]
+	\begin{tabular}{l | c | c c c }
+		\hline
+		\hline
+		Sample & Parameter & +1$\sigma$ & Nominal & -1$\sigma$ \\
+		\hline
+		FGD1 0$\pi$ & 2p2h norm $\nu$ & 15139.1 & 16723.8 & 18308.6 \\
+		FGD2 0$\pi$ & 2p2h norm $\nu$ & 15420.4 & 16959.3 & 18498.2 \\
+		FGD1 1$\pi$ & $C^A_5$ & 4056.67 & 4381.47 & 4746.83 \\
+		FGD2 1$\pi$ & $C^A_5$ & 3307.92 & 3564.23 & 3852.44 \\
+		FGD1 Other & CC DIS & 3691.18 & 3943.95 & 4196.72 \\
+		FGD2 Other & CC DIS & 3343.41 & 3570.94 & 3798.47 \\
+		\hline
+		FGD1 1Trk & 2p2h norm $\bar{\nu}$ & 3245.72 & 3587.77 & 3929.83 \\ 
+		FGD2 1Trk & 2p2h norm $\bar{\nu}$ & 3272.86 & 3618.29 & 3963.73 \\
+		FGD1 NTrk & $M_A^{RES}$ & 1019.96 & 1066.91 & 1126.26 \\
+		FGD2 NTrk & $M_A^{RES}$ & 1028.7 & 1077.24 & 1138.62 \\
+		
+		\hline
+		FGD1 1Trk \numu & 2p2h norm $\nu$ & 1178.79 & 1272.17 & 1365.55 \\
+		FGD2 1Trk \numu & 2p2h norm $\nu$ & 1170.3 & 1262.63 & 1354.97 \\
+		FGD1 NTrk \numu & b29 & 1282.3 & 1357.45 & 1432.61 \\
+		FGD2 NTrk \numu & $M_A^{RES}$ & 1184.42 & 1246.71 & 1317.25 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{The largest effect of the 1-$\sigma$ variations on each sample on the event selections}
+	\label{tab:onesigma}
+\end{table}
+
+The results are expected and entirely compatible with the likelihood scans in \autoref{sec:llh_scan}, where we saw very strong constraints on many parameters (e.g. 2p2h norm $\nu$), which primarily came from sensitivity in the sample distributions. It is therefore expected that those parameters have a large impact on the event rates from the 1$\sigma$ variations.
+
+The impact on the \pmu \cosmu distributions for each sample and their respective ``highest impact parameters'' presented in \autoref{tab:onesigma} are shown in \autoref{fig:onesigma_fhc} and \autoref{fig:onesigma_rhc}. We note similar responses in both FGDs and across samples.
+
+\begin{figure}[!h]
 	\begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=1]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 	\end{subfigure}
@@ -1554,85 +1590,72 @@ To finally inspect the effects of the parameterisation we vary the parameters on
 	\includegraphics[width=\textwidth,page=6]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=11]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=12]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\caption{The largest effect of the 1-$\sigma$ variations on FHC selections' \pmu \cosmu}
+\label{fig:onesigma_fhc}
+\end{figure}
+
+\begin{figure}[h]
+\begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=13]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=14]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 	\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=15]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=16]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
 
-\begin{subfigure}[t]{0.24\textwidth}
-	\includegraphics[width=\textwidth,page=11]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
-\end{subfigure}
-\begin{subfigure}[t]{0.24\textwidth}
-	\includegraphics[width=\textwidth,page=12]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
-\end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=17]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=18]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 	\end{subfigure}
-
-
 \begin{subfigure}[t]{0.24\textwidth}
-	\includegraphics[width=\textwidth,page=15]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\includegraphics[width=\textwidth,page=19]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
-	\includegraphics[width=\textwidth,page=16]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\includegraphics[width=\textwidth,page=20]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
+
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=21]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=22]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=23]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=24]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
 
-\begin{subfigure}[t]{0.24\textwidth}
-	\includegraphics[width=\textwidth,page=19]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
-\end{subfigure}
-\begin{subfigure}[t]{0.24\textwidth}
-	\includegraphics[width=\textwidth,page=20]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
-\end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=25]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=26]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 \end{subfigure}
-\caption{The largest effect of the 1-$\sigma$ variations on selections' \pmu \cosmu}
-\label{fig:onesigma}
-\end{figure}
-\red{Cut out the title and add subcaptions}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=27]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=28]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
+\end{subfigure}
 
-\begin{table}[!h]
-	\begin{tabular}{l | c | c c c }
-		\hline
-		\hline
-          Sample & Parameter & +1$\sigma$ & Nominal & -1$\sigma$ \\
-          \hline
-          FGD1 0$\pi$ & 2p2h norm $\nu$ & 15139.1 & 16723.8 & 18308.6 \\
-          FGD2 0$\pi$ & 2p2h norm $\nu$ & 15420.4 & 16959.3 & 18498.2 \\
-          FGD1 1$\pi$ & CA5 & 4056.67 & 4381.47 & 4746.83 \\
-          FGD2 1$\pi$ & CA5 & 3307.92 & 3564.23 & 3852.44 \\
-          FGD1 Other & CCDIS & 3691.18 & 3943.95 & 4196.72 \\
-          FGD2 Other & CCDIS & 3343.41 & 3570.94 & 3798.47 \\
-\hline
-          FGD1 1Trk & 2p2h norm $\bar{\nu}$ & 3245.72 & 3587.77 & 3929.83 \\ 
-          FGD2 1Trk & 2p2h norm $\bar{\nu}$ & 3272.86 & 3618.29 & 3963.73 \\
-          FGD1 NTrk & MARES & 1019.96 & 1066.91 & 1126.26 \\
-          FGD2 NTrk & MARES & 1028.7 & 1077.24 & 1138.62 \\
-          
-          \hline
-          FGD1 1Trk \numu & 2p2h norm $\nu$ & 1178.79 & 1272.17 & 1365.55 \\
-          FGD2 1Trk \numu & 2p2h norm $\nu$ & 1170.3 & 1262.63 & 1354.97 \\
-          FGD1 NTrk \numu & b29 & 1282.3 & 1357.45 & 1432.61 \\
-          FGD2 NTrk \numu & MARES & 1184.42 & 1246.71 & 1317.25 \\
-          \hline
-          \hline
-	\end{tabular}
-\caption{The largest effect of the 1-$\sigma$ variations on each sample on the event selections}
-\label{tab:onesiga}
-\end{table}
+\caption{The largest effect of the 1-$\sigma$ variations on RHC selections' \pmu \cosmu}
+\label{fig:onesigma_rhc}
+\end{figure}
+
 %beam+ND280+xsec
 %Largest difference for FGD1_numuCC_0pi: 1584.73 (FGD1_numuCC_0pi_2p2h_norm_nu)
 %Largest difference for FGD1_numuCC_1pi: 365.358 (FGD1_numuCC_1pi_CA5)
@@ -1681,14 +1704,103 @@ To finally inspect the effects of the parameterisation we vary the parameters on
 %Largest difference for FGD2_NuMuBkg_CCQE_in_AntiNu_Mode_: 10.5504 (FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__ndd_476)
 %Largest difference for FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode: 15.3709 (FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_ndd_554)
 
+\subsection{Prior predictive spectrum}
+\red{insert citation to Box}
+The first statistical test of the Asimov is to investigate the prior predictive spectrum. Here 20000 correlated throws of the parameters are performed, using the supplied covariance matrices. For each throw we
+\begin{itemize}
+	\item Reweight the Monte-Carlo using the new parameter set, applying an updated weight for each event
+	\item Count the number of events in each \pmu \cosmu bin for each selection and save it
+	\item Statistically fluctuate each bin according to its bin contents\footnote{By using a Poisson probability distribution function in which $\lambda$ is the un-fluctuated number of events in the bin}
+	\item Calculate the test-statistic between the fluctuated histogram from the throw and the histogram from the throw, $\chi^2_{\text{Draw, Draw Fluc}}$
+	\item Calculate the test-statistic between the data and the histogram from the throw, $\chi^2_{\text{Data, Draw}}$.
+	\item Fill a two dimensional histogram of the two test-statistics
+\end{itemize}
+Over the 20000 throws builds a predictive distribution in each \pmu \cosmu bin, in which the z-axis is the number of calculated events in each bin. We then calculate the mean and error for each bin using the arithmetic method and by fitting a Gaussian and extracting the parameters from there. The predictive is formed by taking the mean of each bin as the number of events in the bin, and the error in the bin is calculated in the same way.
+
+We then perform another closure test using the predictive spectrum and fluctuations of the predictive spectrum in which we
+\begin{itemize}
+	\item Take the predictive spectrum calculated above
+	\item Statistically fluctuate the content of each \pmu \cosmu bin 
+	\item Calculate the test-statistic between the fluctuated predictive histogram and the predictive histogram, $\chi^2_{\text{Pred, Pred Fluc}}$
+	\item Calculate the test-statistic between the fluctuated predictive histogram and the data, $\chi^2_{\text{Data, Pred Fluc}}$.
+	\item Fill a two dimensional histogram of the two test-statistics
+\end{itemize}
+
+The two two-dimensional histograms with test-statistics are formed and p-values can then be calculated, which are referred to as ``prior predictive p-values''.  These p-values reflect the priors' influence and compatibility on the Asimov data set. The p-values are simply defined as\red{check these please}
+
+\begin{equation}
+p = \frac{N\left(\chi^2_{\text{Data, Draw}} > \chi^2_{\text{Draw, Draw Fluc}}\right)}{N\left(\text{Total}\right)}
+\end{equation}
+
+\begin{equation}
+p = \frac{N\left(\chi^2_{\text{Data, Pred Fluc}} > \chi^2_{\text{Pred, Pred Fluc}}\right)}{N\left(\text{Total}\right)}
+\end{equation}
+
+which reflects how compatible the prior model is with the Asimov data set. In the case of the Asimov data set it is expected that the two p-values are virtually identical, since we expect the fluctuations of the predictive spectrum to be very similar to that of a throw. \red{explain why?} The two p-values are shown in \autoref{fig:prior_predictive_asimov} and both claim that our Asimov data is  highly compatible with the prior model including uncertainties.
+
+\begin{figure}[!h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PriorPred_procs}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PriorPred_procs}
+	\end{subfigure}
+\caption{Prior predictive spectrum for the Asimov data}
+\label{fig:prior_predictive_asimov}
+\end{figure}
+
 \subsection{Asimov fit}
 \label{sec:asimov_fit}
+After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain.\red{show autocorrelations?}
+\begin{table}[h]
+	\begin{tabular}{l | c c c}
+		\hline
+		\hline
+							& Chain length  & Acceptance rate & Accepted steps\\
+							\hline
+		Low acceptance		& 800,000		& 6.9\% 		  & 55,200 \\
+		Mid acceptance		& 800,000		& 15.0\% 		  & 120,000\\
+		High acceptance		& 1,400,000		& 23.0\%  		  & 322,000 \\
+		\hline
+		\hline
+	\end{tabular}
+\caption{Different MCMC run configurations for the Asimov fit}
+\label{tab:asimov_mcmc_versions}
+\end{table}
+
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=132]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=133]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=134]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.49\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=135]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.49\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=136]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\end{figure}
 
 \subsubsection{Marginalisation effects}
 
-\subsection{Prior predictive spectrum}
+\subsubsection{Covariance matrix}
 
 \subsection{Posterior predictive spectrum}
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PostPred_procs}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PostPred_procs}
+	\end{subfigure}
+\end{figure}
 
 \section{Datafit results}
 
@@ -1700,7 +1812,7 @@ To finally inspect the effects of the parameterisation we vary the parameters on
 
 \section{Validating to BANFF}
 
-\begin{table}[h]
+\begin{table}[!h]
   \begin{tabular}{ l | c c c | c }
     \hline \hline 
                 Sample & Data  & BANFF & MaCh3 & (BANFF-MaCh3)/BANFF \\ 
