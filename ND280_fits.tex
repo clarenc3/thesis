@@ -1705,8 +1705,11 @@ The impact on the \pmu \cosmu distributions for each sample and their respective
 %Largest difference for FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode: 15.3709 (FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_ndd_554)
 
 \subsection{Prior predictive spectrum}
-\red{insert citation to Box}
-The first statistical test of the Asimov is to investigate the prior predictive spectrum. Here 20000 correlated throws of the parameters are performed, using the supplied covariance matrices. For each throw we
+\label{sec:Asimov_prior}
+\red{insert citation to Box, J.R. Statist. Soc. A 1980, 143, Part 4, pp. 383-430}
+The first statistical test of the Asimov is to investigate the prior predictive spectrum and resulting p-values. This is meant to reflect the compatibility of the prior with the Asimov data. The p-value is expected to be about 50\% since we're throwing the parameters either side of the central value which created the Asimov data set. However, we are performing correlated throws, so offsets from 50\% is to be expected.
+
+Here 20000 correlated throws of the parameters are performed, using the supplied covariance matrices. For each throw we
 \begin{itemize}
 	\item Reweight the Monte-Carlo using the new parameter set, applying an updated weight for each event
 	\item Count the number of events in each \pmu \cosmu bin for each selection and save it
@@ -1736,7 +1739,9 @@ p = \frac{N\left(\chi^2_{\text{Data, Draw}} > \chi^2_{\text{Draw, Draw Fluc}}\ri
 p = \frac{N\left(\chi^2_{\text{Data, Pred Fluc}} > \chi^2_{\text{Pred, Pred Fluc}}\right)}{N\left(\text{Total}\right)}
 \end{equation}
 
-which reflects how compatible the prior model is with the Asimov data set. In the case of the Asimov data set it is expected that the two p-values are virtually identical, since we expect the fluctuations of the predictive spectrum to be very similar to that of a throw. \red{explain why?} The two p-values are shown in \autoref{fig:prior_predictive_asimov} and both claim that our Asimov data is  highly compatible with the prior model including uncertainties.
+which reflects how compatible the prior model is with the Asimov data set. In the case of the Asimov data set it is expected that the two p-values are virtually identical, since we expect the fluctuations of the predictive spectrum to be very similar to that of a throw. \red{explain why?} 
+
+The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay around the expected value of 50\% as previously asserted.
 
 \begin{figure}[!h]
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -1745,14 +1750,14 @@ which reflects how compatible the prior model is with the Asimov data set. In th
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PriorPred_procs}
 	\end{subfigure}
-\caption{Prior predictive spectrum for the Asimov data}
+\caption{Prior predictive p-values for the Asimov data}
 \label{fig:prior_predictive_asimov}
 \end{figure}
 
 \subsection{Asimov fit}
 \label{sec:asimov_fit}
-After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain.\red{show autocorrelations?}
-\begin{table}[h]
+After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain.\red{show autocorrelations?} \autoref{tab:asimov_mcmc_versions} shows the different chains completed for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
+\begin{table}[!h]
 	\begin{tabular}{l | c c c}
 		\hline
 		\hline
@@ -1768,31 +1773,202 @@ After the closure tests are complete we fit the model to the Asimov data set. Th
 \label{tab:asimov_mcmc_versions}
 \end{table}
 
+Since MCMC methods aren't designed to find a global minimum of the test-statistic, it is less trivial to define the ``best-fit'' parameter set than with a conventional minimiser. The most straightforward method is to select the MCMC step with the highest likelihood and draw the parameter set from that step, although there is no guarantee whatsoever that this is the global minimum. For the one-dimensional parameter plots we instead opt to marginalise over all parameters except the ``parameter of interest''. Since we're dealing with a very high-dimensional, highly-correlated fit, the outcome is likely to display some ``marginalisation effects'': the parameter value which maximises the $n+1$ dimensional marginal likelihood does not maximise the $n$ dimensional marginal likelihood.
+
+\autoref{fig:mcmc_asimov_loglsteps} demonstrates that the lowest test-statistic is indeed obtained at the very beginning of the chain, and the chain progresses to move around the minimum at $\chi^2 \sim 300-400$. The lowest test-statistic after the first 1/4 of the chain has been discarded is found at step 423471/800000, which has $\chi^2 = 284.49$.
+
+\begin{figure}[h]
+	\includegraphics[width=0.45\textwidth]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge}
+	\caption{Markov Chain behaviour for the ``mid acceptance'' MCMC, showing intended behaviour of moving around minimum}
+	\label{fig:mcmc_asimov_loglsteps}
+\end{figure}
+
+\autoref{fig:flux_asimov_fhc} (FHC) and \autoref{fig:flux_asimov_rhc} (RHC) shows the result of the Asimov fit for the ND280 flux parameters. There is a consistent ``bias'' in estimating the parameter set which generated the Asimov, whose residuals (bottom panel) appear to have a shape, going from over-estimated to under-estimated in parameter value as $E_\nu$ increases. The highest acceptance chain has less ``bias'' than the shorter chains, and all the chains are consistent with each other. Many of the parameters with large biases are barely constrained by the ND280 data (e.g. ND280 FHC $\nu_\mu$ at $E_\nu > 4\text{ GeV}$ and ND280 RHC $\bar{\nu}_e$) and only get their constraints from the prior covariance matrix. The ND280 to SK correlation is working as expected and the SK flux parameters show almost identical constraint to their ND280 equivalents.
+
+We also note improved constraints on all flux parameters from the prior uncertainty. This is emphasises around the flux peak at $E_\nu \sim 0.6\text{ GeV}$, where the flux parameter uncertainty reduces by 50\%.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=3]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=4]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=5]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=10]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=11]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=12]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=13]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+\end{subfigure}
+\caption{ND280 and SK FHC flux parameters after the Asimov fit for different MCMC chains}
+\label{fig:flux_asimov_fhc}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=6]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=7]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=8]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=9]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+		\end{subfigure}
+		
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=14]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=15]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=16]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=17]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\caption{ND280 and SK RHC flux parameters after the Asimov fit for different MCMC chains}
+	\label{fig:flux_asimov_rhc}
+\end{figure}
+\autoref{fig:xsec_asimov} shows interaction parameters after the fit to Asimov data. As for the flux parameters, some parameters are ``biased'', notably the Fermi momentum parameters ($p_F$), 2p2h norm $\bar{\nu}$, BeRPA A, CC DIS and NC$1\gamma$. Again, the chains are very compatible in their estimates of the parameter values, and the reduction of the uncertainties are significant for many parameters. $p_F$, 2p2h norm C/O, BeRPA E, $\nu_e$/$\nu_\mu$, NC coherent, NC$1\gamma$ and NC oth. SK barely improve, due to the fit lacking events which constrain these parameters, or the parameter has very little ``strength'' to change the interaction cross-section.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=19]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=20]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=21]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+	\end{subfigure}
+	\caption{Interaction parameters after the Asimov fit for different MCMC chains}
+	\label{fig:xsec_asimov}
+\end{figure}
+
+\red{Show some posteriors?}
+\subsubsection{Asimov fit, flux parameters only}
+To investigate if correlations and marginalisation are to blame for the ``bias'' in \autoref{sec:asimov_fit}, a fit to the Asimov data is done keeping the cross-section and ND280 parameters fixed at their Asimov values, and only the flux parameters are varied. \autoref{fig:flux_asimov_nd280_fluxonly} shows the parameter values for the ND280 flux parameters using different methods of obtaining the central values. The biases have vanished for all methods, and we conclude that the Asimov parameters are being correctly found when flux parameters alone are being fit.
 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=132]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
 	\end{subfigure}
-\begin{subfigure}[t]{0.32\textwidth}
-	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=133]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
-\end{subfigure}
-\begin{subfigure}[t]{0.32\textwidth}
-	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=134]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
-\end{subfigure}
-
-\begin{subfigure}[t]{0.49\textwidth}
-	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=135]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
-\end{subfigure}
-\begin{subfigure}[t]{0.49\textwidth}
-	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=136]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
-\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=3]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=4]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=5]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=6]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=7]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=8]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=9]{figures/mach3/Asimov/2017b_Asimov_July2017_FixND280_FixXsec_0_drawPar}
+	\end{subfigure}
+	
+	\caption{ND280 flux parameters after the Asimov fit, fitting flux only}
+	\label{fig:flux_asimov_nd280_fluxonly}
 \end{figure}
 
 \subsubsection{Marginalisation effects}
+In \autoref{sec:asimov_fit} it was noted that many parameters appeared ``biased'' in their one-dimensional marginal posterior not agreeing with the input Asimov value. This is expected for parameters which correlate strongly with non-Gaussian parameters, of which the fit contains some. Here we investigate this further by looking at the two-dimensional marginal posterior for a few correlated parameters and comparing them to the one-dimensional marginal posterior. For the central value parameter estimates we use the highest posterior density point. We look at three selected parameters that showed bias: $p_F^{C}$, 2p2h norm $\bar{\nu}$ and the 30th beam parameter (``$b_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV).
 
-\subsubsection{Covariance matrix}
+\paragraph{$p_F^C$ bias}
+\autoref{fig:marginalisation_pf} shows the two dimensional marginal posterior of $p_F^C$ with $p_F^O$ and BeRPA D. The $p_F$ parameters are problematic in that the parameterisation \red{show splines?} allows for non-Gaussian behaviour and additionally has hard cut-offs near the prior value--notably at the lower limit. Marginalising over such parameters causes shifts in the highest posterior densities. For the two-dimensional posterior of $p_F^C$ and $p_F^O$ the highest density is indeed very close to the prior input value of 1.0 for both parameters (within one bin-width), whereas marginalising over the other parameter causes the posterior density to shift from $p_F^{C}$ = 1.008 to 1.062. The second inset shows the opposite effect when marginalising $p_F^{C}$ over BeRPA D, in which the two-dimensional marginal posterior has its highest density at $p_F^{C} = 1.077$ which shifts to $p_F^{C} = 1.054$ after the marginalisation.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=15]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_marg_xsec}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=23]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_marg_xsec}
+	\end{subfigure}
+\caption{Selected two-dimensional marginal posteriors for $p_F^C$ and 2p2h shape O and BeRPA B, showing the resulting one-dimensional marginal posterior}
+\label{fig:marginalisation_pf}
+\end{figure}
+
+\paragraph{2p2h norm $\bar{\nu}_\mu$ bias}
+\autoref{fig:marginalisation_2p2h_norm_nubar} shows the same marginalisation plots for 2p2h norm $\bar{\nu}$ with 2p2h shape C and BeRPA E. The case of the 2p2h normalisation parameters are slightly different to the $p_F$ parameters: the normalisation is well-behaved across the phase space and looks very Gaussian and does not have any hard cut-offs near the prior (cut-off is when normalisation = 0). The marginsaliation effect happens instead with parameters that 2p2h normalisations correlate heavily with which may have non-Gaussian posteriors. The first example is with 2p2h shape C, in which we notice a tail at low 2p2h shape C and low 2p2h norm $\bar{\nu}$. Marginalising over the parameter bring the posterior density from 2p2h norm $\bar{\nu}$ = 1.061 to 0.842, which is the main cause of the ``bias''. Again, other parameters have the opposite effect: marginalising over BeRPA E causes the marginal posterior to shift from 2p2h norm $\bar{\nu}$ from 0.769 to 0.842.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=55]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_marg_xsec}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=60]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_marg_xsec}
+	\end{subfigure}
+	\caption{Selected two-dimensional marginal posteriors for 2p2h norm $\bar{\nu}$ with 2p2h shape C and BeRPA E showing the resulting one-dimensional marginal posterior}
+	\label{fig:marginalisation_2p2h_norm_nubar}
+\end{figure}
+
+\paragraph{$b\_29$ bias}
+The 30th beam parameter (``$b\_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV) sees similar effects from a number of parameters:
+``$b\_24$'' (ND280 FHC $\bar{\nu}_e$ 2.5-30 GeV), ``$b\_46$'' (ND280 RHC $\nu_\mu$ 1.5-2.5 GeV), ``$b\_49$'' (ND280 RHC $\nu_e$ 2.5-30 GeV) and BeRPA D. The marginalisation plots are shown in \autoref{fig:marginalisation_b29} and all the above parameters have identical shifts: $b\_29$ moves from 0.988 to 0.974. It is noteworthy that the above parameters are all only weakly constrained by ND280 data: there is no dedicated $\nu_e$ selection (b\_46 and b\_49) and high $Q^2$ CCQE events are sparse (BeRPA D). This can cause non-Gaussianity in that the chain may ``wander'' the space and explore a largely flat likelihood in one parameter.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=25]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_b29}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=47]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_b29}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=50]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_b29}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=61]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_b29}
+	\end{subfigure}
+	\caption{Selected two-dimensional marginal posteriors for ``$b\_29$'' (ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV)}
+	\label{fig:marginalisation_b29}
+\end{figure}
+In conclusion, the biases present in the Asmiov fit study seems likely to be due to marginlisation effects over parameters that are non-Gaussian, have hard cut-offs or are poorly constrained in the fit. These patterns are expected to arise again when fitting against real data.
 
 \subsection{Posterior predictive spectrum}
+\red{Put in reference to the posterior predictive calculations}
+The next statistical closure test we can perform on the Asimov data fit is to calculate the posterior predictive spectra and p-values. The procedure and aim of the tests is similar to that of the prior predictive spectrum calculation presented in \autoref{sec:Asimov_prior}, but the parameter variations no longer come form the pre-fit covariance matrices. Instead the parameter sets come from the Markov Chain steps after the burn-in has been removed, so the p-value reflects the future predictability of the model in light of the fit data, were more data to be observed.\red{clarify this?}
+
+The expectation of this test is to produce a p-value very close to 1.0, since the Asimov data is an exact parameter set of the model.
+
+The MCMC was run on the Asimov data fit, presented in \autoref{sec:asimov_fit}. The longest chain in \autoref{tab:asimov_mcmc_versions} was selected for the calculation of these spectra. The parameter sets are drawn randomly from the MCMC after burn-in (1/4, or 350,000 steps), which was chosen after stability was observed in the parameters and likelihoods, and the autocorrelations tended to zero. 
+
+The result is shown in \autoref{fig:posterior_predictive_asimov}, and as expected the p-value is 1.0. Comparing the y-axis ($-2\mathcal{L}_{\text{Sample}} \text{(Data, Draw)}$) to the prior predictive spectrum in \autoref{fig:prior_predictive_asimov}, the difference is almost one order of magnitude, essentially reflecting the much tighter model constraint before and after using ND280 data.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PostPred_procs}
@@ -1800,7 +1976,12 @@ After the closure tests are complete we fit the model to the Asimov data set. Th
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PostPred_procs}
 	\end{subfigure}
+\caption{Posterior predictive p-values for the fit to Asimov data}
+\label{fig:posterior_predictive_asimov}
 \end{figure}
+
+\subsection{Covariance matrix}
+The last consistency check
 
 \section{Datafit results}
 
