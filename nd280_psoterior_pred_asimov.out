@@ -1,0 +1,55 @@
+FGD1_numuCC_0pi_nom                          16723.8   16723.8   0         
+FGD1_numuCC_0pi_mean                         16723.8   16730.9   0.421294  
+FGD1_numuCC_0pi_mode                         16723.8   16717.6   0.791105  
+
+FGD1_numuCC_1pi_nom                          4381.47   4381.47   0         
+FGD1_numuCC_1pi_mean                         4381.47   4371.67   0.285353  
+FGD1_numuCC_1pi_mode                         4381.47   4368.32   0.934172  
+
+FGD1_numuCC_other_nom                        3943.95   3943.95   0         
+FGD1_numuCC_other_mean                       3943.95   3957.1    0.282943  
+FGD1_numuCC_other_mode                       3943.95   3954.17   0.846655  
+
+FGD2_numuCC_0pi_nom                          16959.3   16959.3   0         
+FGD2_numuCC_0pi_mean                         16959.3   16952.8   0.309672  
+FGD2_numuCC_0pi_mode                         16959.3   16948.8   0.825513  
+
+FGD2_numuCC_1pi_nom                          3564.23   3564.23   0         
+FGD2_numuCC_1pi_mean                         3564.23   3565.16   0.355927  
+FGD2_numuCC_1pi_mode                         3564.23   3544.41   0.893171  
+
+FGD2_numuCC_other_nom                        3570.94   3570.94   0         
+FGD2_numuCC_other_mean                       3570.94   3571.43   0.335447  
+FGD2_numuCC_other_mode                       3570.94   3565.15   1.02591   
+
+FGD1_anti-numuCC_QE_nom                      3587.77   3587.77   0         
+FGD1_anti-numuCC_QE_mean                     3587.77   3586.45   0.277212  
+FGD1_anti-numuCC_QE_mode                     3587.77   3581.35   0.805999  
+
+FGD1_anti-numuCC_nQE_nom                     1066.91   1066.91   0         
+FGD1_anti-numuCC_nQE_mean                    1066.91   1075.13   0.34655   
+FGD1_anti-numuCC_nQE_mode                    1066.91   1066.65   0.779044  
+
+FGD2_anti-numuCC_1_track_nom                 3618.29   3618.29   0         
+FGD2_anti-numuCC_1_track_mean                3618.29   3612.19   0.360471  
+FGD2_anti-numuCC_1_track_mode                3618.29   3601.25   1.25187   
+
+FGD2_anti-numuCC_N_tracks_nom                1077.24   1077.24   0         
+FGD2_anti-numuCC_N_tracks_mean               1077.24   1084.68   0.203048  
+FGD2_anti-numuCC_N_tracks_mode               1077.24   1080.75   1.07342   
+
+FGD1_NuMuBkg_CCQE_in_AntiNu_Mode__nom        1272.17   1272.17   0         
+FGD1_NuMuBkg_CCQE_in_AntiNu_Mode__mean       1272.17   1267.04   0.178698  
+FGD1_NuMuBkg_CCQE_in_AntiNu_Mode__mode       1272.17   1263.7    0.792555  
+
+FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode_nom        1357.45   1357.45   0         
+FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode_mean       1357.45   1357.19   0.37946   
+FGD1_NuMuBkg_CCnQE_in_AntiNu_Mode_mode       1357.45   1340.5    1.3821    
+
+FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__nom        1262.63   1262.63   0         
+FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__mean       1262.63   1259.48   0.352955  
+FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__mode       1262.63   1256.54   0.984615  
+
+FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_nom        1246.71   1246.71   0         
+FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_mean       1246.71   1246.61   0.333601  
+FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_mode       1246.71   1247.18   1.19283   
