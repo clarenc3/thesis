@@ -10,6 +10,7 @@ Describe me
 \section{Super-Kamiokande}
 
 \section{T2K oscillation analysis chain overview}
+\label{sec:oscchain}
 The T2K oscillation analyses have a myriad of input groups providing central values and covariances for the systematic parameters. The ND280 beam group provides data on the neutrino beam, the NuMu and Nue systematics and selections groups provide ND280 systematics and suggested binning, the Neutrino Interactions Working Group (NIWG) provide neutrino interaction systematics, and the T2K-SK group provides systematics and selections for SK. Since ND280 and SK are in the same neutrino beam, the high-statistics neutrino samples at ND280 can be used to constrain the simulation prior to seeing data at SK. At the near-detector the flux model, neutrino interaction model and ND280 model is fit. Details on these systematics will be provided in \autoref{subsec:ND280:syst:xsec, subsec:ND280:syst:flux, subsec:ND280:syst:det}.
 
 T2K has two separate groups fitting near-detector data with the intent of maximising model likelihood: BANFF \red{INSERT ACRONYM} and MaCh3 \red{INSERT ACRONYM}. The two frameworks use identical event selections and systematic parameters, outlined below in \autoref{subsec:ND280:sel} and \autoref{subsec:ND280:syst}, but entirely different methods of evaluating the model goodness and exploring the parameter space.
@@ -635,6 +636,7 @@ As expected from the neutrino flux at ND280 and neutrino interaction cross-secti
 
 Looking at the \cosmu projection in \autoref{fig:nominal_mccosmu}, the forward region of the CC0$\pi$ selection contains a large fraction of CC1$\pi$ events (50\%) and the highest amount of 2p2h. For the 1$\pi$ selection we note the CC coherent contribution almost exclusively in the most forward-going bin, as expected.
 \begin{table}
+	\centering
 	\begin{tabular}{l | c c c c c c | c}
 		\hline
 		\hline
@@ -914,7 +916,7 @@ The overall efficiency of ND280 in runs 2 to 6 was approximately 85\%, collectin
 	\label{fig:t2k_pot}
 \end{figure}
 
-\begin{table}[htbp]
+\begin{table}[h]
 	\centering
 	\begin{tabular}{ l c c c }
 		\hline
@@ -986,9 +988,8 @@ Defining the beam parameters as $\vec{b}$, cross-section parameters as $\vec{x}$
 \end{equation}
 
 The effect of each weight on the MC sample statistics is shown in \autoref{tab:eventrate_mach3}. The nominal flux and detector weights are 1.0, so are not included in the table
-
-\begin{table}[!h]
-	\resizebox{\textwidth}{!}{
+\begin{sidewaystable}
+	\centering
 	\begin{tabular}{ l | c | c | c | c | c }
 		\hline
 		Sample & Raw MC & POT only & POT+xsec & POT+NDCov & POT+BeamCov \\ 
@@ -1011,10 +1012,9 @@ The effect of each weight on the MC sample statistics is shown in \autoref{tab:e
 		\hline
 		\hline
 	\end{tabular}
-}
 	\caption{Event rates broken by type of weight applied for the nominal MC samples}
 	\label{tab:eventrate_mach3}
-\end{table}
+\end{sidewaystable}
 
 \subsection{Defining the test-statistic}
 As mentioned in \autoref{sec:ND280:sel}, data and simulation events are binned in \pmu, \cosmu for 14 different selections (seven per FGD): \numu CC0$\pi$, \numu CC1$\pi$, \numu CCOther, \numubar CC1Track, \numubar CCNTrack, \numu in RHC CC1Track and \numu in RHC CCNTrack. It is assumed that the data $n^{\alpha}$ in each bin $\alpha$, is a statistical fluctuation of the simulation in that bin, $\lambda^{\alpha}$, and the probability distribution to observe $n^{\alpha}$ given $\lambda^\alpha$ is Poissonian:
@@ -1054,11 +1054,12 @@ tests
 \section{Nominal model}
 \label{sec:nom_model}
 The rates for the data and nominal model with all mentioned Monte-Carlo scalings and selections are presented in \autoref{tab:event_rates_2017}. We note that generally the Monte-Carlo rates of the CC0$\pi$ and CC1Track are underestimated (2-3\%) , CC$1\pi$ is overestimated (6-11\%) and CCOther is under-estimated (5-15\%). \numubar selections except FGD2 CC1Track \numubar are overestimated by 5\%, with FGD1 being 2\%. The \numu in RHC selections are mildly underestimated. The rates across the FGDs are consistent for all selections.
-\begin{table}[!h]
+\begin{table}[h]
 	\centering
 	\begin{tabular}{ l | c c c }
 		\hline
-		Sample & Data & Nominal MC & Data/MC \\ \hline
+		\hline
+		Sample & Data & Nominal MC & Data/MC \\
 		\hline
 		\FGDCCNoPi{1}{\numu}           & 17136 & 16723.80 & 1.02 \\% \hline
 		\FGDCCOnePi{1}{\numu}          & 3954  & 4381.47 & 0.90 \\% \hline
@@ -1080,8 +1081,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 		\FGDCCOneTrk{2}{\numu} in RHC  & 1320 & 1262.63 & 1.05 \\% \hline
 		\FGDCCNTrk{2}{\numu} in RHC    & 1253 & 1246.71 & 1.01\\% \hline
 		\hline
-		\hline
-		Total & 64768 & 63632.86 & 0.98 \\
+		Total & 64768 & 63632.86 & 0.98 \\\hline
 		\hline
 	\end{tabular}
 	\caption{Observed and predicted event rates for the different \nd~samples in the near-detector}
@@ -1090,7 +1090,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 
 \autoref{fig:nominal2D_FGD1numu} shows the \pmu \cosmu distributions and their ratios for FGD1, normalised to bin width. For FGD1 CC0$\pi$, the largest Data/MC discrepancies are in the very forward region around 500-1000 MeV/c, with some areas of low cross-section  (e.g. \pmu 2-5 GeV/c, \cosmu 0.85-0.9) mismodelled. The lines of constant $Q^2$ suggest high $Q^2$ behaviour is over-estimated in Monte-Carlo, whereas for $0.05 < Q^2 < 0.15 \text{ GeV}^2$ it is under-estimated. For CC1$\pi$ the most forward-goign bins are almost consistently under-estimated. As for CC0$\pi$, the $Q^2 >0.1 \text{GeV}^2$ region is over-estimated, but it is less clear at lower $Q^2$. For CCOther there is a band-like behaviour in $Q^2$ going from over estimation to underestimation up until $Q^2\sim0.1\text{ GeV}^2$. The high-momentum areas are mostly under-estimated in Monte-Carlo. It is also clear that ND280 are dominated by $0.05 < Q^2 < 0.30\text{ GeV}^2$ events.
 
-\begin{figure}[!t]
+\begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=1]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 	\end{subfigure}
@@ -1127,7 +1127,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 
 \autoref{fig:nominal2D_FGD2numu} shows the same \numu selections for FGD2. The CC0$\pi$ selection is very similar to the FGD1 CC0$\pi$ selection, whereas the CC1$\pi$ selection appears better modelled for FGD2 than FGD1, although the opposite is true for CCOther.
 
-\begin{figure}[!t]
+\begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=10]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 	\end{subfigure}
@@ -1370,7 +1370,8 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 
 The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autoref{fig:nominal1D_cosmu} after applying the weights scaling show no noticeable differences to the raw MC distributions in \autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu}. Comparing the sample breakdown in \autoref{tab:nominal_mode_afterscale} to \autoref{tab:nominal_mode} shows the largest effect being CCQE 1.3\% units for FGD1 0$\pi$ and CCDIS for FGD1 and FGD2 (also impacting the NTrk selections).
 
-\begin{table}
+\begin{table}[h]
+	\centering
   \begin{tabular}{l | c c c c c c c }
     \hline
     \hline
@@ -1522,7 +1523,8 @@ To finally inspect the effects of the parameterisation we vary the parameters on
 
 The largest effects of the variations on the event rates in each sample is shown in \autoref{tab:onesigma}. For the CC0$\pi$ or 1 track selections the 2p2h normalisation parameters has the largest effect. This is expected because of the uncertainty applied is conservative at $\pm100\%$, so the lower event rate (15139.1 for FGD1 0$\pi$) is the event rate without any 2p2h $\nu$ events. For CC1$\pi$ selections, the largest effect is the $C_5^A$ parameter, which controls the single pion production model. For the CCOther selections the CC DIS parameter has the largest effect. For the RHC NTrack selections the $M_A^{RES}$ parameter is instead dominant, controlling the single pion production model of which the NTrack selections is dominated by (e.g. FGD1 NTrack 28.4\% CC1$\pi^{\pm,0}$ vs 26.9\% CCDIS in \autoref{tab:nominal_mode_afterscale}). The only selection which is does not have an interaction parameter as its largest uncertainity on event rate is FGD1 NTrk \numu, where the 29th beam parameter (RHC \numubar, $E_\nu = 0.7-1.0 \text{ GeV}$)--- the second largest effect is from $M_A^{RES}$, which predicts event rates from +1$\sigma$:1291.84 to -1$\sigma$: 1432.51. 
 
-\begin{table}[!h]
+\begin{table}[h]
+	\centering
 	\begin{tabular}{l | c | c c c }
 		\hline
 		\hline
@@ -1757,7 +1759,8 @@ The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay arou
 \subsection{Asimov fit}
 \label{sec:asimov_fit}
 After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain.\red{show autocorrelations?} \autoref{tab:asimov_mcmc_versions} shows the different chains completed for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
-\begin{table}[!h]
+\begin{table}[h]
+	\centering
 	\begin{tabular}{l | c c c}
 		\hline
 		\hline
@@ -1909,6 +1912,7 @@ To investigate if correlations and marginalisation are to blame for the ``bias''
 \end{figure}
 
 \subsubsection{Marginalisation effects}
+\label{sec:marginalisation}
 In \autoref{sec:asimov_fit} it was noted that many parameters appeared ``biased'' in their one-dimensional marginal posterior not agreeing with the input Asimov value. This is expected for parameters which correlate strongly with non-Gaussian parameters, of which the fit contains some. Here we investigate this further by looking at the two-dimensional marginal posterior for a few correlated parameters and comparing them to the one-dimensional marginal posterior. For the central value parameter estimates we use the highest posterior density point. We look at three selected parameters that showed bias: $p_F^{C}$, 2p2h norm $\bar{\nu}$ and the 30th beam parameter (``$b_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV).
 
 \paragraph{$p_F^C$ bias}
@@ -1966,6 +1970,7 @@ The next statistical closure test we can perform on the Asimov data fit is to ca
 
 \autoref{tab:asimov_posterior_pred} shows the event rates from the posterior predictive spectrum. We note a consistently low likelihood contribution from all samples ($\sim0.18-0.42$), totalling at 4.43. This is small compared to the number of bins being fit (1624), and the contributions enter primarily in low statistics areas (high \pmu, low \cosmu), where non-Gaussian behaviour is expected. The 2D \pmu \cosmu distributions and the bin-by-bin likelihood contributions for FGD1 and FGD2 0$\pi$ is shown in \autoref{fig:posterior_predictive_2d_asimov}.
 \begin{table}[h]
+	\centering
   \begin{tabular}{l c c c}
 \hline
 \hline
@@ -2035,6 +2040,7 @@ The result is shown in \autoref{fig:posterior_predictive_asimov}, and as expecte
 \end{figure}
 
 \subsection{Covariance matrix}
+\label{sec:covariance_asimov}
 The last consistency check is to inspect the covariance matrix after the fitting to the Asimov data. The expected outcome is heavily correlated flux parameters---roughly retaining the covariances from the input covariance matrix---, interaction parameters correlating internally for parameters that affect the same modes and topologies (e.g. $M_A^{QE}$ and BeRPA), and correlations between the flux parameters and cross-section parameters, especially for normalisation parameters.
 
 In \autoref{fig:asimov_full_corr} we present the full flux and cross-section parameter square root covariance and correlation matrix. The red square in the bottom left corner is the block of 100 flux parameters, all heavily internally correlated. The upper right corner is occupied by the cross-section parameters, which has some internal correlations, but far less than the fluxes. Many cross-section parameters correlate with the flux parameters, notably CC DIS---which is parameterised as $0.4/E_\nu$, so is essentially a flux normalisation weight for DIS events---, $C_5^A$---which largely controls the CC$1\pi$ nucleon level cross-section normalisation, and the BeRPA parameters---which control the $Q^2$ correction of CCQE events due to the RPA effects.
@@ -2103,7 +2109,8 @@ A more digestible version of \autoref{fig:asimov_full_corr} is shown in \autoref
 \section{Datafit}
 \label{sec:datafit}
 The nominal model presented in \autoref{sec:nom_model} is now fit to the data in the reconstructed \pmu \cosmu variables, using the full 14 samples. Three Markov Chain Monte Carlo samples were run with different step-size tunings, acceptance rates and sample lengths, and a conservative 1/4 burn-in was used for all chains in \autoref{tab:mcmc_data}.
-\begin{table}
+\begin{table}[h]
+	\centering
 	\begin{tabular}{l | c c c}
 		\hline \hline
 					& Steps		& Acceptance (\%) & Accepted steps \\
@@ -2244,7 +2251,6 @@ We note an interesting 2p2h normalisation, in which $\nu$ events pulls the norma
 	\label{fig:xsec_data}
 \end{figure}
 
-
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Data_0_BeRPA}
@@ -2256,6 +2262,34 @@ We note an interesting 2p2h normalisation, in which $\nu$ events pulls the norma
 	\end{subfigure}
 \caption{BeRPA weights for each step for the tuned fits to data and Asimov}
 \label{fig:berpa_data}
+\end{figure}
+
+To understand why BeRPA is heavily distorted from the nominal form, we can look at the $Q^2_{rec}$ distributions of the CC0$\pi$ selections in \autoref{fig:fgd1_cc0pi_q2_berpa} and \autoref{fig:fgd2_cc0pi_q2_berpa}. For both FGD1 and FGD2 we see a clear deficit at low $Q^2$, about 9\% in the first bin. We see the effect of BeRPA A on the pre-fit distributions is to move the low $Q^2$ region specifically, as is the case for BeRPA B although it targets slightly higher $Q^2$. The post-fit distributions are a clear improvement for all of the $Q^2$ space, and this is the driver behind the BeRPA pulls.
+
+\begin{figure}[h]
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 6mm}, clip,page=15]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_PostFit_5_4_rootstack}
+			\caption{Pre-fit, BeRPA A effect}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 6mm}, clip,page=15]{figures/mach3/data/postfit/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostFit_5_4_rootstack}
+			\caption{Post-fit, BeRPA B effect}
+		\end{subfigure}
+		\caption{FGD1 CC$0\pi$ in $Q^2_{rec}$after the fit to data, showing impact of the BeRPA parameters}
+		\label{fig:fgd1_cc0pi_q2_berpa}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 6mm}, clip,page=131]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_PostFit_5_4_rootstack}
+		\caption{Pre-fit, BeRPA A effect}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 6mm}, clip,page=127]{figures/mach3/data/postfit/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostFit_5_4_rootstack}
+		\caption{Post-fit, BeRPA B effect}
+	\end{subfigure}
+	\caption{FGD2 CC$0\pi$ in $Q^2_{rec}$ after the fit to data, showing impact of the BeRPA parameters}
+	\label{fig:fgd2_cc0pi_q2_berpa}
 \end{figure}
 
 Finally we note that the three different MCMC all produced very similar post-fit parameters.
@@ -2275,6 +2309,7 @@ The prior predictive spectrum and p-values are calculated in the same way as in 
 
 The table of prior predictive p-values broken down by sample is found in \autoref{tab:data_post_pvalue}. We note the high-statistics FHC samples all consistently having $p=0.000$, and the low-statistics RHC samples having slightly higher p-values than that (maximum of $p=0.017$ for FGD2 CCNTrack \numubar). This is primarily due to statistical fluctuations being a much larger effect for the low-statistics samples compared to the systematic fluctuations.
 \begin{table}[h]
+	\centering
 	\begin{tabular}{l | c c }
 		\hline \hline
 		Sample & Draw Fluc. & Pred. Fluc. \\
@@ -2316,7 +2351,8 @@ The posterior predictive spectrum and p-values were calculated in identical way 
 \end{figure}
 
 The p-values can further be broken down into sample contributions, and are presented in \autoref{tab:data_post_pvalue}. We note good p-values for all samples except FGD1 CCOther, which is zero. Importantly, the FGD2 CCOther selection observes a good p-value.
-\begin{table}
+\begin{table}[h]
+	\centering
 \begin{tabular}{l | c c }
 	\hline \hline
 	Sample & Draw Fluc. & Pred. Fluc. \\
@@ -2343,6 +2379,7 @@ The p-values can further be broken down into sample contributions, and are prese
 \caption{Posterior predictive p-values for each sample after the data fit}
 \label{tab:data_post_pvalue}
 \end{table}
+
 The test-statistic distributions are shown in \autoref{fig:posterior_pred_data_fgd1ccother} with FGD2 as comparison. Whereas the x-axis (statistically fluctuated test-statistic in the model) are similar for the two selections, we see a much higher test-statistic on the y-axis, reflecting the post-fit distribution for FGD1 is much worse than FGD2 and statistical fluctuations of each. This was already hinted at in \autoref{tab:postfit_eventrate}, where FGD1 CCOther showed only a marginal improvement after the fit.
 
 \begin{figure}[h]
@@ -2774,6 +2811,7 @@ For the NTrk distributions we see a similar story: the \pmu distributions are we
 \end{figure}
 
 \subsection{Covariance matrix}
+\label{sec:covariance_data}
 \autoref{fig:postfit_corr_nd280} shows the post-fit covariance matrix for the ND280 parameters, directly comparable to \autoref{fig:asimov_nd_corr}. The bottom row shows the absolute difference in each matrix multiplied by the sign of each matrix. Blue entries have flipped sign, whereas red entries have kept their sign in the fit to Asimov and real data. We see the flux parameters never flip signs and generally the covariance barely changes, whereas the correlation changes at a maximum of $\sim0.2$. The only parameters that swap signs are the cross-section parameters. Although sometimes strong in the correlation plot, looking at the covariance plot we see the effects are often limited to weak changes in the covariances.
 
 For the cross-section parameters we note stronger correlations for the dominant 2p2h parameters (2p2h shape C and 2p2h norm $\nu$) and the flux parameters. Whereas the 2p2p normalisation correlates stronger, the 2p2h shape parameter swaps sign frequently. This may be a result of the parameter being pushed against the boundary in the data fit. Interestingly, 2p2h norm $\nu$ correlations very differently with BeRPA A: we swap the sign and the strength. Again this is not surprising: the BeRPA A parameter is pulled far from the value in the Asimov fit (the prior), so is entirely possible to correlate differently.
@@ -2962,7 +3000,125 @@ The CC1$\pi$ parameters are mostly the same with small differences in $C_5^A$ an
 In summary, the two FGDs seem to produce mostly compatible post-fit parameters. The only large difference is the flux normalisation parameters at high $E_\nu$, where FGD1 prefers a much smaller normalisation than FGD2 ($\sim 0.85$ vs $\sim 1.00$). However, this region is very low statistics and barely contributes to the overall event rate at ND280 or SK, so is a small effect in practice. For the interaction parameters we observe slightly different parameters for $M_A^{QE}$ and BeRPA B, in which the fit settles somewhere in between.\red{Try to understand this?}
 
 \subsubsection{Excluding FGD1 CCOther}
-Finished
+The data fit showed a generally good description of the ND280 selections with acceptable p-values and best-fit test-statistics for all but FGD1 CCOther. Here we investigate the impact of the sample on the overall fit with the concern that if some parameterisation of systematics has gone awry it may produce erroneous parameter results propagated to SK. 
+
+The ND280 flux parameters in \autoref{fig:flux_data_nd280_nofgd1ccoth} are almost identical to the full 2017 fit and we note barely any differences: the largest change is 0.015 in the highest $E_\nu$ normalisation of FHC \numu.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.10\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=3]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=4]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=5]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=6]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=7]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=8]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=9]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\caption{ND280 flux parameters after the data fit for excluding FGD1 CCOther}
+	\label{fig:flux_data_nd280_nofgd1ccoth}
+\end{figure}
+
+The interaction parameters in \autoref{fig:xsec_data_nofgd1ccoth} shows slightly more change in the single and multi-pion related parameters, although the CC0$\pi$ parameters remain unchanged. The changes happen in the poorly constrained non-resonant $I_{1/2}$ background parameter, the CC DIS parameter, and some of the FSI parameters. All the differences are however well within the full data fit result.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=19]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=20]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=21]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\caption{Interaction parameters after the data fit for excluding FGD1 CCOther}
+	\label{fig:xsec_data_nofgd1ccoth}
+\end{figure}
+
+The event rate and $-2\ln\mathcal{L}_s$ for including and excluding FGD1 CCOther is shown in \autoref{tab:postfit_eventrate_nofgd1ccother} and as expected there is no greater difference between the two fits in central values or uncertainties: the total difference across all samples is 50.5 events and for the test-statistic it's 2.25.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ l | c c | c c }
+		\hline
+		\hline
+                Sample 		& \multicolumn{2}{c|}{Event rate} & \multicolumn{2}{c}{$-2\ln{\mathcal{L}_s}$} \\
+			                & 2017 & FGD1 CCOth & 2017 & FGD1 CCOth\\
+		\hline
+                FGD1 0$\pi$ 	& $17122.9\pm120.0$ & $17121.6\pm120.9$ & 172.21  & 170.75 \\ 
+                FGD1 1$\pi$ 	& $4053.8\pm54.3$   & $4032.4\pm54.0$ & 164.04 & 162.14	\\ 
+		\hline
+                FGD2 0$\pi$ 	& $17501.5\pm122.5$ & $17487.9\pm121.4$ & 166.15  & 166.28 \\ 
+                FGD2 1$\pi$ 	& $3409.4\pm48.2$   & $3408.7\pm46.1$ &  162.71 & 162.26	\\ 
+                FGD2 Other 	& $3917.8\pm50.8$  & $3906.6\pm55.8$ & 171.17 & 172.05	\\ 
+		\hline
+                FGD1 1Trk 	& $3509.6\pm50.1$  & $3513.1\pm50.1$ & 117.80 &117.15	\\ 
+                FGD1 NTrk 	& $1062.7\pm21.9$  & $1046.7\pm23.6$ & 76.50 	& 76.36\\ 
+                FGD2 1Trk 	& $3678.7\pm51.3$  & $3679.0\pm53.0$ & 129.84 	& 128.44 \\ 
+                FGD2 NTrk 	& $1108.4\pm23.5$  & $1105.1\pm19.8$ & 80.34 	& 80.72 \\ 
+		\hline
+                FGD1 \numu 1Trk & $1348.3\pm23.1$  & $1351.6\pm24.5$ & 66.51 	& 66.38 \\
+                FGD1 \numu NTrk & $1359.1\pm26.9$  & $1351.4\pm26.0$ & 61.75 	& 61.17 \\
+                FGD2 \numu 1Trk & $1323.1\pm23.8$  & $1327.6\pm23.3$ & 64.34 	& 65.09 \\
+                FGD2 \numu NTrk	& $1265.9\pm24.2$  & $1272.3\pm25.1$ & 75.70 	& 78.00 \\
+		\hline
+                Total 		& $60658.1$ & $60607.6\pm244.1$ & 1509.05 & 1506.81 \\ 
+		\hline
+		\hline
+	\end{tabular}
+        \caption{Event rate and test-statistic for 2017 with and without FGD1 CCOther. N.B. the total rate and test-statistic for 2017 has the values for FGD1 CCOther subtracted}
+	\label{tab:postfit_eventrate_nofgd1ccother}
+\end{table}
+
+Finally we recalculate the sample-by-sample p-values in \autoref{tab:data_post_pvalue_nofgd1ccother} for direct comparison to the full data fit values in \autoref{tab:data_post_pvalue}. The difference between the two fits' posterior predictive p-values is maximally 7\% for FGD2 NTrk (from 58.7\% to 51.7\%) and all p-values are deemed acceptable.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l | c c }
+		\hline \hline
+		Sample & Draw Fluc. & Pred. Fluc. \\
+		\hline
+		FGD1 0$\pi$ & 0.075 & 0.071 \\
+		FGD1 1$\pi$ & 0.089 & 0.086 \\
+		FGD2 0$\pi$ & 0.113 & 0.115 \\
+		FGD2 1$\pi$ & 0.087 & 0.096 \\
+		FGD2 Other  & 0.090 & 0.087 \\
+		\hline
+		FGD1 1Trk & 0.526 & 0.529 \\
+		FGD1 NTrk & 0.293 & 0.281 \\
+		FGD2 1Trk & 0.293 & 0.288 \\
+		FGD2 NTrk & 0.208 & 0.206 \\
+		\hline
+		FGD1 \numu 1Trk & 0.283 & 0.287 \\
+		FGD1 \numu NTrk & 0.860 & 0.859 \\
+		FGD2 \numu 1Trk & 0.313 & 0.307 \\
+		FGD2 \numu NTrk & 0.517 & 0.520 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Posterior predictive p-values for each sample after the data fit excluding FGD1 CCOther}
+	\label{tab:data_post_pvalue_nofgd1ccother}
+\end{table}
 
 \subsubsection{2015-like study}
 The 2017 oscillation analysis saw numerous updates to the cross-section model which attempted to provide freedom to nuclear effects such as multi-nucleon interactions and RPA corrections. Ideally, the flux and interaction model is moving closer towards reality than being an ``effective'' model, being able to only describe ND280-like detectors in a flux similar to that at ND280. 
@@ -3267,39 +3423,420 @@ In summary it appears releasing the single pion priors has little effect on the 
 Finished (data fit?)
 
 \section{Validating to BANFF}
+As outlined in \autoref{sec:oscchain}, T2K has two near-detector fitters: one Markov Chain Monte Carlo fitter (``MaCh3'') and one frequentist gradient descent fitter (``BANFF''). The results of the 2017 fits has been presented using the former, and this section shows the validation tests throughout the fitting process between the two fitters.
 
-\begin{table}[!h]
-  \begin{tabular}{ l | c c c | c }
-    \hline \hline 
-                Sample & Data  & BANFF & MaCh3 & (BANFF-MaCh3)/BANFF \\ 
-                \hline
-                FGD1 CC0$\pi$ &  17136 &  16723.69 & 16723.8 & -6.60E-6 \\
-                FGD1 CC1$\pi$ &  3954 &  4381.48 & 4381.47 & 2.28E-6\\ 
-                FGD1 CCOther &  4149 &  3943.95 & 3943.95 & 0E0\\ 
-                \hline
-                FGD2 CC0$\pi$ &  17443 &  16959.19 & 16959.3 & -6.49E-6 \\
-                FGD2 CC1$\pi$ &  3366 &  3564.23 & 3564.23 & 0E0\\
-                FGD2 CCOther &  4075 &  3570.95 & 3570.94 & 2.80E-6 \\
-                \hline
-                FGD1 Anu-CCQE &  3527 &  3587.65 & 3587.77 & -3.34E-5\\ 
-                FGD1 Anu-CCNQE &  1054 &  1066.91 & 1066.91 & 0E0\\
-                \hline
-                FGD2 Anu-CCQE &  3732 &  3618.27 & 3618.29 & -5.53E-6 \\
-                FGD2 Anu-CCNQE &  1026 &  1077.24 & 1077.24 & 0E0 \\
-                \hline
-                FGD1 Nu-CCQE &  1363 &  1272.17 & 1272.17 & 0E0\\
-                FGD1 Nu-CCNQE &  1370 &  1357.45 & 1357.45 & 0E0 \\
-                \hline
-                FGD2 Nu-CCQE &  1320 &  1262.63 & 1262.63 & 0E0 \\
-                FGD2 Nu-CCNQE &  1253 &  1246.71 & 1246.71 & 0E0 \\
-                \hline
-                Total &  64768 &  63632.53 & 63632.9 & -5.81E-6 \\
-                \hline
-                \hline
+The validation procedure is not expected to entirely agree at all stages due to numerous technical and statistical differences. As covered earlier, a gradient descent minimiser is designed to find a global minimum of the test-statistic whereas a MCMC samples to build up a posterior distribution in high dimension. Comparing parameter values between the two is not a trivial exercise, and differences are expected. 
+
+An example of a technical difference is MaCh3 evaluates the weights from cross-section parameter variations on GPGPUs\footnote{General Purpose Graphics Processing Units}, which involves floating point operations in 32 (float) rather than 64 bits (double). The effect of this on 35,000 events from run 3c is shown in \autoref{fig:cpu_vs_gpu_weight}, where we observe weight differences on the 1E-7 scale per event, which agrees well with the float vs double precision. Hence we expect small differences in event rates, although too small to notice in a likelihood evaluation.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.45\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 20mm 0mm 0mm}, clip, page=1]{figures/mach3/Asimov/fsi_inel_hi_diff}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.45\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 20mm 0mm 0mm}, clip, page=1]{figures/mach3/Asimov/pfo_diff}
+	\end{subfigure}
+	\caption{Absolute weight differences using a GPU versus CPU for a random parameter variation in MaCh3 for Run 3c Monte-Carlo}
+	\label{fig:cpu_vs_gpu_weight}
+\end{figure}
+
+Weights from cross-section parameters were also compared for a selected few events and was found to be accurate to 1E-6. 
+
+\subsection{Nominal model}
+The nominal model and selection are run through both the MaCh3 and BANFF frameworks and the nominal event rates are compared in \autoref{tab:eventrate_banff_mach3}. The largest difference is seen in the FGD1 1Trk selection $\mathcal{O}(10^{-3})$ percent and the total difference is $\mathcal{O}(10^{-4})$ percent, which were deemed acceptable.
+\begin{table}[h]
+	\centering
+  \begin{tabular}{ l | c c c c }
+    \hline 
+    \hline 
+    Sample & Data  & BANFF & MaCh3 & $\frac{\text{BANFF-MaCh3}}{\text{BANFF}}$ \\ 
+    \hline
+    FGD1 0$\pi$ &  17136 &  16723.69 & 16723.8 & -6.60E-6 \\
+    FGD1 1$\pi$ &  3954 &  4381.48 & 4381.47 & 2.28E-6\\ 
+    FGD1 Other &  4149 &  3943.95 & 3943.95 & 0E0\\ 
+    \hline
+    FGD2 0$\pi$ &  17443 &  16959.19 & 16959.3 & -6.49E-6 \\
+    FGD2 1$\pi$ &  3366 &  3564.23 & 3564.23 & 0E0\\
+    FGD2 Other &  4075 &  3570.95 & 3570.94 & 2.80E-6 \\
+    \hline
+    FGD1 1Trk &  3527 &  3587.65 & 3587.77 & -3.34E-5\\ 
+    FGD1 NTrk &  1054 &  1066.91 & 1066.91 & 0E0\\
+    \hline
+    FGD2 1Trk &  3732 &  3618.27 & 3618.29 & -5.53E-6 \\
+    FGD2 NTrk &  1026 &  1077.24 & 1077.24 & 0E0 \\
+    \hline
+    FGD1 \numu 1Trk &  1363 &  1272.17 & 1272.17 & 0E0\\
+    FGD1 \numu NTrk &  1370 &  1357.45 & 1357.45 & 0E0 \\
+    \hline
+    FGD2 \numu 1Trk &  1320 &  1262.63 & 1262.63 & 0E0 \\
+    FGD2 \numu NTrk &  1253 &  1246.71 & 1246.71 & 0E0 \\
+    \hline
+    Total &  64768 &  63632.53 & 63632.9 & -5.81E-6 \\
+    \hline
+    \hline
   \end{tabular}
-        \caption{BANFF and MaCh3 comparison of final event rates for the nominal model and data}
-        \label{tab:eventrate_banff_mach3}
+  \caption{BANFF and MaCh3 comparison of final event rates for the nominal model and data}
+  \label{tab:eventrate_banff_mach3}
 \end{table}
+
+\autoref{fig:mach3_banff_prefit_fgd1} and \autoref{fig:mach3_banff_prefit_fgd2} show the 2D \pmu \cosmu distributions for FGD1 and FGD2 respectively, with BANFF-MaCh3 on the z-axis. We see the differences in \autoref{eventrate_banff_mach3} come primarily from one or two bins, and it was found these differences were due to the interaction parameter evaluations mentioned earlier.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=1]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{0$\pi$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=2]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{1$\pi$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=3]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{Other}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=4]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=5]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{NTrk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=6]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{\numu 1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=7]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{\numu NTrk}
+	\end{subfigure}
+	\caption{FGD1 selections showing the nominal MaCh3-BANFF events}
+	\label{fig:mach3_banff_prefit_fgd1}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=8]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{0$\pi$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=9]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{1$\pi$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=10]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{Other}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=11]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=12]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{NTrk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=13]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{\numu 1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 70mm 100mm 7mm}, clip, page=14]{figures/mach3/banff/momentumProjections_170328_withMACH3_MAQEonly}
+		\caption{\numu NTrk}
+	\end{subfigure}
+	\caption{FGD2 selections showing the nominal MaCh3-BANFF events}
+	\label{fig:mach3_banff_prefit_fgd2}
+\end{figure}
+
+\subsection{Likelihood scans}
+The likelihood scans in \autoref{sec:llh_scan} are also validated across the two groups. As then, likelihood response is scanned across a parameter one at a time, and all other parameters are fixed to their nominal values. This validation has two main purposes: checking the likelihood response of the prior term and the sample term. The plots shown below are for the total likelihood.
+
+A selection of ND280 flux parameters are shown in \autoref{fig:banff_asimov_scan_ND280_flux}. We see very good agreement for the different groups of parameters, and all other flux parameters display this property.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=4]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FHC \numu 0.6-0.7 GeV}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=19]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FHC \nue 0.7-0.8 GeV}
+	\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=36]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{RHC \numu 1.0-1.5 GeV}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=47]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{RHC \numu 0.8-1.5 GeV}
+\end{subfigure}
+\caption{Likelihood scan comparison between BANFF and MaCh3 for ND280 flux parameters}
+\label{fig:banff_asimov_scan_ND280_flux}
+\end{figure}
+
+\autoref{fig:banff_asimov_scan_SK_flux} shows the same parameters as in \autoref{fig:banff_asimov_scan_ND280_flux} but for SK. We again note perfect agreement for all parameters.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=54]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FHC \numu 0.6-0.7 GeV}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=69]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FHC \nue 0.7-0.8 GeV}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=86]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{RHC \numu 1.0-1.5 GeV}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=97]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{RHC \numu 0.8-1.5 GeV}
+	\end{subfigure}
+	\caption{Likelihood scan comparison between BANFF and MaCh3 for SK flux parameters}
+	\label{fig:banff_asimov_scan_SK_flux}
+\end{figure}
+
+\autoref{fig:banff_asimov_scan_xsec} shows the likelihood responses for a selection of interaction parameters, which also agree well.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=105]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FSI Cex lo}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=111]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{2p2h norm $\bar{\nu}$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=113]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{2p2h shape C}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=116]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{BeRPA B}
+	\end{subfigure}
+	\caption{Likelihood scan comparison between BANFF and MaCh3 for interaction parameters}
+	\label{fig:banff_asimov_scan_xsec}
+\end{figure}
+
+\autoref{fig:banff_asimov_scan_ND280} shows the likelihood response for a selection of ND280 detector parameters and again perfect agreement is seen.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=135]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FGD1 CC0$\pi$ 0-1 GeV, 0.85-0.94}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=324]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FGD1 \numubar CC1Trk 3-5 GeV, 0.99-1.00}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=569]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FGD2 CCOther 3-5 GeV, 0.85-0.90}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip, page=682]{figures/mach3/banff/Asimov_scan_20July_flux_Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
+		\caption{FGD2 \numubar CCNTrk 1.5-2 GeV, 0.93-0.90}
+	\end{subfigure}
+	\caption{Likelihood scan comparison between BANFF and MaCh3 for ND280 detector parameters}
+	\label{fig:banff_asimov_scan_ND280}
+\end{figure}
+
+\subsection{1$\sigma$ variations}
+We also validate the two frameworks on a parameter-by-parameter basis by varying all the parameters by the pre-fit $1\sigma$. This validation is meant to purely look at the sample response to specific parameters and catch erroneous implementation and \pmu \cosmu responses---e.g. CCOther selections have strong responses to 2p2h variations, or a FGD1 CC0$\pi$ event having a response to an FGD2 CC1$\pi$ ND280 parameter, or a FHC \numu event having a response to a variation of the RHC flux parameters.
+
+To demonstrate, \autoref{tab:1sigmavar_banff_berpa_b} shows the responses of all the samples to a variation in the BeRPA B interaction parameter. The largest difference is seen in the FGD1 CC0$\pi$, followed by the FGD2 CC0$\pi$ sample, much in accordance with the nominal event rate differences in \autoref{tab:eventrate_banff_mach3}.
+\begin{sidewaystable}
+	\centering
+\begin{tabular}{l | c c | c c | c c | c}
+	\hline
+	\hline
+	 Sample  & \multicolumn{2}{c|}{-1$\sigma$} & \multicolumn{2}{c|}{Nominal} & \multicolumn{2}{c|}{+1$\sigma$} & \underline{BANFF-MaCh3}\\
+			 &  BANFF  &  MaCh3  &  BANFF  &  MaCh3  & BANFF & MaCh3 & BANFF\\ 
+	\hline
+	 FGD1 0$\pi$ &  16081.46 &  16081.60 &  16723.69 &  16723.80 &  17365.92 &  17366.10 &  -1E-5 \\ 
+	 FGD1 1$\pi$ &  4372.10 &  4372.09 &  4381.48 &  4381.47 &  4390.85 &  4390.84 &  3E-6 \\ 
+	 FGD1 Other &  3934.03 &  3934.03 &  3943.95 &  3943.95 &  3953.88 &  3953.87 &  2E-6 \\ 
+	 \hline
+	 FGD2 0$\pi$ &  16315.62 &  16315.70 &  16959.19 &  16959.30 &  17602.77 &  17602.90 &  -7E-6 \\ 
+	 FGD2 1$\pi$ &  3556.52 &  3556.52 &  3564.23 &  3564.23 &  3571.94 &  3571.94 &  1E-6 \\ 
+	 FGD2 Other &  3561.12 &  3561.12 &  3570.95 &  3570.94 &  3580.77 &  3580.77 &  0E-6 \\ 
+	 \hline
+	 FGD1 1Trk &  3478.23 &  3478.35 &  3587.65 &  3587.77 &  3697.08 &  3697.20 &  -3.3E-6 \\ 
+	 FGD1 NTrk &  1063.27 &  1063.26 &  1066.91 &  1066.91 &  1070.55 &  1070.55 &  1E-6 \\
+	 \hline
+	 FGD2 1Trk &  3509.99 &  3510.01 &  3618.27 &  3618.29 &  3726.55 &  3726.58 &  -7E-6 \\ 
+	 FGD2 NTrk &  1073.57 &  1073.57 &  1077.24 &  1077.24 &  1080.91 &  1080.91 &  3E-6 \\ 
+	 \hline
+	 FGD1 \numu 1Trk &  1235.74 &  1235.74 &  1272.17 &  1272.17 &  1308.60 &  1308.60 &  1E-6 \\ 
+	 FGD1 \numu NTrk &  1349.19 &  1349.18 &  1357.45 &  1357.45 &  1365.72 &  1365.72 &  3E-6 \\
+	 \hline
+	 FGD2 \numu 1Trk &  1226.51 &  1226.51 &  1262.63 &  1262.63 &  1298.76 &  1298.76 &  1E-6 \\ 
+	 FGD2 \numu NTrk &  1239.87 &  1239.87 &  1246.71 &  1246.71 &  1253.54 &  1253.54 &  4E-6 \\ 
+	 \hline
+	 \hline
+	\end{tabular}
+\caption{1$\sigma$ variations for BeRPA B in MaCh3 and BANFF. N.B. the last column is calculated with event rates to four decimal places}
+\label{tab:1sigmavar_banff_berpa_b}
+\end{sidewaystable}
+
+\subsection{Asimov fit}
+BANFF performs the same Asimov fit as MaCh3 in \autoref{fig:banff_asimov}. However it does not suffer from marginalisation issues and additionally starts the fit at the local minimum, so has no biases. Because of this, direct comparisons are not particularly enlightening. Comparing to the MaCh3 result in \autoref{sec:asimov_fit} and \autoref{fig:flux_asimov_fhc}, \autoref{fig:flux_asimov_rhc} and \autoref{fig:xsec_asimov} we see compatible uncertainties on all parameters.
+\begin{figure}[h]
+	\begin{subfigure}[t]{\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 17mm 0mm 0mm}, clip, page=1]{figures/mach3/banff/asimov_banff_flux}
+	\caption{Flux parameters}
+	\end{subfigure}
+\begin{subfigure}[t]{\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 15mm 0mm 0mm}, clip, page=1]{figures/mach3/banff/asimov_banff_xsec}
+	\caption{Interaction parameters}
+\end{subfigure}
+\caption{BANFF post-fit parameter when fitting the Asimov data set}
+\label{fig:banff_asimov}
+\end{figure}
+
+\subsection{Data fit}
+We compare the global minimum from BANFF to the 1D marginalised posteriors from MaCh3, keeping the marginalisation issues detailed in \autoref{sec:marginalisation} in mind.
+
+The flux parameters are compared in \autoref{fig:banff_mach3_flux} and we see a consistent shift in the parameters. The shapes are near identical, with BANFF seeing consistently higher flux parameters. This is largely expected due to the correlations of the flux with interaction parameters that showed marginalisation biases in the Asimov fit. The uncertainties on each of the parameters is consistent.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1]{figures/mach3/banff/mach3banff}
+	\end{subfigure}
+\begin{subfigure}[t]{0.49\textwidth}
+\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=2]{figures/mach3/banff/mach3banff}
+\end{subfigure}
+
+\begin{subfigure}[t]{0.49\textwidth}
+\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=3]{figures/mach3/banff/mach3banff}
+\end{subfigure}
+\begin{subfigure}[t]{0.49\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=4]{figures/mach3/banff/mach3banff}
+\end{subfigure}
+\caption{Flux parameters post-fit for BANFF and MaCh3}
+\label{fig:banff_mach3_flux}
+\end{figure}
+
+\autoref{fig:banff_mach3_xsec} shows the post-fit interaction parameters where differences aren't as pronounced. The uncertainties on $p_F$ are slightly different due to the method of evaluating the error (arithmetic mean) and the non-Gaussian shape of the one dimensional posterior. 2p2h normalisations and BeRPA A and B are different, as expected from the marginalisation bias present in the Asimov. The CC DIS parameter is also ``fit lower'' in MaCh3, likely due to the correlations with the flux parameters which are also fit higher.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=6]{figures/mach3/banff/mach3banff}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=5]{figures/mach3/banff/mach3banff}
+	\end{subfigure}
+\caption{Interaction parameters post-fit for BANFF and MaCh3}
+\label{fig:banff_mach3_xsec}
+\end{figure}
+
+Finally we can also compare the final event rates and test-statistics in \autoref{tab:banff_mach3_postfit_eventrate}. The difference in number of events is -15.38 (MaCh3 higher), corresponding to -0.02\%. The test-statistic from the samples differs by -11.96 and as expected BANFF is lower. Comparing to the total number of fit bins (1624) and degrees of freedom (938), the $\Delta\left(-2\ln\mathcal{L}_s/\text{nDOF}\right) \sim -0.01$. The sample with the largest difference in test-statistic are the 0$\pi$ selections and FGD2 CCOther, where the difference is approximately 2.
+\begin{table}[h]
+	\centering 
+		\begin{tabular}{ l | c c | c c }
+			\hline
+			\hline
+                        Sample 		& \multicolumn{2}{c|}{Event rate} & \multicolumn{2}{c}{-$2\ln{\mathcal{L}}_{s}$} \\
+                                        & BANFF         & MaCh3    & BANFF    & MaCh3 \\
+                        \hline
+			FGD1 0$\pi$ 	& 17122.22 	& 17123.80 & 169.97   & 172.21 	\\ 
+			FGD1 1$\pi$ 	& 4061.65 	& 4054.18  & 164.06   & 164.04 	\\ 
+			FGD1 Other 	& 4095.58 	& 4103.96  & 223.49   & 224.03 	\\ 
+                        \hline
+			FGD2 CC0$\pi$ 	& 17494.56 	& 17500.70 & 164.40   & 166.15 	\\ 
+			FGD2 CC1$\pi$ 	& 3416.28 	& 3409.63  & 162.62   & 162.71 	\\ 
+			FGD2 CCOther 	& 3915.36 	& 3914.40  & 168.82   & 171.17 	\\ 
+                        \hline
+			FGD1 Anu-CCQE 	& 3503.79 	& 3509.37  & 117.79   & 117.80 	\\ 
+			FGD1 Anu-CCNQE 	& 1052.69 	& 1062.70  & 74.98    & 76.50 	\\ 
+			FGD2 Anu-CCQE 	& 3685.46  	& 3678.66  & 129.09   & 129.84 	\\ 
+			FGD2 Anu-CCNQE 	& 1097.38	& 1108.52  & 78.95    & 80.34 	\\ 
+                        \hline
+			FGD1 Nu-CCQE 	& 1353.44 	& 1347.50  & 66.99    & 66.51 	\\ 
+			FGD1 Nu-CCNQE 	& 1354.02 	& 1358.99  & 62.00    & 61.75 	\\ 
+			FGD2 Nu-CCQE 	& 1330.49 	& 1323.30  & 62.79    & 64.34 	\\ 
+			FGD2 Nu-CCNQE 	& 1263.12 	& 1265.69  & 75.17    & 75.70 	\\ 
+			\hline
+			Total 		& 64746.02      & 64761.40 & 1721.12  & 1733.08 	\\ 
+                        \hline
+                        \hline
+		\end{tabular}
+	\caption{Comparison of the event rates for data post-fit MC and -$2\ln{\mathcal{L}}_{s}$ contributions broken by sample for MaCh3 and BANFF}
+	\label{tab:banff_mach3_postfit_eventrate}
+\end{table}
+
+\subsection{Post fit distributions}
+We now compare the post-fit \pmu distributions from BANFF and MaCh3. The BANFF post-fit uses the parameter set which finds the global minimum, and MaCh3 uses the arithmetic mean of each one-dimensional marginalised posterior distribution. Purely for reference, the uncertainty on the MaCh3 prediction is chosen to be the post-fit uncertainty on $M_A^{QE}$.
+
+\autoref{fig:mach3_banff_postfit_fgd1} shows the post-fit predictions for FGD1 and \autoref{fig:mach3_banff_postfit_fgd2} for FGD2. The 0$\pi$ distributions appear identical, and 1$\pi$ are slightly higher for MaCh3 than for BANFF, which is also true for the CCOther selection. The only difference in the RHC selections is in the NTrk selection, where again MaCh3 predicts a slightly higher number of events.
+\begin{figure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={15mm 15mm 15mm 15mm}, clip, page=1]{figures/mach3/banff/mach3banff_mom}
+	\end{subfigure}
+
+\begin{subfigure}[t]{0.32\textwidth}
+	\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=2]{figures/mach3/banff/mach3banff_mom}
+	\caption{0$\pi$}
+\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=3]{figures/mach3/banff/mach3banff_mom}
+		\caption{1$\pi$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=4]{figures/mach3/banff/mach3banff_mom}
+		\caption{Other}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=5]{figures/mach3/banff/mach3banff_mom}
+		\caption{1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=6]{figures/mach3/banff/mach3banff_mom}
+		\caption{NTrk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=7]{figures/mach3/banff/mach3banff_mom}
+		\caption{\numu 1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=8]{figures/mach3/banff/mach3banff_mom}
+		\caption{\numu NTrk}
+	\end{subfigure}
+	\caption{FGD1 selections in \pmu with data, prefit, BANFF postfit and MaCh3 postfit}
+	\label{fig:mach3_banff_postfit_fgd1}
+\end{figure}
+
+\begin{figure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=9]{figures/mach3/banff/mach3banff_mom}
+		\caption{0$\pi$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=10]{figures/mach3/banff/mach3banff_mom}
+		\caption{1$\pi$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=11]{figures/mach3/banff/mach3banff_mom}
+		\caption{Other}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=12]{figures/mach3/banff/mach3banff_mom}
+		\caption{1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=13]{figures/mach3/banff/mach3banff_mom}
+		\caption{NTrk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=14]{figures/mach3/banff/mach3banff_mom}
+		\caption{\numu 1Trk}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.24\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 3mm 15mm 10mm}, clip, page=15]{figures/mach3/banff/mach3banff_mom}
+		\caption{\numu NTrk}
+	\end{subfigure}
+	\caption{FGD2 selections in \pmu with data, prefit, BANFF postfit and MaCh3 postfit}
+	\label{fig:mach3_banff_postfit_fgd2}
+\end{figure}
+
 
 \section{Impact on SK oscillation analyses}
 
