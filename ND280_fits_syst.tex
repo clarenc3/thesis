@@ -1,0 +1,128 @@
+\section{Systematics}
+\label{sec:syst}
+The fit's main goal is to minimise impact of systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between ND280 and SK are the neutrino flux parameters (since T2K and SK are in the same neutrino ``beamline''), and neutrino-nucleus interaction parameters. Nuisance parameters are mostly ND280 detector parameters and cross-section parameters that are parametrised as only effective on Carbon. As such, there are many ``parameters of interest'', which the following sections cover.
+
+\subsection{Flux}
+\label{subsec:syst_flux}
+The flux systematics are evaluated by varying underlying parameters in the flux model and using NA61/SHINE \red{CITE} data. [7] N. Antoniou et al. CERN-SPSC-2006-034, 2006.
+
+The NA61 data comes from runs using the thin target, whereas the T2K target is roughly 2 interaction lengths The data is $\pi^\pm$, $K^\pm$, $K^0_S$ and $\rho^+$.
+
+HARP data used for pion rescattering.
+
+Talk about the corrections in psyche
+\begin{itemize}
+  \item ND280, SK FHC \numu; ND280, SK RHC \numubar, :\\
+    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
+
+  \item ND280, SK FHC \numubar; ND280, SK RHC \numu:\\
+    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30
+
+  \item ND280, SK FHC \nue; ND280, SK RHC \nuebar:\\
+    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30
+
+  \item ND280, SK FHC \nuebar; ND280, SK RHC \nue:\\
+    $E_\nu^{true}$: 0, 2.5, 30
+\end{itemize}
+
+\subsection{Detector systematics}
+\label{subsec:syst_nd280}
+The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics, such as TPC PID, FGD PID, TPC Momentum scale\red{talk about all the detector systematics in summary} and study the impact on the number of predicted events in each \pmu \cosmu bin. 
+
+There are three categories of underlying ND280 systematics: observable-variation systematics, efficiency like systematics, normalisation systematic
+
+The event variation in each \pmu \cosmu bin is assumed to be Gaussian \red{show examples of good Gaussian bins and bad ones} 
+
+see TN 212 p 95
+Field distortions
+Momentum resolution
+Momentum scale
+TPC PID
+FGD PID
+Time of flight
+
+charge ID efficiency
+tpc cluster eff
+tpc track eff
+fgd track eff
+tpc-fgd matching eff
+michel electron
+oofv bckg
+pile-up
+fgd mass
+pion SI
+
+all magnet
+sand muon bkgd
+total
+
+read p39 onwards about syst
+
+The number of detector systematics still decreased slightly from 580 to 556 due to merging bins with similar detector systematic effects for the rebinned samples.
+All the consecutive bins with similar systematic values have been merged in order to reach a lower number of parameters (556) while the number of bins in the fit increased a lot (1624 bins), keeping the number of parameters under control.
+It has been demonstrated with Asimov fits, the results of which are shown in \autoref{fig:2017_rebin_asimov}, that the effect of this rebinning was small.
+
+The effect of changing the ND280 systematics binning was done with an older cross-section model than which the fit was completed in. This was due to a late delivery of the cross-section model \red{write an appendix on this model}. The flux parameters were entirely consistent.
+\begin{table}
+	\centering
+	\begin{tabular}{ l | c | c }
+		\hline
+		Parameter & Fit binning & Similar syst. merge \\
+		\hline
+		\hline
+		FSI INEL LO & $0.0 \pm 0.202$ & $0.0\pm0.200$ \\
+		FSI INEL HI & $0.0 \pm 0.235$ & $0.0\pm0.233$ \\
+		FSI PI PROD & $0.0 \pm 0.347$ & $0.0\pm0.344$ \\
+		FSI CEX LO  & $0.0 \pm 0.416$ & $0.0\pm0.412$ \\
+		FSI CEX HI  & $0.0 \pm 0.193$ & $0.0\pm0.191$ \\
+		$M_A^{QE}$  & $1.2 \pm 0.0517$ & $1.2\pm0.0512$ \\
+		$p_F^{C}$   & $217 \pm 36.96$ & $217\pm36.021$ \\
+		2p2h norm C & $100 \pm 30.79$ & $100\pm30.56$ \\
+		$E_B^{C}$   & $25.0 \pm 8.57$ & $25.0\pm8.56$ \\
+		$p_F^{O}$   & $225 \pm 57.61$  & $225\pm56.16$ \\
+		2p2h norm O & $100 \pm 277.98$ & $0.0\pm272.62$ \\
+		$E_B^{C}$   & $27.0 \pm 9.00$ & $27.0\pm9.00$ \\
+		$C_5^A$		& $1.01 \pm 0.066$ & $1.01\pm0.064$ \\
+		$M_A^{1\pi}$ & $0.95 \pm 0.060$ & $0.95\pm0.059$ \\
+		$I_{1/2}$ non-res & $1.30 \pm 0.180$ & $1.30\pm0.180$ \\
+		CC $\nu_e$ norm & $1.00 \pm 0.030$ & $1.00\pm0.030$ \\
+		DIS Shape	& $0.00 \pm 0.208$ & $0.0\pm0.208$ \\
+		CC Coherent norm & $1.0 \pm 0.258$ & $1.0\pm0.257$ \\
+		NC Coherent norm & $1.0 \pm 0.299$ & $1.0\pm0.299$ \\
+		NC Other & $1.0 \pm 0.182$ & $1.0\pm0.181$ \\
+		2p2h $\bar{\nu}$ & $1.0 \pm 0.332$ & $1.0\pm0.329$ \\
+		\hline
+	\end{tabular}
+	\caption{Cross-section parameter results from comparisons using fit binning and a merged binning for the 2015 cross-section model.}
+\label{fig:2017_rebin_asimov}
+\end{table}
+
+The merged systematics binning was improved to:
+\begin{itemize}
+	\item FHC $\nu_{\mu}$~CC0$\pi$ bin edges: \\
+	\pmu (MeV/c): 0, 1000, 1250, 2000, 3000, 5000, 30000 \\
+	\cosmu:  -1, 0.6, 0.7, 0.8, 0.85,0.94, 0.96, 1
+	\item FHC $\nu_{\mu}$~CC1$\pi$  bin edges: \\
+	\pmu (MeV/c):  0, 300, 1250, 1500, 5000, 30000 \\
+	\cosmu: -1, 0.7, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\item FHC $\nu_{\mu}$~CCOther bin edges: \\
+	\pmu (MeV/c): 0, 1500, 2000, 3000, 5000, 30000 \\
+	\cosmu:  -1, 0.8, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\item RHC $\bar{\nu}_{\mu}$~CC 1-Track bin edges: \\
+	\pmu (MeV/c): 0, 400, 900, 1100, 2000, 10000 \\
+	\cosmu:  -1, 0.6, 0.7, 0.88, 0.95, 0.97, 0.98, 0.99, 1.00
+	\item RHC $\bar{\nu}_{\mu}$~CC N-Track bin edges: \\
+	\pmu (MeV/c):  0, 700, 1200, 1500, 2000, 3000, 10000 \\
+	\cosmu: -1, 0.85, 0.88, 0.93, 0.98, 0.99, 1.00
+	\item RHC $\nu_{\mu}$~CC 1-Track bin edges: \\
+	\pmu (MeV/c):  0, 400, 800, 1100, 2000, 10000 \\
+	\cosmu:   -1, 0.7, 0.85, 0.90, 0.93, 0.96, 0.98, 0.99, 1.00
+	\item RHC $\nu_{\mu}$~CC N-Track bin edges: \\
+	\pmu (MeV/c):  0, 1000, 1500, 2000, 3000, 10000 \\
+	\cosmu: -1, 0.8, 0.90, 0.93, 0.95, 0.96, 0.97, 0.99, 1.00
+\end{itemize}
+Be mega clear that each of these above make up one parameter
+
+\subsection{Cross-section}
+\label{subsec:syst_xsec}
+splines vs normalisation parameter, Maybe extra bit on BeRPA because of involvement

@@ -1,0 +1,28 @@
+\chapter{ND280 fits}
+\label{chap:ND280}
+
+\section{T2K}
+The T2K experiment
+
+\section{ND280}
+Describe me
+
+\section{Super-Kamiokande}
+
+\section{T2K oscillation analysis chain overview}
+\label{sec:oscchain}
+The T2K oscillation analyses have a myriad of input groups providing central values and covariances for the systematic parameters. The ND280 beam group provides data on the neutrino beam, the NuMu and Nue systematics and selections groups provide ND280 systematics and suggested binning, the Neutrino Interactions Working Group (NIWG) provide neutrino interaction systematics, and the T2K-SK group provides systematics and selections for SK. Since ND280 and SK are in the same neutrino beam, the high-statistics neutrino samples at ND280 can be used to constrain the simulation prior to seeing data at SK. At the near-detector the flux model, neutrino interaction model and ND280 model is fit. Details on these systematics will be provided in \autoref{subsec:ND280:syst:xsec, subsec:ND280:syst:flux, subsec:ND280:syst:det}.
+
+T2K has two separate groups fitting near-detector data with the intent of maximising model likelihood: BANFF \red{INSERT ACRONYM} and MaCh3 \red{INSERT ACRONYM}. The two frameworks use identical event selections and systematic parameters, outlined below in \autoref{subsec:ND280:sel} and \autoref{subsec:ND280:syst}, but entirely different methods of evaluating the model goodness and exploring the parameter space.
+
+BANFF interfaces to the popular gradient-descent minimizer MINUIT \red{CITE} and MaCh3 uses a custom Markov Chain Monte Carlo sampler to sample the high dimensional parameter space. Importantly, the BANFF attempts to find the global minimum of the test-statistic given the data and the model, whereas MaCh3 explores an area around the minimum test-statistic with the intent of sampling the Bayesian posterior. Therefore, MaCh3 does not necessarily locate a set of ``best-fit'' parameters with covariances assuming a parabolic minimum: instead it provides a full high-dimensional posterior with arbitrary shape. Once the model is constrained by near-detector data, the T2K oscillation analysis chain can then proceed using the model proposed by the near-detector data and model and include oscillation effects.
+
+However, providing a high-dimensional posterior of arbitrary shape is cumbersome, so oscillation groups often use the BANFF output. MaCh3 has the advantage of a near and far detector implementation, meaning a simultaneous fit of data from both detectors can be done. This avoids assumptions on the underlying probability distribution functions of the parameters and the likelihood surface, and additionally benefits from fully correlating the models at both detectors, allowing one to affect the other as the fit proceeds.
+
+The following sections detail the near-detector implementation of the MaCh3 framework. It also includes comparisons and validations to the BANFF framework. It finishes with the 2017 round fit to data.
+
+\section{Need for ND280 fits}
+As statistics increase at Super-Kamiokande, there is more and more need for well-controlled systematics. The T2K oscillation analysis uses \red{CITEME}
+
+SK without constraints
+Share same beam, use near detector complex
