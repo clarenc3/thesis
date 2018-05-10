@@ -18,10 +18,12 @@ The nominal model presented in \autoref{sec:nom_model} is now fit to the data in
 
 \autoref{tab:postfit_eventrate} shows the event rates per sample and total before and after the fit for the tuned MCMC, making correlated throws of the model to build the errors. The ``Pri. Pred'' uses the prior predictive method and ``Pos. Pred.'' uses the posterior predictive method, outlined earlier. We see very good agreement with the overall event rate (64768 data vs 64761.40 post-fit) and the CC0$\pi$ samples. The total sample contribution to the test-statistic\footnote{Excluding the penalty term from the priors} moves from 2539.08 to 1733.08. For the samples, we generally see good effect on targets, with FGD2 CC0$\pi$ decreasing the statistic by factor 2. Interestingly, FGD1 CCOther sees a noticeably smaller improvement than FGD2 (273.39 to 224.02 vs 277.96 to 171.17), indicating some tension in the fit. The uncertainty on the predictions decrease remarkably post-fit too: for the 0$\pi$ selections we go from an uncertainty of 2094.2 to 120.0, and overall from 6666.8 to 255.2.
 \begin{sidewaystable}
+	\centering
 		\begin{tabular}{ l | c c c | c c }
 			\hline
 			\hline
-			Sample 			&Data	&Pri. Pred. & Pos. Pred. & -$2\ln{L}_{s}$ Pri. Pred. & -$2\ln{L}_{s}$ Pos. Pred. \\
+			Sample 			& \multicolumn{3}{c|}{Event rate} & \multicolumn{2}{c}{$-2\ln\mathcal{L}_S$} \\
+							& Data	& Prior & Posterior & Prior & Posterior \\
                         \hline
 			FGD1 0$\pi$ 	& 17136	& $16837.5\pm2094.2$ 	& $17122.9\pm120.0$ & 272.22  & 172.21 	\\ 
 			FGD1 1$\pi$ 	& 3954 	& $4438.8\pm482.9$	& $4053.8\pm54.3$  & 259.65  & 164.04 	\\ 
