@@ -177,7 +177,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 		Total & 64768 & 63632.86 & 0.98 \\\hline
 		\hline
 	\end{tabular}
-	\caption{Observed and predicted event rates for the different \nd~samples in the near-detector}
+	\caption{Observed and predicted event rates for the different ND280 selections for the 2017 analysis}
 	\label{tab:event_rates_2017}
 \end{table}
 
@@ -301,7 +301,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \label{fig:nominal2D_FGD12numubar}
 \end{figure}
 
-\autoref{fig:nominal2D_FGD12numuRHC} shows the \numu in RHC selections, which generally populate higher \pmu due to the \numu flux in RHC mode. The samples are also statistically small so are more prone to larger statistical fluctuations. The CC1Track selection appears to have a pattern of underestimation at low \pmu, following the $Q^2$ band to high \pmu and high \cosmu.
+\autoref{fig:nominal2D_FGD12numubar} shows the \numu in RHC selections, which generally populate higher \pmu due to the \numu flux in RHC mode. The samples are also statistically small so are more prone to larger statistical fluctuations. The CC1Track selection appears to have a pattern of underestimation at low \pmu, following the $Q^2$ band to high \pmu and high \cosmu.
 
 \begin{figure}
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -509,7 +509,7 @@ The scan splits the likelihood into each of the individual contributions present
 
 In practice, the estimated constraints from the one dimensional log-likelihood are not accurate due to the large correlations in the beam and ND280 parameters in the prior covariance matrices; hence $\chi^2\sim1$ does not indicate the typical $1\sigma$ sensitivity. For sensitivity estimates, it is more appropriate to vary the correlated parameters simultaneously, as is done in the Asimov fit presented later in \autoref{sec:asimov_fit}. The likelihood scans are considered more of a closure test to inspect implementation.
 
-\begin{figure}[!h]
+\begin{figure}[h]
 	\centering
 \begin{subfigure}[t]{0.32\textwidth}
 	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=5]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
@@ -536,12 +536,12 @@ In practice, the estimated constraints from the one dimensional log-likelihood a
 	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=55]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
 	\caption{SK FHC \numu 0.6-0.7 GeV}
 \end{subfigure}
-\caption{Asimov likelihood scans for selected beam parameters in the fit}
-\label{fig:beam_asimov}
+\caption{Asimov likelihood scans for selected beam parameters}
+\label{fig:beam_asimov_llh}
 \end{figure}
 
-\autoref{fig:beam_asimov} shows a selected number of beam parameters. Using the Asimov data set, it's clear that the prior term is dominant, even for the high-statistics ND280 FHC \numu $E_\nu = 0.6-0.7\text{ GeV}$ parameter. Many parameters see barely any constraint from the samples---e.g. \numubar in FHC running (due to very low wrong-sign events in \numu running) and \nue in FHC (due to no dedicated \nue selection being included). As expected, the SK flux parameters are only being constrained by the prior and see no direction contribution from any ND280 samples.
-\begin{figure}[!h]
+\autoref{fig:beam_asimov_llh} shows a selected number of beam parameters. Using the Asimov data set, it's clear that the prior term is dominant, even for the high-statistics ND280 FHC \numu $E_\nu = 0.6-0.7\text{ GeV}$ parameter. Many parameters see barely any constraint from the samples---e.g. \numubar in FHC running (due to very low wrong-sign events in \numu running) and \nue in FHC (due to no dedicated \nue selection being included). As expected, the SK flux parameters are only being constrained by the prior and see no direction contribution from any ND280 samples.
+\begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=107]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
@@ -562,17 +562,17 @@ In practice, the estimated constraints from the one dimensional log-likelihood a
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=122]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
-		\caption{$I_{1/2}^\text{bkg} 	$}
+		\caption{$I_{1/2}^\text{bkg}$}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=105]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
 		\caption{FSI CEX LO}
 	\end{subfigure}
-	\caption{Asimov likelihood scans for selected cross-section parameters in the fit}
-	\label{fig:xsec_asimov}
+	\caption{Asimov likelihood scans for selected cross-section parameters}
+	\label{fig:xsec_asimov_llh}
 \end{figure}
 
-\autoref{fig:xsec_asimov} shows the likelihood scans for a selected few cross-section parameters. $M_A^{QE}$ and 2p2h norm $\nu$ are both fit without a prior, so only sees constraint from the sample likelihood, and 2p2h shape C has an almost flat prior likelihood, largely constrained by the samples. Some cross-section parameters, like BeRPA E, have a weaker constraint from the MC samples than from the prior, largely due to its effect being limited to high $Q^2$, of which ND280 have few. We also observe some non-Gaussian responses, such as the pion final-state-interaction charge exchange at low pion momentum (FSI CEX LO) and the single pion production non-resonant background parameter, $I_{1/2}^\text{bkg}$.
+\autoref{fig:xsec_asimov_llh} shows the likelihood scans for a selected few cross-section parameters. $M_A^{QE}$ and 2p2h norm $\nu$ are both fit without a prior, so only sees constraint from the sample likelihood, and 2p2h shape C has an almost flat prior likelihood, largely constrained by the samples. Some cross-section parameters, like BeRPA E, have a weaker constraint from the MC samples than from the prior, largely due to its effect being limited to high $Q^2$, of which ND280 have few. We also observe some non-Gaussian responses, such as the pion final-state-interaction charge exchange at low pion momentum (FSI CEX LO) and the single pion production non-resonant background parameter, $I_{1/2}^\text{bkg}$.
 \begin{figure}[!h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -600,7 +600,7 @@ In practice, the estimated constraints from the one dimensional log-likelihood a
 	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=542]{figures/mach3/Asimov/Full_LLHscan_18July_BeRPA_U_ND280logL_scan}
 	\caption{FGD2 \numubar CC1Trk \{0.4-0.9 GeV, 0.6-0.7\}}
 \end{subfigure}
-\caption{Asimov likelihood scans for selected ND280 parameters in the fit}
+\caption{Asimov likelihood scans for selected ND280 parameters}
 \label{fig:nd280_asimov}
 \end{figure}
 
