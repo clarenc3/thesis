@@ -1064,7 +1064,7 @@ Most of the parameter change by approximately only a normalisation whereas the p
 		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/llh/MultiPi_vs_MultiTrack_TotalLLH}
 		\caption{BeRPA D}
 	\end{subfigure}
-\caption{Asimov likelihood scans for multi-$\pi$ and rebinned samples versus the unchanged multi-track sample from 2017}
+\caption{Asimov likelihood scans for multi-$\pi$ and rebinned samples versus the unchanged multi-track sample from 2017 with run 2 to 8 statistics}
 \label{fig:llh_multitrack_vs_multipi}
 \end{figure}
 
@@ -1082,15 +1082,71 @@ Most of the parameter change by approximately only a normalisation whereas the p
 		\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/llh/MultiPi_vs_MultiTrack_TotalLLH}
 		\caption{Charge exchange}
 	\end{subfigure}
-	\caption{Asimov likelihood scans for multi-$\pi$ and rebinned samples versus the unchanged multi-track sample from 2017 for some pion FSI rescaterring parameters}
+	\caption{Asimov likelihood scans for multi-$\pi$ and rebinned samples versus the unchanged multi-track sample from 2017 with run 2 to 8 statistics, for some pion FSI rescaterring parameters}
 	\label{fig:llh_multitrack_vs_multipi_fsi}
 \end{figure}
+
+\subsection{Prior predictive}
+As was done in \autoref{sec:Asimov_prior} we perform a closure test checking the prior's predictive power on the Asimov data set. We expect the predictive spectrum to largely agree with the Asimov data and produce large uncertainties and thereby p-values around 0.5.
+
+The \pmu \cosmu prior predictive spectrum is made using 20,000 correlated throws of the systematics, and the two-dimensional p-value is calculated for each of the 20,000 throws. The p-value compares the test-statistic from the samples of the drawn parameter variation with the Asimov data to the test-statistic of the drawn parameter variation to a statistical fluctuation of the drawn parameter variation. The fraction of draws in which the former is smaller than the latter constitute the p-value.
+
+\autoref{fig:prior_predictive_asimov_2018} shows the resulting two-dimensional p-value, agreeing with the expectation. Comparing to 2017 where the p-value was 0.572, it's clear the p-value increases this year. In the case of skewed correlated parameter throws---coming from missing parameter correlations---we'd expect something similar to this when the case where we increase the statistics. This is because the x-axis in \autoref{fig:prior_predictive_asimov_2018} is likely to be squeeze when the statistics increase, whereas they y-axis would not because the systematics are unchanged changed.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/2018/asimov/pred/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_PriorPred_procs}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/2018/asimov/pred/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_PriorPred_procs}
+	\end{subfigure}
+	\caption{Prior predictive p-values for the Asimov data in 2018}
+	\label{fig:prior_predictive_asimov_2018}
+\end{figure}
+
+\autoref{tab:asimov_prior_pred_2018} shows the event rates after making correlated throws of the systematics with the test-statistic to Asimov data. Comparing to the 2017 equivalent in \autoref{tab:asimov_prior_pred} we see a similar level of uncertainty, as expected. As in 2017, the prior predictive on Asimov data produces an 11\% uncertainty on the total event rate, with a 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. As in 2017, we see a consistent skew in the prior predictive ``best-fit'' where it overestimates the Asimov data set, likely due to missing covariance matrices between cross-section, flux and ND280 parameters. The contribution to the test-statistic is much larger too compared to 2017, primarily due to many more bins in each selection.
+\begin{table}
+	\begin{tabular} {l | c c | c}
+		\hline
+		\hline
+		Sample 			& Nominal	& Prior Pred.	& $-2\log\mathcal{L}_S$ \\
+		\hline
+		FGD1 0$\pi$             & 31529.3   & $32394.6\pm4245.4$   & 26.24   \\
+		FGD1 1$\pi$             & 7998.1    & $8113.27\pm891.8$   & 2.35   \\
+		FGD1 Other              & 6793.68   & $6909.17\pm827.6$   & 3.91   \\
+		\hline
+		FGD2 0$\pi$             & 31734     & $32603.1\pm4095.5$   & 26.44   \\
+		FGD2 1$\pi$             & 6419.04   & $6516.55\pm685.0$   & 2.32    \\
+		FGD2 Other              & 6562.75   & $6677.6\pm784.5$    & 3.71   \\
+		\hline
+		FGD1 \numubar 0$\pi$    & 6371.34   & $6574.72\pm861.2$   & 8.73   \\
+		FGD1 \numubar 1$\pi$    & 533.25   & $545.10\pm126.6$   & 0.61  \\
+		FGD1 \numubar Other     & 1023.36   & $1039.8\pm167.2$    & 1.20   \\
+		\hline
+		FGD2 \numubar 0$\pi$    & 6283.35   & $6483.34\pm835.5$   & 8.94   \\
+		FGD2 \numubar 1$\pi$    & 483.51   & $495.42\pm104.9$   & 0.47  \\
+		FGD2 \numubar Other     & 943.96   & $949.90\pm175.5$   & 1.59   \\
+		\hline
+		FGD1 \numu RHC 0$\pi$   & 2485.51   & $2561.04\pm320.8$   & 2.57   \\
+		FGD1 \numu RHC 1$\pi$   & 855.91   & $874.72\pm85.4$   & 0.56  \\
+		FGD1 \numu RHC Other    & 804.65   & $817.92\pm85.0$   & 0.36  \\
+		\hline
+		FGD2 \numu RHC 0$\pi$   & 2553.51   & $2642.35\pm285.6$   & 4.20  \\
+		FGD2 \numu RHC 1$\pi$   & 679.99    & $700.02\pm68.7$   & 0.89  \\
+		FGD2 \numu RHC Other    & 792.17   & $808.12\pm83.7$   & 0.61  \\
+		\hline
+		Total                   & 114847    & $117840\pm12411.1$ & 95.70 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Prior predictive event rates for the Asimov data}
+	\label{tab:asimov_prior_pred_2018}
+\end{table}
 
 \subsection{Asimov fit}
 \label{sec:asimov_2018}
 We now fit the model to the Asimov data defined as the model at nominal to estimate the sensitivity and as a closure test. We also perform some test-fits using different ND280 covariance matrices, comparing results using the nominal binned multi-track to the binned multi-$\pi$ RHC selections, and fitting without any detector parameters.
 
-The MCMC parameter obtained for the different studies are shown in \autoref{tab:mcmc_asimov_2018}. The primary reason behind the low acceptance for the ``Full cov'' (full ND280 covariance matrix used) is the 4370 parameters being fit simultaneously.
+The MCMC parameter obtained for the different studies are shown in \autoref{tab:mcmc_asimov_2018}. The primary reason behind the low acceptance for the ``Full cov'' (full ND280 covariance matrix used) is the 4368 parameters being fit simultaneously.
 \begin{table}[h]
 	\begin{tabular}{l | c c c}
 		\hline
@@ -1109,15 +1165,18 @@ The MCMC parameter obtained for the different studies are shown in \autoref{tab:
 \end{table}
 
 \subsubsection{Full and reduced ND280 cov}
-Simultaneous with checking the performance of the parameterisation, we compare a fit to Asimov data using the reduced ND280 covariance matrix with 1036\red{confirm} parameters and one using the full ND280 covariance matrix without any bin merging, leading to 4236 parameters \red{confirm this}.
+Simultaneous with checking the performance of the parameterisation, we compare a fit to Asimov data using the reduced ND280 covariance matrix with 1076 ND280 detector parameters, and one using the full ND280 covariance matrix without any bin merging with 4238 ND280 detector parameters.
 
-\autoref{fig:asimov_fit_2018_full_red_beam_nd280} an \autoref{fig:asimov_fit_2018_full_red_beam_sk}
+\autoref{fig:asimov_fit_2018_full_red_beam_fhc} and \autoref{fig:asimov_fit_2018_full_red_beam_rhc} show the flux parameters after the fit to Asimov data using the two matrices. There is a consistent bias in all flux parameters for both ND280 and SK, which appear to be mostly a normalisation-only offset by 1-2\%. The ND280 and SK follow the same pattern throughout, and the uncertainties are approximately halved compared to the prior, similar to the 2017 fit to Asimov data.
+
+The full and reduced ND280 covariance matrices agree and are compatible in all parameters and only small shifts are seen, primarily in regions of very low statistics. 
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.10\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
 	\end{subfigure}
 
+\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
 	\end{subfigure}
@@ -1130,38 +1189,47 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=5, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
 	\end{subfigure}
+\caption{ND280}
+\end{subfigure}
 
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=7, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=8, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=9, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
-	\caption{ND280 flux parameters, comparing Asimov fits with full and reduced ND280 covariance matrices}
-	\label{fig:asimov_fit_2018_full_red_beam_nd280}
+\begin{subfigure}[t]{\textwidth}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\caption{SK}
+\end{subfigure}
+	\caption{FHC flux parameters, comparing Asimov fits with full and reduced ND280 covariance matrices}
+	\label{fig:asimov_fit_2018_full_red_beam_fhc}
 \end{figure}
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
-	\end{subfigure}
+	\begin{subfigure}[t]{\textwidth}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=7, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=8, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=9, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
+\end{subfigure}
+\caption{ND280}
+\end{subfigure}
 
+\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=14, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
 	\end{subfigure}
@@ -1174,11 +1242,17 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=17, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Asimov_NoRed_TryAgain_merg_2018a_MultiPi_Binningv6_NewCov_Asimov_merge}
 	\end{subfigure}
-	\caption{SK flux parameters, comparing Asimov fits with full and reduced ND280 covariance matrices}
-	\label{fig:asimov_fit_2018_full_red_beam_sk}
+\caption{SK}
+\end{subfigure}
+	\caption{RHC flux parameters, comparing Asimov fits with full and reduced ND280 covariance matrices}
+	\label{fig:asimov_fit_2018_full_red_beam_rhc}
 \end{figure}
 
-\autoref{fig:asimov_fit_2018_full_red_xsec}
+Looking at the cross-section parameters after the fit to Asimov data in \autoref{fig:asimov_fit_2018_full_red_xsec}, the pattern is much the same as in 2017. $p_F$, 2p2h normalisation $\bar{\nu}$, 2p2h shape, BeRPA A and BeRPA E appear biased from the Asimov parameter value, whereas the rest seem to find it satisfactorily. 
+
+The reduction in parameter uncertainties from the doubling of data is particularly noticeable for 2p2h normalisation $\nu$, which is reduced to 10\% from 20\%, $M_A^{QE}$ which now has a similar uncertainty to fits from bubble chamber data, the 2p2h shape parameters which now have 20\% uncertainty, and the BeRPA B parameter, whose uncertainty more than halves compared to the prior. We also see small uncertainties on the single pion parameters, and the CCDIS parameter (which in 2017 appeared biased in Asimov) is not biased. The ND280 fit also brings down the uncertainties on the pion rescattering probabilities, by between 1/2 to 1/4 of the prior.
+
+The two ND280 covariance matrices are again compatible and produce the same values throughout the cross-section parameters.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -1199,12 +1273,16 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 \end{figure}
 
 \subsubsection{Comparison to multi-track}
+As with the likelihood scan, we now compare results from using the new rebinned selections versus the selection and binning of 2017, but including the new run 7 and 8 data.
+
+In the light of the biases from using the multi-$\pi$ samples above, this is p
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.10\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
 	
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
@@ -1217,7 +1295,31 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=5, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
-	
+\caption{ND280}
+\end{subfigure}
+
+	\begin{subfigure}[t]{\textwidth}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
+\end{subfigure}
+\caption{SK}
+\end{subfigure}
+	\caption{FHC flux parameters, comparing Asimov fits with rebinned multi-$\pi$ to 2017 binned multi-track}
+	\label{fig:asimov_fit_2018_mpi_mtrack_fhc}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+		\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
@@ -1230,24 +1332,10 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=9, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
-	\caption{ND280 flux parameters, comparing Asimov fits with rebinned multi-$\pi$ to 2017 binned multi-track}
-\end{figure}
+\caption{ND280}
+\end{subfigure}
 
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
-	\end{subfigure}
-
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=14, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
@@ -1260,7 +1348,10 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=17, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
-	\caption{SK flux parameters, comparing Asimov fits with rebinned multi-$\pi$ to 2017 binned multi-track}
+\caption{SK}
+\end{subfigure}
+	\caption{RHC flux parameters, comparing Asimov fits with rebinned multi-$\pi$ to 2017 binned multi-track}
+	\label{fig:asimov_fit_2018_mpi_mtrack_rhc}
 \end{figure}
 
 \begin{figure}[h]
@@ -1279,6 +1370,7 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 		\includegraphics[width=\textwidth,page=21, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_merg_2018a_NewDetMatrix_20180307_Asimov_again_merge}
 	\end{subfigure}
 	\caption{Interaction parameters, comparing Asimov fits with rebinned multi-$\pi$ to 2017 binned multi-track}
+	\label{fig:asimov_fit_2018_mpi_mtrack_xsec}
 \end{figure}
 
 \subsubsection{Asimov without detector parameters}
@@ -1288,6 +1380,7 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
 	
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
@@ -1300,7 +1393,33 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=5, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
+\caption{ND280}
+\end{subfigure}
+
+	\begin{subfigure}[t]{\textwidth}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
+\end{subfigure}
+
+\caption{SK}
+\end{subfigure}
+	\caption{FHC flux parameters, fitting to Asimov without varying detector parameters}
+	\label{fig:asimov_fit_2018_nodet_fhc}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
 	
+		\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
@@ -1313,24 +1432,10 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=9, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\caption{ND280 flux parameters, fitting to Asimov without varying detector parameters}
-\end{figure}
+\caption{ND280}
+\end{subfigure}
 
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
-	\end{subfigure}
-
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=14, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
@@ -1343,7 +1448,11 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=17, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\caption{SK flux parameters, fitting to Asimov without varying detector parameters}
+
+\caption{SK}
+\end{subfigure}
+	\caption{RHC flux parameters, fitting to Asimov without varying detector parameters}
+	\label{fig:asimov_fit_2018_nodet_rhc}
 \end{figure}
 
 \begin{figure}[h]
@@ -1362,15 +1471,137 @@ Simultaneous with checking the performance of the parameterisation, we compare a
 		\includegraphics[width=\textwidth,page=21, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
 	\caption{Interaction parameters, fitting to Asimov without varying detector parameters}
+	\label{fig:asimov_fit_2018_nodet_xsec}
 \end{figure}
 
 \subsection{Covariance matrix}
-Calculate
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+		\caption{$\sqrt{\mathbf{V}_{i,j}}$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=3]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+		\caption{$\rho_{i,j}$}
+	\end{subfigure}
+	\caption{$\sqrt{\mathbf{V}_{i,j}}$ and correlation matrix for the Asimov post-fit, showing the full flux and cross-section parameters}
+	\label{fig:asimov_full_corr_2018}
+\end{figure}
 
-\subsection{Prior predictive}
-Running
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=5]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=6]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+	\end{subfigure}
+	\caption{$\sqrt{\mathbf{V}_{i,j}}$ and correlation matrix for the Asimov post-fit, showing ND280 flux and cross-section parameters}
+	\label{fig:asimov_nd_corr_2018}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{\textwidth}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=8]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=9]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+		\end{subfigure}
+		\caption{Post-fit}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{\textwidth}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/inputs/flux_covariance_banff_13av2.pdf}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=3]{figures/mach3/inputs/flux_covariance_banff_13av2.pdf}
+		\end{subfigure}
+		\caption{Pre-fit}
+	\end{subfigure}
+	\caption{$\sqrt{\mathbf{V}_{i,j}}$ and correlation matrix for the flux parameters pre and post-fit to Asimov data}
+	\label{fig:asimov_flux_corr_2018}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=11]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=12]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+	\end{subfigure}
+	\caption{$\sqrt{\mathbf{V}_{i,j}}$ and correlation matrix for the Asimov post-fit, showing cross-section parameters}
+	\label{fig:asimov_xsec_corr_2018}
+\end{figure}
+
+Comparing the cross-section correlation matrix from the fit to Asimov data from 2017 to the 2018 results in \autoref{fig:asimov_xsec_corr_2017_vs_2018} we generally see very small changes. The CC0$\pi$ parameters (bottom left corner) are unchanged, and the single pion parameters are correlating marginally more with the coherent parameters. The single pion and 2p2h normalisation correlations are slightly reduced, possibly due to the new RHC \numubar samples. The pion FSI parameters (upper right corner) are clearly less correlated in 2018, owing to the updated covariance matrix.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=12]{figures/mach3/Asimov/2017b_NewDet_NewData_Asimov_Long_0_drawCorr.pdf}
+		\caption{2017}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=12]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
+		\caption{2018}
+	\end{subfigure}
+	\caption{Correlation matrix for the Asimov post-fit, showing cross-section parameters for 2017 and 2018 fits}
+	\label{fig:asimov_xsec_corr_2017_vs_2018}
+\end{figure}
+
 \subsection{Posterior predictive}
-Running
+The posterior predictive \pmu \cosmu spectrum and p-values are calculated using the MCMC with the reduced covariance matrix outlined above. The calculation proceeds the same as in \autoref{sec:asimov_pospred} using 20,000 randomly chosen steps after a conservative 1/4 burn-in (corresponding to 975,000 steps). 
+
+For the posterior predictive p-values we expect values close to 1.0 since we're expecting a relatively tight post-fit constraints relative statistical fluctuations, as was the case in the 2017 analysis. \autoref{fig:postpred_asimov_2018} shows the two p-values, which both are exactly 1.0. 
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/2018/asimov/pred/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_PostPredStore_SampLLH_procs}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/2018/asimov/pred/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_PostPredStore_SampLLH_procs}
+	\end{subfigure}
+	\caption{Posterior predictive p-values for the Asimov data in 2018}
+	\label{fig:postpred_asimov_2018}
+\end{figure}
+
+Moving attention to the posterior predictive spectrum's event rates in \autoref{tab:asimov_posterior_pred_2018}, we again see a very large reduction in the post-fit event rate compared to the prior predictive: from 12411.1 to 340.9 overall, 4245.4 to 168.3 for CC0$\pi$, 891.8 to 76.6 for CC1$\pi$ and 827.6 to 76.2 for CCOther. The reduction in uncertainty is comparable to 2017, and overall doubling the statistics has the effect of moving the percentage uncertainty from 0.40\% to 0.30\%, agreeing with the $1/\sqrt{2}$ expectation. The CC0$\pi$ uncertainty moves from 0.70\% to 0.53\%, CC1$\pi$ from 1.3\% to 0.96\%, CCOther from 1.4\% to 1.1\%. The anti-neutrino selections CC0$\pi$ moves from 1.5\% to 1.1\%, and NTrack moves from 2.0\% to 3.9\% 1$\pi$ and 2.9\% for Other: the increase coming from splitting the NTrk sample into lower statistics samples.
+\begin{table}[h]
+	\begin{tabular} {l | c c | c}
+		\hline
+		\hline
+		Sample 			& Nominal	& Pos. Pred.	& $-2\log\mathcal{L}_S$ \\
+		\hline
+                FGD1 0$\pi$             & 31529.3   & $31545.3\pm168.3$   & 1.22   \\
+                FGD1 1$\pi$             & 7998.1    & $8015.68\pm76.6$   & 0.70  \\
+                FGD1 Other              & 6793.68   & $6804.29\pm76.2$   & 0.48  \\
+\hline
+                FGD2 0$\pi$             & 31734     & $31713.9\pm166.9$   & 0.99  \\
+                FGD2 1$\pi$             & 6419.04   & $6428.7\pm68.2$    & 0.44  \\
+                FGD2 Other              & 6562.75   & $6554.53\pm71.9$   & 0.38  \\
+\hline
+                FGD1 \numubar 0$\pi$    & 6371.34   & $6369.71\pm71.4$   & 0.56  \\
+                FGD1 \numubar 1$\pi$    & 533.25   &  $537.87\pm20.8$   & 0.12  \\
+                FGD1 \numubar Other     & 1023.36   & $1027.79\pm29.3$   & 0.05 \\
+
+                FGD2 \numubar 0$\pi$    & 6283.35   & $6287.51\pm71.2$   & 0.47  \\
+                FGD2 \numubar 1$\pi$    & 483.51   & $487.22\pm20.7$   & 0.04 \\
+                FGD2 \numubar Other     & 943.96   & $946.53\pm28.1$   & 0.04 \\
+\hline
+                FGD1 \numu RHC 0$\pi$   & 2485.51   & $2513.19\pm42.1$   & 0.47  \\
+                FGD1 \numu RHC 1$\pi$   & 855.91   & $844.85\pm13.7$   & 0.22  \\
+                FGD1 \numu RHC Other    & 804.65   & $795.18\pm13.3$   & 0.14   \\
+\hline
+                FGD2 \numu RHC 0$\pi$   & 2553.51   & $2529.72\pm32.2$   & 0.35  \\
+                FGD2 \numu RHC 1$\pi$   & 679.99    & $669.64\pm9.8$   & 0.18    \\
+                FGD2 \numu RHC Other    & 792.17   & $783.53\pm13.1$   & 0.12  \\
+                \hline
+                Total					& 114847	& $114855.4\pm340.9$ & 6.98 \\
+		\hline
+		\hline
+\end{tabular}
+\caption{Posterior predictive event rates after fitting to the Asimov data}
+\label{tab:asimov_posterior_pred_2018}
+\end{table}
+
 
 \section{Data fit}
 \subsection{Full and reduced ND280 cov}
@@ -1543,7 +1774,6 @@ Running
 \subsection{Prior predictive}
 Running
 \subsection{Posterior predictive}
-Running
 
 \subsection{Compatibility}
 \subsubsection{FGD1 vs FGD2}

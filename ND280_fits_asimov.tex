@@ -849,6 +849,40 @@ The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay arou
 \label{fig:prior_predictive_asimov}
 \end{figure}
 
+Finally \autoref{tab:asimov_prior_pred} shows the prior predictive event rates from the prior predictive spectrum to the Asmiov data with uncertainties from all systematics. We note that using the prior covariances without any fitting to the Asimov data produces an 11\% uncertainty on the total event rate, with a 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. We also note a particularly bad test-statistic for the 0$\pi$ and 1Trk selections for the Asimov prior predictive central value. This is likely due to missing correlations between cross-section, flux and near-detector parameters, causing the correlated throws of the systematics to be skewed.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l | c c | c}
+		\hline
+		\hline
+		Sample & Nominal & Prior Pred & -2$\log\mathcal{L}_s$ \\ 
+		\hline
+		FGD1 0$\pi$ & 16723.8 &  $17014.5\pm2244.0$ &  14.58 \\
+		FGD1 1$\pi$ & 4381.47 &  $4438.3\pm487.6$ &  0.99 \\
+		FGD1 Other & 3943.95 &  $3984.1\pm537.5$  & 0.76\\
+		
+		FGD2 0$\pi$ & 16959.3 &  $17252.4\pm2311.7$ &  18.9 \\
+		FGD2 1$\pi$ & 3564.23 &  $3612.9\pm398.4$ &  0.92 \\
+		FGD2 Other & 3570.94 &  $3581.5\pm456.3$ &  0.92 \\
+		\hline
+		FGD1 1Trk & 3587.77 &  $3695.7\pm481.8$ &  3.99 \\
+		FGD1 NTrk & 1066.91 &  $1093.9\pm138.4$ &  1.51  \\
+		FGD2 1Trk & 3618.29 &  $3721.1\pm473.6$ &  3.89 \\
+		FGD2 NTrk & 1077.24 &  $1102.9\pm131.6$ &  0.90 \\
+		\hline
+		FGD1 \numu 1 Trk & 1272.17 &  $1309.4\pm139.6$ &  1.27 \\
+		FGD1 \numu NTrk & 1357.45 &  $1378.0\pm155.9$ &  0.50 \\
+		FGD2 \numu 1Trk & 1262.63 &  $1305.9\pm140.9$ &  2.09 \\
+		FGD2 \numu NTrk & 1246.71 &  $1263.5\pm139.4$ &  0.49 \\
+		\hline
+		Total & 63632.86 & $64670.8\pm7025.2$ & 51.72 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Event rates broken down by sample after the prior predictive spectrum for the Asimov data}
+	\label{tab:asimov_prior_pred}
+\end{table}
+
 \subsection{Asimov fit}
 \label{sec:asimov_fit}
 After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain.\red{show autocorrelations?} \autoref{tab:asimov_mcmc_versions} shows the different chains completed for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
@@ -1058,41 +1092,45 @@ The 30th beam parameter (``$b\_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 G
 In conclusion, the biases present in the Asmiov fit study seems likely to be due to marginlisation effects over parameters that are non-Gaussian, have hard cut-offs or are poorly constrained in the fit. These patterns are expected to arise again when fitting against real data.
 
 \subsection{Posterior predictive spectrum}
+\label{sec:asimov_pospred}
 \red{Put in reference to the posterior predictive calculations}
 The next statistical closure test we can perform on the Asimov data fit is to calculate the posterior predictive spectra and p-values. The procedure and aim of the tests is similar to that of the prior predictive spectrum calculation presented in \autoref{sec:Asimov_prior}, but the parameter variations no longer come form the pre-fit covariance matrices. Instead the parameter sets come from the Markov Chain steps after the burn-in has been removed, so the p-value reflects the future predictability of the model in light of the fit data, were more data to be observed.\red{clarify this?} The expectation of this test is to produce a p-value very close to 1.0, since the Asimov data is an exact parameter set of the model.
 
 \autoref{tab:asimov_posterior_pred} shows the event rates from the posterior predictive spectrum. We note a consistently low likelihood contribution from all samples ($\sim0.18-0.42$), totalling at 4.43. This is small compared to the number of bins being fit (1624), and the contributions enter primarily in low statistics areas (high \pmu, low \cosmu), where non-Gaussian behaviour is expected. The 2D \pmu \cosmu distributions and the bin-by-bin likelihood contributions for FGD1 and FGD2 0$\pi$ is shown in \autoref{fig:posterior_predictive_2d_asimov}.
 \begin{table}[h]
 	\centering
-  \begin{tabular}{l c c c}
+  \begin{tabular}{l | c c | c}
 \hline
 \hline
     Sample & Nominal & Pos. Pred & -2$\log\mathcal{L}_s$ \\ 
 \hline
- FGD1 0$\pi$ & 16723.8 &  16730.9 &  0.42 \\
- FGD1 1$\pi$ & 4381.47 &  4371.67 &  0.29 \\
- FGD1 Other & 3943.95 &  3957.1  & 0.28\\
- FGD2 0$\pi$ & 16959.3 &  16952.8 &  0.31 \\
- FGD2 1$\pi$ & 3564.23 &  3565.16 &  0.36 \\
- FGD2 Other & 3570.94 &  3571.43 &  0.34 \\
-    \hline
- FGD1 1Trk & 3587.77 &  3586.45 &  0.28 \\
- FGD1 NTrk & 1066.91 &  1075.13 &  0.35  \\
- FGD2 1Trk & 3618.29 &  3612.19 &  0.36 \\
- FGD2 NTrk & 1077.24 &  1084.68 &  0.20 \\
-    \hline
- FGD1 \numu 1 Trk & 1272.17 &  1267.04 &  0.18 \\
- FGD1 \numu NTrk & 1357.45 &  1357.19 &  0.38 \\
- FGD2 \numu 1Trk & 1262.63 &  1259.48 &  0.35 \\
- FGD2 \numu NTrk & 1246.71 &  1246.61 &  0.33 \\
+ FGD1 0$\pi$ & 16723.8 &  $16730.9\pm116.8$ &  0.42 \\
+ FGD1 1$\pi$ & 4381.47 &  $4371.67\pm57.7$ &  0.29 \\
+ FGD1 Other & 3943.95 &  $3957.1\pm55.8$  & 0.28\\
+ 
+ FGD2 0$\pi$ & 16959.3 &  $16952.8\pm116.7$ &  0.31 \\
+ FGD2 1$\pi$ & 3564.23 &  $3565.16\pm49.5$ &  0.36 \\
+ FGD2 Other & 3570.94 &  $3571.43\pm51.0$ &  0.34 \\
+ \hline
+ FGD1 1Trk & 3587.77 &  $3586.45\pm52.5$ &  0.28 \\
+ FGD1 NTrk & 1066.91 &  $1075.13\pm21.4$ &  0.35  \\
+ FGD2 1Trk & 3618.29 &  $3612.19\pm51.9$ &  0.36 \\
+ FGD2 NTrk & 1077.24 &  $1084.68\pm21.4$ &  0.20 \\
+ \hline
+ FGD1 \numu 1 Trk & 1272.17 &  $1267.04\pm23.6$ &  0.18 \\
+ FGD1 \numu NTrk & 1357.45 &  $1357.19\pm25.2$ &  0.38 \\
+ FGD2 \numu 1Trk & 1262.63 &  $1259.48\pm22.3$ &  0.35 \\
+ FGD2 \numu NTrk & 1246.71 &  $1246.61\pm25.0$ &  0.33 \\
 \hline
-Total & 63632.86 & 63637.83 & 4.43 \\
+Total & 63632.86 & $63637.83\pm253.0$ & 4.43 \\
 \hline
 \hline
   \end{tabular}
 \caption{Event rates broken down by sample after the posterior predictive spectrum for the fit to Asimov data}
 \label{tab:asimov_posterior_pred}
 \end{table}
+
+Comparing the posterior predictive event rates in \autoref{tab:asimov_posterior_pred} to the prior predictive in \autoref{tab:asimov_prior_pred} we see a drastic reduction in the event rate uncertainties: 7025.2 to 253.0 for the total rate, 2244.0 to 116.8 for CC0$\pi$, 487.6 to 57.7 for CC1$\pi$ and 537.5 to 55.8 for CCOther. This brings the event rate uncertainties below 2\% level for all the selections, which marks the best possible scenario for the data fit.
 
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
