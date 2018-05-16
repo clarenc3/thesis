@@ -1110,31 +1110,31 @@ The \pmu \cosmu prior predictive spectrum is made using 20,000 correlated throws
 		\hline
 		Sample 			& Nominal	& Prior Pred.	& $-2\log\mathcal{L}_S$ \\
 		\hline
-		FGD1 0$\pi$             & 31529.3   & $32394.6\pm4245.4$   & 26.24   \\
+		FGD1 0$\pi$             & 31529.3   & $32394.6\pm4245.4$  & 26.24   \\
 		FGD1 1$\pi$             & 7998.1    & $8113.27\pm891.8$   & 2.35   \\
 		FGD1 Other              & 6793.68   & $6909.17\pm827.6$   & 3.91   \\
 		\hline
-		FGD2 0$\pi$             & 31734     & $32603.1\pm4095.5$   & 26.44   \\
+		FGD2 0$\pi$             & 31734     & $32603.1\pm4095.5$  & 26.44   \\
 		FGD2 1$\pi$             & 6419.04   & $6516.55\pm685.0$   & 2.32    \\
 		FGD2 Other              & 6562.75   & $6677.6\pm784.5$    & 3.71   \\
 		\hline
 		FGD1 \numubar 0$\pi$    & 6371.34   & $6574.72\pm861.2$   & 8.73   \\
-		FGD1 \numubar 1$\pi$    & 533.25   & $545.10\pm126.6$   & 0.61  \\
+		FGD1 \numubar 1$\pi$    & 533.25   	& $545.10\pm126.6$    & 0.61  \\
 		FGD1 \numubar Other     & 1023.36   & $1039.8\pm167.2$    & 1.20   \\
 		\hline
 		FGD2 \numubar 0$\pi$    & 6283.35   & $6483.34\pm835.5$   & 8.94   \\
-		FGD2 \numubar 1$\pi$    & 483.51   & $495.42\pm104.9$   & 0.47  \\
-		FGD2 \numubar Other     & 943.96   & $949.90\pm175.5$   & 1.59   \\
+		FGD2 \numubar 1$\pi$    & 483.51   	& $495.42\pm104.9$    & 0.47  \\
+		FGD2 \numubar Other     & 943.96   	& $949.90\pm175.5$    & 1.59   \\
 		\hline
 		FGD1 \numu RHC 0$\pi$   & 2485.51   & $2561.04\pm320.8$   & 2.57   \\
-		FGD1 \numu RHC 1$\pi$   & 855.91   & $874.72\pm85.4$   & 0.56  \\
-		FGD1 \numu RHC Other    & 804.65   & $817.92\pm85.0$   & 0.36  \\
+		FGD1 \numu RHC 1$\pi$   & 855.91   	& $874.72\pm85.4$     & 0.56  \\
+		FGD1 \numu RHC Other    & 804.65   	& $817.92\pm85.0$     & 0.36  \\
 		\hline
 		FGD2 \numu RHC 0$\pi$   & 2553.51   & $2642.35\pm285.6$   & 4.20  \\
-		FGD2 \numu RHC 1$\pi$   & 679.99    & $700.02\pm68.7$   & 0.89  \\
-		FGD2 \numu RHC Other    & 792.17   & $808.12\pm83.7$   & 0.61  \\
+		FGD2 \numu RHC 1$\pi$   & 679.99    & $700.02\pm68.7$     & 0.89  \\
+		FGD2 \numu RHC Other    & 792.17   	& $808.12\pm83.7$     & 0.61  \\
 		\hline
-		Total                   & 114847    & $117840\pm12411.1$ & 95.70 \\
+		Total                   & 114847    & $117840\pm12411.1$  & 95.70 \\
 		\hline
 		\hline
 	\end{tabular}
@@ -1143,7 +1143,7 @@ The \pmu \cosmu prior predictive spectrum is made using 20,000 correlated throws
 \end{table}
 
 \subsection{Asimov fit}
-\label{sec:asimov_2018}
+\label{sec:asimov_fit_2018}
 We now fit the model to the Asimov data defined as the model at nominal to estimate the sensitivity and as a closure test. We also perform some test-fits using different ND280 covariance matrices, comparing results using the nominal binned multi-track to the binned multi-$\pi$ RHC selections, and fitting without any detector parameters.
 
 The MCMC parameter obtained for the different studies are shown in \autoref{tab:mcmc_asimov_2018}. The primary reason behind the low acceptance for the ``Full cov'' (full ND280 covariance matrix used) is the 4368 parameters being fit simultaneously.
@@ -1160,7 +1160,7 @@ The MCMC parameter obtained for the different studies are shown in \autoref{tab:
 		\hline
 		\hline
 	\end{tabular}
-	\caption{Markov Chain parameters for the various Asimov fits in \autoref{sec:asimov_2018}}
+	\caption{Markov Chain parameters for the various Asimov fits in \autoref{sec:asimov_fit_2018}}
 	\label{tab:mcmc_asimov_2018}
 \end{table}
 
@@ -1252,7 +1252,7 @@ Looking at the cross-section parameters after the fit to Asimov data in \autoref
 
 The reduction in parameter uncertainties from the doubling of data is particularly noticeable for 2p2h normalisation $\nu$, which is reduced to 10\% from 20\%, $M_A^{QE}$ which now has a similar uncertainty to fits from bubble chamber data, the 2p2h shape parameters which now have 20\% uncertainty, and the BeRPA B parameter, whose uncertainty more than halves compared to the prior. We also see small uncertainties on the single pion parameters, and the CCDIS parameter (which in 2017 appeared biased in Asimov) is not biased. The ND280 fit also brings down the uncertainties on the pion rescattering probabilities, by between 1/2 to 1/4 of the prior.
 
-The two ND280 covariance matrices are again compatible and produce the same values throughout the cross-section parameters.
+The two ND280 covariance matrices are compatible for the interaction parameters.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -1273,9 +1273,13 @@ The two ND280 covariance matrices are again compatible and produce the same valu
 \end{figure}
 
 \subsubsection{Comparison to multi-track}
-As with the likelihood scan, we now compare results from using the new rebinned selections versus the selection and binning of 2017, but including the new run 7 and 8 data.
+As with the likelihood scan, we now compare results from using the rebinned old selections (FHC \numu) and the new rebinned selections (RHC \numubar, \numu) for the 2018 analysis versus the selection and binning of 2017 including the new run 7 and 8 data.
 
-In the light of the biases from using the multi-$\pi$ samples above, this is p
+In the light of the biases in the flux parameters from using the multi-$\pi$ samples above and the biases observed in the 2017 analysis' Asimov study (\autoref{sec:asimov_fit}), it is particularly interesting to see the flux parameters largely unbiased for the multi-track selection in \autoref{fig:asimov_fit_2018_mpi_mtrack_fhc} and \autoref{fig:asimov_fit_2018_mpi_mtrack_rhc}. The two selections follow a similar pattern, although the fit using the multi-$\pi$ is offset by 1-2\%.
+
+The ND280 and SK parameters echo each other again and are compatible.
+
+Comparing the size of the errors from the two selections, we note a marginally smaller error for the multi-$\pi$ selection for the flux parameters, although barely discernible.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.10\textwidth}
@@ -1354,6 +1358,9 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 	\label{fig:asimov_fit_2018_mpi_mtrack_rhc}
 \end{figure}
 
+The interaction parameters in \autoref{fig:asimov_fit_2018_mpi_mtrack_xsec} are entirely compatible and neither of the two fits show unexpected biases. 
+
+Comparing the size of the errors on the parameters the multi-$\pi$ selection and rebinning has a much larger impact than on the flux parameters. Many parameters reduce by as much as 20-30\%, as expected from the earlier likelihood scans. The 2p2h and pion FSI parameters see the largest reductions.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -1374,6 +1381,9 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 \end{figure}
 
 \subsubsection{Asimov without detector parameters}
+To investigate the biases in the flux parameters seen in the fit to Asimov data for both the new ND280 covariance matrices for the multi-$\pi$ selections, we perform a fit to the asimov data without varying the ND280 parameters. This should help answer if there are issues related to dimensionality in the new fit, since we're fitting approximately double the number of parameters (1307 vs 781) with a large increase in number of bins (4130 vs 1624).
+
+\autoref{fig:asimov_fit_2018_nodet_fhc} shows the FHC flux parameters without varying the ND280 systematics, showing the central values and errors evaluated with the arithmetic mean, a Gaussian fit and the highest-posterior-density. All of the biases seen in the previous Asimov fit are gone. The uncertainties are reduced due to the marginalisation over the ND280 systematics are essentially delta functions at the nominal values. Looking at the RHC parameters in \autoref{fig:asimov_fit_2018_nodet_rhc} the same holds true.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.10\textwidth}
@@ -1418,7 +1428,6 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 
 \begin{figure}[h]
 	\centering
-	
 		\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
@@ -1448,13 +1457,13 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=17, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-
 \caption{SK}
 \end{subfigure}
 	\caption{RHC flux parameters, fitting to Asimov without varying detector parameters}
 	\label{fig:asimov_fit_2018_nodet_rhc}
 \end{figure}
 
+The interaction parameters in \autoref{fig:asimov_fit_2018_nodet_xsec} are similarly less biased than in the full fit, although the effect is less extreme than for the flux parameters.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -1474,7 +1483,14 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 	\label{fig:asimov_fit_2018_nodet_xsec}
 \end{figure}
 
+In conclusion, it appears that the bias in the flux parameters come from the ND280 parameters. 
+\subsection{Marginalisation effects}
+\red{write this section}
+
 \subsection{Covariance matrix}
+Using the results from the fit to Asimov data we here look at the parameter correlations.
+
+\autoref{fig:asimov_full_corr_2018} shows the full $\sqrt{}$ covariance and correlation matrix for the flux (bottom left corner) and cross-section (upper right corner) parameters. Many patterns are repeated from the 2017 case (\autoref{fig:asimov_full_corr}): the flux parameters are highly internally correlated where the cross-section parameters are mostly separated into categories of correlations (e.g. CC0$\pi$-CC0$\pi$ correlations are strong, CC0$\pi$-CC1$\pi$ are not).
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
@@ -1488,6 +1504,11 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 	\label{fig:asimov_full_corr_2018}
 \end{figure}
 
+Looking at the more digestible version, excluding the SK flux parameters, in \autoref{fig:asimov_nd_corr_2018}, the strongest correlations between the flux and interaction parameters are for the CC DIS parameter and the $M_A^{QE}$, BeRPA A, BeRPA B and $C_5^A$ parameter in which the latter group are especially strong around the flux peak.
+
+For the flux parameters, the largest uncertainties are seen for the high energy wrong-sign \nue parameters, since there barely is any data to constrain it. Furthermore, the production processes leading to such neutrinos are only weakly correlated with the lower energy right-sign processes, which is why it is weakly constrained by the prior covariance.
+
+The largest interaction uncertainties are on 2p2h normalisations, BeRPA E, CC coherent normalisations and the NC parameters, which again is expected since the lack of data of such processes and $Q^2$, and it is compatible with the 2017 fit.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=5]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
@@ -1499,6 +1520,7 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 	\label{fig:asimov_nd_corr_2018}
 \end{figure}
 
+Comparing the flux covariances before and after the fit in \autoref{fig:asimov_flux_corr_2018}, it's clear that ND280 reduces the uncertainty but maintains the parameters correlations. However, four of the ND280 and SK \nuebar parameters appear weakly negatively correlated (-0.15), which is not present in the prefit covariance.
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 		\begin{subfigure}[t]{0.49\textwidth}
@@ -1523,18 +1545,7 @@ In the light of the biases from using the multi-$\pi$ samples above, this is p
 	\label{fig:asimov_flux_corr_2018}
 \end{figure}
 
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=11]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=12]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
-	\end{subfigure}
-	\caption{$\sqrt{\mathbf{V}_{i,j}}$ and correlation matrix for the Asimov post-fit, showing cross-section parameters}
-	\label{fig:asimov_xsec_corr_2018}
-\end{figure}
-
-Comparing the cross-section correlation matrix from the fit to Asimov data from 2017 to the 2018 results in \autoref{fig:asimov_xsec_corr_2017_vs_2018} we generally see very small changes. The CC0$\pi$ parameters (bottom left corner) are unchanged, and the single pion parameters are correlating marginally more with the coherent parameters. The single pion and 2p2h normalisation correlations are slightly reduced, possibly due to the new RHC \numubar samples. The pion FSI parameters (upper right corner) are clearly less correlated in 2018, owing to the updated covariance matrix.
+Finally comparing the cross-section correlation matrix from the fit to Asimov data from 2017 to the 2018 results in \autoref{fig:asimov_xsec_corr_2017_vs_2018} we generally see very small changes. The CC0$\pi$ parameters (bottom left corner) are unchanged, and the single pion parameters are correlating marginally more with the coherent parameters. The single pion and 2p2h normalisation correlations are slightly reduced, possibly due to the new RHC \numubar samples. The pion FSI parameters (upper right corner) are clearly less correlated in 2018, owing to the updated covariance matrix.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=12]{figures/mach3/Asimov/2017b_NewDet_NewData_Asimov_Long_0_drawCorr.pdf}
@@ -1581,7 +1592,7 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
                 FGD1 \numubar 0$\pi$    & 6371.34   & $6369.71\pm71.4$   & 0.56  \\
                 FGD1 \numubar 1$\pi$    & 533.25   &  $537.87\pm20.8$   & 0.12  \\
                 FGD1 \numubar Other     & 1023.36   & $1027.79\pm29.3$   & 0.05 \\
-
+\hline
                 FGD2 \numubar 0$\pi$    & 6283.35   & $6287.51\pm71.2$   & 0.47  \\
                 FGD2 \numubar 1$\pi$    & 483.51   & $487.22\pm20.7$   & 0.04 \\
                 FGD2 \numubar Other     & 943.96   & $946.53\pm28.1$   & 0.04 \\
@@ -1602,15 +1613,85 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
 \label{tab:asimov_posterior_pred_2018}
 \end{table}
 
-
 \section{Data fit}
-\subsection{Full and reduced ND280 cov}
+\label{sec:data_2018}
+The Asimov fit stumbled upon one main issue: the 1-2\% flux normalisation bias when using the multi-$\pi$ selection. With this in mind we keep the multi-track selection (which showed no bias) and perform data fits with it, the multi-$\pi$ selection with the reduced ND280 covariance matrix, and the multi-$\pi$ selection with the full ND280 covariance matrix.
+
+The details for the MCMC that were obtained for the different fits are shown in \autoref{tab:mcmc_data_2018}. As for the Asimov case, the lower acceptance probability is a direct result of the number of ND280 parameters being fit: the multi-track fit has 556, the nominal covariance has 1076 and the full covariance has 4238. All chains were monitored for stability and often converged within 1/8th of the total steps requested. For the parameter plots we again use the conservative burn-in of 1/4.
+\begin{table}[h]
+	\begin{tabular}{l | c c c}
+		\hline
+		\hline
+		Name		&	Step length & Acceptance & Accepted steps \\
+		\hline
+		Nominal cov	& 	3,900,000	& 12.2\%	 & 470,956 \\
+		Full cov	& 	5,869,504	& 6.1\%		 & 358,039 \\
+		Multi-track & 	1,500,000	& 17.1\%	 & 257,439 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Markov Chain parameters for the various data fits in \autoref{sec:data_2018}}
+	\label{tab:mcmc_data_2018}
+\end{table}
+
+The summary for the data predictive distributions are shown in \autoref{tab:postfit_eventrate_2018} using the reduced ND280 covariance matrix. In contrast to the 2017 analysis, the prior predictive distribution predicts the RHC 1$\pi$ and Other distributions relatively well. This is reflected in the only marginal decrease in the test-statistic, e.g. 53.6 to 53.3 for FGD1 \numubar $1\pi$. For the same distribution we barely see a change in the prediction from the prefit to the postfit ($542.7\pm127.2$ to $542.9\pm21.6$). However, the prior predictive distributions do a poor job at predicting the central values of the data of the high statistics FHC distributions, although often inside the 1$\sigma$ uncertainties from the priors.
+
+As in 2017, the fit reduces the uncertainties on the total event rate by almost two orders of magnitude; from 11.5\% to 0.29\% for the total, 14.1\% to 0.5\% for CC0$\pi$, 11.1\% to 1.0\% for CC1$\pi$, 12.9\% to 1.0\% for CCOther. For the new RHC selections we see reductions of 13.6\% to 1.1\% for CC0$\pi$, 23.4\% to 4.0\% for CC1$\pi$ and 19.8\% to 2.6\% for CCOther. 
+
+Inspecting the test-statistic, the total $-2\log\mathcal{L}_S/\text{nBins}$ goes from 1.47 to 1.12, a deterioration from the 2017 value of 1.07. The fit is driven by the FHC 0$\pi$ distributions (35.6\% of statistic) and the 1$\pi$, Other and RHC 0$\pi$ making up between 10-15\% for both FGDs. The new RHC 1$\pi$ and Other distributions have a small contribution to the statistic in total and barely improve after the fit. Interestingly, all the CCOther distributions improve except FGD1 CC1$\pi$ RHC \numu.
+\begin{sidewaystable}
+	\centering
+	\begin{tabular}{ l | c c c | c c }
+		\hline
+		\hline
+		Sample 			& \multicolumn{3}{c|}{Event rate} & \multicolumn{2}{c}{$-2\ln\mathcal{L}_S$} \\
+		& Data	& Prior & Posterior & Prior & Posterior \\
+		\hline
+		FGD1 0$\pi$ 	& 33553	& $32045.4\pm4509.1$ 	& $33614.9\pm171.8$ & 1092.0  & 834.5 	\\ 
+		FGD1 1$\pi$ 	& 7757 	& $8111.0\pm902.3$	& $7966.8\pm77.8$  & 409.6  & 313.4 	\\ 
+		FGD1 Other 		& 8068 	& $6897.1\pm886.7$	& $7869.6\pm80.5$  & 710.7  & 458.6 	\\ 
+		\hline
+		FGD2 0$\pi$ 	& 33462 & $32441.5\pm4261.7$	& $33397.3\pm172.7$ & 1155.2  & 868.1 	\\ 
+		FGD2 1$\pi$ 	& 6133 	& $6523.5\pm722.3$	& $6271.6\pm66.6$  & 414.5 & 303.6 	\\ 
+		FGD2 Other 		& 7664 	& $6688.8\pm814.3$	& $7496.1\pm76.9$  & 646.3  & 416.4 	\\ 
+		\hline
+		FGD1 \numubar 0$\pi$ 	& 6368 	& $6577.3\pm894.0$	& $6331.8\pm69.1$  & 410.1  & 358.3 	\\ 
+		FGD1 \numubar 1$\pi$ 	& 535 	& $542.7\pm127.2$	& $542.9\pm21.6$  & 53.6  & 53.3 	\\ 
+		FGD1 \numubar Other 	& 1102 	& $1026.5\pm203.3$	& $1100.6\pm29.0$  & 85.8  &  86.3	\\ 
+		\hline
+		FGD2 \numubar 0$\pi$ 	& 6451  & $6462.9\pm893.1$	& $6447.1\pm67.4$ & 441.2  & 406.7	\\ 
+		FGD2 \numubar 1$\pi$ 	& 465 	& $489.0\pm102.9$	& $471.1\pm20.7$  & 43.2 & 40.04 	\\ 
+		FGD2 \numubar Other 	& 1032 	& $952.5\pm201.0$	& $1044.1\pm29.5$  & 118.9  & 104.71 	\\ 
+		\hline
+		FGD1 \numu RHC 0$\pi$ 	& 2707 	& $2545.7\pm332.8$	& $2713.4\pm44.5$  & 152.3  & 129.7 	\\ 
+		FGD1 \numu RHC 1$\pi$ 	& 847 	& $873.8\pm82.8$	& $871.0\pm14.9$  & 60.1  & 51.1 	\\ 
+		FGD1 \numu RHC Other 	& 1015 	& $815.9\pm83.1$	& $928.9\pm14.6$  & 110.5  & 71.4 	\\ 
+		\hline
+		FGD2 \numu RHC 0$\pi$ 	& 2648  & $2637.7\pm281.4$	& $2738.0\pm34.8$ & 172.1  & 153.0 	\\ 
+		FGD2 \numu RHC 1$\pi$ 	& 693 	& $698.7\pm66.7$	& $710.6\pm10.1$  & 79.4 & 73.4 	\\ 
+		FGD2 \numu RHC Other 	& 932 	& $806.1\pm84.4$	& $913.0\pm14.4$  & 79.1  & 58.1 	\\ 
+		\hline
+		Total 				& 121432 & $116639.1\pm13427.1$	& $121429.3\pm352.3$ & 6234.7 & 4780.6 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Event rate and test-statistic for data, pre-fit MC and post-fit MC broken by sample, using the reduced ND280 covariance matrix}
+	\label{tab:postfit_eventrate_2018}
+\end{sidewaystable}
+
+\subsection{Full and reduced ND280 covariance}
+As for the Asimov case in \autoref{sec:asimov_fit_2018}, we here compare the data fit results using the full and reduced ND280 covariance. We expect similar results for the two fits, as only small difference were found in the fit to Asimov data.
+
+\autoref{fig:data_full_red_rhc} shows the FHC flux parameters for the two fits, in which we note compatibility for the two fits, similar to that seen in the Asimov. The divergence happens at higher energies, where it's likely that the reduced covariance matrix (which was binned to mostly ignore shapes at higher energies) is missing freedom to vary events which the full ND280 matrix fit has.
+
+Looking at the shape of the FHC flux parameters, there is a tendency towards the nominal at higher energies and the majority of the shape change happens below 1 GeV. The shape below 1 GeV is to increase the flux by 10\% below 0.5 GeV, sitting at nominal at the flux peak of 0.6 GeV, to then decrease the flux by 7\% at 0.7 GeV up until 1.5 GeV. A similar shape was observed in the 2017 analysis in \autoref{fig:flux_data_fhc}, although these results are slightly shifted upwards.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.10\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
 	
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
@@ -1623,7 +1704,34 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=5, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
-	
+\caption{ND280}
+\end{subfigure}
+
+	\begin{subfigure}[t]{\textwidth}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
+\end{subfigure}
+\caption{SK}
+\end{subfigure}
+	\caption{FHC flux parameters, fitting to data with different ND280 matrices}
+	\label{fig:data_full_red_fhc}
+\end{figure}
+
+For the RHC flux parameters in \autoref{fig:data_full_red_rhc} we again note good agreement using the two covariance matrices. However, we see an entirely different shape of the flux to the FHC case, in which the low energy normalisation is nominal, falling to 95\% below 0.5 GeV and then sharply increasing to 10\% above 1 GeV, which then sink to nominal at 3 GeV. The wrong-sign flux is however increased at low energies, similar to the FHC flux parameters.
+
+Additionally, ND280 and SK see a slightly different behaviour around 2 GeV, where ND280 prefers a 10\% increased normalisation and the SK parameter sits at nominal. Otherwise the parameters are well mirrored.
+\begin{figure}[h]
+	\centering
+		\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
@@ -1636,24 +1744,10 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=9, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
-	\caption{ND280 flux parameters, fitting to data with different ND280 matrices}
-\end{figure}
+\caption{ND280}
+\end{subfigure}
 
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
-	\end{subfigure}
-
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=14, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
@@ -1666,9 +1760,17 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=17, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
-	\caption{SK flux parameters, fitting to data with different ND280 matrices}
+\caption{SK}
+\end{subfigure}
+	\caption{RHC flux parameters, fitting to data with different ND280 matrices}
+	\label{fig:data_full_red_rhc}
 \end{figure}
 
+\autoref{fig:data_full_red_xsec} shows the interaction parameters, in which we again note mostly compatibility. Interestingly, $M_A^{QE}$ is pulled even further than in 2017, now fully compatible with bubble chamber results ($M_A^{QE}=1.04\pm0.06$). The 2p2h $\nu$ normalisation parameter is decreased to 2017 ($1.64\pm0.21$ to $1.31\pm0.17$), whereas the $\bar{\nu}$ parameter increases ($0.80\pm0.26$ to $0.91\pm0.23$). Importantly, the 2p2h normalisation parameter for $\bar{\nu}$ is the largest difference in using the two ND280 covariance matrices, just outside of each other's $1\sigma$ uncertainty. The 2p2h shape parameters now fit very similar values for $^{12}C$ and $^{16}O$ and are not pushed towards any boundaries. The BeRPA A parameter after the fit is much closer to the nominal compared to the 2017 result, although the opposite is true for BeRPA B, which now sits 2-3$\sigma$ from the prior central value.
+
+The single pion parameters largely agree with 2017 albeit with smaller parameter errors. $C_5^A$ decreases slightly but still agrees with the prior uncertainty. The non-resonant $I_{1/2}$ background increases outside the 1$\sigma$ range but still has a large associated error. The CC DIS parameter moves more away from the prior---which would be expected if the poor CC Other disagreement still exists---and the coherent normalisation now fully agree with the prior. The NC other parameter remains at the upper boundary of the prior 1$\sigma$ uncertainty.
+
+The pion FSI---which received new priors for this analysis---interestingly still sit close to their fitted values in 2017. The reduction in uncertainty is the most dramatic for the pion FSI parameters, just like in the Asimov case.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -1685,9 +1787,11 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
 		\includegraphics[width=\textwidth,page=21, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_FullCov_NoReduc_Data_merg_2018a_MultiPi_Binningv6_NewCov_Data_merge}
 	\end{subfigure}
 	\caption{Interaction parameters, fitting to data with different ND280 matrices}
+	\label{fig:data_full_red_xsec}
 \end{figure}
 
 \subsection{Compare to multi-track}
+We also make a data fit in which we fit using the old multi-track with the 2017 binning, adding the run 2 to 8 data, to the reduced covariance matrix fit.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.10\textwidth}
@@ -1772,8 +1876,43 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
 
 \subsection{Covariance matrix}
 \subsection{Prior predictive}
-Running
+
+
 \subsection{Posterior predictive}
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l | c c }
+		\hline \hline
+		Sample & Draw Fluc. & Pred. Fluc. \\
+		\hline
+		FGD1 0$\pi$ & 0.211 & 0.208 \\
+		FGD1 1$\pi$ & 0.062 & 0.061 \\
+		\textcolor{red}{FGD1 Other}  & \textcolor{red}{0.000} & \textcolor{red}{0.000} \\
+		FGD2 0$\pi$ & 0.067 & 0.065 \\
+		FGD2 1$\pi$ & 0.140 & 0.134 \\
+		\textcolor{red}{FGD2 Other}  & \textcolor{red}{0.001} & \textcolor{red}{0.001} \\
+		\hline
+		FGD1 \numubar 0$\pi$ & 0.013 & 0.014 \\
+		FGD1 \numubar 1$\pi$ & 0.288 & 0.292 \\
+		FGD1 \numubar Other  & 0.288 & 0.296 \\
+		
+		\textcolor{red}{FGD2} \numubar 0$\pi$ & \textcolor{red}{0.000} & \textcolor{red}{0.000} \\
+		FGD2 \numubar 1$\pi$ & 0.784 & 0.786 \\
+		FGD2 \numubar Other  & 0.038 & 0.036 \\
+		\hline
+		FGD1 \numu RHC 0$\pi$ & 0.146 & 0.150 \\
+		FGD1 \numu RHC 1$\pi$ & 0.121 & 0.122 \\
+		FGD1 \numu RHC Other  & 0.078 & 0.078 \\
+		
+		FGD2 \numu RHC 0$\pi$ & 0.033 & 0.031 \\
+		FGD2 \numu RHC 1$\pi$ & 0.001 & 0.002 \\
+		FGD2 \numu RHC Other  & 0.373 & 0.366 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Posterior predictive p-values for each sample after the data fit}
+	\label{tab:data_post_pvalue_2018}
+\end{table}
 
 \subsection{Compatibility}
 \subsubsection{FGD1 vs FGD2}

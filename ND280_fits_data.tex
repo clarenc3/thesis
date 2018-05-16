@@ -86,7 +86,7 @@ Compared to the expected Asimov prior predictive in \autoref{tab:asimov_prior_pr
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=13]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\caption{ND280 and SK FHC flux parameters after the data fit for different MCMC chains}
+	\caption{FHC flux parameters after the data fit for different MCMC chains}
 	\label{fig:flux_data_fhc}
 \end{figure}
 
@@ -117,7 +117,7 @@ Compared to the expected Asimov prior predictive in \autoref{tab:asimov_prior_pr
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=17]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\caption{ND280 and SK RHC flux parameters after the data fit for different MCMC chains}
+	\caption{RHC flux parameters after the data fit for different MCMC chains}
 	\label{fig:flux_data_rhc}
 \end{figure}
 
@@ -205,7 +205,7 @@ The prior predictive spectrum and p-values are calculated in the same way as in 
 	\label{fig:prior_pred_data}
 \end{figure}
 
-The table of prior predictive p-values broken down by sample is found in \autoref{tab:data_post_pvalue}. We note the high-statistics FHC samples all consistently having $p=0.000$, and the low-statistics RHC samples having slightly higher p-values than that (maximum of $p=0.017$ for FGD2 CCNTrack \numubar). This is primarily due to statistical fluctuations being a much larger effect for the low-statistics samples compared to the systematic fluctuations.
+The table of prior predictive p-values broken down by sample is found in \autoref{tab:data_pre_pvalue}. We note the high-statistics FHC samples all consistently having $p=0.000$, and the low-statistics RHC samples having slightly higher p-values than that (maximum of $p=0.017$ for FGD2 CCNTrack \numubar). This is primarily due to statistical fluctuations being a much larger effect for the low-statistics samples compared to the systematic fluctuations.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c }
@@ -219,20 +219,26 @@ The table of prior predictive p-values broken down by sample is found in \autore
 		FGD2 1$\pi$ & 0.000 & 0.000 \\
 		FGD2 Other  & 0.000 & 0.000 \\
 		\hline
-		FGD1 1Trk & 0.002 & 0.002 \\
-		FGD1 NTrk & 0.003 & 0.002 \\
-		FGD2 1Trk & 0.001 & 0.000 \\
-		FGD2 NTrk & 0.017 & 0.017 \\
+		FGD1 \numubar 0$\pi$ & 0.000 & 0.000 \\
+		FGD1 \numubar 1$\pi$ & 0.075 & 0.075 \\
+		FGD1 \numubar Other  & 0.073 & 0.076 \\
+		
+		FGD2 \numubar 0$\pi$ & 0.000 & 0.000 \\
+		FGD2 \numubar 1$\pi$ & 0.213 & 0.215 \\
+		FGD2 \numubar Other  & 0.001 & 0.002 \\
 		\hline
-		FGD1 \numu 1Trk & 0.004 & 0.004 \\
-		FGD1 \numu NTrk & 0.011 & 0.009 \\
-		FGD2 \numu 1Trk & 0.003 & 0.003 \\
-		FGD2 \numu NTrk & 0.003 & 0.003 \\
+		FGD1 \numu RHC 0$\pi$ & 0.001 & 0.001 \\
+		FGD1 \numu RHC 1$\pi$ & 0.026 & 0.023 \\
+		FGD1 \numu RHC Other  & 0.011 & 0.013 \\
+		
+		FGD2 \numu RHC 0$\pi$ & 0.001 & 0.002 \\
+		FGD2 \numu RHC 1$\pi$ & 0.000 & 0.000 \\
+		FGD2 \numu RHC Other  & 0.064 & 0.063 \\
 		\hline
 		\hline
 	\end{tabular}
 	\caption{Prior predictive p-values for each sample after the data fit}
-	\label{tab:data_post_pvalue}
+	\label{tab:data_pre_pvalue_2018}
 \end{table}
 
 \subsection{Posterior predictive}
