@@ -364,22 +364,23 @@ Deciding on detector binning:
 Check how similar percentage effect on systematics: if the percentage change is more than 5\% and the percentage effect of the systematics on the bin is greater than 5\% and the bin content in the bin is at least one and the effect of the systematics on the bin changes the number of events in that bin by at least one.
 Will favour high-statistics bins and disfavour low-statistics bins.
 
+VERIFIED IN 17 MAY AFTER BUG v7
 \begin{itemize}
 	\item FGD1 and FGD2 CC0$\pi$: 272 detector bins (841) \\
-	$p_\mu$ (GeV/c): 0, 200, 300, 400, 450, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1400, 5000, 30000.\\
-	$\cos\theta_\mu$: -1, 0.5, 0.6, 0.7, 0.76, 0.8, 0.83, 0.85, 0.88, 0.965, 0.97, 0.975, 0.98, 0.985, 0.99, 0.995, 1.
+	$p_\mu$ (GeV/c): 0, 200, 300, 400, 450, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1400, 5000, 30000\\
+	$\cos\theta_\mu$: -1, 0.5, 0.6, 0.7, 0.76, 0.8, 0.83, 0.85, 0.88, 0.965, 0.97, 0.975, 0.98, 0.985, 0.99, 0.995, 1
 	
-	\item FGD1 and FGD2 CC1$\pi$: 100 detector bins (288) \\
-	$p_\mu$ (GeV/c): 0, 300, 350, 400, 500, 600, 650, 700, 1100, 3000, 5000, 30000.\\
-	$\cos\theta_\mu$: -1, 0.6, 0.7, 0.8, 0.85, 0.88, 0.9, 0.92, 0.93, 0.94, 1.
+	\item FGD1 and FGD2 CC1$\pi$: 110 detector bins (288) \\
+	$p_\mu$ (GeV/c): 0, 300, 350, 400, 500, 600, 650, 700, 1100, 3000, 5000, 30000\\
+	$\cos\theta_\mu$: -1, 0.6, 0.7, 0.8, 0.85, 0.88, 0.9, 0.92, 0.93, 0.94, 1
 	
 	\item FGD1 and FGD2 CCOther: 72 detector bins (342) \\
-	$p_\mu$ (GeV/c): 0, 300, 400, 600, 650, 1750, 2000, 5000, 30000.\\
-	$\cos\theta_\mu$: -1, 0.6, 0.93, 0.94, 0.95, 0.96, 0.98, 0.99, 0.995, 1.
+	$p_\mu$ (GeV/c): 0, 300, 400, 600, 650, 1750, 2000, 5000, 30000\\
+	$\cos\theta_\mu$: -1, 0.6, 0.93, 0.94, 0.95, 0.96, 0.98, 0.99, 0.995, 1
 	
 	\item FGD1 and FGD2 CC0$\pi$ RHC: 49 detector bins (306) \\
-	$p_\mu$ (GeV/c): 0, 300, 400, 500, 550, 2000, 4000, 30000.\\
-	$\cos\theta_\mu$: -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.96, 1. 
+	$p_\mu$ (GeV/c): 0, 300, 400, 500, 550, 2000, 4000, 30000\\
+	$\cos\theta_\mu$: -1, 0.6, 0.7, 0.8, 0.85, 0.9, 0.96, 1 
 	
 	\item FGD1 and FGD2 CC1$\pi$ RHC: 4 detector bins (48) \\
 	$p_\mu$ (GeV/c): 0, 500, 30000.\\
@@ -1679,7 +1680,7 @@ Inspecting the test-statistic, the total $-2\log\mathcal{L}_S/\text{nBins}$ goes
 	\label{tab:postfit_eventrate_2018}
 \end{sidewaystable}
 
-\subsection{Full and reduced ND280 covariance}
+\subsection{Full and reduced ND280 covariance matrix}
 As for the Asimov case in \autoref{sec:asimov_fit_2018}, we here compare the data fit results using the full and reduced ND280 covariance. We expect similar results for the two fits, as only small difference were found in the fit to Asimov data.
 
 \autoref{fig:data_full_red_rhc} shows the FHC flux parameters for the two fits, in which we note compatibility for the two fits, similar to that seen in the Asimov. The divergence happens at higher energies, where it's likely that the reduced covariance matrix (which was binned to mostly ignore shapes at higher energies) is missing freedom to vary events which the full ND280 matrix fit has.
@@ -1790,14 +1791,26 @@ The pion FSI---which received new priors for this analysis---interestingly still
 	\label{fig:data_full_red_xsec}
 \end{figure}
 
-\subsection{Compare to multi-track}
-We also make a data fit in which we fit using the old multi-track with the 2017 binning, adding the run 2 to 8 data, to the reduced covariance matrix fit.
+\autoref{fig:berpa_weight_2018} shows how the BeRPA weight has changed relative the 2017 weight and the nominal Nieves RPA. The behaviour below $Q^2\sim0.4\text{ GeV}^2$ is similar to 2017, although at $Q^2=0.5\text{ GeV}^2$ the enhancement is much stronger. The BeRPA parameterisation dies off more similar to the nominal than in 2017. In general though, the nominal RPA weight is heavily modified in the fit.
+\begin{figure}[h]
+	\includegraphics[width=0.3\textwidth, trim={0mm 0mm 0mm 0mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merge_BeRPA}
+	\caption{BeRPA weight applied to CCQE events after the fit to data}
+	\label{fig:berpa_weight_2018}
+\end{figure}
+
+\subsection{Comparison to multi-track}
+A fit to data using the old multi-track selection with the 2017 binning using the run 2 to 8 data, was made. Experiences gained from the fit to Asimov data showed less bias in the flux parameters for the multi-track selection, although the likelihood scans showed the new selection with updated binning to be more sensitive to parameters.
+
+\autoref{fig:data_multitrack_multipi_fhc}  show the FHC flux parameters after the data fit. For FHC \numu, the multi-track selection sits much closer to the priors and does not display the ``wavy'' oscillation between 0 and 1 GeV, seen when using the multi-$\pi$ selection. The multi-track FHC \numu flux parameters do however increase to $\sim8\%$ above 1.5 GeV, whereas the multi-$\pi$ is close to nominal. The SK FHC \numu parameters echo this behaviour.
+
+Looking at the other distributions (\nue, \numubar, \nuebar), they are more compatible. There seems to be a trend of the multi-$\pi$ laying below the multi-track up to 1.5 GeV, which stays put for the \numu flux but switches for the other distributions. All the flux parameters are still within the prior uncertainty and each other's uncertainty
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.10\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
 	
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
@@ -1810,7 +1823,35 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=5, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
+\caption{ND280}
+\end{subfigure}
+
+	\begin{subfigure}[t]{\textwidth}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
+\end{subfigure}
+\begin{subfigure}[t]{0.24\textwidth}
+	\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
+\end{subfigure}
+\caption{SK}
+\end{subfigure}
 	
+	\caption{FHC flux parameters, fitting to data with different selections}
+	\label{fig:data_multitrack_multipi_fhc}
+\end{figure}
+
+Inspecting the RHC parameters in \autoref{fig:data_multitrack_multipi_rhc}, a similar pattern emerges: the ``wavy'' nature at low energy is slightly stronger for multi-$\pi$. Above 1 GeV, the multi-track sits close to the prior throughout, and the multi-$\pi$ follows a similar shape but with more extreme corrections.
+
+For the wrong-sign component, the multi-$\pi$ sits closer to the nominal, and the multi-track agreeing in shape but with a different normalisation. Again, the two fits consistently sit within 1$\sigma$ of the prior uncertainty and each other's uncertainties.
+\begin{figure}[h]
+	\centering
+		\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
@@ -1823,24 +1864,10 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=9, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
-	\caption{ND280 flux parameters, fitting to data with different selections}
-\end{figure}
+\caption{ND280}
+\end{subfigure}
 
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=10, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=11, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=12, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.24\textwidth}
-		\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
-	\end{subfigure}
-
+	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=14, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
@@ -1853,9 +1880,23 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=17, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
-	\caption{SK flux parameters, fitting to data with different selections}
+\caption{SK}
+\end{subfigure}
+	\caption{RHC flux parameters, fitting to data with different selections}
+	\label{fig:data_multitrack_multipi_rhc}
 \end{figure}
 
+Finally the cross-section parameters in \autoref{fig:data_multitrack_multipi_xsec} show consistent behaviour up until 2p2h normalisation for $\bar{\nu}$. The multi-$\pi$ selection prefers a normalisation much in line with the prior and has a reduced uncertainty, where the multi-track agrees much more with the value of the 2p2h normalisation for $\nu$. Compared to the 2017 value of $\sim0.8$, the multi-$\pi$ selection seems more compatible. The relative 2p2h $^{12}C/^{16}O$ normalisation parameter shows a preference for the nominal in the multi-track, whereas the multi-$\pi$ pushes it half-way down the prior.
+
+The 2p2h shape C parameter sits close to the upper boundary for multi-track, similar to in 2017, within 1$\sigma$ of the multi-$\pi$ selection. The 2p2h shape O parameter shows a similar level of disagreement, with the multi-track sitting on the prior value, whereas the multi-$\pi$ selection shows a similar value to the carbon parameter. 
+
+The BeRPA parameters are particularly interesting here: the multi-track selection is very similar to the 2017 values, whereas the multi-$\pi$ sees a ``softening'' of the effect at low $Q^2$ (BeRPA A), but a larger move from te prior for BeRPA B, even higher than in 2017 (previously seen in \autoref{fig:berpa_weight_2018}).
+
+The single pion parameters are entirely compatible and similar to 2017, with the small exception of the non-resonant $I_{1/2}$ background which increases outside the prior. The CC coherent normalisations are similar to 2017 from the multi-track, sitting just on the 1$\sigma$ boundary, whereas the multi-$\pi$ agrees with the nominal.
+
+Of the NC parameters, only NC other (encompassing NC1$\pi$ and NCDIS) see differences: the multi-track fit prefers a value in agreement with the prior's central value, whereas the multi-$\pi$ selection pulls outside the prior uncertainty.
+
+The pion FSI parameters are expected to show large differences, as was the case in the Asimov studies of the fit and likelihood scans. This comes both from a rebinning of the FHC 1$\pi$ samples and the splitting of the NTrack into $1\pi$ and Other for RHC selections. The parameters are largely compatible, and the multi-$\pi$ consistently sits close to the prior value. Both fits still sit within the 1$\sigma$ uncertainty of the prior.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -1872,11 +1913,51 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 		\includegraphics[width=\textwidth,page=21, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
 	\caption{Interaction parameters, fitting to data with different selections}
+	\label{fig:data_multitrack_multipi_xsec}
 \end{figure}
 
 \subsection{Covariance matrix}
-\subsection{Prior predictive}
 
+
+\subsection{Prior predictive}
+Using the same method as in the Asimov study, we perform a check of the compatibility of the data with the model prescribed by the prior central values and uncertainty. In 2017 the prior model was deemed entirely incompatible with the data (\autoref{sec:prior_pred_data}), resulting in p-values of 0.0 for every selection. The p-values are calculated as two-dimensional, as described in \autoref{sec:Asimov_prior}.
+
+\autoref{tab:data_pre_pvalue_2018} shows the prior predictive p-values, which are zero for all the high-statistics samples. The lower statistics RHC 1$\pi$ and Other \numubar and \numu selection have non-zero p-values, largely due to the sample size being less than 1000 in \autoref{tab:postfit_eventrate_2018}. The p-values are largely in agreement with the 2017 values in \autoref{tab:data_pre_pvalue_2018}, and the statistics increase of anti-neutrino data has brought the 1Trk (aka 0$\pi$) p-value to zero too. Curiously, the RHC \numubar 1$\pi$ selections both have acceptable p-values as was implied from the event rates in \autoref{tab:postfit_eventrate_2018}, although the small sample size is likely at effect here.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{l | c c }
+		\hline \hline
+		Sample & Draw Fluc. & Pred. Fluc. \\
+		\hline
+		FGD1 0$\pi$ & 0.000 & 0.000 \\
+		FGD1 1$\pi$ & 0.000 & 0.000 \\
+		FGD1 Other  & 0.000 & 0.000 \\
+		\hline
+		FGD2 0$\pi$ & 0.000 & 0.000 \\
+		FGD2 1$\pi$ & 0.000 & 0.000 \\
+		FGD2 Other  & 0.000 & 0.000 \\
+		\hline
+		FGD1 \numubar 0$\pi$ & 0.000 & 0.000 \\
+		FGD1 \numubar 1$\pi$ & 0.075 & 0.075 \\
+		FGD1 \numubar Other  & 0.073 & 0.076 \\
+		\hline
+		FGD2 \numubar 0$\pi$ & 0.000 & 0.000 \\
+		FGD2 \numubar 1$\pi$ & 0.213 & 0.215 \\
+		FGD2 \numubar Other  & 0.001 & 0.002 \\
+		\hline
+		FGD1 \numu RHC 0$\pi$ & 0.001 & 0.001 \\
+		FGD1 \numu RHC 1$\pi$ & 0.026 & 0.023 \\
+		FGD1 \numu RHC Other  & 0.011 & 0.013 \\
+		\hline
+		FGD2 \numu RHC 0$\pi$ & 0.001 & 0.002 \\
+		FGD2 \numu RHC 1$\pi$ & 0.000 & 0.000 \\
+		FGD2 \numu RHC Other  & 0.064 & 0.063 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Prior predictive p-values for each sample after the data fit}
+	\label{tab:data_pre_pvalue_2018}
+\end{table}
 
 \subsection{Posterior predictive}
 \begin{table}[h]
@@ -1888,6 +1969,7 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 		FGD1 0$\pi$ & 0.211 & 0.208 \\
 		FGD1 1$\pi$ & 0.062 & 0.061 \\
 		\textcolor{red}{FGD1 Other}  & \textcolor{red}{0.000} & \textcolor{red}{0.000} \\
+		\hline
 		FGD2 0$\pi$ & 0.067 & 0.065 \\
 		FGD2 1$\pi$ & 0.140 & 0.134 \\
 		\textcolor{red}{FGD2 Other}  & \textcolor{red}{0.001} & \textcolor{red}{0.001} \\
@@ -1895,7 +1977,7 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 		FGD1 \numubar 0$\pi$ & 0.013 & 0.014 \\
 		FGD1 \numubar 1$\pi$ & 0.288 & 0.292 \\
 		FGD1 \numubar Other  & 0.288 & 0.296 \\
-		
+		\hline
 		\textcolor{red}{FGD2} \numubar 0$\pi$ & \textcolor{red}{0.000} & \textcolor{red}{0.000} \\
 		FGD2 \numubar 1$\pi$ & 0.784 & 0.786 \\
 		FGD2 \numubar Other  & 0.038 & 0.036 \\
@@ -1903,7 +1985,7 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 		FGD1 \numu RHC 0$\pi$ & 0.146 & 0.150 \\
 		FGD1 \numu RHC 1$\pi$ & 0.121 & 0.122 \\
 		FGD1 \numu RHC Other  & 0.078 & 0.078 \\
-		
+		\hline
 		FGD2 \numu RHC 0$\pi$ & 0.033 & 0.031 \\
 		FGD2 \numu RHC 1$\pi$ & 0.001 & 0.002 \\
 		FGD2 \numu RHC Other  & 0.373 & 0.366 \\
@@ -1913,6 +1995,9 @@ We also make a data fit in which we fit using the old multi-track with the 2017 
 	\caption{Posterior predictive p-values for each sample after the data fit}
 	\label{tab:data_post_pvalue_2018}
 \end{table}
+
+\subsection{Post-fit distributions}
+
 
 \subsection{Compatibility}
 \subsubsection{FGD1 vs FGD2}

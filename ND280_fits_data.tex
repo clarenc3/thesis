@@ -193,6 +193,7 @@ To understand why BeRPA is heavily distorted from the nominal form, we can look 
 Finally we note that the three different MCMC all produced very similar post-fit parameters.
 
 \subsection{Prior predictive}
+\label{sec:prior_pred_data}
 The prior predictive spectrum and p-values are calculated in the same way as in the fit to Asimov data. Here we expect to see a poor p-value due to the priors' inability to describe ND280 data---the reason behind doing the fit. \autoref{fig:prior_pred_data} shows the prior predictive p-value for all the samples, and as expected not a single parameter variation of the prior model produces a smaller test-statistic against the data than a fluctuation of the prior model does to itself.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -215,33 +216,29 @@ The table of prior predictive p-values broken down by sample is found in \autore
 		FGD1 0$\pi$ & 0.000 & 0.000 \\
 		FGD1 1$\pi$ & 0.000 & 0.000 \\
 		FGD1 Other  & 0.000 & 0.000 \\
+		\hline
 		FGD2 0$\pi$ & 0.000 & 0.000 \\
 		FGD2 1$\pi$ & 0.000 & 0.000 \\
 		FGD2 Other  & 0.000 & 0.000 \\
 		\hline
-		FGD1 \numubar 0$\pi$ & 0.000 & 0.000 \\
-		FGD1 \numubar 1$\pi$ & 0.075 & 0.075 \\
-		FGD1 \numubar Other  & 0.073 & 0.076 \\
-		
-		FGD2 \numubar 0$\pi$ & 0.000 & 0.000 \\
-		FGD2 \numubar 1$\pi$ & 0.213 & 0.215 \\
-		FGD2 \numubar Other  & 0.001 & 0.002 \\
+		FGD1 1Trk & 0.002 & 0.002 \\
+		FGD1 NTrk & 0.003 & 0.002 \\
+		FGD2 1Trk & 0.001 & 0.000 \\
+		FGD2 NTrk & 0.017 & 0.017 \\
 		\hline
-		FGD1 \numu RHC 0$\pi$ & 0.001 & 0.001 \\
-		FGD1 \numu RHC 1$\pi$ & 0.026 & 0.023 \\
-		FGD1 \numu RHC Other  & 0.011 & 0.013 \\
-		
-		FGD2 \numu RHC 0$\pi$ & 0.001 & 0.002 \\
-		FGD2 \numu RHC 1$\pi$ & 0.000 & 0.000 \\
-		FGD2 \numu RHC Other  & 0.064 & 0.063 \\
+		FGD1 \numu 1Trk & 0.004 & 0.004 \\
+		FGD1 \numu NTrk & 0.011 & 0.009 \\
+		FGD2 \numu 1Trk & 0.003 & 0.003 \\
+		FGD2 \numu NTrk & 0.003 & 0.003 \\
 		\hline
 		\hline
 	\end{tabular}
 	\caption{Prior predictive p-values for each sample after the data fit}
-	\label{tab:data_pre_pvalue_2018}
+	\label{tab:data_pre_pvalue}
 \end{table}
 
 \subsection{Posterior predictive}
+\label{sec:post_pred_data}
 The posterior predictive spectrum and p-values were calculated in identical way to the Asimov fit, using the model after fitting to data. The resulting test-statistic distribution and p-value is shown in \autoref{fig:posterior_pred_data}, where $p = 0.000$\footnote{A rather discouraging result!}. 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -293,7 +290,7 @@ The test-statistic distributions are shown in \autoref{fig:posterior_pred_data_f
 \begin{subfigure}[t]{0.49\textwidth}
 	\includegraphics[width=\textwidth, trim={0mm 6mm 0mm 11mm}, clip,page=52]{figures/mach3/data/postpred/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostPred_procs}
 \end{subfigure}
-	\caption{Posterior predictive p-values for the two CCOther selections after the data fit}
+	\caption{Bin-by-bin likelihood contributions in \pmu \cosmu for the CCOther selections}
 	\label{fig:posterior_pred_data_fgd1ccother}
 \end{figure}
 
@@ -307,7 +304,7 @@ The test-statistic distributions are shown in \autoref{fig:posterior_pred_data_f
 		\includegraphics[width=\textwidth, trim={0mm 6mm 0mm 11mm}, clip,page=48]{figures/mach3/data/postpred/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostPred_procs}
 		\caption{FGD2 CCOther}
 	\end{subfigure}
-\caption{Bin-by-bin likelihood contributions in \pmu \cosmu for the CCOther selections}
+\caption{Posterior predictive p-values for the two CCOther selections after the data fit}
 \label{fig:posterior_pred_data_llh_ccother}
 \end{figure}
 
