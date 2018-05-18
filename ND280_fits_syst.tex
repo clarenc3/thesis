@@ -1,62 +1,259 @@
 \section{Systematics}
 \label{sec:syst}
-The fit's main goal is to minimise impact of systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between ND280 and SK are the neutrino flux parameters (since T2K and SK are in the same neutrino ``beamline''), and neutrino-nucleus interaction parameters. Nuisance parameters are mostly ND280 detector parameters and cross-section parameters that are parametrised as only effective on Carbon. As such, there are many ``parameters of interest'', which the following sections cover.
+The fit's main goal is to minimise impact of systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between ND280 and SK are the neutrino flux parameters (since T2K and SK are in the same neutrino ``beamline''), and neutrino-nucleus interaction parameters. The ``nuisance parameters'' can be considered as the ND280 detector parameters and cross-section parameters that are parametrised as only effective on Carbon. As such, there are many ``parameters of interest'', which the following section covers.
+
+The sources of systematics enter the fit by changing the prediction by shape and/or normalisation, and in most cases the fit incurs a likelihood penalty for moving parameters away from their priors. The penalty takes two forms: either Gaussian or a constant. In the case where there is firm reason to believe a parameter is constrained from other sources, the Gaussian penalty is imposed. When external data or recent model development and similar indicate lacking or conflicting knowledge of a parameter, a flat prior is chosen.
+
+For the Gaussian penalty we have
+\begin{equation}
+	-2\log\mathcal{L}_\text{Penalty} = (X_i-\mu_i) \left(\mathbf{V}_{i,j}\right)^{-1} (X_j-\mu_j)
+\end{equation}
+for parameter $i$, with current fit values $X_i$, priors $\mu_i$ and covariance matrix $\mathbf{V}$, and for a flat penalty we have
+\begin{equation}
+	-2\log\mathcal{L}_\text{Penalty} = C
+\end{equation}
+where $C$ is a constant.
 
 \subsection{Flux}
 \label{subsec:syst_flux}
-The flux systematics are evaluated by varying underlying parameters in the flux model and using NA61/SHINE \red{CITE} data. [7] N. Antoniou et al. CERN-SPSC-2006-034, 2006.
-
-The NA61 data comes from runs using the thin target, whereas the T2K target is roughly 2 interaction lengths The data is $\pi^\pm$, $K^\pm$, $K^0_S$ and $\rho^+$.
-
-HARP data used for pion rescattering.
-
-Talk about the corrections in psyche
+The flux systematics contain uncertainties from all sources going into the neutrino flux prediction. They are primarily split into six categories:
 \begin{itemize}
-  \item ND280, SK FHC \numu; ND280, SK RHC \numubar, :\\
-    $E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
-
-  \item ND280, SK FHC \numubar; ND280, SK RHC \numu:\\
-    $E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30
-
-  \item ND280, SK FHC \nue; ND280, SK RHC \nuebar:\\
-    $E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30
-
-  \item ND280, SK FHC \nuebar; ND280, SK RHC \nue:\\
-    $E_\nu^{true}$: 0, 2.5, 30
+	\item Hadron interaction uncertainties
+	\item Proton beam profile and off-axis angle
+	\item Horn current and field
+	\item Horn and target alignment
+	\item Materials modelling
+	\item Number of protons on target
 \end{itemize}
+
+The software suite for the beam simulation consists of FLUKA2011 \cite{fluka2008_1, fluka2008_2, fluka2011} which simulates hadronic interactions in target and baffle, JNUBEAM (GEANT3-based \cite{geant3}) which simulates the geometry and tracking, and GCALOR \cite{gcalor} which simulates hadronic re-interactions and is used as a cross-check for FLUKA. Full details are found elsewhere \cite{t2k_beam, t2k_tn_flux}.
+
+The simulations are updated each year to improve the modelling, often taking additional data in to account. An example of such is using the dedicated NA61/SHINE T2K replica target data \cite{NA61_pions_rep} to tune the hadron production model at the T2K beam target, and including results from the HARP experiment \cite{harp}.
+
+The effects on the fractional error for the ND280 neutrino flux prediction is shown in \autoref{fig:flux_uncert_fhc} for FHC running and \autoref{fig:flux_uncert_rhc} for RHC running. The uncertainties are $\sim10\%$ in the flux peak region and is dominated by the hadron interaction uncertainties, which in turn consists primarily of multiplicity, pion rescattering and interaction length uncertainties. The proton beam profile and off-axis angle become important shortly after the flux peak at about 1 GeV for the right-sign component of the flux.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_numode_numu}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_numode_numub}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_numode_nue}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_numode_nueb}
+	\end{subfigure}
+	\caption{FHC flux uncertainties, ``13av2 Error'' is used for this analysis}
+	\label{fig:flux_uncert_fhc}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_numu}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_numub}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_nue}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_nueb}
+	\end{subfigure}
+\caption{RHC flux uncertainties, ``13av2 Error'' is used for this analysis}
+\label{fig:flux_uncert_rhc}
+\end{figure}
+
+Importantly, the hadronic interaction uncertainty is reducible by improved modelling and tuning to carefully selecting relevant hadron production data, which is the main method of reducing the flux uncertainty at T2K. An example of such an effort is the black dashed line and the black solid line in \autoref{fig:flux_uncert_fhc}, which shows the reduction in flux uncertainty from 2014 to 2015 analyses. Additionally, new beam profile monitors aid in reducing the proton beam profile and off-axis angle uncertainties.
+
+The flux systematics enter the near-detector and oscillation analyses as bin-by-bin normalisations in $E_\nu^\text{True}$ for four different neutrino species (\numu, \numubar, \nue, \nuebar), for each running mode (FHC, RHC), for each detector (ND280, SK). The binning is chosen to reflect the magnitude of the neutrino flux and the changing shape but simultaneously keeping the number of parameters relatively low. The right-sign and wrong-sign species have the same binning, so ND280 FHC \numu is binned as ND280 RHC \numubar:
+\begin{itemize}
+	\item ND280, SK FHC \numu; ND280, SK RHC \numubar, :\\
+	$E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
+	
+	\item ND280, SK FHC \numubar; ND280, SK RHC \numu:\\
+	$E_\nu^{true}$: 0, 0.7, 1, 1.5, 2.5, 30
+	
+	\item ND280, SK FHC \nue; ND280, SK RHC \nuebar:\\
+	$E_\nu^{true}$: 0, 0.5, 0.7, 0.8, 1.5, 2.5, 4, 30
+	
+	\item ND280, SK FHC \nuebar; ND280, SK RHC \nue:\\
+	$E_\nu^{true}$: 0, 2.5, 30
+\end{itemize}
+This procedure brings the total number of flux parameters to 100: 50 for ND280 and 50 for SK. The SK flux parameters are not directly constrained in the near-detector fit: however because of the very strong ND280-SK parameter correlations, the constraint on the ND280 flux parameters from ND280 data indirectly moves SK parameters. Hence, all 100 parameters are fit at ND280.
+
+The central values and bin-by-bin uncertainties are highly correlated so the likelihood penalties are evaluated with a covariance matrix, shown in \autoref{fig:flux_cov}.
+\begin{figure}[h]
+	\includegraphics[width=0.45\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/inputs/flux_covariance_banff_13av2}
+	\caption{13av2 covariance matrix, used in this analysis}
+	\label{fig:flux_cov}
+\end{figure}
+
+%pi+ to mu+numu 99.9877
+%to e+nue 1.23E-4
+%Kplus to mu+numu 63.55
+%to pi0mu+numu3.353
+%to pi0e+nue 5.07
+%K0L to pi-mu+numu 27.04
+%to pi0e+nue 40.55
+%mu+ to e+numubar+nue 100
+
+In addition to the variation systematics above, there is also a nominal flux correction applied to each event as a function of its run period (e.g. run 2a), neutrino specie (e.g. \numubar) and $E_\nu^{\text{True}}$ (e.g. 0.8 GeV). This is present to correct the nominal flux model which the Monte-Carlo was produced with updated measurements. An example from run 4a and run 5b is shown in \autoref{fig:flux_ratio}.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/run4_enu_nd5_13av2_numu_rat}
+		\caption{4a \numu}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/run5b_enu_nd5_13av2_numubar_rat}
+		\caption{5b \numubar}
+	\end{subfigure}
+	\caption{Nominal flux corrections applied to events in the ND5 tracker plane}
+	\label{fig:flux_ratio}
+\end{figure}
 
 \subsection{Detector systematics}
 \label{subsec:syst_nd280}
-The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics, such as TPC PID, FGD PID, TPC Momentum scale\red{talk about all the detector systematics in summary} and study the impact on the number of predicted events in each \pmu \cosmu bin. 
+The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics, such as TPC PID, FGD PID, TPC Momentum scale and study the impact on the number of predicted events in each \pmu \cosmu bin. 
 
-There are three categories of underlying ND280 systematics: observable-variation systematics, efficiency like systematics, normalisation systematic
+The parameterisation of near detector systematics are categorised as systematics that purely weight an event as the value changes and systematics that vary the observable event topology. The event weighting can further be broken down into efficiencies (with shapes) and normalisation parameters. When FGD-related systematics are concerned---such as pion tagging by Michel electron identification---the two FGDs have separate implementations to account for geometrical and compositional differences.
+
+The different sources of systematics, their variation type and assumed probability distribution function (PDF) are shown in \autoref{tab:nd280_systs}.
+\begin{table}[h]
+	\begin{tabular}{l c c}
+	\hline
+	\hline
+	Systematic						& Variation 	& PDF \\
+	\hline
+	TPC								& ---			& ---  \\
+	Magnetic Field Distortions		& Observable 	& Flat \\
+	TPC Momentum Scale				& Observable	& Gauss \\
+	TPC Momentum Resolution			& Observable	& Gauss \\
+	TPC PID							& Observable	& Gauss \\
+	TPC Cluster Efficiency			& Efficiency	& Gauss \\
+	TPC Tracking Efficiency			& Efficiency	& Gauss \\
+	TPC Charge ID Efficiency		& Efficiency	& Gauss \\
+	\hline 
+	FGD-TPC & ---&--- \\
+	TPC-FGD Matching Efficiency		& Efficiency	& Gauss \\
+	\hline
+	FGD & --- &--- \\
+	FGD PID							& Observable	& Gauss \\
+	FGD1-FGD2 Time of Flight		& Observable	& Gauss \\
+	FGD Hybrid Tracking Efficiency	& Efficiency	& Gauss \\
+	Michel Electron Efficiency		& Efficiency	& Gauss \\
+	\hline
+	Backgrounds & ---&--- \\
+	Out-of-Fiducial-Volume			& Normalisation & Gauss \\
+	Sand Muons						& Normalisation & Gauss \\
+	Pile-Up							& Normalisation	& Gauss \\
+	\hline
+	MC modelling & --- & --- \\
+	Pion secondary interactions		& Normalisation & Gauss \\
+	FGD Mass						& Normalisation & Gauss \\
+	\hline
+	\hline
+	\end{tabular}
+\caption{ND280 systematics present in the fit}
+\label{tab:nd280_systs}
+\end{table}
+
+\paragraph{Observable variation systematics}
+This group of systematics have the potential to change the reconstructed topology, so allow for migration in and out of selections. It can also switch the reconstructed lepton candidate for a different track in the event. The systematic is applied as a smearing to the reconstructed event variables (e.g. \pmu, \cosmu) and then reruns the event selection algorithm on the smeared event.
+
+There are two methods with which the smearing is applied:
+\begin{itemize}
+	\item If the relevant reconstructed variable has a known true value, the difference between the two is used as a scaling. The updated value of the variable after the variation is then
+	\begin{equation}
+		x'_{reco} = x_{true} + \left(x_{reco}^{MC}-x_{true}\right)\left(s + \alpha \cdot \delta s\right)
+	\end{equation}
+	where $\alpha$ is the random variable from the relevant systematic's PDF in \autoref{tab:nd280_systs}, $s$ is the scaling factor, and $\delta s$ is its statistical error. The scaling factor is defined as
+	\begin{equation}
+		s = \frac{\sigma^{data}}{\sigma^{MC}}
+	\end{equation}
+	and
+	\begin{equation}
+		\delta s = s \cdot \left| \frac{\delta \sigma^{data}}{\sigma^{Data}} - \frac{\delta \sigma^{MC}}{\sigma^{MC}} \right|
+	\end{equation}
+	where $\sigma^{data}$ is the dispersion observed in data and $\delta \sigma^{data}$ is the error on the dispersion.
+	\item If the MC is corrected to match a data mean value. This correction is needed because the effect of a systematic error ($\delta \Delta \bar{x}$) on the selected event relative the nominal MC is not guaranteed to agree with the corrected MC. The updated observable is then
+	\begin{equation}
+		x'_{reco} = x^{MC}_{reco}+ \Delta\bar{x} + \alpha \delta \Delta \bar{x}
+	\end{equation}
+	where $\Delta\bar{x} = \bar{x}^{data}_{reco}-\bar{x}^{MC}_{reco}$,$\bar{x}_{reco}$ is the mean value of the variable $x$, $\alpha$ is a random variable, and $\delta \Delta \bar{x}$ is the associated uncertainty from the reconstructed data and MC discrepancy,
+	\begin{equation}
+		\delta \Delta \bar{x} = \sqrt{\Delta\bar{x}^2 + \left(\delta \bar{x}^{data}_{reco}\right)^2  + \left(\delta \bar{x}^{MC}_{reco}\right)^2}
+	\end{equation}
+\end{itemize}
+
+Additionally uncertainties from the magnetic field has special cases of the above:
+\begin{itemize}
+	\item The TPC laser calibration corrections are used on-top of the B-field mapping corrections, where the latter is applied during reconstruction and the former is treated as an uncertainty. The reconstructed variable is then
+	\begin{equation}
+		x'_{reco} = x^{MC}_{reco} + \alpha \left(x_{reco}^{New}-x_{reco}^MC\right)
+	\end{equation}
+	where $\alpha$ is the random variable and $x_{reco}^{New}$ is the reconstructed momentum after the updated mapping is applied. This applies to the magnetic field distortion systematic.
+	\item If the observable depends on a scale $s$ that is easy to extract from in-situ measurements
+	\begin{equation}
+		x'_{reco} = x_{reco}^{MC}+\alpha \delta x
+	\end{equation}
+	where $\delta x = x_{reco}^{MC} \delta s$ is the uncertainty on the observable and $\delta s$ is the uncertainty on the scaling variable. The TPC momentum scale systematic uses this parameterisation, in which $s$ is the scale of the magnet current and $\delta s$ is its uncertainty.
+\end{itemize}
+
+\paragraph{Efficiency systematics}
+The weight systematics are computed from studies which compare data and MC predictions in well known control samples. The multiple ND280 subdetectors enable cross-checks for tracking and matching efficiencies: e.g. TPC2 tracking efficiency can be computed using tracks with segments in FGD1 and FGD2, which therefore should have a track in TPC2.
+
+Using the sand muon control sample---defined as having a through-going muon track in most of the detector, where the muon was created in the surrounding sand in the ND280 pit or the magnet---as an example, such muons tend to be very forward-going and high energy. Thus the sample is suitable for alignment studies but not efficiency (since the \pmu, \cosmu phase space is very limited). The model assumed to move to this phase space assumes the ratio between efficiencies in data and MC are the same in analysis and control samples.
+
+The efficiency using MC is calculated using the truth information and the calculated efficiency for the data is then
+\begin{equation}
+\epsilon_{data} = \frac{\epsilon_{data}^{Control}}{\epsilon_{MC}^{Control}} \epsilon_{MC}
+\end{equation}
+where $\epsilon^{Control}$ is the efficiency in the control sample(s). The statistical uncertainty in $r^{Control} = \epsilon^{Control}_{data}/\epsilon^{Control}_{MC}$ is taken into account as
+\begin{equation}
+\delta r^{Control} = \sqrt{\left(1-r^{Control}\right)^2 + \left(\delta r^{Control}_{Stat}\right)^2}
+\end{equation}
+yielding the predicted efficiency in the data as
+\begin{equation}
+\epsilon_{data}' = \left(r^{Control} + \alpha \delta r^{Control}\right)\epsilon_{MC}
+\end{equation}
+where $\alpha$ is the random variable.
+
+Finally to propagate the weight systematics on an event-by-event basis we define the two weights
+\begin{equation}
+w_{Eff} = \frac{\epsilon_{data}'}{\epsilon_{MC}}
+\end{equation}
+for events that identify the track correctly and
+\begin{equation}
+w_{Ineff} = \frac{1-\epsilon_{Data}'}{1-\epsilon_{MC}}
+\end{equation}
+
+\paragraph{Normalisation systematics}
+These systematics are simple one-time weights which change the overall event numbers. The FGD mass error is an example of such a systematics: if the mass of the FGD is larger than the nominal, the overall number of observed events in MC should be increased. The weight $w$ is simple applied as
+\begin{equation}
+w = 1+\alpha \cdot \delta e
+\end{equation}
+where 1.0 is the nominal weight, $\alpha$ is a random variable, and $\delta e$ is the systematic error on the source.
+
+\red{talk about all the detector systematics in summary?}
+
+\paragraph{Parameterisation of ND280 related systematics}
+The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an event-by-event basis. However, in practice this is complicated by two main reasons: 1) the event selection framework is not sufficiently optimised to guarantee fast reweighting below 0.1s per reconfigure; 2) and for some events and values of variation systematics, discontinuous test-statistic were found when events were migrated from one topology to another. Whereas the former is purely computational, the latter causes problems for finding minima with gradient descent algorithms, employed by the dedicated near-detector only fit (BANFF). 
+
+It was instead decided to parameterise the systematics similarly to the flux systematics, which both ensures smoothness and enables fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event and 1000 random variations are chosen according to the prior covariances the events are binned in the chosen fit-binning in \autoref{sec:binning_2017}. Each bin is then a normalisation parameter, and highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the effects from Martini-Nieves 1p1h model\red{cite} differences are added.
+
+The central value and uncertainty on the number of events in a bin comes from a Gaussian fit to the bin content over the throws, and the central value is the Gaussian fit's maximum. 
 
 The event variation in each \pmu \cosmu bin is assumed to be Gaussian \red{show examples of good Gaussian bins and bad ones} 
 
 see TN 212 p 95
-Field distortions
-Momentum resolution
-Momentum scale
-TPC PID
-FGD PID
-Time of flight
-
-charge ID efficiency
-tpc cluster eff
-tpc track eff
-fgd track eff
-tpc-fgd matching eff
-michel electron
-oofv bckg
-pile-up
-fgd mass
-pion SI
-
-all magnet
-sand muon bkgd
-total
-
 read p39 onwards about syst
+
+
 
 The number of detector systematics still decreased slightly from 580 to 556 due to merging bins with similar detector systematic effects for the rebinned samples.
 All the consecutive bins with similar systematic values have been merged in order to reach a lower number of parameters (556) while the number of bins in the fit increased a lot (1624 bins), keeping the number of parameters under control.

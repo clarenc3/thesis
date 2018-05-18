@@ -354,12 +354,15 @@ Here we re-bin all selections for 2018 analysis using the above criteria, leadin
 \section{Systematics}
 \subsection{Flux}
 No change
+
 \subsection{Cross-section}
 Only new thing is FSI central values
 
 and the CC norm nu nubar
 
 \subsection{Making new detector systematics}
+Also added proton SI
+
 Deciding on detector binning: 
 Check how similar percentage effect on systematics: if the percentage change is more than 5\% and the percentage effect of the systematics on the bin is greater than 5\% and the bin content in the bin is at least one and the effect of the systematics on the bin changes the number of events in that bin by at least one.
 Will favour high-statistics bins and disfavour low-statistics bins.
@@ -1095,47 +1098,48 @@ The \pmu \cosmu prior predictive spectrum is made using 20,000 correlated throws
 \autoref{fig:prior_predictive_asimov_2018} shows the resulting two-dimensional p-value, agreeing with the expectation. Comparing to 2017 where the p-value was 0.572, it's clear the p-value increases this year. In the case of skewed correlated parameter throws---coming from missing parameter correlations---we'd expect something similar to this when the case where we increase the statistics. This is because the x-axis in \autoref{fig:prior_predictive_asimov_2018} is likely to be squeeze when the statistics increase, whereas they y-axis would not because the systematics are unchanged changed.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/2018/asimov/pred/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_PriorPred_procs}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/2018/asimov/pred/17May_MultiPi_CovFix_Final_pospred_PriorPred_procs.pdf}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/2018/asimov/pred/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_PriorPred_procs}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=2]{figures/mach3/2018/asimov/pred/17May_MultiPi_CovFix_Final_pospred_PriorPred_procs.pdf}
 	\end{subfigure}
 	\caption{Prior predictive p-values for the Asimov data in 2018}
 	\label{fig:prior_predictive_asimov_2018}
 \end{figure}
 
-\autoref{tab:asimov_prior_pred_2018} shows the event rates after making correlated throws of the systematics with the test-statistic to Asimov data. Comparing to the 2017 equivalent in \autoref{tab:asimov_prior_pred} we see a similar level of uncertainty, as expected. As in 2017, the prior predictive on Asimov data produces an 11\% uncertainty on the total event rate, with a 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. As in 2017, we see a consistent skew in the prior predictive ``best-fit'' where it overestimates the Asimov data set, likely due to missing covariance matrices between cross-section, flux and ND280 parameters. The contribution to the test-statistic is much larger too compared to 2017, primarily due to many more bins in each selection.
+\autoref{tab:asimov_prior_pred_2018} shows the event rates after making correlated throws of the systematics with the test-statistic to Asimov data. Comparing to the 2017 equivalent in \autoref{tab:asimov_prior_pred} we see a similar level of uncertainty, as expected. As in 2017, the prior predictive on Asimov data produces an 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. As in 2017, we see a consistent skew in the prior predictive ``best-fit'' where it overestimates the Asimov data set, likely due to missing covariance matrices between cross-section, flux and ND280 parameters. The contribution to the test-statistic is much larger too compared to 2017, primarily due to many more bins in each selection.
 \begin{table}
 	\begin{tabular} {l | c c | c}
 		\hline
 		\hline
 		Sample 			& Nominal	& Prior Pred.	& $-2\log\mathcal{L}_S$ \\
 		\hline
-		FGD1 0$\pi$             & 31529.3   & $32394.6\pm4245.4$  & 26.24   \\
-		FGD1 1$\pi$             & 7998.1    & $8113.27\pm891.8$   & 2.35   \\
-		FGD1 Other              & 6793.68   & $6909.17\pm827.6$   & 3.91   \\
+		FGD1 0$\pi$             & 31529.3   & $32347.8\pm4135.7$  & 26.1   \\
+		FGD1 1$\pi$             & 7998.1    & $8106.6\pm8899.4$   & 2.1   \\
+		FGD1 Other              & 6793.7   & $6894.1\pm858.4$   & 3.1 \\
 		\hline
-		FGD2 0$\pi$             & 31734     & $32603.1\pm4095.5$  & 26.44   \\
-		FGD2 1$\pi$             & 6419.04   & $6516.55\pm685.0$   & 2.32    \\
-		FGD2 Other              & 6562.75   & $6677.6\pm784.5$    & 3.71   \\
+		FGD2 0$\pi$             & 31734.1  & $32572.8\pm4012.8$  & 26.5   \\
+		FGD2 1$\pi$             & 6419.0   & $6511.2\pm702.4$   & 2.0    \\
+		FGD2 Other              & 6562.8   & $6652.8\pm786.4$    & 3.0   \\
 		\hline
-		FGD1 \numubar 0$\pi$    & 6371.34   & $6574.72\pm861.2$   & 8.73   \\
-		FGD1 \numubar 1$\pi$    & 533.25   	& $545.10\pm126.6$    & 0.61  \\
-		FGD1 \numubar Other     & 1023.36   & $1039.8\pm167.2$    & 1.20   \\
+		FGD1 \numubar 0$\pi$    & 6371.3   & $6541.9\pm847.5$   & 7.7   \\
+		FGD1 \numubar 1$\pi$    & 533.3   	& $530.5\pm115.5$    & 4.6  \\
+		FGD1 \numubar Other     & 1023.4   & $1037.4\pm191.1$    & 0.8   \\
 		\hline
-		FGD2 \numubar 0$\pi$    & 6283.35   & $6483.34\pm835.5$   & 8.94   \\
-		FGD2 \numubar 1$\pi$    & 483.51   	& $495.42\pm104.9$    & 0.47  \\
-		FGD2 \numubar Other     & 943.96   	& $949.90\pm175.5$    & 1.59   \\
+		FGD2 \numubar 0$\pi$    & 6283.4   & $6444.7\pm830.5$   & 8.4   \\
+		FGD2 \numubar 1$\pi$    & 483.5   	& $486.8\pm102.3$    & 0.6  \\
+		FGD2 \numubar Other     & 944.0   	& $953.2\pm204.1$    & 0.6   \\
 		\hline
-		FGD1 \numu RHC 0$\pi$   & 2485.51   & $2561.04\pm320.8$   & 2.57   \\
-		FGD1 \numu RHC 1$\pi$   & 855.91   	& $874.72\pm85.4$     & 0.56  \\
-		FGD1 \numu RHC Other    & 804.65   	& $817.92\pm85.0$     & 0.36  \\
+		FGD1 \numu RHC 0$\pi$   & 2485.5   & $2543.8\pm429.5$   & 3.3   \\
+		FGD1 \numu RHC 1$\pi$   & 855.9   	& $861.9\pm107.7$     & 0.5  \\
+		FGD1 \numu RHC Other    & 804.7   	& $790.9\pm159.8$     & 1.9  \\
 		\hline
-		FGD2 \numu RHC 0$\pi$   & 2553.51   & $2642.35\pm285.6$   & 4.20  \\
-		FGD2 \numu RHC 1$\pi$   & 679.99    & $700.02\pm68.7$     & 0.89  \\
-		FGD2 \numu RHC Other    & 792.17   	& $808.12\pm83.7$     & 0.61  \\
+		FGD2 \numu RHC 0$\pi$   & 2553.5   & $2503.5\pm395.5$   & 6.3  \\
+		FGD2 \numu RHC 1$\pi$   & 680.0    & $687.3\pm88.1$     & 0.8  \\
+		FGD2 \numu RHC Other    & 792.2   	& $780.4\pm136.5$     & 1.9  \\
 		\hline
-		Total                   & 114847    & $117840\pm12411.1$  & 95.70 \\
+		Total                   & 114834    & $117541.9\pm12383.0$  & 100.2 \\
+		% Updated
 		\hline
 		\hline
 	\end{tabular}
@@ -1648,31 +1652,32 @@ Inspecting the test-statistic, the total $-2\log\mathcal{L}_S/\text{nBins}$ goes
 		Sample 			& \multicolumn{3}{c|}{Event rate} & \multicolumn{2}{c}{$-2\ln\mathcal{L}_S$} \\
 		& Data	& Prior & Posterior & Prior & Posterior \\
 		\hline
-		FGD1 0$\pi$ 	& 33553	& $32045.4\pm4509.1$ 	& $33614.9\pm171.8$ & 1092.0  & 834.5 	\\ 
-		FGD1 1$\pi$ 	& 7757 	& $8111.0\pm902.3$	& $7966.8\pm77.8$  & 409.6  & 313.4 	\\ 
-		FGD1 Other 		& 8068 	& $6897.1\pm886.7$	& $7869.6\pm80.5$  & 710.7  & 458.6 	\\ 
+		FGD1 0$\pi$ 	& 33553	& $32292.0\pm4121.4$ 	& $33614.9\pm171.8$ & 1096.0  & 834.5 	\\ 
+		FGD1 1$\pi$ 	& 7757 	& $8101.2\pm911.2$	& $7966.8\pm77.8$  & 408.5  & 313.4 	\\ 
+		FGD1 Other 		& 8068 	& $6925.9\pm886.5$	& $7869.6\pm80.5$  & 712.0  & 458.6 	\\ 
 		\hline
-		FGD2 0$\pi$ 	& 33462 & $32441.5\pm4261.7$	& $33397.3\pm172.7$ & 1155.2  & 868.1 	\\ 
-		FGD2 1$\pi$ 	& 6133 	& $6523.5\pm722.3$	& $6271.6\pm66.6$  & 414.5 & 303.6 	\\ 
-		FGD2 Other 		& 7664 	& $6688.8\pm814.3$	& $7496.1\pm76.9$  & 646.3  & 416.4 	\\ 
+		FGD2 0$\pi$ 	& 33462 & $32565.7\pm4102.7$	& $33397.3\pm172.7$ & 1156.0  & 868.1 	\\ 
+		FGD2 1$\pi$ 	& 6133 	& $6519.8\pm720.4$	& $6271.6\pm66.6$  & 414.1 & 303.6 	\\ 
+		FGD2 Other 		& 7664 	& $6694.8\pm816.1$	& $7496.1\pm76.9$  & 644.5  & 416.4 	\\ 
 		\hline
-		FGD1 \numubar 0$\pi$ 	& 6368 	& $6577.3\pm894.0$	& $6331.8\pm69.1$  & 410.1  & 358.3 	\\ 
-		FGD1 \numubar 1$\pi$ 	& 535 	& $542.7\pm127.2$	& $542.9\pm21.6$  & 53.6  & 53.3 	\\ 
-		FGD1 \numubar Other 	& 1102 	& $1026.5\pm203.3$	& $1100.6\pm29.0$  & 85.8  &  86.3	\\ 
+		FGD1 \numubar 0$\pi$ 	& 6368 	& $6526.9\pm920.7$	& $6331.8\pm69.1$  & 409.3  & 358.3 	\\ 
+		FGD1 \numubar 1$\pi$ 	& 535 	& $534.3\pm134.1$	& $542.9\pm21.6$  & 53.8  & 53.3 	\\ 
+		FGD1 \numubar Other 	& 1102 	& $1024.7\pm203.9$	& $1100.6\pm29.0$  & 86.0  &  86.3	\\ 
 		\hline
-		FGD2 \numubar 0$\pi$ 	& 6451  & $6462.9\pm893.1$	& $6447.1\pm67.4$ & 441.2  & 406.7	\\ 
-		FGD2 \numubar 1$\pi$ 	& 465 	& $489.0\pm102.9$	& $471.1\pm20.7$  & 43.2 & 40.04 	\\ 
-		FGD2 \numubar Other 	& 1032 	& $952.5\pm201.0$	& $1044.1\pm29.5$  & 118.9  & 104.71 	\\ 
+		FGD2 \numubar 0$\pi$ 	& 6451  & $6410.1\pm940.7$	& $6447.1\pm67.4$ & 441.3  & 406.7	\\ 
+		FGD2 \numubar 1$\pi$ 	& 465 	& $476.6\pm118.8$	& $471.1\pm20.7$  & 45.8 & 40.04 	\\ 
+		FGD2 \numubar Other 	& 1032 	& $1017.2\pm201.0$	& $1044.1\pm29.5$  & 119.3  & 104.71 	\\ 
 		\hline
-		FGD1 \numu RHC 0$\pi$ 	& 2707 	& $2545.7\pm332.8$	& $2713.4\pm44.5$  & 152.3  & 129.7 	\\ 
-		FGD1 \numu RHC 1$\pi$ 	& 847 	& $873.8\pm82.8$	& $871.0\pm14.9$  & 60.1  & 51.1 	\\ 
-		FGD1 \numu RHC Other 	& 1015 	& $815.9\pm83.1$	& $928.9\pm14.6$  & 110.5  & 71.4 	\\ 
+		FGD1 \numu RHC 0$\pi$ 	& 2707 	& $2541.2\pm442.2$	& $2713.4\pm44.5$  & 149.4  & 129.7 	\\ 
+		FGD1 \numu RHC 1$\pi$ 	& 847 	& $860.3\pm108.0$	& $871.0\pm14.9$  & 60.3  & 51.1 	\\ 
+		FGD1 \numu RHC Other 	& 1015 	& $1009.8\pm111.3$	& $928.9\pm14.6$  & 112.8  & 71.4 	\\ 
 		\hline
-		FGD2 \numu RHC 0$\pi$ 	& 2648  & $2637.7\pm281.4$	& $2738.0\pm34.8$ & 172.1  & 153.0 	\\ 
-		FGD2 \numu RHC 1$\pi$ 	& 693 	& $698.7\pm66.7$	& $710.6\pm10.1$  & 79.4 & 73.4 	\\ 
-		FGD2 \numu RHC Other 	& 932 	& $806.1\pm84.4$	& $913.0\pm14.4$  & 79.1  & 58.1 	\\ 
+		FGD2 \numu RHC 0$\pi$ 	& 2648  & $2598.7\pm445.1$	& $2738.0\pm34.8$ & 178.1  & 153.0 	\\ 
+		FGD2 \numu RHC 1$\pi$ 	& 693 	& $689.3\pm89.6$	& $710.6\pm10.1$  & 79.6 & 73.4 	\\ 
+		FGD2 \numu RHC Other 	& 932 	& $786.9\pm163.3$	& $913.0\pm14.4$  & 81.3  & 58.1 	\\ 
 		\hline
-		Total 				& 121432 & $116639.1\pm13427.1$	& $121429.3\pm352.3$ & 6234.7 & 4780.6 \\
+		Total 				& 121432 & $117241.8\pm12775.9$	& $121429.3\pm352.3$ & 6248.1 & 4780.6 \\
+		% Prior predictive updated, posterior _NOT_
 		\hline
 		\hline
 	\end{tabular}
