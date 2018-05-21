@@ -52,10 +52,10 @@ The effects on the fractional error for the ND280 neutrino flux prediction is sh
 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_numu}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_numub}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_numub}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_anumode_numu}
 	\end{subfigure}
 
 	\begin{subfigure}[t]{0.42\textwidth}
@@ -68,7 +68,7 @@ The effects on the fractional error for the ND280 neutrino flux prediction is sh
 \label{fig:flux_uncert_rhc}
 \end{figure}
 
-Importantly, the hadronic interaction uncertainty is reducible by improved modelling and tuning to carefully selecting relevant hadron production data, which is the main method of reducing the flux uncertainty at T2K. An example of such an effort is the black dashed line and the black solid line in \autoref{fig:flux_uncert_fhc}, which shows the reduction in flux uncertainty from 2014 to 2015 analyses. Additionally, new beam profile monitors aid in reducing the proton beam profile and off-axis angle uncertainties.
+Importantly, the hadronic interaction uncertainty is reducible by improved modelling and tuning to carefully selected relevant hadron production data, which is the main method of reducing the flux uncertainty at T2K. An example of such an effort is the black dashed line and the black solid line in \autoref{fig:flux_uncert_fhc}, which shows the reduction in flux uncertainty from 2014 to 2015 analyses. Additionally, new beam profile monitors aid in reducing the proton beam profile and off-axis angle uncertainties.
 
 The flux systematics enter the near-detector and oscillation analyses as bin-by-bin normalisations in $E_\nu^\text{True}$ for four different neutrino species (\numu, \numubar, \nue, \nuebar), for each running mode (FHC, RHC), for each detector (ND280, SK). The binning is chosen to reflect the magnitude of the neutrino flux and the changing shape but simultaneously keeping the number of parameters relatively low. The right-sign and wrong-sign species have the same binning, so ND280 FHC \numu is binned as ND280 RHC \numubar:
 \begin{itemize}
@@ -84,7 +84,7 @@ The flux systematics enter the near-detector and oscillation analyses as bin-by-
 	\item ND280, SK FHC \nuebar; ND280, SK RHC \nue:\\
 	$E_\nu^{true}$: 0, 2.5, 30
 \end{itemize}
-This procedure brings the total number of flux parameters to 100: 50 for ND280 and 50 for SK. The SK flux parameters are not directly constrained in the near-detector fit: however because of the very strong ND280-SK parameter correlations, the constraint on the ND280 flux parameters from ND280 data indirectly moves SK parameters. Hence, all 100 parameters are fit at ND280.
+This procedure brings the total number of flux parameters to 100: 50 for ND280 and 50 for SK. The SK flux parameters are not directly constrained in the near-detector fit: however because of the very strong ND280-SK flux correlations, the constraint on the ND280 flux parameters from ND280 data indirectly moves SK flux parameters. Hence, all 100 parameters are fit at ND280.
 
 The central values and bin-by-bin uncertainties are highly correlated so the likelihood penalties are evaluated with a covariance matrix, shown in \autoref{fig:flux_cov}.
 \begin{figure}[h]
@@ -124,12 +124,12 @@ The parameterisation of near detector systematics are categorised as systematics
 
 The different sources of systematics, their variation type and assumed probability distribution function (PDF) are shown in \autoref{tab:nd280_systs}.
 \begin{table}[h]
-	\begin{tabular}{l c c}
+	\begin{tabular}{l | c c}
 	\hline
 	\hline
 	Systematic						& Variation 	& PDF \\
 	\hline
-	TPC								& ---			& ---  \\
+	\multicolumn{3}{l}{TPC} \\
 	Magnetic Field Distortions		& Observable 	& Flat \\
 	TPC Momentum Scale				& Observable	& Gauss \\
 	TPC Momentum Resolution			& Observable	& Gauss \\
@@ -138,21 +138,21 @@ The different sources of systematics, their variation type and assumed probabili
 	TPC Tracking Efficiency			& Efficiency	& Gauss \\
 	TPC Charge ID Efficiency		& Efficiency	& Gauss \\
 	\hline 
-	FGD-TPC & ---&--- \\
+	\multicolumn{3}{l}{FGD-TPC} \\
 	TPC-FGD Matching Efficiency		& Efficiency	& Gauss \\
 	\hline
-	FGD & --- &--- \\
+	\multicolumn{3}{l}{FGD} \\
 	FGD PID							& Observable	& Gauss \\
 	FGD1-FGD2 Time of Flight		& Observable	& Gauss \\
 	FGD Hybrid Tracking Efficiency	& Efficiency	& Gauss \\
 	Michel Electron Efficiency		& Efficiency	& Gauss \\
 	\hline
-	Backgrounds & ---&--- \\
+	\multicolumn{3}{l}{Backgrounds} \\
 	Out-of-Fiducial-Volume			& Normalisation & Gauss \\
 	Sand Muons						& Normalisation & Gauss \\
 	Pile-Up							& Normalisation	& Gauss \\
 	\hline
-	MC modelling & --- & --- \\
+	\multicolumn{3}{l}{MC modelling} \\
 	Pion secondary interactions		& Normalisation & Gauss \\
 	FGD Mass						& Normalisation & Gauss \\
 	\hline
@@ -241,19 +241,137 @@ where 1.0 is the nominal weight, $\alpha$ is a random variable, and $\delta e$ i
 
 \red{talk about all the detector systematics in summary?}
 
+\paragraph{Relative systematic error sizes}
+\autoref{tab:nd280_syst_error_nu} shows the relative errors from ND280 systematics contribution on the number of predicted events for the different ND280 \numu selections for FGD1. The total error for the CC0$\pi$ selection is 1.66\%, CC1$\pi$ is 3.33\% and CCOther 6.47\%. For comparison, the flux and cross-section errors are generally $\mathcal{O}\left(10\%\right)$. The error increases with selection because the increased track multiplicity and lower ``cleanliness'' of the reconstructed events. 
+
+The largest contribution to the total error is pion secondary interactions, making up $\sim90\%$ of the detector systematics. This systematic additionally has the power to migrate events through selections by changing the number of reconstructed pions. For the CCOther selection the TPC tracking efficiency also has a large contribution (1.79\%), decreasing to 0.44\% for CC1$\pi$ and 0.27\% for CC0$\pi$. The FGD mass contributes a 0.6\% uncertainty for all selections, making up 1/3 of the error on CC0$\pi$ selection.
+\begin{table}[h]
+	\begin{tabular}{l | c c c}
+		\hline
+		\hline
+		Systematic & \multicolumn{3}{c}{Percentage error} \\
+				   & CC0$\pi$ & CC1$\pi$ & CCOther \\ 
+		\hline	
+		\multicolumn{4}{l}{TPC} \\
+		Magnetic Field Distortions		& 0.025 & 0.063 & 0.072 \\
+		TPC Momentum Scale				& 0.062 & 0.074 & 0.230 \\
+		TPC Momentum Resolution			& 0.055 & 0.094 & 0.286 \\
+		TPC PID							& 0.316 & 0.792 & 0.616 \\
+		TPC Cluster Efficiency			& 0.000 & 0.000 & 0.002 \\
+		TPC Tracking Efficiency			& 0.259 & 0.440 & 1.786 \\
+		TPC Charge ID Efficiency		& 0.178 & 0.270 & 0.473 \\
+		\hline 
+		\multicolumn{4}{l}{FGD-TPC} \\
+		TPC-FGD Matching Efficiency		& 0.148 & 0.270 & 0.605 \\
+		\hline
+		\multicolumn{4}{l}{FGD} \\
+		FGD PID							& 0.011 & 0.034 & 0.015 \\
+		FGD1-FGD2 Time of Flight		& 0.034 & 0.070 & 0.017 \\
+		FGD Hybrid Tracking Efficiency	& 0.106 & 0.100 & 0.532 \\
+		Michel Electron Efficiency		& 0.062 & 0.253 & 0.008 \\
+		\hline
+		\multicolumn{4}{l}{Backgrounds} \\
+		Out-of-Fiducial-Volume			& 0.391 & 0.541 & 0.286 \\
+		Sand Muons						& 0.069 & 0.085 & 0.031 \\
+		Pile-Up							& 0.112 & 0.112 & 0.112 \\
+		\hline
+		\multicolumn{4}{l}{MC modelling} \\
+		Pion secondary interactions		& 1.433 & 3.173 & 6.118 \\
+		FGD Mass						& 0.595 & 0.595 & 0.595 \\
+		\hline
+		Total & 1.660 & 3.329 & 6.467 \\
+		\hline
+		\hline
+	\end{tabular}
+\caption{Integrated systematic errors for FGD1 FHC related systematics}
+\label{tab:nd280_syst_error_nu}
+\end{table}
+FGD2 has similarly sized systematic contributions, although slightly modified due to the ND280 geometry, e.g. the sand muon error is smaller in FGD2 due to tighter vetos than in FGD1.
+
+\autoref{tab:nd280_syst_error_nubar} shows the same table but for the RHC selections. The tracking related systematics for the FGD (Michel electron tagging, PID, hybrid tracking) are not present because the number of tracks in the event---defining the 1Trk or NTrk selection---is solely based on the number of TPC tracks present, so has no impact.
+
+As for the FHC selections, the largest systematic by far is the pion secondary modelling (90+\%). The impact is larger than for FHC selections since the source of pions are \numu interactions (typically higher in $E_\nu$ so also higher in multiplicity) and the larger uncertainties on $\pi^-$ re-interaction probabilities. The FGD mass is again the second largest systematic for CC0$\pi$, although for the CCNTrk selection the TPC tracking efficiency comes in second, followed by the TPC PID, followed by the FGD mass.
+\begin{table}[h]
+	\begin{tabular}{l | c c}
+		\hline
+		\hline
+		Systematic & \multicolumn{2}{c}{Percentage error} \\
+				   & CC1Trk & CCNTrk \\ 
+		\hline	
+		\multicolumn{3}{l}{TPC} \\
+		Magnetic Field Distortions		& 0.004 & 0.165 \\
+		TPC Momentum Scale				& 0.049 & 0.246 \\
+		TPC Momentum Resolution			& 0.041 & 0.123 \\
+		TPC PID							& 0.307 & 0.544 \\
+		TPC Cluster Efficiency			& 0.000 & 0.002 \\
+		TPC Tracking Efficiency			& 0.436 & 1.201 \\
+		TPC Charge ID Efficiency		& 0.117 & 0.115 \\
+		\hline 
+		\multicolumn{3}{l}{FGD-TPC} \\
+		TPC-FGD Matching Efficiency		& 0.109 & 0.394 \\
+		\hline
+		\multicolumn{3}{l}{FGD} \\
+		FGD1-FGD2 Time of Flight		& 0.016 & 0.009 \\
+		\hline
+		\multicolumn{3}{l}{Backgrounds} \\
+		Out-of-Fiducial-Volume			& 0.336 & 0.610 \\
+		Sand Muons						& 0.153 & 0.248 \\
+		Pile-Up							& 0.240 & 0.241 \\
+		\hline
+		\multicolumn{3}{l}{MC modelling} \\
+		Pion secondary interactions		& 4.902 & 9.198 \\
+		FGD Mass						& 0.598 & 0.584 \\
+		\hline
+		Total 							& 5.371 & 10.378 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Integrated systematic errors for FGD1 RHC related systematics}
+	\label{tab:nd280_syst_error_nubar}
+\end{table}
+
 \paragraph{Parameterisation of ND280 related systematics}
 The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an event-by-event basis. However, in practice this is complicated by two main reasons: 1) the event selection framework is not sufficiently optimised to guarantee fast reweighting below 0.1s per reconfigure; 2) and for some events and values of variation systematics, discontinuous test-statistic were found when events were migrated from one topology to another. Whereas the former is purely computational, the latter causes problems for finding minima with gradient descent algorithms, employed by the dedicated near-detector only fit (BANFF). 
 
-It was instead decided to parameterise the systematics similarly to the flux systematics, which both ensures smoothness and enables fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event and 1000 random variations are chosen according to the prior covariances the events are binned in the chosen fit-binning in \autoref{sec:binning_2017}. Each bin is then a normalisation parameter, and highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the effects from Martini-Nieves 1p1h model\red{cite} differences are added.
+It was instead decided to parameterise the systematics similarly to the flux systematics, which both ensures smoothness and enables fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event and 500 random variations are chosen according to the prior covariances and the number of events are binned in the chosen fit-binning in \autoref{sec:binning_2017}. Each bin is then a normalisation parameter, and highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the effects from Martini-Nieves 1p1h model\red{cite} differences are added. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
 
-The central value and uncertainty on the number of events in a bin comes from a Gaussian fit to the bin content over the throws, and the central value is the Gaussian fit's maximum. 
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/bad_bin}
+		\caption{FGD1 CC0$\pi$, 1250-2000, 0.6-0.7}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/decent_bin}
+		\caption{FGD1 CC1Trk, 0-400, 0.97-0.98}
+	\end{subfigure}
 
-The event variation in each \pmu \cosmu bin is assumed to be Gaussian \red{show examples of good Gaussian bins and bad ones} 
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/good_bin}
+		\caption{FGD1 CC1$\pi$, 300-1250, 0.9-0.92}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.42\textwidth}
+		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/good_bin2}
+		\caption{FGD2 CCNTrk, 0-700, 0.93-0.98}
+	\end{subfigure}
+	\caption{Number of events in selected detector bins with uncertainties from ND280 systematics}
+	\label{fig:det_var}
+\end{figure}
+The result of the detector systematics procedure is shown in \autoref{fig:det_var} for a selection of bins. In FGD1 CC0$\pi$ we note a particularly bad fit to the \pmu=1250-2000, \cosmu=0.6-0.7 bin, in which we see a double Gaussian bimodal behaviour, likely from event migrating in and out of the sample due to pion secondary interactions. Although a simple fit to the bin content chooses one of the peaks, the covariance matrix entry sits in between the two with an error that covers both modes.
 
-see TN 212 p 95
-read p39 onwards about syst
+%see TN 212 p 95
+%read p39 onwards about syst
 
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.70\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/numu/syst/nd280_syst_cov.pdf}
+	\end{subfigure}
+\end{figure}
 
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.70\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/numu/syst/nd280_syst_cov.pdf}
+	\end{subfigure}
+\end{figure}
 
 The number of detector systematics still decreased slightly from 580 to 556 due to merging bins with similar detector systematic effects for the rebinned samples.
 All the consecutive bins with similar systematic values have been merged in order to reach a lower number of parameters (556) while the number of bins in the fit increased a lot (1624 bins), keeping the number of parameters under control.
