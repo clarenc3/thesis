@@ -335,6 +335,32 @@ The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an
 
 It was instead decided to parameterise the systematics similarly to the flux systematics, which both ensures smoothness and enables fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event and 500 random variations are chosen according to the prior covariances and the number of events are binned in the chosen fit-binning in \autoref{sec:binning_2017}. Each bin is then a normalisation parameter, and highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the effects from Martini-Nieves 1p1h model\red{cite} differences are added. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
 
+Using the fit binning in \pmu \cosmu yields 1624 ND280 parameters, which was reduced to 556 by merging bins with similar features in the underlying bin-by-bin event distributions. The final ND280 detector matrix binning was chosen to be
+\begin{itemize}
+	\item FHC $\nu_{\mu}$~CC0$\pi$ bin edges: \\
+	\pmu (MeV/c): 0, 1000, 1250, 2000, 3000, 5000, 30000 \\
+	\cosmu:  -1, 0.6, 0.7, 0.8, 0.85, 0.94, 0.96, 1
+	\item FHC $\nu_{\mu}$~CC1$\pi$  bin edges: \\
+	\pmu (MeV/c):  0, 300, 1250, 1500, 5000, 30000 \\
+	\cosmu: -1, 0.7, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\item FHC $\nu_{\mu}$~CCOther bin edges: \\
+	\pmu (MeV/c): 0, 1500, 2000, 3000, 5000, 30000 \\
+	\cosmu:  -1, 0.8, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
+	\item RHC $\bar{\nu}_{\mu}$~CC 1-Track bin edges: \\
+	\pmu (MeV/c): 0, 400, 900, 1100, 2000, 10000 \\
+	\cosmu:  -1, 0.6, 0.7, 0.88, 0.95, 0.97, 0.98, 0.99, 1.00
+	\item RHC $\bar{\nu}_{\mu}$~CC N-Track bin edges: \\
+	\pmu (MeV/c):  0, 700, 1200, 1500, 2000, 3000, 10000 \\
+	\cosmu: -1, 0.85, 0.88, 0.93, 0.98, 0.99, 1.00
+	\item RHC $\nu_{\mu}$~CC 1-Track bin edges: \\
+	\pmu (MeV/c):  0, 400, 800, 1100, 2000, 10000 \\
+	\cosmu:   -1, 0.7, 0.85, 0.90, 0.93, 0.96, 0.98, 0.99, 1.00
+	\item RHC $\nu_{\mu}$~CC N-Track bin edges: \\
+	\pmu (MeV/c):  0, 1000, 1500, 2000, 3000, 10000 \\
+	\cosmu: -1, 0.8, 0.90, 0.93, 0.95, 0.96, 0.97, 0.99, 1.00
+\end{itemize}
+in which we note a large first momentum bin many selection. This is primarily because the pion secondary interaction systematic is by far dominant, which generally becomes larger at higher \pmu (which in turn correlates with higher $E_\nu$), leading to enough energy to create a pion. Reducing the ND280 detector systematics had no discernible effect for flux or interaction parameters in a fit to Asimov data.
+
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.42\textwidth}
 		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/bad_bin}
@@ -356,88 +382,59 @@ It was instead decided to parameterise the systematics similarly to the flux sys
 	\caption{Number of events in selected detector bins with uncertainties from ND280 systematics}
 	\label{fig:det_var}
 \end{figure}
-The result of the detector systematics procedure is shown in \autoref{fig:det_var} for a selection of bins. In FGD1 CC0$\pi$ we note a particularly bad fit to the \pmu=1250-2000, \cosmu=0.6-0.7 bin, in which we see a double Gaussian bimodal behaviour, likely from event migrating in and out of the sample due to pion secondary interactions. Although a simple fit to the bin content chooses one of the peaks, the covariance matrix entry sits in between the two with an error that covers both modes.
+The result of the detector systematics procedure is shown in \autoref{fig:det_var} for a selection of bins. In FGD1 CC0$\pi$ we find the worst overall example in the \pmu=1250-2000, \cosmu=0.6-0.7 bin, in which we see a double Gaussian bimodal behaviour. This is likely from events migrating in and out of the \{\pmu, \cosmu, sample\} combination due to pion secondary interactions. Although a simple fit to the bin content chooses one of the peaks, the covariance matrix entry sits in between the two with an error that covers both modes.
 
-%see TN 212 p 95
-%read p39 onwards about syst
-
+The final covariance matrix is seen in \autoref{fig:nd280_cov}, where the majority of bins are highly correlated. The correlation matrix is shown in \autoref{fig:nd280_corr}. We particularly see high correlations for the high-momentum bins (towards the end of each selection). The anti-correlations enter mostly for RHC selections, where bins at low \pmu correlate negatively with bins at high \pmu. There are also anti-correlations in FGD1 vs FGD2 selections.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.70\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/numu/syst/nd280_syst_cov.pdf}
 	\end{subfigure}
+\caption{$\text{sgn(}V_{i,j}\text{)}\times\sqrt{V_{i,j}}$ for the ND280 systematic parameters}
+\label{fig:nd280_cov}
 \end{figure}
-
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.70\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/numu/syst/nd280_syst_cov.pdf}
 	\end{subfigure}
+\caption{Correlation matrix for the ND280 systematic parameters}
+\label{fig:nd280_corr}
 \end{figure}
 
-The number of detector systematics still decreased slightly from 580 to 556 due to merging bins with similar detector systematic effects for the rebinned samples.
-All the consecutive bins with similar systematic values have been merged in order to reach a lower number of parameters (556) while the number of bins in the fit increased a lot (1624 bins), keeping the number of parameters under control.
-It has been demonstrated with Asimov fits, the results of which are shown in \autoref{fig:2017_rebin_asimov}, that the effect of this rebinning was small.
-
-The effect of changing the ND280 systematics binning was done with an older cross-section model than which the fit was completed in. This was due to a late delivery of the cross-section model \red{write an appendix on this model}. The flux parameters were entirely consistent.
-\begin{table}
-	\centering
-	\begin{tabular}{ l | c | c }
-		\hline
-		Parameter & Fit binning & Similar syst. merge \\
-		\hline
-		\hline
-		FSI INEL LO & $0.0 \pm 0.202$ & $0.0\pm0.200$ \\
-		FSI INEL HI & $0.0 \pm 0.235$ & $0.0\pm0.233$ \\
-		FSI PI PROD & $0.0 \pm 0.347$ & $0.0\pm0.344$ \\
-		FSI CEX LO  & $0.0 \pm 0.416$ & $0.0\pm0.412$ \\
-		FSI CEX HI  & $0.0 \pm 0.193$ & $0.0\pm0.191$ \\
-		$M_A^{QE}$  & $1.2 \pm 0.0517$ & $1.2\pm0.0512$ \\
-		$p_F^{C}$   & $217 \pm 36.96$ & $217\pm36.021$ \\
-		2p2h norm C & $100 \pm 30.79$ & $100\pm30.56$ \\
-		$E_B^{C}$   & $25.0 \pm 8.57$ & $25.0\pm8.56$ \\
-		$p_F^{O}$   & $225 \pm 57.61$  & $225\pm56.16$ \\
-		2p2h norm O & $100 \pm 277.98$ & $0.0\pm272.62$ \\
-		$E_B^{C}$   & $27.0 \pm 9.00$ & $27.0\pm9.00$ \\
-		$C_5^A$		& $1.01 \pm 0.066$ & $1.01\pm0.064$ \\
-		$M_A^{1\pi}$ & $0.95 \pm 0.060$ & $0.95\pm0.059$ \\
-		$I_{1/2}$ non-res & $1.30 \pm 0.180$ & $1.30\pm0.180$ \\
-		CC $\nu_e$ norm & $1.00 \pm 0.030$ & $1.00\pm0.030$ \\
-		DIS Shape	& $0.00 \pm 0.208$ & $0.0\pm0.208$ \\
-		CC Coherent norm & $1.0 \pm 0.258$ & $1.0\pm0.257$ \\
-		NC Coherent norm & $1.0 \pm 0.299$ & $1.0\pm0.299$ \\
-		NC Other & $1.0 \pm 0.182$ & $1.0\pm0.181$ \\
-		2p2h $\bar{\nu}$ & $1.0 \pm 0.332$ & $1.0\pm0.329$ \\
-		\hline
-	\end{tabular}
-	\caption{Cross-section parameter results from comparisons using fit binning and a merged binning for the 2015 cross-section model.}
-\label{fig:2017_rebin_asimov}
-\end{table}
-
-The merged systematics binning was improved to:
-\begin{itemize}
-	\item FHC $\nu_{\mu}$~CC0$\pi$ bin edges: \\
-	\pmu (MeV/c): 0, 1000, 1250, 2000, 3000, 5000, 30000 \\
-	\cosmu:  -1, 0.6, 0.7, 0.8, 0.85,0.94, 0.96, 1
-	\item FHC $\nu_{\mu}$~CC1$\pi$  bin edges: \\
-	\pmu (MeV/c):  0, 300, 1250, 1500, 5000, 30000 \\
-	\cosmu: -1, 0.7, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
-	\item FHC $\nu_{\mu}$~CCOther bin edges: \\
-	\pmu (MeV/c): 0, 1500, 2000, 3000, 5000, 30000 \\
-	\cosmu:  -1, 0.8, 0.85, 0.9, 0.92, 0.96, 0.98, 0.99, 1
-	\item RHC $\bar{\nu}_{\mu}$~CC 1-Track bin edges: \\
-	\pmu (MeV/c): 0, 400, 900, 1100, 2000, 10000 \\
-	\cosmu:  -1, 0.6, 0.7, 0.88, 0.95, 0.97, 0.98, 0.99, 1.00
-	\item RHC $\bar{\nu}_{\mu}$~CC N-Track bin edges: \\
-	\pmu (MeV/c):  0, 700, 1200, 1500, 2000, 3000, 10000 \\
-	\cosmu: -1, 0.85, 0.88, 0.93, 0.98, 0.99, 1.00
-	\item RHC $\nu_{\mu}$~CC 1-Track bin edges: \\
-	\pmu (MeV/c):  0, 400, 800, 1100, 2000, 10000 \\
-	\cosmu:   -1, 0.7, 0.85, 0.90, 0.93, 0.96, 0.98, 0.99, 1.00
-	\item RHC $\nu_{\mu}$~CC N-Track bin edges: \\
-	\pmu (MeV/c):  0, 1000, 1500, 2000, 3000, 10000 \\
-	\cosmu: -1, 0.8, 0.90, 0.93, 0.95, 0.96, 0.97, 0.99, 1.00
-\end{itemize}
-Be mega clear that each of these above make up one parameter
+% Table with interaction parameters
+%\begin{table}
+%	\centering
+%	\begin{tabular}{ l | c | c }
+%		\hline
+%		Parameter & Fit binning & Similar syst. merge \\
+%		\hline
+%		\hline
+%		FSI INEL LO & $0.0 \pm 0.202$ & $0.0\pm0.200$ \\
+%		FSI INEL HI & $0.0 \pm 0.235$ & $0.0\pm0.233$ \\
+%		FSI PI PROD & $0.0 \pm 0.347$ & $0.0\pm0.344$ \\
+%		FSI CEX LO  & $0.0 \pm 0.416$ & $0.0\pm0.412$ \\
+%		FSI CEX HI  & $0.0 \pm 0.193$ & $0.0\pm0.191$ \\
+%		$M_A^{QE}$  & $1.2 \pm 0.0517$ & $1.2\pm0.0512$ \\
+%		$p_F^{C}$   & $217 \pm 36.96$ & $217\pm36.021$ \\
+%		2p2h norm C & $100 \pm 30.79$ & $100\pm30.56$ \\
+%		$E_B^{C}$   & $25.0 \pm 8.57$ & $25.0\pm8.56$ \\
+%		$p_F^{O}$   & $225 \pm 57.61$  & $225\pm56.16$ \\
+%		2p2h norm O & $100 \pm 277.98$ & $0.0\pm272.62$ \\
+%		$E_B^{C}$   & $27.0 \pm 9.00$ & $27.0\pm9.00$ \\
+%		$C_5^A$		& $1.01 \pm 0.066$ & $1.01\pm0.064$ \\
+%		$M_A^{1\pi}$ & $0.95 \pm 0.060$ & $0.95\pm0.059$ \\
+%		$I_{1/2}$ non-res & $1.30 \pm 0.180$ & $1.30\pm0.180$ \\
+%		CC $\nu_e$ norm & $1.00 \pm 0.030$ & $1.00\pm0.030$ \\
+%		DIS Shape	& $0.00 \pm 0.208$ & $0.0\pm0.208$ \\
+%		CC Coherent norm & $1.0 \pm 0.258$ & $1.0\pm0.257$ \\
+%		NC Coherent norm & $1.0 \pm 0.299$ & $1.0\pm0.299$ \\
+%		NC Other & $1.0 \pm 0.182$ & $1.0\pm0.181$ \\
+%		2p2h $\bar{\nu}$ & $1.0 \pm 0.332$ & $1.0\pm0.329$ \\
+%		\hline
+%	\end{tabular}
+%	\caption{Cross-section parameter results from comparisons using fit binning and a merged binning for the 2015 cross-section model.}
+%\label{fig:2017_rebin_asimov}
+%\end{table}
 
 \subsection{Cross-section}
 \label{subsec:syst_xsec}
-splines vs normalisation parameter, Maybe extra bit on BeRPA because of involvement
+For 
