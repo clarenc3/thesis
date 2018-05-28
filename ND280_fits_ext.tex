@@ -309,7 +309,7 @@ A summary of the 2018 analysis' selection efficiencies and purities is shown in 
 \section{Rebinning}
 With the large increase in statistics from using run 7 and 8 data, a re-binning of the two reconstructed event observables \pmu and \cosmu is due. As was the case in \autoref{sec:binning_2017}, we base the binning on requiring $\sim20$ raw MC events per bin, which is roughly equivalent to 1-2 data events. We keep in mind the approximate momentum resolution of ND280 is $\sim50\text{ MeV}$ and the angular resolution $\sim2\degree$.
 
-Here we re-bin all selections for 2018 analysis using the above criteria, leading to a drastic increase in the number of bins from the 2017 analysis, which was 1624. The total number of bins is now 4130, of which 2942 are FHC (six selections) and 1188 are RHC (12 selections). We note the FGD1 and 2 CC0$\pi$ binning alone (1682) is more bins than was present in total for 2017 (1624).
+Here we re-bin all selections for 2018 analysis using the above criteria, leading to a drastic increase in the number of bins from the 2017 analysis, which was 1624. The total number of bins is now 4238, of which 2942 are FHC (six selections) and 1188 are RHC (12 selections). We note the FGD1 and 2 CC0$\pi$ binning alone (1682) is more bins than was present in total for 2017 (1624).
 
 \begin{itemize}
 	\item FGD1+2 CC0$\pi$: 841 fit bins\\
@@ -344,7 +344,7 @@ Here we re-bin all selections for 2018 analysis using the above criteria, leadin
 	$p_\mu$ (MeV/c) = 0, 600, 800, 1500, 30000.\\
 	$\cos\theta_\mu$ = -1, 0.7, 0.8, 0.86, 0.9, 0.94, 0.96, 0.97, 0.98, 0.99, 1
 	
-	\item FGD1+2 CCOther $\nu$ RHC: 80 fit bins \\
+	\item FGD1+2 CCOther $\nu$ RHC: 54 fit bins \\
 	$p_\mu$ (MeV/c) = 0, 600, 1000, 1250, 2000, 4000, 30000.\\
 	$\cos\theta_\mu$ = -1, 0.7, 0.8, 0.86, 0.9, 0.93, 0.95, 0.97, 0.99, 1.
 \end{itemize}
@@ -1379,7 +1379,7 @@ The interaction parameters in \autoref{fig:asimov_fit_2018_mpi_mtrack_xsec} are 
 \end{figure}
 
 \subsubsection{Asimov without detector parameters}
-To investigate the biases in the flux parameters seen in the fit to Asimov data for both the new ND280 covariance matrices for the multi-$\pi$ selections, we perform a fit to the asimov data without varying the ND280 parameters. This should help answer if there are issues related to dimensionality in the new fit, since we're fitting approximately double the number of parameters (1307 vs 781) with a large increase in number of bins (4130 vs 1624).
+To investigate the biases in the flux parameters seen in the fit to Asimov data for both the new ND280 covariance matrices for the multi-$\pi$ selections, we perform a fit to the asimov data without varying the ND280 parameters. This should help answer if there are issues related to dimensionality in the new fit, since we're fitting approximately double the number of parameters (1307 vs 781) with a large increase in number of bins (4238 vs 1624).
 
 \autoref{fig:asimov_fit_2018_nodet_fhc} shows the FHC flux parameters without varying the ND280 systematics, showing the central values and errors evaluated with the arithmetic mean, a Gaussian fit and the highest-posterior-density. All of the biases seen in the previous Asimov fit are gone. The uncertainties are reduced due to the marginalisation over the ND280 systematics are essentially delta functions at the nominal values. Looking at the RHC parameters in \autoref{fig:asimov_fit_2018_nodet_rhc} the same holds true.
 \begin{figure}[h]
@@ -1634,8 +1634,6 @@ The details for the MCMC that were obtained for the different fits are shown in 
 
 The summary for the data predictive distributions are shown in \autoref{tab:postfit_eventrate_2018} using the reduced ND280 covariance matrix. In contrast to the 2017 analysis, the prior predictive distribution predicts the RHC 1$\pi$ and Other distributions relatively well. This is reflected in the only marginal decrease in the test-statistic, e.g. 42.7 to 40.0 for FGD2 \numubar $1\pi$. For the same distribution we barely see a change in the prediction from the prefit to the postfit ($542.7\pm127.2$ to $542.9\pm21.6$). However, the prior predictive distributions do a poor job at predicting the central values of the data of the high statistics FHC distributions, although often inside the 1$\sigma$ uncertainties from the priors.
 
-As in 2017, the fit reduces the uncertainties on the total event rate by almost two orders of magnitude; from 11.5\% to 0.29\% for the total, 12.1\% to 0.5\% for CC0$\pi$, 10.6\% to 1.0\% for CC1$\pi$, 12.1\% to 1.0\% for CCOther. For the new RHC selections we see reductions of 12.8\% to 1.1\% for CC0$\pi$, 23.1\% to 4.0\% for CC1$\pi$ and 16.3\% to 2.8\% for CCOther. 
-
 Inspecting the test-statistic, the total $-2\log\mathcal{L}_S/\text{nBins}$ goes from 1.50 to 1.12, a deterioration from the 2017 value of 1.07. The fit is driven by the FHC 0$\pi$ distributions (35.9\% of statistic) and the 1$\pi$, Other and RHC 0$\pi$ making up between 10-15\% for both FGDs. The new RHC 1$\pi$ and Other distributions have a small contribution to the statistic in total. Interestingly, the test statistics of FGD1 \numubar 1$\pi$ and Other both increase by one unit after the fit.
 \begin{sidewaystable}
 	\centering
@@ -1677,6 +1675,50 @@ Inspecting the test-statistic, the total $-2\log\mathcal{L}_S/\text{nBins}$ goes
 	\caption{Event rate and test-statistic for data, pre-fit MC and post-fit MC broken by sample, using the reduced ND280 covariance matrix}
 	\label{tab:postfit_eventrate_2018}
 \end{sidewaystable}
+
+\autoref{tab:2018_syst_uncertain} shows the fit uncertainties broken down by sample and systematic source. As in 2017, the fit reduces the uncertainties on the total event rate by almost two orders of magnitude; from 9.9\% to 0.3\% for the total, 11.7\% to 0.5\% for 0$\pi$, 1.7\% to 1.0\% for 1$\pi$, 12.2\% to 1.0\% for Other. For the new RHC selections we see reductions of 12.9\% to 1.1\% for 0$\pi$, 23.1\% to 4.0\% for 1$\pi$ and 16.3\% to 2.8\% for Other. 
+
+Comparing to the 2017 result in \autoref{tab:postfit_eventrate}, the overall uncertainty on the event rate moves from 0.39\% to 0.3\% for the total event rate, 0.7\% to 0.5\% for FGD1 0$\pi$, 1.3\% to 1.0\% for 1$\pi$ and 1.4\% to 1.0\% for Other. This largely agrees with the $1/\sqrt{2}$ expectation from doubling the data.
+
+The largest systematic for the FHC selections is flux and interactions at 8-10\%, which generally agrees with cross-section measurements \red{cite something}. After the fit to ND280 data the impact on the uncertainty of the event rate more than halves. For the RHC selections with one or more pions, the detector systematics are the dominant systematic in the prior model: e.g. for FGD1 \numubar 1$\pi$ the prior detector uncertainty is 21\% whereas the FHC equivalent is 5.3\%. This is primarily due to the larger wrong-sign background in RHC and the proton background in selecting the lepton candidate. After the fit these selections are still dominated by detector systematics, albeit it at a 5\% level. For the FHC selections the ND280 uncertainties lay around 1.5-3\%, and are instead controlled equally by flux and interaction systematics.
+\begin{table}
+	\begin{tabular}{l | c c | c c | c c | c c}
+		\hline
+		\hline 
+		Sample & \multicolumn{8}{c}{$\delta N/N (\%)$} \\
+		& \multicolumn{2}{c|}{Flux} & \multicolumn{2}{c|}{ND280} & \multicolumn{2}{c|}{Interaction} & \multicolumn{2}{c}{All} \\
+		& Pre & Post & Pre & Post & Pre & Post & Pre & Post \\
+		\hline
+		FGD1 0$\pi$ & 8.0 & 3.6 & 3.3 & 1.7 & 9.9 & 3.4 & 11.7 & 0.5\\
+		FGD1 1$\pi$ & 7.6 & 3.1 & 5.3 & 2.2 & 6.5 & 2.8 & 10.7 & 1.0 \\
+		FGD1 Other & 8.1 & 3.4 & 6.6 & 2.4 & 7.7 & 2.9 & 12.2 & 1.0 \\
+		FGD2 0$\pi$ & 8.0 & 3.6 & 2.8 & 1.4 & 9.6 & 3.3 & 11.8 & 0.5 \\
+		FGD2 1$\pi$ & 7.6 & 3.1 & 4.8 & 2.4 & 6.6 & 2.8 & 10.3 & 1.1 \\
+		FGD2 Other & 8.1 & 3.4 & 5.5 & 2.4 & 7.8 & 2.9 & 11.6 & 1.0 \\
+		\hline
+		FGD1 \numubar 0$\pi$ & 7.7 & 4.4 & 6.3 & 2.5 & 9.5 & 3.5 & 12.9 & 1.1 \\
+		FGD1 \numubar 1$\pi$ & 6.8 & 4.6 & 21.0 & 5.2 & 7.1 & 3.2 & 23.1 & 4.0 \\
+		FGD1 \numubar Other & 6.8 & 4.5 & 15.2 & 3.8 & 7.4 & 2.9 & 16.3 & 2.8 \\
+		FGD2 \numubar 0$\pi$ & 7.6 & 4.3 &  6.7 & 2.4 & 9.3 & 3.6 & 12.2 & 1.1 \\
+		FGD2 \numubar 1$\pi$ & 6.8 & 3.8 & 19.3 & 5.1 & 7.3 & 3.3 & 19.7 & 4.4 \\
+		FGD2 \numubar Other & 6.8 & 4.4 & 19.0 & 4.0 & 7.6 & 2.9 & 19.6 & 3.0 \\
+		\hline
+		FGD1 \numu RHC 0$\pi$ & 7.1 & 4.3 & 14.3 & 3.1 & 8.4 & 3.2 & 15.8 & 1.7 \\
+		FGD1 \numu RHC 1$\pi$ & 7.2 & 3.9 & 8.7 & 4.1 & 6.4 & 2.8 & 12.1 & 2.9 \\
+		FGD1 \numu RHC Other & 7.7 & 4.4 & 19.3 & 4.4 & 7.3 & 2.8 & 20.8 & 3.0 \\
+		FGD2 \numu RHC 0$\pi$ & 7.1 & 4.2 & 14.9 & 3.0 & 8.3 & 3.0 & 16.3 & 1.7 \\
+		FGD2 \numu RHC 1$\pi$ & 7.2 & 4.2 & 9.2 & 4.2 & 6.8 & 2.9 & 12.5 & 3.3 \\
+		FGD2 \numu RHC Other & 7.7 & 4.3 & 16.1 & 4.6 & 7.3 & 2.8 & 17.6 & 3.1 \\
+		\hline
+		Total & 7.5 & 4.6 & 3.4 & 2.1 & 7.2 & 3.0 & 9.9 & 0.3 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{Event rate uncertainties from the prior and posterior model broken down by sample}
+	\label{tab:2018_syst_uncertain}
+\end{table}
+
+Finally, varying the combined full parameter set has a much greater impact on the event rate uncertainties de to the very strong correlations between the flux, interaction and ND280 parameters: e.g. the FGD1 FHC 0$\pi$ event rate uncertainty from the flux is 3.6\%, ND280 is 1.7\% and interaction is 3.4\% but put together they amount to 0.5\%.
 
 \subsection{Full and reduced ND280 covariance matrix}
 As for the Asimov case in \autoref{sec:asimov_fit_2018}, we here compare the data fit results using the full and reduced ND280 covariance. We expect similar results for the two fits, as only small difference were found in the fit to Asimov data.
