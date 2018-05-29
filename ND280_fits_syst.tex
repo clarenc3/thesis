@@ -459,7 +459,7 @@ The T2K and Super-K experiments both use the custom interaction library NEUT 5.3
 
 \red{talk about the factorisation into initial state, nucleon interaction, final state interaction}
 
-\subsubsection{CCQE and CC0$\pi$}
+\paragraph{CCQE and CC0$\pi$}
 The nominal model is generated with a Spectral Function from Benhar et al (SF) \cite{benhar} and a 2-particle-2-hole (2p2h) excitation \cite{nieves1,nieves2} for the CCQE/CC0$\pi$ model. An alternative model uses the Llewellyn-Smith model\cite{llewelyn-smith} with a dipole axial form factor and BBBA05 vector form factors \cite{bbba05} with a Smith-Moniz Relativistic Fermi Gas (RFG) \cite{Smith-Moniz}. 
 
 \autoref{fig:cc0pi_diag} shows some pseudo diagrams of the definition of the 0$\pi$, CCQE and one 2p2h process. The CC0$\pi$ signal definition does not include hadronic information, so the CCQE and 2p2h processes produce identical 0$\pi$ final states. Using CCQE energy reconstruction for 2p2h events would clearly bias $E_\nu$---as would be missing a pion in a single pion event due to thresholds or pion final state interaction.
@@ -568,7 +568,7 @@ The magnitude and uncertainty of $A, B, D$ and $E$ are then chosen to match the 
 	\label{fig:berpa_throws}
 \end{figure}
 
-\subsubsection{Single pion production}
+\paragraph{Single pion production}
 The single pion production is described with the Rein-Sehgal model\cite{Rein_Sehgal, Rein_Angular} with lepton mass corrections \cite{Kuzmin_MassEffect,Wroclaw_MassEffect,Berger_Sehgal_MassEffect} and modified form factors aimed at the $\Delta$ resonance \cite{Wroclaw_CC1pi_2014,Wroclaw_CC1pi_2009,Wroclaw_CC1pi_theory}. The tunable parameters all relate to the neutrino-nucleon scattering interaction in the Rein-Sehgal model, which are $M_A^{RES}$, the axial mass for the resonant interaction in the Rein-Sehgal model, $C_5^A(0)$, one of the axial form factors at $Q^2=0$ in the Graczyk-Sobczyk form factor parameterisation, and the size of the non-resonant $I_{1/2}$ background in the Rein-Sehgal model.. 
 
 \autoref{fig:1pi_diags} shows the charged-current neutrino-nucleon processes described by the model. The models also extend to anti-neutrino and neutral-current processes. In the case of missing a pion due to detector thresholds and/or pion interactions the neutrino energy is clearly biased by at least $E=m_\pi$.
@@ -592,7 +592,7 @@ The single pion production is described with the Rein-Sehgal model\cite{Rein_Seh
 
 The single pion production uncertainties were tuned to selected bubble chamber data from ANL\cite{ANL_CC1pi,ANL_NC1pi} and BNL\cite{BNL_CC1pi,BNL_CC1pi_isospin,BNL_NuInt02}. The parameter values were cross-checked with modern corrections\cite{ANL_BNL_corr} and nuclear data from MiniBooNE\cite{MB_CC1pip,MB_CC1pi0,MB_NC1pi0}, MINER$\nu$A\cite{MIN_CC1pi0,MIN_CC1pip,MIN_pion_2016} and K2K \cite{K2K_CC1pip} using NUISANCE\cite{NUISANCE}.
 
-\subsubsection{Coherent scattering}
+\paragraph{Coherent scattering}
 The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_Sehgal_coh}. This process has a small cross-section but occupies a very specific phase space region: the very forward going, collinear lepton-pion system, and low $Q^2$ region. Furthermore it shares final state with single pion production. The interaction diagram is shown in \autoref{fig:coh_diags}.
 \begin{figure}[h]
 	\centering
@@ -630,7 +630,7 @@ An $E_\pi$ dependent scaling factor, listed in \autoref{tab:rein_sehgal_coh}, is
 
 The strength of the coherent interaction is allowed to vary in the fit as normalisation parameters: one for CC $^{12}C$, one for CC $^{16}O$ and one for NC interactions. The prior uncertainty is 30\% from inspections of MINER$\nu$A data.
 
-\subsubsection{Multi-$\pi$ and DIS}
+\paragraph{Multi-$\pi$ and DIS}
 The transition from single pion production to DIS is a custom interpolation between $1.3 < W < 2.0$, selecting events with $N_\pi>1$ to avoid double counting single pion production cross-sections. A pseudo diagram is shown in \autoref{fig:dis_diags}, where fragmentation causes pion emission. In NEUT the structure functions are taken from the GRV98 parton distribution function \cite{grv98} with Bodek-Yang corrections \cite{bodek_yang}. The details of the transition can be found in \cite{neut} and is inspired from external bubble chamber data on pion multiplicity. The DIS model is directly from PYTHIA 5.7 and JETSET 7.4 \cite{pythia}.
 
 The multi-pi/DIS uncertainties are inspired from results from MINOS \cite{minos_mult} on DIS interactions at $E_\nu = 4.0 \text{ GeV}$, increasing with decreasing $E_\nu$ and is parametersied as 
@@ -638,20 +638,102 @@ The multi-pi/DIS uncertainties are inspired from results from MINOS \cite{minos_
 \delta\left(\sigma_\text{CC DIS}\right) = \frac{0.4}{E_\nu}
 \end{equation}
 
+NC DIS events do not receive this systematic and is instead controlled by an overall normalisation parameter including numerous other NC interaction modes, explained further down.
 
-\subsubsection{Initial State}
-The initial state description for all models but CCQE is the relativistic global Fermi gas \red{cite}
+\paragraph{Other interactions}
+The interaction modes with smaller cross-sections and/or small effects on 0$\pi$ selections are controlled by normalisation parameters.
 
-\subsubsection{Final State Interactions}
-hadronic final state interactions are handled by a cascade implementation of the Salcedo-Oset model \red{cite}.
-The pion FSI uncertainties come from fits to external pion-nucleus scattering data from a variety of experiments \red{find out which and cite}.
+The NC1$\gamma$ interaction---modelled with the Rein-Sehgal single-pion model with replaced branching fractions---is important because the $\gamma \rightarrow e^+ e^-$ decay may mimic \nue appearance signal although the cross-section is very small $\mathcal{O}(10^{-40}) \text{ cm}^2/\text{nucleon}$\cite{thesis_pierre}. The prior weight is set to 200\% of nominal after comparing to a recent theory model\cite{nc1gamma}, and the prior uncertainty is conservative at 100\%.
 
-\subsubsection{Other interactions}
-nue,numu 2\% on ratio and fully anti-correlated with anti-neutrino equivalent
+The NC elastic, resonant kaon and eta production and NC DIS events are all joined together under the ``NC other'' normalisation parameter. The prior is the nominal value with an uncertainty of 30\%.
 
-NC1gamma (200\% nominal, 100\% uncertainty)
+\paragraph{\nue and \nuebar}
+In principle, there may be unmodelled effects present for \nue (\nuebar) and not \numu (\numubar), which could affect \nue appearance. Since there is published dedicated \nue selection at ND280\footnote{With the exception of \cite{thesis_pierre}, included in next year's analysis} to constrain \nue cross-sections, an uncorrelated 2\% uncertainty from radiative corrections and another 2\% correlated uncertainty from second class currents are added\cite{kevin_nue_numu}. These systematics are simply normalisations applied to all \nue and \nuebar events separately.
 
-NCOther (NC res kaon, etc, NC DIS 30\%)
+\paragraph{Final State Interactions}
+The hadronic (pion and nucleon) final state interactions are handled by a cascade implementation of the Salcedo-Oset model \cite{salcedo_oset} when their momentum is less than 500 MeV. In summary, the interaction probabilities are functions of the hadron's momentum and position in the nucleus, with direction and momentum changes tuned to $\pi-N$ scattering data\cite{pion_scattering}, including in-medium corrections\cite{seki}. More details are provided elsewhere\cite{neut}. Above 500 MeV, the interaction probabilities are calculated from $\pi^\pm$ scattering off free protons and deuteron compiled by the PDG\cite{pdg_2010}. To avoid double counting and discontinuities, the two models are blended between $400 < p_\pi<500 \text{ MeV}$. 
 
-\subsection{Parameterisation}
-The interaction parameters are parameterised as shapes or normalisations.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.3\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/cascade}
+	\caption{An example of a pion FSI cascade}
+\end{figure}
+
+The systematics are parameterised as the scattering probabilities for the different interaction processes at each microscopic step in the cascade. These are divided into absorption, pion production, quasi-elastic and charge exchange. Furthermore, the two latter are split into low and high energy regions, above and below the model transition at $p_\pi = 500\text{ MeV}$. For oscillation analyses using the 0$\pi$ topology, the absorption and elastic probabilities are most important since they can significantly bias energy reconstruction by removing pions from the reconstructed event. The prior values and uncertainties come from tuning to world scattering data: $\pi^+-^{12}C$ for the low energy and $\pi^\pm - ^{12}C$ for the high energy parameters.
+
+Importantly, the pion rescattering probabilities are assumed to be independent, which is not correct. An extreme variation in the absorption probability will cause a pion to be absorbed, so the effect of the other parameters should be none. However this is not implemented as it was found to have a $\sim1\%$ effect on T2K run 2-4 data.
+
+The nucleon interaction uncertainties are neglected since for water Cherenkov detector such as Super-Kamiokande, the nucleon threshold is rarely reached. However, when nucleons interact to produce pions these pions are propagated through the simulation and are subject to the above systematics.
+
+\paragraph{Parameterisation}
+The interaction parameters are parameterised as shapes or normalisations on an event-by-event basis. In the case of normalisations, an event gets an associated weight from normalisation parameters in the parameterisation (e.g. a CC coherent event on $^{12}C$ gets the CC coh. C parameter weight and no other: if the parameter is 1.5, the weight is 1.5). 
+
+For shape parameters, each event can have associated one dimensional ``splines''\footnote{The implementation uses a ROOT \texttt{TSpline3} class}, which assumes all parameters have uncorrelated responses. The weights are pre-calculated through a reweighting routine which calculates the weight of parameter variation $x \rightarrow x'$, where $x$ is the nominal Monte Carlo parameter value and $x'$ is the new parameter value, as
+\begin{equation}
+	w(x\rightarrow x') = \frac{d^n\sigma(x')}{dX^n} / \frac{d^n\sigma(x)}{dX^n}
+\end{equation}
+for an $n$ dimensional cross-section calculation for $X$ dependent parameters. Similar to the pion FSI parameters, this is not strictly true since for example a simultaneous variation in $M_A^{RES}$ and $C_5^A$ is not equivalent to a variation in $M_A^{RES}$ followed by a variation of $C_5^A$. This is currently neglected in the analysis since the effect is sub-percent.
+
+An example of three spline parameters, comparing a third order polynomial \texttt{TF1} implementation to a \texttt{TSpline3} implementation fitted to the discrete calculated parameter variations is shown in \autoref{fig:xsec_splines}.
+\begin{figure}[h]
+	\centering
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 5mm 15mm 15mm}, clip,page=1]{figures/niwg/splines/pdd_c}
+		\caption{2p2h shape C}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 5mm 15mm 15mm}, clip,page=1]{figures/niwg/splines/fsi_inel_lo}
+		\caption{FSI Inel. Lo}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={5mm 5mm 15mm 15mm}, clip,page=1]{figures/niwg/splines/fsi_cex_lo}
+		\caption{FSI Cex. Lo}
+	\end{subfigure}
+\caption{A \texttt{TF1} and \texttt{TSpline3} shape implementation of three different shape parameters in the analysis}
+\label{fig:xsec_splines}
+\end{figure}
+
+\paragraph{Covariance matrix}
+\autoref{fig:xsec_cov_matrix_prior} shows the final $\sqrt{\textbf{V}}$ covariance and correlation matrix. Only a few parameters are correlated in the prior covariance matrix: the 2p2h shape C and O parameters (+0.55), the single pion production parameters (-0.8 to 0.10), the \nue(\nuebar)/\numu(\numubar) (-0.71), the CC coherent parameters (+1.00), and the pion FSI parameters (-1.00 to 1.00).
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1] {figures/niwg/xsec_covariance_2017b_NOMINAL_v1_xseccov}
+		\caption{$\sqrt{\text{Covariance}}$}
+		\label{fig:xsec_cov_matrix_vij}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=2] {figures/niwg/xsec_covariance_2017b_NOMINAL_v1_xseccov}
+		\caption{Correlation}
+	\end{subfigure}
+	\caption{Interaction covariance matrix provided as the prior}
+	\label{fig:xsec_cov_matrix_prior}
+\end{figure}
+
+Note that some of the errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}, p_F$ and that BeRPA U is fixed. Furthermore, the errors are relative the priors: e.g. the error on $p_F^C$ is not 6 MeV but rather $217\times0.06=13\text{ MeV}$.
+
+\begin{table}
+	\begin{tabular}{l | c c c c }
+		\hline
+		\hline
+		Parameter & Nominal & Error & Prior shape & Parameter type \\
+		\hline
+		$M_A^{QE}$ & 1.21 GeV & 0-10 & Flat & Shape \\
+		$M_A^{QE} H$ & 1.03 GeV & 0 & --- & Shape \\
+		$p_F^C$ & 217 MeV & 31 MeV & Flat & Shape \\
+		$p_F^O$ & 225 MeV & 31 MeV & Flat & Shape \\
+		2p2h norm $\nu$ & 1.0 & 1.0 & Flat & Norm. \\
+		2p2h norm $\bar{\nu}$ & 1.0 & 1.0 & Flat & Norm. \\
+		2p2h norm C to O & 1.0 & 0.2 & Gauss & Norm. \\
+		2p2h shape C & 1.0 & 3.0 & Gauss & Shape \\
+		2p2h shape O & 1.0 & 3.0 & Gauss & Shape \\ 
+		BeRPA A & 0.59 & 0.118 & Gauss & Shape \\
+		BeRPA B & 1.05 & 0.210 & Gauss & Shape \\
+		BeRPA D & 1.13 & 0.170 & Gauss & Shape \\
+		BeRPA E & 0.88 & 0.352 & Gauss & Shape \\
+		BeRPA U & 1.20 & --- & --- & --- \\
+		\hline
+		
+		\hline
+		\hline
+	\end{tabular}
+\end{table}

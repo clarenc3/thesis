@@ -745,8 +745,8 @@ note output
 fin.entry
 empty.misc.check
 }
-FUNCTION {phdthesis}
-{ output.bibitem
+
+FUNCTION {phdthesis} { output.bibitem
 format.authors "author" output.check
 new.block
 format.btitle "title" output.check
@@ -760,6 +760,7 @@ new.block
 note output
 fin.entry
 }
+
 FUNCTION {proceedings}
 { output.bibitem
 collaboration output
