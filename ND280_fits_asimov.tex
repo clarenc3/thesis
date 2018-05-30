@@ -849,7 +849,7 @@ The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay arou
 \label{fig:prior_predictive_asimov}
 \end{figure}
 
-Finally \autoref{tab:asimov_prior_pred} shows the prior predictive event rates from the prior predictive spectrum to the Asmiov data with uncertainties from all systematics. We note that using the prior covariances without any fitting to the Asimov data produces an 11\% uncertainty on the total event rate, with a 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. We also note a particularly bad test-statistic for the 0$\pi$ and 1Trk selections for the Asimov prior predictive central value. This is likely due to missing correlations between cross-section, flux and near-detector parameters, causing the correlated throws of the systematics to be skewed.
+Finally \autoref{tab:asimov_prior_pred} shows the prior predictive event rates from the prior predictive spectrum to the Asmiov data with uncertainties from all systematics. We note that using the prior covariances without any fitting to the Asimov data produces 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. We also note a particularly bad test-statistic for the 0$\pi$ and 1Trk selections for the Asimov prior predictive central value. This is likely due to missing correlations between cross-section, flux and near-detector parameters, causing the correlated throws of the systematics to be skewed.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c | c}
@@ -885,7 +885,7 @@ Finally \autoref{tab:asimov_prior_pred} shows the prior predictive event rates f
 
 \subsection{Asimov fit}
 \label{sec:asimov_fit}
-After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain.\red{show autocorrelations?} \autoref{tab:asimov_mcmc_versions} shows the different chains completed for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
+After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain. \autoref{tab:asimov_mcmc_versions} shows the different chains completed for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c c}

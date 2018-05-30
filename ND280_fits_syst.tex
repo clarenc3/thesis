@@ -239,8 +239,6 @@ w = 1+\alpha \cdot \delta e
 \end{equation}
 where 1.0 is the nominal weight, $\alpha$ is a random variable, and $\delta e$ is the systematic error on the source.
 
-\red{talk about all the detector systematics in summary?}
-
 \paragraph{Relative systematic error sizes}
 \autoref{tab:nd280_syst_error_nu} shows the relative errors from ND280 systematics contribution on the number of predicted events for the different ND280 \numu selections for FGD1. The total error for the CC0$\pi$ selection is 1.66\%, CC1$\pi$ is 3.33\% and CCOther 6.47\%. For comparison, the flux and cross-section errors are generally $\mathcal{O}\left(10\%\right)$. The error increases with selection because the increased track multiplicity and lower ``cleanliness'' of the reconstructed events. 
 
@@ -457,7 +455,7 @@ The T2K and Super-K experiments both use the custom interaction library NEUT 5.3
 
 \autoref{fig:neut_xsecs} shows at T2K energies ($E_\nu\sim0.6\text{ GeV}$) the primary interaction mode is CCQE. Charged pion production becomes important at $E_\nu\sim1\text{ GeV}$, and multi-$\pi$ and DIS above $E_\nu\sim2.5\text{ GeV}$. Since this analysis aims to minimise systematics for oscillation analyses---which select the charged-current 0$\pi$ final state at SK---the 0$\pi$ systematics have the largest impact. Single pion production make up $15-20\%$ of the 0$\pi$ selection by missing pions in either reconstruction or losing them to pion final state interactions before the pion exits the nucleus.
 
-\red{talk about the factorisation into initial state, nucleon interaction, final state interaction}
+The neutrino interaction process is factorised into four parts: 1) A nucleon is simulated from a nuclear model and used as a target for the neutrino interaction and we boost into its rest-frame 2) The neutrino interacts off this nucleon which is now at rest, equivalent to a neutrino-nucleon interaction 3) The outgoing particles from the fundamental vertex are propagated through the nucleus with radiative corrections and final state interactions applied 4) The particles are boosted back into the lab frame.
 
 \paragraph{CCQE and CC0$\pi$}
 The nominal model is generated with a Spectral Function from Benhar et al (SF) \cite{benhar} and a 2-particle-2-hole (2p2h) excitation \cite{nieves1,nieves2} for the CCQE/CC0$\pi$ model. An alternative model uses the Llewellyn-Smith model\cite{llewelyn-smith} with a dipole axial form factor and BBBA05 vector form factors \cite{bbba05} with a Smith-Moniz Relativistic Fermi Gas (RFG) \cite{Smith-Moniz}. 
@@ -530,7 +528,7 @@ in which $m_f$ is the final state nucleon mass, $m_i' = m_i-E_b$ where $m_i$ is 
 
 \autoref{fig:2p2h_shape_enu_reco} shows the importance of good 2p2h modelling for SK $E_\nu$ reconstruction: it biases 2p2h events towards a lower energy and so directly impact oscillation parameter fits.
 
-The second class of uncertainties comes from the Random Phase Approximation \cite{nieves2}, which effectively describes correlations between nucleons in a nucleus. The net effect is to modify the 1-particle-1-hole\cite{nieves1} cross-section, which in NEUT is parameterised as a look-up table correction to the CCQE cross-section in $E_\nu$ and $Q^2$. The $E_\nu$ dependence was found to be relatively weak, so a $Q^2$ dependent correction was developed to mimic the uncertainties associated with the model\cite{nieves1}. The correction is parameterised as a third order rising polynomial which switches a decaying exponential at $Q^2=1.2\text{ GeV}^2$. A normal polynomial of form $ax^3+bx^2+cx+d$ connecting to $\exp{\left(-e(x-f)\right)}$ was found to strongly correlate the polynomial and exponential parameters, so a Bernstein polynomial base was chosen instead. The parameterisation follows
+The second group of nuclear uncertainties for CC0$\pi$ comes from the Random Phase Approximation \cite{nieves2}, which effectively describes correlations between nucleons in a nucleus. The net effect is to modify the 1-particle-1-hole\cite{nieves1} cross-section, which in NEUT is parameterised as a look-up table correction to the CCQE cross-section in $E_\nu$ and $Q^2$. The $E_\nu$ dependence was found to be relatively weak, so a $Q^2$ dependent correction was developed to mimic the uncertainties associated with the model\cite{nieves1}. The correction is parameterised as a third order rising polynomial which switches to a decaying exponential at $Q^2=1.2\text{ GeV}^2$. A normal polynomial of form $ax^3+bx^2+cx+d$ connecting to $\exp{\left(-e(x-f)\right)}$ was found to strongly correlate the polynomial and exponential parameters, so a Bernstein polynomial base was chosen instead. The parameterisation follows
 
 \begin{equation}
 w(Q^2) = 
@@ -593,7 +591,7 @@ The single pion production is described with the Rein-Sehgal model\cite{Rein_Seh
 The single pion production uncertainties were tuned to selected bubble chamber data from ANL\cite{ANL_CC1pi,ANL_NC1pi} and BNL\cite{BNL_CC1pi,BNL_CC1pi_isospin,BNL_NuInt02}. The parameter values were cross-checked with modern corrections\cite{ANL_BNL_corr} and nuclear data from MiniBooNE\cite{MB_CC1pip,MB_CC1pi0,MB_NC1pi0}, MINER$\nu$A\cite{MIN_CC1pi0,MIN_CC1pip,MIN_pion_2016} and K2K \cite{K2K_CC1pip} using NUISANCE\cite{NUISANCE}.
 
 \paragraph{Coherent scattering}
-The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_Sehgal_coh}. This process has a small cross-section but occupies a very specific phase space region: the very forward going, collinear lepton-pion system, and low $Q^2$ region. Furthermore it shares final state with single pion production. The interaction diagram is shown in \autoref{fig:coh_diags}.
+The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_Sehgal_coh}. This process has a small cross-section but occupies a very specific phase space: the very forward going, collinear lepton-pion, low $Q^2$ region. This is important since it has the same final state as single pion production. The interaction diagram is shown in \autoref{fig:coh_diags}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.42\textwidth}
@@ -628,7 +626,7 @@ An $E_\pi$ dependent scaling factor, listed in \autoref{tab:rein_sehgal_coh}, is
 \label{tab:rein_sehgal_coh}
 \end{table}
 
-The strength of the coherent interaction is allowed to vary in the fit as normalisation parameters: one for CC $^{12}C$, one for CC $^{16}O$ and one for NC interactions. The prior uncertainty is 30\% from inspections of MINER$\nu$A data.
+The strength of the coherent interaction is allowed to vary in the fit as normalisation parameters: one for CC $^{12}C$, one for CC $^{16}O$ and one for NC interactions. The prior uncertainty is 30\% from inspections of MINER$\nu$A data and the two CC parameter are 100\% correlated in the prior.
 
 \paragraph{Multi-$\pi$ and DIS}
 The transition from single pion production to DIS is a custom interpolation between $1.3 < W < 2.0$, selecting events with $N_\pi>1$ to avoid double counting single pion production cross-sections. A pseudo diagram is shown in \autoref{fig:dis_diags}, where fragmentation causes pion emission. In NEUT the structure functions are taken from the GRV98 parton distribution function \cite{grv98} with Bodek-Yang corrections \cite{bodek_yang}. The details of the transition can be found in \cite{neut} and is inspired from external bubble chamber data on pion multiplicity. The DIS model is directly from PYTHIA 5.7 and JETSET 7.4 \cite{pythia}.
@@ -689,7 +687,7 @@ An example of three spline parameters, comparing a third order polynomial \textt
 		\includegraphics[width=\textwidth, trim={5mm 5mm 15mm 15mm}, clip,page=1]{figures/niwg/splines/fsi_cex_lo}
 		\caption{FSI Cex. Lo}
 	\end{subfigure}
-\caption{A \texttt{TF1} and \texttt{TSpline3} shape implementation of three different shape parameters in the analysis}
+\caption{\texttt{TF1} and \texttt{TSpline3} interpolation of three different shape parameters for three random events included in the analysis}
 \label{fig:xsec_splines}
 \end{figure}
 
@@ -709,16 +707,18 @@ An example of three spline parameters, comparing a third order polynomial \textt
 	\label{fig:xsec_cov_matrix_prior}
 \end{figure}
 
-Note that some of the errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}, p_F$ and that BeRPA U is fixed. Furthermore, the errors are relative the priors: e.g. the error on $p_F^C$ is not 6 MeV but rather $217\times0.06=13\text{ MeV}$.
+Note that some of the errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}$ and $p_F$ and that BeRPA U is fixed. Furthermore, the errors are relative the priors: e.g. the error on $M_A^{RES}$ is not 0.16 GeV but rather $0.95\times0.16=0.152\text{ GeV}$, where the nominal value is 0.16.
 
+A summary of the interaction parameters is provided in \autoref{tab:xsec_params}.
 \begin{table}
 	\begin{tabular}{l | c c c c }
 		\hline
 		\hline
-		Parameter & Nominal & Error & Prior shape & Parameter type \\
+		Parameter & Prior (Nominal) & Error & Prior shape & Type \\
 		\hline
+		\textbf{CC0$\pi$} & & & & \\
 		$M_A^{QE}$ & 1.21 GeV & 0-10 & Flat & Shape \\
-		$M_A^{QE} H$ & 1.03 GeV & 0 & --- & Shape \\
+		$M_A^{QE}$ H & 1.03 (1.21) GeV & 0 & --- & Shape \\
 		$p_F^C$ & 217 MeV & 31 MeV & Flat & Shape \\
 		$p_F^O$ & 225 MeV & 31 MeV & Flat & Shape \\
 		2p2h norm $\nu$ & 1.0 & 1.0 & Flat & Norm. \\
@@ -732,8 +732,33 @@ Note that some of the errors in \autoref{fig:xsec_cov_matrix_vij} do not include
 		BeRPA E & 0.88 & 0.352 & Gauss & Shape \\
 		BeRPA U & 1.20 & --- & --- & --- \\
 		\hline
-		
+		\textbf{CC1$\pi$ and DIS} & & & & \\
+		$M_A^{RES}$ & 1.07 (0.95) GeV & 0.15 GeV & Gauss & Shape \\
+		$C_5^A$ & 0.96 (1.01) & 0.15 & Gauss & Shape \\
+		$I_{1/2}$ non-res & 0.96 (1.30) & 0.40 & Gauss & Shape \\
+		CC coh $^{12}C$ & 1.0 & 0.3 & Gauss & Norm. \\
+		CC coh $^{16}O$ & 1.0 & 0.3 & Gauss & Norm. \\
+		CC DIS & 1.0 & 0.4 & Gauss & Shape \\
+		\hline
+		\textbf{$\nu_e$ and $\bar{\nu}_e$} & & & & \\
+		CC $\nu_e/\nu_\mu$ & 1.0 & $\sqrt{2}\times0.02$ & Gauss & Norm. \\
+		CC $\bar{\nu}_e/\bar{\nu}_\mu$ & 1.0 & $\sqrt{2}\times0.02$ & Gauss & Norm. \\
+		\hline
+		\textbf{NC} & & & & \\
+		NC coh & 1.0 & 0.3 & Gauss & Norm. \\
+		NC $1\gamma$ & 2.0 (1.0) & 1.0 & Gauss & Norm. \\
+		NC other & 1.0 & 0.3 & Gauss & Norm. \\
+		\hline
+		\textbf{Pion FSI} & & & & \\
+		Pion QE & 1.0 & 0.41 & Gauss & Shape \\
+		Pion Abs & 1.1 (1.0) & 0.41 & Gauss & Shape \\
+		Pion Cex Lo & 1.0 & 0.57 & Gauss & Shape \\
+		Pion QE Hi & 1.8 (1.0) & 0.34 & Gauss & Shape \\
+		Pion Inel & 1.0 & 0.50 & Gauss & Shape \\
+		Pion Cex Hi & 1.8 (1.0) & 0.28 & Gauss & Shape \\
 		\hline
 		\hline
 	\end{tabular}
+\caption{Interaction parameters for T2K 2017 oscillation analyses}
+\label{tab:xsec_params}
 \end{table}

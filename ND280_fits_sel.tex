@@ -5,49 +5,6 @@ The goal of the selection is to map theory interaction modes (e.g. CCQE, CC1$\pi
 The fit bins events in the two reconstructed muon variables \pmu and \cosmu. The muon variables are chosen primarily due to excellent detector resolution of muons and because this is what T2K oscillation analyses observe at \sk. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino, but these will not be presented here.
 
 The selections are entirely defined by the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions.
-\begin{itemize}
-\item \textbf{CC$0\pi$}: Events with one negative muon without any charged or neutral pions in the final state. It is developed to contain CCQE and 2p2h events and is the largest sample at ND280. An example event display is shown in \autoref{fig:cc0pi_evtdisplay}. \red{show plots of cross-sections at ND280 from NEUT?}
-\begin{figure}[htbp]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={1cm 2.8cm 0 1cm}, clip]{figures/numu/evtdisplay/CC0pi_7423_34_179070_perX0Z_all}
-		\caption{Side-view}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={1cm 15cm 1cm 15cm}, clip]{figures/numu/evtdisplay/CC0pi_7423_34_179070_ortX0Z_all}
-	\caption{Top-view}
-	\end{subfigure}
-	\caption{True FGD1 CC0$\pi$ event display in ND280}
-	\label{fig:cc0pi_evtdisplay}
-\end{figure}
-
-\item \textbf{CC$1\pi$}: Events with one negative muon and one positive pion with no negative or neutral pions in the final state. It is developed to contain mostly CC1$\pi^{+}$ events from resonant interactions\red{refer to previous sections maybe}. An example event display is shown in \autoref{fig:cc1pi_evtdisplay}. 
-\begin{figure}[htbp]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={4cm 2cm 4cm 3cm}, clip]{figures/numu/evtdisplay/CC1pi_7508_22_119769_perpX0Z_all}
-		\caption{Side-view}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={0cm 17cm 1cm 17cm}, clip]{figures/numu/evtdisplay/CC1pi_7508_22_119769_ortX0Z_all}
-		\caption{Top-view}
-	\end{subfigure}
-	\caption{True FGD1 CC1$\pi$ event display in ND280}
-	\label{fig:cc1pi_evtdisplay}
-\end{figure}
-
-\item \textbf{CC Other}: Events with one negative muon and any number of neutral or negative pions which does not satisfy CC1$\pi$ selection. The presence of one $\pi^{-,0}$ or more than one $\pi^+$ in an event makes this possible. There are no constraints on the number of reconstructed heavier mesons (e.g. kaons or etas). It is developed to contain mostly DIS interactions and CC$1\pi^0$. An example event display is shown in \autoref{fig:ccoth_evtdisplay}.
-\end{itemize}
-\begin{figure}[htbp]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={1cm 3cm 1cm 1cm}, clip ]{figures/numu/evtdisplay/CCOthers_7491_46_209894_perX0Z_all}
-		\caption{Side-view}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={3cm 16cm 3cm 16cm}, clip]{figures/numu/evtdisplay/CCOthers_7491_46_209894_ortX0Z_all}
-		\caption{Top-view}
-	\end{subfigure}
-	\caption{True FGD1 CCOther event display in ND280}
-	\label{fig:ccoth_evtdisplay}
-\end{figure}
 
 \subsection{Event selection cuts, \numu}
 \label{sec:numu_sel}
@@ -183,16 +140,53 @@ Then finally the remaining particles can be identified using the TPC PID:
 
 Now using information from the TPC PID, FGD Michel electron and FGD PID algorithms the \numu CC-inclusive sample can be categorised into the CC$0\pi$, CC$1\pi$ and CCOther samples:
 \begin{itemize}
-	\item \textbf{CC0$\pi$}: Contains events with no identified pions, electrons or positrons using the TPC PID. There are no Michel electrons and/or charged pions found in the FGD
-	\item \textbf{CC$1\pi$}: Contains events with one reconstructed positively charged pion. The sum of the number of positive pions found in the TPC and the number of Michel electrons is one. If there are no Michel electrons the sum of positive pions in the TPC and fully contained in the FGD is one. If there is a negative pion or electron/positron reconstructed in the TPC it is rejected.
-	\item \textbf{CCOther}: All events which are not classified as CC0$\pi$ or CC$1\pi$ fall into this sample. Events with one or more reconstructed negative pions, or neutral pions reconstructed as electron or positron candidates, in the TPC are thereby selected. Event with more than one positive pion based on the TPC and FGD pion counting criteria will also enter into this sample.
+	\item \textbf{CC0$\pi$}: Contains events with one negative muon candidate, no identified charged or neutral pions in the TPC or FGD, and no electrons or positrons in the TPC. It aims to contain CCQE and 2p2h events and is the largest sample at ND280. An example event display is shown in \autoref{fig:cc0pi_evtdisplay}.
+	\begin{figure}[h]
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={25mm 28mm 30mm 30mm}, clip]{figures/numu/evtdisplay/CC0pi_7423_34_179070_perX0Z_all}
+			\caption{Side-view}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={10mm 150mm 10mm 150mm}, clip]{figures/numu/evtdisplay/CC0pi_7423_34_179070_ortX0Z_all}
+			\caption{Top-view}
+		\end{subfigure}
+		\caption{True FGD1 CC0$\pi$ event display in ND280}
+		\label{fig:cc0pi_evtdisplay}
+	\end{figure}
+
+	\item \textbf{CC$1\pi$}: Contains events with one negative muon candidate and one positive pion candidate. The sum of the number of positive pions found in the TPC and the number of Michel electrons is one and if there are no Michel electrons the sum of positive pions in the TPC and fully contained in the FGD is one. If there is a negative pion or electron/positron reconstructed in the TPC it is rejected. It is developed to contain mostly CC1$\pi^{+}$ events from resonant interactions. An example event display is shown in \autoref{fig:cc1pi_evtdisplay}.
+	\begin{figure}[h]
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={50mm 30mm 50mm 40mm}, clip]{figures/numu/evtdisplay/CC1pi_7508_22_119769_perpX0Z_all}
+			\caption{Side-view}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={0mm 170mm 10mm 170mm}, clip]{figures/numu/evtdisplay/CC1pi_7508_22_119769_ortX0Z_all}
+			\caption{Top-view}
+		\end{subfigure}
+		\caption{True FGD1 CC1$\pi$ event display in ND280}
+		\label{fig:cc1pi_evtdisplay}
+	\end{figure}
+	
+	\item \textbf{CCOther}: All events with one negative muon candidate which are not classified as CC0$\pi$ or CC$1\pi$ fall into this sample. Events with one or more reconstructed negative pion(s), or one or more neutral pion(s) reconstructed as electron or positron candidates in the TPC are thereby selected. Event with more than one positive pion based on the TPC and FGD pion counting criteria are also accepted. It is developed to contain mostly DIS interactions and CC$1\pi^0$. An example event display is shown in \autoref{fig:ccoth_evtdisplay}.
+	\begin{figure}[h]
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={20mm 30mm 20mm 30mm}, clip ]{figures/numu/evtdisplay/CCOthers_7491_46_209894_perX0Z_all}
+			\caption{Side-view}
+		\end{subfigure}
+		\begin{subfigure}[t]{0.49\textwidth}
+			\includegraphics[width=\textwidth, trim={3cm 16cm 3cm 16cm}, clip]{figures/numu/evtdisplay/CCOthers_7491_46_209894_ortX0Z_all}
+			\caption{Top-view}
+		\end{subfigure}
+		\caption{True FGD1 CCOther event display in ND280}
+		\label{fig:ccoth_evtdisplay}
+	\end{figure}
 \end{itemize}
 
-\red{Put in 1Trk and Ntrk definitions}
 \paragraph{Efficiency and purity}
 Using the aforementioned cuts we can study the lepton tagging efficiency and purity of each ND280 \numu selection. The number of events are the raw number of generated Monte-Carlo events without any weighting applied. We show the efficiencies as a function of reconstructed lepton candidate momentum, $p_{reco}$.
 
-\autoref{fig:cc0pi_topology} shows the topology purity for the CC0$\pi$ selection in FGD1 and FGD2. The purity peak coincides with the event peak with $\sim85\%$ efficiency and falls off in both directions. The true CC$1\pi$ and CCOther topology constitute the selection very similarly, at about $10\%$ across the momentum range. As we move up in momentum the CC DIS cross-sections---the largest contribution to the CCOther final state---increase whilst the CCQE and 2p2h cross-sections---the largest contributions to the CC0$\pi$ final state---decrease. CC1$\pi$ and CC DIS interactions can produce low-momentum pions which aren't reconstructed in the detector and CC DIS can produce a $\pi^-$ which may be mistaken for the lepton candidate \red{show plots of cross-sections?}. Furthermore, the pions can undergo secondary interactions after exiting the nucleus, causing them to be undetected. The NC contribution comes primarily from the NC$1\pi^-$ via resonance interaction, in which the $\pi^-$ is identified as the lepton candidate and there are no other particles in the final state. We also note barely any anti-neutrino contamination, owing to the sign selection from the magnet, the low \numubar flux in FHC and the smaller cross-section. Averaging over the entire range we have purity of $75.5\%$ for FGD1 and $73.5\%$ for FGD2.
+\autoref{fig:cc0pi_topology} shows the topology purity for the CC0$\pi$ selection in FGD1 and FGD2. The purity peak coincides with the event peak with $\sim85\%$ efficiency and falls off in both directions. The true CC$1\pi$ and CCOther topology constitute the selection very similarly, at about $10\%$ across the momentum range. As we move up in momentum the CC DIS cross-sections---the largest contribution to the CCOther final state---increase whilst the CCQE and 2p2h cross-sections---the largest contributions to the CC0$\pi$ final state---decrease. CC1$\pi$ and CC DIS interactions can produce low-momentum pions which aren't reconstructed in the detector and CC DIS can produce a $\pi^-$ which may be mistaken for the lepton candidate. Furthermore, the pions can undergo secondary interactions after exiting the nucleus, causing them to be undetected. The NC contribution comes primarily from the NC$1\pi^-$ via resonance interaction, in which the $\pi^-$ is identified as the lepton candidate and there are no other particles in the final state. We also note barely any anti-neutrino contamination, owing to the sign selection from the magnet, the low \numubar flux in FHC and the smaller cross-section. Averaging over the entire range we have purity of $75.5\%$ for FGD1 and $73.5\%$ for FGD2.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/selection/2017b_Diag_WithSelection}
@@ -248,10 +242,6 @@ Using the aforementioned cuts we can study the lepton tagging efficiency and pur
 	\label{fig:cc1pi_muon}
 \end{figure}
 
-\red{Add part looking at how the pion is tagged and number of events}
-
-\red{Show plots for \cosmu?}
-
 \autoref{fig:ccoth_topology} shows the topology purity for the CCOther selection. As expected from the other purities, CCOther increases with $p_{reco}$ due to the increase in the CC DIS cross-section. The CC0$\pi$ and CC1$\pi$ topology seeps in to this selection by creating $\pi^{\pm,0}$ after exiting the nucleus that become(s) wrongly associated with the primary interaction vertex, or by the reconstruction falsely identifying an outgoing proton as a $\pi^+$. In the NC case, it is enough to have a interaction which produces a \{$\pi^-, \pi^0$\} combination, which can happen directly through NC DIS or indirectly with NC$1\pi$ via resonances, in which a secondary interaction occurs and the new track gets wrongly associated to the primary vertex. Initially, the purity starts at 35-40\% and plateaus around 80\% at $p_{reco} \sim 1.5\text{ GeV/c}$. Overall, the purity of the selection is 65\% for both FGDs over the entire range, with $\sim10\%$ each from NC, CC0$\pi$ and CC1$\pi$.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -266,7 +256,7 @@ Using the aforementioned cuts we can study the lepton tagging efficiency and pur
 	\label{fig:ccoth_topology}
 \end{figure}
 
-\autoref{fig:ccoth_muon} shows the muon tag efficiency for the CC Other sample, which is notably worse than for previous selections: on average 73\%. This is expected, since the CCOther selection has at least 2 tracks (1$\mu^-$, 1$\pi^{\pm}$, 1$\pi^0$) but often even more. It is sufficient to have an interaction in which $N_\pi \ge 2$ and $p_{\pi} > p_{\mu}$ to wrongly identify the lepton candidate. Owing to the many tracks in this topology due to the CC and NC DIS interaction, it is no surprise to see a 20\% contribution from $\pi^-$. Furthermore, at low $p_{reco}$ electrons are selected a majority of the time, coming from two sources: 1) relatively high threshold of \numu CC DIS compared to \nue CC DIS due to the muon mass (even though the \nue flux is much lower than \numu \red{show this}) and 2) since the CCOther topology is the only topology to allow for $\pi^0$, these are likely to produce $e^\pm$ pairs in the TPC. If the $\pi^0$ shower occurs early in the TPC and the interaction vertex is traced to a downstream layer of the FGD, the electron may be falsely associated with the interaction vertex, and if $p_e > p_\mu$ is picked as the highest momentum candidate. To pass the TPC $\mu$ PID cut we would require a low momentum $e^-$ to match the dE/dx of a $\mu^-$, which in \autoref{fig:TPC_dedx} happens at $p\sim100\text{ MeV/c}$.
+\autoref{fig:ccoth_muon} shows the muon tag efficiency for the CC Other sample, which is notably worse than for previous selections: on average 73\%. This is expected, since the CCOther selection has at least 2 tracks (1$\mu^-$, 1$\pi^{\pm}$, 1$\pi^0$) but often even more. It is sufficient to have an interaction in which $N_\pi \ge 2$ and $p_{\pi} > p_{\mu}$ to wrongly identify the lepton candidate. Owing to the many tracks in this topology due to the CC and NC DIS interaction, it is no surprise to see a 20\% contribution from $\pi^-$. Furthermore, at low $p_{reco}$ electrons are selected a majority of the time, coming from two sources: 1) relatively high threshold of \numu CC DIS compared to \nue CC DIS due to the muon mass (even though the \nue flux is much lower than \numu) and 2) since the CCOther topology is the only topology to allow for $\pi^0$, these are likely to produce $e^\pm$ pairs in the TPC. If the $\pi^0$ shower occurs early in the TPC and the interaction vertex is traced to a downstream layer of the FGD, the electron may be falsely associated with the interaction vertex, and if $p_e > p_\mu$ is picked as the highest momentum candidate. To pass the TPC $\mu$ PID cut we would require a low momentum $e^-$ to match the dE/dx of a $\mu^-$, which in \autoref{fig:TPC_dedx} happens at $p\sim100\text{ MeV/c}$.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/selection/2017b_Diag_WithSelection}
@@ -282,7 +272,7 @@ Using the aforementioned cuts we can study the lepton tagging efficiency and pur
 
 \subsection{Event selection cuts, \numubar in RHC}
 \label{sec:numubar_sel}
-The anti-neutrino selections CC1Track and CCNTrack have the same event quality and fiducial volume cut as the neutrino selection, and the muon candidate track is required to pass through the TPC downstream of the struck FGD. However, its highest momentum track is required to be the highest momentum positive track for its muon PID (a $\mu^+$ coming from a \numubar interaction). Furthermore, it has a larger background of ``wrong-sign'' events: \numu interactions producing $\mu^-$, but also \numu interactions producing $\pi^+$ which may be identified as the lepton candidate.\red{SHOW PLOT OF THIS, e.g. numubar flux with numu background in there} Hence, the selection cuts proceed marginally differently:
+The anti-neutrino selections CC1Track and CCNTrack have the same event quality and fiducial volume cut as the neutrino selection, and the muon candidate track is required to pass through the TPC downstream of the struck FGD. However, its highest momentum track is required to be the highest momentum positive track for its muon PID (a $\mu^+$ coming from a \numubar interaction). Furthermore, it has a larger background of ``wrong-sign'' events: \numu interactions producing $\mu^-$, but also \numu interactions producing $\pi^+$ which may be identified as the lepton candidate. Hence, the selection cuts proceed marginally differently:
 \begin{itemize}
 	\item \textbf{Positive multiplicity}: The muon candidate track charge is required to be a highest momentum positive track, which removes a large amount of \numu background interactions
 	
@@ -290,7 +280,7 @@ The anti-neutrino selections CC1Track and CCNTrack have the same event quality a
 	
 	\item \textbf{Positive muon identification}: The TPC PID outlined for the \numu selections are used to select the positive muon candidate, with the cuts optimised for $\mu^+$. 
 	
-	$\mathcal{L}_{MIP}$ is defined identically to \autoref{eq:tpc_track_mip} although the cut is now placed at 0.9, and still applies only to particles with $p < 500\text{ MeV}$. The muon likelihood $\mathcal{L}_\mu$ is also modified to $0.1 < \mathcal{L}_\mu < 0.7$ which removes protons and positive pions from the \numu background. The upper bound at 0.7 is present to reject low energy wrong-sign muons ($\mu^-$), which are misidentified as positive tracks. The likelihood distributions and impact of these cuts are shown in \autoref{fig:numubar_likelihood} and \autoref{fig:numubar_likelihood_sel} for the selected lepton candidate. \autoref{fig:numubar_pulls} shows the TPC PID pulls for run5+6. \red{REMEMBER THAT THIS IS NOT PRESENT FOR PSYCHE V3}
+	$\mathcal{L}_{MIP}$ is defined identically to \autoref{eq:tpc_track_mip} although the cut is now placed at 0.9, and still applies only to particles with $p < 500\text{ MeV}$. The muon likelihood $\mathcal{L}_\mu$ is also modified to $0.1 < \mathcal{L}_\mu < 0.7$ which removes protons and positive pions from the \numu background. The upper bound at 0.7 is present to reject low energy wrong-sign muons ($\mu^-$), which are misidentified as positive tracks. The likelihood distributions and impact of these cuts are shown in \autoref{fig:numubar_likelihood} and \autoref{fig:numubar_likelihood_sel} for the selected lepton candidate. \autoref{fig:numubar_pulls} shows the TPC PID pulls for run5+6.
 \end{itemize}
 
 \begin{figure}[h]
@@ -399,7 +389,7 @@ As with the \numu samples, the CCNTrack selection purity in \autoref{fig:ccnubar
 
 \subsection{Event selection, \numu in RHC}
 \label{sec:numu_in_nubar_sel}
-In anti-neutrino mode there is a large fraction of \numu interactions, owing partly to the larger \numu cross-section and partly due to the higher flux background. \red{show plots of this}. The same pre-selection cuts apply for the \numu in RHC selection as for the previous selections presented in \autoref{sec:numu_sel} and \autoref{sec:numubar_sel}.
+In anti-neutrino mode there is a large fraction of \numu interactions, owing partly to the larger \numu cross-section and partly due to the higher flux background. The same pre-selection cuts apply for the \numu in RHC selection as for the previous selections presented in \autoref{sec:numu_sel} and \autoref{sec:numubar_sel}.
 
 The CC-inclusive selection proceeds by:
 \begin{itemize}
@@ -523,7 +513,7 @@ A summary of all selections' efficiency and purities is shown in \autoref{tab:ef
 \label{sec:binning_2017}
 We expect largely similar kinematics across the two FGDs so apply the same binning in reconstructed muon momentum, \pmu, and cosine of the neutrino-muon angle, \cosmu. The binning for the fit is primarily influenced by MC statistics: we require $\sim 20$ raw MC events per bin (roughly equivalent to 1-2 data events). The momentum resolution is $\sim50\text{ MeV}$ up to 1 GeV and the angular resolution $\sim 2\degree$.
 
-The binning in \pmu \cosmu for each sample is shown below. The FHC selection largely share the same binning and has the highest number of bins. The total number of fit bins is 1624, of which 902 are FHC (six selections) and 722 are RHC (eight selections).
+The binning in \pmu \cosmu for each sample is shown below. The FHC selections all have similar binning and has the highest number of bins. The total number of bins is 1624, of which 902 are FHC (six selections) and 722 are RHC (eight selections).
 \begin{itemize}
 	\item FGD1+2  CC$0\pi$, CC1$\pi$ and CCOther \numu: 154 bins CC0$\pi$, CCOther; 143 bins CC1$\pi$\\
 	\pmu: 0, 300, 400, 500, 600, 700, 800, 900, 1000, 1250, 1500, 2000, 3000 (not for CC1$\pi$), 5000, 30000\\
@@ -546,6 +536,7 @@ The binning in \pmu \cosmu for each sample is shown below. The FHC selection lar
 	\cosmu: -1.0, 0.7, 0.8, 0.85, 0.9, 0.93, 0.95, 0.96, 0.97, 0.98, 0.99, 1
 \end{itemize}
 
+\iffalse
 The raw Monte-Carlo \pmu \cosmu event distributions with aforementioned binning is shown in \autoref{fig:nominal_mc2d} with the projections and by-mode distributions in \autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu}. The 2D plots include lines of constant $Q^2_{\text{reco}}$, for $E_\nu = 0.6 \text{ GeV}$, defined as the reconstructed (observed) $Q^2$:
 \begin{equation}
 Q^2_{\text{reco}} = -m^2_\mu + 2E_\nu \left( E_\mu-p_\mu\cos\theta_\mu \right)
@@ -605,7 +596,7 @@ As expected from the neutrino flux at ND280 and neutrino interaction cross-secti
 \label{fig:nominal_mc2d}
 \end{figure}
 
-\autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu} show the projections onto \pmu and \cosmu along with the composition by mode. \autoref{tab:nominal_mode} gives the mode breakdown of the histograms binned into 2D. The CC0$\pi$ samples have sizeable contributions from single pion interactions which is more than an effect from misreconstruction: in \autoref{fig:cc0pi_topology} the fraction of CC1$\pi$ topology events reconstructed as CC0$\pi$ was $\sim11\%$, whereas for the true interaction mode we have $\sim20\%$. This effect is almost entirely driven by final-state-interactions, in which nucleons and pions exit the nucleon-level interaction and are propagated through the nucleus with a probability of re-interaction with surrounding nucleons. A CC1$\pi^{0,+}$ interaction can see a pion absorbed, leaving only the outgoing muon, classifying it (correctly) as a CC0$\pi$ topology. This applies to all samples: feed-down occurs from pion absorption and feed-up occurs from inelastic nucleon or pion interactions, in which additional pions exit the nucleus. There is no effort to disentangle the effects of the fundamental interaction to that of final-state-interaction in this fit, as doing so is very model dependent\red{maybe cite some model dependence?}. In general, the selections perform well in separating the interaction models achieving above 65\% content for all samples. 
+\autoref{fig:nominal_mcpmu} and \autoref{fig:nominal_mccosmu} show the projections onto \pmu and \cosmu along with the composition by mode. \autoref{tab:nominal_mode} gives the mode breakdown of the histograms binned into 2D. The CC0$\pi$ samples have sizeable contributions from single pion interactions which is more than an effect from misreconstruction: in \autoref{fig:cc0pi_topology} the fraction of CC1$\pi$ topology events reconstructed as CC0$\pi$ was $\sim11\%$, whereas for the true interaction mode we have $\sim20\%$. This effect is almost entirely driven by final-state-interactions, in which nucleons and pions exit the nucleon-level interaction and are propagated through the nucleus with a probability of re-interaction with surrounding nucleons. A CC1$\pi^{0,+}$ interaction can see a pion absorbed, leaving only the outgoing muon, classifying it (correctly) as a CC0$\pi$ topology. This applies to all samples: feed-down occurs from pion absorption and feed-up occurs from inelastic nucleon or pion interactions, in which additional pions exit the nucleus. There is no effort to disentangle the effects of the fundamental interaction to that of final-state-interaction in this fit, as doing so is model dependent. In general, the selections perform well in separating the interaction models achieving above 65\% content for all samples. 
 
 \autoref{fig:nominal_mcpmu} shows the fraction of single pion events in 0$\pi$ is highest at low momentum, reaching 50\% in the first bin. We also note the NC contribution is primarily focused in the 500-1000 MeV/c region for the 1$\pi$ and Other samples. It is also clear that the Other sample produces higher momentum muons, and mostly contains multi-$\pi$ and DIS events, as intended. 
 
@@ -747,5 +738,4 @@ Looking at the \cosmu projection in \autoref{fig:nominal_mccosmu}, the forward r
 	\caption{Raw Monte-Carlo event distributions for the 6CC\numu, 4CC\numubar and 4CC\numu in RHC, selections at ND280 projected onto \cosmu and bin-width normalised}
 	\label{fig:nominal_mccosmu}
 \end{figure}
-
-\clearpage
+\fi

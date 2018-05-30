@@ -306,7 +306,7 @@ A summary of the 2018 analysis' selection efficiencies and purities is shown in 
 	\label{tab:eff_pur_summary_2018}
 \end{table}
 
-\section{Rebinning}
+\section{Binning}
 With the large increase in statistics from using run 7 and 8 data, a re-binning of the two reconstructed event observables \pmu and \cosmu is due. As was the case in \autoref{sec:binning_2017}, we base the binning on requiring $\sim20$ raw MC events per bin, which is roughly equivalent to 1-2 data events. We keep in mind the approximate momentum resolution of ND280 is $\sim50\text{ MeV}$ and the angular resolution $\sim2\degree$.
 
 Here we re-bin all selections for 2018 analysis using the above criteria, leading to a drastic increase in the number of bins from the 2017 analysis, which was 1624. The total number of bins is now 4238, of which 2942 are FHC (six selections) and 1188 are RHC (12 selections). We note the FGD1 and 2 CC0$\pi$ binning alone (1682) is more bins than was present in total for 2017 (1624).
@@ -349,23 +349,22 @@ Here we re-bin all selections for 2018 analysis using the above criteria, leadin
 	$\cos\theta_\mu$ = -1, 0.7, 0.8, 0.86, 0.9, 0.93, 0.95, 0.97, 0.99, 1.
 \end{itemize}
 
-\red{Put in the plots when they're done? Plot overload?}
-
 \section{Systematics}
-\subsection{Flux}
-No change
+The 2018 iteration of the fits to ND280 data was intended primarily a statistics update, including run 7 and 8 data, and a suitable update to the RHC selections to match the FHC selections. There was therefore comparably few updates to the treatment of systematics.
 
-\subsection{Cross-section}
-Only new thing is FSI central values and the CC norm nu nubar
+\subsection{Flux}
+The flux systematics saw no change and follows that prescribed in \autoref{subsec:syst_flux}.
 
 \subsection{Making new detector systematics}
-Added proton SI
+The systematics in \autoref{subsec:syst_nd280} are used again in the 2018 analysis. 
 
-Deciding on detector binning: 
-Check how similar percentage effect on systematics: if the percentage change is more than 5\% and the percentage effect of the systematics on the bin is greater than 5\% and the bin content in the bin is at least one and the effect of the systematics on the bin changes the number of events in that bin by at least one.
-Will favour high-statistics bins and disfavour low-statistics bins.
+One more systematic was added to the detector response: the proton secondary interaction systematic. It is analogous to the pion secondary interaction but applies to protons instead, so allows proton tracks to be modified in the reconstruction. Since the proton ID is excellent when $p < 1.4\text{ GeV}$, this systematic is only important for anti-neutrino selections with $p > 1.4\text{ GeV}$, where there is a risk of the proton being assigned as the lepton candidate.
 
-VERIFIED IN 17 MAY AFTER BUG v7
+The parameterisation of the systematics is also unchanged to \autoref{subsec:syst_nd280}---we assign correlated normalisation parameters to each \pmu, \cosmu, merging similar responses when possible. Since the number of selections increased from 14 to 18 and the number of bins increased from 1624 to 4238, a new ND280 covariance matrix had to be generated. However, the number of bins increase by $\sim2.6$, and making the equivalent increase in detector parameters would bring the number of ND280 parameters to $\sim1500$, so a more aggressive bin merging was applied. The parameterisation of ND280 with identical binning to the fit binning (so 4238 ND280 parameters) was also tested and is presented throughout as a reference.
+
+The bin merging was approached in two ways: bins were merged if 1) there was a <5\% difference in effect from ND280 systematics, or 2) the effect of the systematics was <5\% and the bin content was less than one and the effect of the systematics on the bin was to change the number of events by less than one. This bin merging strategy is intended to merge bins with low response to the ND280 systematics and bins of low statistics. 
+
+The number of final ND280 detector parameters decreased from 4238 to 1076 and favours finer binning for the high statistics FHC selections, as intended. The binning was as follows:
 \begin{itemize}
 	\item FGD1 and FGD2 CC0$\pi$: 272 detector bins (841) \\
 	$p_\mu$ (GeV/c): 0, 200, 300, 400, 450, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1400, 5000, 30000\\
@@ -404,12 +403,74 @@ VERIFIED IN 17 MAY AFTER BUG v7
 	$\cos\theta_\mu$: -1, 0.7, 1.
 \end{itemize}
 
-show raw 4238 plots, binning choices for data
+The $\chi^2/\text{nbins}$ for each bin's content when fitting a Gaussian is shown in \autoref{fig:det_chi2_ndof}. There are some clear outliers which follow a repeating pattern: this is the lowest momentum bin which often has bimodal distributions due to pions entering and exciting the selection from variation systematics. In most cases the difference in the $\sigma$ between the distribution and the fitted Gaussian is < 0.1 events, although modelling the distribution as a Gaussian is not ideal.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.7\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fhc_v7_chi2ndof}
+		\caption{FHC}
+	\end{subfigure}
 
-try to rebin with justification, show ndof etc, some canvases
+	\begin{subfigure}[t]{0.7\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/rhc_v7_chi2ndof}
+		\caption{RHC}
+	\end{subfigure}
+\caption{$\chi^2/\text{nbins}$ for the reduced detector covariance matrix bins when fitting the bin's content distribution to a Gaussian}
+\label{fig:det_chi2_ndof}
+\end{figure}
+
+\autoref{fig:det_binbybin} shows the event distributions for the three worst bins in \autoref{fig:det_chi2_ndof} (upper panel), which are all bimodal. We note all these cases to be low statistics (x-axis) so in reality have a low overall impact on the fit. The bottom panel shows a random selection of other bins which are better behaved.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fdg1_numu_ccoth_bad}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fgd1_numu_1pi_bad}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fgd2_numubar_0pi_bad}
+	\end{subfigure}
+
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fgd1_numu_0pi_good}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fgd1_numu_1pi_good}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fgd2_numubkg_ccoth_good}
+	\end{subfigure}
+	\caption{Bin-by-bin event distributions with fitted Gaussians for the reduced ND280 systematic parameterisation}
+	\label{fig:det_binbybin}
+\end{figure}
+
+\subsection{Interaction}
+The interaction systematics are similar to \autoref{subsec:syst_xsec} with two changes: a new FSI tune was developed with a more robust fitting method, carefully selected scattering data (including data from the dedicated DUET experiment\cite{duet}). It was also decided to remove the high energy charge exchange pion final state parameter.
+
+\begin{table}
+	\begin{tabular}{l c}
+		\hline
+		\hline
+		Parameter & Best-fit $\pm1\sigma$ \\
+		\hline
+		FEFQE & $1.069\pm0.313$ \\
+		FEFABS & $1.404\pm0.432$\\
+		FEFCX & $0.697\pm0.305$\\
+		FEFINEL & $1.002\pm1.101$\\
+		FEFQEH & $1.824\pm0.859$ \\
+		FEFCXH & $1.8\pm0.00$\\
+		\hline
+		\hline
+	\end{tabular}
+\caption{New pion final state interaction central values and uncertainties introduced for 2018 analyses}
+\label{tab:pion_fsi_2018}
+\end{table}
+
+
+
+New thing is FSI central values and the CC norm nu nubar (radiative corrections)
 
 \section{Nominal model}
-Using the nominal model, applying the multiplicative nominal weights, the event rates in \autoref{tab:detailed_eventrate_2018} are obtained. 
+Using the nominal model, applying the multiplicative nominal weights, the event rates in \autoref{tab:detailed_eventrate_2018} are obtained.
 
 As expected from the large increase in POT detailed in \autoref{tab:pot_2018}, run 7 and 8 almost doubles the data for the FHC and RHC selections. There are now 67,000 FHC \numu, 13,000 RHC \numubar, and 5,000 RHC \numu CC0$\pi$ events, totalling at 82,000. The FGD1 and FGD2 equivalent selections are consistent, and we generally note CC0$\pi$ selections underestimated by 0-6\%, CC1$\pi$ overestimated by the same amount, and CCOther underestimated by 9-26\% for all FGDs and beam running modes. Averaging over all the selections the nominal model underestimates the data by 6\%.
 
