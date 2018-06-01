@@ -124,7 +124,7 @@ The CC0$\pi$ RHC selections are much the same as the 2017 1Track selection, and 
 	\label{fig:numubar_cc0pi_muon_2018}
 \end{figure}
 
-Moving to the 1$\pi$ \numubar selection, the purity is shown in \autoref{fig:numubar_cc1pi_topology_2018}. The \numubar RHC selection sees similar performance to the \numu FHC equivalent in \autoref{fig:cc1pi_topology_2018}, reaching an overall purity of $50-54\%$, with FGD1 being the higher. The wrong-sign contamination is significant at 25-30\%, coming from a $\pi^+$ in a CC1$\pi^+$ or CC DIS event being reconstructed as the muon candidate, and the $\mu^-$ reconstructed as the $\pi^-$. The right-sign CCOther contamination is about 10\%, owing mostly to one or several missed $\pi$. We again see the CC0$\pi$ \numu peak at 1.5 GeV, where the proton (likely from a CCQE or 2p2h interaction) is reconstructed as the $\mu^+$.
+Moving to the 1$\pi$ \numubar selection, the purity is shown in \autoref{fig:numubar_cc1pi_topology_2018}. The \numubar RHC selection sees similar performance to the \numu FHC equivalent in \autoref{fig:cc1pi_topology}, reaching an overall purity of $50-54\%$, with FGD1 being the higher. The wrong-sign contamination is significant at 25-30\%, coming from a $\pi^+$ in a CC1$\pi^+$ or CC DIS event being reconstructed as the muon candidate, and the $\mu^-$ reconstructed as the $\pi^-$. The right-sign CCOther contamination is about 10\%, owing mostly to one or several missed $\pi$. We again see the CC0$\pi$ \numu peak at 1.5 GeV, where the proton (likely from a CCQE or 2p2h interaction) is reconstructed as the $\mu^+$.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth,page=15, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
@@ -355,7 +355,7 @@ The 2018 iteration of the fits to ND280 data was intended primarily a statistics
 \subsection{Flux}
 The flux systematics saw no change and follows that prescribed in \autoref{subsec:syst_flux}.
 
-\subsection{Making new detector systematics}
+\subsection{ND280}
 The systematics in \autoref{subsec:syst_nd280} are used again in the 2018 analysis. 
 
 One more systematic was added to the detector response: the proton secondary interaction systematic. It is analogous to the pion secondary interaction but applies to protons instead, so allows proton tracks to be modified in the reconstruction. Since the proton ID is excellent when $p < 1.4\text{ GeV}$, this systematic is only important for anti-neutrino selections with $p > 1.4\text{ GeV}$, where there is a risk of the proton being assigned as the lepton candidate.
@@ -443,21 +443,35 @@ The $\chi^2/\text{nbins}$ for each bin's content when fitting a Gaussian is show
 	\label{fig:det_binbybin}
 \end{figure}
 
-\subsection{Interaction}
-The interaction systematics are similar to \autoref{subsec:syst_xsec} with two changes: a new FSI tune was developed with a more robust fitting method, carefully selected scattering data (including data from the dedicated DUET experiment\cite{duet}). It was also decided to remove the high energy charge exchange pion final state parameter.
+The new ND280 covariance matrix is shown in \autoref{fig:nd280_cov_2018} and \autoref{fig:nd280_corr_2018}. Note: they are not directly comparable to the 2017 matrices in \autoref{fig:nd280_cov} and \autoref{fig:nd280_corr} because the dominant parameter switched from \pmu to \cosmu so parameters now run $\{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^1,p_\mu^2\},...\{\cos\theta_\mu^1,p_\mu^N\}$ instead of $\{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^2,p_\mu^1\},...\{\cos\theta_\mu^N,p_\mu^1\}$. However we note many similarities with 2017: the largest systematics are $\sim50\%$, notably in the high-momentum bins. FGD1 and FGD2 are correlated as expected, and the selections in each FGD is correlated more.
+\begin{figure}[h]
+	\includegraphics[width=0.7\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
+	\caption{$\sqrt{\text{Covariance}}$ for the reduced ND280 parameterisation}
+	\label{fig:nd280_cov_2018}
+\end{figure}
 
-\begin{table}
-	\begin{tabular}{l c}
+\begin{figure}[h]
+	\includegraphics[width=0.7\textwidth,page=4, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
+	\caption{Correlation for the reduced ND280 parameterisation}
+	\label{fig:nd280_corr_2018}
+\end{figure}
+
+\subsection{Interaction}
+The interaction systematics are similar to \autoref{subsec:syst_xsec} with two changes: a new FSI tune was developed, and an uncertainty on radiative corrections was applied.
+
+\paragraph{Pion final state interaction update}
+The new FSI tune\cite{thesis_elder} did not change the underlying model, but applied a more robust fitting method, extending the scattering data to heavier targets such as oxygen, aluminium, iron and lead, including fresh data from the dedicated DUET experiment\cite{duet}. It was also decided to remove the high energy charge exchange pion final state parameter due to poor constraints from external data. The new constraints are shown in \autoref{tab:pion_fsi_2018}, and is a reduction for the quasi-elastic and charge exchange parameters, but is otherwise an inflation. The inelastic and quasi-elastic high energy probabilities double in uncertainty. The absorption and charge exchange central values move by $\sim1\sigma$ from the old recommendation. However, the correlations are now fully evaluated and the expectation is to reduce the systematics by $\sim50\%$.
+\begin{table}[h]
+	\begin{tabular}{l | c c}
 		\hline
 		\hline
-		Parameter & Best-fit $\pm1\sigma$ \\
+		Parameter & 2017 value & Best-fit $\pm1\sigma$ \\
 		\hline
-		FEFQE & $1.069\pm0.313$ \\
-		FEFABS & $1.404\pm0.432$\\
-		FEFCX & $0.697\pm0.305$\\
-		FEFINEL & $1.002\pm1.101$\\
-		FEFQEH & $1.824\pm0.859$ \\
-		FEFCXH & $1.8\pm0.00$\\
+		FEFQE & $1.0\pm0.41$ & $1.069\pm0.313$ \\
+		FEFABS & $1.1\pm0.41$ & $1.404\pm0.432$ \\
+		FEFCX & $1.0\pm0.57$ & $0.697\pm0.305$ \\
+		FEFINEL & $1.0\pm0.50$ & $1.002\pm1.101$ \\
+		FEFQEH & $1.8\pm0.34$ & $1.824\pm0.859$ \\
 		\hline
 		\hline
 	\end{tabular}
@@ -465,10 +479,36 @@ The interaction systematics are similar to \autoref{subsec:syst_xsec} with two c
 \label{tab:pion_fsi_2018}
 \end{table}
 
+\paragraph{Coulomb corrections}
+As the anti-neutrino statistics increased, a systematic was included to account for the Coulomb effect of a lepton leaving the interaction nucleon and nucleus. $\mu^+/e^+$ receive a repulsive force and $\mu^-/e^-$ an attractive force, and is simply modelled by shifting the true lepton momentum by a fixed amount, dependent on the target nucleus\cite{coulomb1, coulomb2}. The shifts are shown in \autoref{tab:coulomb_shifts}.
+\begin{table}[h]
+	\begin{tabular}{l | c c}
+		$V_C$ (MeV) & $\mu^-$ & $\mu^+$ \\
+		\hline
+		$^{12}C$ & $-3.6$ & $+2.6$ \\
+		$^{16}O$ & $-4.3$ & $+3.3$ \\
+	\end{tabular}
+		\caption{Lepton momentum shifts as a result of Coulomb corrections}
+		\label{tab:coulomb_shifts}
+\end{table}
 
+Since the relative effect of the Coulomb shift is smaller at higher momentum, a correlated 3\% total (2\% on $\nu$, 1\% on $\bar{\nu}$ negatively correlated with each other) uncertainty on CC inclusive $\nu$ and $\bar{\nu}$ with $0.4 < E_\nu < 0.6 \text{ GeV}$ is applied.
 
-New thing is FSI central values and the CC norm nu nubar (radiative corrections)
+\paragraph{Covariance}
+The new covariance and correlation matrices for the interaction systematics are presented in \autoref{fig:xsec_cov_2018} and \autoref{fig:xsec_corr_2018}. As previously noted, the pion FSI parameters (upper right corner) are now fully correlated which gives rise to smaller overall pion FSI systematics. The new CC normalisation from uncertainties in the Coulomb correction is shown in the middle of the matrix.
+\begin{figure}[h]
+	\includegraphics[width=0.7\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/niwg/xsec_covariance_2018a_NOMINAL_v11_xseccov}
+	\caption{$\sqrt{\text{Covariance}}$ for the interaction parameters in 2018}
+	\label{fig:xsec_cov_2018}
+\end{figure}
 
+\begin{figure}[h]
+	\includegraphics[width=0.7\textwidth,page=2, trim={0mm 0mm 0mm 0mm}, clip]{figures/niwg/xsec_covariance_2018a_NOMINAL_v11_xseccov}
+	\caption{Correlation for the interaction parameters in 2018}
+	\label{fig:xsec_corr_2018}
+\end{figure}
+
+\clearpage
 \section{Nominal model}
 Using the nominal model, applying the multiplicative nominal weights, the event rates in \autoref{tab:detailed_eventrate_2018} are obtained.
 
