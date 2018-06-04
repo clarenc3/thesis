@@ -18,7 +18,7 @@ An example of a technical difference is MaCh3 evaluates the weights from cross-s
 
 Weights from cross-section parameters were also compared for a selected few events and was found to be accurate to 1E-6. 
 
-\subsection{Nominal model}
+\section{Nominal model}
 The nominal model and selection are run through both the MaCh3 and BANFF frameworks and the nominal event rates are compared in \autoref{tab:eventrate_banff_mach3}. The largest difference is seen in the FGD1 1Trk selection $\mathcal{O}(10^{-3})$ percent and the total difference is $\mathcal{O}(10^{-4})$ percent, which were deemed acceptable.
 \begin{table}[h]
 	\centering
@@ -124,7 +124,7 @@ The nominal model and selection are run through both the MaCh3 and BANFF framewo
 	\label{fig:mach3_banff_prefit_fgd2}
 \end{figure}
 
-\subsection{Likelihood scans}
+\section{Likelihood scans}
 The likelihood scans in \autoref{sec:llh_scan} are also validated across the two groups. As then, likelihood response is scanned across a parameter one at a time, and all other parameters are fixed to their nominal values. This validation has two main purposes: checking the likelihood response of the prior term and the sample term. The plots shown below are for the total likelihood.
 
 A selection of ND280 flux parameters are shown in \autoref{fig:banff_asimov_scan_ND280_flux}. We see very good agreement for the different groups of parameters, and all other flux parameters display this property.
@@ -215,7 +215,7 @@ A selection of ND280 flux parameters are shown in \autoref{fig:banff_asimov_scan
 	\label{fig:banff_asimov_scan_ND280}
 \end{figure}
 
-\subsection{1$\sigma$ variations}
+\section{1$\sigma$ variations}
 We also validate the two frameworks on a parameter-by-parameter basis by varying all the parameters by the pre-fit $1\sigma$. This validation is meant to purely look at the sample response to specific parameters and catch erroneous implementation and \pmu \cosmu responses---e.g. CCOther selections have strong responses to 2p2h variations, or a FGD1 CC0$\pi$ event having a response to an FGD2 CC1$\pi$ ND280 parameter, or a FHC \numu event having a response to a variation of the RHC flux parameters.
 
 To demonstrate, \autoref{tab:1sigmavar_banff_berpa_b} shows the responses of all the samples to a variation in the BeRPA B interaction parameter. The largest difference is seen in the FGD1 CC0$\pi$, followed by the FGD2 CC0$\pi$ sample, much in accordance with the nominal event rate differences in \autoref{tab:eventrate_banff_mach3}.
@@ -253,7 +253,7 @@ To demonstrate, \autoref{tab:1sigmavar_banff_berpa_b} shows the responses of all
 	\label{tab:1sigmavar_banff_berpa_b}
 \end{sidewaystable}
 
-\subsection{Asimov fit}
+\section{Asimov fit}
 BANFF performs the same Asimov fit as MaCh3 in \autoref{fig:banff_asimov}. However it does not suffer from marginalisation issues and additionally starts the fit at the local minimum, so has no biases. Because of this, direct comparisons are not particularly enlightening. Comparing to the MaCh3 result in \autoref{sec:asimov_fit} and \autoref{fig:flux_asimov_fhc}, \autoref{fig:flux_asimov_rhc} and \autoref{fig:xsec_asimov} we see compatible uncertainties on all parameters.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -268,7 +268,7 @@ BANFF performs the same Asimov fit as MaCh3 in \autoref{fig:banff_asimov}. Howev
 	\label{fig:banff_asimov}
 \end{figure}
 
-\subsection{Data fit}
+\section{Data fit}
 We compare the global minimum from BANFF to the 1D marginalised posteriors from MaCh3, keeping the marginalisation issues detailed in \autoref{sec:marginalisation} in mind.
 
 The flux parameters are compared in \autoref{fig:banff_mach3_flux} and we see a consistent shift in the parameters. The shapes are near identical, with BANFF seeing consistently higher flux parameters. This is largely expected due to the correlations of the flux with interaction parameters that showed marginalisation biases in the Asimov fit. The uncertainties on each of the parameters is consistent.
@@ -337,7 +337,7 @@ Finally we can also compare the final event rates and test-statistics in \autore
 	\label{tab:banff_mach3_postfit_eventrate}
 \end{table}
 
-\subsection{Post fit distributions}
+\section{Post fit distributions}
 We now compare the post-fit \pmu distributions from BANFF and MaCh3. The BANFF post-fit uses the parameter set which finds the global minimum, and MaCh3 uses the posterior predictive spectrum. The error on the MaCh3 prediction is the total uncertainty.
 
 \autoref{fig:mach3_banff_postfit_fgd1} shows the post-fit predictions for FGD1 and \autoref{fig:mach3_banff_postfit_fgd2} for FGD2. The 0$\pi$, 1$\pi$ and 1 track distributions are identical to within 1\%. The Other and NTrk distributions show the largest differences, just above 2\% for FGD1 CCOther.
@@ -412,9 +412,3 @@ We now compare the post-fit \pmu distributions from BANFF and MaCh3. The BANFF p
 	\caption{FGD2 selections in \pmu with data, prefit, BANFF postfit and MaCh3 postfit}
 	\label{fig:mach3_banff_postfit_fgd2}
 \end{figure}
-
-
-
-\chapter{MCMC diagnostics}
-\section{Auto-correlations}
-\section{Burn-in}

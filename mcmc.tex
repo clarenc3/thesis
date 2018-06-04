@@ -1,0 +1,64 @@
+\chapter{Markov Chain Monte Carlo}
+\label{chap:mcmc}
+
+\epigraph{There are three kinds of lies: lies, damned lies and statistics}{Mark Twain}
+
+The analysis presented in this thesis employs a Bayesian view of statistics, in which the end result is a posterior probability distribution for the model $\vec{\theta}$ given the data $D$.. It is is built from the joint probability distribution of observing data $D$ given the model $\vec{\theta}$, $P(D|\vec{\theta})$, provided some prior information on $\vec{\theta}$, $P(\vec{\theta})$, and are related through Bayes' theorem,
+
+\begin{equation}
+P(\vec{\theta}|D) = \frac{P(D|\vec{\theta})P(\vec{\theta})}{\int P(D|\vec{\theta})P(\vec{\theta})d\vec{\theta})}
+\label{eq:bayes}
+\end{equation}
+which conditions on the full model space in the denominator. 
+
+\cite{mcmc_handbook}
+
+\cite{bayesian_tutorial}
+
+Markov Chain Monte Carlo method of Metropolis and Hastings\cite{metropolis,hastings}
+
+$\vec{\theta}$ constitutes our model with all its parameters.
+
+\section{Point estimates and uncertainties}
+Since the fit doesn't intend to give central values with uncertainties related through a covariance matrix we don't do this. Computationally heavy also
+
+\section{Marginalisation}
+Parameter of interest $\vec{x}$ which is a subset of $\vec{\theta}$, in which we're marginalising over $\vec{\theta}'$
+\begin{equation}
+	P(\vec{x}|D) = \int P(\vec{\theta}',\vec{x}|D) d\vec{\theta}'
+\end{equation}
+loses information about the full posterior, so is not propagated to the full analysis. Only used for comparison to BANFF.
+
+\section{Predictive checks}
+A Bayesian analysis conditions on the entire model's probability, so can lead to misleading results when the model space strongly disagrees with the data space. Assessing the model goodness against data is therefore critical in any Bayesian analysis, and closely follows what is detailed in \cite{posterior_predictive_checks, posterior_predictive_checks2, posterior_predictive_checks3, prior_predictive_checks}. This analysis uses three ``goodness checks'' of varying robustness, in which the test-statistic from the statistics of the sample for observed events $n$ with predicted events $\lambda$,
+
+\begin{equation}
+	-\log\mathcal{L}_\text{Samples} = \lambda-n+n\log\frac{n}{\lambda}
+	\label{eq:sample_stat}
+\end{equation}
+
+is of central importance. The ``predictive spectrum'' of a model is also crucial and is defined as having the point estimate $\bar{\lambda}$ as the average predicted events over $i$ randomly chosen MCMC steps after burn-in,
+
+\begin{equation}
+	\bar{\lambda} = \frac{1}{N} \sum^{N}_i \lambda_i
+\end{equation}
+
+with the error $\Delta \bar{\lambda}$ taken as the root mean square,
+
+\begin{equation}
+	\Delta \bar{\lambda} = \sqrt{\frac{1}{N} \sum^{N}_i \lambda^2_i}
+\end{equation}
+
+For this analysis we further checked that these were consistent with a Gaussian fit\footnote{Extracting $\bar{\lambda}$ and $\Delta \bar{\lambda}$ from the fitted parameters}, and separately the mode with 68\% central highest posterior density of the bin.
+
+The three methods all involve applying statistical fluctuations to a given simulation, calculating some test-statistic of the fluctuation versus a different distribution, and finally locating the test-statistic of the realised simulation (``best-fit'') given the data. The methods are:
+
+\begin{itemize} 
+	\item A one-dimensional plot of the test-statistic (\autoref{eq:sample_stat}) between a distribution and a statistical fluctuation of that distribution
+	\item
+	\item
+\end{itemize}
+
+\section{Diagnostics}
+
+\section{Burn-in}
