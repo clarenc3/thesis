@@ -351,6 +351,7 @@ Here we re-bin all selections for 2018 analysis using the above criteria, leadin
 \end{itemize}
 
 \section{Systematics}
+\label{sec:syst_2018}
 The 2018 iteration of the fits to ND280 data was intended primarily a statistics update, including run 7 and 8 data, and a suitable update to the RHC selections to match the FHC selections. There was therefore comparably few updates to the treatment of systematics.
 
 \subsection{Flux}
@@ -1816,7 +1817,7 @@ The largest systematic for the FHC selections is flux and interactions at 8-10\%
 		\hline
 		\hline
 	\end{tabular}
-	\caption{Event rate uncertainties from the prior and posterior model broken down by sample}
+	\caption{Event rate uncertainties from the prior and posterior model broken down by selection and systematic types}
 	\label{tab:2018_syst_uncertain}
 \end{table}
 
@@ -3039,3 +3040,55 @@ The $E_{rec}$ distributions are shown in \autoref{fig:sk_2018} where the increas
 	\caption{Impact of the full 2018 fit on SK spectra compared to the prior and 2017 results}
 	\label{fig:sk_2018}
 \end{figure}
+
+\subsection{Impact of ND280 parameterisation}
+The full fit to data in \autoref{sec:data_2018} highlighted the importance of proper parameterisation of ND280 systematics, in which the resulting parameters sometimes lay outside 1$\sigma$ of each other. 
+
+The effect of each on the integrated event rate at sk is shown in \autoref{tab:sk_evt_rates_2018_nd280}. There is noticeable shift in the central value for the reduced parameterisation for $1\text{R}\mu$, although the $1\text{R}e$ samples all agree well. The full parameterisation delivers the smallest uncertainties, with the multi-track being worse than the 2017 result. 
+\begin{table}
+	\begin{tabular}{l | c c c | c c c }
+		\hline
+		\hline
+		Sample  & \multicolumn{3}{c|}{Event rate} & \multicolumn{3}{c}{$\delta N/N$ (\%)} \\
+				& Full & Reduced & Multi-track & Full & Reduced & Multi-track \\
+		\hline
+		$1\text{R}\mu$ & $270.30\pm6.46$ & $260.91\pm7.47$ & $272.34\pm8.43$ & 2.39 & 2.86 & 3.10 \\
+		$1\text{R}e$  & $73.33\pm2.89$ & $71.49\pm2.70$ & $72.63\pm3.12$ & 3.94 & 3.78 & 4.30  \\
+		$1\text{R}e \text{ 1d}e$ & $7.02\pm0.33$ & $7.02\pm0.33$ & $7.16\pm0.38$ & 4.64 & 4.70 & 5.31 \\
+		
+		$1\text{R}\mu \text{ RHC}$  & $65.09\pm1.55$ & $61.48\pm1.83$ & $66.52\pm2.01$ & 2.38 & 2.98 & 3.02 \\
+		$1\text{R}e \text{ RHC}$ & $8.12\pm0.29$ & $7.80\pm0.32$ & $8.15\pm0.33$ & 3.57 & 4.10 & 4.05 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{T2K-SK event rates and uncertainties from flux and interaction systematics comparing the impact of ND280 systematics parameterisations}
+	\label{tab:sk_evt_rates_2018_nd280}
+\end{table}
+
+The propagation to SK in $E_{rec}$ is shown in \autoref{fig:sk_2018_nd280param}, where we see the largest difference coming from the multi-$\pi$ versus multi-track. The two multi-$\pi$ selections are compatible for the $1\text{R}e$ FHC and RHC selections, and differ in the $1\text{R}\mu$ selections when $E_{rec}>0.6\text{ GeV}$ although consistently well within uncertainty.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1]{figures/mach3/2018/data/2018_results_test_spectra_2018_results_test_redcov_spectra_2018_results_test_multitrack_spectra}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=5]{figures/mach3/2018/data/2018_results_test_spectra_2018_results_test_redcov_spectra_2018_results_test_multitrack_spectra}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=6]{figures/mach3/2018/data/2018_results_test_spectra_2018_results_test_redcov_spectra_2018_results_test_multitrack_spectra}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=2]{figures/mach3/2018/data/2018_results_test_spectra_2018_results_test_redcov_spectra_2018_results_test_multitrack_spectra}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=3]{figures/mach3/2018/data/2018_results_test_spectra_2018_results_test_redcov_spectra_2018_results_test_multitrack_spectra}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=4]{figures/mach3/2018/data/2018_results_test_spectra_2018_results_test_redcov_spectra_2018_results_test_multitrack_spectra}
+	\end{subfigure}
+	
+	\caption{Impact of the full 2018 fit on SK spectra compared to the using the reduced multi-$\pi$ parameterisation and the multi-track selection}
+	\label{fig:sk_2018_nd280param}
+\end{figure}
+
+In conclusion, the parameterisation of ND280 systematics is clearly an effect on oscillations at T2K. 

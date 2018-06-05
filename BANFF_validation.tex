@@ -1,4 +1,5 @@
 \chapter{Validating to BANFF}
+\label{chap:banff_valid}
 As outlined in \autoref{sec:oscchain}, T2K has two near-detector fitters: one Markov Chain Monte Carlo fitter (``MaCh3'') and one frequentist gradient descent fitter (``BANFF''). The results of the 2017 fits has been presented using the former, and this section shows the validation tests throughout the fitting process between the two fitters.
 
 The validation procedure is not expected to entirely agree at all stages due to numerous technical and statistical differences. As covered earlier, a gradient descent minimiser is designed to find a global minimum of the test-statistic whereas a MCMC samples to build up a posterior distribution in high dimension. Comparing parameter values between the two is not a trivial exercise, and differences are expected. 

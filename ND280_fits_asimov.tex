@@ -109,41 +109,6 @@ The effect of each weight on the MC sample statistics is shown in \autoref{tab:e
 	\label{tab:eventrate_mach3}
 \end{sidewaystable}
 
-\subsection{Defining the test-statistic}
-As mentioned in \autoref{sec:ND280:sel}, data and simulation events are binned in \pmu, \cosmu for 14 different selections (seven per FGD): \numu CC0$\pi$, \numu CC1$\pi$, \numu CCOther, \numubar CC1Track, \numubar CCNTrack, \numu in RHC CC1Track and \numu in RHC CCNTrack. It is assumed that the data $n^{\alpha}$ in each bin $\alpha$, is a statistical fluctuation of the simulation in that bin, $\lambda^{\alpha}$, and the probability distribution to observe $n^{\alpha}$ given $\lambda^\alpha$ is Poissonian:
-\begin{equation}
-P(n^\alpha|\lambda^\alpha) = \frac{e^{-\lambda^\alpha} \left(\lambda^\alpha\right)^n}{\left(n^\alpha\right)!}
-\end{equation}
-The Monte-Carlo prediction $\lambda$ is influenced by the beam parameters $\vec{b}$, the cross-section parameters $\vec{x}$ and the ND280 detector parameters $vec{d}$ outlined in \autoref{eq:mc_scale}. Then the statistical contribution to the negative log-likelihood per \pmu \cosmu bin $\alpha$ is
-\begin{equation}
--\log\mathcal{L}^\alpha_\text{Sample} = \lambda^\alpha(\vec{b},\vec{x},\vec{d}) - n^\alpha + n^\alpha\log\frac{n^\alpha}{\lambda^\alpha(\vec{b},\vec{x},\vec{d})}
-\end{equation}
-
-The majority of systematics in \autoref{sec:syst} are constrained by prior information outside of the ND280 data used in the fit. The constraints may come from calibration studies, external cross-section data, beam simulations, and so on. A covariance matrix $\boldsymbol{V}_{i,j}$ encoding the correlations and uncertainties of parameters $i$ to $j$ is used for the separate sources of systematics. If the central values from external constraints (priors) is $\vec{\mu}$ and the parameter values varied in the fit are $\vec{X}$, we assume a Gaussian probability density function for each parameter, giving rise to a negative log-likelihood contribution for systematic $K$
-\begin{equation}
--\log\mathcal{L}^K_\text{Syst} = \frac{1}{2}( X_i - \mu_i ) \left(\boldsymbol{V}^K\right)^{-1}_{i,j} ( X_j - \mu_j )
-\end{equation}
-and for our three separate sources of systematics we then have in total
-\begin{equation}
--\log\mathcal{L_\text{Syst}} = -\left(\log\mathcal{L_\text{Flux}} + \log\mathcal{L_\text{Interaction}} + \log\mathcal{L_\text{ND280}}\right)
-\end{equation}
-Finally, our combined test-statistic for \pmu, \cosmu bins $\alpha$ over samples $S$, using our three sets of systematics (flux with parameters $\vec{b}$, cross-section with parameters $\vec{x}$, ND280 with parameters $\vec{d}$), is
-\begin{equation}
-\label{eq:test_stat}
-\begin{split}
--\log\mathcal{L_\text{Total}} & =  \sum_S^\text{Samples} \left( \sum_{\alpha}^\text{Bins} \left( \lambda^\alpha(\vec{b},\vec{x},\vec{d}) - n^\alpha + n^\alpha\log\frac{n^\alpha}{\lambda^\alpha(\vec{b},\vec{x},\vec{d})} \right) \right)_S \\
- & + \frac{1}{2} \left( \sum_{i,j}^\text{Flux} ( b_i - \mu_i ) \left(\boldsymbol{V}^b\right)^{-1}_{i,j} ( b_j - \mu_j ) \right) \\
- & + \frac{1}{2} \left( \sum_{i,j}^\text{Interaction} ( x_i - \mu_i ) \left(\boldsymbol{V}^x\right)^{-1}_{i,j} ( x_j - \mu_j ) \right) \\
- & + \frac{1}{2} \left( \sum_{i,j}^\text{ND280} ( d_i - \mu_i ) \left(\boldsymbol{V}^d\right)^{-1}_{i,j} ( d_j - \mu_j ) \right)
-\end{split}
-\end{equation}
-
-\section{Parameters of interest}
-flux and cross-section
-
-\section{Fitting method: MCMC}
-tests
-
 \section{Nominal model}
 \label{sec:nom_model}
 The rates for the data and nominal model with all mentioned Monte-Carlo scalings and selections are presented in \autoref{tab:event_rates_2017}. We note that generally the Monte-Carlo rates of the CC0$\pi$ and CC1Track are underestimated (2-3\%) , CC$1\pi$ is overestimated (6-11\%) and CCOther is under-estimated (5-15\%). \numubar selections except FGD2 CC1Track \numubar are overestimated by 5\%, with FGD1 being 2\%. The \numu in RHC selections are mildly underestimated. The rates across the FGDs are consistent for all selections.
@@ -801,42 +766,7 @@ The impact on the \pmu \cosmu distributions for each sample and their respective
 
 \subsection{Prior predictive spectrum}
 \label{sec:Asimov_prior}
-\red{insert citation to Box, J.R. Statist. Soc. A 1980, 143, Part 4, pp. 383-430}
-The first statistical test of the Asimov is to investigate the prior predictive spectrum and resulting p-values. This is meant to reflect the compatibility of the prior with the Asimov data. The p-value is expected to be about 50\% since we're throwing the parameters either side of the central value which created the Asimov data set. However, we are performing correlated throws, so offsets from 50\% is to be expected.
-
-Here 20000 correlated throws of the parameters are performed, using the supplied covariance matrices. For each throw we
-\begin{itemize}
-	\item Reweight the Monte-Carlo using the new parameter set, applying an updated weight for each event
-	\item Count the number of events in each \pmu \cosmu bin for each selection and save it
-	\item Statistically fluctuate each bin according to its bin contents\footnote{By using a Poisson probability distribution function in which $\lambda$ is the un-fluctuated number of events in the bin}
-	\item Calculate the test-statistic between the fluctuated histogram from the throw and the histogram from the throw, $\chi^2_{\text{Draw, Draw Fluc}}$
-	\item Calculate the test-statistic between the data and the histogram from the throw, $\chi^2_{\text{Data, Draw}}$.
-	\item Fill a two dimensional histogram of the two test-statistics
-\end{itemize}
-Over the 20000 throws builds a predictive distribution in each \pmu \cosmu bin, in which the z-axis is the number of calculated events in each bin. We then calculate the mean and error for each bin using the arithmetic method and by fitting a Gaussian and extracting the parameters from there. The predictive is formed by taking the mean of each bin as the number of events in the bin, and the error in the bin is calculated in the same way.
-
-We then perform another closure test using the predictive spectrum and fluctuations of the predictive spectrum in which we
-\begin{itemize}
-	\item Take the predictive spectrum calculated above
-	\item Statistically fluctuate the content of each \pmu \cosmu bin 
-	\item Calculate the test-statistic between the fluctuated predictive histogram and the predictive histogram, $\chi^2_{\text{Pred, Pred Fluc}}$
-	\item Calculate the test-statistic between the fluctuated predictive histogram and the data, $\chi^2_{\text{Data, Pred Fluc}}$.
-	\item Fill a two dimensional histogram of the two test-statistics
-\end{itemize}
-
-The two two-dimensional histograms with test-statistics are formed and p-values can then be calculated, which are referred to as ``prior predictive p-values''.  These p-values reflect the priors' influence and compatibility on the Asimov data set. The p-values are simply defined as\red{check these please}
-
-\begin{equation}
-p = \frac{N\left(\chi^2_{\text{Data, Draw}} > \chi^2_{\text{Draw, Draw Fluc}}\right)}{N\left(\text{Total}\right)}
-\end{equation}
-
-\begin{equation}
-p = \frac{N\left(\chi^2_{\text{Data, Pred Fluc}} > \chi^2_{\text{Pred, Pred Fluc}}\right)}{N\left(\text{Total}\right)}
-\end{equation}
-
-which reflects how compatible the prior model is with the Asimov data set. In the case of the Asimov data set it is expected that the two p-values are virtually identical, since we expect the fluctuations of the predictive spectrum to be very similar to that of a throw. \red{explain why?} 
-
-The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay around the expected value of 50\% as previously asserted.
+The first statistical test of the Asimov is to investigate the prior predictive spectrum and resulting p-values. This is meant to reflect the compatibility of the prior with the Asimov data. The p-value is expected to be about 50\% since we're throwing the parameters either side of the central value which created the Asimov data set. However, we are performing correlated throws, so offsets from 50\% is to be expected. The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay around the expected value of 50\% as previously asserted.
 
 \begin{figure}[!h]
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -849,7 +779,7 @@ The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay arou
 \label{fig:prior_predictive_asimov}
 \end{figure}
 
-Finally \autoref{tab:asimov_prior_pred} shows the prior predictive event rates from the prior predictive spectrum to the Asmiov data with uncertainties from all systematics. We note that using the prior covariances without any fitting to the Asimov data produces 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. We also note a particularly bad test-statistic for the 0$\pi$ and 1Trk selections for the Asimov prior predictive central value. This is likely due to missing correlations between cross-section, flux and near-detector parameters, causing the correlated throws of the systematics to be skewed.
+\autoref{tab:asimov_prior_pred} shows the prior predictive event rates from the prior predictive spectrum to the Asmiov data with uncertainties from all systematics. We note that using the prior covariances without any fitting to the Asimov data produces 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. We also note a particularly bad test-statistic for the 0$\pi$ and 1Trk selections for the Asimov prior predictive central value. This is likely due to missing correlations between cross-section, flux and near-detector parameters, causing the correlated throws of the systematics to be skewed.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c | c}
@@ -999,7 +929,6 @@ We also note improved constraints on all flux parameters from the prior uncertai
 	\label{fig:xsec_asimov}
 \end{figure}
 
-\red{Show some posteriors?}
 \subsubsection{Asimov fit, flux parameters only}
 To investigate if correlations and marginalisation are to blame for the ``bias'' in \autoref{sec:asimov_fit}, a fit to the Asimov data is done keeping the cross-section and ND280 parameters fixed at their Asimov values, and only the flux parameters are varied. \autoref{fig:flux_asimov_nd280_fluxonly} shows the parameter values for the ND280 flux parameters using different methods of obtaining the central values. The biases have vanished for all methods, and we conclude that the Asimov parameters are being correctly found when flux parameters alone are being fit.
 
@@ -1093,8 +1022,7 @@ In conclusion, the biases present in the Asmiov fit study seems likely to be due
 
 \subsection{Posterior predictive spectrum}
 \label{sec:asimov_pospred}
-\red{Put in reference to the posterior predictive calculations}
-The next statistical closure test we can perform on the Asimov data fit is to calculate the posterior predictive spectra and p-values. The procedure and aim of the tests is similar to that of the prior predictive spectrum calculation presented in \autoref{sec:Asimov_prior}, but the parameter variations no longer come form the pre-fit covariance matrices. Instead the parameter sets come from the Markov Chain steps after the burn-in has been removed, so the p-value reflects the future predictability of the model in light of the fit data, were more data to be observed.\red{clarify this?} The expectation of this test is to produce a p-value very close to 1.0, since the Asimov data is an exact parameter set of the model.
+The next statistical closure test we perform on the Asimov data fit is to calculate the posterior predictive spectra and p-values. 
 
 \autoref{tab:asimov_posterior_pred} shows the event rates from the posterior predictive spectrum. We note a consistently low likelihood contribution from all samples ($\sim0.18-0.42$), totalling at 4.43. This is small compared to the number of bins being fit (1624), and the contributions enter primarily in low statistics areas (high \pmu, low \cosmu), where non-Gaussian behaviour is expected. The 2D \pmu \cosmu distributions and the bin-by-bin likelihood contributions for FGD1 and FGD2 0$\pi$ is shown in \autoref{fig:posterior_predictive_2d_asimov}.
 \begin{table}[h]

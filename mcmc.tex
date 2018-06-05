@@ -1,43 +1,168 @@
-\chapter{Markov Chain Monte Carlo}
+\chapter{Statistical treatment and Markov Chain Monte Carlo}
 \label{chap:mcmc}
 
-\epigraph{There are three kinds of lies: lies, damned lies and statistics}{Mark Twain}
+\epigraph{There are three kinds of lies: lies, damned lies, and statistics}{Mark Twain}
 
-The analysis presented in this thesis employs a Bayesian view of statistics, in which the end result is a posterior probability distribution for the model $\vec{\theta}$ given the data $D$.. It is is built from the joint probability distribution of observing data $D$ given the model $\vec{\theta}$, $P(D|\vec{\theta})$, provided some prior information on $\vec{\theta}$, $P(\vec{\theta})$, and are related through Bayes' theorem,
+The analysis presented in this thesis employs a Bayesian view of statistics, in which the end result is a posterior probability distribution $P(\vec{\theta}|D)$ for the model $\vec{\theta}$ given the observed data $D$. It is is built from the joint probability distributions of observing data $D$ given the model $\vec{\theta}$, $P(D|\vec{\theta})$, provided some prior information on $\vec{\theta}$, $P(\vec{\theta})$. These are related through Bayes' theorem,
 
 \begin{equation}
-P(\vec{\theta}|D) = \frac{P(D|\vec{\theta})P(\vec{\theta})}{\int P(D|\vec{\theta})P(\vec{\theta})d\vec{\theta})}
+P(\vec{\theta}|D) = \frac{P(D|\vec{\theta})P(\vec{\theta})}{\int P(D|\vec{\theta})P(\vec{\theta})d\vec{\theta}}
 \label{eq:bayes}
 \end{equation}
-which conditions on the full model space in the denominator. 
+which conditions on the full model space in the denominator. The $P(D|\vec{\theta})$ from the event distributions are modelled with a Poisson probability distribution for the data $n$ being a fluctuation of the simulation $\lambda(\vec{\theta})$. The $P(\vec{\theta})$ is the knowledge of the systematics $\vec{\theta}$ from data not used in this analysis (e.g. external hadron scattering data, cosmic data at ND280) and is modelled using a multivariate Gaussian probability distribution. Each parameter $i$ has a central value $\mu_i$ which is varied to $X_i$ during the sampling and is related with parameter $j$ through the covariance matrix $\mathbf{V}_{i,j}$. This is formally expressed as
 
-\cite{mcmc_handbook}
-
-\cite{bayesian_tutorial}
-
-Markov Chain Monte Carlo method of Metropolis and Hastings\cite{metropolis,hastings}
-
-$\vec{\theta}$ constitutes our model with all its parameters.
-
-\section{Point estimates and uncertainties}
-Since the fit doesn't intend to give central values with uncertainties related through a covariance matrix we don't do this. Computationally heavy also
-
-\section{Marginalisation}
-Parameter of interest $\vec{x}$ which is a subset of $\vec{\theta}$, in which we're marginalising over $\vec{\theta}'$
 \begin{equation}
-	P(\vec{x}|D) = \int P(\vec{\theta}',\vec{x}|D) d\vec{\theta}'
+	P(D|\vec{\theta}) P(\vec{\theta}) = \prod \mathcal{L}_\text{Total} = \prod \left(\mathcal{L}_\text{Samples} \times \mathcal{L}_\text{Systematics}\right)
 \end{equation}
-loses information about the full posterior, so is not propagated to the full analysis. Only used for comparison to BANFF.
 
-\section{Predictive checks}
-A Bayesian analysis conditions on the entire model's probability, so can lead to misleading results when the model space strongly disagrees with the data space. Assessing the model goodness against data is therefore critical in any Bayesian analysis, and closely follows what is detailed in \cite{posterior_predictive_checks, posterior_predictive_checks2, posterior_predictive_checks3, prior_predictive_checks}. This analysis uses three ``goodness checks'' of varying robustness, in which the test-statistic from the statistics of the sample for observed events $n$ with predicted events $\lambda$,
+or more conveniently in the logarithmic space,
+
+\begin{equation}
+\label{eq:test_stat}
+\begin{split}
+	- \log\mathcal{L}_\text{Total} = &\sum_\text{Bins} \left[ \lambda(\vec{\theta}) - n + n \log \frac{n}{\lambda(\vec{\theta})} \right] + \\
+									& \sum_\text{Systematics} \frac{1}{2} \left[ ( X_i - \mu_i ) \left( \boldsymbol{V} \right)^{-1}_{i,j} ( X_j - \mu_j ) \right]
+\end{split}
+\end{equation}
+
+In practice, the posterior is generally not analytically solvable and $\vec{\theta}$ might be of very high dimension---in this thesis we have $\text{dim}(\vec{\theta})=687, 1209, 4369$ presented in \autoref{sec:syst} and \autoref{sec:syst_2018}. It is instead commonplace to sample from the posterior using Monte Carlo methods\cite{bayesian_tutorial}, producing a point density proportional to the posterior.
+
+\section{Metropolis-Hastings algorithm}
+This analysis uses the well established Metropolis-Hastings algorithm\cite{metropolis,hastings} to explore the parameter space $\vec{\theta}$ and sample the posterior $P(\vec{\theta}|D)$. It can be considered a guided random walk which prefers areas of high probability (minimising \autoref{eq:test_stat}). The algorithm consists of a set of steps which are repeated $N$ times
+\begin{itemize}
+	\item \textbf{Initialisation}: A random starting point of the parameters $\vec{\theta}$ is chosen and accepted as the starting point
+	\item \textbf{Step proposal}: A new set of parameters $\vec{\theta}'$ is proposed using an uncorrelated Gaussian proposal function, symmetric around the previous accepted point
+	\begin{equation}
+		\vec{\theta}' = \vec{\theta}+\text{rand}_{\text{Gauss}}(\vec{\theta})
+	\end{equation}
+	The Gaussian proposal function has a tuneable width, which can increase or decrease the acceptance rate but can significantly worsen the parameter space exploration.
+	\item \textbf{Acceptance probability}: The total test-statistic in \autoref{eq:test_stat} is calculated for the current and proposed step, with acceptance probability
+	\begin{equation}
+		\alpha = \min \left[ 1, \exp\left(\log\mathcal{L}_\text{Total}(\vec{\theta}) - \log\mathcal{L}_\text{Total}(\vec{\theta}') \right)\right]
+	\end{equation}
+	\item \textbf{Accept or reject}: A uniform random number $u \in U[0,1]$ is selected and compared to $\alpha$, deciding on if the new parameter set $\vec{\theta}'$ is accepted or rejected
+	\begin{equation}
+	\vec{\theta} =
+	\begin{cases}
+		\vec{\theta}' & \alpha \ge u \\
+		\vec{\theta} & \alpha < u
+	\end{cases}
+	\end{equation}
+	\item \textbf{Repeat}: Repeat step proposal
+\end{itemize}
+Importantly, the Metropolis-Hastings algorithm will always accept steps in the direction of higher probability, but also accepts steps with lower probabilities. Thereby an adequately explored MCMC does not suffer from local minima and scales relatively well with increasing dimensionality. However, after $N$ steps there is no guarantee that the posterior has been adequately sampled and the parameters have converged. There is general guidance on how big $N$ should be, although literature recommends running for as long as possible\cite{mcmc_handbook}.
+
+Since separate MCMC are statistically independent, they can be combined when the stationary distribution is reached. Hence running MCMC is often done in parallel: for ND280-only fits we often use at least three, whereas full ND280+SK oscillation fits run several hundred.
+
+\section{Diagnostics}
+The main tuneable parameters in a Metropolis-Hastings algorithm are the step-sizes of the proposal functions and the number of steps $N$. These are varied until convergence in the parameters are obtained. For this analysis a set of diagnostics are used for monitoring convergence: parameter traces, likelihood traces, batched means and autocorrelations, as recommended in literature\cite{mcmc_handbook}.
+
+The traces are simply the parameter values with each MCMC step, which is a function of the step-size of the Gaussian proposal function. Too fine step-sizes causes high acceptance probability with poor parameter space exploration and highly correlated steps, with the opposite for coarse step-sizes. The optimal acceptance probability is 0.234\cite{step_prop} and step-size tuning is done as to roughly coincide with this number.
+
+The batched means are similar to the traces but cuts up the steps into batches and compares the average parameter values in each batch. This is typically a good indicator of burn-in, as small batches near the start of the chain may have different values to batches near the end of the chain.
+
+The auto-correlation function $r_k$ after lag $k$ steps is identical to that in signal processing,
+\begin{equation}
+r_k = \frac{\sum_{i=1}^{N-k}\left(Y_i-\bar{Y}\right) \left(Y_{i+k} - \bar{Y}\right)} {\sum_{i=1}^N \left(Y_i-\bar{Y}\right)^2 }
+\end{equation}
+and is a measure of how correlated a step is with the $k^\text{th}$ steps ahead. This is an important tool for MCMC to diagnose chain stability, since the optimal acceptance probability of 0.234 can be easily achieved by varying the step-sizes, although this can incur significant step-to-step correlations, which the auto-correlation measure calculates. Generally, this analysis aims to have auto-correlations of less than 0.2 after lag $k=10,000$. \autoref{fig:auto_corr} shows example auto-correlation functions for a chain which did not pass this criteria in the interaction parameters, so was step-size tuned further.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/2018a_MultiPi_Binningv6_NewCov_Data_merge_MCMC_diag}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mcmc/2018a_MultiPi_Binningv6_NewCov_Data_merge_MCMC_diag}
+	\end{subfigure}
+	\caption{Auto-correlation function for an example fit}
+	\label{fig:auto_corr}
+\end{figure}
+
+In the case where multiple MCMC have sampled the same posterior we also compare the above diagnostics chain to chain. In the case of suspected non-convergence after significant number of steps the $\hat{R}$ test\cite{gelman_rubin} is also used, which estimates the improvement in parameter variance that may be achieved by running a chain for longer.
+
+\section{Burn-in}
+Since the initial parameters $\vec{\theta}$ aren't necessarily in a region of high probability density, it generally takes an MCMC some time to reach the stationary posterior distribution. This parameter exploration is normally referred to as the ``burn-in'' period of a MCMC and is usually discarded. \autoref{fig:2p2h_shape_mcmc} shows the evolution with step of six separate MCMC fit exploring data, all starting with the parameter value around 0. 
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/2p2h_shape_C_step}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/2p2h_shape_C_step2}
+	\end{subfigure}
+	
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/2p2h_shape_C_step3}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/2p2h_shape_C_step4}
+	\end{subfigure}
+	\caption{2p2h shape C evolution over the number of steps with six separate chains}
+	\label{fig:2p2h_shape_mcmc}
+\end{figure}
+
+The chains appear to converge somewhere around 30,000 steps, which would indicate an approximate burn-in. The auto-correlations are also checked, along with a random subset of other parameters. The total test-statistic in \autoref{eq:test_stat} is also checked over steps, and in this case results in \autoref{fig:llh_step}. All chains initially walk towards the minimum and reach it after about 800 steps. The chains then globally step out of the minimum and explore the area around it, which appears stable after 20,000 steps.
+\begin{figure}[h]
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/logl_step0}
+	\caption{Test-statistic evolution over the steps for six separate chains}
+	\label{fig:llh_step}
+\end{figure}
+
+The analyses presented in this thesis use a more conservative approach than above since computational power was not an issue. Generally, individual chains are at least 1,000,000 steps long and at least three such chains are run and the burn-in is always at least 1/4th of the total.
+
+\section{Point estimates and uncertainties of parameters}
+Since this analysis propagates a posterior rather central values with uncertainties related through a covariance matrix, it is less concerned with the accuracy of point estimates and their uncertainties than a neutrino oscillation analysis would be. This saves significant computational time, since point estimation in high dimensions with correlated parameters requires a significant number of MCMC steps or a better suited algorithm than Metropolis-Hastings.
+
+However, many point estimates with uncertainties are presented in this work, especially when validating against the frequentist ``BANFF'' framework in \autoref{chap:banff_valid}.
+ 
+\subsection{Parameters of interest and marginalisation}
+At minimum, 73 parameters are propagated to oscillation analyses in this work. Hence the number of parameters of interest is high, and visualising parameter behaviour becomes difficult. Throughout the ND280 fits we project the high-dimensional posterior onto one or two dimensions---the latter being used to form the covariance matrices. The projection uses the marginalisation method, in which we integrate out the parameter dependencies of the posterior in all but the parameter of interest. Naturally, this processes loses a lot of information about the full posterior, so is not propagated to the full analysis.
+
+Consider the parameter of interest $x$ where $x \in \vec{\theta}$ and the remaining parameter space is denoted $\vec{\theta}'$. The marginalised posterior density of the parameter $x$ given the data $D$, $P(x|D)$, is simply given by
+\begin{equation}
+P(x|D) = \int P(\vec{\theta}',\vec{x}|D) d\vec{\theta}'
+\end{equation}
+
+This one-dimensional posterior distribution is then used to obtain point estimates and uncertainties. We use chiefly three methods on the one-dimensional posterior for this:
+\begin{itemize}
+	\item The arithmetic mean and rms
+	\item The fitted Gaussian mean and 1$\sigma$
+	\item The highest posterior density with (a)symmetric errors
+\end{itemize}
+The three methods are used to flag when posteriors have non-Gaussian shapes, as in the Gaussian case the above are all equivalent. This can happen for parameters that have hard cut-offs or strong correlations and parameters that are switches (``on'' or ``off''), amongst others. \autoref{fig:point_estimate} demonstrates the differences between the methods for a non-Gaussian beam parameter.
+\begin{figure}[h]
+	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/b88_example}
+	\caption{One-dimensional marginalised posterior density for a beam parameter, showing three methods of point and error estimation}
+	\label{fig:point_estimate}
+\end{figure}
+We note very asymmetric errors in the case of the asymmetric HPD method and different estimates of the central value. Importantly, none of the above methods are de-facto wrong, and in many cases the one dimensional posterior has to be investigated further for e.g. marginalisation effects with other non-Gaussian parameters. Unless otherwise stated, the arithmetic mean and rms are used here due to its simplicity.
+
+\subsection{Covariance estimates}
+In the case of estimating covariances a similar method is used. We marginalise the high-dimensional posterior onto the two parameters whose covariance we're calculating. The marginal posterior is binned and the covariance is calculated arithmetically without assuming a shape of the test-statistic or posterior. \autoref{fig:cov_2d_posterior} shows two example two-dimensional marginal posteriors between beam and interaction parameters, one of which results in a strong correlation and the other doesn't.
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/example_corr}
+		\caption{Strong correlation}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.40\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/example_corr2}
+		\caption{Weak correlation}
+	\end{subfigure}
+	\caption{Two-dimensional marginal posteriors used to calculate parameter covariance}
+	\label{fig:cov_2d_posterior}
+\end{figure}
+
+\section{Predictive checks and p-values}
+A Bayesian analysis conditions on the entire model's probability, so can lead to misleading results when the model space strongly disagrees with the data space. Assessing the model goodness against data is therefore critical in any Bayesian analysis, and closely follows what is detailed in \cite{posterior_predictive_checks, posterior_predictive_checks2, posterior_predictive_checks3, prior_predictive_checks}. 
+
+This analysis uses two ``goodness-of-fit'' checks, in which the test-statistic from the statistics of the sample for observed events $n$ with predicted events $\lambda$,
 
 \begin{equation}
 	-\log\mathcal{L}_\text{Samples} = \lambda-n+n\log\frac{n}{\lambda}
 	\label{eq:sample_stat}
 \end{equation}
 
-is of central importance. The ``predictive spectrum'' of a model is also crucial and is defined as having the point estimate $\bar{\lambda}$ as the average predicted events over $i$ randomly chosen MCMC steps after burn-in,
+is of central importance. The ``predictive spectrum'' of a distribution from a model is also crucial, and is defined as having a point estimate $\bar{\lambda}$ equal to the average predicted events over $i$ randomly chosen MCMC steps after burn-in,
 
 \begin{equation}
 	\bar{\lambda} = \frac{1}{N} \sum^{N}_i \lambda_i
@@ -49,16 +174,36 @@ with the error $\Delta \bar{\lambda}$ taken as the root mean square,
 	\Delta \bar{\lambda} = \sqrt{\frac{1}{N} \sum^{N}_i \lambda^2_i}
 \end{equation}
 
-For this analysis we further checked that these were consistent with a Gaussian fit\footnote{Extracting $\bar{\lambda}$ and $\Delta \bar{\lambda}$ from the fitted parameters}, and separately the mode with 68\% central highest posterior density of the bin.
+For this analysis it was checked that the predictive spectrum using the arithmetic mean and rms were consistent with a Gaussian fit\footnote{Extracting $\bar{\lambda}$ and $\Delta \bar{\lambda}$ from the fitted parameters}, and separately the mode with 68\% central highest posterior density of the bin.
 
-The three methods all involve applying statistical fluctuations to a given simulation, calculating some test-statistic of the fluctuation versus a different distribution, and finally locating the test-statistic of the realised simulation (``best-fit'') given the data. The methods are:
+The three goodness-of-fit tests both involve applying statistical fluctuations to a drawn simulation, calculating the test-statistic in \autoref{eq:sample_stat} of the fluctuation versus some other distribution. Then locating the test-statistic of the posterior predictive spectrum (``best-fit'') given the data gives a $p$ value. The methods are:
 
 \begin{itemize} 
-	\item A one-dimensional plot of the test-statistic (\autoref{eq:sample_stat}) between a distribution and a statistical fluctuation of that distribution
-	\item
-	\item
+	\item A one-dimensional plot of the test-statistic between the drawn distribution and the statistical fluctuation of that drawn distribution
+	\item A two-dimensional plot of the test-statistic between the data and the drawn distribution, versus the test-statistic between a fluctuation of the drawn distribution and the drawn distribution
 \end{itemize}
+The former case simply locates the realised test-statistic in a distribution, whereas the second informs about the predictive nature of the model after having seen data, were we to observe more data. Formally,
 
-\section{Diagnostics}
+\begin{equation}
+P(D'|D_{obs}) = \int P(D'|\vec{\theta}) P(\vec{\theta}|D_{obs}) d\vec{\theta}
+\end{equation}
 
-\section{Burn-in}
+To construct the p-value in the two-dimensional case we need to compare to a reference distribution, which is the statistically fluctuated drawn histogram in this case. In practice, 20,000 draws of the parameters are performed after burn-in, which samples the posterior. For each draw we
+\begin{itemize}
+	\item Reweight the Monte-Carlo using the new parameter set
+	\item Statistically fluctuate each Monte-Carlo bin according to its bin contents
+	\item Calculate the test-statistic between the fluctuated histogram from the draw and the histogram from the draw, $\chi^2_{\text{Draw, Draw Fluc}}$
+	\item Calculate the test-statistic between the data and the histogram from the draw, $\chi^2_{\text{Data, Draw}}$.
+	\item Fill a two dimensional histogram of the two test-statistics
+\end{itemize}
+The predictive spectrum is formed by taking the mean in each bin as the central number of events, and the error is calculated in the same way. Hence the posterior predictive distribution is never truly observed from one MCMC draw but is rather the distribution represented by the posterior.
+
+The posterior predictive p-values is then finally
+\begin{equation}
+p = \frac{N\left(\chi^2_{\text{Data, Draw}} < \chi^2_{\text{Draw, Draw Fluc}}\right)}{N\left(\text{Total}\right)}
+\end{equation}
+where $N\left(\chi^2_{\text{Data, Draw}} < \chi^2_{\text{Draw, Draw Fluc}}\right)$ is the number of times a drawn distribution had a smaller test-statistic against data than it did against a fluctuation of itself, and $N(\text{Total})$ is the total number of draws.
+
+For closure tests the drawn distribution can also be the predictive distribution. Furthermore, the drawn distribution can be from both the prior and posterior distributions.
+
+
