@@ -26,8 +26,6 @@ The flux systematics contain uncertainties from all sources going into the neutr
 	\item Number of protons on target
 \end{itemize}
 
-The software suite for the beam simulation consists of FLUKA2011 \cite{fluka2008_1, fluka2008_2, fluka2011} which simulates hadronic interactions in target and baffle, JNUBEAM (GEANT3-based \cite{geant3}) which simulates the geometry and tracking, and GCALOR \cite{gcalor} which simulates hadronic re-interactions and is used as a cross-check for FLUKA. Full details are found elsewhere \cite{t2k_beam, t2k_tn_flux}.
-
 The simulations are updated each year to improve the modelling, often taking additional data in to account. An example of such is using the dedicated NA61/SHINE T2K replica target data \cite{NA61_pions_rep} to tune the hadron production model at the T2K beam target, and including results from the HARP experiment \cite{harp}.
 
 The effects on the fractional error for the ND280 neutrino flux prediction is shown in \autoref{fig:flux_uncert_fhc} for FHC running and \autoref{fig:flux_uncert_rhc} for RHC running. The uncertainties are $\sim10\%$ in the flux peak region and is dominated by the hadron interaction uncertainties, which in turn consists primarily of multiplicity, pion rescattering and interaction length uncertainties. The proton beam profile and off-axis angle become important shortly after the flux peak at about 1 GeV for the right-sign component of the flux.
@@ -92,15 +90,6 @@ The central values and bin-by-bin uncertainties are highly correlated so the lik
 	\caption{13av2 covariance matrix, used in this analysis}
 	\label{fig:flux_cov}
 \end{figure}
-
-%pi+ to mu+numu 99.9877
-%to e+nue 1.23E-4
-%Kplus to mu+numu 63.55
-%to pi0mu+numu3.353
-%to pi0e+nue 5.07
-%K0L to pi-mu+numu 27.04
-%to pi0e+nue 40.55
-%mu+ to e+numubar+nue 100
 
 In addition to the variation systematics above, there is also a nominal flux correction applied to each event as a function of its run period (e.g. run 2a), neutrino specie (e.g. \numubar) and $E_\nu^{\text{True}}$ (e.g. 0.8 GeV). This is present to correct the nominal flux model which the Monte-Carlo was produced with updated measurements. An example from run 4a and run 5b is shown in \autoref{fig:flux_ratio}.
 \begin{figure}[h]

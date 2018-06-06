@@ -27,8 +27,16 @@ or more conveniently in the logarithmic space,
 
 In practice, the posterior is generally not analytically solvable and $\vec{\theta}$ might be of very high dimension---in this thesis we have $\text{dim}(\vec{\theta})=687, 1209, 4369$ presented in \autoref{sec:syst} and \autoref{sec:syst_2018}. It is instead commonplace to sample from the posterior using Monte Carlo methods\cite{bayesian_tutorial}, producing a point density proportional to the posterior.
 
+Markov Chain Monte Carlo methods have been used extensively in astro-statistics, computational physics and biology, and is central to evaluating the multi-dimensional integrals that occur in Bayesian statistics. The necessary and sufficient conditions for a successful Markov Chain constructing the posterior density requires
+\begin{itemize}
+	\item \textbf{Irreducibility:} From any given state, the probability to reach any other state has to be non-zero
+	\item \textbf{Recurrence:} When the stationary distribution has been found, all subsequent steps must sample from that stationary distribution
+	\item \textbf{Aperiodicity:} The sequence of steps must not be periodic
+\end{itemize}
+A detailed discussion of these criteria can be found in \cite{mcmc_practice, mcmc_handbook}.
+
 \section{Metropolis-Hastings algorithm}
-This analysis uses the well established Metropolis-Hastings algorithm\cite{metropolis,hastings} to explore the parameter space $\vec{\theta}$ and sample the posterior $P(\vec{\theta}|D)$. It can be considered a guided random walk which prefers areas of high probability (minimising \autoref{eq:test_stat}). The algorithm consists of a set of steps which are repeated $N$ times
+This analysis uses the well established Metropolis-Hastings algorithm\cite{metropolis,hastings} in Markov Chain Monte Carlo to explore the parameter space $\vec{\theta}$ and sample the posterior $P(\vec{\theta}|D)$. It can be considered a random walk which prefers areas of high probability (minimising \autoref{eq:test_stat}). The algorithm consists of a set of steps which are repeated $N$ times
 \begin{itemize}
 	\item \textbf{Initialisation}: A random starting point of the parameters $\vec{\theta}$ is chosen and accepted as the starting point
 	\item \textbf{Step proposal}: A new set of parameters $\vec{\theta}'$ is proposed using an uncorrelated Gaussian proposal function, symmetric around the previous accepted point
@@ -57,7 +65,7 @@ Since separate MCMC are statistically independent, they can be combined when the
 \section{Diagnostics}
 The main tuneable parameters in a Metropolis-Hastings algorithm are the step-sizes of the proposal functions and the number of steps $N$. These are varied until convergence in the parameters are obtained. For this analysis a set of diagnostics are used for monitoring convergence: parameter traces, likelihood traces, batched means and autocorrelations, as recommended in literature\cite{mcmc_handbook}.
 
-The traces are simply the parameter values with each MCMC step, which is a function of the step-size of the Gaussian proposal function. Too fine step-sizes causes high acceptance probability with poor parameter space exploration and highly correlated steps, with the opposite for coarse step-sizes. The optimal acceptance probability is 0.234\cite{step_prop} and step-size tuning is done as to roughly coincide with this number.
+The traces are simply the parameter values with each MCMC step, which is a function of the step-size of the Gaussian proposal function. Too fine step-sizes causes high acceptance probability with poor parameter space exploration and highly correlated steps, with the opposite for coarse step-sizes. The optimal acceptance probability is 0.234\cite{step_prop,mcmc_handbook} and step-size tuning is done as to roughly coincide with this number.
 
 The batched means are similar to the traces but cuts up the steps into batches and compares the average parameter values in each batch. This is typically a good indicator of burn-in, as small batches near the start of the chain may have different values to batches near the end of the chain.
 
