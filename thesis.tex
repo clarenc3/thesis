@@ -6,7 +6,7 @@
 %\documentclass[hyperpdf,nobind,draft,hidefrontback]{hepthesis}
 
 %% For Cambridge soft-bound version
-\documentclass[hyperpdf,bindnopdf]{hepthesis}
+\documentclass[hyperpdf,bindnopdf,alphafoot]{hepthesis}
 %% For Cambridge hard-bound version (must be one-sided)
 %\documentclass[hyperpdf,oneside]{hepthesis}
 
@@ -16,11 +16,31 @@
 
 %% Put package includes etc. into preamble.tex for convenience
 \input{preamble}
+\setlength{\textfloatsep}{5pt}
 
 %% You can set the line spacing this way
 %\setallspacing{double}
-%% or a section at a time like this
+% single, onehalf, double
 %\setfrontmatterspacing{double}
+%\setbackmatterspacing{double}
+%\setmainmatterspacing{double}
+%\setappendixspacing{double}
+
+%% Margins
+%\setextramargins
+%%\setfrontmatterextramargins
+%%\setmainmatterextramargins
+%%\setappendixextramargins
+%%\setbackmatterextramargins
+%%\setabstractextramargins
+%%\setdeclarationextramargins
+%%\setacknowledgementsextramargins
+%%\setprefaceextramargins
+
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{10pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-40pt}{20pt}
 
 %% Define the thesis title and author
 \title{Minimising systematic uncertainties in the T2K experiment by use of near-detector and external data}
