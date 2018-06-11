@@ -1,4 +1,4 @@
-\section{Datafit}
+\section{Fitting Real Data}
 \label{sec:datafit}
 
 The nominal model presented in \autoref{sec:nom_model} is now fit to the data in the reconstructed \pmu \cosmu variables, using the full 14 samples. Three Markov Chain Monte Carlo samples were run with different step-size tunings, acceptance rates and sample lengths, and a conservative 1/4 burn-in was used for all chains in \autoref{tab:mcmc_data}.
@@ -192,7 +192,7 @@ To understand why BeRPA is heavily distorted from the nominal form, we can look 
 
 Finally we note that the three different MCMC all produced very similar post-fit parameters.
 
-\subsection{Prior predictive}
+\subsection{Prior Predictive Spectrum}
 \label{sec:prior_pred_data}
 The prior predictive spectrum and p-values are calculated in the same way as in the fit to Asimov data. Here we expect to see a poor p-value due to the priors' inability to describe ND280 data---the reason behind doing the fit. \autoref{fig:prior_pred_data} shows the prior predictive p-value for all the samples, and as expected not a single parameter variation of the prior model produces a smaller test-statistic against the data than a fluctuation of the prior model does to itself.
 \begin{figure}[h]
@@ -237,7 +237,7 @@ The table of prior predictive p-values broken down by sample is found in \autore
 	\label{tab:data_pre_pvalue}
 \end{table}
 
-\subsection{Posterior predictive}
+\subsection{Posterior Predictive Spectrum}
 \label{sec:post_pred_data}
 The posterior predictive spectrum and p-values were calculated in identical way to the Asimov fit, using the model after fitting to data. The resulting test-statistic distribution and p-value is shown in \autoref{fig:posterior_pred_data}, where $p = 0.000$\footnote{A rather discouraging result!}. 
 \begin{figure}[h]
@@ -386,7 +386,7 @@ As we observed a very poor p-value for the two-dimensional calculation in \autor
 	\label{fig:posterior_pred_data_1d_ccother}
 \end{figure}
 
-\subsection{Post-fit distributions}
+\subsection{Post-fit Distributions}
 \autoref{fig:posterior_pred_data_fhc} and \autoref{fig:posterior_pred_data_rhc} shows all the selections' \pmu \cosmu distributions post-fit, using the posterior predictive spectrum as a representation of the post-fit Monte-Carlo. Clearly, the post-fit Monte-Carlo does not describe all distributions, and there is plenty of discrepancies in all selections. The 0$\pi$ and 1Trk selections generally see good predictions post-fit, especially around the flux peak. The 1$\pi$ and Other selections are much patchier and it's difficult to spot patterns in $Q^2$, \pmu or \cosmu. Interestingly, the NTrk predictions are generally better than 1$\pi$ and Other.
 
 \begin{figure}[h]
@@ -709,7 +709,7 @@ For the NTrk distributions we see a similar story: the \pmu distributions are we
 	\label{fig:rhc_nu_postfit}
 \end{figure}
 
-\subsection{Covariance matrix}
+\subsection{Covariance Matrix from the Data Fit}
 \label{sec:covariance_data}
 \autoref{fig:postfit_corr_nd280} shows the post-fit covariance matrix for the ND280 parameters, directly comparable to \autoref{fig:asimov_nd_corr}. The bottom row shows the absolute difference in each matrix multiplied by the sign of each matrix. Blue entries have flipped sign, whereas red entries have kept their sign in the fit to Asimov and real data. We see the flux parameters never flip signs and generally the covariance barely changes, whereas the correlation changes at a maximum of $\sim0.2$. The only parameters that swap signs are the cross-section parameters. Although sometimes strong in the correlation plot, looking at the covariance plot we see the effects are often limited to weak changes in the covariances.
 
@@ -766,8 +766,8 @@ Looking purely at the correlations, there are strong relations between $M_A^{QE}
 %	\label{fig:postfit_corr_xsec}
 %\end{figure}
 
-\subsection{Alternate studies}
+\subsection{Alternate Model and Compatibility Studies}
 A number of alternative studies were performed for the 2017 analysis, comparing subruns in data and MC, change of model parameters and their priors, investigating effects of removing runs, and comparing FGD1 and FGD2. The largest impact was found in the FHC versus RHC data fit, and the FGD1 vs FGD2 data fit, with some parameters outside the $1\sigma$ range of the full fit to data. The parameter values of these two fits---and a fit using a 2015-like model with BeRPA and 2p2h shape fixed---were propagated to Super-Kamiokande and event rate comparisons were made. Generally, there was negligible ($<1\sigma$) differences even when parameter values were different, and the studies were all compatible with respect to impact on oscillation analyses. These studies are found in \autoref{sec:data_alt_studies}.
 
-\section{Cross-group validation}
+\section{Cross-group Validations}
 To further validate the implementation and results of the 2017 ND280-only fits before the full oscillation analysis was run, comparisons are made to the frequentist ``BANFF'' group. This group gives information on systematics for oscillation analyses by providing central values and uncertainties related through a covariance matrix which are marginalised over. The validation saw differences in all of the flux parameters, and some of the interaction parameter all due to marginalisation effects when providing the point estimates from the MCMC. However, the posterior predictive distributions compared to the ``best-fit'' distributions agreed well and validation tests were all complete. \autoref{chap:banff_valid} details this procedure.

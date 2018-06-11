@@ -6,7 +6,7 @@ The fit bins events in the two reconstructed muon variables \pmu and \cosmu. The
 
 The selections are entirely defined by the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions.
 
-\subsection{Event selection cuts, \numu}
+\subsection{\numu in FHC}
 \label{sec:numu_sel}
 The different topological selections all start by isolating CC-inclusive candidates in FGD1 or FGD2. Firstly is required to contain one reconstructed track candidate of negative charge crossing the TPC downstream of either FGD (TPC2 for interactions starting in FGD1, TPC3 for interactions starting in FGD2). The event also needs to fulfil data quality and fiducial volume requirements. The muon is then assumed to be the highest momentum negative track (HMNT) found in the event, and it is required that the track is identified as a muon.
 
@@ -183,7 +183,7 @@ Now using information from the TPC PID, FGD Michel electron and FGD PID algorith
 	\end{figure}
 \end{itemize}
 
-\paragraph{Efficiency and purity}
+\paragraph{Efficiency and Purity}
 Using the aforementioned cuts we can study the lepton tagging efficiency and purity of each ND280 \numu selection. The number of events are the raw number of generated Monte-Carlo events without any weighting applied. We show the efficiencies as a function of reconstructed lepton candidate momentum, $p_{reco}$.
 
 \autoref{fig:cc0pi_topology} shows the topology purity for the CC0$\pi$ selection in FGD1 and FGD2. The purity peak coincides with the event peak with $\sim85\%$ efficiency and falls off in both directions. The true CC$1\pi$ and CCOther topology constitute the selection very similarly, at about $10\%$ across the momentum range. As we move up in momentum the CC DIS cross-sections---the largest contribution to the CCOther final state---increase whilst the CCQE and 2p2h cross-sections---the largest contributions to the CC0$\pi$ final state---decrease. CC1$\pi$ and CC DIS interactions can produce low-momentum pions which aren't reconstructed in the detector and CC DIS can produce a $\pi^-$ which may be mistaken for the lepton candidate. Furthermore, the pions can undergo secondary interactions after exiting the nucleus, causing them to be undetected. The NC contribution comes primarily from the NC$1\pi^-$ via resonance interaction, in which the $\pi^-$ is identified as the lepton candidate and there are no other particles in the final state. We also note barely any anti-neutrino contamination, owing to the sign selection from the magnet, the low \numubar flux in FHC and the smaller cross-section. Averaging over the entire range we have purity of $75.5\%$ for FGD1 and $73.5\%$ for FGD2.
@@ -270,7 +270,7 @@ Using the aforementioned cuts we can study the lepton tagging efficiency and pur
 	\label{fig:ccoth_muon}
 \end{figure}
 
-\subsection{Event selection cuts, \numubar in RHC}
+\subsection{\numubar in RHC}
 \label{sec:numubar_sel}
 The anti-neutrino selections CC1Track and CCNTrack have the same event quality and fiducial volume cut as the neutrino selection, and the muon candidate track is required to pass through the TPC downstream of the struck FGD. However, its highest momentum track is required to be the highest momentum positive track for its muon PID (a $\mu^+$ coming from a \numubar interaction). Furthermore, it has a larger background of ``wrong-sign'' events: \numu interactions producing $\mu^-$, but also \numu interactions producing $\pi^+$ which may be identified as the lepton candidate. Hence, the selection cuts proceed marginally differently:
 \begin{itemize}
@@ -328,7 +328,7 @@ The anti-neutrino selections CC1Track and CCNTrack have the same event quality a
 
 Once the \numubar CC-inclusive selection is run the aforementioned pion reconstruction is applied. The \numubar CC1Track selection has one positive muon and does not have any charged or neutral pions in the final state. Importantly, the \numubar CC1Track selection has a higher efficiency in selecting the muon candidate than the \numu CC0$\pi$ selection due to the \numubar resonant interactions producing a $\pi^-$, not a $\pi^+$, which are promptly absorbed in the nucleus and so do not leave a track to be (falsely) identified as a muon candidate. The \numubar CCNTrack selection contains the remaining particles passing the \numubar CC-inclusive selection, containing at least one neutral or charged pion and/or any number of heavier mesons.
 
-\paragraph{Efficiency and purity}
+\paragraph{Efficiency and Purity}
 As for the \numu case, we study the efficiency and purities of the anti-neutrino CC1Track and CCNTrack samples.
 
 \autoref{fig:ccnubar1trk_topology} shows the \numubar CC 1 track topology purity. The purity peaks at 85\% with the event distribution peak ($p_{reco}\sim 0.6\text{ GeV}$) and decreases to $\sim60\%$ at higher momentum. The wrong-sign \numu equivalent selection have a small effect, notable only at low momentum. The largest background is the \numubar N tracks topology, in which one of the pions are unreconstructed. The NC topology enters primarily by the NC1$\pi^+$ via resonance interaction, in which the $\pi^+$ is reconstructed as a $\mu^+$. Over the whole range the purity is 76.7\% where the analogous \numu selection in \autoref{fig:cc0pi_topology} had a purity of 75.5\%, so are very similar in performance.
@@ -387,7 +387,7 @@ As with the \numu samples, the CCNTrack selection purity in \autoref{fig:ccnubar
 	\label{fig:ccnubarNtrk_muon}
 \end{figure}
 
-\subsection{Event selection, \numu in RHC}
+\subsection{\numu in RHC}
 \label{sec:numu_in_nubar_sel}
 In anti-neutrino mode there is a large fraction of \numu interactions, owing partly to the larger \numu cross-section and partly due to the higher flux background. The same pre-selection cuts apply for the \numu in RHC selection as for the previous selections presented in \autoref{sec:numu_sel} and \autoref{sec:numubar_sel}.
 
@@ -415,7 +415,7 @@ The CC-inclusive selection proceeds by:
 
 The \numu in RHC selection then breaks down the CC-inclusive selection into CC1Track and CCNTrack, based entirely on the number of TPC-FGD matched tracks. Events with one such reconstructed track enters the CC1Track selection, and events with any other number of tracks regardless of PID, enter the CCNTrack selection. Hence the \numu RHC selection is analogous to the \numubar RHC selection.
 
-\paragraph{Efficiency and purity}
+\paragraph{Efficiency and Purity}
 As in previous sections we now study the muon tagging efficiency and topological purity of the final \numu in RHC selections.
 
 \autoref{fig:ccnubarnu1trk_topology} shows the purity of the CC1Track selection, where we note a poor purity at low momentum, plateauing at 60\% at 0.8 GeV/c, averaging at 52\%. The overall \numu CCNtrack contribution is 29\%, 10 percentage units larger than for \numubar and is roughly constant over the full range. The wrong-sign contribution is 10\% in total, and NC is 10\%. The wrong-sign and NC contributions happen primarily at low momentum and vanish above $p_{reco}=1\text{ GeV/c}$.
@@ -509,7 +509,7 @@ A summary of all selections' efficiency and purities is shown in \autoref{tab:ef
 	\label{tab:eff_pur_summary}
 \end{table}
 
-\section{Binning}
+\section{Binning the Selections}
 \label{sec:binning_2017}
 We expect largely similar kinematics across the two FGDs so apply the same binning in reconstructed muon momentum, \pmu, and cosine of the neutrino-muon angle, \cosmu. The binning for the fit is primarily influenced by MC statistics: we require $\sim 20$ raw MC events per bin (roughly equivalent to 1-2 data events). The momentum resolution is $\sim50\text{ MeV}$ up to 1 GeV and the angular resolution $\sim 2\degree$.
 

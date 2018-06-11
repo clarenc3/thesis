@@ -1,25 +1,23 @@
 \chapter{The Tokai to Kamioka Experiment}
 \label{chap:detectors}
+The Tokai to Kamioka (T2K) experiment was proposed and designed in the early to mid 2000s with the intent of observing electron neutrino appearance ($\nu_\mu \rightarrow \nu_e$), alongside precision measurements of muon neutrino disappearance ($\nu_\mu \rightarrow \nu_\mu$)\cite{t2k_loi,t2k_prop}. Previous long baseline experiments K2K\cite{k2k_obs} and MINOS\cite{minos_obs} had pioneered measuring muon neutrino disappearance in a neutrino ``beam'' over long distances, confirming the 2005 Super-Kamiokande results for $\Delta m^2$ and $\sin^2 \theta_{23}$ from atmospheric neutrinos\cite{sk_2005}. However, neither K2K or MINOS were able to confirm electron neutrino appearance with significance.
 
-The Tokai to Kamioka (T2K) experiment was proposed and designed in the early to mid 2000s with the intent of observing electron neutrino appearance ($\nu_\mu \rightarrow \nu_e$) transition, alongside precision measurements of muon neutrino disappearance ($\nu_\mu \rightarrow \nu_\mu$)\cite{t2k_loi,t2k_prop}. Previous long baseline experiments K2K\cite{k2k_obs} in Japan and MINOS\cite{minos_obs} in the US had pioneered measuring muon neutrino disappearance in a neutrino ``beam'' over long distances, confirming the 2005 Super-Kamiokande results for $\Delta m^2$ and $\sin^2 \theta_{23}$ from atmospheric neutrinos\cite{sk_2005}. However, neither were able to confirm electron neutrino appearance with significance.
+The precision measurement era took off when the independent short baseline reactor anti electron-neutrino experiments Daya Bay\cite{daya_bay_disc} and RENO\cite{reno_disc} in 2012 observed, and  in 2013 Double Chooz\cite{chooz_disc} hinted at, anti electron-neutrino disappearance ($\bar{\nu}_e \rightarrow \bar{\nu}_e$) with a large amplitude ($\sim \sin^2 2\theta_{13}$). The large $\sin^2 \theta_{13}$ enables electron neutrino appearance in neutrino beams with relatively low number of protons-on-target (POT), and in 2014 T2K independently observed electron neutrino appearance\cite{t2k_disc} with a larger yet mixing angle than the reactors. NO$\nu$A confirmed\cite{nova_disc} the appearance measurement in 2016, also finding a large $\sin^2 \theta_{13}$ mixing amplitude.
 
-The precision measurement era took off when the independent short baseline reactor anti electron-neutrino experiments Daya Bay\cite{daya_bay_disc} and RENO\cite{reno_disc} observed in 2012, followed by indications from Double Chooz\cite{chooz_disc} in 2013, anti electron-neutrino disappearance ($\bar{\nu}_e \rightarrow \bar{\nu}_e$) with a larger $\sin^2 2\theta_{13}$ than anticipated. T2K independently observed electron neutrino appearance\cite{t2k_disc} in 2014 with an even larger mixing angle when fixing $\Delta m^2$ and $\sin^2 \theta_{23}$ to global best-fit values, the neutrino mass ordering to normal, and $\delta_{CP}=0$. NO$\nu$A confirmed\cite{nova_disc} the appearance measurement in 2016, also finding a large $\sin^2 \theta_{13}$ mixing amplitude.
-
-The large $\sin^2 \theta_{13}$ enabled electron neutrino appearance in neutrino beams at T2K and NO$\nu$A with relatively low number of protons-on-target (POT). The current effort in the $\nu_\mu \rightarrow \nu_e$ channel is measuring the CP violating Dirac phase, $\delta_{CP}$, which sensitivity increases further to when using recent results from Daya Bay\cite{daya_bay} and RENO\cite{reno} in the PDG\cite{pdg_2017}.
-
+ The current effort in the $\nu_\mu \rightarrow \nu_e$ channel is measuring the CP violating Dirac phase, $\delta_{CP}$, whose sensitivity increases further when using recent results from Daya Bay\cite{daya_bay}, RENO\cite{reno} and Double Chooz\cite{double_chooz} in the PDG\cite{pdg_2017}. Including $\nu_\mu \rightarrow \nu_e$ channel(s) also significantly reduce $\theta_{23}$ uncertainties\cite{nova_neutrino2018}.
 \begin{figure}[h]
 	\includegraphics[width=1.0\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/view/t2k_overview}
 	\caption{The T2K experiment where neutrinos are created at the J-PARC complex in Tokai and the neutrino beam is characterised at the near-detectors 280 m downstream. 295 km west is the Super-Kamiokande far-detector, measuring the oscillated neutrino spectrum}
 	\label{fig:t2k_overview}
 \end{figure}
-The neutrinos at T2K come from particle decays---primarily $K^\pm$, $\pi^\pm$ and $\mu^\pm$---after a proton beam impinges on a target at the J-PARC complex. The neutrino direction is measured by a suite of near-detectors $\sim280$ m downstream of the target and a muon monitor, providing information on the neutrino flux, directionality and interaction cross-section. One near-detector, INGRID, is a plastic scintillator and iron sandwiched detector placed on-axis, extends $\pm1\deg$ in a cross as to measure the neutrino flux and directionality, and is detailed in \autoref{sec:ingrid}. A second near-detector, ND280, sits $2.5\deg$ off-axis and is surrounded by a 0.2T magnetic field and consists of sub-detectors with multiple interaction targets and a tracker region, designed to accurately measure neutrino interactions under a similar neutrino flux to Super-Kamiokande, and is detailed in \autoref{sec:nd280}. The far detector, Super-Kamiokande, sits 295 km downstream of the target station and measures the rate of neutrino interactions on its 50,000 tonnes of purified water, detailed in \autoref{sec:sk}. A schematic of the travel is shown in \autoref{fig:t2k_overview}.
 
-A host of other neutrino detectors---not used in this analysis---additionally sit in ``pit'' 280m from the target station with ND280 and INGRID. Examples include the liquid emulsion NINJA experiment\cite{ninja}, the water target WAGASCI\cite{wagasci} experiment and its magnetic calorimeter Baby-MIND\cite{baby_mind}. These will in the future make precision measurements of neutrino-nucleus interactions, a dominant systematic for current oscillation analyses.
-
+The neutrinos at T2K are born from particle decay---primarily $K^\pm$, $\pi^\pm$ and $\mu^\pm$---after a proton beam impinges on a target at the J-PARC complex. The neutrino direction is measured by the ND280 and INGRID detectors, $\sim280$ m downstream of the target and a muon monitor station, which provide information on the neutrino flux, directionality and interaction cross-section. The far detector, Super-Kamiokande, sits 295 km downstream of the target station and measures the rate of neutrino interactions on its 50,000 tonnes of purified water, detailed in \autoref{sec:sk}. A schematic of the neutrinos' travel is shown in \autoref{fig:t2k_overview}.
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth, trim={10mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/view/image_nd.jpeg}
 	\caption{The suite of near-detectors at 280 m from the target, showing ND280 and INGRID}
 \end{figure}
+
+A host of other neutrino detectors---not used in this analysis---sit in ``pit'' 280m from the target station with ND280 and INGRID. Examples include the liquid emulsion NINJA experiment\cite{ninja}, the water target WAGASCI\cite{wagasci} experiment and its magnetic calorimeter Baby-MIND\cite{baby_mind}. These will in the future make precision measurements of neutrino-nucleus interactions, a dominant systematic for current oscillation analyses.
 
 \section{Beamline}
 The J-PARC complex\cite{jparc_tdr} is used to accelerate protons to 30 GeV/c using a linear accelerator (LINAC), a rapid cycling synchrotron (RCS) and a main ring (MR) synchrotron. The MR has the ability to fast-extract into the neutrino beamline with a design power of 750 kW at 30 GeV/c, using $\sim3\times10^{14}$ protons per spill with 8 proton bunches per spill, with a spill cycle of $\sim0.5$ Hz. The spill width, which opens the trigger window at the neutrino detectors, is $\sim5 \mu$s\cite{t2k_det}.
@@ -37,7 +35,7 @@ The J-PARC complex\cite{jparc_tdr} is used to accelerate protons to 30 GeV/c usi
 	\label{fig:neutrino_beamline}
 \end{figure}
 
-The neutrino beamline consists of two parts and is shown in \autoref{fig:neutrino_beamline}: the primary beamline---which takes fast-extracted protons from the MR, bends them to point towards SK, and impinges them on a graphite target---and the secondary beamline---which directs the mesons from the proton-target interaction through a decay volume, finishing with a beam dump. Shortly after the target in the secondary beamline are three magnetic horns\cite{t2k_horns} which are used to deflect (focus) wrong-sign (right-sign) mesons to reduce wrong-sign and enhance right-sign neutrinos. Running the magnets at 250 kA (1.7 T) increases the neutrino flux at SK by factor $\sim17$\cite{t2k_beam}. The focused mesons pass through a $\sim96$m decay volume in which the majority of them decay. Remaining particles then strike the beam dump, which stops all mesons. Surviving high momentum muons $p_\mu > 5.0 \text{ GeV/c}$ generally pass through the beam dump, after which they are measured by muon monitors. The MUMON muon monitors (one ionisation chamber and one silicon PIN photodiode) infer the neutrino beam direction to better than 0.25 mrad and the beam intensity better than 3\%\cite{t2k_mumon,t2k_mumon2}, and is used to inform the beam simulation group.
+The neutrino beamline consists of two parts and is shown in \autoref{fig:neutrino_beamline}: the primary beamline---which takes fast-extracted protons from the MR, bends them to point towards SK, and impinges them on a graphite target---and the secondary beamline---which directs the mesons from the proton-target interaction through a decay volume, finishing with a beam dump. Shortly after the target in the secondary beamline are three magnetic horns\cite{t2k_horns} which are used to deflect (focus) wrong-sign (right-sign) mesons to reduce wrong-sign and enhance right-sign neutrinos. Running the magnets at 250 kA (1.7 T) increases the neutrino flux at SK by factor $\sim17$\cite{t2k_beam}. The focused mesons pass through a $\sim96$ m decay volume in which the majority of them decay. Remaining particles then strike the beam dump, which stops all mesons. Surviving high momentum muons $p_\mu > 5.0 \text{ GeV/c}$ generally pass through the beam dump, after which they are measured by muon monitors. The MUMON muon monitors (one ionisation chamber and one silicon PIN photodiode) infer the neutrino beam direction to better than 0.25 mrad and the beam intensity better than 3\%\cite{t2k_mumon,t2k_mumon2}, and is used to inform the beam simulation group.
 
 The neutrinos come primarily from three meson decays
 \begin{align*}
@@ -81,14 +79,12 @@ From the beam simulation we trace back each neutrino's parent meson, shown in \a
 	\label{fig:flux_parents}
 \end{figure}
 
-The software suite for the beam simulation consists of FLUKA2011 \cite{fluka2008_1, fluka2008_2, fluka2011} which simulates hadronic interactions in target and baffle, JNUBEAM (GEANT3-based \cite{geant3}) which simulates the geometry and handles tracking, and GCALOR \cite{gcalor} which simulates hadronic re-interactions and is used as a cross-check for FLUKA\cite{t2k_beam, t2k_tn_flux}.
-
-T2K was the first long baseline experiment to use the ``off-axis'' technique\cite{off_axis} in which the far-detector is offset from the neutrino beam center. This has two main effects: 1) it focuses the neutrino energy spectra into a narrower ``peak'' (albeit with lower overall rate than on-axis) and 2) it reduces the wrong-sign background for $\nu_e$ appearance searches. The effect, overlaid with the expected $\nu_\mu$ and $\nu_e$ neutrino flux at Super-Kamiokande, is shown in \autoref{fig:off-axis}. Since the neutrino parents are mostly from $\pi$ decay---a two-body decay---we can approximately express the neutrino energy $E_\nu$ as a function of pion-neutrino angle $\theta_{\pi,\nu}$, pion energy $E_\pi$ and mass $m_\pi$ and the muon mass $m_\mu$,
+T2K was the first long baseline experiment to use the ``off-axis'' technique\cite{off_axis} in which the far-detector is offset from the neutrino beam center. This has two main effects: 1) it focuses the neutrino energy spectra into a narrower ``peak'' (albeit with lower overall rate than on-axis) and 2) it reduces the wrong-sign background for $\nu_e$ appearance searches. Since the neutrino parents are mostly from $\pi$ decay---a two-body decay---we can approximately express the neutrino energy $E_\nu$ as a function of pion-neutrino angle $\theta_{\pi,\nu}$, pion energy $E_\pi$ and mass $m_\pi$, and the muon mass $m_\mu$,
 \begin{equation}
 	E_\nu = \frac{m^2_\pi-m^2_\mu}{2\left( E_\pi - p_\pi \cos \theta_{\pi,\nu} \right)} 
 \end{equation}
 
-For a chosen $\cos \theta_{\pi,\nu}$, there is a maximum pion energy of $E_\pi^\text{max} = p_\pi/cos\theta_{\pi,\nu}$, giving rise to a maximum neutrino energy of
+For a chosen $\cos \theta_{\pi,\nu}$, there is a maximum pion energy of $E_\pi^\text{max} = p_\pi/\cos\theta_{\pi,\nu}$, giving rise to a maximum neutrino energy of
 \begin{equation}
 	E_\nu^\text{max} = \frac{m^2_\pi-m^2_\mu}{2E_\pi \sin^2 \theta_{\pi,\nu}} 
 \end{equation}
@@ -147,7 +143,7 @@ INGRID has measured the neutrino event rates within 2\% of expected, with a prec
 	\label{fig:ingrid_monitoring}
 \end{figure}
 
-\section{ND280}
+\section{The Near Detector at 280 m}
 \label{sec:nd280}
 The off-axis near detector for T2K is called ND280, and its neutrino-nucleus interaction data is the subject of this thesis. In contrast to INGRID, ND280 was designed to accurately reconstruct and track particles emanating from a neutrino scattering vertex in one of its targets. 
 
@@ -184,7 +180,7 @@ The measured track length and particle pulls for the pion hypothesis are shown i
 The FGD is also used to for daily checks of the neutrino event rates and vertex distributions. It also acts as a cosmic trigger for stopping muons, whose selection is used to determine Michel $e$ efficiencies.
 
 \subsection{Time Projection Chambers}
-The three T2K time projection chambers (TPCs)\cite{t2k_tpc} provide the majority of the tracking, energy loss, particle identification and momentum measurements in the ND280 detector. Each TPC is composed of an inner and an outer ``box''. The inner provides the field cage and the outer the ground potential for the TPC. The inner box measures $1808\times2230\times850\text{ mm}$ and the outer box measures $2302\times2400\times974\text{ mm}$. The maximum drift distance from central cathode to micromegas is 897 mm, and with the nominal cathode voltage at $-25\text{ kV}$ and micromegas at $-350\text{ kV}$, the drift field is $\sim 275\text{ V/cm}$. All TPCs use an Ar:C$F_4$:$C_4H_{10}$ mixture at 95:3:2, which ionises when charged particles pass through. The ionisation electrons are drifted toward bulk micromegas detectors\cite{micromegas1, micromegas2}, amplifying the charge. \autoref{fig:tpc_sys} provides a schematic of the TPC design.
+The three T2K time projection chambers (TPCs)\cite{t2k_tpc} provide the majority of the tracking, energy loss, particle identification and momentum measurements in the ND280 detector. Each TPC is composed of an inner and an outer ``box''. The inner provides the field cage and the outer the ground potential for the TPC. The inner box measures $1808\times2230\times850\text{ mm}$ and the outer box measures $2302\times2400\times974\text{ mm}$. The maximum drift distance from central cathode to micromegas is 897 mm, and with the nominal cathode voltage at $-25\text{ kV}$ and micromegas at $-350\text{ kV}$, the drift field is $\sim 275\text{ V/cm}$. All TPCs use an Ar:C$F_4$:$C_4H_{10}$ mixture at 95:3:2, which ionises when charged particles pass through. The ionisation electrons are drifted toward bulk micromegas detectors\cite{micromegas_1, micromegas_2}, amplifying the charge. \autoref{fig:tpc_sys} provides a schematic of the TPC design.
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/tpc/tpc_1}
 	\caption{The ND280 TPC design}
@@ -222,8 +218,8 @@ The pi-zero detector (P0D)\cite{t2k_p0d} was designed to measure the NC1$\pi^0$ 
 	\label{fig:nd280_p0d}
 \end{figure}
 
-\subsection{The UA1 Magnet and Side Muon Range Detector}
-The entirety of the above detector system (FGD+TPC+ECal+P0D) is placed inside the recycled UA1 dipole magnet. It is operated at 2.7 kA to produce a uniform horizontal magnetic field of 0.2 T. The  yoke is split into two sections, each made of eight C-shaped flux return yokes. 
+\subsection{The UA1/NOMAD Magnet and Side Muon Range Detector}
+The entirety of the above detector system (FGD+TPC+ECal+P0D) is placed inside the recycled UA1 dipole magnet. It is operated at 2.7 kA to produce a uniform horizontal magnetic field of 0.2 T. The  yoke is split into two sections, each made of eight C-shaped flux return yokes. The inner volume of the magnet is $7.0\times3.5\times3.6\text{ m}$, placing the main spatial limitations on ND280.
 
 The side muon range detector (SMRD)\cite{t2k_smrd} sits in the innermost gaps of the UA1 magnet return yoke, surrounding the entire ECal, P0D and tracker. It was designed to measure muons from neutrino interactions which escape the tracker at high angles, punching through the FGD, ECal and SMRD but leaving few TPC hits. The momentum can be inferred from range in iron and SMRD and the tracks can be reconstructed using FGD-ECal-SMRD matching above 70\% efficiency. The SMRD additionally provides a reliable cosmic trigger for the whole detector. 
 \begin{figure}[h]
@@ -236,20 +232,32 @@ Shown in \autoref{fig:nd280_ua1}, there are 16 iron plates in the magnet yoke ea
 
 \section{Super-Kamiokande}
 \label{sec:sk}
-The Super-Kamiokande (SK)\cite{t2k_sk, t2k_sk2, t2k_sk3} detector has served to measure a proton decay, solar and atmospheric neutrino oscillations since 1996 with SK-I. Starting with K2K\cite{k2k_design} in 1999, Super-Kamiokande also served as a far detector for long baseline accelerator neutrino oscillation searches and continues to do so for T2K. 
-
-The detector consists of 50,000 (25,000 fiducial) tonnes of ultra-pure water in a $41.4\times39.3\text{ m}$ cylindrical tank. It is split into an inner (ID) and outer (OD) detector with inner dimension $36.2\times33.8\text{ m}$. The inner and outer detector is separated by a Tyvek and ``blacksheet'' barrier, and the inner detector has 11,146 inward-facing 20-inch PMTs, and the outer, providing a veto for the inner detector, has 1,885 8-inch PMTs facing outwards into the OD. The inner detector has approximately 40\% photo-coverage and provides excellent $\mu/e$ separation, crucial to differentiate muon neutrino disappearance from electron neutrino appearance. The outer detector 
-
-The detector is placed 295 km from the production target in the Kamioka mine in Ikenoyama, located in Gifu, Japan. The mine provides roughly 1000 m overburden, drastically reducing cosmogenic backgrounds. A sketch of the detector in the mine is shown in \autoref{fig:sk_schematic}.
+The Super-Kamiokande (SK)\cite{t2k_sk, t2k_sk2, t2k_sk3} detector has served to measure a proton decay, solar and atmospheric neutrino oscillations since 1996 with SK-I. Starting with K2K\cite{k2k_design} in 1999, Super-Kamiokande also served as a far detector for long baseline accelerator neutrino oscillation searches and continues to do so for T2K with SK-IV. The detector is placed 295 km from the production target in the Kamioka mine in Ikenoyama, located in Gifu, Japan. The mine provides roughly 1 km overburden---or 2.7 km equivalent water overburden---drastically reducing cosmogenic backgrounds. A sketch of the detector in the mine is shown in \autoref{fig:sk_schematic}.
 \begin{figure}[h]
-	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 60mm}, clip,page=1]{figures/det_chap/sk/sk.pdf}
-	\caption{The Super-Kamiokande detector}
+	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/sk/sk.pdf}
+	\caption{The Super-Kamiokande detector in Ikenoyama}
 	\label{fig:sk_schematic}
 \end{figure}
 
-Particle detection in SK happen primarily though production of Cherenkov light. The muon/electron separation occurs primarily by ring ``fuzziness'', indicating the amount of rescattering of the charged particle. Muons and pions are generally highly penetrating whereas electrons rescatter often and shower at T2K energies, and so the former produces sharp rings whereas electrons produce fuzzy rings. The number of delayed Michel $e$ is also used to identify contained muons and pions.
+The detector consists of 50,000 (25,000 fiducial) tonnes of ultra-pure water in a $41.4\times39.3\text{ m}$ cylindrical tank. It is split into an inner (ID) and outer (OD) detector with inner dimension $36.2\times33.8\text{ m}$ and the outer surrounding the inner. The inner and outer detectors are separated by a Tyvek and ``blacksheet'' barrier, and the inner detector has 11,146 inward-facing 20-inch PMTs, and the outer---providing a veto and shielding for the inner detector---has 1,885 8-inch PMTs facing outwards into the OD. The inner detector has approximately 40\% photo-coverage and provides excellent $\mu/e$ separation, crucial to differentiate muon neutrino disappearance from electron neutrino appearance.
 
-Super-Kamiokande is currently closed for upgrades and maintenance and will resume to collecting data in early 2019\red{cite?}.
+Particle detection in SK happen primarily though production of Cherenkov light. The muon/electron separation occurs primarily by ring ``fuzziness'', indicating the amount of rescattering of the charged particle. Muons and pions are generally highly penetrating whereas electrons rescatter often and shower at T2K energies, and the former produces sharp rings whereas electrons produce fuzzy rings. The number of delayed Michel $e$ is also used to identify contained muons and pions.
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 3mm}, clip,page=1]{figures/det_chap/sk/elike.pdf}
+		\caption{$e$-like, $p=622.5\text{ MeV}$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.48\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 3mm}, clip,page=1]{figures/det_chap/sk/mulike.pdf}
+		\caption{$\mu$-like, $p=439.9\text{ MeV}$}
+	\end{subfigure}
+\end{figure}
+
+Super-Kamiokande is currently closed for upgrades and maintenance and will resume collecting data in early 2019\cite{superk_upgrade}.
 
 \section{Simulation}
-NEUT, GEANT4, ElecSim, GEANT3 (beam and SK) SKDETSIM, CALOR. Systematics detailed in \autoref{sec:syst}.
+The three detectors (INGRID, ND280 and SK) share neutrino interaction Monte-Carlo, namely NEUT\cite{neut}. NEUT is an interaction generator written for the (Hyper, Super)-Kamiokande experiments, with large contributions from K2K and T2K collaborators.
+
+ND280 and INGRID are simulated with GEANT4\cite{t2k_det,geant4}, and the ND280 electronics uses a custom package called ElecSim. The beamline simulation consists of FLUKA2011 \cite{fluka2008_1, fluka2008_2, fluka2011} which simulates hadronic interactions in target and baffle, JNUBEAM (GEANT3-based \cite{geant3}) which simulates the geometry and handles particle tracking, and GCALOR \cite{gcalor} which simulates hadronic re-interactions and is used as a cross-check for FLUKA\cite{t2k_beam, t2k_tn_flux}. Super-Kamiokande uses a custom package, SKDETSIM\cite{t2k_sk}, based on GEANT3\cite{geant3}.
+
+The systematics treatment from the detectors are detailed in \autoref{sec:syst}.

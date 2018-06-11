@@ -1,4 +1,4 @@
-\chapter{Statistical treatment and Markov Chain Monte Carlo}
+\chapter{Statistical Treatment and Markov Chain Monte Carlo}
 \label{chap:mcmc}
 
 \epigraph{There are three kinds of lies: lies, damned lies, and statistics}{Mark Twain}
@@ -35,7 +35,7 @@ Markov Chain Monte Carlo methods have been used extensively in astro-statistics,
 \end{itemize}
 A detailed discussion of these criteria can be found in \cite{mcmc_practice, mcmc_handbook}.
 
-\section{Metropolis-Hastings algorithm}
+\section{The Metropolis-Hastings Algorithm}
 This analysis uses the well established Metropolis-Hastings algorithm\cite{metropolis,hastings} in Markov Chain Monte Carlo to explore the parameter space $\vec{\theta}$ and sample the posterior $P(\vec{\theta}|D)$. It can be considered a random walk which prefers areas of high probability (minimising \autoref{eq:test_stat}). The algorithm consists of a set of steps which are repeated $N$ times
 \begin{itemize}
 	\item \textbf{Initialisation}: A random starting point of the parameters $\vec{\theta}$ is chosen and accepted as the starting point
@@ -117,12 +117,12 @@ The chains appear to converge somewhere around 30,000 steps, which would indicat
 
 The analyses presented in this thesis use a more conservative approach than above since computational power was not an issue. Generally, individual chains are at least 1,000,000 steps long and at least three such chains are run and the burn-in is always at least 1/4th of the total.
 
-\section{Point estimates and uncertainties of parameters}
+\section{Point Estimates and Uncertainties of Parameters}
 Since this analysis propagates a posterior rather central values with uncertainties related through a covariance matrix, it is less concerned with the accuracy of point estimates and their uncertainties than a neutrino oscillation analysis would be. This saves significant computational time, since point estimation in high dimensions with correlated parameters requires a significant number of MCMC steps or a better suited algorithm than Metropolis-Hastings.
 
 However, many point estimates with uncertainties are presented in this work, especially when validating against the frequentist ``BANFF'' framework in \autoref{chap:banff_valid}.
  
-\subsection{Parameters of interest and marginalisation}
+\subsection{Parameters of Interest and Marginalisation}
 At minimum, 73 parameters are propagated to oscillation analyses in this work. Hence the number of parameters of interest is high, and visualising parameter behaviour becomes difficult. Throughout the ND280 fits we project the high-dimensional posterior onto one or two dimensions---the latter being used to form the covariance matrices. The projection uses the marginalisation method, in which we integrate out the parameter dependencies of the posterior in all but the parameter of interest. Naturally, this processes loses a lot of information about the full posterior, so is not propagated to the full analysis.
 
 Consider the parameter of interest $x$ where $x \in \vec{\theta}$ and the remaining parameter space is denoted $\vec{\theta}'$. The marginalised posterior density of the parameter $x$ given the data $D$, $P(x|D)$, is simply given by
@@ -144,7 +144,7 @@ The three methods are used to flag when posteriors have non-Gaussian shapes, as 
 \end{figure}
 We note very asymmetric errors in the case of the asymmetric HPD method and different estimates of the central value. Importantly, none of the above methods are de-facto wrong, and in many cases the one dimensional posterior has to be investigated further for e.g. marginalisation effects with other non-Gaussian parameters. Unless otherwise stated, the arithmetic mean and rms are used here due to its simplicity.
 
-\subsection{Covariance estimates}
+\subsection{Covariance Estimates}
 In the case of estimating covariances a similar method is used. We marginalise the high-dimensional posterior onto the two parameters whose covariance we're calculating. The marginal posterior is binned and the covariance is calculated arithmetically without assuming a shape of the test-statistic or posterior. \autoref{fig:cov_2d_posterior} shows two example two-dimensional marginal posteriors between beam and interaction parameters, one of which results in a strong correlation and the other doesn't.
 
 \begin{figure}[h]
@@ -160,7 +160,7 @@ In the case of estimating covariances a similar method is used. We marginalise t
 	\label{fig:cov_2d_posterior}
 \end{figure}
 
-\section{Predictive checks and p-values}
+\section{Predictive Checks and p-values}
 A Bayesian analysis conditions on the entire model's probability, so can lead to misleading results when the model space strongly disagrees with the data space. Assessing the model goodness against data is therefore critical in any Bayesian analysis, and closely follows what is detailed in \cite{posterior_predictive_checks, posterior_predictive_checks2, posterior_predictive_checks3, prior_predictive_checks}. 
 
 This analysis uses two ``goodness-of-fit'' checks, in which the test-statistic from the statistics of the sample for observed events $n$ with predicted events $\lambda$,
@@ -213,5 +213,3 @@ p = \frac{N\left(\chi^2_{\text{Data, Draw}} < \chi^2_{\text{Draw, Draw Fluc}}\ri
 where $N\left(\chi^2_{\text{Data, Draw}} < \chi^2_{\text{Draw, Draw Fluc}}\right)$ is the number of times a drawn distribution had a smaller test-statistic against data than it did against a fluctuation of itself, and $N(\text{Total})$ is the total number of draws.
 
 For closure tests the drawn distribution can also be the predictive distribution. Furthermore, the drawn distribution can be from both the prior and posterior distributions.
-
-

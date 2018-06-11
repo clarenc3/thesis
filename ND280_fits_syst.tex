@@ -17,7 +17,7 @@ for parameter $i$, with current fit values $X_i$, priors $\mu_i$ and covariance 
 \end{equation}
 where $C$ is a constant.
 
-\subsection{Flux}
+\subsection{The Beamline and Neutrino Flux}
 \label{subsec:syst_flux}
 The flux systematics contain uncertainties from all sources going into the neutrino flux prediction. They are primarily split into six categories:
 \begin{itemize}
@@ -108,7 +108,7 @@ In addition to the variation systematics above, there is also a nominal flux cor
 	\label{fig:flux_ratio}
 \end{figure}
 
-\subsection{Detector systematics}
+\subsection{The ND280 Detector}
 \label{subsec:syst_nd280}
 The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics, such as TPC PID, FGD PID, TPC Momentum scale and study the impact on the number of predicted events in each \pmu \cosmu bin. 
 
@@ -154,7 +154,7 @@ The different sources of systematics, their variation type and assumed probabili
 \label{tab:nd280_systs}
 \end{table}
 
-\paragraph{Observable variation systematics}
+\paragraph{Observable Variation Systematics}
 This group of systematics have the potential to change the reconstructed topology, so allow for migration in and out of selections. It can also switch the reconstructed lepton candidate for a different track in the event. The systematic is applied as a smearing to the reconstructed event variables (e.g. \pmu, \cosmu) and then reruns the event selection algorithm on the smeared event.
 
 There are two methods with which the smearing is applied:
@@ -196,7 +196,7 @@ Additionally uncertainties from the magnetic field has special cases of the abov
 	where $\delta x = x_{reco}^{MC} \delta s$ is the uncertainty on the observable and $\delta s$ is the uncertainty on the scaling variable. The TPC momentum scale systematic uses this parameterisation, in which $s$ is the scale of the magnet current and $\delta s$ is its uncertainty.
 \end{itemize}
 
-\paragraph{Efficiency systematics}
+\paragraph{Efficiency Systematics}
 The weight systematics are computed from studies which compare data and MC predictions in well known control samples. The multiple ND280 subdetectors enable cross-checks for tracking and matching efficiencies: e.g. TPC2 tracking efficiency can be computed using tracks with segments in FGD1 and FGD2, which therefore should have a track in TPC2.
 
 Using the sand muon control sample---defined as having a through-going muon track in most of the detector, where the muon was created in the surrounding sand in the ND280 pit or the magnet---as an example, such muons tend to be very forward-going and high energy. Thus the sample is suitable for alignment studies but not efficiency (since the \pmu, \cosmu phase space is very limited). The model assumed to move to this phase space assumes the ratio between efficiencies in data and MC are the same in analysis and control samples.
@@ -224,14 +224,14 @@ for events that identify the track correctly and
 w_{Ineff} = \frac{1-\epsilon_{Data}'}{1-\epsilon_{MC}}
 \end{equation}
 
-\paragraph{Normalisation systematics}
+\paragraph{Normalisation Systematics}
 These systematics are simple one-time weights which change the overall event numbers. The FGD mass error is an example of such a systematics: if the mass of the FGD is larger than the nominal, the overall number of observed events in MC should be increased. The weight $w$ is simple applied as
 \begin{equation}
 w = 1+\alpha \cdot \delta e
 \end{equation}
 where 1.0 is the nominal weight, $\alpha$ is a random variable, and $\delta e$ is the systematic error on the source.
 
-\paragraph{Relative systematic error sizes}
+\paragraph{Relative Systematic Error Sizes}
 \autoref{tab:nd280_syst_error_nu} shows the relative errors from ND280 systematics contribution on the number of predicted events for the different ND280 \numu selections for FGD1. The total error for the CC0$\pi$ selection is 1.66\%, CC1$\pi$ is 3.33\% and CCOther 6.47\%. For comparison, the flux and cross-section errors are generally $\mathcal{O}\left(10\%\right)$. The error increases with selection because the increased track multiplicity and lower ``cleanliness'' of the reconstructed events. 
 
 The largest contribution to the total error is pion secondary interactions, making up $\sim90\%$ of the detector systematics. This systematic additionally has the power to migrate events through selections by changing the number of reconstructed pions. For the CCOther selection the TPC tracking efficiency also has a large contribution (1.79\%), decreasing to 0.44\% for CC1$\pi$ and 0.27\% for CC0$\pi$. The FGD mass contributes a 0.6\% uncertainty for all selections, making up 1/3 of the error on CC0$\pi$ selection.
@@ -320,10 +320,10 @@ As for the FHC selections, the largest systematic by far is the pion secondary m
 	\label{tab:nd280_syst_error_nubar}
 \end{table}
 
-\paragraph{Parameterisation of ND280 related systematics}
+\paragraph{Parameterisation of ND280 Systematics}
 The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an event-by-event basis. However, in practice this is complicated by two main reasons: 1) the event selection framework is not sufficiently optimised to guarantee fast reweighting below 0.1s per reconfigure; 2) and for some events and values of variation systematics, discontinuous test-statistic were found when events were migrated from one topology to another. Whereas the former is purely computational, the latter causes problems for finding minima with gradient descent algorithms, employed by the dedicated near-detector only fit (BANFF). 
 
-It was instead decided to parameterise the systematics similarly to the flux systematics, which both ensures smoothness and enables fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event and 500 random variations are chosen according to the prior covariances and the number of events are binned in the chosen fit-binning in \autoref{sec:binning_2017}. Each bin is then a normalisation parameter, and highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the effects from Martini-Nieves 1p1h model\red{cite} differences are added. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
+It was instead decided to parameterise the systematics similarly to the flux systematics, which both ensures smoothness and enables fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event and 500 random variations are chosen according to the prior covariances and the number of events are binned in the chosen fit-binning in \autoref{sec:binning_2017}. Each bin is then a normalisation parameter, and highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the effects from Martini and Nieves 1p1h model differences are added\cite{t2k_2015}. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
 
 Using the fit binning in \pmu \cosmu yields 1624 ND280 parameters, which was reduced to 556 by merging bins with similar features in the underlying bin-by-bin event distributions. The final ND280 detector matrix binning was chosen to be
 \begin{itemize}
@@ -425,7 +425,7 @@ The final covariance matrix is seen in \autoref{fig:nd280_cov}, where the majori
 %\label{fig:2017_rebin_asimov}
 %\end{table}
 
-\subsection{Cross-section}
+\subsection{The Neutrino-Matter Interaction}
 \label{subsec:syst_xsec}
 The parameterisation of the interaction systematics is frequently updated in T2K analyses to account for new theoretical calculations. This includes nuclear in-medium effects such as RPA and 2p2h corrections\cite{nieves1,nieves2}, initial state models such as Local Fermi Gases \cite{lfg} and Spectral Functions \cite{benhar}, and parameter tunes of existing models\cite{ccqe_tuning}.
 
@@ -558,7 +558,7 @@ The magnitude and uncertainty of $A, B, D$ and $E$ are then chosen to match the 
 	\label{fig:berpa_throws}
 \end{figure}
 
-\paragraph{Single pion production}
+\paragraph{Single Pion Production}
 The single pion production is described with the Rein-Sehgal model\cite{Rein_Sehgal, Rein_Angular} with lepton mass corrections \cite{Kuzmin_MassEffect,Wroclaw_MassEffect,Berger_Sehgal_MassEffect} and modified form factors aimed at the $\Delta$ resonance \cite{Wroclaw_CC1pi_2014,Wroclaw_CC1pi_2009,Wroclaw_CC1pi_theory}. The tunable parameters all relate to the neutrino-nucleon scattering interaction in the Rein-Sehgal model, which are $M_A^{RES}$, the axial mass for the resonant interaction in the Rein-Sehgal model, $C_5^A(0)$, one of the axial form factors at $Q^2=0$ in the Graczyk-Sobczyk form factor parameterisation, and the size of the non-resonant $I_{1/2}$ background in the Rein-Sehgal model.. 
 
 \autoref{fig:1pi_diags} shows the charged-current neutrino-nucleon processes described by the model. The models also extend to anti-neutrino and neutral-current processes. In the case of missing a pion due to detector thresholds and/or pion interactions the neutrino energy is clearly biased by at least $E=m_\pi$.
@@ -582,7 +582,7 @@ The single pion production is described with the Rein-Sehgal model\cite{Rein_Seh
 
 The single pion production uncertainties were tuned to selected bubble chamber data from ANL\cite{ANL_CC1pi,ANL_NC1pi} and BNL\cite{BNL_CC1pi,BNL_CC1pi_isospin,BNL_NuInt02}. The parameter values were cross-checked with modern corrections\cite{ANL_BNL_corr} and nuclear data from MiniBooNE\cite{MB_CC1pip,MB_CC1pi0,MB_NC1pi0}, MINER$\nu$A\cite{MIN_CC1pi0,MIN_CC1pip,MIN_pion_2016} and K2K \cite{K2K_CC1pip} using NUISANCE\cite{NUISANCE}.
 
-\paragraph{Coherent scattering}
+\paragraph{Coherent Scattering}
 The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_Sehgal_coh}. This process has a small cross-section but occupies a very specific phase space: the very forward going, collinear lepton-pion, low $Q^2$ region. This is important since it has the same final state as single pion production. The interaction diagram is shown in \autoref{fig:coh_diags}.
 \begin{figure}[h]
 	\centering
@@ -630,7 +630,7 @@ The multi-pi/DIS uncertainties are inspired from results from MINOS \cite{minos_
 
 NC DIS events do not receive this systematic and is instead controlled by an overall normalisation parameter including numerous other NC interaction modes, explained further down.
 
-\paragraph{Other interactions}
+\paragraph{Other Interactions}
 The interaction modes with smaller cross-sections and/or small effects on 0$\pi$ selections are controlled by normalisation parameters.
 
 The NC1$\gamma$ interaction---modelled with the Rein-Sehgal single-pion model with replaced branching fractions---is important because the $\gamma \rightarrow e^+ e^-$ decay may mimic \nue appearance signal although the cross-section is very small $\mathcal{O}(10^{-40}) \text{ cm}^2/\text{nucleon}$\cite{thesis_pierre}. The prior weight is set to 200\% of nominal after comparing to a recent theory model\cite{nc1gamma}, and the prior uncertainty is conservative at 100\%.
@@ -683,7 +683,7 @@ An example of three spline parameters, comparing a third order polynomial \textt
 \label{fig:xsec_splines}
 \end{figure}
 
-\paragraph{Covariance matrix}
+\paragraph{Covariance Matrix}
 \autoref{fig:xsec_cov_matrix_prior} shows the final $\sqrt{\textbf{V}}$ covariance and correlation matrix. Only a few parameters are correlated in the prior covariance matrix: the 2p2h shape C and O parameters (+0.55), the single pion production parameters (-0.8 to 0.10), the \nue(\nuebar)/\numu(\numubar) (-0.71), the CC coherent parameters (+1.00), and the pion FSI parameters (-1.00 to 1.00).
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}

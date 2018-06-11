@@ -1,4 +1,4 @@
-\section{Building and varying the Monte-Carlo prediction}
+\section{Building the Monte-Carlo Prediction}
 T2K has been taking data since 2010 with steadily increasing beam power and protons on target (POT), and is currently on ``run 9'', shown in \autoref{fig:t2k_pot}. This analysis uses data from runs 2 to 6: run 1 was omitted because parts of the detector was uninstrumented (and is only $\sim4\%$ of the run 1-6 data), and run 7 and beyond had not gone through full Monte-Carlo production until summer 2017. 
 
 The overall efficiency of ND280 in runs 2 to 6 was approximately 85\%, collecting 9.7E20 POT out of 12E20 POT. The good POT\footnote{Defined as POT collected when all ND280 sub-detectors and global DAQ are flagged online} per run used in this analysis is listed in \autoref{tab:pot_2017}.
@@ -103,7 +103,7 @@ The effect of each weight on the MC sample statistics is shown in \autoref{tab:e
 	\label{tab:eventrate_mach3}
 \end{sidewaystable}
 
-\section{Nominal model}
+\section{Nominal Model Prediction}
 \label{sec:nom_model}
 The rates for the data and nominal model with all mentioned Monte-Carlo scalings and selections are presented in \autoref{tab:event_rates_2017}. We note that generally the Monte-Carlo rates of the CC0$\pi$ and CC1Track are underestimated (2-3\%) , CC$1\pi$ is overestimated (6-11\%) and CCOther is under-estimated (5-15\%). \numubar selections except FGD2 CC1Track \numubar are overestimated by 5\%, with FGD1 being 2\%. The \numu in RHC selections are mildly underestimated. The rates across the FGDs are consistent for all selections.
 \begin{table}[h]
@@ -141,7 +141,6 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \end{table}
 
 \autoref{fig:nominal2D_FGD1numu} shows the \pmu \cosmu distributions and their ratios for FGD1, normalised to bin width. For FGD1 CC0$\pi$, the largest Data/MC discrepancies are in the very forward region around 500-1000 MeV/c, with some areas of low cross-section  (e.g. \pmu 2-5 GeV/c, \cosmu 0.85-0.9) mismodelled. The lines of constant $Q^2$ suggest high $Q^2$ behaviour is over-estimated in Monte-Carlo, whereas for $0.05 < Q^2 < 0.15 \text{ GeV}^2$ it is under-estimated. For CC1$\pi$ the most forward-goign bins are almost consistently under-estimated. As for CC0$\pi$, the $Q^2 >0.1 \text{GeV}^2$ region is over-estimated, but it is less clear at lower $Q^2$. For CCOther there is a band-like behaviour in $Q^2$ going from over estimation to underestimation up until $Q^2\sim0.1\text{ GeV}^2$. The high-momentum areas are mostly under-estimated in Monte-Carlo. It is also clear that ND280 are dominated by $0.05 < Q^2 < 0.30\text{ GeV}^2$ events.
-
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=1]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
@@ -178,7 +177,6 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \end{figure}
 
 \autoref{fig:nominal2D_FGD2numu} shows the same \numu selections for FGD2. The CC0$\pi$ selection is very similar to the FGD1 CC0$\pi$ selection, whereas the CC1$\pi$ selection appears better modelled for FGD2 than FGD1, although the opposite is true for CCOther.
-
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=10]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
@@ -215,8 +213,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \end{figure}
 
 \autoref{fig:nominal2D_FGD12numubar} shows the \pmu \cosmu for the \numubar selection, which again sees mostly consistent behaviour for the two FGDs for both the 1Track and NTracks selection. The event are mostly underestimated at low \pmu and become overestimated as we go up in \cosmu. The $Q^2$ bands appear present, notably in the 1 Track selections for $0.05 < Q^2 < 0.10 \text{ GeV}^2$.
-
-\begin{figure}
+\begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=19]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 	\end{subfigure}
@@ -261,8 +258,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \end{figure}
 
 \autoref{fig:nominal2D_FGD12numubar} shows the \numu in RHC selections, which generally populate higher \pmu due to the \numu flux in RHC mode. The samples are also statistically small so are more prone to larger statistical fluctuations. The CC1Track selection appears to have a pattern of underestimation at low \pmu, following the $Q^2$ band to high \pmu and high \cosmu.
-
-\begin{figure}
+\begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=31]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 	\end{subfigure}
@@ -306,11 +302,8 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \label{fig:nominal2D_FGD12numurhc}
 \end{figure}
 
-\red{fix z axis is \autoref{fig:nominal2D_FGD12numurhc}}
-
-\autoref{fig:nominal1D_pmu} shows the projections of the 2D distributions onto \pmu, where we note generally good modelling. The CC0$\pi$ selections have a clear oscillation from underprediction to overprediction for FGD1 and FGD2 in $0 < p_\mu < 1 \text{ GeV}$. The FGD1 \numubar CC1Track selection appears to show similar behaviour although without the under-prediction at low \pmu, although FGD2 \numu CC1Track does not. The CC1$\pi$ selection shows a nearly consistent over-estimation of $\sim10\%$ in every bin for both FGDs. The CCOther selection is instead underestimated at the event distribution peak, into the tail ($0.5<p_\mu <1.5\text{ GeV}$). The CCNtrack distributions consistent with good modelling due to their large statistical errors.
-
-\begin{figure}
+\autoref{fig:nominal1D_pmu} shows the projections of the 2D distributions onto \pmu, where we note generally good modelling. The CC0$\pi$ selections have a clear oscillation from under-prediction to overprediction for FGD1 and FGD2 in $0 < p_\mu < 1 \text{ GeV}$. The FGD1 \numubar CC1Track selection appears to show similar behaviour although without the under-prediction at low \pmu, although FGD2 \numu CC1Track does not. The CC1$\pi$ selection shows a nearly consistent over-estimation of $\sim10\%$ in every bin for both FGDs. The CCOther selection is instead underestimated at the event distribution peak, into the tail ($0.5<p_\mu <1.5\text{ GeV}$). The CCNtrack distributions consistent with good modelling due to their large statistical errors.
+\begin{figure}[h]
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=43]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 \end{subfigure}
@@ -323,7 +316,6 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=48]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 \end{subfigure}
-
 
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=50]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
@@ -365,8 +357,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \end{figure}
 
 \autoref{fig:nominal1D_cosmu} shows the projections of the 2D distributions onto \cosmu. Again we see consistency across the FGDs, with CC0$\pi$ showing another oscillatory behaviour, going from underestimation at low \cosmu to a good prediction until $\cos \theta_\mu \sim 0.93$, in which the underestimation is back, similar in magnitude. For CC1$\pi$ we see a similar oscillation but shifted by 10\% over-estimation. For \numu CCOther we have less consistency, although the bin above $\cos \theta_\mu = 0.93$ are all underestimated, and for FGD2 this continues as \cosmu decreases. The most forward bin appears to be good modelled for all \numu samples except FGD2 CCOther. For the RHC 1 track selections, we note FGD2 looking similar to the CC0$\pi$ selection, where FGD1 less so. The NTracks selections look similar for FGD1 and FGD2 with overestimates at high \cosmu. For RHC \numu selections, the NTrack selections appear more consistent than 1 track, with underestimates in the highest \cosmu bin. The 1 track appears consistently underestimated in $0.9 < \cos\theta_\mu < 1$.
-
-\begin{figure}
+\begin{figure}[h]
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=43]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 	\end{subfigure}
@@ -421,7 +412,6 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 \end{figure}
 
 The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autoref{fig:nominal1D_cosmu} after applying the weights scaling show no noticeable differences to the raw MC distributions. Looking at the mode populations in \autoref{tab:nominal_mode_afterscale}, the selections contain $>50\%$ of the events they targeted. We see a 20\% contribution of nucleon interaction level CC$1\pi$ events in CC0$\pi$, which come from pion final state interactions, the pions falling below threshold, and misreconstruction.
-
 \begin{table}[h]
 	\centering
   \begin{tabular}{l | c c c c c c c }
@@ -456,18 +446,17 @@ The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autor
 \label{tab:nominal_mode_afterscale}
 \end{table}
 
-\section{Asimov results}
+\section{Fitting Asimov Data}
 \label{sec:asimov}
 To internally validate the implementation and evaluate the effectiveness of the fitting framework we perform studies in which the nominal Monte-Carlo predictions presented in \autoref{sec:nom_model} are set to be the data.
 
-\subsection{Log-likelihood scan}
+\subsection{Log-Likelihood Scans}
 \label{sec:llh_scan}
 For the log-likelihood scans each parameter is set to the values recommended by the priors: the same parameter set which produces the nominal model in \autoref{sec:nom_model}. The parameters are then varied one at a time from -2$\sigma$ to +2$\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$, where $\mathbf{V}_{i,i}$ is the $i^{\text{th}}$ diagonal entry of each group of parameters' covariance matrix\footnote{So the bounds are unaffected by the correlation when getting the lower and upper bounds of the scan}. The minimum of the test-statistic occurs when the parameter is equal to the prior, as this sets prior constraint term to zero and produces a MC sample which perfectly matches the Asimov set, giving a zero contribution from the sample too. When a parameter has been scanned it is reset to the prior value. It is expected that most parameters produces a Gaussian response since the prior probability density function is set to such, and few parameters produce asymmetric responses in the event rate of a given bin\footnote{Although there are some, mentioned later.}.
 
 The scan splits the likelihood into each of the individual contributions presented in \autoref{eq:test_stat} and shows the total likelihood. For any given likelihood scan, there should only be contributions from the likelihood terms that are being varied: the sample likelihood (since the MC event $\lambda=\lambda(\vec{b},\vec{x},\vec{d})$) and the group of systematics which the parameter belongs to (e.g. the flux likelihood should vary when any of the $\vec{b}$ parameters are varied).
 
 In practice, the estimated constraints from the one dimensional log-likelihood are not accurate due to the large correlations in the beam and ND280 parameters in the prior covariance matrices; hence $\chi^2\sim1$ does not indicate the typical $1\sigma$ sensitivity. For sensitivity estimates, it is more appropriate to vary the correlated parameters simultaneously, as is done in the Asimov fit presented later in \autoref{sec:asimov_fit}. The likelihood scans are considered more of a closure test to inspect implementation.
-
 \begin{figure}[h]
 	\centering
 \begin{subfigure}[t]{0.32\textwidth}
@@ -569,7 +558,7 @@ As expected, the ND280 parameters covering high statistics samples and regions o
 
 Comparing top and bottom panels, the responses for equivalent FGD1 and FGD2 parameters are compatible and have similar strength.
 
-\subsection{Parameter variations}
+\subsection{Parameter Variations}
 \label{sec:sigmavar}
 To finally inspect the effects of the parameterisation we vary the parameters one at a time over one unit of $\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$ as before, now looking at the impact on the event distributions for each selection.
 
@@ -758,7 +747,7 @@ The impact on the \pmu \cosmu distributions for each sample and their respective
 %Largest difference for FGD2_NuMuBkg_CCQE_in_AntiNu_Mode_: 10.5504 (FGD2_NuMuBkg_CCQE_in_AntiNu_Mode__ndd_476)
 %Largest difference for FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode: 15.3709 (FGD2_NuMuBkg_CCnQE_in_AntiNu_Mode_ndd_554)
 
-\subsection{Prior predictive spectrum}
+\subsection{Prior Predictive Spectrum}
 \label{sec:Asimov_prior}
 The first statistical test of the Asimov is to investigate the prior predictive spectrum and resulting p-values. This is meant to reflect the compatibility of the prior with the Asimov data. The p-value is expected to be about 50\% since we're throwing the parameters either side of the central value which created the Asimov data set. However, we are performing correlated throws, so offsets from 50\% is to be expected. The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay around the expected value of 50\% as previously asserted.
 
@@ -807,7 +796,7 @@ The first statistical test of the Asimov is to investigate the prior predictive 
 	\label{tab:asimov_prior_pred}
 \end{table}
 
-\subsection{Asimov fit}
+\subsection{Fitting to Asimov Data}
 \label{sec:asimov_fit}
 After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain. \autoref{tab:asimov_mcmc_versions} shows the different chains completed for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
 \begin{table}[h]
@@ -923,7 +912,7 @@ We also note improved constraints on all flux parameters from the prior uncertai
 	\label{fig:xsec_asimov}
 \end{figure}
 
-\subsubsection{Asimov fit, flux parameters only}
+\subsubsection{Fitting to Asimov Data, Varying Only Flux Parameters}
 To investigate if correlations and marginalisation are to blame for the ``bias'' in \autoref{sec:asimov_fit}, a fit to the Asimov data is done keeping the cross-section and ND280 parameters fixed at their Asimov values, and only the flux parameters are varied. \autoref{fig:flux_asimov_nd280_fluxonly} shows the parameter values for the ND280 flux parameters using different methods of obtaining the central values. The biases have vanished for all methods, and we conclude that the Asimov parameters are being correctly found when flux parameters alone are being fit.
 
 \begin{figure}[h]
@@ -961,7 +950,7 @@ To investigate if correlations and marginalisation are to blame for the ``bias''
 	\label{fig:flux_asimov_nd280_fluxonly}
 \end{figure}
 
-\subsubsection{Marginalisation effects}
+\subsubsection{Marginalisation Effects}
 \label{sec:marginalisation}
 In \autoref{sec:asimov_fit} it was noted that many parameters appeared ``biased'' in their one-dimensional marginal posterior not agreeing with the input Asimov value. This is expected for parameters which correlate strongly with non-Gaussian parameters, of which the fit contains some. Here we investigate this further by looking at the two-dimensional marginal posterior for a few correlated parameters and comparing them to the one-dimensional marginal posterior. For the central value parameter estimates we use the highest posterior density point. We look at three selected parameters that showed bias: $p_F^{C}$, 2p2h norm $\bar{\nu}$ and the 30th beam parameter (``$b_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV).
 
@@ -1014,7 +1003,7 @@ The 30th beam parameter (``$b\_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 G
 \end{figure}
 In conclusion, the biases present in the Asmiov fit study seems likely to be due to marginlisation effects over parameters that are non-Gaussian, have hard cut-offs or are poorly constrained in the fit. These patterns are expected to arise again when fitting against real data.
 
-\subsection{Posterior predictive spectrum}
+\subsection{Posterior Predictive Spectrum}
 \label{sec:asimov_pospred}
 The next statistical closure test we perform on the Asimov data fit is to calculate the posterior predictive spectra and p-values. 
 
@@ -1092,7 +1081,7 @@ The result is shown in \autoref{fig:posterior_predictive_asimov}, and as expecte
 \label{fig:posterior_predictive_asimov}
 \end{figure}
 
-\subsection{Covariance matrix}
+\subsection{Covariance Matrix from the Asimov Fit}
 \label{sec:covariance_asimov}
 The last consistency check is to inspect the covariance matrix after the fitting to the Asimov data. The expected outcome is heavily correlated flux parameters---roughly retaining the covariances from the input covariance matrix---, interaction parameters correlating internally for parameters that affect the same modes and topologies (e.g. $M_A^{QE}$ and BeRPA), and correlations between the flux parameters and cross-section parameters, especially for normalisation parameters.
 

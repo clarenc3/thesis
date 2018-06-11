@@ -1,4 +1,4 @@
-\chapter{Alternative studies, 2017}
+\chapter{Alternative Studies, 2017 Analysis}
 \label{sec:data_alt_studies}
 The largest concern for the analysis presented was the poor posterior predictive p-value, driven primarily by the modelling of the FGD1 CCOther selection. A number of compatibility studies were made to study the effects of this and various other model choices, e.g. using BeRPA and 2p2h shape.
 
@@ -6,7 +6,7 @@ For the alternative studies that had the largest effect on the ND280 fit, we pro
 
 The procedure mimics that of the posterior predictive method, in which MCMC steps are randomly selected after burn-in to give a parameter set $\vec{x}$, used to reweight the Monte-Carlo prediction which is filled in a two-dimensional histogram ($N_{toys}$ vs $E_{rec}$ here). A Gaussian is then fit to the bin-by-bin distributions and the mean and rms is extracted and taken as the central value and 1$\sigma$.
 
-\section{Neutrino vs anti-neutrino}
+\section{Neutrino vs Anti-Neutrino}
 The data-sets used for the full fit (runs 2 to 6) spanned neutrino (runs 2 to 4) and anti-neutrino runs (runs 5 to 6), as shown in  \autoref{tab:pot_2017}. As seen in the table, the FHC/RHC ratio is roughly 1.5 and looking at \autoref{tab:event_rates_2017} the FHC/RHC event rate ratio is 3.4. Hence the full run 2 to 6 fit is dominated by FHC running and hence by neutrino rather than anti-neutrino interactions.
 
 To investigate the compatibility between neutrino and anti-neutrino data at T2K, we perform data fits to run 2 to 4 data and to run 5 to 6 data separately, comparing results to the full fit. Due to the different event rates we expect larger constraints on parameters from the FHC data (run 2 to 4) than the RHC data (run 5 to 6), and the overall constraint from the full fit to come primarily from the FHC data. 
@@ -191,7 +191,7 @@ The FGD1 vs FGD2 fit saw numerous difference in parameters: the high energy flux
 	\label{fig:sk_fgd1vsfgd2}
 \end{figure}
 
-\section{Excluding FGD1 CCOther}
+\section{Excluding the FGD1 CCOther Selection}
 The data fit showed a generally good description of the ND280 selections with acceptable p-values and best-fit test-statistics for all but FGD1 CCOther. Here we investigate the impact of the sample on the overall fit with the concern that if some parameterisation of systematics has gone awry it may produce erroneous parameter results propagated to SK. 
 
 The ND280 flux parameters in \autoref{fig:flux_data_nd280_nofgd1ccoth} are almost identical to the full 2017 fit and we note barely any differences: the largest change is 0.015 in the highest $E_\nu$ normalisation of FHC \numu.
@@ -312,7 +312,7 @@ Finally we recalculate the sample-by-sample p-values in \autoref{tab:data_post_p
 	\label{tab:data_post_pvalue_nofgd1ccother}
 \end{table}
 
-\section{2015-like study}
+\section{Using a 2015-like Model}
 The 2017 oscillation analysis saw numerous updates to the cross-section model which attempted to provide freedom to nuclear effects such as multi-nucleon interactions and RPA corrections. Ideally, the flux and interaction model is moving closer towards reality than being an ``effective'' model, being able to only describe ND280-like detectors in a flux similar to that at ND280. 
 
 In this section we compare the parameter values from the 2017 analysis to a modified 2017 model made to resemble that of 2015 \cite{t2k_2015}. In 2015 there was no freedom to change the 2p2h shape or the RPA correction, which was at the time thought to be a weakness in the analysis. The 2p2h normalisation were applied, albeit in a different fashion where 2p2h norm $\bar{\nu}$ was applied multiplicatively to the 2p2h norm $\nu$ weight for $\bar{\nu}$ 2p2h events, effectively correlating the parameters. The 2p2h normalisation was also separated for Carbon and Oxygen, but were found to be the same after the fit. For the 2017 analysis these parameters are uncorrelated. The priors on the single pion parameters changed slightly too, but overall only shifted central values by small amounts and gave larger uncertainties on the prior.
@@ -428,7 +428,7 @@ A straight-forward implementation of the 2015 cross-section model is therefore t
 	\label{fig:xsec_data_2015like}
 \end{figure}
 
-\paragraph{BeRPA or 2p2h shape fixed fit}
+\paragraph{A Model with BeRPA and 2p2h Shape Fixed}
 From the initial likelihood scans and 1$\sigma$ variations to the Asimov data set in \autoref{sec:llh_scan} and \autoref{sec:sigmavar}, it is expected that the ``2015-like'' quality of keeping BeRPA and 2p2h shape parameters fixed comes from the BeRPA variation. But both BeRPA and 2p2h shape are pulled away from the nominal correction, which the scans and parameter variations were centralised on. Two additional MCMCs were run on the data with variations of the 2015-like cross-section model: fixing the BeRPA parameters at nominal and leaving 2p2h shape free, and vice versa. 
 
 \autoref{fig:2015like_berpa_2p2h_comp_flux} shows the flux parameters after the fits for the different variations and confirms suspicions that the BeRPA parameters are causing the shift in flux parameters. Fixing 2p2h shape to their nominal values has a minor impact on the flux parameters and narrowly replicates the 2015-like fit.
@@ -516,8 +516,7 @@ The 2015-like parameterisation fixed 2p2h shape and BeRPA to their prior values 
 	\label{fig:sk_2015like}
 \end{figure}
 
-
-\section{Prior on $M_{A}^{QE}$}
+\section{Invoking a Prior on $M_{A}^{QE}$}
 In the 2017 data fit it was decided to keep the flat prior on $M_A^{QE}$. This was justified by wanting a conservative CCQE model with large degrees of freedom. There is also the historical ``MiniBooNE $M_A^{QE}$ puzzle'', in which fits to MiniBooNE CCQE data inflated $M_A^{QE}$ to 1.3-1.6 GeV from the bubble chamber value of $\sim1.0\text{ GeV}$. Fits to MiniBooNE and MINERvA ``CCQE'' data are further complicated by different signal definitions at the two experiments (e.g. subtraction of pionless delta decay) and a questionable model dependence\cite{ccqe_tuning}. However, now that a detailed nuclear model has been implemented for the CCQE/CC0$\pi$ model, $M_A^{QE}$ is feasibly a neutrino-nucleon parameter (i.e. not an effective parameter in the nuclear environment), and can be constrained from neutrino-nucleon scattering data.
 
 Fits were done of the NEUT generator's CCQE model with the NUISANCE package to ANL\cite{ANL_CCQE1,ANL_CCQE2} and BNL\cite{BNL_CCQE} CCQE data in $E_\nu$ and $Q^2$ using NUISANCE\cite{NUISANCE}, finding $M_A^{QE}=1.03\pm0.04\text{ GeV}$ in agreement with literature\cite{maqe_fit}. This result was then propagated into the analysis in the interaction parameter covariance matrix. In light of the data fit presented in \autoref{sec:datafit}---in which $M_A^{QE}=1.12\pm0.07\text{ GeV}$, right between the bubble chamber prior and the nominal value in NEUT---a moderate effect is expected.
@@ -578,7 +577,7 @@ The interaction parameters for the two $M_A^{QE}$ priors are found in \autoref{f
 
 In summary, the prior on $M_A^{QE}$ has a small effect on the parameter values propagated to the oscillation analysers.
 
-\section{Flat pion priors}
+\section{A Model with Flat Single Pion Production Priors}
 Similar to the CCQE/CC0$\pi$ cross-section modelling, there are concerns that the neutrino-nucleon parameters in single pion production are absorbing unmodelled nuclear effects, effectively turning the model ``unnatural'': the post-fit model describes ND280 data well but no longer does so for bubble chamber data.
 
 The CC0$\pi$ modelling has improved drastically over recent years with multi-nucleon effects\cite{nieves1,nieves2}, spectral function calculations \cite{benhar}, initial state models \cite{lfg} being developed. However, few models have extended into the ``delta-region'', in which the $\Delta$ baryon decays to produce a pion-nucleon state, a large contributor to the 1$\pi$ topology at ND280.
