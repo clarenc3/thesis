@@ -16,7 +16,6 @@ which conditions on the full model space in the denominator. The $P(D|\vec{\thet
 \end{equation}
 
 or more conveniently in the logarithmic space,
-
 \begin{equation}
 \label{eq:test_stat}
 \begin{split}
@@ -59,6 +58,13 @@ This analysis uses the well established Metropolis-Hastings algorithm\cite{metro
 	\item \textbf{Repeat}: Repeat step proposal
 \end{itemize}
 Importantly, the Metropolis-Hastings algorithm will always accept steps in the direction of higher probability, but also accepts steps with lower probabilities. Thereby an adequately explored MCMC does not suffer from local minima and scales relatively well with increasing dimensionality. However, after $N$ steps there is no guarantee that the posterior has been adequately sampled and the parameters have converged. There is general guidance on how big $N$ should be, although literature recommends running for as long as possible\cite{mcmc_handbook}.
+
+\begin{figure}[h]
+	\includegraphics[width=0.6\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/corr_maqe_berpab}
+	\caption{Evolution of two correlated interaction parameters with MCMC step for a fit to data at ND280}
+	\label{fig:corr_evo}
+\end{figure}
+\autoref{fig:corr_evo} shows the evolution of two correlated interaction parameters, detailed in \autoref{subsec:syst_xsec}. The MCMC initially starts at $\{M_A^{QE}, \text{BeRPA B}\} \sim \{1.0, 1.1\}$ but the region is disfavoured by the likelihood. After only 1,000 steps the BeRPA B parameter has roughly reached stationarity, whereas $M_A^{QE}$ is exploring up to $\sim20,000$ steps.
 
 Since separate MCMC are statistically independent, they can be combined when the stationary distribution is reached. Hence running MCMC is often done in parallel: for ND280-only fits we often use at least three, whereas full ND280+SK oscillation fits run several hundred.
 
