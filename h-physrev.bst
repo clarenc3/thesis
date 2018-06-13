@@ -218,12 +218,11 @@ FUNCTION {format.edited}
 if$
 }
 FUNCTION {format.title}
-{
+{ title
 %{ title empty$
 %{ "" }
 %{ title "t" change.case$ }
 %if$
-title
 }
 FUNCTION {n.dashify}
 { 't :=
