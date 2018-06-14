@@ -1,6 +1,5 @@
 \chapter{Neutrino Physics}
 \label{chap:theory}
-
 \section{The Discoveries of the Neutrinos}
 Neutrinos were initially proposed as a solution to the apparent violation of the conservation of four and angular momentum in James Chadwick measurements of the beta decay in 1932\cite{Chadwick1,Chadwick2}. Inspired by Wolfgang Pauli's new elementary particle ``the neutron'' (which had characteristics of what we today call a nucleon and a neutrino)\cite{pauli_1933}, Enrico Fermi built his theory of $\beta$-decay\cite{fermi_1934}, in which the observable process $n \rightarrow p + e^-$ is always accompanied by an invisible four-momentum carrier, the electron anti-neutrino.
 
@@ -11,6 +10,14 @@ The field quickly developed, and in 1962 Lederman, Schwartz, Steinberger and oth
 When the third charged lepton, the $\tau$, was discovered at SLAC's $e^+e^-$ accelerator in 1975\cite{tau_disc}, the search for its neutrino partner started. Its existence was already hinted at in $\tau$ decays, but was ultimately discovered at DONUT\cite{tau_nu_disc} in 2000. The discovery of the $\nu_\tau$ and the three neutrino flavours was confirmed by $Z \rightarrow l^+ l^-$ decays at LEP and SLAC\cite{lep}, which found the number of active neutrino flavours, assuming the Standard Model, as $N_\nu = 2.9840\pm0.0082$. This has also been confirmed by cosmological data from Planck and others\cite{planck}, $N_\text{eff} = 3.04\pm0.18$\footnote{$N_\text{eff}=3.0\pm0.4$ and $\sum m_\nu < 0.22 \text{ eV}$ when varying both $N_\text{eff}$ and $\sum m_\nu$.}.
 
 \section{Neutrino Oscillations}
+\label{sec:theory:osc}
+This thesis could largely proceed without mentioning neutrino oscillations, Two-flavour model, See-saw model?
+
+\section{Neutrino Interactions}
+\label{sec:theory:int}
+Invoking ideas from electron scattering
+
+\section{Experimental Overview}
 Neutrino oscillations is today an established physics phenomena, cemented by Kajita-san and Art McDonald receiving the Nobel Prize in Physics in 2015. This section briefly introduce neutrino oscillation experiments and gives an overview
 
 \subsection{Solar Neutrinos}
@@ -45,6 +52,8 @@ The Sudbury Neutrino Observatory (SNO) put the nail in the coffin in 2002\cite{s
 
 Additionally, the low threshold, low background, Borexino experiment has detected solar neutrinos from the $^{8}\text{B}$, $^{7}\text{Be}$, $pep$, CNO and $pp$ processes\cite{borexino_summary}. The next-generation SNO experiment, SNO+, aims to confirm and improve these measurements, and make detailed measurements of the MSW effect, solar metallicty and luminosity.
 
+Although the solar neutrino oscillation parameters $\Delta m^2_{21}$ and $\theta_{21}$ are considered well-constrained, there is $\sim 2\sigma$ tension on $\Delta m^2_{21}$ between SK+SNO (which are compatible), and the reactor anti-neutrino experiment, KamLAND\cite{m2_tension}.
+
 \subsection{Atmospheric Neutrinos}
 Atmospheric neutrinos are emitted when cosmic rays interact with nuclei in the earth's atmosphere, producing mesons which decay into neutrinos, amongst others. The primary decay is the pion decay,
 \begin{gather*}
@@ -75,24 +84,40 @@ Atmospheric neutrino observatories after the mid 2000s have focussed on measurin
 \end{figure}
 
 \subsection{Accelerator Neutrinos}
-Neutrinos from accelerators are similar to atmospheric neutrinos in energy, baseline and production mechanism. Generally, these neutrinos are born from proton beam impinging on targets, producing a flurry of mesons, which decay into neutrinos amongst others. The main advantage over using atmospheric neutrinos is the relatively precise tuning of the neutrino flux which enables specific $L/E$ to be selected. The disadvantage is the reduced flux, generally reducing the baseline to a few 100 km and the impact of the matter effect.
+Accelerator neutrinos are similar to atmospheric neutrinos in energy, baseline and production mechanism. The neutrinos are made by impinging protons from accelerators on targets, producing a flurry of mesons which decay into neutrinos, amongst others. Experiments often have the ability to deflect and/or focus mesons after the target, enabling sign and thus $\nu_\mu$ vs $\bar{\nu_\mu}$ selection. In contrast to atmospheric, accelerator neutrinos are primarily ($\sim90\%$) muon flavoured.
 
-MINOS and K2K long baseline neutrinos
+The driver behind the accelerator programme was initially the atmospheric neutrino oscillations outlined above. Since the neutrino energy can be tuned in an accelerator, the oscillation dip is bombarded by statistics. Furthermore, the dependence on the atmospheric flux simulation is removed\cite{lbnl_review}. The disadvantage is the reduced total flux at the far-detector, generally forcing the baseline to $L<1000\text{ km}$ which limits the impact of the matter effect. The majority of long baseline accelerator neutrino experiments include a near detector which samples the beam before any long baseline oscillations have taken place.
 
-OPERA and ICARUS $\nu_\tau$ appearance
+The short-baseline ($L\sim 1\text{ km}$) accelerator neutrino experiments, such as MiniBooNE\cite{mb_design}, MINER$\nu$A\cite{minerva_design}, and the upcoming SBND programme\cite{sbnd}, are generally intended to measure neutrino interactions and perform short baseline oscillation searches. They may also serve as neutrino beam monitors for other experiments. The interaction measurements are used to inform neutrino event generators\cite{neut,genie,NuWro}, aiding in reducing systematic uncertainties for neutrino cross-section and oscillation experiments.
 
-T2K long baseline $\nu_e$ appearance, NO$\nu$A
+The pioneering long-baseline ($L\sim 100-1000\text{ km}$) experiments MINOS\cite{minos_obs} and K2K\cite{k2k_obs} confirmed the atmospheric neutrino mixing in $\nu_\mu \rightarrow \nu_\mu$, finding compatible oscillation parameters. The searches for $\nu_\mu \rightarrow \nu_e$ were not statistically significant\cite{k2k_noobs,minos_disc}, and were discovered by the next generation experiments T2K\cite{t2k_disc} and NO$\nu$A\cite{nova_disc}, with the $\bar{\nu}_\mu \rightarrow \bar{\nu}_e$ oscillation hinted at by NO$\nu$A at Neutrino 2018\cite{nova_neutrino2018}. The Japanese experiments K2K and T2K have consistently used the 50,000 tonne water Cherenkov detector Super-Kamiokande\cite{superk} as their far detector, with plastic scintillator based near-detectors and a baseline of $L\sim250\text{ km}$ and $E\sim0.5-2\text{ GeV}$. Both MINOS and NO$\nu$A use(d) purpose-built matching near and far-detectors, allowing for many detector systematics to be reduced, with $L\sim700\text{ km}$ and $E\sim2-5\text{ GeV}$.
 
-NOvA $\bar{\nu}_e$ appearance
+In Europe, the OPERA\cite{opera} experiment was designed to look for the dominant $\nu_\mu \rightarrow \nu_\tau$ oscillation. The ICARUS\cite{icarus} experiment searched for $\nu_\mu\rightarrow\nu_e$ from steriles observed by LSND\cite{lsnd} and MiniBooNE\cite{miniboone_sterile}, which have been questioned in the community\cite{lsnd_refute}. The detection threshold for the charged current interaction $\nu_\tau + X \rightarrow \tau + X'$ is $E_\nu\sim 3.5\text{ GeV}$, so the neutrino beam from CERN to Gran Sasso (CNGS)\cite{cngs} was wide-band with $E_\nu = 10-25\text{ GeV}$. The $\tau$ detection required very fine granularity and OPERA used nuclear emulsions to accomplish this, and ICARUS pioneered the use of liquid argon TPCs in neutrino physics. OPERA claimed $\nu_\tau$ appearance\cite{opera_final_tau} at 6.1$\sigma$, and both OPERA and ICARUS found no evidence of sterile neutrinos\cite{icarus_lsnd,opera_lsnd}.
 
 \subsection{Reactor Anti-Neutrinos}
-KamLAND and reactor neutrinos
-Short baseline reactor neutrinos and theta 13
+Reactor neutrinos are formed in fission products in nuclear reactors, e.g. $^{231}\text{Th} \rightarrow ^{231}\text{Pa} + e^- + \bar{\nu}_e$ and $^{215}\text{Po} \rightarrow ^{211}\text{Pb} + e^- + \bar{\nu}_e$. The neutrino flux depends on the relative fission yields of the products, but generally have a similar energy to solar neutrinos, in the 1-10 MeV range, seen in \autoref{fig:reactor_flux}.
+\begin{figure}[h]
+	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/reactor_flux}
+	\caption{Reactor flux for the Japanese experimental fast reactor, JOYO. Figure from \cite{reactor_flux}.}
+	\label{fig:reactor_flux}
+\end{figure}
 
-\section{Neutrino Oscillations}
-\label{sec:theory:osc}
-This thesis could largely proceed without mentioning neutrino oscillations, Two-flavour model, See-saw model?
+They are exclusively detected by the IBD interaction, in which the $e^+ + e^- \rightarrow 2\gamma$ are measured in scintillator. Many experiments additionally dope or surround the scintillator with a high neutron capture element (e.g. $^{6}\text{Li}$ or $^{157}\text{Gd}$). In the case of Gd, this gives a prompt $2\gamma$ signal follwed by a $\sim30\mu\text{s}$ delayed $\gamma$ cascade with $E_\gamma^{tot}\sim8\text{ MeV}$, facsillitating signal-background separation. 
 
-\section{Neutrino Interactions}
-\label{sec:theory:int}
-Invoking ideas from electron scattering
+Similarly to accelerator neutrinos, the reactors can be split by baseline. Short baseline experiments with $L\sim1-2\text{ km}$ perform world-leading measurements of $\Delta m^2_{13}$ and $sin^2\theta_{13}$, and probing parts of the sterile neutrino spectrum. Daya Bay\cite{daya_bay_disc}, RENO\cite{reno_disc} and Double Chooz\cite{double_chooz_disc} all measured a relatively large $\sin^2 \theta_{13}$, enabling $\nu_e$ appearance to be found at long baseline neutrino experiments such as T2K and NO$\nu$A. The short baseline reactor results on $\sin^2\theta_{13}$ are often used in T2K oscillation analyses for increased sensitivity. A summary plot of the measured parameters by short baseline reactor and long baseline accelerator neutrino oscillation experiments is shown in \autoref{fig:13_sector}.
+\begin{figure}[h]
+	\includegraphics[width=0.5\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/reno_theta_dm13}
+	\caption{$\Delta m^2_{23}$ and $\sin^2 2\theta_{13}$ measurements from reactor (Daya Bay\cite{daya_bay}, RENO\cite{reno_new} and Double Chooz\cite{double_chooz_old}) and accelerator (T2K\cite{t2k_2015}, NO$\nu$A\cite{nova_2017} and MINOS\cite{minos_numu_nue}) neutrinos. Figure from \cite{reno_new}.}
+	\label{fig:13_sector}
+\end{figure}
+
+The only medium baseline ($L\sim50\text{ km}$) under construction is JUNO\cite{juno}. The RENO collaboration has proposed\cite{reno_50} building a far detector site for RENO, equivalent to JUNO, although groundbreaking has not yet commenced. The medium baseline aims to measure the neutrino mass ordering by separating the oscillations into fast and slow parts from $\Delta m^2_{23}$ and $\Delta m^2_{12}$, and improve measurements of $\sin^2 \theta_{12}$.
+
+KamLAND is the only long baseline $L\sim180\text{ km}$ reactor anti-neutrino experiment. It measured the $\bar{\nu}_e$ flux from 56 Japanese nuclear power reactors with good sensitivty to $\Delta m^2_{21}$, but less so to its sign due to the smaller matter effect. However, combining KamLAND with SNO and SK solar has excellent reduction on $\Delta m^2_{21}$ and $\tan^2\theta_{12}$, as shown in \autoref{fig:21_sector}. These results are used as priors in the T2K oscillation analyses.
+\begin{figure}[h]
+	\includegraphics[width=0.7\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/kamland_solar_comb}
+	\caption{$\Delta m^2_{21}$ and $\theta_{21}$ measurements from KamLAND, SNO and Super-Kamiokande (Solar). Figure from \cite{kamland_2011}.}
+	\label{fig:21_sector}
+\end{figure}
+
+Additionally, the short baseline reactors at $\sim1\text{ km}$ have measured excess at $E_\nu\sim5\text{ MeV}$\cite{double_chooz, daya_bay, reno}, which is currently unresolved. The culprit is claimed to be either poor neutrino flux modelling, or a sterile neutrino\cite{huber_neos,steriles}. As a result, very short baseline ($L\sim10-20\text{ m}$) experiments NEOS\cite{neos}, DANSS\cite{danss}, PROSPECT\cite{prospect}, STEREO\cite{stereo} and SoLi$\delta$\cite{solid} have looked for $\bar{\nu}_e$ disappearance and have not found evidence of a sterile signal and confirmed hints of a 5 MeV excess.
