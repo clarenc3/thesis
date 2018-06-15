@@ -61,212 +61,7 @@ In summary, the TPC pion PID requires that the track (with $p_{reco}<500\text{ M
 
 The only difference in the likelihood cuts from \autoref{sec:ND280:sel} is for the $\mu^+$ selection, which in \autoref{sec:numubar_sel} required $0.1 < \mathcal{L}_\mu < 0.7$. The upper bound at 0.7 was present to reject low energy $\mu^-$ from \numu RHC interactions, which was discarded for this analysis after it gave a 4\% increase in efficiency with negligible purity change. The $\mu^-$ criteria for the \numu in RHC selection did not change and still requires a MIP-like track with $0.1 < \mathcal{L}_\mu < 0.8$.
 
-Here we study the efficiencies and purities in the same way as \autoref{sec:ND280:sel}, using unweighted raw Monte-Carlo events.
-
-\subsection{\numu in FHC}
-Since the FHC selection is unchanged to the 2017 analysis, the efficiency and purities are very similar and here we only compare FGD1 CC0$\pi$ in 2018 to 2017 in \autoref{fig:fgd1_cc0pi_eff_2017_2018}, and refer to \autoref{tab:eff_pur_summary_2018} for the summary.
-\begin{figure}[h]
-	\centering
-	\caption*{2018 analysis}
-	\begin{subfigure}[t]{\textwidth}
-		\centering
-	\begin{subfigure}[t]{0.4\textwidth}
-		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{Efficiency}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.4\textwidth}
-		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{Purity}
-	\end{subfigure}
-\end{subfigure}
-
-	\begin{subfigure}[t]{\textwidth}
-		\centering
-		\caption*{2017 analysis}
-	\begin{subfigure}[t]{0.4\textwidth}
-	\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/selection/2017b_Diag_WithSelection}
-	\caption{Efficiency}
-\end{subfigure}
-\begin{subfigure}[t]{0.4\textwidth}
-	\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/selection/2017b_Diag_WithSelection}
-	\caption{Purity}
-\end{subfigure}
-\end{subfigure}
-\caption{FGD1 0$\pi$ efficiencies and purities for 2017 and 2018 analyses}
-\label{fig:fgd1_cc0pi_eff_2017_2018}
-\end{figure}
-
-\subsection{\numubar in RHC}
-The CC0$\pi$ RHC selections are much the same as the 2017 1Track selection, and as such the purity in \autoref{fig:numubar_cc0pi_topology_2018} is almost identical to \autoref{fig:ccnubar1trk_topology}. Both FGDs have similar purities and the largest contamination is right-sign single events in which the pion is missed, at about 9.5\%. The NC contribution is 5\% and the total wrong-sign contribution is $\sim5\%$, similar to the 1Trk selection. The difference comes primarily from the removed upper bound on the muon likelihood cut. Moving up in momentum, the purity reduces to about 60\% from 85\% at the event peak.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=13, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=19, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numubar CC0$\pi$ selection events' true event topology for FGD1 and FGD2 }
-	\label{fig:numubar_cc0pi_topology_2018}
-\end{figure}
-
-\autoref{fig:numubar_cc0pi_muon_2018} shows the muon tagging efficiency, which again is comparable to the 1Trk equivalent in \autoref{fig:ccnubar1trk_muon}. The largest mis-id comes from $\pi^+$ being reconstructed as the muon, and the wrong-sign contamination is small. At $\sim1.5\text{ GeV}$ we see the characteristic proton bump---which makes up 3\% of the total---in which the dE/dx of a proton is very similar to that of a muon, causing it to be the selected highest momentum positive track with a muon likelihood.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=14, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=20, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numubar CC0$\pi$ selection events' true lepton candidate for FGD1 and FGD2}
-	\label{fig:numubar_cc0pi_muon_2018}
-\end{figure}
-
-Moving to the 1$\pi$ \numubar selection, the purity is shown in \autoref{fig:numubar_cc1pi_topology_2018}. The \numubar RHC selection sees similar performance to the \numu FHC equivalent in \autoref{fig:cc1pi_topology}, reaching an overall purity of $50-54\%$, with FGD1 being the higher. The wrong-sign contamination is significant at 25-30\%, coming from a $\pi^+$ in a CC1$\pi^+$ or CC DIS event being reconstructed as the muon candidate, and the $\mu^-$ reconstructed as the $\pi^-$. The right-sign CCOther contamination is about 10\%, owing mostly to one or several missed $\pi$. We again see the CC0$\pi$ \numu peak at 1.5 GeV, where the proton (likely from a CCQE or 2p2h interaction) is reconstructed as the $\mu^+$.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=15, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=21, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numubar CC1$\pi$ selection events' true event topology for FGD1 and FGD2 }
-	\label{fig:numubar_cc1pi_topology_2018}
-\end{figure}
-
-\autoref{fig:numubar_cc1pi_muon_2018} shows the muon tagging efficiency, which in the event peak sits at 80\% and decreases to 50\% with increasing $p_{\text{reco}}$. Tagging the right-sign pion as the lepton candidate happens 20\% of the time, and protons at $p\sim1.5\text{ GeV}$ about 15\% of the time, making up a large fraction of mis-identification. However, the 1$\pi$ selection is still almost 10\% more efficient and pure than the old CCNTrack selection.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=16, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=22, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numubar CC1$\pi$ selection events' true lepton candidate for FGD1 and FGD2}
-	\label{fig:numubar_cc1pi_muon_2018}
-\end{figure}
-
-Finally \autoref{fig:numubar_ccOth_topology_2018} shows the purity of the \numubar CCOther selection, which collects all \numubar CC candidates that weren't classified as CC0$\pi$ or CC1$\pi$. As with the equivalent \numu selection, the sample suffers from low purity due to broken tracks and secondary interactions, leading to a mis-reconstructed number of pions in the event. The selection has an almost equal efficiency for \numubar CCOther events as it does for \numu CCOther events, and in FGD2 it's indeed more pure of wrong-sign events. It has a high NC contamination due to collecting high pion multiplicity events, causing a pion to be reconstructed as a muon in the TPC.  At low momentum, the purity is close to zero, being swamped by wrong-sign 0$\pi$ events in which the low momentum $\mu^-$ is identified as a $\mu^+$, owing to the changed likelihood cut which in the 2017 analysis was present to remove such events. The wrong-sign 0$\pi$ and 1$\pi$ contributions largely vanish above 500 MeV and the wrong sign component is almost exclusively \numu CCOther.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=17, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=23, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numubar CCOther selection events' true event topology for FGD1 and FGD2 }
-	\label{fig:numubar_ccOth_topology_2018}
-\end{figure}
-
-The muon tagging efficiency of the \numubar CCOther selection is shown in \autoref{fig:numubar_ccOth_muon_2018}, which echoes the conclusions above. The efficiency is below 50\% and has almost equal parts proton tagging and $\pi^+$ tagging as contaminants. The wrong sign tag happens primarily at low momentum, in which the charge is reconstructed in the magnetic field. The proton bump at 1.5 GeV is especially present in this selection.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=18, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=24, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numubar CCOther selection events' true lepton candidate for FGD1 and FGD2}
-	\label{fig:numubar_ccOth_muon_2018}
-\end{figure}
-
-\subsection{\numu in RHC}
-As with the \numubar CC0$\pi$ selection, the \numu RHC CC0$\pi$ selection is largely identical to the 1Track equivalent in the 2017 analysis. The purity in \autoref{fig:numurhc_cc0pi_topology_2018} is above 53\%, with large contamination from right-sign 1$\pi$ and Other interactions, and the wrong-sign background making up 8\%, slightly less than the 1Track case. The NC contamination is almost identical to the 1Track selection at 9\%. We note the purity above 600 MeV stabilises at about 60\%.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=25, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=31, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numu RHC CC0$\pi$ selection events' true event topology for FGD1 and FGD2 }
-	\label{fig:numurhc_cc0pi_topology_2018}
-\end{figure}
-
-The muon tagging efficiency is shown in \autoref{fig:numurhc_cc0pi_muon_2018}, where we note 90\% above 1 GeV. At the event peak the efficiency sits at 55\%, leading to overall 78\%. In and below the event peak the main contamination is from $\pi^-$ (13\%) and as we go down in momentum the wrong-sign contributions increase due to wrongly reconstructing the charge in the magnet. At low momentum the wrong-sign component is $\times10$ larger than the right-sign.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=26, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=32, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numu RHC CC0$\pi$ selection events' true lepton candidate for FGD1 and FGD2}
-	\label{fig:numurhc_cc0pi_muon_2018}
-\end{figure}
-
-The CC1$\pi$ purity is shown in \autoref{fig:numurhc_cc1pi_topology_2018}, where we again see a large wrong-sign contribution at low momentum, primarily from \numubar 1$\pi$ events. The purity is 43\% overall, and a meagre 20\% in the event peak. The right-sign CCOther amount is constant with momentum, making up almost 1/3 at higher momentum.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=27, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=33, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numu RHC CC1$\pi$ selection events' true event topology for FGD1 and FGD2 }
-	\label{fig:numurhc_cc1pi_topology_2018}
-\end{figure}
-
-The muon tagging efficiency in \autoref{fig:numurhc_cc1pi_muon_2018} performs similarly to the NTrack selection at 65\%. At the event peak the efficiency is barely 20\%--the rest split almost equally amongst $\pi^-$, $\pi^+$ and $\mu^+$---but increases steadily to 85\% at higher momentum, where to wrong-sign component vanishes. The total wrong-sign contribution is 12\% but is dominant at low momentum. The $\pi^-$ contribution is sizeable at 22\%, which dies off at higher momentum.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=28, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=34, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numu RHC CC1$\pi$ selection events' true lepton candidate for FGD1 and FGD2}
-	\label{fig:numurhc_cc1pi_muon_2018}
-\end{figure}
-
-The \numu RHC CCOther selection's purity seen in \autoref{fig:numurhc_ccOth_topology_2018} is relatively high compared to other CC Other selection; overall 61\%. At low momentum the NC contribution is the largest, which is also the largest background overall at 13\%. Interestingly, the right-sign 0$\pi$ selection contaminates the sample 10\% and is the second largest contamination. Since the sign selection looks for a negative track for \numu selections, the CC0$\pi$ contribution can not come from a proton track being the muon candidate, and must be broken tracks being reconstructed as multiple pions.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=29, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=35, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numu RHC CCOther selection events' true event topology for FGD1 and FGD2 }
-	\label{fig:numurhc_ccOth_topology_2018}
-\end{figure}
-
-The corresponding muon efficiency is shown in \autoref{fig:numurhc_ccOth_muon_2018}, where we see close to zero efficiency at low momentum. In this region the electron is the principal muon candidate, but dies down above 200 MeV. After that the $\pi^-$ is the only competing background at $\sim20\%$. The overall efficiency is 68\% and stabilises at 1 GeV, coinciding with the event distribution peak.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=30, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD1}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth,page=36, trim={0mm 0mm 0mm 9mm}, clip]{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_diagnostics}
-		\caption{FGD2}
-	\end{subfigure}
-	\caption{Breakdown of \numu RHC CCOther selection events' true lepton candidate for FGD1 and FGD2}
-	\label{fig:numurhc_ccOth_muon_2018}
-\end{figure}
-
-A summary of the 2018 analysis' selection efficiencies and purities is shown in \autoref{tab:eff_pur_summary_2018}.
+A summary of the 2018 analysis' selection efficiencies and purities is shown in \autoref{tab:eff_pur_summary_2018}. For details, see \autoref{chap:eff_2018}.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ l | c c }
@@ -497,20 +292,20 @@ As the anti-neutrino statistics increased, a systematic was included to account 
 Since the relative effect of the Coulomb shift is smaller at higher momentum, a correlated 3\% total (2\% on $\nu$, 1\% on $\bar{\nu}$ negatively correlated with each other) uncertainty on CC inclusive $\nu$ and $\bar{\nu}$ with $0.4 < E_\nu < 0.6 \text{ GeV}$ is applied.
 
 \paragraph{Covariance Matrix}
-The new covariance and correlation matrices for the interaction systematics are presented in \autoref{fig:xsec_cov_2018} and \autoref{fig:xsec_corr_2018}. As previously noted, the pion FSI parameters (upper right corner) are now fully correlated which gives rise to smaller overall pion FSI systematics. The new CC normalisation from uncertainties in the Coulomb correction is shown in the middle of the matrix.
+The new covariance and correlation matrices for the interaction systematics are presented in \autoref{fig:xsec_cov_corr_2018}. As previously noted, the pion FSI parameters (upper right corner) are now fully correlated which gives rise to smaller overall pion FSI systematics. The new CC normalisation from uncertainties in the Coulomb correction is shown in the middle of the matrix.
 \begin{figure}[h]
-	\includegraphics[width=0.7\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/niwg/xsec_covariance_2018a_NOMINAL_v11_xseccov}
-	\caption{$\sqrt{\text{Covariance}}$ for the interaction parameters in 2018}
-	\label{fig:xsec_cov_2018}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/niwg/xsec_covariance_2018a_NOMINAL_v11_xseccov}
+		\caption{$\sqrt{\text{Covariance}}$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 0mm}, clip]{figures/niwg/xsec_covariance_2018a_NOMINAL_v11_xseccov}
+		\caption{Correlation}
+	\end{subfigure}
+	\caption{Covariance and correlation matrix for the interaction parameter priors in the 2018 analysis}
+	\label{fig:xsec_cov_corr_2018}
 \end{figure}
 
-\begin{figure}[h]
-	\includegraphics[width=0.7\textwidth,page=2, trim={0mm 0mm 0mm 0mm}, clip]{figures/niwg/xsec_covariance_2018a_NOMINAL_v11_xseccov}
-	\caption{Correlation for the interaction parameters in 2018}
-	\label{fig:xsec_corr_2018}
-\end{figure}
-
-\clearpage
 \section{Nominal Model Prediction}
 Using the nominal model, applying the multiplicative nominal weights, the event rates in \autoref{tab:detailed_eventrate_2018} are obtained.
 
@@ -597,219 +392,9 @@ As expected from the large increase in POT detailed in \autoref{tab:pot_2018}, r
   \label{tab:detailed_eventrate_2018}
 \end{table}
 
-\autoref{fig:nominal2D_FGD1numu_2018} shows the data and nominal model prediction for the FGD1 FHC selections. We see in the restricted plotting region (excluding highest momentum and most backward bins, normalising to bin width), the data is consistently higher than the prediction. The CC0$\pi$ selection looks overestimated at higher momentum between \cosmu=0.8-0.95. We also see some clear underestimates along lines of constant $Q^2$, between 0.07 and 0.15 $\text{GeV}^2$. For the CC1$\pi$ selection we see a similar overestimate at high \pmu and \cosmu=0.8-0.95. For the CCOther selection we see a clear underestimate in almost all bins below $Q^2=0.2\text{ GeV}^2$. In general, the distributions are compatible and similar to the 2017 equivalents in \autoref{fig:nominal2D_FGD1numu}.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=1]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=2]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=3]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=4]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=5]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=6]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=7]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=8]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=9]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\caption{Data and nominal MC distributions and the Data/MC ratio for FGD1 FHC selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
-	\label{fig:nominal2D_FGD1numu_2018}
-\end{figure}
+Looking closer at the nominal distributions, we project onto \pmu and \cosmu separately and look at the mode contributions in the nominal model. The 2D \pmu \cosmu distributions are found in \autoref{chap:nominal_mc_2018}.
 
-\autoref{fig:nominal2D_FGD2numu_2018} shows the nominal FHC \numu distributions for FGD2, with very similar behaviour to the FGD1 distributions.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=10]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=11]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=12]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=13]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=14]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=15]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=16]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=17]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=18]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\caption{Data and nominal MC distributions and the Data/MC ratio for FGD2 FHC selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
-	\label{fig:nominal2D_FGD2numu_2018}
-\end{figure}
-
-\autoref{fig:nominal2D_FGD1numubar_2018} shows the first light for the new RHC CC0$\pi$, CC1$\pi$ and CCNTrack selections. The CC0$\pi$ selection is slightly over-estimated, but the nominal prediction looks more compatible with data than the FHC \numu distributions. The Data/MC ratio also doesn't appear to contain the same deficiency in $Q^2$. The CC1$\pi$ distribution is consistently underestimated in the most forward bin, and hints at an overestimation at low $Q^2$. The CCOther distribution looks similar to the FHC equivalents in that it is almost consistently underestimated.
-\begin{figure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=19]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=20]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=21]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=22]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=23]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=24]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=25]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=26]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=27]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\caption{Data and nominal MC distributions and the Data/MC ratio for FGD1 \numubar selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
-	\label{fig:nominal2D_FGD1numubar_2018}
-\end{figure}
-
-\autoref{fig:nominal2D_FGD2numubar_2018} shows the new RHC selections for FGD2. The CC0$\pi$ distribution is underestimated, in contrast to FGD1, and looks more similar to the FHC selections with patters of underestimation looking roughly constant in $Q^2$. The CC1$\pi$ distribution appears to underestimate in $Q^2$ rather than overestimate as was the case for FGD1. The CCOther distribution however largely looks compatible with the FGD1 case and is underestimated in general.
-\begin{figure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=28]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=29]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=30]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=31]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=32]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=33]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=34]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=35]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=36]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}	
-\caption{Data and nominal MC distributions and the Data/MC ratio for FGD2 \numubar selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
-\label{fig:nominal2D_FGD2numubar_2018}
-\end{figure}
-
-\autoref{fig:nominal2D_FGD1numurhc_2018} shows the new RHC \numu selections for FGD1. As expected, they are concentrated at higher $p_\mu$, owing to the neutrino parents producing neutrinos of higher $E_\nu$. The distributions are consistently underestimated, although the shapes are fairly well reproduced. The CC0$\pi$ distribution again looks underestimated in constant $Q^2$, similar to the FHC \numu and RHC \numubar selections. The CC1$\pi$ selection is also similar to the RHC \numubar equivalent and is underestimated at high \cosmu and high \pmu. The CCOther selection agrees well with the previous CCOther selections, being even more underestimated than for the others.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=37]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=38]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=39]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=40]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=41]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=42]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=43]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=44]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=45]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-\caption{Data and nominal MC distributions and the Data/MC ratio for FGD1 \numu RHC selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
-\label{fig:nominal2D_FGD1numurhc_2018}
-\end{figure}
-
-The FGD2 \numu RHC distributions in \autoref{fig:nominal2D_FGD2numurhc_2018} are similarly underestimated throughout. For CC0$\pi$ there is consistent underestimation at high \pmu and \cosmu, which agrees with the FGD1 distribution. The data appears shifted towards higher momentum to the prediction, and have a larger spread. The CC1$\pi$ selection is similarly patchy and is difficult to draw conclusions from. CCOther is consistent with FGD1, being mostly underestimated, although overestimated at low momentum.
-\begin{figure}[h]
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=46]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=47]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=48]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=49]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=50]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=51]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=52]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=53]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth,page=54]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-	\end{subfigure}
-	\caption{Data and nominal MC distributions and the Data/MC ratio for FGD2 \numu RHC selections. Lines of constant $Q^2_\text{reco}$ are shown. Bin content is normalised to bin width.}
-	\label{fig:nominal2D_FGD2numurhc_2018}
-\end{figure}
-
-Looking closer at the nominal distributions, we project onto \pmu and \cosmu separately and look at the mode contributions in the nominal model. The distributions for FGD1 FHC \numu selections are shown in \autoref{fig:nominal1D_pmu_fhc_2018}. For CC0$\pi$ we see the same behaviour as in 2017 (\autoref{fig:nominal1D_pmu}), with the low momentum on underestimated up until the event peak at 500 MeV, which after 1 GeV is mostly well modelled. The CC1$\pi$ distributions look marginally more consistent with data compared to 2017, but there is still a consistent overestimation in $0.5 < p_\mu < 1\text{ GeV}$, with a slight underestimation at the event peak. The CCOther distributions are again grossly underestimated throughout $p_\mu$ between 10 and 20\%. FGD2 looks particularly like a normalisation effect.
+The distributions for FGD1 FHC \numu selections are shown in \autoref{fig:nominal1D_pmu_fhc_2018}. For CC0$\pi$ we see the same behaviour as in 2017 (\autoref{fig:nominal1D_pmu}), with the low momentum on underestimated up until the event peak at 500 MeV, which after 1 GeV is mostly well modelled. The CC1$\pi$ distributions look marginally more consistent with data compared to 2017, but there is still a consistent overestimation in $0.5 < p_\mu < 1\text{ GeV}$, with a slight underestimation at the event peak. The CCOther distributions are again grossly underestimated throughout $p_\mu$ between 10 and 20\%. FGD2 looks particularly like a normalisation effect.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.20\textwidth}
 		\includegraphics[width=\textwidth,page=55]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
@@ -966,7 +551,7 @@ Finally the RHC \numu \cosmu projections are shown in \autoref{fig:nominal1D_cos
 	\label{fig:nominal1D_cosmu_rhc_numu_2018}
 \end{figure}
 
-Summarising the mode contributions for each selection, we look at \autoref{tab:nominal_mode_afterscale_2018}. The mode contributions are very similar to the 2017 results for FHC \numu selections. The RHC \numubar 0$\pi$ selection has 3\% less CCQE events, likely due to the change in the muon likelihood cut, and has a larger contamination of 1$\pi$, multi-$\pi$ and DIS events. The NC contribution is largest for the new RHC \numubar CCOther selections at 13.5\%. Generally, the selections perform satisfactorily at targeting the appropriate interaction modes, reaching above 55\% throughout.
+The summary of each mode contribution to the selections is shown in \autoref{tab:nominal_mode_afterscale_2018}. They are in general very similar to the 2017 results for FHC \numu selections. The RHC \numubar 0$\pi$ selection has 3\% less CCQE events, likely due to the change in the muon likelihood cut, and has a larger contamination of 1$\pi$, multi-$\pi$ and DIS events. The NC contribution is largest for the new RHC \numubar CCOther selections at 13.5\%. Generally, the selections perform satisfactorily at targeting the appropriate interaction modes, reaching above 55\% throughout.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c c c c c c }
@@ -1938,7 +1523,7 @@ The two detector parameterisations are mostly compatible, consistently within 1$
 
 \autoref{fig:berpa_weight_2018} shows how the BeRPA weight has changed relative the 2017 weight and the nominal Nieves RPA. The behaviour below $Q^2\sim0.4\text{ GeV}^2$ is similar to 2017, although at $Q^2=0.5\text{ GeV}^2$ the enhancement is much stronger. The BeRPA parameterisation dies off more similar to the nominal than in 2017. In general though, the nominal RPA weight is heavily modified in the fit.
 \begin{figure}[h]
-	\includegraphics[width=0.3\textwidth, trim={0mm 0mm 0mm 0mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merge_BeRPA}
+	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip]{figures/mach3/2018/data/2018a_MultiPi_Binningv6_NewCov_Data_merge_BeRPA}
 	\caption{BeRPA weight applied to CCQE events after the fit to data}
 	\label{fig:berpa_weight_2018}
 \end{figure}
@@ -3089,4 +2674,4 @@ The propagation to SK in $E_{rec}$ is shown in \autoref{fig:sk_2018_nd280param},
 	\label{fig:sk_2018_nd280param}
 \end{figure}
 
-In conclusion, the parameterisation of ND280 systematics is clearly an effect on oscillations at T2K. 
+In conclusion, the parameterisation of ND280 detector systematics has an effect on oscillations at T2K. The effect is mostly contained within the $1\sigma$ uncertainty from systematics, but should be improved upon.

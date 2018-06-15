@@ -429,46 +429,10 @@ The final covariance matrix is seen in \autoref{fig:nd280_cov}, where the majori
 \label{subsec:syst_xsec}
 The parameterisation of the interaction systematics is frequently updated in T2K analyses to account for new theoretical calculations. This includes nuclear in-medium effects such as RPA and 2p2h corrections\cite{nieves1,nieves2}, initial state models such as Local Fermi Gases \cite{lfg} and Spectral Functions \cite{benhar}, and parameter tunes of existing models\cite{ccqe_tuning}.
 
-The T2K and Super-K experiments both use the custom interaction library NEUT 5.3.3\cite{neut} as a primary generator, with cross-checks with GENIE\cite{genie} and NuWro\cite{NuWro}. Hence the interaction parameterisation deals with the models implemented into NEUT and are outlined here. The total cross-sections in $E_\nu$, $\sigma(E_\nu)$, for NEUT 5.3.3 are shown in \autoref{fig:neut_xsecs}.
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/NEUT_533_xsecs}
-		\caption{Charged current}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/NEUT_533_xsecs_NC}
-		\caption{Neutral current}
-	\end{subfigure}
-	\caption{Total cross-sections from the NEUT 5.3.3\cite{neut} neutrino interaction generator}
-	\label{fig:neut_xsecs}
-\end{figure}
-
-\autoref{fig:neut_xsecs} shows at T2K energies ($E_\nu\sim0.6\text{ GeV}$) the primary interaction mode is CCQE. Charged pion production becomes important at $E_\nu\sim1\text{ GeV}$, and multi-$\pi$ and DIS above $E_\nu\sim2.5\text{ GeV}$. Since this analysis aims to minimise systematics for oscillation analyses---which select the charged-current 0$\pi$ final state at SK---the 0$\pi$ systematics have the largest impact. Single pion production make up $15-20\%$ of the 0$\pi$ selection by missing pions in either reconstruction or losing them to pion final state interactions before the pion exits the nucleus.
-
-The neutrino interaction process is factorised into four parts: 1) A nucleon is simulated from a nuclear model and used as a target for the neutrino interaction and we boost into its rest-frame 2) The neutrino interacts off this nucleon which is now at rest, equivalent to a neutrino-nucleon interaction 3) The outgoing particles from the fundamental vertex are propagated through the nucleus with radiative corrections and final state interactions applied 4) The particles are boosted back into the lab frame.
+The T2K and Super-K experiments both use the custom interaction library NEUT 5.3.3\cite{neut} as a primary generator, with cross-checks with GENIE\cite{genie} and NuWro\cite{NuWro}. Hence the interaction parameterisation deals with the models implemented into NEUT and are outlined here. 
 
 \paragraph{CCQE and CC0$\pi$}
 The nominal model is generated with a Spectral Function from Benhar et al (SF) \cite{benhar} and a 2-particle-2-hole (2p2h) excitation \cite{nieves1,nieves2} for the CCQE/CC0$\pi$ model. An alternative model uses the Llewellyn-Smith model\cite{llewelyn-smith} with a dipole axial form factor and BBBA05 vector form factors \cite{bbba05} with a Smith-Moniz Relativistic Fermi Gas (RFG) \cite{Smith-Moniz}. 
-
-\autoref{fig:cc0pi_diag} shows some pseudo diagrams of the definition of the 0$\pi$, CCQE and one 2p2h process. The CC0$\pi$ signal definition does not include hadronic information, so the CCQE and 2p2h processes produce identical 0$\pi$ final states. Using CCQE energy reconstruction for 2p2h events would clearly bias $E_\nu$---as would be missing a pion in a single pion event due to thresholds or pion final state interaction.
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CC0pi}
-		\caption{CC0$\pi$}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CCQE}
-		\caption{CCQE}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/2p2h_possibly}
-		\caption{A 2p2h process}
-	\end{subfigure}
-	\caption{CC0$\pi$, CCQE and 2p2h pseudo-diagrams}
-	\label{fig:cc0pi_diag}
-\end{figure}
 
 When selecting the default CCQE model for T2K analyses, it was found\cite{ccqe_tuning} that the SF+2p2h model was inferior to the RFG+2p2h+RPA when describing external neutrino and anti-neutrino CCQE scattering data from MiniBooNE\cite{miniboone_nu_ccqe, miniboone_nubar_ccqe} and MINER$\nu$A \cite{minerva_nu_ccqe, minerva_nubar_ccqe}. Thus the simpler RFG model was chosen and a one-time weight is applied in \pmu, \cosmu to account for the phase space shift.
 
@@ -558,48 +522,12 @@ The magnitude and uncertainty of $A, B, D$ and $E$ are then chosen to match the 
 \end{figure}
 
 \paragraph{Single Pion Production}
-The single pion production is described with the Rein-Sehgal model\cite{Rein_Sehgal, Rein_Angular} with lepton mass corrections \cite{Kuzmin_MassEffect,Wroclaw_MassEffect,Berger_Sehgal_MassEffect} and modified form factors aimed at the $\Delta$ resonance \cite{Wroclaw_CC1pi_2014,Wroclaw_CC1pi_2009,Wroclaw_CC1pi_theory}. The tunable parameters all relate to the neutrino-nucleon scattering interaction in the Rein-Sehgal model, which are $M_A^{RES}$, the axial mass for the resonant interaction in the Rein-Sehgal model, $C_5^A(0)$, one of the axial form factors at $Q^2=0$ in the Graczyk-Sobczyk form factor parameterisation, and the size of the non-resonant $I_{1/2}$ background in the Rein-Sehgal model.. 
-
-\autoref{fig:1pi_diags} shows the charged-current neutrino-nucleon processes described by the model. The models also extend to anti-neutrino and neutral-current processes. In the case of missing a pion due to detector thresholds and/or pion interactions the neutrino energy is clearly biased by at least $E=m_\pi$.
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CC1npip}
-		\caption{CC1$\pi^+$1n}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CC1pi0}
-		\caption{CC1$\pi^0$}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CC1ppip}
-		\caption{CC1$\pi^+$1p}
-	\end{subfigure}
-	\caption{Charged-current single pion production on a nucleon via a $\Delta$ resonances}
-	\label{fig:1pi_diags}
-\end{figure}
+The single pion production is described with the Rein-Sehgal model\cite{Rein_Sehgal, Rein_Angular} with lepton mass corrections \cite{Kuzmin_MassEffect,Wroclaw_MassEffect,Berger_Sehgal_MassEffect} and modified form factors aimed at the $\Delta$ resonance \cite{Wroclaw_CC1pi_2014,Wroclaw_CC1pi_2009,Wroclaw_CC1pi_theory}. The tunable parameters all relate to the neutrino-nucleon scattering interaction in the Rein-Sehgal model, which are $M_A^{RES}$, the axial mass for the resonant interaction in the Rein-Sehgal model, $C_5^A(0)$, one of the axial form factors at $Q^2=0$ in the Graczyk-Sobczyk form factor parameterisation, and the size of the non-resonant $I_{1/2}$ background in the Rein-Sehgal model.
 
 The single pion production uncertainties were tuned to selected bubble chamber data from ANL\cite{ANL_CC1pi,ANL_NC1pi} and BNL\cite{BNL_CC1pi,BNL_CC1pi_isospin,BNL_NuInt02}. The parameter values were cross-checked with modern corrections\cite{ANL_BNL_corr} and nuclear data from MiniBooNE\cite{MB_CC1pip,MB_CC1pi0,MB_NC1pi0}, MINER$\nu$A\cite{MIN_CC1pi0,MIN_CC1pip,MIN_pion_2016} and K2K \cite{K2K_CC1pip} using NUISANCE\cite{NUISANCE}.
 
 \paragraph{Coherent Scattering}
-The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_Sehgal_coh}. This process has a small cross-section but occupies a very specific phase space: the very forward going, collinear lepton-pion, low $Q^2$ region. This is important since it has the same final state as single pion production. The interaction diagram is shown in \autoref{fig:coh_diags}.
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CCcoh}
-		\caption{CC coherent}
-		\label{fig:coh_diags}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.42\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CCmultipion}
-		\caption{CC DIS}
-		\label{fig:dis_diags}
-	\end{subfigure}
-	\caption{Coherent and multi-pion/DIS scattering diagrams}
-	\label{fig:coh_dis_diags}
-\end{figure}
-
-An $E_\pi$ dependent scaling factor, listed in \autoref{tab:rein_sehgal_coh}, is applied to match MINER$\nu$A $\nu$ and $\bar{\nu}$ CC coherent data \cite{MIN_coh} and the Berger-Sehgal model \cite{Berger_Sehgal_coh}.
+The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_Sehgal_coh}. An $E_\pi$ dependent scaling factor, listed in \autoref{tab:rein_sehgal_coh}, is applied to match MINER$\nu$A $\nu$ and $\bar{\nu}$ CC coherent data \cite{MIN_coh} and the Berger-Sehgal model \cite{Berger_Sehgal_coh}.
 \begin{table}[h]
 	\begin{tabular}{c | c}
 		\hline
@@ -620,7 +548,7 @@ An $E_\pi$ dependent scaling factor, listed in \autoref{tab:rein_sehgal_coh}, is
 The strength of the coherent interaction is allowed to vary in the fit as normalisation parameters: one for CC $^{12}C$, one for CC $^{16}O$ and one for NC interactions. The prior uncertainty is 30\% from inspections of MINER$\nu$A data and the two CC parameter are 100\% correlated in the prior.
 
 \paragraph{Multi-$\pi$ and DIS}
-The transition from single pion production to DIS is a custom interpolation between $1.3 < W < 2.0$, selecting events with $N_\pi>1$ to avoid double counting single pion production cross-sections. A pseudo diagram is shown in \autoref{fig:dis_diags}, where fragmentation causes pion emission. In NEUT the structure functions are taken from the GRV98 parton distribution function \cite{grv98} with Bodek-Yang corrections \cite{bodek_yang}. The details of the transition can be found in \cite{neut} and is inspired from external bubble chamber data on pion multiplicity. The DIS model is directly from PYTHIA 5.7 and JETSET 7.4 \cite{pythia}.
+In NEUT the structure functions are taken from the GRV98 parton distribution function \cite{grv98} with Bodek-Yang corrections \cite{bodek_yang}. The details of the transition can be found in \cite{neut} and is inspired from external bubble chamber data on pion multiplicity. The DIS model is directly from PYTHIA 5.7 and JETSET 7.4 \cite{pythia}.
 
 The multi-pi/DIS uncertainties are inspired from results from MINOS \cite{minos_mult} on DIS interactions at $E_\nu = 4.0 \text{ GeV}$, increasing with decreasing $E_\nu$ and is parametersied as 
 \begin{equation}
@@ -641,12 +569,6 @@ In principle, there may be unmodelled effects present for \nue (\nuebar) and not
 
 \paragraph{Final State Interactions}
 The hadronic (pion and nucleon) final state interactions are handled by a cascade implementation of the Salcedo-Oset model \cite{salcedo_oset} when their momentum is less than 500 MeV. In summary, the interaction probabilities are functions of the hadron's momentum and position in the nucleus, with direction and momentum changes tuned to $\pi-N$ scattering data\cite{pion_scattering}, including in-medium corrections\cite{seki}. More details are provided elsewhere\cite{neut}. Above 500 MeV, the interaction probabilities are calculated from $\pi^\pm$ scattering off free protons and deuteron compiled by the PDG\cite{pdg_2010}. To avoid double counting and discontinuities, the two models are blended between $400 < p_\pi<500 \text{ MeV}$. 
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.3\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/cascade}
-	\caption{An example of a pion FSI cascade}
-\end{figure}
 
 The systematics are parameterised as the scattering probabilities for the different interaction processes at each microscopic step in the cascade. These are divided into absorption, pion production, quasi-elastic and charge exchange. Furthermore, the two latter are split into low and high energy regions, above and below the model transition at $p_\pi = 500\text{ MeV}$. For oscillation analyses using the 0$\pi$ topology, the absorption and elastic probabilities are most important since they can significantly bias energy reconstruction by removing pions from the reconstructed event. The prior values and uncertainties come from tuning to world scattering data: $\pi^+-^{12}C$ for the low energy and $\pi^\pm - ^{12}C$ for the high energy parameters.
 
