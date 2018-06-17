@@ -394,7 +394,7 @@
 \newlength{\@frontmattertopskip}%
 \newlength{\@frontmattertitletopskip}%
 \newlength{\frontmattertitleskip}%
-\addtolength{\frontmattertitleskip}{2cm}%
+\addtolength{\frontmattertitleskip}{1cm}%
 \addtolength{\@frontmattertitletopskip}{0cm}%
 \setlength{\@frontmattertopskip}{\frontmattertitleskip}%
 \addtolength{\@frontmattertopskip}{\@frontmattertitletopskip}%
@@ -533,7 +533,7 @@
 %% An environment for the rubbish at the front of a typical thesis
 \let\@oldfrontmatter\frontmatter
 \specialcomment{frontmatter}{%
-  \setcounter{tocdepth}{2}% show down to subsections in contents
+  \setcounter{tocdepth}{1}% show down to subsections in contents
   \setcounter{secnumdepth}{2}% number down to subsections
   \newcounter{iterlist}%
   \@oldfrontmatter%
@@ -593,7 +593,7 @@
 
 %% Environment for acknowledgements page in frontmatter
 \newenvironment{acknowledgements}{%
-  \cleardoublepage%
+  \newpage%
   \adjustwidth{\@acknowledgementsextramargin}{\@acknowledgementsextramargin}%
   \vspace*{\@frontmattertopskip}%
   \begin{center}%
@@ -611,7 +611,7 @@
 
 %% Environment for preface page in frontmatter
 \newenvironment{preface}{%
-  \cleardoublepage%
+  \newpage
   \adjustwidth{\@prefaceextramargin}{\@prefaceextramargin}%
   \vspace*{\@frontmattertopskip}%
   \begin{center}%
@@ -632,7 +632,7 @@
 %% so you'll have to do that bit yourself like in the
 %% example file)
 \newenvironment{declaration}{%
-  \cleardoublepage%
+ \newpage
   \adjustwidth{\@declarationextramargin}{\@declarationextramargin}%
   \vspace*{\@frontmattertopskip}%
   \begin{center}%
@@ -655,9 +655,9 @@
 
 %% Environment for thesis abstract in frontmatter
 %% (argument is the thesis title)
-\newenvironment{abstract}[1][Abstract]{%
+\newenvironment{abstract}[1][Abstract]{
   \adjustwidth{\@abstractextramargin}{\@abstractextramargin}%
-  \cleardoublepage%
+  \newpage%
   \vspace*{\@frontmattertopskip}%
   \begin{center}%
     \begingroup
@@ -699,6 +699,11 @@
     \vspace*{8cm}%
     {#2}%
   \end{center}%
+
+%  \begin{abstract}
+%    {#3}
+%  \end{abstract}
+
   \endgroup%
   %\@oldendtitlepage%
   %\cleardoublepage%
@@ -710,7 +715,7 @@
 \newlength{\@oldparindent}
 \setlength{\@oldparindent}{\parindent}
 \DeclareRobustCommand{\pagequote}[3][same]{%
-  \cleardoublepage%
+%  \cleardoublepage%
   \vspace*{\stretch{2}}%
   \thispagestyle{empty}%
   % \thispagestyle{plain}%
@@ -731,7 +736,7 @@
   \end{center}%
   \vspace*{\stretch{4}}%
   \if@twoside\clearpage\fi%
-  \thispagestyle{plain}%
+  \thispagestyle{empty}%
 }
 %% Alias
 \let\frontquote\pagequote
@@ -739,9 +744,9 @@
 
 %% A quote on its own page
 \DeclareRobustCommand{\dedication}[1]{%
-  \cleardoublepage%
+%  \cleardoublepage%
   \vspace*{\stretch{2}}%
-  \thispagestyle{plain}%
+  \thispagestyle{empty}%
   \pagestyle{plain}%
   \begin{center}%
   \begin{varwidth}{\textwidth}%
@@ -750,7 +755,7 @@
   \end{center}%
   \vspace*{\stretch{4}}%
   %\cleardoublepage%
-  \pagestyle{plain}%
+  \pagestyle{empty}%
 }
 
 

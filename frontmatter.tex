@@ -1,10 +1,10 @@
 %% Title
-\titlepage[Imperial College London]{A dissertation submitted to Imperial College London\\ for the degree of Doctor of Philosophy}
+\titlepage[The Blackett Laboratory\\Imperial College London]{A dissertation submitted to Imperial College London\\ for the degree of Doctor of Philosophy}
 
 %% Abstract
-\begin{abstract}%[\smaller \thetitle\\ \vspace*{1cm} \smaller {\theauthor}]
-  %\thispagestyle{empty}
-  What an amazing abstract
+\begin{abstract}[\large{\thetitle}\\ \vspace*{1.5cm} \normalsize{\textit{Abstract}}]
+	%\thispagestyle{empty}
+	This thesis presents some nice work that I did.
 \end{abstract}
 
 %% Declaration
@@ -12,51 +12,25 @@
   This dissertation is the result of my own work, except where explicit reference is made to the work of others, and has not been submitted for another qualification to this or any other university. This dissertation does not exceed the word limit for the respective Degree Committee.
   \vspace*{1cm}
   \begin{flushright}
-    Carl Vincent Clarence Wret
+	  \theauthor
   \end{flushright}
 \end{declaration}
 
 %% Acknowledgements
 \begin{acknowledgements}
-  Morgan Wascko
+	I have had the great privilege to work, travel, and form friendships with a multitude of excellent people during my three years on T2K and at Imperial College London.
+	
+	Starting my Ph.D. on neutrino interactions and model selections, I am indebted to Patrick Stowell, Callum Wilkinson, Luke Pickering and Ryan Terri for countless hours of discussions and explanations, culminating in the birth of the NUISANCE\cite{nuisance} project---now in use across most neutrino cross-section experiments. We could not have done it without the expertise and advice of my supervisor Morgan Wascko, Kendall Mahn, the Neutrino Interaction Working Group conveners, Kevin McFarland and Yoshinari Hayato-san, and neutrino interaction guru Jan Sobczyk. I extend special gratitude to Monireh Kabirnezhad for spending two months with me in Japan, implementing new single pion production models and eating noodles.
   
-  Luke Pickering
+	Continuing the interaction model studies with ND280 data---the topic of this thesis---would have been impossible without the help of the current and past members of the MaCh3 group, spearheaded by Asher Kaboth. I hail Asher for his many wisdoms on the fit mechanics, statistics and Markov Chain Monte Carlo, Richard Calland for fueling my interest in multi-threading and GPU programming, and Kirsty Duffy and Leila Haegel's for their helpful inputs on the physics output and interpretations. I thank the members of the frequentist ND280 fitting group (BANFF), led by Mark Scott with Simon Bienstock and Pierre Lasorak, for many discussions and hard work on studying the physics, statistics and systematics in the fit. Special mentions to Raj Shah and Stephen Dolan for explaining complex topics to a novice Ph.D. student.
+	
+	I remain grateful for the time spent and the knowledge transferred through my colleagues in the Imperial T2K group. Luke Pickering, Wing Ma, Pip Hamilton, Dominic Brailsford, Morgan Wascko, Yoshi Uchida, Patrick Dunne, Phill Litchfield, Artur Sztuc, Toby Nonnenmacher and Edward Atkin all made room 530 and beyond a treat. I thank classmates and friends Jack Wright, Sioni Summers, Daniel Saunders, Thibaud Humair, Slavomira Stefkova,
+	
+	Friends and loved ones, Rajee Sukamaran, Rina Kay, Hannah Peckham, Jessica Lawrence, Caitlin Loftus
   
-  Callum Wilkinson
+  My sister Clarissa, parents and grandmother for being patient and reminding me 
   
-  Patrick Stowell
-  
-  Kevin McFarland
-  
-  Phill Litchfield
-  
-  Patrick Dunne
-  
-  Asher Kaboth
-  
-  Jack Wright, Sioni Summers, Daniel Saunders
-  
-  Simon Bienstock
-  
-  Pierre Lasorak
-  
-  Mark Scott
-  
-  Jessica Lawrence
-  
-  Caitlin Loftus
-  
-  Toby Nonnenmacher
-  
-  Edward Atkin
-  
-  Artur Sztuc
-  
-  Monireh Kabirnezhad
-  
-  Hannah Peckham
-  
-  Parents
+  Finally, a modern High Energy Physics analysis demands excellent computing and support. The work in this thesis could not happen without the Compute Canada Gullimin, Cedar and Graham clusters---made possibly by Hiro Tanaka---Imperial College High Energy Physics Computing---maintained by Simon Fayer and Raymond Beuselinck with special thanks to David Colling for GPU support---and the Imperial College High Performace Computing centre. I am additionally grateful for the generous hardware sponsorship from NVIDIA's academic seeding project.
 \end{acknowledgements}
 
 \iffalse
