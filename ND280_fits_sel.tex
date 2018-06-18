@@ -1,26 +1,26 @@
 \section{Selections}
 \label{sec:ND280:sel}
-The goal of the selection is to map theory interaction modes (e.g. CCQE, CC1$\pi^+$, CC DIS) to ND280 selections, so that theory parameters receive largest constraints from fewest exclusive samples. Equivalent FGD1 and FGD2 selections are separated due to differences in systematics and reconstruction: forward-going tracks emanating in FGD1 leaves a track in FGD1, TPC2, FGD2 and TPC3 so has more hits recorded than the FGD2 equivalence, which only passes through FGD2 and TPC3. Furthermore, FGD2 contains plastic scintillator interleaved with passive water layers whereas FGD1 is fully plastic scintillator. Separating FGD1 and FGD2 also allows constraints on water interactions to come strictly from the FGD2 selections.
+The goal of the selection is to map interaction channels (e.g. CCQE, CC1$\pi^+$, CC DIS) to observable ND280 selections, so that theory parameters receive their largest constraints from a few exclusive samples. Equivalent FGD1 and FGD2 selections are separated due to differences in systematics and reconstruction: forward-going tracks emanating in FGD1 leaves a track in FGD1, TPC2, FGD2 and TPC3, so has more hits recorded than the FGD2 equivalence, which only passes through FGD2 and TPC3. Furthermore, FGD2 contains plastic scintillator interleaved with passive water layers whereas FGD1 is fully plastic scintillator. Separating FGD1 and FGD2 also allows constraints on water interactions to come strictly from the FGD2 selections.
 
-The fit bins events in the two reconstructed muon variables \pmu and \cosmu. The muon variables are chosen primarily due to excellent detector resolution of muons and because this is what T2K oscillation analyses observe at \sk. There is ongoing effort to bin in pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino, but these will not be presented here.
+The analysis bins events in the two reconstructed muon candidate variables \pmu and \cosmu. The muon variables are chosen primarily due to excellent detector resolution of muons and for overlap with T2K oscillation analyses observe at SK. There is ongoing effort to include pion variables when such are present (e.g. for CC$1\pi^+$ or CCOther selections), and composite variables in the plane transverse to the neutrino, but these will not be presented here.
 
-The selections are entirely defined by the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for misidentified particles. There is also no attempt to correct for nuclear effects such as final-state-interactions.
+The selections are entirely defined by the observed reconstructed event topology of an event in the detector and there is no attempt at correcting for misidentified particles. There is no attempt to correct for nuclear effects such as final-state-interactions.
 
 \subsection{\numu in FHC}
 \label{sec:numu_sel}
-The different topological selections all start by isolating CC-inclusive candidates in FGD1 or FGD2. Firstly is required to contain one reconstructed track candidate of negative charge crossing the TPC downstream of either FGD (TPC2 for interactions starting in FGD1, TPC3 for interactions starting in FGD2). The event also needs to fulfil data quality and fiducial volume requirements. The muon is then assumed to be the highest momentum negative track (HMNT) found in the event, and it is required that the track is identified as a muon.
+The different topological selections all start by isolating CC-inclusive candidates in FGD1 or FGD2. Firstly, an event is required to contain one reconstructed track of negative charge crossing the TPC downstream of either FGD. The event also needs to fulfil data quality and fiducial volume requirements. The muon is assumed to be the highest momentum negative track (HMNT) found in the event, and it is required that the track is identified as a muon.
 
-The detailed general selection criteria for the CC-inclusive sample is:
+The detailed selection criteria for the CC-inclusive sample is:
 \begin{itemize}
 	\item \textbf{Event quality cut}: The full beam spill has a good global ND280 data quality flag, meaning all ND280 sub-detectors and magnet were operational and reading out data. The event must occur within the bunch time window of the neutrino beam. Event pile-up is mitigated by associating each event to a beam bunch within a beam spill.
 	
-	\item \textbf{Quality and fiducial volume cut}: At least one reconstructed track is present in the FGD1 or FGD2 fiducial volume. The fiducial volume for FGD1 is $|x|<874.51\text{ mm}$, $|y-55|<874.51\text{ mm}$, $136.875 < z < 446.955\text{ mm}$ and for FGD2 $|x|<874.51\text{ mm}$, $|y-55|<874.51\text{ mm}$, $1481.45< z < 1807.05\text{ mm}$\footnote{The 55mm offset in $y$ reflects the shift in XY modules relative the center of the ND280 coordinate system.}.
+	\item \textbf{Quality and fiducial volume cut}: At least one reconstructed track is present in the FGD1 or FGD2 fiducial volumes. The fiducial volume for FGD1 is $|x|<874.51\text{ mm}$, $|y-55|<874.51\text{ mm}$, $136.875 < z < 446.955\text{ mm}$ and for FGD2 $|x|<874.51\text{ mm}$, $|y-55|<874.51\text{ mm}$, $1481.45< z < 1807.05\text{ mm}$\footnote{The 55mm offset in $y$ reflects the shift in XY modules relative the center of the ND280 coordinate system.}.
 	
-	The $x$ and $y$ cuts are designed to accept interactions which have their vertex five bars from the edge of the XY module of each FGD. The $z$ cut excludes the first XY module of each FGD and includes the remaining (14 for FGD1, 7 for FGD2). To reject short tracks, for which the TPC reconstruction is unreliable, tracks are required to have more than 18 TPC clusters.
+	The $x$ and $y$ cuts are designed to accept interactions which have their vertex five bars from the edge of the XY module of each FGD. The $z$ cut excludes the first XY module of each FGD and includes the remaining (14 for FGD1, seven for FGD2). To reject short tracks, for which the TPC reconstruction is unreliable, tracks are required to have more than 18 TPC clusters.
 	
 	\item \textbf{Upstream background veto}: If the second highest momentum track starts at least 150 mm upstream of the selected muon candidate (highest momentum negative track with muon PID), the event is rejected. This cut eliminates events in which the muon candidate might be the second part of a broken track which started further upstream (e.g. in the P0D). For events with a reconstructed vertex in FGD2 there is the added criterion of having no reconstructed tracks in FGD1.
 	
-	\item \textbf{Broken track cut}: The start position of the muon candidate track needs to be less than 425 mm away from the FGD upstream edge if the event has at least one reconstructed FGD-only track. The cut vetoes events where the reconstruction has cut a muon candidate track into two tracks: one of which is fully contained in the FGD and the second starting downstream of the fully contained track in the FGD and enters the TPC, causing the second track to be the selected as the muon candidate, misplacing the vertex.
+	\item \textbf{Broken track cut}: The starting position of the muon candidate track needs to be less than 425 mm away from the FGD upstream edge if the event has at least one reconstructed FGD-only track. The cut vetoes events where the reconstruction has cut a muon candidate track into two tracks: one of which is fully contained in the FGD and the other which starts downstream of the fully contained, misplacing the interaction vertex.
 	
 	\item \textbf{Muon PID cut}: Once a particle is considered a muon candidate (fulfilling the above criteria), the particle identification is applied based on the observed $dE/dx$ measurement of the track in the TPC. The measured energy deposit $E$ in the TPC is compared with the expected energy deposit under muon, pion, electron and proton hypotheses and pulls and discrimination functions are then applied.
 	
@@ -33,16 +33,12 @@ The detailed general selection criteria for the CC-inclusive sample is:
 	\begin{equation}
 	C_T^{exp} = \frac{53.87 \text{ ADC}}{\beta^{2.283}} \left( 5.551 - \beta^{2.283} - \log\left[0.001913 + \frac{1}{\left(\beta\gamma\right)^{1.249}}\right]\right)
 	\end{equation}
-	and $\sigma^{exp}$ is the deposited energy resolution of the TPC.
-	
-	The likelihoods $\mathcal{L}_i$ are then defined as
+	$C_T^{obs}$ is the observed energy loss and $\sigma^{exp}$ is the deposited energy resolution of the TPC. $\beta=v/c$ and $\gamma = 1/\sqrt{1-\beta^2}$ are the relativistic variables of the track. The likelihoods $\mathcal{L}_i$ are then defined as
 	\begin{equation}
 	\label{eq:tpc_track_likelihood}
 		\mathcal{L}_i = \frac{e^{-\delta^2_i}}{\sum_n e^{-\delta^2_n}}
 	\end{equation}
-	where the denominator is over $n$, which are the particles $n=\mu,\pi,e,p$. 
-	
-	In the PID algorithm, electrons are rejected by requiring
+	where the denominator is summed over the particle types $n=\mu,\pi,e,p$. In the PID algorithm, electrons are rejected by requiring
 	\begin{equation}
 		\label{eq:tpc_track_mip}
 		\mathcal{L}_{MIP} = \frac{\mathcal{L}_\mu + \mathcal{L}_\pi}{1-\mathcal{L}_p} > 0.8
@@ -52,7 +48,7 @@ The detailed general selection criteria for the CC-inclusive sample is:
 	\label{eq:tpc_track_mu}
 		\mathcal{L}_\mu > 0.05
 	\end{equation}
-	The constants 0.8, 0.05 and 500 MeV/c are chosen from particle gun studies in the TPC and test-beam data, and the impact on the selection is shown in \autoref{fig:numu_likelihoods}. The TPC pulls after preselection are shown in \autoref{fig:numu_pulls}, and the energy loss in the TPC from which pulls are derived are shown in \autoref{fig:TPC_dedx}.
+	The constants 0.8, 0.05 and 500 MeV/c are chosen from particle gun studies in the TPC and test-beam data\cite{t2k_tpc,thesis_tpc, thesis_christine}, and the impact on the selection is shown in \autoref{fig:numu_likelihoods}. The TPC pulls after preselection are shown in \autoref{fig:numu_pulls}, and the energy loss in the TPC from which pulls are derived are shown in \autoref{fig:TPC_dedx}.
 	
 	Importantly, TPC segments need to pass the TPC track quality cut contribute to the likelihood: bad quality tracks do not. If a track passes through multiple TPCs all TPC tracks are taken into account.
 \end{itemize}
@@ -79,22 +75,22 @@ The detailed general selection criteria for the CC-inclusive sample is:
 		\includegraphics[width=\textwidth]{figures/numu/Cuts/numu/Mulik_run12}
 		\caption{$\mathcal{L}_{\mu}$}
 	\end{subfigure}
-	\caption{Likelihood distributions for preselected MC events, showing cuts placed for \numu analysis}
+	\caption{Likelihood distributions for preselected MC events, showing cuts placed for \numu in FHC analysis}
 	\label{fig:numu_likelihoods}
 \end{figure}
 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth]{figures/numu/Cuts/numu/Elepull_run12}
-		\caption{$Pull_e$}
+		\caption{$\delta_e$}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}	
 		\includegraphics[width=\textwidth]{figures/numu/Cuts/numu/Protpull_run12}
-		\caption{$Pull_p$}
+		\caption{$\delta_p$}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth]{figures/numu/Cuts/numu/Mulikelihood_run2}
-		\caption{$Pull_\mu$}
+		\caption{$\delta_\mu$}
 	\end{subfigure}
 	\caption{Pull distributions after selection showing data and MC for \numu analysis}
 	\label{fig:numu_pulls}
@@ -112,17 +108,17 @@ To identify pion candidate(s) a number of cuts are applied:
 	
 	\item \textbf{Pion PID}: For positive tracks in the TPC, pion, positron and proton hypotheses are tested. For negative tracks, pion and electron hypotheses are tested. 
 	
-	As for the muon candidate, \autoref{eq:tpc_track_chi2} and \autoref{eq:tpc_track_likelihood} defines the particle likelihoods. For the pion PID, the MIP likelihood in \autoref{eq:tpc_track_mip} is required and in addition a cut on the pion likelihood is invoked,
+	As for the muon candidate, \autoref{eq:tpc_track_chi2} and \autoref{eq:tpc_track_likelihood} define the particle likelihoods. For the pion PID, the MIP likelihood in \autoref{eq:tpc_track_mip} is required and in addition a cut on the pion likelihood is invoked,
 	\begin{equation}
 	\label{tpc_track_pi}
 		\mathcal{L}_\pi > 0.3
 	\end{equation}
 	
-	When there is no particle track in the TPC, the FGD PID can be used to count the number of charged pions. However, it can not be used for neutral pions because there is currently no electron or positron reconstruction available. The FGD pion PID proceeds either by:
+	When there is no particle track in the TPC, the FGD PID is used to count the number of charged pions. However, it can not be used for neutral pions because there is currently no electron or positron reconstruction available. The FGD pion PID proceeds either by:
 	\begin{itemize}
-		\item \textbf{Michel electron tag}: For low-momentum pion tracks that fail to leave enough hits for track reconstruction, a search for a Michel electron tag is made. It looks for a time-delayed FGD hit cluster out of time with a beam bunch window (so has no associated beam spill or bunch). The number of hits in the delayed time bin should be greater than six for FGD1 and five for FGD2\footnote{Roughly corresponding to 200 photoelectrons, but can't be used as a criteria in FGD2 due to the water layers}. Since no measurement of the track is made, this selection does not give rise to a pion momentum.
+		\item \textbf{Michel electron tag}: A search for a Michel electron tag is made for low-momentum tracks that fail to leave enough hits for track reconstruction. It looks for a time-delayed FGD hit cluster out of time with a beam bunch window. A Michel candidate is found if the number of hits in the delayed time bin is greater than six for FGD1 and five for FGD2\footnote{Roughly corresponding to 200 photoelectrons, which can't be used as a criteria in FGD2 due to the water layers}. Since there is no measurement of the track, the pion has no associated momentum or angle.
 		
-		\item \textbf{FGD reconstruction}: For higher momentum pions it is required they leave fully contained tracks in the FGD and that the track belongs to the same bunch as the muon candidate. Furthermore, there can only be one pion track reconstructed in the FGD, which eliminates the possibility of a broken track being reconstructed as two pions. The pion candidate is required to be upwards or downwards-going by invoking $|\cos\theta_{\pi,\nu}| > 0.3$, which limits the possibility of traveling along the FGD bars. Finally it is required the pion pull (as a function of track length) $P_\pi$ be $-2 < P_\pi < 2.5$ from simulation studies, shown in \autoref{fig:FGD_pion_pulls}.
+		\item \textbf{FGD reconstruction}: Higher momentum pions may leave fully contained tracks in the FGD. If such a track belongs to the same bunch as the muon candidate and there is only one pion track reconstructed in the FGD, it is considered a pion candidate. The pion candidate is required to be upwards or downwards-going by invoking $|\cos\theta_{\pi,\nu}| > 0.3$, which limits the possibility of travelling along the FGD bars. Finally we require a pion pull of $-2 < P_\pi < 2.5$ in the FGD from its track length, shown in \autoref{fig:FGD_pion_pulls}.
 	\end{itemize}
 \end{itemize}
 \begin{figure}[h]
@@ -131,16 +127,16 @@ To identify pion candidate(s) a number of cuts are applied:
 	\label{fig:FGD_pion_pulls}
 \end{figure}
 
-Then finally the remaining particles can be identified using the TPC PID: 
+Finally, the remaining particles can be identified using the TPC PID: 
 \begin{itemize}
-	\item For a positive particle, it is tagged with type of highest probability. If the most likely particle is a positron but the $p_{reco} > 900\text{ MeV}$ it's tagged as a proton, otherwise a positron
+	\item For a positive particle, it is tagged according to highest probability. If the most likely particle is a positron but the $p_{reco} > 900\text{ MeV}$ it's tagged as a proton, otherwise it is a positron.
 	
-	\item For a negative particle, if the probability of a pion is $P_\pi>0.8$ it is tagged as a negative pion, and if not it is assumed an electron
+	\item For a negative particle, if the probability of a pion is $P_\pi>0.8$ it is tagged as a negative pion, and if not it is assumed an electron.
 \end{itemize}
 
 Now using information from the TPC PID, FGD Michel electron and FGD PID algorithms the \numu CC-inclusive sample can be categorised into the CC$0\pi$, CC$1\pi$ and CCOther samples:
 \begin{itemize}
-	\item \textbf{CC0$\pi$}: Contains events with one negative muon candidate, no identified charged or neutral pions in the TPC or FGD, and no electrons or positrons in the TPC. It aims to contain CCQE and 2p2h events and is the largest sample at ND280. An example event display is shown in \autoref{fig:cc0pi_evtdisplay}.
+	\item \textbf{CC0$\pi$}: Contains events with one negative muon candidate, no identified charged or neutral pions in the TPC or FGD, and no electrons or positrons in the TPC. The selection contains CCQE and 2p2h events and is the largest sample at ND280. An example event display is shown in \autoref{fig:cc0pi_evtdisplay}.
 	\begin{figure}[h]
 		\begin{subfigure}[t]{0.49\textwidth}
 			\includegraphics[width=\textwidth, trim={25mm 28mm 30mm 30mm}, clip]{figures/numu/evtdisplay/CC0pi_7423_34_179070_perX0Z_all}
@@ -154,7 +150,7 @@ Now using information from the TPC PID, FGD Michel electron and FGD PID algorith
 		\label{fig:cc0pi_evtdisplay}
 	\end{figure}
 
-	\item \textbf{CC$1\pi$}: Contains events with one negative muon candidate and one positive pion candidate. The sum of the number of positive pions found in the TPC and the number of Michel electrons is one and if there are no Michel electrons the sum of positive pions in the TPC and fully contained in the FGD is one. If there is a negative pion or electron/positron reconstructed in the TPC it is rejected. It is developed to contain mostly CC1$\pi^{+}$ events from resonant interactions. An example event display is shown in \autoref{fig:cc1pi_evtdisplay}.
+	\item \textbf{CC$1\pi$}: Contains events with one negative muon candidate and one positive pion candidate. The sum of the number of positive pions found in the TPC and the number of Michel electrons is one and if there are no Michel electrons the sum of positive pions in the TPC and fully contained in the FGD is one. If there is a negative pion, electron or positron reconstructed in the TPC it is rejected. The selection contains mostly CC1$\pi^{+}$ events from resonant interactions. An example event display is shown in \autoref{fig:cc1pi_evtdisplay}.
 	\begin{figure}[h]
 		\begin{subfigure}[t]{0.49\textwidth}
 			\includegraphics[width=\textwidth, trim={50mm 30mm 50mm 40mm}, clip]{figures/numu/evtdisplay/CC1pi_7508_22_119769_perpX0Z_all}
@@ -168,7 +164,7 @@ Now using information from the TPC PID, FGD Michel electron and FGD PID algorith
 		\label{fig:cc1pi_evtdisplay}
 	\end{figure}
 	
-	\item \textbf{CCOther}: All events with one negative muon candidate which are not classified as CC0$\pi$ or CC$1\pi$ fall into this sample. Events with one or more reconstructed negative pion(s), or one or more neutral pion(s) reconstructed as electron or positron candidates in the TPC are thereby selected. Event with more than one positive pion based on the TPC and FGD pion counting criteria are also accepted. It is developed to contain mostly DIS interactions and CC$1\pi^0$. An example event display is shown in \autoref{fig:ccoth_evtdisplay}.
+	\item \textbf{CCOther}: All events with one negative muon candidate which are not classified as CC0$\pi$ or CC$1\pi$ fall into this sample. Events with one or more reconstructed negative pion(s), or one or more neutral pion(s) reconstructed as electron or positron candidates in the TPC, are thereby selected. Event with more than one positive pion based on the TPC and FGD pion counting criteria are also accepted. The selection contains mostly multi-$\pi$, DIS and CC$1\pi^0$ interactions. An example event display is shown in \autoref{fig:ccoth_evtdisplay}.
 	\begin{figure}[h]
 		\begin{subfigure}[t]{0.49\textwidth}
 			\includegraphics[width=\textwidth, trim={20mm 30mm 20mm 30mm}, clip ]{figures/numu/evtdisplay/CCOthers_7491_46_209894_perX0Z_all}
@@ -185,15 +181,15 @@ Now using information from the TPC PID, FGD Michel electron and FGD PID algorith
 
 \subsection{\numubar in RHC}
 \label{sec:numubar_sel}
-The anti-neutrino selections CC1Track and CCNTrack have the same event quality and fiducial volume cut as the neutrino selection, and the muon candidate track is required to pass through the TPC downstream of the struck FGD. However, its highest momentum track is required to be the highest momentum positive track for its muon PID (a $\mu^+$ coming from a \numubar interaction). Furthermore, it has a larger background of ``wrong-sign'' events: \numu interactions producing $\mu^-$, but also \numu interactions producing $\pi^+$ which may be identified as the lepton candidate. Hence, the selection cuts proceed marginally differently:
+The anti-neutrino CC1Track and CCNTrack selections have the same event quality and fiducial volume cut as the neutrino selection, and the muon candidate track is required to pass through the TPC downstream of the struck FGD. The highest momentum track is required to be the highest momentum positive track for its muon PID. The selections generally have a larger background of ``wrong-sign'' events: $\nu_x$ interactions producing $x^-$ which are identified as $\mu^+$, and $\nu_x$ interactions producing a $\pi^+$ which may be identified as the lepton candidate. Hence, the selection cuts proceed differently:
 \begin{itemize}
-	\item \textbf{Positive multiplicity}: The muon candidate track charge is required to be a highest momentum positive track, which removes a large amount of \numu background interactions
+	\item \textbf{Positive multiplicity}: The muon candidate track charge is required to be a highest momentum positive track, which removes a large amount of wrong-sign interactions
 	
 	\item \textbf{TPC veto}: Veto backwards-going events starting in the FGD and events coming from the P0D and the magnet by utilising the upstream TPCs. If the upstream TPC of an FGD has hits the event is rejected
 	
 	\item \textbf{Positive muon identification}: The TPC PID outlined for the \numu selections are used to select the positive muon candidate, with the cuts optimised for $\mu^+$. 
 	
-	$\mathcal{L}_{MIP}$ is defined identically to \autoref{eq:tpc_track_mip} although the cut is now placed at 0.9, and still applies only to particles with $p < 500\text{ MeV}$. The muon likelihood $\mathcal{L}_\mu$ is also modified to $0.1 < \mathcal{L}_\mu < 0.7$ which removes protons and positive pions from the \numu background. The upper bound at 0.7 is present to reject low energy wrong-sign muons ($\mu^-$), which are misidentified as positive tracks. The likelihood distributions and impact of these cuts are shown in \autoref{fig:numubar_likelihood} and \autoref{fig:numubar_likelihood_sel} for the selected lepton candidate. \autoref{fig:numubar_pulls} shows the TPC PID pulls for run5+6.
+	$\mathcal{L}_{MIP}$ is defined identically to \autoref{eq:tpc_track_mip} although the cut is now placed at 0.9, and still applies only to particles with $p < 500\text{ MeV}$. The muon likelihood cut is modified to $0.1 < \mathcal{L}_\mu < 0.7$ which removes protons and positive pions from the \numu background. The upper bound at 0.7 is present to reject low energy wrong-sign muons, which may be misidentified as positive tracks. The likelihood distributions and impact of these cuts are shown in \autoref{fig:numubar_likelihood} and \autoref{fig:numubar_likelihood_sel} for the selected lepton candidate. \autoref{fig:numubar_pulls} shows the TPC PID pulls for run5+6.
 \end{itemize}
 
 \begin{figure}[h]
@@ -239,11 +235,11 @@ The anti-neutrino selections CC1Track and CCNTrack have the same event quality a
 	\label{fig:numubar_pulls}
 \end{figure}
 
-Once the \numubar CC-inclusive selection is run the aforementioned pion reconstruction is applied. The \numubar CC1Track selection has one positive muon and does not have any charged or neutral pions in the final state. Importantly, the \numubar CC1Track selection has a higher efficiency in selecting the muon candidate than the \numu CC0$\pi$ selection due to the \numubar resonant interactions producing a $\pi^-$, not a $\pi^+$, which are promptly absorbed in the nucleus and so do not leave a track to be (falsely) identified as a muon candidate. The \numubar CCNTrack selection contains the remaining particles passing the \numubar CC-inclusive selection, containing at least one neutral or charged pion and/or any number of heavier mesons.
+Once the \numubar CC-inclusive selection is run the aforementioned pion reconstruction is applied. The \numubar CC1Track selection has one positive muon and does not have any charged or neutral pions in the final state. The \numubar CC1Track selection has a higher efficiency in selecting the muon candidate than the \numu CC0$\pi$ selection from the \numubar resonant interactions producing a $\pi^-$, not a $\pi^+$, which are can capture on the nucleus and so do not leave a track to be (falsely) identified as a muon candidate. The \numubar CCNTrack selection contains the remaining particles passing the \numubar CC-inclusive selection, containing at least one neutral or charged pion.
 
 \subsection{\numu in RHC}
 \label{sec:numu_in_nubar_sel}
-In anti-neutrino mode there is a large fraction of \numu interactions, owing partly to the larger \numu cross-section and partly due to the higher flux background. The same pre-selection cuts apply for the \numu in RHC selection as for the previous selections presented in \autoref{sec:numu_sel} and \autoref{sec:numubar_sel}.
+In RHC running there is a large fraction of \numu interactions, owing mostly to the larger \numu cross-section. The same pre-selection cuts are applied for the \numu in RHC selection as for the previous selections.
 
 The CC-inclusive selection proceeds by:
 \begin{itemize}
@@ -251,7 +247,7 @@ The CC-inclusive selection proceeds by:
 	
 	\item \textbf{TPC PID}: The PID proceeds by the MIP requirement in \autoref{eq:tpc_track_mip} for particles with $p_\mu < 500 \text{ MeV/c}$, accepting candidate tracks with $\mathcal{L}_{MIP} > 0.7$.
 	
-	Similar to \autoref{sec:numubar_sel}, a lower and upper bound is set $0.1 < \mathcal{L}_\mu < 0.8$, which rejects protons and mis-reconstructed $\mu^+$. The effect of these cuts can be seen in \autoref{fig:nu_numubar_likelihood}.
+	Similar to \autoref{sec:numubar_sel}, a lower and upper bound is set $0.1 < \mathcal{L}_\mu < 0.8$, which rejects protons and low momentum $\mu^+$. The effect of these cuts can be seen in \autoref{fig:nu_numubar_likelihood}.
 \end{itemize}
 
 \begin{figure}[h]
@@ -269,7 +265,7 @@ The CC-inclusive selection proceeds by:
 
 The \numu in RHC selection then breaks down the CC-inclusive selection into CC1Track and CCNTrack, based entirely on the number of TPC-FGD matched tracks. Events with one such reconstructed track enters the CC1Track selection, and events with any other number of tracks regardless of PID, enter the CCNTrack selection. Hence the \numu RHC selection is analogous to the \numubar RHC selection.
 
-A summary of all selections' efficiency and purities is shown in \autoref{tab:eff_pur_summary}. For more detail see \autoref{chap:eff_2017}.
+A summary of all selections' efficiency and purities is shown in \autoref{tab:eff_pur_summary}. We note $90+\%$ efficiency for CC0$\pi$ and 1 right-sign 1Track efficiencies, with about 75\% purity. As the track multiplicity increases, the efficiencies and purities drop. The NTrack selections in \numubar perform the worst at 55\% efficiency and 45\% purity. For more detail see \autoref{chap:eff_2017}.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{ l | c c }
@@ -306,7 +302,7 @@ A summary of all selections' efficiency and purities is shown in \autoref{tab:ef
 
 \section{Binning the Selections}
 \label{sec:binning_2017}
-We expect largely similar kinematics across the two FGDs so apply the same binning in reconstructed muon momentum, \pmu, and cosine of the neutrino-muon angle, \cosmu. The binning for the fit is primarily influenced by MC statistics: we require $\sim 20$ raw MC events per bin (roughly equivalent to 1-2 data events). The momentum resolution is $\sim50\text{ MeV}$ up to 1 GeV and the angular resolution $\sim 2\degree$.
+We expect largely similar kinematics across the two FGDs so apply the same binning in reconstructed muon momentum, \pmu, and cosine of the average neutrino-muon angle, \cosmu. The binning for the fit is primarily influenced by MC statistics: we require $\sim 20$ raw MC events per bin (roughly equivalent to 1-2 data events). The momentum resolution is $\sim50\text{ MeV}$ up to 1 GeV and the angular resolution $\sim 2\degree$.
 
 The binning in \pmu \cosmu for each sample is shown below. The FHC selections all have similar binning and has the highest number of bins. The total number of bins is 1624, of which 902 are FHC (six selections) and 722 are RHC (eight selections).
 \begin{itemize}

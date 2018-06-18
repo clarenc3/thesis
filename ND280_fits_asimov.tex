@@ -1,11 +1,11 @@
 \section{Building the Monte-Carlo Prediction}
-T2K has been taking data since 2010 with steadily increasing beam power and protons on target (POT), and is currently on ``run 9'', shown in \autoref{fig:t2k_pot}. This analysis uses data from runs 2 to 6: run 1 was omitted because parts of the detector was uninstrumented (and is only $\sim4\%$ of the run 1-6 data), and run 7 and beyond had not gone through full Monte-Carlo production until summer 2017. 
+T2K has been taking data since 2010 with steadily increasing beam power and protons on target (POT), and is currently on ``run 9'', shown earlier in \autoref{fig:t2k_pot}. This analysis uses data from runs 2 to 6: run 1 was omitted because parts of the detector was uninstrumented (and is only $\sim4\%$ of the run 1-6 data), and run 7 and beyond had not gone through full Monte-Carlo production until summer 2017. 
 
 The overall efficiency of ND280 in runs 2 to 6 was approximately 85\%, collecting 9.7E20 POT out of 12E20 POT. The good POT\footnote{Defined as POT collected when all ND280 sub-detectors and global DAQ are flagged online} per run used in this analysis is listed in \autoref{tab:pot_2017}.
 
 \begin{table}[h]
 	\centering
-	\begin{tabular}{ l c c c }
+	\begin{tabular}{ l | c c c }
 		\hline
 		Run & Data POT (E19) & MC POT (E19) & Sand POT (E19) \\
 		\hline
@@ -33,31 +33,31 @@ The overall efficiency of ND280 in runs 2 to 6 was approximately 85\%, collectin
 		Total & 96.58343 & 1778.27 & 227.15 \\
 		\hline
 	\end{tabular}
-	\caption{Counted and generated proton-on-targets for the T2K ND280 2017 analysis. FHC denotes Forward Horn Current (neutrino dominated mode), RHC denotes Reverse Horn Current (anti-neutrino dominated mode)}
+	\caption{Counted and generated proton-on-targets for the T2K ND280 2017 analysis}
 	\label{tab:pot_2017}
 \end{table}
-The Monte-Carlo is generated for the different run-periods to account for beam configurations, ND280 configurations, run-dependent calibrations, and so on. Runs marked ``a'' and ``w'' refer to the P0D detector's removable water bags being air filled (a) or water filled (w), which require different ND280 geometries in simulation.
+The Monte-Carlo is generated for the different run-periods to account for beam configurations, ND280 configurations, run-dependent calibrations, and so on. Runs marked ``a'' and ``w'' refer to the P0D detector's removable water bags being air filled (a) or water filled (w), which require different ND280 geometries in the simulation.
 
-To build the nominal distribution for direct comparison to data, a number of scalings and weights are applied. For the near-detector portion of MaCh3 and BANFF, all weights are applied on an event-by-event basis:
+To build the nominal distribution for direct comparison to data, a number of scalings and weights are applied. For the ND280 analysis all weights are applied on an event-by-event basis\footnote{Which is not the case for SK analyses}:
 \begin{itemize}
 	\item \textbf{POT weight:} \\
 	A run-by-run scaling factor taking the ratio of total good flagged data to the generated Monte-Carlo POT. An event receives a one-time weight depending on what run it was from and how much MC was generated in the production. These numbers can be read off directly from \autoref{tab:pot_2017}. This weight $w_\text{POT}$ is only applied once and is not varied in the fit.
 	
 	\item \textbf{Flux weight:} \\
-	A run-by-run correction to the nominal neutrino flux which the production was made in. The weight is applied as a function of $E_\nu^{\text{true}}$ with~$0 < E_\nu^{\text{true}} < 30 \text{ GeV}$~, detailed in \autoref{subsec:syst_flux}. An event receives a weight depending on what run it was from and its $E_\nu^{\text{true}}$. The weight $w_\text{Flux}$ is only applied once and is not varied in the fit.
+	A run-by-run correction to the nominal neutrino flux which the full experiment simulation was made in. The weight is applied as a function of $E_\nu^{true}$ with~$0 < E_\nu^{true} < 30 \text{ GeV}$~, detailed in \autoref{subsec:syst_flux}. An event receives a weight depending on what run it was from and its $E_\nu^{true}$. The weight $w_\text{Flux}$ is only applied once and is not varied in the fit.
 	
-	\item \textbf{Beam covariance weight:} \\
-	An event-by-event weight to vary the impact of the flux simulation. An event gets weighted as a function of the neutrino running mode (FHC or RHC), the flavour of neutrino ($\nu_\mu$, $\bar{\nu}_\mu$, $\nu_e$ or $\bar{\nu}_e$) and the neutrino energy. There are 100 parameters $\vec{b}$ in the fit---although only 50 being constrained directly by ND280 data, the remaining 50 being the SK flux parameters, constrained solely by their correlations with the ND280 flux parameters---outlined in detail in \autoref{subsec:syst_flux}.
+	\item \textbf{Beam variation weight:} \\
+	An event-by-event weight to vary the impact of the flux simulation. An event gets weighted as a function of the neutrino run, the flavour of neutrino ($\nu_\mu$, $\bar{\nu}_\mu$, $\nu_e$ or $\bar{\nu}_e$) and the neutrino energy, detailed in \autoref{subsec:syst_flux}.
 	
 	The weight $w_{\vec{b}\rightarrow \vec{b}'}$ is applied once to weight the simulation to nominal, and is recalculated for every iteration of the fit.
 	
-	\item \textbf{Cross-section weight:} \\
-	An event-by-event weight taking the full generated event through the neutrino interaction simulation, calculating a weight to apply to the event. The applied weight is calculated as $w_{\vec{x} \rightarrow \vec{x}'}=\sigma(\vec{x}')/\sigma(\vec{x})$ for the generated neutrino interaction systematic parameter values $\vec{x}$ and the modified parameter values $\vec{x}'$. The event can receive a normalisation and a shape parameter depending on its interaction type and the interaction model considered in the analysis. Details of the model are found in \autoref{subsec:syst_xsec}.
+	\item \textbf{Cross-section variation weight:} \\
+	An event-by-event weight taking the full generated event through the neutrino interaction simulation, calculating a weight to apply to the event. The applied weight is pre-calculated as $w_{\vec{x} \rightarrow \vec{x}'}=\sigma(\vec{x}')/\sigma(\vec{x})$ for the generated neutrino interaction systematic parameter values $\vec{x}$ and the modified parameter values $\vec{x}'$. The event can receive a normalisation and a shape parameter depending on its interaction type and the interaction model considered in the analysis, detailed in \autoref{subsec:syst_xsec}.
 	
 	The weight $w_{\vec{x}\rightarrow \vec{x}'}$ is applied once to weight the simulation to nominal, and is recalculated for every iteration of the fit.
 	
-	\item \textbf{Detector covariance weight:} \\
-	An event-by-event weight from the reconstruction and selection package to vary the impact of the detector simulation. It is applied as a function of the event's topology and detector (e.g. FGD1 CC0$\pi$) and which detector covariance bin the event bin falls into (e.g. $p_\mu=350\text{ MeV}, \cos\theta_\mu=0.99$). The weight is a normalisation parameter $\vec{d}$ for each bin in the detector covariance matrix scheme, explained in detail in \autoref{subsec:syst_nd280}.
+	\item \textbf{Detector variation weight:} \\
+	An event-by-event weight from the reconstruction and selection package to vary the impact of the detector simulation. It is applied as a function of the event's topology and detector (e.g. FGD1 CC0$\pi$), its \pmu and \cosmu. The weights are normalisation parameters $\vec{d}$ for each bin in the detector covariance matrix, explained in detail in \autoref{subsec:syst_nd280}.
 	
 	The weight $w_{\vec{d}\rightarrow \vec{d}'}$ is applied once to weight the simulation to nominal, and is recalculated for every iteration of the fit.
 \end{itemize}
@@ -67,14 +67,14 @@ All weights are parameterised as multiplicative, so for a two parameter variatio
 w_{x \rightarrow x', y \rightarrow y'} = w_{x \rightarrow x', y \rightarrow y} \times w_{x \rightarrow x, y\rightarrow y'}
 \end{equation}
 
-Defining the beam parameters as $\vec{b}$, cross-section parameters as $\vec{x}$ and detector parameters as $\vec{d}$, we express one rescaled Monte-Carlo event $i$ as
+Defining the beam parameters as $\vec{b}$, cross-section parameters as $\vec{x}$ and detector parameters as $\vec{d}$, we express one rescaled Monte-Carlo event $\lambda_i$ as
 
 \begin{equation}
 \lambda_i\left(\vec{b}, \vec{x}, \vec{d}\right) = 1 \times w_i^\text{POT} \times w_i^\text{Flux} \times w^{\vec{b}\rightarrow \vec{b}'}_i \times w^{\vec{x} \rightarrow \vec{x}'}_i \times w^{\vec{d}\rightarrow \vec{d}'}_i
 \label{eq:mc_scale}
 \end{equation}
 
-The effect of each weight on the MC sample statistics is shown in \autoref{tab:eventrate_mach3}. The nominal flux and detector weights are 1.0, so are not included in the table
+The effect of each weight on the predictions for each ND280 selection is shown in \autoref{tab:eventrate_mach3}. The nominal flux and detector weights are 1.0, so are not included in the table.
 \begin{sidewaystable}
 	\centering
 	\begin{tabular}{ l | c | c | c | c | c }
@@ -142,7 +142,7 @@ The rates for the data and nominal model with all mentioned Monte-Carlo scalings
 
 \autoref{fig:nominal1D_pmu} shows the projections of the 2D distributions onto \pmu, where we note generally good modelling. The 2D distributions can be found in \autoref{chap:nominal_mc_2017}.
 
-The CC0$\pi$ selections have a clear oscillation from under-prediction to overprediction for FGD1 and FGD2 in $0 < p_\mu < 1 \text{ GeV}$. The FGD1 \numubar CC1Track selection appears to show similar behaviour although without the under-prediction at low \pmu, although FGD2 \numu CC1Track does not. The CC1$\pi$ selection shows a nearly consistent over-estimation of $\sim10\%$ in every bin for both FGDs. The CCOther selection is instead underestimated at the event distribution peak, into the tail ($0.5<p_\mu <1.5\text{ GeV}$). The CCNtrack distributions consistent with good modelling due to their large statistical errors.
+The CC0$\pi$ selections have a clear oscillation from under-prediction to overprediction for FGD1 and FGD2 in $0 < p_\mu < 1 \text{ GeV}$. The FGD1 \numubar CC1Track selection appears to show similar behaviour although without the under-prediction at low \pmu, although FGD2 \numu CC1Track does not. The CC1$\pi$ selection shows a nearly consistent over-estimation of $\sim10\%$ in every bin for both FGDs. The CCOther selection is instead underestimated at the event distribution peak, into the tail ($0.5<p_\mu <1.5\text{ GeV}$). The CCNtrack distributions are consistent with good modelling due to their large statistical errors.
 \begin{figure}[h]
 \begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=43]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
@@ -196,7 +196,7 @@ The CC0$\pi$ selections have a clear oscillation from under-prediction to overpr
 \label{fig:nominal1D_pmu}
 \end{figure}
 
-\autoref{fig:nominal1D_cosmu} shows the projections of the 2D distributions onto \cosmu. Again we see consistency across the FGDs, with CC0$\pi$ showing another oscillatory behaviour, going from underestimation at low \cosmu to a good prediction until $\cos \theta_\mu \sim 0.93$, in which the underestimation is back, similar in magnitude. For CC1$\pi$ we see a similar oscillation but shifted by 10\% over-estimation. For \numu CCOther we have less consistency, although the bin above $\cos \theta_\mu = 0.93$ are all underestimated, and for FGD2 this continues as \cosmu decreases. The most forward bin appears to be good modelled for all \numu samples except FGD2 CCOther. For the RHC 1 track selections, we note FGD2 looking similar to the CC0$\pi$ selection, where FGD1 less so. The NTracks selections look similar for FGD1 and FGD2 with overestimates at high \cosmu. For RHC \numu selections, the NTrack selections appear more consistent than 1 track, with underestimates in the highest \cosmu bin. The 1 track appears consistently underestimated in $0.9 < \cos\theta_\mu < 1$.
+\autoref{fig:nominal1D_cosmu} shows the projections of the 2D distributions onto \cosmu. Again we see consistency across the FGDs, with CC0$\pi$ showing another oscillatory behaviour, going from underestimation at low \cosmu to a good prediction until $\cos \theta_\mu \sim 0.93$, in which the underestimation is back, similar in magnitude. For CC1$\pi$ we see a similar oscillation but shifted by 10\% over-estimation. For \numu CCOther we have less consistency, although the bin above $\cos \theta_\mu = 0.93$ are all underestimated, and for FGD2 this continues as \cosmu decreases. The most forward bin appears to be well modelled for all \numu samples except FGD2 CCOther. For the RHC 1 track selections, we note FGD2 looking similar to the CC0$\pi$ selection, where FGD1 less so. The NTracks selections look similar for FGD1 and FGD2 with overestimates at high \cosmu. For RHC \numu selections, the NTrack selections appear more consistent than 1 track, with underestimates in the highest \cosmu bin. The 1 track appears consistently underestimated in $0.9 < \cos\theta_\mu < 1$.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=43]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
@@ -210,7 +210,6 @@ The CC0$\pi$ selections have a clear oscillation from under-prediction to overpr
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=49]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
 	\end{subfigure}
-	
 	
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth,page=51]{{figures/mach3/selection/2017b_nominal_withdebug_forthesis_ND280_nom.pdf}}
@@ -251,7 +250,7 @@ The CC0$\pi$ selections have a clear oscillation from under-prediction to overpr
 	\label{fig:nominal1D_cosmu}
 \end{figure}
 
-The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autoref{fig:nominal1D_cosmu} after applying the weights scaling show no noticeable differences to the raw MC distributions. Looking at the mode populations in \autoref{tab:nominal_mode_afterscale}, the selections contain $>50\%$ of the events they targeted. We see a 20\% contribution of nucleon interaction level CC$1\pi$ events in CC0$\pi$, which come from pion final state interactions, the pions falling below threshold, and misreconstruction.
+The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autoref{fig:nominal1D_cosmu} after applying the weights scaling show no noticeable differences to the raw MC distributions. Looking at the mode populations in \autoref{tab:nominal_mode_afterscale}, the selections contain $>50\%$ of the interaction modes that they were designed to target. We see a 20\% contribution of nucleon interaction level CC$1\pi$ events in CC0$\pi$, which come from pion final state interactions, detector thresholds, and misreconstruction.
 \begin{table}[h]
 	\centering
   \begin{tabular}{l | c c c c c c c }
@@ -288,15 +287,15 @@ The \pmu and \cosmu mode distributions in \autoref{fig:nominal1D_pmu} and \autor
 
 \section{Fitting Asimov Data}
 \label{sec:asimov}
-To internally validate the implementation and evaluate the effectiveness of the fitting framework we perform studies in which the nominal Monte-Carlo predictions presented in \autoref{sec:nom_model} are set to be the data.
+To internally validate the implementation and evaluate the effectiveness of the fitting framework, we perform studies in which the nominal Monte-Carlo predictions presented in \autoref{sec:nom_model} are set to be the data.
 
 \subsection{Log-Likelihood Scans}
 \label{sec:llh_scan}
-For the log-likelihood scans each parameter is set to the values recommended by the priors: the same parameter set which produces the nominal model in \autoref{sec:nom_model}. The parameters are then varied one at a time from -2$\sigma$ to +2$\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$, where $\mathbf{V}_{i,i}$ is the $i^{\text{th}}$ diagonal entry of each group of parameters' covariance matrix\footnote{So the bounds are unaffected by the correlation when getting the lower and upper bounds of the scan}. The minimum of the test-statistic occurs when the parameter is equal to the prior, as this sets prior constraint term to zero and produces a MC sample which perfectly matches the Asimov set, giving a zero contribution from the sample too. When a parameter has been scanned it is reset to the prior value. It is expected that most parameters produces a Gaussian response since the prior probability density function is set to such, and few parameters produce asymmetric responses in the event rate of a given bin\footnote{Although there are some, mentioned later.}.
+For the log-likelihood scans each parameter is set to the values recommended by the priors: the same parameter set which produced the nominal model in \autoref{sec:nom_model}. The estimated constraints from the one dimensional log-likelihood are not accurate due to the large correlations in the beam and ND280 parameters in the prior covariance matrices; hence $\chi^2\sim1$ does not indicate the typical $1\sigma$ sensitivity. For sensitivity estimates, it is more appropriate to vary the correlated parameters simultaneously, as is done in the Asimov fit presented later in \autoref{sec:asimov_fit}. The likelihood scans are considered a closure test rather than sensitivity.
 
-The scan splits the likelihood into each of the individual contributions presented in \autoref{eq:test_stat} and shows the total likelihood. For any given likelihood scan, there should only be contributions from the likelihood terms that are being varied: the sample likelihood (since the MC event $\lambda=\lambda(\vec{b},\vec{x},\vec{d})$) and the group of systematics which the parameter belongs to (e.g. the flux likelihood should vary when any of the $\vec{b}$ parameters are varied).
+The parameters are then varied one at a time from -2$\sigma$ to +2$\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$, where $\mathbf{V}_{i,i}$ is the $i^{\text{th}}$ diagonal entry of each group of parameters' covariance matrix\footnote{So the bounds are unaffected by the correlation when getting the lower and upper bounds of the scan}. The minimum of the test-statistic occurs when the parameter is equal to the prior. When a parameter has been scanned it is reset to the prior value. Most parameters are expected to have a Gaussian response since the prior probability density function is set to such, and few parameters produce asymmetric responses in the event rate of a given bin\footnote{Although there are some, mentioned later.}.
 
-In practice, the estimated constraints from the one dimensional log-likelihood are not accurate due to the large correlations in the beam and ND280 parameters in the prior covariance matrices; hence $\chi^2\sim1$ does not indicate the typical $1\sigma$ sensitivity. For sensitivity estimates, it is more appropriate to vary the correlated parameters simultaneously, as is done in the Asimov fit presented later in \autoref{sec:asimov_fit}. The likelihood scans are considered more of a closure test to inspect implementation.
+The scan splits the likelihood into each of the individual contributions presented in \autoref{eq:test_stat} and shows the total likelihood. For any given likelihood scan, there should only be contributions from the likelihood terms that are being varied: the sample likelihood and the group of systematics to which the parameter belongs.
 \begin{figure}[h]
 	\centering
 \begin{subfigure}[t]{0.32\textwidth}
@@ -328,7 +327,7 @@ In practice, the estimated constraints from the one dimensional log-likelihood a
 \label{fig:beam_asimov_llh}
 \end{figure}
 
-\autoref{fig:beam_asimov_llh} shows a selected number of beam parameters. Using the Asimov data set, it's clear that the prior term is dominant, even for the high-statistics ND280 FHC \numu $E_\nu = 0.6-0.7\text{ GeV}$ parameter. Many parameters see barely any constraint from the samples---e.g. \numubar in FHC running (due to very low wrong-sign events in \numu running) and \nue in FHC (due to no dedicated \nue selection being included). As expected, the SK flux parameters are only being constrained by the prior and see no direction contribution from any ND280 samples.
+\autoref{fig:beam_asimov_llh} shows a selected number of beam parameters. The prior term is dominant, even for the high-statistics ND280 FHC \numu $E_\nu = 0.6-0.7\text{ GeV}$ parameter. Many parameters barely see any constraint from the samples---e.g. \numubar in FHC running and \nue in FHC. As expected, the SK flux parameters are only being constrained by the prior and see no contribution from any ND280 selection.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -360,7 +359,7 @@ In practice, the estimated constraints from the one dimensional log-likelihood a
 	\label{fig:xsec_asimov_llh}
 \end{figure}
 
-\autoref{fig:xsec_asimov_llh} shows the likelihood scans for a selected few cross-section parameters. $M_A^{QE}$ and 2p2h norm $\nu$ are both fit without a prior, so only sees constraint from the sample likelihood, and 2p2h shape C has an almost flat prior likelihood, largely constrained by the samples. Some cross-section parameters, like BeRPA E, have a weaker constraint from the MC samples than from the prior, largely due to its effect being limited to high $Q^2$, of which ND280 have few. We also observe some non-Gaussian responses, such as the pion final-state-interaction charge exchange at low pion momentum (FSI CEX LO) and the single pion production non-resonant background parameter, $I_{1/2}^\text{bkg}$.
+\autoref{fig:xsec_asimov_llh} shows the likelihood scans for selected cross-section parameters. $M_A^{QE}$ and 2p2h norm $\nu$ are both fit without a prior, so only see constraints from the sample likelihood, and 2p2h shape C has an almost flat prior likelihood, mostly constrained by the samples. Some cross-section parameters, like BeRPA E, have a weaker constraint from the MC samples than from the prior, due to parameter effects being limited to high $Q^2$, of which ND280 have few. We observe some non-Gaussian responses, such as the pion final-state-interaction charge exchange at low pion momentum (FSI CEX LO) and the single pion production non-resonant background parameter, $I_{1/2}^\text{bkg}$.
 \begin{figure}[!h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -392,7 +391,7 @@ In practice, the estimated constraints from the one dimensional log-likelihood a
 \label{fig:nd280_asimov}
 \end{figure}
 
-\autoref{fig:nd280_asimov} shows a selected number of the ND280 parameters for FGD1 and FGD2. Generally, the ND280 parameters are more balanced between prior and sample likelihoods. The effect is by design, since the underlying MC events that are being varied when making the detector covariance are the same as those being varied in the fit: the only difference is the fit binning and the binning used to make the ND280 covariance matrix, covered in \autoref{subsec:syst_nd280}.
+\autoref{fig:nd280_asimov} shows a selected number of the ND280 parameters for FGD1 and FGD2. The ND280 parameters are more balanced between prior and sample likelihoods. The effect is by design, since the underlying MC events that are being varied when making the detector covariance are the same as those being selected in the fit: the only difference is the analysis binning and the binning used to make the ND280 covariance matrix, covered in \autoref{subsec:syst_nd280}.
 
 As expected, the ND280 parameters covering high statistics samples and regions of phase space---such as CC0$\pi$, $0<p_\mu<1.0\text{ GeV}$, $0.6 < \cos\theta_\mu < 0.7$---have higher constraints than low ones---such as CCOther $1.5 < p_\mu < 2.0\text{ GeV}$, $0.8 < \cos\theta_\mu < 0.85$.
 
@@ -400,10 +399,9 @@ Comparing top and bottom panels, the responses for equivalent FGD1 and FGD2 para
 
 \subsection{Parameter Variations}
 \label{sec:sigmavar}
-To finally inspect the effects of the parameterisation we vary the parameters one at a time over one unit of $\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$ as before, now looking at the impact on the event distributions for each selection.
+To finally inspect the effects of the parameterisation we vary the parameters one at a time over one unit of $\sigma$, where $\sigma = \sqrt{\mathbf{V}_{i,i}}$ as before, but now looking at the impact on the event distributions for each selection.
 
-The largest effects of the variations on the event rates in each sample is shown in \autoref{tab:onesigma}. For the CC0$\pi$ or 1 track selections the 2p2h normalisation parameters has the largest effect. This is expected because of the uncertainty applied is conservative at $\pm100\%$, so the lower event rate (15139.1 for FGD1 0$\pi$) is the event rate without any 2p2h $\nu$ events. For CC1$\pi$ selections, the largest effect is the $C_5^A$ parameter, which controls the single pion production model. For the CCOther selections the CC DIS parameter has the largest effect. For the RHC NTrack selections the $M_A^{RES}$ parameter is instead dominant, controlling the single pion production model of which the NTrack selections is dominated by (e.g. FGD1 NTrack 28.4\% CC1$\pi^{\pm,0}$ vs 26.9\% CCDIS in \autoref{tab:nominal_mode_afterscale}). The only selection which is does not have an interaction parameter as its largest uncertainity on event rate is FGD1 NTrk \numu, where the 29th beam parameter (RHC \numubar, $E_\nu = 0.7-1.0 \text{ GeV}$)--- the second largest effect is from $M_A^{RES}$, which predicts event rates from +1$\sigma$:1291.84 to -1$\sigma$: 1432.51. 
-
+The largest effects of the variations on the event rates in each sample is shown in \autoref{tab:onesigma}. For the CC0$\pi$ and 1 track selections the 2p2h normalisation parameters have the largest effect. This is expected because the prior uncertainties are conservative at $\pm100\%$, so the lower event rate (15139.1 for FGD1 0$\pi$) is the event rate when removing any 2p2h $\nu$ events. For CC1$\pi$ selections, the largest effect is the $C_5^A$ parameter, which controls the single pion production model. For the CCOther selections the CC DIS parameter has the largest effect. For the RHC NTrack selections the $M_A^{RES}$ parameter is instead dominant, controlling the single pion production model of which the NTrack selections is dominated by (e.g. FGD1 NTrack 28.4\% CC1$\pi^{\pm,0}$ vs 26.9\% CCDIS in \autoref{tab:nominal_mode_afterscale}). The only selection which is does not have an interaction parameter as its largest uncertainity on event rate is FGD1 NTrk \numu, where the 29th beam parameter (RHC \numubar, $E_\nu = 0.7-1.0 \text{ GeV}$)--- the second largest effect is from $M_A^{RES}$, which predicts event rates from +1$\sigma$:1291.84 to -1$\sigma$: 1432.51. The results are expected and compatible with the likelihood scans in \autoref{sec:llh_scan}.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c | c c c }
@@ -435,11 +433,8 @@ The largest effects of the variations on the event rates in each sample is shown
 	\label{tab:onesigma}
 \end{table}
 
-The results are expected and entirely compatible with the likelihood scans in \autoref{sec:llh_scan}, where we saw very strong constraints on many parameters (e.g. 2p2h norm $\nu$), which primarily came from sensitivity in the sample distributions. It is therefore expected that those parameters have a large impact on the event rates from the 1$\sigma$ variations.
-
 The impact on the \pmu \cosmu distributions for each sample and their respective ``highest impact parameters'' presented in \autoref{tab:onesigma} are shown in \autoref{fig:onesigma_fhc} and \autoref{fig:onesigma_rhc}. We note similar responses in both FGDs and across samples.
-
-\begin{figure}[!h]
+\begin{figure}[h]
 	\begin{subfigure}[t]{0.24\textwidth}
 	\includegraphics[width=\textwidth,page=1]{figures/mach3/sigmavar/Full_1sigmaVar_18July_BeRPA_U_ND280_sigmavar_highest_all}
 	\end{subfigure}
@@ -589,9 +584,8 @@ The impact on the \pmu \cosmu distributions for each sample and their respective
 
 \subsection{Prior Predictive Spectrum}
 \label{sec:Asimov_prior}
-The first statistical test of the Asimov is to investigate the prior predictive spectrum and resulting p-values. This is meant to reflect the compatibility of the prior with the Asimov data. The p-value is expected to be about 50\% since we're throwing the parameters either side of the central value which created the Asimov data set. However, we are performing correlated throws, so offsets from 50\% is to be expected. The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay around the expected value of 50\% as previously asserted.
-
-\begin{figure}[!h]
+The first statistical test on the Asimov is to investigate the prior predictive spectrum and resulting p-values. This is meant to reflect the compatibility of the prior with the Asimov data. The p-value is expected to be $\sim50\%$ since the parameter throws are either side of the central value which created the Asimov data set. However, the throws are correlated, so offsets from 50\% is to be expected. The two p-values are shown in \autoref{fig:prior_predictive_asimov} and lay around the expected value of 50\% as previously asserted.
+\begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PriorPred_procs}
 	\end{subfigure}
@@ -602,7 +596,7 @@ The first statistical test of the Asimov is to investigate the prior predictive 
 \label{fig:prior_predictive_asimov}
 \end{figure}
 
-\autoref{tab:asimov_prior_pred} shows the prior predictive event rates from the prior predictive spectrum to the Asmiov data with uncertainties from all systematics. We note that using the prior covariances without any fitting to the Asimov data produces 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. We also note a particularly bad test-statistic for the 0$\pi$ and 1Trk selections for the Asimov prior predictive central value. This is likely due to missing correlations between cross-section, flux and near-detector parameters, causing the correlated throws of the systematics to be skewed.
+\autoref{tab:asimov_prior_pred} shows the prior predictive event rates from the prior predictive spectrum to the Asmiov data with uncertainties from all systematics. Using the prior covariances without any fitting to the Asimov data produces 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. There is a particularly bad likelihood for the 0$\pi$ and 1Trk selections for the Asimov prior predictive spectrum. This is likely due to missing correlations between cross-section, flux and near-detector parameters, causing the correlated throws of the systematics to be skewed.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c | c}

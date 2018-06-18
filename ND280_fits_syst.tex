@@ -5,13 +5,13 @@
 
 The fit's main goal is to minimise impact of systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between ND280 and SK are the neutrino flux parameters (since T2K and SK are in the same neutrino ``beamline''), and neutrino-nucleus interaction parameters. The ``nuisance parameters'' can be considered as the ND280 detector parameters and cross-section parameters that are parametrised as only effective on Carbon. As such, there are many ``parameters of interest'', which the following section covers.
 
-The sources of systematics enter the fit by changing the prediction by shape and/or normalisation, and in most cases the fit incurs a likelihood penalty for moving parameters away from their priors. The penalty takes two forms: either Gaussian or a constant. In the case where there is firm reason to believe a parameter is constrained from other sources, the Gaussian penalty is imposed. When external data or recent model development and similar indicate lacking or conflicting knowledge of a parameter, a flat prior is chosen.
+The sources of systematics enter the fit by changing the prediction by shape and/or normalisation, and in most cases the fit incurs a likelihood penalty for moving parameters away from their priors. The penalty takes two forms: either Gaussian or a constant. In the case where there is firm reason to believe a parameter is constrained from other sources, the Gaussian penalty is imposed. When external data and/or recent model developments indicate lacking or conflicting knowledge of a parameter, a flat prior is chosen.
 
 For the Gaussian penalty we have
 \begin{equation}
 	-2\log\mathcal{L}_\text{Penalty} = (X_i-\mu_i) \left(\mathbf{V}\right)^{-1}_{i,j} (X_j-\mu_j)
 \end{equation}
-for parameter $i$, with current fit values $X_i$, priors $\mu_i$ and covariance matrix $\mathbf{V}$, and for a flat penalty we have
+for parameter $i$, with current fit values $X_i$, priors $\mu_i$ and covariance matrix $\mathbf{V}$. For a flat penalty we have
 \begin{equation}
 	-2\log\mathcal{L}_\text{Penalty} = C
 \end{equation}
@@ -19,7 +19,7 @@ where $C$ is a constant.
 
 \subsection{The Beamline and Neutrino Flux}
 \label{subsec:syst_flux}
-The flux systematics contain uncertainties from all sources going into the neutrino flux prediction. They are primarily split into six categories:
+The flux systematics contain uncertainties from all sources entering the neutrino flux prediction. They are split into six categories:
 \begin{itemize}
 	\item Hadron interaction uncertainties
 	\item Proton beam profile and off-axis angle
@@ -29,10 +29,9 @@ The flux systematics contain uncertainties from all sources going into the neutr
 	\item Number of protons on target
 \end{itemize}
 
-The simulations are updated each year to improve the modelling, often taking additional data in to account. An example of such is using the dedicated NA61/SHINE T2K replica target data \cite{NA61_pions_rep} to tune the hadron production model at the T2K beam target, and including results from the HARP experiment \cite{harp}.
+The simulations are updated each year to improve the modelling, often taking new data in to account. An example is using the dedicated NA61/SHINE T2K replica target data \cite{NA61_pions_rep} to tune the hadron production model at the T2K beam target, and including results from the HARP experiment \cite{harp}.
 
-The effects on the fractional error for the ND280 neutrino flux prediction is shown in \autoref{fig:flux_uncert_fhc} for FHC running and \autoref{fig:flux_uncert_rhc} for RHC running. The uncertainties are $\sim10\%$ in the flux peak region and is dominated by the hadron interaction uncertainties, which in turn consists primarily of multiplicity, pion rescattering and interaction length uncertainties. The proton beam profile and off-axis angle become important shortly after the flux peak at about 1 GeV for the right-sign component of the flux.
-
+The fractional errors for the ND280 neutrino flux prediction are shown in \autoref{fig:flux_uncert_fhc} for FHC running and \autoref{fig:flux_uncert_rhc} for RHC running. The uncertainties are $\sim10\%$ in the flux peak region and are dominated by hadron interaction uncertainties, which in turn consist primarily of multiplicity, pion rescattering and interaction length uncertainties. The proton beam profile and off-axis angle become important shortly after the flux peak at about 1 GeV for the right-sign component of the flux.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.42\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_numode_numu}
@@ -69,9 +68,9 @@ The effects on the fractional error for the ND280 neutrino flux prediction is sh
 \label{fig:flux_uncert_rhc}
 \end{figure}
 
-Importantly, the hadronic interaction uncertainty is reducible by improved modelling and tuning to carefully selected relevant hadron production data, which is the main method of reducing the flux uncertainty at T2K. An example of such an effort is the black dashed line and the black solid line in \autoref{fig:flux_uncert_fhc}, which shows the reduction in flux uncertainty from 2014 to 2015 analyses. Additionally, new beam profile monitors aid in reducing the proton beam profile and off-axis angle uncertainties.
+Importantly, the hadronic interaction uncertainties are reducible by improved modelling and tuning to hadron production data. An example is the black dashed line and the black solid line in \autoref{fig:flux_uncert_fhc}, which shows the reduction in flux uncertainty from 2014 to 2015 analyses. Additionally, new in-situ beam profile monitors aid in reducing the proton beam profile and off-axis angle contributions.
 
-The flux systematics enter the near-detector and oscillation analyses as bin-by-bin normalisations in $E_\nu^\text{True}$ for four different neutrino species (\numu, \numubar, \nue, \nuebar), for each running mode (FHC, RHC), for each detector (ND280, SK). The binning is chosen to reflect the magnitude of the neutrino flux and the changing shape but simultaneously keeping the number of parameters relatively low. The right-sign and wrong-sign species have the same binning, so ND280 FHC \numu is binned as ND280 RHC \numubar:
+The flux systematics enter the near-detector and oscillation analyses as bin-by-bin normalisations in true neutrino energy, $E_\nu^{true}$, for four different neutrino species (\numu, \numubar, \nue, \nuebar), for each running mode (FHC, RHC), for each detector (ND280, SK). The binning is chosen to reflect the magnitude of the neutrino flux and the changing shape but simultaneously keeping the number of parameters relatively low. The right-sign and wrong-sign species have the same binning, so ND280 FHC \numu is binned the same as ND280 RHC \numubar:
 \begin{itemize}
 	\item ND280, SK FHC \numu; ND280, SK RHC \numubar, :\\
 	$E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
@@ -85,16 +84,14 @@ The flux systematics enter the near-detector and oscillation analyses as bin-by-
 	\item ND280, SK FHC \nuebar; ND280, SK RHC \nue:\\
 	$E_\nu^{true}$: 0, 2.5, 30
 \end{itemize}
-This procedure brings the total number of flux parameters to 100: 50 for ND280 and 50 for SK. The SK flux parameters are not directly constrained in the near-detector fit: however because of the very strong ND280-SK flux correlations, the constraint on the ND280 flux parameters from ND280 data indirectly moves SK flux parameters. Hence, all 100 parameters are fit at ND280.
-
-The central values and bin-by-bin uncertainties are highly correlated so the likelihood penalties are evaluated with a covariance matrix, shown in \autoref{fig:flux_cov}.
+This procedure brings the total number of flux parameters to 100: 50 for ND280 and 50 for SK. The SK flux parameters are not directly constrained in the ND280-only analysis: the strong correlation between the flux at ND280 and SK indirectly moves SK flux parameters when the ND280 flux parameters move. Hence, all 100 parameters are included in the ND280-only analysis. The flux parameters are highly correlated so the likelihood penalties are evaluated with a covariance matrix, shown in \autoref{fig:flux_cov}.
 \begin{figure}[h]
-	\includegraphics[width=0.45\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/inputs/flux_covariance_banff_13av2}
-	\caption{13av2 covariance matrix, used in this analysis}
+	\includegraphics[width=0.6\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/inputs/flux_covariance_banff_13av2}
+	\caption{13av2 neutrino flux covariance matrix, used in this analysis}
 	\label{fig:flux_cov}
 \end{figure}
 
-In addition to the variation systematics above, there is also a nominal flux correction applied to each event as a function of its run period (e.g. run 2a), neutrino specie (e.g. \numubar) and $E_\nu^{\text{True}}$ (e.g. 0.8 GeV). This is present to correct the nominal flux model which the Monte-Carlo was produced with updated measurements. An example from run 4a and run 5b is shown in \autoref{fig:flux_ratio}.
+In addition to the variation systematics above, there is also a nominal flux correction applied to each event as a function of its run period (e.g. run 2a), neutrino specie (e.g. \numubar) and $E_\nu^{true}$ (e.g. 0.8 GeV); this is present to correct the nominal flux model with updated measurements. An example of the corrections from run 4a and run 5b is shown in \autoref{fig:flux_ratio}.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.42\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/run4_enu_nd5_13av2_numu_rat}
@@ -104,15 +101,15 @@ In addition to the variation systematics above, there is also a nominal flux cor
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/run5b_enu_nd5_13av2_numubar_rat}
 		\caption{5b \numubar}
 	\end{subfigure}
-	\caption{Nominal flux corrections applied to events in the ND5 tracker plane}
+	\caption{Nominal flux corrections applied to events in the ND5 (tracker) plane at ND280}
 	\label{fig:flux_ratio}
 \end{figure}
 
 \subsection{The ND280 Detector}
 \label{subsec:syst_nd280}
-The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics, such as TPC PID, FGD PID, TPC Momentum scale and study the impact on the number of predicted events in each \pmu \cosmu bin. 
+The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics---such as the TPC PID, FGD PID, and TPC Momentum scale---and study the impact on the number of predicted events in each \pmu \cosmu bin. 
 
-The parameterisation of near detector systematics are categorised as systematics that purely weight an event as the value changes and systematics that vary the observable event topology. The event weighting can further be broken down into efficiencies (with shapes) and normalisation parameters. When FGD-related systematics are concerned---such as pion tagging by Michel electron identification---the two FGDs have separate implementations to account for geometrical and compositional differences.
+The parameterisation of near detector systematics are categorised as systematics that purely weight an event as the value changes and systematics that vary the observed event topology. The event weighting can be broken down further into efficiencies (with shapes) and normalisation parameters. When FGD-related systematics are concerned---such as pion tagging by Michel electron identification---the two FGDs have separate implementations to account for geometrical and compositional differences.
 
 The different sources of systematics, their variation type and assumed probability distribution function (PDF) are shown in \autoref{tab:nd280_systs}.
 \begin{table}[h]
@@ -155,7 +152,7 @@ The different sources of systematics, their variation type and assumed probabili
 \end{table}
 
 \paragraph{Observable Variation Systematics}
-This group of systematics have the potential to change the reconstructed topology, so allow for migration in and out of selections. It can also switch the reconstructed lepton candidate for a different track in the event. The systematic is applied as a smearing to the reconstructed event variables (e.g. \pmu, \cosmu) and then reruns the event selection algorithm on the smeared event.
+This group of systematics have the potential to change the reconstructed topology, so allow for migration in and out of selections. They can also switch the reconstructed lepton candidate to a different track in the event. The systematic is applied as a smearing to the reconstructed event variables (e.g. \pmu, \cosmu) and then reruns the event selection algorithm on the smeared event.
 
 There are two methods with which the smearing is applied:
 \begin{itemize}
@@ -197,11 +194,11 @@ Additionally uncertainties from the magnetic field has special cases of the abov
 \end{itemize}
 
 \paragraph{Efficiency Systematics}
-The weight systematics are computed from studies which compare data and MC predictions in well known control samples. The multiple ND280 subdetectors enable cross-checks for tracking and matching efficiencies: e.g. TPC2 tracking efficiency can be computed using tracks with segments in FGD1 and FGD2, which therefore should have a track in TPC2.
+The weight systematics are computed from studies which compare data and MC predictions in well known control samples. The multiple ND280 subdetectors enable cross-checks for tracking and matching efficiencies: e.g. TPC2 tracking efficiency can be computed using tracks with segments in FGD1 and FGD2, which therefore should also have a track in TPC2 which can be cross-checked.
 
-Using the sand muon control sample---defined as having a through-going muon track in most of the detector, where the muon was created in the surrounding sand in the ND280 pit or the magnet---as an example, such muons tend to be very forward-going and high energy. Thus the sample is suitable for alignment studies but not efficiency (since the \pmu, \cosmu phase space is very limited). The model assumed to move to this phase space assumes the ratio between efficiencies in data and MC are the same in analysis and control samples.
+Using the sand muon control sample---defined as having a through-going muon track in most of the detector, where the muon was created in the surrounding sand in the ND280 pit or the magnet---as an example, such muons tend to be very forward-going and high energy. Thus the sample is suitable for alignment studies but not efficiency studies since the \pmu, \cosmu phase space is very limited. 
 
-The efficiency using MC is calculated using the truth information and the calculated efficiency for the data is then
+The model used to move to some new phase space assumes the ratio between efficiencies in data and MC are the same in analysis and control samples. The efficiency for the data is then
 \begin{equation}
 \epsilon_{data} = \frac{\epsilon_{data}^{Control}}{\epsilon_{MC}^{Control}} \epsilon_{MC}
 \end{equation}
@@ -213,9 +210,7 @@ yielding the predicted efficiency in the data as
 \begin{equation}
 \epsilon_{data}' = \left(r^{Control} + \alpha \delta r^{Control}\right)\epsilon_{MC}
 \end{equation}
-where $\alpha$ is the random variable.
-
-Finally to propagate the weight systematics on an event-by-event basis we define the two weights
+where $\alpha$ is the random variable. Finally we define the two weights
 \begin{equation}
 w_{Eff} = \frac{\epsilon_{data}'}{\epsilon_{MC}}
 \end{equation}
@@ -223,9 +218,10 @@ for events that identify the track correctly and
 \begin{equation}
 w_{Ineff} = \frac{1-\epsilon_{Data}'}{1-\epsilon_{MC}}
 \end{equation}
+to propagate the weight systematics on an event-by-event basis.
 
 \paragraph{Normalisation Systematics}
-These systematics are simple one-time weights which change the overall event numbers. The FGD mass error is an example of such a systematics: if the mass of the FGD is larger than the nominal, the overall number of observed events in MC should be increased. The weight $w$ is simple applied as
+These systematics are simple one-time weights which change the overall event numbers. The FGD mass error is an example of such a systematics: if the mass of the FGD is larger than the nominal, the overall number of observed events in MC should be increased. The weight $w$ is applied as
 \begin{equation}
 w = 1+\alpha \cdot \delta e
 \end{equation}
@@ -234,7 +230,7 @@ where 1.0 is the nominal weight, $\alpha$ is a random variable, and $\delta e$ i
 \paragraph{Relative Systematic Error Sizes}
 \autoref{tab:nd280_syst_error_nu} shows the relative errors from ND280 systematics contribution on the number of predicted events for the different ND280 \numu selections for FGD1. The total error for the CC0$\pi$ selection is 1.66\%, CC1$\pi$ is 3.33\% and CCOther 6.47\%. For comparison, the flux and cross-section errors are generally $\mathcal{O}\left(10\%\right)$. The error increases with selection because the increased track multiplicity and lower ``cleanliness'' of the reconstructed events. 
 
-The largest contribution to the total error is pion secondary interactions, making up $\sim90\%$ of the detector systematics. This systematic additionally has the power to migrate events through selections by changing the number of reconstructed pions. For the CCOther selection the TPC tracking efficiency also has a large contribution (1.79\%), decreasing to 0.44\% for CC1$\pi$ and 0.27\% for CC0$\pi$. The FGD mass contributes a 0.6\% uncertainty for all selections, making up 1/3 of the error on CC0$\pi$ selection.
+The largest contribution to the total error is pion secondary interactions, making up $\sim90\%$ of the detector systematics. This systematic has the power to migrate events through selections by changing the number of reconstructed pions. For the CCOther selection the TPC tracking efficiency also has a large contribution (1.79\%), decreasing to 0.44\% for CC1$\pi$ and 0.27\% for CC0$\pi$. The FGD mass contributes 0.6\% uncertainty for all selections, making up 1/3 of the error on CC0$\pi$ selection. FGD2 has similarly sized systematic contributions, although slightly modified due to the geometry: e.g. the sand muon error is smaller in FGD2 due to tighter vetos than in FGD1.
 \begin{table}[h]
 	\begin{tabular}{l | c c c}
 		\hline
@@ -276,11 +272,10 @@ The largest contribution to the total error is pion secondary interactions, maki
 \caption{Integrated systematic errors for FGD1 FHC related systematics}
 \label{tab:nd280_syst_error_nu}
 \end{table}
-FGD2 has similarly sized systematic contributions, although slightly modified due to the ND280 geometry, e.g. the sand muon error is smaller in FGD2 due to tighter vetos than in FGD1.
 
-\autoref{tab:nd280_syst_error_nubar} shows the same table but for the RHC selections. The tracking related systematics for the FGD (Michel electron tagging, PID, hybrid tracking) are not present because the number of tracks in the event---defining the 1Trk or NTrk selection---is solely based on the number of TPC tracks present, so has no impact.
+\autoref{tab:nd280_syst_error_nubar} shows the error table for the RHC selections. The tracking related systematics for the FGD (Michel electron tagging, PID, hybrid tracking) are not present because the number of tracks in the event---defining the 1Trk or NTrk selection---is solely based on the number of TPC tracks present, so has no impact.
 
-As for the FHC selections, the largest systematic by far is the pion secondary modelling (90+\%). The impact is larger than for FHC selections since the source of pions are \numu interactions (typically higher in $E_\nu$ so also higher in multiplicity) and the larger uncertainties on $\pi^-$ re-interaction probabilities. The FGD mass is again the second largest systematic for CC0$\pi$, although for the CCNTrk selection the TPC tracking efficiency comes in second, followed by the TPC PID, followed by the FGD mass.
+As for the FHC selections, the largest systematic by far is the pion secondary modelling (90+\%). The impact is larger than for FHC selections since the source of pions are \numu interactions (typically higher in $E_\nu$ so also higher in multiplicity) and the larger uncertainties on $\pi^-$ re-interaction probabilities. The FGD mass is the second largest systematic for CC0$\pi$, although for the CCNTrk selection the TPC tracking efficiency comes in second, followed by the TPC PID, followed by the FGD mass.
 \begin{table}[h]
 	\begin{tabular}{l | c c}
 		\hline
@@ -321,9 +316,9 @@ As for the FHC selections, the largest systematic by far is the pion secondary m
 \end{table}
 
 \paragraph{Parameterisation of ND280 Systematics}
-The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an event-by-event basis. However, in practice this is complicated by two main reasons: 1) the event selection framework is not sufficiently optimised to guarantee fast reweighting below 0.1s per reconfigure; 2) and for some events and values of variation systematics, discontinuous test-statistic were found when events were migrated from one topology to another. Whereas the former is purely computational, the latter causes problems for finding minima with gradient descent algorithms, employed by the dedicated near-detector only fit (BANFF). 
+The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an event-by-event basis. In practice this is unfeasible because: 1) the event selection framework is not sufficiently optimised to guarantee fast reweighting below 0.1 s per systematics reconfigure; 2) some values of variation systematics gave rise to discontinuous test-statistics as events migrated from one topology to another. Whereas the former is purely computational, the latter causes problems for finding minima with gradient descent algorithms, employed by the other ND280 fitting group (BANFF). 
 
-It was instead decided to parameterise the systematics similarly to the flux systematics, which both ensures smoothness and enables fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event and 500 random variations are chosen according to the prior covariances and the number of events are binned in the chosen fit-binning in \autoref{sec:binning_2017}. Each bin is then a normalisation parameter, and highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the effects from Martini and Nieves 1p1h model differences are added\cite{t2k_2015}. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
+The systematics are instead parameterised similarly to the flux systematics, which ensures both smoothness and fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event basis and 500 random variations are chosen according to the prior covariances, and the number of events are binned in the fit-binning from \autoref{sec:binning_2017}. The content of each bin is then a normalisation parameter, and is highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the differences in Martini and Nieves' 1p1h model to the NEUT CCQE model are added\cite{t2k_2015}. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
 
 Using the fit binning in \pmu \cosmu yields 1624 ND280 parameters, which was reduced to 556 by merging bins with similar features in the underlying bin-by-bin event distributions. The final ND280 detector matrix binning was chosen to be
 \begin{itemize}
@@ -349,7 +344,7 @@ Using the fit binning in \pmu \cosmu yields 1624 ND280 parameters, which was red
 	\pmu (MeV/c):  0, 1000, 1500, 2000, 3000, 10000 \\
 	\cosmu: -1, 0.8, 0.90, 0.93, 0.95, 0.96, 0.97, 0.99, 1.00
 \end{itemize}
-in which we note a large first momentum bin for many selections. This is primarily because the pion secondary interaction systematic is by far dominant, which generally becomes larger at higher \pmu (which in turn correlates with higher $E_\nu$), leading to enough energy to create a pion. Reducing the ND280 detector systematic binning had no discernible effect for flux or interaction parameters in a fit to Asimov data.
+in which we note a large first momentum bin for many selections. This is primarily because the pion secondary interaction systematic is by far dominant, which generally becomes larger at higher \pmu (which in turn correlates with higher $E_\nu$), leading to enough energy to create a pion. Reducing the ND280 detector systematic binning had no discernible effect for flux or interaction parameters in a fit to mock data.
 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.42\textwidth}
@@ -372,7 +367,7 @@ in which we note a large first momentum bin for many selections. This is primari
 	\caption{Number of events in selected detector bins with uncertainties from ND280 systematics}
 	\label{fig:det_var}
 \end{figure}
-The result of the detector systematics procedure is shown in \autoref{fig:det_var} for a selection of bins. In FGD1 CC0$\pi$ we find the worst overall example in the \pmu=1250-2000, \cosmu=0.6-0.7 bin, in which we see a double Gaussian bimodal behaviour. This is likely from events migrating in and out of the \{\pmu, \cosmu, sample\} combination due to pion secondary interactions. Although a simple fit to the bin content chooses one of the peaks, the covariance matrix entry sits in between the two with an error that covers both modes.
+The result of the detector systematics procedure is shown in \autoref{fig:det_var} for a selection of bins. In FGD1 CC0$\pi$ the worst overall example is the \pmu=1250-2000, \cosmu=0.6-0.7 bin, which has a double Gaussian bimodal behaviour. This is likely from events migrating in and out of the \{\pmu, \cosmu, sample\} combination due to pion secondary interactions. Although a simple fit to the bin content chooses one of the peaks, the covariance matrix entry sits in between the two with an error that covers the bimodality.
 
 The final covariance matrix is seen in \autoref{fig:nd280_cov}, where the majority of bins are highly correlated. The correlation matrix is shown in \autoref{fig:nd280_corr}. We particularly see high correlations for the high-momentum bins (towards the end of each selection). The anti-correlations enter mostly for RHC selections, where bins at low \pmu correlate negatively with bins at high \pmu. There are also anti-correlations in FGD1 vs FGD2 selections.
 \begin{figure}[h]
@@ -429,18 +424,18 @@ The final covariance matrix is seen in \autoref{fig:nd280_cov}, where the majori
 \label{subsec:syst_xsec}
 The parameterisation of the interaction systematics is frequently updated in T2K analyses to account for new theoretical calculations. This includes nuclear in-medium effects such as RPA and 2p2h corrections\cite{nieves1,nieves2}, initial state models such as Local Fermi Gases \cite{lfg} and Spectral Functions \cite{benhar}, and parameter tunes of existing models\cite{ccqe_tuning}.
 
-The T2K and Super-K experiments both use the custom interaction library NEUT 5.3.3\cite{neut} as a primary generator, with cross-checks with GENIE\cite{genie} and NuWro\cite{NuWro}. Hence the interaction parameterisation deals with the models implemented into NEUT and are outlined here. 
+The T2K and SK experiments both use the custom interaction library NEUT 5.3.3\cite{neut} as their primary neutrino event generator, with cross-checks with GENIE\cite{genie} and NuWro\cite{NuWro}. Hence the interaction parameterisation deals with the models implemented in NEUT and are outlined here. 
 
 \paragraph{CCQE and CC0$\pi$}
-The nominal model is generated with a Spectral Function from Benhar et al (SF) \cite{benhar} and a 2-particle-2-hole (2p2h) excitation \cite{nieves1,nieves2} for the CCQE/CC0$\pi$ model. An alternative model uses the Llewellyn-Smith model\cite{llewelyn-smith} with a dipole axial form factor and BBBA05 vector form factors \cite{bbba05} with a Smith-Moniz Relativistic Fermi Gas (RFG) \cite{Smith-Moniz}. 
+The nominal model is generated with a Spectral Function (SF) from Benhar and others\cite{benhar} and a 2-particle-2-hole (2p2h) excitation \cite{nieves1,nieves2} for the CCQE/CC0$\pi$ model. An alternative model uses the Llewellyn-Smith model\cite{llewelyn-smith} with a dipole axial form factor and BBBA05 vector form factors\cite{bbba05} coupled to a Smith-Moniz Relativistic Fermi Gas (RFG)\cite{Smith-Moniz}. 
 
-When selecting the default CCQE model for T2K analyses, it was found\cite{ccqe_tuning} that the SF+2p2h model was inferior to the RFG+2p2h+RPA when describing external neutrino and anti-neutrino CCQE scattering data from MiniBooNE\cite{miniboone_nu_ccqe, miniboone_nubar_ccqe} and MINER$\nu$A \cite{minerva_nu_ccqe, minerva_nubar_ccqe}. Thus the simpler RFG model was chosen and a one-time weight is applied in \pmu, \cosmu to account for the phase space shift.
+When selecting the default CCQE model for T2K analyses, it was found\cite{ccqe_tuning} that the SF+2p2h model was inferior to the RFG+2p2h+RPA model when predicting external neutrino and anti-neutrino CCQE scattering data from MiniBooNE\cite{miniboone_nu_ccqe, miniboone_nubar_ccqe} and MINER$\nu$A \cite{minerva_nu_ccqe, minerva_nubar_ccqe}. Thus the simpler RFG model was chosen and a one-time weight is applied in \pmu, \cosmu to account for the phase space shift.
 
-In the selected CCQE model we have three free parameters to vary: $M_A^{QE}$, the axial mass in the dipole form factor parameterisation in the Llewelyn-Smith model, and $p_F$, the Fermi surface momentum, for $^{12}C$ and $^{16}O$ coming from the Smith-Moniz model\footnote{The binding energy term was found to have a negligible effect in 2015 analyses so was removed}.
+In the selected CCQE model we have three free parameters to vary: $M_A^{QE}$, the axial mass in the dipole form factor parameterisation in the Llewelyn-Smith model, and $p_F$, the Fermi surface momentum, for $^{12}\text{C}$ and $^{16}\text{O}$ coming from the Smith-Moniz model\footnote{The binding energy term was found to have a negligible effect in 2015 analyses so was removed}.
 
-The 2p2h effects first have normalisation parameters separated for neutrino and anti-neutrino, and one for $^{12}C\rightarrow^{16}O$ scaling. Secondly, there is a 2p2h shape parameter separated for $^{12}C$ and $^{16}O$ which is parameterised as a multiplicative weight applied on an event-by-event basis, taking an event's $E_\nu, q_0, q_3$, where $E_\nu$ is the true neutrino energy, $q_0$ is the energy and $q_3$ is the momentum components of $Q = k_\nu - k_\mu = (q_0, q_3)$. The 2p2h model can be parameterised as having terms with and without pion exchange and the interference between these terms. The parameterisation of the shape uncertainty is to at -1 assign all the 2p2h to $\Delta$-like or at +1 to non$\Delta$-like 2p2h, and an interference term soaking up the lost or gained cross-section so the systematic have no net effect on the normalisation of 2p2h events.
+The 2p2h effects first have normalisation parameters separated for neutrino and anti-neutrino, and one for $^{12}\text{C}\rightarrow^{16}\text{O}$ scaling. Secondly, there is a 2p2h shape parameter separated for $^{12}\text{C}$ and $^{16}\text{O}$ which is parameterised as a multiplicative weight applied on an event-by-event basis, taking an event's $E_\nu, q_0, q_3$, where $E_\nu$ is the true neutrino energy, $q_0$ is the energy and $q_3$ is the momentum components of $Q = k_\nu - k_\mu = (q_0, q_3)$. The 2p2h model can be parameterised as having terms with and without pion exchange and the interference between these terms. At a value of -1 the shape uncertainty assigns all the 2p2h to $\Delta$-like and at +1 to non$\Delta$-like 2p2h, and an interference term soaking up the lost or gained cross-section is included, so the systematic have no net effect on the normalisation of 2p2h events.
 
-The net effect of the parameter on NEUT Monte-Carlo events generated with an ND280 flux on a $^{12}C$ target in $q_0, q_3$ (integrated over ND280 $E_\nu$) is shown in \autoref{fig:2p2h_shape_q0q3}. The $\sim300\text{ MeV}$ shift in $q_0$ from $m_\Delta-m_N$ is evident for the extreme parameter values, whereas the nominal (``Tweak Value = 0'') populates both regions.
+The net effect of the parameter on NEUT Monte-Carlo events generated with an ND280 flux on a $^{12}\text{C}$ target in $q_0, q_3$ (integrated over ND280 $E_\nu$) is shown in \autoref{fig:2p2h_shape_q0q3}. The $\sim300\text{ MeV}$ shift in $q_0$ from $m_\Delta-m_N$ is evident for the extreme parameter values, whereas the nominal (``Tweak Value = 0'') populates both regions.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -460,16 +455,16 @@ The net effect of the parameter on NEUT Monte-Carlo events generated with an ND2
 \begin{equation}
 	E_\nu^{reco} = \frac{m^2_f-m_i'^2-m^2_l+2m_i'E_l}{2(m_i'-E_l+p_l\cos\theta_{\nu,l})}
 \end{equation}
-in which $m_f$ is the final state nucleon mass, $m_i' = m_i-E_b$ where $m_i$ is the initial state nucleon mass and $E_b$ is the binding energy of a nucleon in the nucleus (27 MeV for $^{16}O$, 25 MeV for $^{12}C$), $E_l$ ($p_l$) is the reconstructed lepton energy (momentum), and $\cos\theta_{\nu,l}$ is the cosine of the reconstructed angle between the incoming neutrino and outgoing lepton.
+in which $m_f$ is the final state nucleon mass, $m_i' = m_i-E_b$ where $m_i$ is the initial state nucleon mass and $E_b$ is the binding energy of a nucleon in the nucleus (27 MeV for $^{16}\text{O}$, 25 MeV for $^{12}\text{C}$), $E_l$ ($p_l$) is the reconstructed lepton energy (momentum), and $\cos\theta_{\nu,l}$ is the cosine of the reconstructed angle between the incoming neutrino and outgoing lepton.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.42\textwidth}
 		\includegraphics[width=\textwidth, trim={30mm 0mm 38mm 26mm}, clip,page=1]{figures/niwg/ediff_neutrino_mec_pdd_c}
-		\caption{$^{12}C$ target}
+		\caption{$^{12}\text{C}$ target}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.42\textwidth}
 		\includegraphics[width=\textwidth, trim={30mm 0mm 38mm 27mm}, clip,page=1]{figures/niwg/ediff_neutrino_mec_pdd_o}
-		\caption{$^{16}O$ target}
+		\caption{$^{16}\text{O}$ target}
 	\end{subfigure}
 
 \begin{subfigure}[t]{0.42\textwidth}
@@ -484,7 +479,6 @@ in which $m_f$ is the final state nucleon mass, $m_i' = m_i-E_b$ where $m_i$ is 
 \autoref{fig:2p2h_shape_enu_reco} shows the importance of good 2p2h modelling for SK $E_\nu$ reconstruction: it biases 2p2h events towards a lower energy and so directly impact oscillation parameter fits.
 
 The second group of nuclear uncertainties for CC0$\pi$ comes from the Random Phase Approximation \cite{nieves2}, which effectively describes correlations between nucleons in a nucleus. The net effect is to modify the 1-particle-1-hole\cite{nieves1} cross-section, which in NEUT is parameterised as a look-up table correction to the CCQE cross-section in $E_\nu$ and $Q^2$. The $E_\nu$ dependence was found to be relatively weak, so a $Q^2$ dependent correction was developed to mimic the uncertainties associated with the model\cite{nieves1}. The correction is parameterised as a third order rising polynomial which switches to a decaying exponential at $Q^2=1.2\text{ GeV}^2$. A normal polynomial of form $ax^3+bx^2+cx+d$ connecting to $\exp{\left(-e(x-f)\right)}$ was found to strongly correlate the polynomial and exponential parameters, so a Bernstein polynomial base was chosen instead. The parameterisation follows
-
 \begin{equation}
 w(Q^2) = 
 \begin{cases}
@@ -524,10 +518,10 @@ The magnitude and uncertainty of $A, B, D$ and $E$ are then chosen to match the 
 \paragraph{Single Pion Production}
 The single pion production is described with the Rein-Sehgal model\cite{Rein_Sehgal, Rein_Angular} with lepton mass corrections \cite{Kuzmin_MassEffect,Wroclaw_MassEffect,Berger_Sehgal_MassEffect} and modified form factors aimed at the $\Delta$ resonance \cite{Wroclaw_CC1pi_2014,Wroclaw_CC1pi_2009,Wroclaw_CC1pi_theory}. The tunable parameters all relate to the neutrino-nucleon scattering interaction in the Rein-Sehgal model, which are $M_A^{RES}$, the axial mass for the resonant interaction in the Rein-Sehgal model, $C_5^A(0)$, one of the axial form factors at $Q^2=0$ in the Graczyk-Sobczyk form factor parameterisation, and the size of the non-resonant $I_{1/2}$ background in the Rein-Sehgal model.
 
-The single pion production uncertainties were tuned to selected bubble chamber data from ANL\cite{ANL_CC1pi,ANL_NC1pi} and BNL\cite{BNL_CC1pi,BNL_CC1pi_isospin,BNL_NuInt02}. The parameter values were cross-checked with modern corrections\cite{ANL_BNL_corr} and nuclear data from MiniBooNE\cite{MB_CC1pip,MB_CC1pi0,MB_NC1pi0}, MINER$\nu$A\cite{MIN_CC1pi0,MIN_CC1pip,MIN_pion_2016} and K2K \cite{K2K_CC1pip} using NUISANCE\cite{NUISANCE}.
+The single pion production uncertainties were tuned to selected bubble chamber data from ANL\cite{ANL_CC1pi,ANL_NC1pi} and BNL\cite{BNL_CC1pi,BNL_CC1pi_isospin,BNL_NuInt02}. The parameter values were cross-checked with suggested corrections to the ANL and BNL data\cite{ANL_BNL_corr}, and compared to results when fitting nuclear data from MiniBooNE\cite{MB_CC1pip,MB_CC1pi0,MB_NC1pi0}, MINER$\nu$A\cite{MIN_CC1pi0,MIN_CC1pip,MIN_pion_2016} and K2K \cite{K2K_CC1pip} using NUISANCE\cite{NUISANCE}.
 
 \paragraph{Coherent Scattering}
-The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_Sehgal_coh}. An $E_\pi$ dependent scaling factor, listed in \autoref{tab:rein_sehgal_coh}, is applied to match MINER$\nu$A $\nu$ and $\bar{\nu}$ CC coherent data \cite{MIN_coh} and the Berger-Sehgal model \cite{Berger_Sehgal_coh}.
+The coherent scattering model is described by the Rein-Sehgal model\cite{Rein_Sehgal_coh}. An $E_\pi$ dependent scaling factor, listed in \autoref{tab:rein_sehgal_coh}, is applied to match MINER$\nu$A $\nu$ and $\bar{\nu}$ CC coherent data \cite{MIN_coh} and the Berger-Sehgal model\cite{Berger_Sehgal_coh}.
 \begin{table}[h]
 	\begin{tabular}{c | c}
 		\hline
@@ -545,47 +539,47 @@ The coherent scattering model is described by the Rein-Sehgal model \cite{Rein_S
 \label{tab:rein_sehgal_coh}
 \end{table}
 
-The strength of the coherent interaction is allowed to vary in the fit as normalisation parameters: one for CC $^{12}C$, one for CC $^{16}O$ and one for NC interactions. The prior uncertainty is 30\% from inspections of MINER$\nu$A data and the two CC parameter are 100\% correlated in the prior.
+The strength of the coherent interaction is allowed to vary in the fit as normalisation parameters: one for CC $^{12}\text{C}$, one for CC $^{16}\text{O}$ and one for NC interactions. The prior uncertainty is 30\% from inspections of MINER$\nu$A data and the two CC parameters are 100\% correlated in the prior.
 
 \paragraph{Multi-$\pi$ and DIS}
-In NEUT the structure functions are taken from the GRV98 parton distribution function \cite{grv98} with Bodek-Yang corrections \cite{bodek_yang}. The details of the transition can be found in \cite{neut} and is inspired from external bubble chamber data on pion multiplicity. The DIS model is directly from PYTHIA 5.7 and JETSET 7.4 \cite{pythia}.
+In NEUT the structure functions are taken from the GRV98 parton distribution functions\cite{grv98} with Bodek-Yang corrections\cite{bodek_yang}. The details of the transition can be found in\cite{neut} and is inspired by external bubble chamber data on pion multiplicity. The DIS model is directly from PYTHIA 5.7 and JETSET 7.4\cite{pythia}.
 
-The multi-pi/DIS uncertainties are inspired from results from MINOS \cite{minos_mult} on DIS interactions at $E_\nu = 4.0 \text{ GeV}$, increasing with decreasing $E_\nu$ and is parametersied as 
+The multi-pi/DIS uncertainties come from measurements by MINOS\cite{minos_mult} on DIS interactions. At $E_\nu = 4.0 \text{ GeV}$ the uncertainties should be $\sim 10\%$, increasing with decreasing $E_\nu$ and is parametersied as 
 \begin{equation}
 \delta\left(\sigma_\text{CC DIS}\right) = \frac{0.4}{E_\nu}
 \end{equation}
 
-NC DIS events do not receive this systematic and is instead controlled by an overall normalisation parameter including numerous other NC interaction modes, explained further down.
+NC DIS events do not receive this systematic and are instead controlled by an overall normalisation parameter including other NC interaction modes, explained further down.
 
-\paragraph{Other Interactions}
+\paragraph{Subdominant Interactions}
 The interaction modes with smaller cross-sections and/or small effects on 0$\pi$ selections are controlled by normalisation parameters.
 
-The NC1$\gamma$ interaction---modelled with the Rein-Sehgal single-pion model with replaced branching fractions---is important because the $\gamma \rightarrow e^+ e^-$ decay may mimic \nue appearance signal although the cross-section is very small $\mathcal{O}(10^{-40}) \text{ cm}^2/\text{nucleon}$\cite{thesis_pierre}. The prior weight is set to 200\% of nominal after comparing to a recent theory model\cite{nc1gamma}, and the prior uncertainty is conservative at 100\%.
+The NC1$\gamma$ interaction---modelled with the Rein-Sehgal single-pion model with replaced branching fractions---is important because although the cross-section is very small ($\mathcal{O}(10^{-40}) \text{ cm}^2/\text{nucleon}$\cite{thesis_pierre}), the $\gamma \rightarrow e^+ e^-$ process may mimic \nue appearance signal at SK. The prior weight is set to 200\% of nominal after comparing to a recent theory model\cite{nc1gamma}, and the prior uncertainty is conservative at 100\%.
 
-The NC elastic, resonant kaon and eta production and NC DIS events are all joined together under the ``NC other'' normalisation parameter. The prior is the nominal value with an uncertainty of 30\%.
+The NC elastic, resonant kaon and eta production, and NC DIS events are all joined together under the ``NC other'' normalisation parameter. The prior is the nominal value with an uncertainty of 30\%.
 
-\paragraph{\nue and \nuebar}
-In principle, there may be unmodelled effects present for \nue (\nuebar) and not \numu (\numubar), which could affect \nue appearance. Since there is published dedicated \nue selection at ND280\footnote{With the exception of \cite{thesis_pierre}, included in next year's analysis} to constrain \nue cross-sections, an uncorrelated 2\% uncertainty from radiative corrections and another 2\% correlated uncertainty from second class currents are added\cite{kevin_nue_numu}. These systematics are simply normalisations applied to all \nue and \nuebar events separately.
+\paragraph{Electron (Anti-)Neutrinos}
+In principle, there may be unmodelled effects present for \nue (\nuebar) and not \numu (\numubar), which could affect parameters extracted from \nue appearance. Since there is dedicated \nue selection at ND280\footnote{With the exception of the upcoming work presented in \cite{thesis_pierre}, included in next year's analysis} to constrain \nue cross-sections or any high-statistics external data, an uncorrelated 2\% uncertainty from radiative corrections and another 2\% correlated uncertainty from second class currents are added\cite{kevin_nue_numu}. These systematics are simply normalisations applied to \nue and \nuebar events separately.
 
 \paragraph{Final State Interactions}
-The hadronic (pion and nucleon) final state interactions are handled by a cascade implementation of the Salcedo-Oset model \cite{salcedo_oset} when their momentum is less than 500 MeV. In summary, the interaction probabilities are functions of the hadron's momentum and position in the nucleus, with direction and momentum changes tuned to $\pi-N$ scattering data\cite{pion_scattering}, including in-medium corrections\cite{seki}. More details are provided elsewhere\cite{neut}. Above 500 MeV, the interaction probabilities are calculated from $\pi^\pm$ scattering off free protons and deuteron compiled by the PDG\cite{pdg_2010}. To avoid double counting and discontinuities, the two models are blended between $400 < p_\pi<500 \text{ MeV}$. 
+The hadronic pion final state interactions are handled by a cascade implementation of the Salcedo-Oset model \cite{salcedo_oset} when their momentum is less than 500 MeV. In summary, the interaction probabilities are functions of the hadron's momentum and position in the nucleus, with direction and momentum changes tuned to $\pi-N$ scattering data\cite{pion_scattering}, including in-medium corrections\cite{seki}. More details are provided elsewhere\cite{neut}. Above 500 MeV, the interaction probabilities are calculated from $\pi^\pm$ scattering off free protons and deuteron compiled by the PDG\cite{pdg_2010}. To avoid double counting and discontinuities, the two models are blended between $400 < p_\pi<500 \text{ MeV}$. 
 
-The systematics are parameterised as the scattering probabilities for the different interaction processes at each microscopic step in the cascade. These are divided into absorption, pion production, quasi-elastic and charge exchange. Furthermore, the two latter are split into low and high energy regions, above and below the model transition at $p_\pi = 500\text{ MeV}$. For oscillation analyses using the 0$\pi$ topology, the absorption and elastic probabilities are most important since they can significantly bias energy reconstruction by removing pions from the reconstructed event. The prior values and uncertainties come from tuning to world scattering data: $\pi^+-^{12}C$ for the low energy and $\pi^\pm - ^{12}C$ for the high energy parameters.
+The systematics are parameterised as the scattering probabilities for the different interaction processes at each microscopic step in the cascade. These are divided into absorption, pion production, quasi-elastic and charge exchange. Furthermore, the two latter are split into low and high energy regions, above and below the model transition at $p_\pi = 500\text{ MeV}$. For oscillation analyses using the 0$\pi$ topology, the absorption and elastic probabilities are most important since they can significantly bias energy reconstruction by removing pions from the reconstructed event. The prior values and uncertainties come from tuning to world scattering data: $\pi^+-^{12}\text{C}$ for the low energy and $\pi^\pm - ^{12}\text{C}$ for the high energy parameters.
 
-Importantly, the pion rescattering probabilities are assumed to be independent, which is not correct. An extreme variation in the absorption probability will cause a pion to be absorbed, so the effect of the other parameters should be none. However this is not implemented as it was found to have a $\sim1\%$ effect on T2K run 2-4 data.
+Importantly, the pion rescattering probabilities are assumed to be independent, which is technically incorrect. An extreme variation in the absorption probability will cause a pion to be absorbed, so the effect of the other parameters should be nothing. Such effects are unaccounted for as it was found to have a $\sim1\%$ effect on T2K run 2-4 data.
 
-The nucleon interaction uncertainties are neglected since for water Cherenkov detector such as Super-Kamiokande, the nucleon threshold is rarely reached. However, when nucleons interact to produce pions these pions are propagated through the simulation and are subject to the above systematics.
+The nucleon final state interactions are modelled using the Bertini model in GEANT4\cite{geant4} and are neglected since for water Cherenkov detector such as SK, the nucleon detection threshold is rarely reached. However, when nucleons interact to produce pions these pions are propagated through the simulation and are subject to the above systematics.
 
 \paragraph{Parameterisation}
-The interaction parameters are parameterised as shapes or normalisations on an event-by-event basis. In the case of normalisations, an event gets an associated weight from normalisation parameters in the parameterisation (e.g. a CC coherent event on $^{12}C$ gets the CC coh. C parameter weight and no other: if the parameter is 1.5, the weight is 1.5). 
+The neutrino interaction uncertainties are parameterised as shapes or normalisations and are applied on an event-by-event basis. In the case of normalisations, an event gets attached to normalisation parameters in accordance with their mode: e.g. a CC coherent event on $^{12}\text{C}$ gets the CC coh. C parameter weight: if the parameter is 1.5, the weight is 1.5.
 
-For shape parameters, each event can have associated one dimensional ``splines''\footnote{The implementation uses a ROOT \texttt{TSpline3} class}, which assumes all parameters have uncorrelated responses. The weights are pre-calculated through a reweighting routine which calculates the weight of parameter variation $x \rightarrow x'$, where $x$ is the nominal Monte Carlo parameter value and $x'$ is the new parameter value, as
+For shape parameters, each event has associated one dimensional ``splines''\footnote{The implementation uses a ROOT \texttt{TSpline3} class, reflected in the name}, which assumes that the interaction parameters have uncorrelated responses to variations. The weights are pre-calculated through a reweighting routine which calculates the weight of parameter variation $x \rightarrow x'$, where $x$ is the nominal Monte Carlo parameter value and $x'$ is the new parameter value, as
 \begin{equation}
 	w(x\rightarrow x') = \frac{d^n\sigma(x')}{dX^n} / \frac{d^n\sigma(x)}{dX^n}
 \end{equation}
 for an $n$ dimensional cross-section calculation for $X$ dependent parameters. Similar to the pion FSI parameters, this is not strictly true since for example a simultaneous variation in $M_A^{RES}$ and $C_5^A$ is not equivalent to a variation in $M_A^{RES}$ followed by a variation of $C_5^A$. This is currently neglected in the analysis since the effect is sub-percent.
 
-An example of three spline parameters, comparing a third order polynomial \texttt{TF1} implementation to a \texttt{TSpline3} implementation fitted to the discrete calculated parameter variations is shown in \autoref{fig:xsec_splines}.
+An example of three interaction parameters that are parameterised as splines is shown in \autoref{fig:xsec_splines}. The figure compares parameterising the shape as a third order polynomial \texttt{TF1} implementation to a \texttt{TSpline3} implementation, both fitted to discrete calculated parameter variations.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -620,9 +614,9 @@ An example of three spline parameters, comparing a third order polynomial \textt
 	\label{fig:xsec_cov_matrix_prior}
 \end{figure}
 
-Note that some of the errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}$ and $p_F$ and that BeRPA U is fixed. Furthermore, the errors are relative the priors: e.g. the error on $M_A^{RES}$ is not 0.16 GeV but rather $0.95\times0.16=0.152\text{ GeV}$, where the nominal value is 0.16.
+The errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}$ and $p_F$ and that BeRPA U is fixed. Furthermore, the errors are relative the priors: e.g. the error on $M_A^{RES}$ is not 0.16 GeV but rather $0.95\times0.16=0.152\text{ GeV}$, where the nominal value is 0.16.
 
-A summary of the interaction parameters is provided in \autoref{tab:xsec_params}.
+A summary of the interaction parameters applied in this analysis is provided in \autoref{tab:xsec_params}.
 \begin{table}
 	\begin{tabular}{l | c c c c }
 		\hline
