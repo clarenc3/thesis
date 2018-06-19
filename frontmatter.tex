@@ -2,9 +2,8 @@
 \titlepage[The Blackett Laboratory,\\Imperial College London]{A Dissertation Submitted to Imperial College London\\ for the Degree of Doctor of Philosophy}
 
 %% Abstract
-\begin{abstract}[\large{\thetitle}\\ \vspace*{1.5cm} \normalsize{\textit{Abstract}}]
-	%\thispagestyle{empty}
-	This thesis presents some work that I did.
+\begin{abstract}[\LARGE{\textbf{\thetitle}}\\ \vspace*{1.5cm} \normalsize{\textit{Abstract}}]
+	The Tokai to Kamioka (T2K) long baseline neutrino oscillation experiment was designed to make precise measurements of neutrino oscillations. It uses a muon (anti-)neutrino dominated beam produced at the Japan Proton Accelerator Research Complex (J-PARC) on the east coast of Japan, aiming towards the Super-Kamiokande (SK) detector 295 km west. The neutrino beam is sampled by the two near detectors ND280 and INGRID, 280 m downstream of production. These measure the neutrino flux and interaction cross-sections to reduce the impact of systematics for oscillation analyses. The work presented herein details the process of using ND280, INGRID, and external data to best constrain the predicted event rates at SK. The analysis proceeds by using a Markov Chain Monte Carlo method which simultaneously fits ND280 and SK data without assumptions on the underlying posterior probability density function. The two analyses detailed here reduce event rate uncertainties at SK from 12-14\% to 2-4\%, enabling world-leading oscillation parameters to be extracted from T2K. Numerous run-by-run and detector-by-detector studies were performed and alternate models investigated, all of which were deemed compatible within error. The work has been included in the official T2K results presented in 2017 and 2018, and its use continues beyond that.
 \end{abstract}
 
 %% Declaration
@@ -18,40 +17,18 @@
 
 %% Acknowledgements
 \begin{acknowledgements}
-	I have had the great privilege to work, travel, and form friendships with a multitude of excellent people during my three years on T2K and at Imperial College London.
+	I have had the great privilege to work, travel, and form friendships with a multitude of excellent people during my three years on T2K and at Imperial College London. Special mentions to all of those who have discussed lovely complex ideas at length with me on endless flights, Shinkansens, coffee shops, and paradisal islands.
 	
-	Starting my Ph.D. on neutrino interactions and model selections, I am indebted to Patrick Stowell, Callum Wilkinson, Luke Pickering and Ryan Terri for countless hours of discussions and explanations, culminating in the birth of the NUISANCE\cite{nuisance} project---now in use across most neutrino cross-section experiments. We could not have done it without the expertise and advice of my supervisor Morgan Wascko, Kendall Mahn, the Neutrino Interaction Working Group conveners, Kevin McFarland and Yoshinari Hayato-san, and neutrino interaction guru Jan Sobczyk. I extend special gratitude to Monireh Kabirnezhad for spending two months with me in Japan, implementing new single pion production models and eating noodles.
+	Starting my Ph.D. on neutrino interactions and model selections, I am indebted to Patrick Stowell, Callum Wilkinson, Luke Pickering and Ryan Terri for countless hours of discussions and explanations, culminating in the birth of the NUISANCE project\cite{NUISANCE}---now in use across many neutrino interaction experiments. We could not have done it without the expertise and advice of my supervisor Morgan Wascko, Kendall Mahn, and Kevin McFarland. I also extend special gratitude to Monireh Kabirnezhad for spending two months with me in Japan, implementing new single pion production models and eating noodles.
   
-	Continuing the interaction model studies with ND280 data---the topic of this thesis---would have been impossible without the help of the current and past members of the MaCh3 group, spearheaded by Asher Kaboth. I hail Asher for his many wisdoms on the fit mechanics, statistics and Markov Chain Monte Carlo, Richard Calland for fueling my interest in multi-threading and GPU programming, and Kirsty Duffy and Leila Haegel's for their helpful inputs on the physics output and interpretations. I thank the members of the frequentist ND280 fitting group (BANFF), led by Mark Scott with Simon Bienstock and Pierre Lasorak, for many discussions and hard work on studying the physics, statistics and systematics in the fit. Special mentions to Raj Shah and Stephen Dolan for explaining complex topics to a novice Ph.D. student.
+	Continuing the interaction model studies with ND280 data---the topic of this thesis---would have been impossible without the help of the current and past members of the MaCh3 analysis group, spearheaded by Asher Kaboth. I especially hail Asher for his many wisdoms on the fit mechanics, statistics and Markov Chain Monte Carlo and Richard Calland for fuelling my interest in multi-threading and GPU programming. I thank the members of the frequentist ND280 fitting group (BANFF), led by Mark Scott with Simon Bienstock and Pierre Lasorak, for many discussions and hard work on studying the physics, statistics and systematics in the fit.
 	
-	I remain grateful for the time spent and the knowledge transferred through my colleagues in the Imperial T2K group. Luke Pickering, Wing Ma, Pip Hamilton, Dominic Brailsford, Morgan Wascko, Yoshi Uchida, Patrick Dunne, Phill Litchfield, Artur Sztuc, Toby Nonnenmacher and Edward Atkin all made room 530 and beyond a treat. I thank classmates and friends Jack Wright, Sioni Summers, Daniel Saunders, Thibaud Humair, Slavomira Stefkova,
+	I remain grateful for the time spent and the knowledge transferred through my colleagues in the Imperial HEP and T2K group: you all made room 530 (and beyond) a treat and joy. I thank my classmates in the Imperial HEP group Jack Wright, Sioni Summers, Thibaud Humair, and Slavomira Stefkova for not always discussing physics at work, and making it a welcome place.
 	
-	Friends and loved ones, Rajee Sukamaran, Rina Kay, Hannah Peckham, Jessica Lawrence, Caitlin Loftus
-  
-  My sister Clarissa, parents and grandmother for being patient and reminding me 
-  
-  Finally, a modern High Energy Physics analysis demands excellent computing and support. The work in this thesis could not happen without the Compute Canada Gullimin, Cedar and Graham clusters---made possibly by Hiro Tanaka---Imperial College High Energy Physics Computing---maintained by Simon Fayer and Raymond Beuselinck with special thanks to David Colling for GPU support---and the Imperial College High Performace Computing centre. I am additionally grateful for the generous hardware sponsorship from NVIDIA's academic seeding project.
+	A modern High Energy Physics analysis demands excellent computing. The work in this thesis could not happen without the Compute Canada Guillimin, Cedar and Graham clusters---made possible by Hiro Tanaka---Imperial College High Energy Physics Computing---maintained by Simon Fayer and Ray Beuselinck, with special thanks to David Colling for GPU support---and the Imperial College High Performace Computing centre. I acknowledge the generous hardware sponsorship from NVIDIA's academic seeding project.
+	
+	Finally, I extend my deepest gratitude to my close friends and loved ones, my sister, parents, step-parent, and grandmother for entertaining distractions, buckets of patience, endless support, and much love. I hope you forever remain with me.
 \end{acknowledgements}
-
-\iffalse
-%% Preface
-\begin{preface}
-  This thesis describes my research on various aspects of the \LHCb
-  particle physics program, centred around the \LHCb detector and \LHC
-  accelerator at \CERN in Geneva.
-
-  \noindent
-  For this example, I'll just mention \ChapterRef{chap:SomeStuff} and \ChapterRef{chap:MoreStuff}.
-\end{preface}
-\fi
 
 %% ToC
 \tableofcontents
-
-%% Strictly optional!
-%\frontquote{%
-%  Writing in English is the most ingenious torture\\
-%  ever devised for sins committed in previous lives.}%
-%  {James Joyce}
-%% I don't want a page number on the following blank page either.
-\thispagestyle{empty}

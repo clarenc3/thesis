@@ -1,7 +1,6 @@
 \section{Fitting Real Data}
 \label{sec:datafit}
-
-The nominal model presented in \autoref{sec:nom_model} is now fit to the data in the reconstructed \pmu \cosmu variables, using the full 14 samples. Three Markov Chain Monte Carlo samples were run with different step-size tunings, acceptance rates and sample lengths, and a conservative 1/4 burn-in was used for all chains in \autoref{tab:mcmc_data}.
+The nominal model presented in \autoref{sec:nom_model} is here fit to the data in the reconstructed \pmu \cosmu variables, using the full 14 ND280 selections. Three Markov Chain Monte Carlo samples are presented with different step-size tunings, acceptance rates and sample lengths, and a conservative 1/4 burn-in was used for all chains in \autoref{tab:mcmc_data}.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c c}
@@ -19,9 +18,9 @@ The nominal model presented in \autoref{sec:nom_model} is now fit to the data in
 
 \autoref{tab:postfit_eventrate} shows the event rates per sample and total before and after the fit for the tuned MCMC, making correlated throws of the model to build the errors using the prior predictive method and the posterior predictive method, outlined earlier. 
 
-We see very good agreement with the overall event rate (64768 data vs 64761.40 post-fit) and the CC0$\pi$ samples. The total sample contribution to the test-statistic\footnote{Excluding the penalty term from the priors} moves from 2539.08 to 1733.08. For the samples, we generally see good effect on targets, with FGD2 CC0$\pi$ decreasing the statistic by factor 2. Interestingly, FGD1 CCOther sees a noticeably smaller improvement than FGD2 (273.39 to 224.02 vs 277.96 to 171.17), indicating some tension in the fit. The uncertainty on the predictions decrease remarkably post-fit too: for the 0$\pi$ selections we go from an uncertainty of 2094.2 to 120.0, and overall from 6666.8 to 255.2. 
+There is very good agreement with the overall event rate (64768 data vs 64761.40 post-fit) and the CC0$\pi$ samples. The total sample contribution to the test-statistic\footnote{Which excludes the penalty term from the priors in the likelihood} moves from 2539.08 to 1733.08 after the analysis. For the samples, we generally see good effect on targets, with FGD2 CC0$\pi$ decreasing its test-statistic by factor 2. Interestingly, FGD1 CCOther sees a much smaller improvement than FGD2 (273.39 to 224.02 vs 277.96 to 171.17), indicating tension in the fit. The uncertainty on the predictions decrease remarkably post-fit: for the 0$\pi$ selections we go from an uncertainty of 2094.2 (12\%) to 120.0 (0.7\%), and overall from 6666.8 (10\%) to 255.2 (0.4\%). 
 
-Compared to the expected Asimov prior predictive in \autoref{tab:asimov_prior_pred} and the posterior predictive in \autoref{tab:asimov_posterior_pred} the data fit uncertainties on the total event rates largely agree with the expectation. For both the prior and posterior predictive, the uncertainties from the data fit are within 10\% of the Asimov fit.
+Comparing the predictive distributions from the fit to data in \autoref{tab:postfit_eventrate} to the Asimov in \autoref{tab:asimov_prior_pred} and \autoref{tab:asimov_posterior_pred}, the data fit uncertainties on the total event rates agree with the expectation. The uncertainties from the data fit are within 10\% of the Asimov fit for both the prior and posterior predictive spectra. 
 \begin{sidewaystable}
 	\centering
 		\begin{tabular}{ l | c c c | c c }
@@ -56,7 +55,7 @@ Compared to the expected Asimov prior predictive in \autoref{tab:asimov_prior_pr
 	\label{tab:postfit_eventrate}
 \end{sidewaystable}
 
-\autoref{fig:flux_data_fhc} shows the FHC flux parameters after the fit to data for the different chains. As expected and seen in the Asimov studies, the SK parameters closely follow the ND280 parameters. The parameters mostly sit within 1$\sigma$ of the prior, with the largest deviation around $E_\nu \sim 0.6-1.0\text{ GeV}$, where the flux normalisation drops sharply to 0.88 and returns to around nominal at $E_\nu\sim1.5\text{ GeV}$. At higher energies the flux normalisation decreases again to around 0.94. The parameters barely go above the priorexcept for \nue at 2 GeV and the high energy \nuebar parameters, although they still sit within one sigma of the central value of the prior.
+\autoref{fig:flux_data_fhc} shows the FHC flux parameters after the fit to data for the different chains. As expected and seen in the Asimov studies, the SK parameters closely follow the ND280 parameters. The parameters mostly sit within 1$\sigma$ of the prior, with the largest deviation around $E_\nu \sim 0.6-1.0\text{ GeV}$, where the flux normalisation drops sharply to 0.88 and returns to around nominal at $E_\nu\sim1.5\text{ GeV}$. At higher energies the flux normalisation decreases again to around 0.94. The parameters all sit within one sigma of the central value of the prior.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.10\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
@@ -91,7 +90,7 @@ Compared to the expected Asimov prior predictive in \autoref{tab:asimov_prior_pr
 	\label{fig:flux_data_fhc}
 \end{figure}
 
-\autoref{fig:flux_data_rhc} shows the RHC flux parameters post-fit. For \numubar we see a decrease in the normalisation at low energies to approximately 0.96, which increases to the nominal at 0.6 GeV. At higher energies the normalisations go back to around 0.96. The only increase observed are the \nuebar parameters around 0.6 GeV. No parameters leave the 1$\sigma$ prior.
+\autoref{fig:flux_data_rhc} shows the RHC flux parameters post-fit. There is decrease of \numubar for low energies to approximately 0.96, which increases to the nominal at 0.6 GeV. At higher energies the normalisations go back to around 0.96. The only increase observed are the \nuebar parameters around 0.6 GeV. No parameters leave the 1$\sigma$ prior.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=6]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
@@ -124,14 +123,13 @@ Compared to the expected Asimov prior predictive in \autoref{tab:asimov_prior_pr
 
 \autoref{fig:xsec_data} show the interaction parameters after the fit, where we expect most of the parameter movement to happen. The largest deviations from the priors are seen for $M_A^{QE}$ and BeRPA B, followed by $M_A^{RES}$. 
 
-The shift in $M_A^{QE}$ is expected since the ``prior'' value is from tunes to nuclear data, which historically inflates the value when not using adequate reasonable nuclear effects, such as 2p2h\cite{ccqe_tuning}. The parameterisation in these fits include such models, so uses a flat prior on $M_A^{QE}$ which in this fit is driven downwards toward values obtained from fits to nucleon data, $M_A^{QE}=1.069\pm0.016\text{ GeV}$ \cite{maqe_fit}. The post-fit value in real units is $M_A^{QE}=1.12\pm0.07\text{ GeV}$.
+The shift in $M_A^{QE}$ is expected since the ``prior'' central value is from tunes to nuclear data\cite{ccqe_tuning}. $M_A^{QE}$ is historically inflated\cite{k2k_ccqe_carbon,k2k_ccqe_oxygen,minos_ccqe_iron,miniboone_nu_ccqe} when not using adequate nuclear effects, such as 2p2h, becoming an effective parameter instead. The parameterisation in these fits include such models, so uses a flat prior on $M_A^{QE}$ which in this fit is driven downwards toward values obtained from fits to nucleon data, $M_A^{QE}=1.069\pm0.016\text{ GeV}$ \cite{maqe_fit}. The post-fit value in real units is $M_A^{QE}=1.12\pm0.07\text{ GeV}$.
 
-The BeRPA B shifts---and the remaining BeRPA shifts: BeRPA A at upper edge, BeRPA D at lower edge of the prior uncertainty---is more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties, indicating that the ND280 data has more events than the Monte-Carlo at low $Q^2$, possibly forcing a shape that isn't ``RPA-like''. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape (present in the Asimov) is heavily distorted in the data fit, in which a large weight at low $Q^2$ is strongly favoured and there is less constraint above $Q^2=0.5\text{ GeV}^2$.
+The shifts in BeRpa are more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties, indicating that the ND280 data has more events than the Monte-Carlo at low $Q^2$, possibly forcing a shape that isn't ``RPA-like''. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape of the RPA correction is heavily distorted in the data fit, in which an increased cross-section at low $Q^2$ is strongly favoured. The weaker constraints above $Q^2=0.5\text{ GeV}^2$ reflect lacking data in the region.
 
-The $M_A^{RES}$ parameter is pushed far from the bubble chamber tuned values (from $M_A^{RES}=1.07\pm0.15$ to $0.806\pm0.04$), whereas the other single pion production parameters are mostly in check. The may indicate sweeping up unmodelled nuclear effects (often approximately a function of $Q^2$) into the $M_A^{RES}$ parameter.
+The $M_A^{RES}$ parameter is pushed far from the bubble chamber tuned values (from $M_A^{RES}=1.07\pm0.15\text{ GeV}$ to $0.806\pm0.04\text{ GeV}$), whereas the other single pion production parameters are compatible with the prior. The may indicate sweeping up unmodelled nuclear effects (often approximately a function of $Q^2$) into the $M_A^{RES}$ parameter.
 
-We note an interesting 2p2h normalisation, in which $\nu$ events pulls the normalisation to 1.6, whereas $\bar{\nu}$ normalisation is 0.8, indicating some $\nu$ vs $\bar{\nu}$ tension in 2p2h. The 2p2h shape parameters are pushed against their upper boundary, preferring a ``delta-like'' $q_0-q_3$ phase space, again indicating the 2p2h model does not entirely agree with ND280 data.
-
+We note an interesting 2p2h normalisation, in which the $\nu$ normalisation to 1.6, whereas $\bar{\nu}$ normalisation is 0.8, indicating some $\nu$ vs $\bar{\nu}$ tension in the nominal 2p2h model. The 2p2h shape parameters are pushed against their upper boundary, preferring a ``delta-like'' $q_0-q_3$ phase space, again indicating the 2p2h model does not agree with ND280 data.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
@@ -163,7 +161,7 @@ We note an interesting 2p2h normalisation, in which $\nu$ events pulls the norma
 \label{fig:berpa_data}
 \end{figure}
 
-To understand why BeRPA is heavily distorted from the nominal form, we can look at the $Q^2_{rec}$ distributions of the CC0$\pi$ selections in \autoref{fig:fgd1_cc0pi_q2_berpa} and \autoref{fig:fgd2_cc0pi_q2_berpa}. For both FGD1 and FGD2 we see a clear deficit at low $Q^2$, about 9\% in the first bin. We see the effect of BeRPA A on the pre-fit distributions is to move the low $Q^2$ region specifically, as is the case for BeRPA B although it targets slightly higher $Q^2$. The post-fit distributions are a clear improvement for all of the $Q^2$ space, and this is the driver behind the BeRPA pulls.
+To understand why BeRPA is heavily distorted from the nominal form, we look at the $Q^2_{rec}$ distributions of the CC0$\pi$ selections in \autoref{fig:fgd1_cc0pi_q2_berpa} and \autoref{fig:fgd2_cc0pi_q2_berpa}. For both FGD1 and FGD2 there is a clear deficit at low $Q^2$, about 9\% in the first bin. The effect of BeRPA A on the pre-fit distributions is to change the low $Q^2$ region, and BeRPA B targets slightly higher $Q^2$. The post-fit distributions are a clear improvement for all of the $Q^2$ space, and this is the driver behind the BeRPA pulls.
 \begin{figure}[h]
 		\begin{subfigure}[t]{0.49\textwidth}
 			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 6mm}, clip,page=15]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_PostFit_5_4_rootstack}
@@ -190,11 +188,11 @@ To understand why BeRPA is heavily distorted from the nominal form, we can look 
 	\label{fig:fgd2_cc0pi_q2_berpa}
 \end{figure}
 
-Finally we note that the three different MCMC all produced very similar post-fit parameters.
+Finally we note that the three different MCMC all produced near identical post-fit parameters.
 
 \subsection{Prior Predictive Spectrum}
 \label{sec:prior_pred_data}
-The prior predictive spectrum and p-values are calculated in the same way as in the fit to Asimov data. Here we expect to see a poor p-value due to the priors' inability to describe ND280 data---the reason behind doing the fit. \autoref{fig:prior_pred_data} shows the prior predictive p-value for all the samples, and as expected not a single parameter variation of the prior model produces a smaller test-statistic against the data than a fluctuation of the prior model does to itself.
+The prior predictive spectrum and p-values are calculated in the same way as in the fit to Asimov data. Here we expect to see a poor p-value due to the priors' inability to describe ND280 data---which is the reason for originally doing the fit. \autoref{fig:prior_pred_data} shows the prior predictive p-value for all the samples, and as expected not a single parameter variation of the prior model produces a smaller test-statistic against the data than a fluctuation of the prior model does to itself.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/data/priorpred/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Data_merge_PriorPred_procs}
@@ -206,7 +204,7 @@ The prior predictive spectrum and p-values are calculated in the same way as in 
 	\label{fig:prior_pred_data}
 \end{figure}
 
-The table of prior predictive p-values broken down by sample is found in \autoref{tab:data_pre_pvalue}. We note the high-statistics FHC samples all consistently having $p=0.000$, and the low-statistics RHC samples having slightly higher p-values than that (maximum of $p=0.017$ for FGD2 CCNTrack \numubar). This is primarily due to statistical fluctuations being a much larger effect for the low-statistics samples compared to the systematic fluctuations.
+The table of prior predictive p-values broken down by sample is found in \autoref{tab:data_pre_pvalue}. We note the high-statistics FHC samples all consistently having $p=0.000$, and the low-statistics RHC samples having slightly higher p-values than that (maximum of $p=0.017$ for FGD2 CCNTrack \numubar). This is primarily due to statistical fluctuations being a much larger effect for the low-statistics samples compared to the size of the systematic fluctuations.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c }
@@ -239,7 +237,7 @@ The table of prior predictive p-values broken down by sample is found in \autore
 
 \subsection{Posterior Predictive Spectrum}
 \label{sec:post_pred_data}
-The posterior predictive spectrum and p-values were calculated in identical way to the Asimov fit, using the model after fitting to data. The resulting test-statistic distribution and p-value is shown in \autoref{fig:posterior_pred_data}, where $p = 0.000$\footnote{A rather discouraging result!}. 
+The posterior predictive spectrum and p-values are calculated using the model after fitting to data. The resulting test-statistic distribution and p-value is shown in \autoref{fig:posterior_pred_data}, where $p = 0.000$\footnote{A rather discouraging result!}. 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/data/postpred/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostPred_procs}
@@ -251,7 +249,7 @@ The posterior predictive spectrum and p-values were calculated in identical way 
 	\label{fig:posterior_pred_data}
 \end{figure}
 
-The p-values can further be broken down into sample contributions, and are presented in \autoref{tab:data_post_pvalue}. We note good p-values for all samples except FGD1 CCOther, which is zero. Importantly, the FGD2 CCOther selection observes a good p-value.
+The p-values are broken down into sample contributions, and are presented in \autoref{tab:data_post_pvalue}. There are good p-values for all samples except FGD1 CCOther, which is zero. Importantly, the FGD2 CCOther selection observes a good p-value.
 \begin{table}[h]
 	\centering
 \begin{tabular}{l | c c }
@@ -281,8 +279,7 @@ The p-values can further be broken down into sample contributions, and are prese
 \label{tab:data_post_pvalue}
 \end{table}
 
-The test-statistic distributions are shown in \autoref{fig:posterior_pred_data_fgd1ccother} with FGD2 as comparison. Whereas the x-axis (statistically fluctuated test-statistic in the model) are similar for the two selections, we see a much higher test-statistic on the y-axis, reflecting the post-fit distribution for FGD1 is much worse than FGD2 and statistical fluctuations of each. This was already hinted at in \autoref{tab:postfit_eventrate}, where FGD1 CCOther showed only a marginal improvement after the fit.
-
+The test-statistic distributions for FGD1 CCOther are shown in \autoref{fig:posterior_pred_data_fgd1ccother} with FGD2 for as comparison. Whereas the x-axis (statistically fluctuated test-statistic in the model) are similar for the two selections, we see a much higher test-statistic on the y-axis, reflecting the post-fit distribution for is much less like the data for FGD1 than for FGD2. This was already hinted at in \autoref{tab:postfit_eventrate}, where FGD1 CCOther showed only a marginal improvement after the fit.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 6mm 0mm 11mm}, clip,page=16]{figures/mach3/data/postpred/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostPred_procs}
@@ -294,7 +291,7 @@ The test-statistic distributions are shown in \autoref{fig:posterior_pred_data_f
 	\label{fig:posterior_pred_data_fgd1ccother}
 \end{figure}
 
-\autoref{fig:posterior_pred_data_llh_ccother} shows the likelihood contribution per bin for FGD1 and FGD2 CCOther selections. As expected, there are more bins with high contributions for FGD1 than FGD2 at low $Q^2$, not present in FGD2. For FGD1 CCOther the high likelihood contributions sit primarily at \cosmu=0.9-0.95, whereas FGD2 has it's largest contributions scattered across the phase space.
+\autoref{fig:posterior_pred_data_llh_ccother} shows the likelihood contribution per bin for FGD1 and FGD2 CCOther selections. As expected, there are more bins with high contributions for FGD1 than FGD2, especially at low $Q^2$, which are not present in FGD2. For FGD1 CCOther, the high likelihood contributions sit primarily at \cosmu=0.9-0.95, whereas FGD2 has it's largest contributions scattered across the phase space.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 6mm 0mm 11mm}, clip,page=21]{figures/mach3/data/postpred/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostPred_procs}
@@ -308,7 +305,7 @@ The test-statistic distributions are shown in \autoref{fig:posterior_pred_data_f
 \label{fig:posterior_pred_data_llh_ccother}
 \end{figure}
 
-Inspecting the \pmu \cosmu post-fit distributions in \autoref{fig:postfit_pmucosmu_data_ccother}, the \pmu distributions appear different around 500-1000 MeV, where FGD2 sees a consistent underestimation and FGD1 instead looks statistically fluctuated, slightly above and under 1$\sigma$ from statistics. We also note the effect of the CC DIS parameter being largely a normalisation up to 1.5 GeV. The distributions otherwise look very similar. For the \cosmu projection the two FGDs look very consistent, with the only mild difference at 0.8-0.92, where the bins show opposite behaviour, just outside 1$\sigma$. The CC DIS parameter has the smallest effect in the most forward-going bin.
+Inspecting the \pmu \cosmu post-fit distributions in \autoref{fig:postfit_pmucosmu_data_ccother}, the \pmu distributions appear different around 500-1000 MeV, where FGD2 sees a consistent underestimation and FGD1 instead looks statistically fluctuated, slightly above and under 1$\sigma$ from statistics. The effect of the CC DIS parameter is largely a normalisation up to 1.5 GeV. The distributions otherwise look very similar. The \cosmu projection of the two FGDs look very consistent, with the only mild difference at 0.8-0.92, where the bins show opposite behaviour, just outside 1$\sigma$. The CC DIS parameter has the smallest effect in the most forward-going bin.
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -333,7 +330,7 @@ Inspecting the \pmu \cosmu post-fit distributions in \autoref{fig:postfit_pmucos
 	\label{fig:postfit_pmucosmu_data_ccother}
 \end{figure}
 
-Projecting the post-fit distributions onto $Q^2_{rec}$ and $E_\nu^{rec}$ in \autoref{fig:postfit_q2enu_data_ccother} the pattern becomes clearer: FGD1 has a consistent under-estimation in the $Q^2_{rec}=0.15-0.4\text{ GeV}^2$ range, whereas FGD2 has a good prediction in all but one bin. Additionally, the CC DIS parameter is almost entirely a normalisation parameter in $Q^2$, so the fit has little freedom in this parameter to change the $Q^2$ shape. Looking at the $E_\nu^{rec}$ distribution we again see mostly consistency across the two FGDs, although FGD1 is underestimated more in the 0.7-0.9 GeV range, approximately within 1$\sigma$ statistical uncertainty.
+Projecting the post-fit distributions onto $Q^2_{rec}$ and $E_\nu^{rec}$ in \autoref{fig:postfit_q2enu_data_ccother} the pattern becomes clearer: FGD1 has a consistent under-estimation in the $Q^2_{rec}=0.15-0.4\text{ GeV}^2$ range, whereas FGD2 has a good prediction in all but one bin. Additionally, the CC DIS parameter is almost entirely a normalisation parameter in $Q^2$, so the fit has little freedom from this parameter to change the $Q^2$ shape. Looking at the $E_\nu^{rec}$ distribution there is mostly consistency across the two FGDs, although FGD1 is more underestimated in the 0.7-0.9 GeV range, approximately within 1$\sigma$ statistical uncertainty.
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -358,7 +355,7 @@ Projecting the post-fit distributions onto $Q^2_{rec}$ and $E_\nu^{rec}$ in \aut
 	\label{fig:postfit_q2enu_data_ccother}
 \end{figure}
 
-We also look at the more conventional one-dimensional p-values in which we use the posterior or prior predictive spectrum and apply statistical fluctuations in each bin, calculating the test-statistic for each set of fluctuations. 20,000 sets of fluctuations are applied. We then calculate the realised likelihood of the posterior predictive spectrum (``best-fit'') and overlay it on the test-statistic spectrum. For the prior predictive spectrum we name it ``hybrid'' because we're applying fluctuations to predictions of the prior model whereas we're overlaying it with test-statistic of the data vs the posterior predictive model. \autoref{fig:posterior_pred_data_1d} shows the result, in which a good p-value of 0.10 is realised for both methods.
+The one-dimensional p-values are shown in \autoref{fig:posterior_pred_data_1d}, in which parameter sets from the posterior and prior probability distributions are taken as the reference distributions. The p-values are 10\% for both methods.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 14mm}, clip,page=1]{figures/mach3/data/postpred/postpred_pvalue_1d}
@@ -372,7 +369,7 @@ We also look at the more conventional one-dimensional p-values in which we use t
 	\label{fig:posterior_pred_data_1d}
 \end{figure}
 
-As we observed a very poor p-value for the two-dimensional calculation in \autoref{tab:data_post_pvalue} the same exercise is repeated looking only at the FGD1 CCOther selection. \autoref{fig:posterior_pred_data_1d_ccother} shows the result for FGD1 CCOther only, using throws from the prior and posterior model for the reference distributions. Although the overall p-value presented in \autoref{fig:posterior_pred_data_1d} is good even though the two-dimensional equivalent was bad, FGD1 CCOther's one-dimensional p-value is still very poor, with the realised test-statistic falling at the very end of the distribution.
+The two-dimensional p-values for the FGD1 CCOther selection in \autoref{tab:data_post_pvalue} were very poor, and the one-dimensional equivalent in \autoref{fig:posterior_pred_data_1d_ccother} concludes similarly. The realised test-statistic falls at the very end of the reference distribution.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 14mm}, clip,page=1]{figures/mach3/data/postpred/pvalue_posteriorpred_fgd1ccother_1d}
@@ -388,7 +385,6 @@ As we observed a very poor p-value for the two-dimensional calculation in \autor
 
 \subsection{Post-fit Distributions}
 \autoref{fig:posterior_pred_data_fhc} and \autoref{fig:posterior_pred_data_rhc} shows all the selections' \pmu \cosmu distributions post-fit, using the posterior predictive spectrum as a representation of the post-fit Monte-Carlo. Clearly, the post-fit Monte-Carlo does not describe all distributions, and there is plenty of discrepancies in all selections. The 0$\pi$ and 1Trk selections generally see good predictions post-fit, especially around the flux peak. The 1$\pi$ and Other selections are much patchier and it's difficult to spot patterns in $Q^2$, \pmu or \cosmu. Interestingly, the NTrk predictions are generally better than 1$\pi$ and Other.
-
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={20mm 6mm 4mm 11mm}, clip,page=5]{figures/mach3/data/postpred/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostPred_procs}
@@ -457,11 +453,11 @@ As we observed a very poor p-value for the two-dimensional calculation in \autor
 \label{fig:posterior_pred_data_rhc}
 \end{figure}
 
-To better understand the effect of the fit we look at the \pmu and \cosmu distribution before and after the fit. \autoref{fig:fhc_postfit_0pi_1pi} shows the distributions using the prior and posterior predictive spectrum for FGD1 and 2 CC0$\pi$ and CC1$\pi$ selections. 
+To better understand the effect of the fit the distributions are projected onto \pmu and \cosmu distribution before and after the fit. \autoref{fig:fhc_postfit_0pi_1pi} shows the distributions using the prior and posterior predictive spectrum for FGD1 and 2 CC0$\pi$ and CC1$\pi$ selections. The uncertainties are the final uncertainties using the full prior and posterior distributions.
 
-For CC0$\pi$, we note some tension between FGD1 and FGD2 in the highest \pmu bin for both the prior and posterior predictive distributions where the simulation describes FGD1 well but undershoots FGD2. The post-fit distribution instead fits FGD2 well in this bin and overestimates FGD1. We also note a good improvement in the first two \pmu bins in the post-fit and a large reduction in the error. Moving to the \cosmu distributions, we note little change in the central values of the predictions, where the primary effect appears to be reducing the error band. In \cosmu there seems to be good agreement with FGD1 and FGD2.
+For CC0$\pi$, there is some tension between FGD1 and FGD2 in the third \pmu bin for both the prior and posterior predictive distributions where the simulation describes FGD1 well but undershoots FGD2. The post-fit distribution instead fits FGD2 well in this bin and overestimates FGD1. There is good improvement in the first two \pmu bins in the post-fit and a large reduction in the overall error. Moving to the \cosmu distributions, there is little change in the central values of the predictions, where the primary effect appears to be reducing the error band. In \cosmu there is good agreement with FGD1 and FGD2.
 
-For CC1$\pi$, there is acceptable description in \pmu before the fit, except in the first bin. In the 500-100 MeV region we note a consistent over-estimation of the cross-section which gets mostly corrected in the fit. The highest bin is well described for FGD1 and less so for FGD2. Looking at the \cosmu distributions, the pre-fit distribution is much worse, notably in the 0.8-0.98 region and especially present for FGD1. In the post-fit we note most of these corrected, although the 0.8-0.92 region is approximately 1$\sigma$ off.
+For CC1$\pi$, there is acceptable description in \pmu before the fit except in the first bin. In the 500-100 MeV region there is consistent over-estimation of the cross-section which gets mostly corrected in the fit. The highest bin is well described for FGD1 and less so for FGD2. The \cosmu distributions pre-fit distribution is much worse than \pmu, notably in the 0.8-0.98 region and especially present for FGD1. In the post-fit this is mostly corrected, although the 0.8-0.92 region is approximately 1$\sigma$ off.
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -530,7 +526,7 @@ For CC1$\pi$, there is acceptable description in \pmu before the fit, except in 
 \label{fig:fhc_postfit_0pi_1pi}
 \end{figure}
 
-\autoref{fig:fhc_postfit_other} shows the projections for FGD1 and FGD2 CCOther before and after the fit. We note a fairly consistent \pmu distribution between FGD1 and FGD2, which is underestimated around the maximum. The post-fit distribution attempts to correct for this but fluctuations in the data appear present, and it often settles somewhere in between. The \cosmu distributions are only good up until \cosmu=0.85, where the prefit starts to underestimate the data. We note this underestimate is present after the fit too, and it appears the freedom in \cosmu is not sufficient to cover the data. 
+\autoref{fig:fhc_postfit_other} shows the projections for FGD1 and FGD2 CCOther before and after the fit. The \pmu distributions are consistent between FGD1 and FGD2, which is underestimated around the maximum. The fit attempts to correct for this but it often settles somewhere in between the two. The \cosmu distributions are good up until \cosmu=0.85, where the prefit starts to underestimate the data. This underestimatation is present after the fit too, and it appears the freedom in \cosmu is not sufficient to cover the data. 
 \begin{figure}[h]
 \begin{subfigure}[t]{\textwidth}
 \begin{subfigure}[t]{0.24\textwidth}
@@ -567,9 +563,9 @@ For CC1$\pi$, there is acceptable description in \pmu before the fit, except in 
 \label{fig:fhc_postfit_other}
 \end{figure}
 
-\autoref{fig:rhc_postfit} shows the RHC \numubar selections for FGD1 and FGD2. For CC1Trk we again note a difference between FGD1 and FGD2 in the highest bin (around 400MeV), which the simulation describes well for FGD2 but not FGD1. Generally the pre-fit description is adequate and the post-fit mostly reduces the error band. The largest difference is around 700 MeV for FGD2, which however is well described for FGD1. For the \cosmu distributions, the pre-fit overestimates FGD1 but well estimates FGD2. The post-fit instead under-estimates FGD2 slightly and well estimates FGD1.
+\autoref{fig:rhc_postfit} shows the RHC \numubar selections for FGD1 and FGD2. For CC1Trk there are differences between FGD1 and FGD2 in the highest bin (around 400MeV), which the simulation describes well for FGD2 but not FGD1. Generally the pre-fit is adequate and the post-fit mostly reduces the error band. The largest difference is around 700 MeV for FGD2, which is well described for FGD1. For the \cosmu distributions, the pre-fit overestimates FGD1 but estimates FGD2 well. The post-fit instead under-estimates FGD2 slightly and well estimates FGD1.
 
-For the CCNTrk distributions the statistics are similar in error to the systematics and the prediction is generally good in \pmu pre-fit and post-fit; again the primary effect of the fit is to reduce the error rather than moving the central value. The \cosmu distribution is similarly well described pre-fit, although the second highest \cosmu bin is overestimated in FGD1 and the highest \cosmu bin is overestimated in FGD2. Post-fit, FGD1 is well described but FGD2 appears consistently over-estimated above \cosmu=0.96, and the highest \cosmu bin is poorly described.
+For the CCNTrk distributions the statistics are similar in error to the systematics and the prediction is generally good in \pmu pre-fit and post-fit; again the primary effect of the fit is to reduce the error rather than moving the central value. The \cosmu distribution is similarly well described pre-fit, although the second highest \cosmu bin is overestimated in FGD1 and the highest \cosmu bin is overestimated in FGD2. Post-fit, FGD1 is well described but FGD2 appears consistently over-estimated above \cosmu= 0.96, and the highest \cosmu bin is poorly described.
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -640,7 +636,7 @@ For the CCNTrk distributions the statistics are similar in error to the systemat
 
 \autoref{fig:rhc_nu_postfit} shows FGD1 and FGD2 RHC \numu selections, which has comparably low statistics. The 1Trk distributions show good consistency for FGD1 and FGD2. The only large discrepancy is found in the second highest \cosmu bin for FGD1 and the highest \cosmu bin for FGD2. The post-fit fails to correct for this and in general the fit minimises the error band rather than correcting the central values.
 
-For the NTrk distributions we see a similar story: the \pmu distributions are well-described by the prior model and mildly better by the post-fit model. For the \cosmu distribution the most forward-going bins are problematic for both FGD1 and FGD2, which the simulation underestimates strongly.
+The NTrk distributions tells a similar story: the \pmu distributions are well-described by the prior model and mildly improved by the post-fit model. For the \cosmu distribution the most forward-going bins are problematic for both FGD1 and FGD2, which the simulation underestimates.
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -711,12 +707,11 @@ For the NTrk distributions we see a similar story: the \pmu distributions are we
 
 \subsection{Covariance Matrix from the Data Fit}
 \label{sec:covariance_data}
-\autoref{fig:postfit_corr_nd280} shows the post-fit covariance matrix for the ND280 parameters, directly comparable to \autoref{fig:asimov_nd_corr}. The bottom row shows the absolute difference in each matrix multiplied by the sign of each matrix. Blue entries have flipped sign, whereas red entries have kept their sign in the fit to Asimov and real data. We see the flux parameters never flip signs and generally the covariance barely changes, whereas the correlation changes at a maximum of $\sim0.2$. The only parameters that swap signs are the cross-section parameters. Although sometimes strong in the correlation plot, looking at the covariance plot we see the effects are often limited to weak changes in the covariances.
+\autoref{fig:postfit_corr_nd280} shows the post-fit covariance matrix for the ND280 parameters, directly comparable to the Asimov matrix in \autoref{fig:asimov_nd_corr}. The bottom row shows the absolute difference in each matrix multiplied by the sign of each matrix. Blue entries have flipped sign, whereas red entries have kept their sign in the fit to Asimov and real data. The flux parameters never flip signs and generally the covariance barely changes, and the correlation maximally changes by $\sim0.2$. The only parameters that swap signs are the cross-section parameters. Although sometimes strong in the correlation plot, looking at the covariance plot the flip happens to parameters with weak constraints.
 
-For the cross-section parameters we note stronger correlations for the dominant 2p2h parameters (2p2h shape C and 2p2h norm $\nu$) and the flux parameters. Whereas the 2p2p normalisation correlates stronger, the 2p2h shape parameter swaps sign frequently. This may be a result of the parameter being pushed against the boundary in the data fit. Interestingly, 2p2h norm $\nu$ correlations very differently with BeRPA A: we swap the sign and the strength. Again this is not surprising: the BeRPA A parameter is pulled far from the value in the Asimov fit (the prior), so is entirely possible to correlate differently.
+For the cross-section parameters there are stronger correlations for 2p2h shape C and 2p2h norm $\nu$ with the flux parameters. Whereas the 2p2p normalisation correlates stronger, the 2p2h shape parameter swaps sign frequently. This may be a result of the parameter being pushed against the boundary in the data fit. Interestingly, 2p2h norm $\nu$ correlates very differently with BeRPA A: the sign is swapped and the strength changes. This is largely expected: BeRPA A is pulled far from the value in the Asimov fit, so is entirely possible to correlate differently.
 
-Looking purely at the correlations, there are strong relations between $M_A^{QE}$, 2p2h normalisations, BeRPA A, BeRPA B, $C_5^A$, CC DIS, NC other and the flux parameters, and don't flip signs to the Asimov case. $M_A^{QE}$ correlates strongly with BeRPA A, B and D as expected from their parametrisations (both being approximately $Q^2$ shape variations for CCQE interactions). The correlation with the flux parameters is due to ND280 data sitting in a relatively small $E_\nu, Q^2$ region, correlating heavily with $E_\nu$ normalisations up to 1 GeV (in turn correlating with the other flux parameters due to the internal flux parameter correlations). The 2p2h normalisations contribute a relatively large portion to the CC0$\pi$ sample across $E_\nu$, giving rise to that correlation. For the same reason, the $C_5^A$ correlations enters due to the parameter controlling the normalisation of one of the interaction terms in the single pion model\cite{Wroclaw_CC1pi_2014}. Finally the CC DIS parameter is parametrised as $0.4/E_\nu$ for DIS events, so directly correlates to any other parameters that are dependent on $E_\nu$, such as the flux parameters.
-
+Looking at the correlations, there are strong relations between $M_A^{QE}$, 2p2h normalisations, BeRPA A, BeRPA B, $C_5^A$, CC DIS, NC other and the flux parameters. $M_A^{QE}$ correlates strongly with BeRPA A, B and D as expected from their parametrisations\footnote{Both being approximately $Q^2$ shape variations for CCQE interactions}. The correlations with the flux parameters is due to ND280 data sitting in a relatively small $E_\nu, Q^2$ region, correlating heavily with $E_\nu$ normalisations up to 1 GeV, in turn correlating with the other flux parameters due to the internal flux parameter correlations. The 2p2h normalisations contribute a relatively large portion to the CC0$\pi$ sample across $E_\nu$, giving rise to that correlation. For the same reason, the $C_5^A$ correlations enters due to the parameter controlling the normalisation of one of the interaction terms in the single pion model. Finally the CC DIS parameter is parametrised as $0.4/E_\nu$ for DIS events, so directly correlates to any other parameters that are dependent on $E_\nu$, such as the flux parameters.
 \begin{figure}[h]
 \begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -767,7 +762,7 @@ Looking purely at the correlations, there are strong relations between $M_A^{QE}
 %\end{figure}
 
 \subsection{Alternate Model and Compatibility Studies}
-A number of alternative studies were performed for the 2017 analysis, comparing subruns in data and MC, change of model parameters and their priors, investigating effects of removing runs, and comparing FGD1 and FGD2. The largest impact was found in the FHC versus RHC data fit, and the FGD1 vs FGD2 data fit, with some parameters outside the $1\sigma$ range of the full fit to data. The parameter values of these two fits---and a fit using a 2015-like model with BeRPA and 2p2h shape fixed---were propagated to Super-Kamiokande and event rate comparisons were made. Generally, there was negligible ($<1\sigma$) differences even when parameter values were different, and the studies were all compatible with respect to impact on oscillation analyses. These studies are found in \autoref{sec:data_alt_studies}.
+A number of alternative studies were performed for the 2017 analysis, comparing subruns in data and MC, change of model parameters and their priors, investigating effects of removing runs, and comparing FGD1 and FGD2. The largest impact was found in the FHC versus RHC data fit, and the FGD1 vs FGD2 data fit, with some parameters outside the $1\sigma$ range of the full fit to data. The posteriors from these two fits---and a fit using a 2015-like model with BeRPA and 2p2h shape fixed---were propagated to SK and event rate comparisons were made. Generally, there was negligible ($<1\sigma$) differences even when parameter values were different, and the studies were all compatible with respect to impact on oscillation analyses. These studies are found in \autoref{sec:data_alt_studies}.
 
 \section{Cross-group Validations}
-To further validate the implementation and results of the 2017 ND280-only fits before the full oscillation analysis was run, comparisons are made to the frequentist ``BANFF'' group. This group gives information on systematics for oscillation analyses by providing central values and uncertainties related through a covariance matrix which are marginalised over. The validation saw differences in all of the flux parameters, and some of the interaction parameter all due to marginalisation effects when providing the point estimates from the MCMC. However, the posterior predictive distributions compared to the ``best-fit'' distributions agreed well and validation tests were all complete. \autoref{chap:banff_valid} details this procedure.
+Comparisons are made to the frequentist ``BANFF'' group to further validate the implementation and results of the 2017 ND280-only fits before the full oscillation analysis is run. The validation saw normalisation differences to this analysis in all of the flux parameters, and some of the interaction parameter. All were due to marginalisation effects when providing the point estimates from the MCMC. The posterior predictive distributions compared to the ``best-fit'' distributions agreed well and validation tests satisfactory. \autoref{chap:banff_valid} details this procedure.

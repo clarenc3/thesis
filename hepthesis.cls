@@ -358,17 +358,17 @@
 }
 
 %% Redefine bits of document shape
-\renewcommand{\topfraction}{0.95}%
-\renewcommand{\bottomfraction}{0.95}%
-\renewcommand{\textfraction}{0.05}%
+\renewcommand{\topfraction}{0.97}%
+\renewcommand{\bottomfraction}{0.97}%
+\renewcommand{\textfraction}{0.03}%
 \renewcommand{\arraystretch}{1.25}%
 
 %% Reset rule widths and the header width
 \renewcommand{\headwidth}{\textwidth}%
-\renewcommand{\headrulewidth}{0.5pt}%
+\renewcommand{\headrulewidth}{0.3pt}%
 \renewcommand{\footrulewidth}{0pt}%
-\addtolength{\headheight}{2.5pt}%
-\addtolength{\headsep}{20pt}%
+\addtolength{\headheight}{2.0pt}%
+\addtolength{\headsep}{15pt}%
 
 %% Extra margins for various sections
 \newlength{\@mainmatterextramargin}%
@@ -382,19 +382,19 @@
 \newlength{\@abstractextramargin}%
 \setlength{\@abstractextramargin}{1.5cm}%
 \newlength{\@declarationextramargin}%
-\setlength{\@declarationextramargin}{1cm}%
+\setlength{\@declarationextramargin}{1.5cm}%
 \newlength{\@acknowledgementsextramargin}%
 \setlength{\@acknowledgementsextramargin}{0cm}%
 \newlength{\@prefaceextramargin}%
 \setlength{\@prefaceextramargin}{0cm}%
 \newlength{\@pagequoteextramargin}%
-\setlength{\@pagequoteextramargin}{2cm}%
+\setlength{\@pagequoteextramargin}{1.5cm}%
 
 %% Top vertical spacing in the front matter
 \newlength{\@frontmattertopskip}%
 \newlength{\@frontmattertitletopskip}%
 \newlength{\frontmattertitleskip}%
-\addtolength{\frontmattertitleskip}{1cm}%
+\addtolength{\frontmattertitleskip}{0cm}%
 \addtolength{\@frontmattertitletopskip}{0cm}%
 \setlength{\@frontmattertopskip}{\frontmattertitleskip}%
 \addtolength{\@frontmattertopskip}{\@frontmattertitletopskip}%
@@ -478,13 +478,13 @@
   \@ifpackageloaded{babel}{\addto\captionsenglish{%
     \renewcommand*{\contentsname}{Contents}
     \renewcommand*{\bibname}{Bibliography}
-    \renewcommand*{\listfigurename}{List of figures}
-    \renewcommand*{\listtablename}{List of tables}
+    \renewcommand*{\listfigurename}{List of Figures}
+    \renewcommand*{\listtablename}{List of Tables}
   }}{%
     \renewcommand*{\contentsname}{Contents}
     \renewcommand*{\bibname}{Bibliography}
-    \renewcommand*{\listfigurename}{List of figures}
-    \renewcommand*{\listtablename}{List of tables}
+    \renewcommand*{\listfigurename}{List of Figures}
+    \renewcommand*{\listtablename}{List of Tables}
   }
 
   %%   Hyperlinks (optional, has to come late in the package list)
@@ -602,7 +602,7 @@
     {\LARGE{\textbf{Acknowledgements}}}%
     \endgroup
   \end{center}%
-  \vspace*{1cm}%
+%  \vspace*{1.5cm}%
 }{%
   \endadjustwidth%
   \ignorespacesafterend%
@@ -620,7 +620,7 @@
     {\LARGE{\textbf{Preface}}}%
     \endgroup
   \end{center}%
-  \vspace*{1cm}%
+%  \vspace*{1cm}%
 }{%
   \endadjustwidth%
   \ignorespacesafterend %
@@ -641,7 +641,7 @@
     {\LARGE\textbf{Declaration}}%
     \endgroup
   \end{center}%
-  \vspace*{1cm}%
+%  \vspace*{1.5cm}%
 }{%
   %\newline \newline \newline%
   %\begin{flushright}
@@ -665,7 +665,7 @@
     {\LARGE\textbf{#1}}%
     \endgroup
   \end{center}%
-  \vspace*{1cm}%
+  \vspace*{0.5cm}%
 }{%
   \endadjustwidth%
   \ignorespacesafterend%
@@ -696,7 +696,7 @@
     \end{doublespace}%
     \vspace*{3cm}%
     {\Large{{\theauthor} \\ {#1}}}\\%
-    \vspace*{8cm}%
+    \vspace*{10cm}%
     {#2}%
   \end{center}%
 
@@ -814,7 +814,7 @@
 \let\@oldtable\table
 \let\@oldendtable\endtable
 \renewenvironment{table}[1][tbp]{%
-  \vspace{0.4cm}%
+%  \vspace{0.4cm}%
   \@oldtable[#1]%
   \begin{center}%
 }{%

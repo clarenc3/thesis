@@ -632,7 +632,7 @@ The first statistical test on the Asimov is to investigate the prior predictive 
 
 \subsection{Fitting to Asimov Data}
 \label{sec:asimov_fit}
-After the closure tests are complete we fit the model to the Asimov data set. Three different MCMCs were run, each one being a tuned version of the previous, in regards to the autocorrelations present in the parameters throughout the chain. \autoref{tab:asimov_mcmc_versions} shows the different chains completed for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
+The model is here fit to the Asimov data set, defined as the model set to the central values of the prior constraints. Three different MCMCs are presented, each one being a tuned version of the previous, in regards to the autocorrelations and acceptance probability of each chain. \autoref{tab:asimov_mcmc_versions} shows the chains for the Asimov study. In each case the burn-in is 1/4 of the total chain length.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c c}
@@ -650,19 +650,18 @@ After the closure tests are complete we fit the model to the Asimov data set. Th
 \label{tab:asimov_mcmc_versions}
 \end{table}
 
-Since MCMC methods aren't designed to find a global minimum of the test-statistic, it is less trivial to define the ``best-fit'' parameter set than with a conventional minimiser. The most straightforward method is to select the MCMC step with the highest likelihood and draw the parameter set from that step, although there is no guarantee whatsoever that this is the global minimum. For the one-dimensional parameter plots we instead opt to marginalise over all parameters except the ``parameter of interest''. Since we're dealing with a very high-dimensional, highly-correlated fit, the outcome is likely to display some ``marginalisation effects'': the parameter value which maximises the $n+1$ dimensional marginal likelihood does not maximise the $n$ dimensional marginal likelihood.
+As covered in \autoref{chap:mcmc}, MCMC methods aren't designed to find a global minimum of the test-statistic, so we revert to defining the ``best-fit'' parameter set as the marginal posterior over all parameters except the ``parameter of interest''. Since we're marginalising over $\sim700$ parameters, the study is likely to see parameter ``biases'' from marginalisation effects.
 
-\autoref{fig:mcmc_asimov_loglsteps} demonstrates that the lowest test-statistic is indeed obtained at the very beginning of the chain, and the chain progresses to move around the minimum at $\chi^2 \sim 300-400$. The lowest test-statistic after the first 1/4 of the chain has been discarded is found at step 423471/800000, which has $\chi^2 = 284.49$.
-
+\autoref{fig:mcmc_asimov_loglsteps} demonstrates that the lowest test-statistic is obtained right at the very beginning of the chain, which progresses to move around the minimum, scanning parameter combinations with $\chi^2 \sim 300-400$, here defined as $\chi^2 = -\log\mathcal{L}$, so $-2\log\mathcal{L}$ roughly coincides with the number of parameters in the fit. The lowest test-statistic after the burn-in is found at step 423471/800000, which has $\chi^2 = 284.49$.
 \begin{figure}[h]
 	\includegraphics[width=0.45\textwidth]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge}
 	\caption{Markov Chain behaviour for the ``mid acceptance'' MCMC, showing intended behaviour of moving around minimum}
 	\label{fig:mcmc_asimov_loglsteps}
 \end{figure}
 
-\autoref{fig:flux_asimov_fhc} (FHC) and \autoref{fig:flux_asimov_rhc} (RHC) shows the result of the Asimov fit for the ND280 flux parameters. There is a consistent ``bias'' in estimating the parameter set which generated the Asimov, whose residuals (bottom panel) appear to have a shape, going from over-estimated to under-estimated in parameter value as $E_\nu$ increases. The highest acceptance chain has less ``bias'' than the shorter chains, and all the chains are consistent with each other. Many of the parameters with large biases are barely constrained by the ND280 data (e.g. ND280 FHC $\nu_\mu$ at $E_\nu > 4\text{ GeV}$ and ND280 RHC $\bar{\nu}_e$) and only get their constraints from the prior covariance matrix. The ND280 to SK correlation is working as expected and the SK flux parameters show almost identical constraint to their ND280 equivalents.
+\autoref{fig:flux_asimov_fhc} (FHC) and \autoref{fig:flux_asimov_rhc} (RHC) shows the result of the Asimov fit for the ND280 flux parameters. There is a consistent ``bias'' in estimating the parameter set which generated the Asimov, whose residuals (bottom panel) appear to have a shape, going from over-estimated to under-estimated as $E_\nu$ increases. The highest acceptance chain has less ``bias'' than the shorter chains, and all the chains are consistent with each other. Many of the parameters with large biases are barely constrained by the ND280 data (e.g. ND280 FHC $\nu_\mu$ at $E_\nu > 4\text{ GeV}$ and ND280 RHC $\bar{\nu}_e$) and only get their constraints from the prior covariance matrix. The ND280 to SK correlation is working as expected and the SK flux parameters show almost identical constraint to their ND280 equivalents.
 
-We also note improved constraints on all flux parameters from the prior uncertainty. This is emphasises around the flux peak at $E_\nu \sim 0.6\text{ GeV}$, where the flux parameter uncertainty reduces by 50\%.
+We note improved constraints on all flux parameters from the prior uncertainty. This is strongest around the flux peak at $E_\nu \sim 0.6\text{ GeV}$, where the flux parameter uncertainty reduces by 50\%.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.10\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
@@ -726,8 +725,8 @@ We also note improved constraints on all flux parameters from the prior uncertai
 	\caption{ND280 and SK RHC flux parameters after the Asimov fit for different MCMC chains}
 	\label{fig:flux_asimov_rhc}
 \end{figure}
-\autoref{fig:xsec_asimov} shows interaction parameters after the fit to Asimov data. As for the flux parameters, some parameters are ``biased'', notably the Fermi momentum parameters ($p_F$), 2p2h norm $\bar{\nu}$, BeRPA A, CC DIS and NC$1\gamma$. Again, the chains are very compatible in their estimates of the parameter values, and the reduction of the uncertainties are significant for many parameters. $p_F$, 2p2h norm C/O, BeRPA E, $\nu_e$/$\nu_\mu$, NC coherent, NC$1\gamma$ and NC oth. SK barely improve, due to the fit lacking events which constrain these parameters, or the parameter has very little ``strength'' to change the interaction cross-section.
 
+\autoref{fig:xsec_asimov} shows interaction parameters after the fit to Asimov data. As for the flux parameters, some parameters are ``biased'', notably the Fermi momentum parameters ($p_F$), 2p2h norm $\bar{\nu}$, BeRPA A, CC DIS and NC$1\gamma$. Again, the chains are very compatible in their estimates of the parameter values, and the reduction of the uncertainties are significant for many parameters. $p_F$, 2p2h norm C/O, BeRPA E, $\nu_e$/$\nu_\mu$, NC coherent, NC$1\gamma$ and NC oth. SK barely improve due to the fit lacking events which constrain these parameters, and/or the parameter has very little ``strength'' to change the interaction cross-section.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/Asimov/2017_NewDet_Asimov_actually_0_2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_2017b_NewDet_NewData_Asimov_Long_0}
@@ -786,11 +785,10 @@ To investigate if correlations and marginalisation are to blame for the ``bias''
 
 \subsubsection{Marginalisation Effects}
 \label{sec:marginalisation}
-In \autoref{sec:asimov_fit} it was noted that many parameters appeared ``biased'' in their one-dimensional marginal posterior not agreeing with the input Asimov value. This is expected for parameters which correlate strongly with non-Gaussian parameters, of which the fit contains some. Here we investigate this further by looking at the two-dimensional marginal posterior for a few correlated parameters and comparing them to the one-dimensional marginal posterior. For the central value parameter estimates we use the highest posterior density point. We look at three selected parameters that showed bias: $p_F^{C}$, 2p2h norm $\bar{\nu}$ and the 30th beam parameter (``$b_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV).
+Marginalisation effects are expected for parameters which correlate strongly with non-Gaussian parameters, which are present in this analysis. This is investigated further by looking at the two-dimensional marginal posteriors for a few correlated parameters and comparing them to their one-dimensional marginal posterior. For the central value parameter estimates we use the highest posterior density point. We look at three selected parameters that show bias: $p_F^{C}$, 2p2h norm $\bar{\nu}$ and the 30th beam parameter (``$b_{29}$'', which is the ND280 RHC $\bar{\nu}_\mu$ parameter for $E_\nu= 0.7-1.0\text{ GeV}$).
 
 \paragraph{$p_F^C$ bias}
-\autoref{fig:marginalisation_pf} shows the two dimensional marginal posterior of $p_F^C$ with $p_F^O$ and BeRPA D. The $p_F$ parameters are problematic in that the parameterisation allows for non-Gaussian behaviour and additionally has hard cut-offs near the prior value--notably at the lower limit. Marginalising over such parameters causes shifts in the highest posterior densities. For the two-dimensional posterior of $p_F^C$ and $p_F^O$ the highest density is indeed very close to the prior input value of 1.0 for both parameters (within one bin-width), whereas marginalising over the other parameter causes the posterior density to shift from $p_F^{C}$ = 1.008 to 1.062. The second inset shows the opposite effect when marginalising $p_F^{C}$ over BeRPA D, in which the two-dimensional marginal posterior has its highest density at $p_F^{C} = 1.077$ which shifts to $p_F^{C} = 1.054$ after the marginalisation.
-
+\autoref{fig:marginalisation_pf} shows the two dimensional marginal posterior of $p_F^C$ with $p_F^O$ and BeRPA D. The $p_F$ parameters are problematic in that the parameterisation allows for non-Gaussian behaviour and additionally has hard cut-offs near the prior value--notably at the lower limit. Marginalising over such parameters causes shifts in the localtion of the highest posterior density. For the two-dimensional posterior of $p_F^C$ and $p_F^O$ the highest density is very close to the prior input value of 1.0 for both parameters (within one bin-width), whereas marginalising over the other parameter causes the posterior density to shift from $p_F^{C}$ = 1.008 to 1.062. The second inset shows the opposite effect when marginalising $p_F^{C}$ over BeRPA D, in which the two-dimensional marginal posterior has its highest density at $p_F^{C} = 1.077$ which shifts to $p_F^{C} = 1.054$ after the marginalisation.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=15]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_marg_xsec}
@@ -803,7 +801,7 @@ In \autoref{sec:asimov_fit} it was noted that many parameters appeared ``biased'
 \end{figure}
 
 \paragraph{2p2h norm $\bar{\nu}_\mu$ bias}
-\autoref{fig:marginalisation_2p2h_norm_nubar} shows the same marginalisation plots for 2p2h norm $\bar{\nu}$ with 2p2h shape C and BeRPA E. The case of the 2p2h normalisation parameters are slightly different to the $p_F$ parameters: the normalisation is well-behaved across the phase space and looks very Gaussian and does not have any hard cut-offs near the prior (cut-off is when normalisation = 0). The marginsaliation effect happens instead with parameters that 2p2h normalisations correlate heavily with which may have non-Gaussian posteriors. The first example is with 2p2h shape C, in which we notice a tail at low 2p2h shape C and low 2p2h norm $\bar{\nu}$. Marginalising over the parameter bring the posterior density from 2p2h norm $\bar{\nu}$ = 1.061 to 0.842, which is the main cause of the ``bias''. Again, other parameters have the opposite effect: marginalising over BeRPA E causes the marginal posterior to shift from 2p2h norm $\bar{\nu}$ from 0.769 to 0.842.
+\autoref{fig:marginalisation_2p2h_norm_nubar} shows the same marginalisation plots for 2p2h norm $\bar{\nu}$ with 2p2h shape C and BeRPA E. The case of the 2p2h normalisation parameters is slightly different to the $p_F$ parameters: the normalisation is well-behaved across the phase space, looks Gaussian, and does not have any hard cut-offs near the prior\footnote{The cut-off is when the normalisation reaches 0}. The marginsaliation effect instead happens with parameters that 2p2h normalisations correlate with, which may have non-Gaussian posterior shapes. The first example is with 2p2h shape C, in which we notice a tail at low 2p2h shape C and low 2p2h norm $\bar{\nu}$. Marginalising over the parameter brings the posterior density from 2p2h norm $\bar{\nu}$ = 1.061 to 0.842, which is the main cause of the ``bias''. Again, other parameters have the opposite effect: marginalising over BeRPA E causes the marginal posterior to shift from 2p2h norm $\bar{\nu}$ from 0.769 to 0.842.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=55]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_marg_xsec}
@@ -816,9 +814,7 @@ In \autoref{sec:asimov_fit} it was noted that many parameters appeared ``biased'
 \end{figure}
 
 \paragraph{$b\_29$ bias}
-The 30th beam parameter (``$b\_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV) sees similar effects from a number of parameters:
-``$b\_24$'' (ND280 FHC $\bar{\nu}_e$ 2.5-30 GeV), ``$b\_46$'' (ND280 RHC $\nu_\mu$ 1.5-2.5 GeV), ``$b\_49$'' (ND280 RHC $\nu_e$ 2.5-30 GeV) and BeRPA D. The marginalisation plots are shown in \autoref{fig:marginalisation_b29} and all the above parameters have identical shifts: $b\_29$ moves from 0.988 to 0.974. It is noteworthy that the above parameters are all only weakly constrained by ND280 data: there is no dedicated $\nu_e$ selection (b\_46 and b\_49) and high $Q^2$ CCQE events are sparse (BeRPA D). This can cause non-Gaussianity in that the chain may ``wander'' the space and explore a largely flat likelihood in one parameter.
-
+The 30th beam parameter (``$b\_29$'', the ND280 RHC $\bar{\nu}_\mu$ parameter for $E_\nu= 0.7-1.0\text{ GeV}$) sees similar effects from a number of parameters: ``$b\_24$'' (ND280 FHC $\bar{\nu}_e$ 2.5-30 GeV), ``$b\_46$'' (ND280 RHC $\nu_\mu$ 1.5-2.5 GeV), ``$b\_49$'' (ND280 RHC $\nu_e$ 2.5-30 GeV) and BeRPA D. The marginalisation plots are shown in \autoref{fig:marginalisation_b29} and all the above parameters have identical shifts: $b\_29$ moves from 0.988 to 0.974. It is noteworthy that the above parameters are all only weakly constrained by ND280 data: there is no dedicated $\nu_e$ selection (b\_46 and b\_49 control $\nu_e$ flux) and high $Q^2$ CCQE events are sparse (the region for BeRPA D). This can cause non-Gaussianity in that the chain may ``wander'' the space and explore a largely flat likelihood in parameters.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=25]{figures/mach3/mcmc/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_b29}
@@ -835,13 +831,14 @@ The 30th beam parameter (``$b\_29$'', or the ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 G
 	\caption{Selected two-dimensional marginal posteriors for ``$b\_29$'' (ND280 RHC $\bar{\nu}_\mu$ 0.7-1.0 GeV)}
 	\label{fig:marginalisation_b29}
 \end{figure}
-In conclusion, the biases present in the Asmiov fit study seems likely to be due to marginlisation effects over parameters that are non-Gaussian, have hard cut-offs or are poorly constrained in the fit. These patterns are expected to arise again when fitting against real data.
+
+In conclusion, the biases present in the Asmiov fit study seems likely to be due to marginlisation effects over parameters that are non-Gaussian, have hard cut-offs or are poorly constrained in the fit. These patterns are expected to arise again when fitting against real data. The frequentist (BANFF) group's validations are provided in \autoref{chap:banff_valid} for comparison, and finds no biases.
 
 \subsection{Posterior Predictive Spectrum}
 \label{sec:asimov_pospred}
-The next statistical closure test we perform on the Asimov data fit is to calculate the posterior predictive spectra and p-values. 
+The next statistical closure test we perform on the Asimov data fit is to calculate the posterior predictive spectra and p-values. The chosen MCMC was presented in \autoref{sec:asimov_fit} and the longest chain in \autoref{tab:asimov_mcmc_versions} was selected for the calculation of these spectra.
 
-\autoref{tab:asimov_posterior_pred} shows the event rates from the posterior predictive spectrum. We note a consistently low likelihood contribution from all samples ($\sim0.18-0.42$), totalling at 4.43. This is small compared to the number of bins being fit (1624), and the contributions enter primarily in low statistics areas (high \pmu, low \cosmu), where non-Gaussian behaviour is expected. The 2D \pmu \cosmu distributions and the bin-by-bin likelihood contributions for FGD1 and FGD2 0$\pi$ is shown in \autoref{fig:posterior_predictive_2d_asimov}.
+\autoref{tab:asimov_posterior_pred} shows the event rates from the posterior predictive spectrum. There is a consistently low likelihood contribution from all samples ($\sim0.18-0.42$), totalling at 4.43. This is small compared to the number of bins being fit (1624), and the contributions enter primarily in low statistics areas (high \pmu, low \cosmu), where Poissonian event distribution are expected. The 2D \pmu \cosmu distributions and the bin-by-bin likelihood contributions for FGD1 and FGD2 0$\pi$ is shown in \autoref{fig:posterior_predictive_2d_asimov}.
 \begin{table}[h]
 	\centering
   \begin{tabular}{l | c c | c}
@@ -875,8 +872,7 @@ Total & 63632.86 & $63637.83\pm253.0$ & 4.43 \\
 \label{tab:asimov_posterior_pred}
 \end{table}
 
-Comparing the posterior predictive event rates in \autoref{tab:asimov_posterior_pred} to the prior predictive in \autoref{tab:asimov_prior_pred} we see a drastic reduction in the event rate uncertainties: 7025.2 to 253.0 for the total rate, 2244.0 to 116.8 for CC0$\pi$, 487.6 to 57.7 for CC1$\pi$ and 537.5 to 55.8 for CCOther. This brings the event rate uncertainties below 2\% level for all the selections, which marks the best possible scenario for the data fit.
-
+Comparing the posterior predictive event rates in \autoref{tab:asimov_posterior_pred} to the prior predictive in \autoref{tab:asimov_prior_pred} we see a drastic reduction in the event rate uncertainties: 7025.2 to 253.0 for the total rate, and for FGD1 CC0$\pi$ 2244.0 to 116.8, 487.6 to 57.7 for CC1$\pi$ and 537.5 to 55.8 for CCOther. This brings the event rate uncertainties below 2\% level for all the selections, which sets a benchmark for the fit to data.
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -901,9 +897,7 @@ Comparing the posterior predictive event rates in \autoref{tab:asimov_posterior_
 	\label{fig:posterior_predictive_2d_asimov}
 \end{figure}
 
-The MCMC was run on the Asimov data fit, presented in \autoref{sec:asimov_fit}. The longest chain in \autoref{tab:asimov_mcmc_versions} was selected for the calculation of these spectra. The parameter sets are drawn randomly from the MCMC after burn-in (1/4, or 350,000 steps), which was chosen after stability was observed in the parameters and likelihoods, and the autocorrelations tended to zero. 
-
-The result is shown in \autoref{fig:posterior_predictive_asimov}, and as expected the p-value is 1.0. Comparing the y-axis ($-2\mathcal{L}_{\text{Sample}} \text{(Data, Draw)}$) to the prior predictive spectrum in \autoref{fig:prior_predictive_asimov}, the difference is almost one order of magnitude, essentially reflecting the much tighter model constraint before and after using ND280 data.
+The calculated posterior predictive p-value is shown in \autoref{fig:posterior_predictive_asimov}, and as expected the p-value is 1.0. Comparing the y-axis ($-2\mathcal{L}_{\text{Sample}} \text{(Data, Draw)}$) to the prior predictive spectrum in \autoref{fig:prior_predictive_asimov}, the difference is almost one order of magnitude, essentially reflecting the much tighter model constraint after using ND280 data.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_merge_PostPred_procs}
@@ -917,9 +911,9 @@ The result is shown in \autoref{fig:posterior_predictive_asimov}, and as expecte
 
 \subsection{Covariance Matrix from the Asimov Fit}
 \label{sec:covariance_asimov}
-The last consistency check is to inspect the covariance matrix after the fitting to the Asimov data. The expected outcome is heavily correlated flux parameters---roughly retaining the covariances from the input covariance matrix---, interaction parameters correlating internally for parameters that affect the same modes and topologies (e.g. $M_A^{QE}$ and BeRPA), and correlations between the flux parameters and cross-section parameters, especially for normalisation parameters.
+The last consistency check is to inspect the covariance matrix from the fit to Asimov data. The expected covariance matrix contains heavily correlated flux parameters---roughly retaining the covariances from the input covariance matrix---, interaction parameters correlating internally for parameters that affect the same modes and topologies (e.g. $M_A^{QE}$ and BeRPA), and correlations between the flux parameters and cross-section parameters, especially for normalisation parameters.
 
-In \autoref{fig:asimov_full_corr} we present the full flux and cross-section parameter square root covariance and correlation matrix. The red square in the bottom left corner is the block of 100 flux parameters, all heavily internally correlated. The upper right corner is occupied by the cross-section parameters, which has some internal correlations, but far less than the fluxes. Many cross-section parameters correlate with the flux parameters, notably CC DIS---which is parameterised as $0.4/E_\nu$, so is essentially a flux normalisation weight for DIS events---, $C_5^A$---which largely controls the CC$1\pi$ nucleon level cross-section normalisation, and the BeRPA parameters---which control the $Q^2$ correction of CCQE events due to the RPA effects.
+\autoref{fig:asimov_full_corr} presents the full flux and cross-section parameter square root covariance and correlation matrix. The red square in the bottom left corner is the 100 flux parameters, all heavily internally correlated. The upper right corner is occupied by the cross-section parameters, which has some internal correlations. Many cross-section parameters correlate with the flux parameters, notably CC DIS---which is parameterised as $0.4/E_\nu$, so is essentially a flux normalisation weight for DIS events---, $C_5^A$---which largely controls the CC$1\pi$ nucleon level cross-section normalisation, and the BeRPA parameters---which control the $Q^2$ correction of CCQE events due to the RPA effects.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/Asimov/2017b_NewDet_NewData_Asimov_Long_0_drawCorr.pdf}
@@ -933,7 +927,7 @@ In \autoref{fig:asimov_full_corr} we present the full flux and cross-section par
 	\label{fig:asimov_full_corr}
 \end{figure}
 
-A more digestible version of \autoref{fig:asimov_full_corr} is shown in \autoref{fig:asimov_nd_corr}, which excludes the SK flux parameters in the matrices. Here we spot the largest post-fit flux uncertainty from the \nue flux parameters, and that the high energy flux parameters correlate only weakly, as expected from the neutrino production parents at high energies compared to low energies. We also observe very strong correlations for the low energy FHC $\nu_\mu$ and RHC $\bar{\nu}_\mu$ parameters. We also see the low energy flux parameters correlating with all the 2p2h parameters.
+A more digestible covariance matrix is shown in \autoref{fig:asimov_nd_corr}, which excludes the SK flux parameters. The largest post-fit flux uncertainty is from the \nue flux parameters, and the high energy flux parameters correlate only weakly, as expected from the neutrino production parents at high energies compared to low energies. There are very strong correlations for the low energy FHC $\nu_\mu$ and RHC $\bar{\nu}_\mu$ parameters, and the low energy flux parameters correlate with all the 2p2h parameters.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=5]{figures/mach3/Asimov/2017b_NewDet_NewData_Asimov_Long_0_drawCorr.pdf}
@@ -945,7 +939,7 @@ A more digestible version of \autoref{fig:asimov_full_corr} is shown in \autoref
 	\label{fig:asimov_nd_corr}
 \end{figure}
 
-\autoref{fig:asimov_flux_corr} shows the flux parameters with the input prior covariance matrix and the output post-fit Asimov covariance matrix. The correlations are largely the same, and we notice the smaller covariance values post-fit compared to the pre-fit, reflecting the tighter constraints on the flux parameters in the Asimov fit.
+\autoref{fig:asimov_flux_corr} shows the flux parameters with the input prior covariance matrix and the output post-fit Asimov covariance matrix. The correlations are largely the same, and we notice the smaller covariance values post-fit compared to the pre-fit, reflecting the tighter constraint on the flux after fitting ND280 data.s
 \begin{figure}[h]
 	\begin{subfigure}[t]{\textwidth}
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -970,7 +964,7 @@ A more digestible version of \autoref{fig:asimov_full_corr} is shown in \autoref
 	\label{fig:asimov_flux_corr}
 \end{figure}
 
-\autoref{fig:asimov_xsec_corr} shows the covariance and correlation matrices zoomed in on the cross-section parameters (the upper right corner of \autoref{fig:asimov_full_corr} and \autoref{fig:asimov_nd_corr}). As expected we observe correlations between C and O parameters (e.g. CC Coh C and CC Coh O), $\nu$ and $\bar{\nu}$ parameters (e.g. 2p2h norm). The CC0$\pi$ parameters (lower left block) correlate $M_A^{QE}$, $p_F$ and the BeRPA parameters, which all affect the CCQE interaction. We also see strong internal correlations in the BeRPA parameters, as expected. The single pion parameter block (middle) roughly maintain the prior correlation, as does the FSI block (top right corner). The single pion parameter $C_5^A$, $M_A^{RES}$ and non-resonant $I_{1/2}$ parameters correlate with the CC coherent parameters---which produce a 1$\pi^\pm$ final state---and the CC DIS parameter---all because they populate the CC1$\pi$ selection (and to a less extent the CCOther). We also note slight correlations between the CCQE and single pion parameters, due to the 20\% single pion events seen in \autoref{tab:nominal_mode_afterscale} in the CC0$\pi$ selection from final state pion interactions.
+\autoref{fig:asimov_xsec_corr} shows the matrices zoomed in on the cross-section parameters (the upper right corner of \autoref{fig:asimov_full_corr} and \autoref{fig:asimov_nd_corr}). As expected there are correlations between C with O parameters (e.g. CC Coh C and CC Coh O), and $\nu$ with $\bar{\nu}$ parameters (e.g. 2p2h norm). The CC0$\pi$ parameters (lower left block) correlate $M_A^{QE}$, $p_F$ and the BeRPA parameters, which affect the CCQE interaction. There are strong internal correlations in the BeRPA parameters, as expected. The single pion parameter block (middle) roughly maintains their prior correlations, as does the FSI block (top right corner). The single pion parameter $C_5^A$, $M_A^{RES}$ and non-resonant $I_{1/2}$ parameters correlate with the CC coherent parameters---which produce a 1$\pi^\pm$ final state---and the CC DIS parameter---since they populate the CC1$\pi$ selection (and to a less extent the CCOther). We note slight correlations between the CCQE and single pion parameters, due to the 20\% single pion events in the CC0$\pi$ selection from final state pion interactions, seen in \autoref{tab:nominal_mode_afterscale}.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=11]{figures/mach3/Asimov/2017b_NewDet_NewData_Asimov_Long_0_drawCorr.pdf}

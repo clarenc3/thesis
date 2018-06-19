@@ -49,32 +49,31 @@
 \DeclareRobustCommand{\Rate}{\mymath{\Gamma}\xspace}
 \DeclareRobustCommand{\RateOf}[1]{\mymath{\Gamma}\parenths{#1}\xspace}
 
-
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
 % T2K specific
-\newcommand{\nue}{$\nu_{e}$}
-\newcommand{\nueb}{$\bar{\nu}_{e}$}
-\newcommand{\numu}{$\nu_{\mu}$}
-\newcommand{\numub}{$\bar{\nu}_{\mu}$}
-\newcommand{\nutau}{$\nu_{\tau}$}
-\newcommand{\nuebar}{$\bar{\nu}_{e}$}
-\newcommand{\numubar}{$\bar{\nu}_{\mu}$}
+\newcommand{\nue}{$\nu_{e}$\xspace}
+\newcommand{\nueb}{$\bar{\nu}_{e}$\xspace}
+\newcommand{\numu}{$\nu_{\mu}$\xspace}
+\newcommand{\numub}{$\bar{\nu}_{\mu}$\xspace}
+\newcommand{\nutau}{$\nu_{\tau}$\xspace}
+\newcommand{\nuebar}{$\bar{\nu}_{e}$\xspace}
+\newcommand{\numubar}{$\bar{\nu}_{\mu}$\xspace}
 
-\newcommand{\sk}{SK}
-\newcommand{\nd}{ND280}
+\newcommand{\sk}{SK\xspace}
+\newcommand{\nd}{ND280\xspace}
 
 \newcommand\red[1]{{\textit{\Large{\textbf{\color{red}#1}}}}}
 \newcommand\blue[1]{{\textit{\Large{\textbf{\color{blue}#1}}}}}
 
-\newcommand{\FGDCCNoPi}[2]{FGD{#1} CC$0\pi$ {#2}}
-\newcommand{\FGDCCOnePi}[2]{FGD{#1} CC$1\pi$ {#2}}
-\newcommand{\FGDCCOther}[2]{FGD{#1} CCOther {#2}}
-\newcommand{\FGDCCOneTrk}[2]{FGD{#1} CC1Track {#2}}
-\newcommand{\FGDCCNTrk}[2]{FGD{#1} CCNTrack {#2}}
-\newcommand{\FGDCCnuOneTrk}[2]{FGD{#1} CC1Trk {#2}}
-\newcommand{\FGDCCnuNTrk}[2]{FGD{#1} CCNTrk {#2}}
-\newcommand{\pmu}{$p_\mu$}
-\newcommand{\cosmu}{$\cos\theta_\mu$}
+\newcommand{\FGDCCNoPi}[2]{FGD{#1} CC$0\pi$ {#2}\xspace}
+\newcommand{\FGDCCOnePi}[2]{FGD{#1} CC$1\pi$ {#2}\xspace}
+\newcommand{\FGDCCOther}[2]{FGD{#1} CCOther {#2}\xspace}
+\newcommand{\FGDCCOneTrk}[2]{FGD{#1} CC1Track {#2}\xspace}
+\newcommand{\FGDCCNTrk}[2]{FGD{#1} CCNTrack {#2}\xspace}
+\newcommand{\FGDCCnuOneTrk}[2]{FGD{#1} CC1Trk {#2}\xspace}
+\newcommand{\FGDCCnuNTrk}[2]{FGD{#1} CCNTrk {#2}\xspace}
+\newcommand{\pmu}{$p_\mu$\xspace}
+\newcommand{\cosmu}{$\cos\theta_\mu$\xspace}
 
 %% High-energy physics stuff
 %\usepackage{abhep}
@@ -101,3 +100,5 @@
 \DeclareRobustCommand{\Xzerobar}{\HepGenAntiParticle{X}{}{0}\xspace}
 \DeclareRobustCommand{\epluseminus}{\Ppositron\!\Pelectron\xspace}
 \DeclareRobustCommand{\protonproton}{\Pproton\APantiproton\xspace}
+
+\let\cleardoublepage=\clearpage
