@@ -3,7 +3,7 @@
 This chapter introduces the experimental evidence for the neutrino and neutrino oscillations, outlines the theory of neutrino oscillations, and discusses neutrino interactions in the $E_\nu\sim1-10 \text{ GeV}$ range, relevant to long baseline neutrino oscillation experiments.
 
 \section{The Discoveries of the Neutrinos}
-Neutrinos were initially proposed as a solution to the apparent violation of the conservation of four-and angular momentum in James Chadwick's measurements of beta decay in 1932\cite{Chadwick1,Chadwick2}. Inspired by Wolfgang Pauli's new elementary particle ``the neutron''\footnote{Which had characteristics of what we today call a nucleon and a neutrino}\cite{pauli_1933}, Enrico Fermi built his theory of $\beta$-decay\cite{fermi_1934}, in which the observable process $n \rightarrow p + e^-$ is always accompanied by an invisible four-momentum carrier, the electron anti-neutrino.
+Neutrinos were initially proposed as a solution to the apparent violation of the conservation of four- and angular momentum in James Chadwick's measurements of beta decay in 1932\cite{Chadwick1,Chadwick2}. Inspired by Wolfgang Pauli's new elementary particle ``the neutron''\footnote{Which had characteristics of what we today call a nucleon and a neutrino}\cite{pauli_1933}, Enrico Fermi built his theory of $\beta$-decay\cite{fermi_1934}, in which the observable process $n \rightarrow p + e^-$ is always accompanied by an invisible four-momentum carrier, the electron anti-neutrino.
 
 The neutrino remained elusive until Reines and Cowan in 1953 devised their experiments using the inverse beta decay (IBD) process, $\bar{\nu}_e + p \rightarrow n + e^+$, near a nuclear reactor\cite{reines_cowan_1,reines_cowan_2}. The experiment consisted of two tanks of water sandwiched by three liquid scintillator tanks with photo multiplier tubes (PMTs). The water was doped with 40 kg $\text{CdCl}_2$, which could detect free neutrons through capture. The electron anti-neutrinos were emitted by the nuclear reactor, interacted with the protons in the water, producing a prompt signal from $e^+ + e^- \rightarrow 2\gamma$. The free neutron was detected $\sim5\mu\text{s}$ after the prompt $2\gamma$ from $n + ^{108}\text{Cd} \rightarrow ^{109m}\text{Cd} \rightarrow ^{109}\text{Cd} + \gamma$. The experiment also took data from a reactor off period, demonstrating a significant reduction in neutrino event rates. Modern reactor neutrino oscillation experiments such as Daya Bay\cite{daya_bay} operate much on the same principle. The experiment was complemented by measurements by R. Davis  in 1964\cite{davis}, which exposed tanks of $^{37}\text{Cl}$ to reactor electron anti-neutrinos, interacting through $\bar{\nu}_e + ^{37}\text{Cl} \rightarrow e^- + ^{37}\text{Ar}$, which would violate lepton number conservation. The experiment found no excess of $^{37}\text{Ar}$, and instead set limits on the solar neutrino flux. 
 
@@ -28,9 +28,9 @@ U =
 	U_{\tau 1} & U_{\tau 2} & U_{\tau 3} \\
 \end{pmatrix}
 \end{equation}
-This echoes that of quark mixing proposed by Cabbibo\cite{cabbibo}, Kobayashi and Maskawa\cite{km}. The superposition leads to a probability of observing neutrino flavour change from flavour $\alpha$ to $\beta$ over distance $L$ for a neutrino with energy $E$ in which the square of two neutrino mass states are separated by $\Delta^2 m_{ij} = m^2_i - m^2_j$,
+This echoes that of quark mixing proposed by Cabbibo\cite{cabbibo}, Kobayashi and Maskawa\cite{km}. The superposition leads to a probability of observing neutrino flavour change from flavour $\alpha$ to $\beta$ over distance $L$ for a neutrino with energy $E$ in which the square of two neutrino mass states are separated by $\Delta m_{ij}^2 = m^2_i - m^2_j$,
 \begin{equation}
-P(\nu_\alpha \rightarrow \nu_\beta) = |\braket{\nu_\beta|\nu_\alpha(t)}|^2 = \sum_{k,j} U*_{\alpha k} U_{\beta k} U*_{\alpha j} U_{\beta j} \exp{ \left( -i\frac{\Delta m^2_{i j} L}{2E} \right)}
+P(\nu_\alpha \rightarrow \nu_\beta) = |\braket{\nu_\beta|\nu_\alpha(t)}|^2 = \sum_{k,j} U^*_{\alpha k} U_{\beta k} U^*_{\alpha j} U_{\beta j} \exp{ \left( -i\frac{\Delta m^2_{i j} L}{2E} \right)}
 \end{equation}
 
 Then using the squared unitarity relation we finally get\cite{boris_mixing},
@@ -61,7 +61,7 @@ c_{12} & s_{12} & 0 \\
 \end{equation}
 where the $(1,2)$ parameters are referred to as ``solar'', $(2,3)$ as ``atmospheric'', and $(1,3)$ as ``reactor''. The $\delta$ is commonly referred to as the CP violating Dirac phase, $\delta_{CP}$. 
 
-Reducing down to two neutrino mass states (where the third is degenerate with another), we obtain to a simpler mixing matrix $U$,
+Reducing down to two neutrino mass states (where the third mass state is approximately degenerate with another mass state), we obtain a simpler mixing matrix $U$,
 \begin{equation}
 U = 
 \begin{pmatrix}
@@ -74,7 +74,7 @@ and an oscillation probability of
 P(\nu_\alpha \rightarrow \nu_\beta) = \delta_{\alpha \beta} -(+) \sin^2 \left( 2\theta \right) \sin^2 \left( \frac{1.267 \Delta m^2 \left[\text{eV}^2\right] L\left[\text{km}\right]}{E\left[\text{GeV}\right]} \right)
 \label{eq:two_flavour}
 \end{equation}
-where the positive sign is picked up when $\beta = \alpha$. The sinusoidal oscillation of the neutrino flavour states is clear in \autoref{eq:two_flavour}, whose period is controlled by the parameter $\Delta m^2$ and amplitude by the mixing angle $\theta$. The maximum probability to observe oscillation for a fixed mixing angle is $L/E \sim 1.25/\Delta m^2$ which for $\Delta m^2 \sim 2.5\times10^{-3}\text{ eV}^2$ and $L\sim300\text{ km}$ means $E=0.6\text{ GeV}$, placing an experiment like T2K ($L=295\text{ km}, E = 0.6\text{ GeV}$) near maximum.
+where the positive sign is picked up when $\beta \neq \alpha$. The sinusoidal oscillation of the neutrino flavour states in \autoref{eq:two_flavour} has a period controlled by the parameter $\Delta m^2$ and amplitude by the mixing angle $\theta$. The maximum oscillation probability for a fixed mixing angle $\theta$ is $L/E \sim 1.25/\Delta m^2$, which for $\Delta m^2 \sim 2.5\times10^{-3}\text{ eV}^2$ and $L\sim300\text{ km}$ means $E=0.6\text{ GeV}$---placing an experiment like T2K ($L=295\text{ km}, E = 0.6\text{ GeV}$) near the maximum.
 
 The final ingredient in the oscillation probability is to account for effects from traversing matter rather than vacuum, often referred to as the Mikheyev-Smirnov-Wolfenstein (MSW) effect\cite{barger,parke,wolfenstein,msw}. The effect sets electron neutrinos apart from muon and tau neutrinos, since they have an additional weak interaction with electrons in matter, shown in \autoref{fig:msw_effect}.
 \begin{figure}[h]
@@ -83,13 +83,13 @@ The final ingredient in the oscillation probability is to account for effects fr
 	\label{fig:msw_effect}
 \end{figure}
 
-Electron neutrinos experience a modified Hamiltoninan potential $\Delta V = 2\sqrt{2}G_F E_\nu N_e$, where $G_F$ is the Fermi constant, $E_\nu$ is the neutrino energy and $N_e$ is the electron number density of the matter. The effect modifies the oscillation probability to have dependence on $\sin^2 \Delta m^2$ and $\sin \Delta m^2$, inferring the sign of $\Delta m^2$ can be resolved when significant matter interactions occur\cite{msw_summary}.
+Electron neutrinos experience a modified Hamiltoninan potential $\Delta V = 2\sqrt{2}G_F E_\nu N_e$, where $G_F$ is the Fermi constant, $E_\nu$ is the neutrino energy and $N_e$ is the electron number density of the matter. The effect modifies the oscillation probability to have stronger dependence on $\sin \left(\ldots \Delta m^2 \ldots \right)$, hence the sign of $\Delta m^2$ can be resolved when significant matter interactions occur\cite{msw_summary}.
 
 \section{Neutrino Interactions}
 \label{sec:theory:int}
 Neutrino-matter interactions are a dominant systematic for current long-baseline, intermediate energy neutrino oscillation experiments. Their parameterisation for this analysis is given in \autoref{subsec:syst_xsec}, with an overview provided here. Detailed discussions can be found in \cite{katori_martini,ulrich_review,nieves_review}.
 
-Generally, the $E_\nu \sim 1-10\text{ GeV}$ regime is referred to as the ```intermediate energy region'''. At the low end, nuclear effects such as nucleon-nucleon correlations\cite{nieves1,nieves2}, $\Delta$ in-medium corrections\cite{nuclear_effects_1pi} and nucleus spectral functions \cite{benhar} are important, whereas the high-end is dominated by deep inelastic scattering (DIS). The transition regions between producing no, single and multiple pions is particularly poorly modelled. Neutrino-nucleus and nucleon scattering theory is often inspired by results from electron scattering\cite{joanna}, such as CLAS\cite{clas} at JLAB. The experiments have the benefit of a narrow beam energy window, and so can study nuclear effects at specific $Q=P_{in}-P_{out}$ to the nucleus. 
+Generally, the $E_\nu \sim 0.5-5\text{ GeV}$ regime is referred to as the ```intermediate energy region'''. \red{EXPAND}At the low end, nuclear effects such as nucleon-nucleon correlations\cite{nieves1,nieves2}, $\Delta$ in-medium corrections\cite{nuclear_effects_1pi} and nucleus spectral functions \cite{benhar} are important, whereas the high-end is dominated by deep inelastic scattering (DIS). The transition regions between producing no, single and multiple pions is particularly poorly modelled. Neutrino-nucleus and nucleon scattering theory is often inspired by results from electron scattering\cite{joanna}, such as CLAS\cite{clas} at JLAB. The experiments have the benefit of a narrow beam energy window, and so can study nuclear effects at specific $Q=P_{in}-P_{out}$ to the nucleus. 
 
 In Monte Carlo event generators, the neutrino interaction process is commonly factorised into four parts: 1) A nucleon is simulated from a nuclear model and is used as a target for the neutrino interaction and we boost into its rest-frame, 2) The neutrino interacts with chosen nucleon which is now at rest, equivalent to a neutrino-nucleon interaction, 3) The outgoing particles from the fundamental vertex are propagated through the nucleus with radiative and final state interactions applied, 4) The particles are boosted back into the lab frame.
 
@@ -146,7 +146,7 @@ Generally, the neutrino-nucleon CCQE interaction is relatively well understood. 
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/diagrams/CC1ppip}
 		\caption{CC1$\pi^+$1p}
 	\end{subfigure}
-	\caption{Charged-current single pion production on a nucleon via a $\Delta$ resonances}
+	\caption{Charged-current single pion production on a nucleon via a $\Delta$ resonance}
 	\label{fig:1pi_diags}
 \end{figure}
 
@@ -188,7 +188,7 @@ Simulations can be considered to agree relatively well with pion scattering data
 
 \section{Experimental Overview}
 \label{sec:exp_overview}
-Neutrino oscillations is now an established physics phenomena, cemented by awarding the 2015 Nobel Prize in Physics to Kajita-san (spokesperson for SK) and Art McDonald (spokesperson for SNO) for their experiments' measurements of solar and atmospheric neutrino oscillations. This section gives a brief introduction and overview of neutrino oscillation experiments and production mechanisms, summarised in \autoref{fig:all_neutrino_expts}.
+Neutrino oscillations is now an established physics phenomenon, cemented by awarding the 2015 Nobel Prize in Physics to Kajita-san (SK) and Art McDonald (SNO) for their experiments' measurements of solar and atmospheric neutrino oscillations. This section gives a brief introduction and overview of neutrino oscillation experiments and production mechanisms, summarised in \autoref{fig:all_neutrino_expts}.
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/le_experiments}
 	\caption{Neutrino oscillation experiments in baseline $L$ and energy $E$. Figure from \cite{ic_neutrino_2018}.}
@@ -221,7 +221,7 @@ Solar neutrinos emanate from various nuclear fusion products and decays in the s
 	\label{fig:solar_flux}
 \end{figure}
 
-R. Davis and J. Bachall continued their 1964 measurements\cite{davis} of the solar neutrinos from $^{8}\text{B}$ and in 1968\cite{davis_sun} announced a solar $\nu_e$ flux factor seven of the expected ($\sim2\sigma$ significance), at the time attributed to inaccurate solar model calculations. This was the birth of the ``solar neutrino problem'', which Bruno Pontecorvo and Vladimir Gribov in 1969\cite{pontecorvo_gribov} proposed solving by invoking a $\nu_e\leftrightarrow\nu_\mu$ oscillation similar to $K^0 \leftrightarrow\bar{K}^0$, giving rise to the PMNS paradigm. In 1989, the Kamiokande experiment\cite{kamiokande_solar} confirmed the result, measuring a solar neutrino flux from $^{8}\text{B}$  of $\sim0.5$ the expected, agreeing with the higher statistic data from Homestake\cite{davis_sun2}. The solar neutrino deficit was confirmed from the low threshold detectors SAGE\cite{sage_solar} and GALLEX\cite{gallex_solar}, additionally capable of detecting $p p$ neutrinos using $^{71}\text{Ga}+\nu_e \rightarrow ^{71}\text{Ge}+e^-$.
+R. Davis and J. Bachall continued their 1964 measurements\cite{davis} of the solar neutrinos from $^{8}\text{B}$ and in 1968\cite{davis_sun} announced a solar $\nu_e$ flux a factor of seven below the expected ($\sim2\sigma$ significance), at the time attributed to inaccurate solar model calculations. This was the birth of the ``solar neutrino problem'', which Bruno Pontecorvo and Vladimir Gribov in 1969\cite{pontecorvo_gribov} proposed solving by invoking a $\nu_e\leftrightarrow\nu_\mu$ oscillation similar to $K^0 \leftrightarrow\bar{K}^0$, giving rise to the PMNS paradigm. In 1989, the Kamiokande experiment\cite{kamiokande_solar} confirmed the result, measuring a solar neutrino flux from $^{8}\text{B}$  of $\sim0.5$ the expected, agreeing with the higher statistic data from Homestake\cite{davis_sun2}. The solar neutrino deficit was confirmed from the low threshold detectors SAGE\cite{sage_solar} and GALLEX\cite{gallex_solar}, additionally capable of detecting $p p$ neutrinos using $^{71}\text{Ga}+\nu_e \rightarrow ^{71}\text{Ge}+e^-$.
 
 The Sudbury Neutrino Observatory (SNO) put the nail in the coffin in 2002\cite{sno_solar} by measuring the solar $\nu$ from $^{8}\text{B}$ in three channels: $\nu_e + d \rightarrow p+p+e^-$ (CC), $\nu_x + d\rightarrow p+ n + \nu_x$ (NC) and $\nu_x + e^- \rightarrow \nu_x+e^-$ (ES). The measured fluxes had a $\nu_e$ component consistent with previous measurements, a strong non-$\nu_e$ component 5.3$\sigma$ above zero, and a NC component consistent with predictions from solar models.
 
@@ -242,7 +242,7 @@ giving rise to a total of three neutrinos. The neutrino flux from Honda\cite{hon
 	\label{fig:atmos_flux}
 \end{figure}
 
-In 1965 F. Reines\cite{reines_atmos} and C.V. Achar\cite{india_atmos_hint} first saw hints of atmospheric $\nu_\mu$ appearance in deep underground laboratories through $\nu_\mu(\bar{\nu}_\mu) + X \rightarrow \mu^\pm + X'$. The Irvine-Michigan-Brookhaven (IMB) experiment observed deficits of $\nu_\mu$ interactions in 1986\cite{imb}, and Kamiokande II in 1988\cite{kamiokande_atmos_hint} verified this and found muon-like events of $59\pm7\%$ the prediction, although good agreement of electron-like single-prong events. The Soudan-2 experiment\cite{soudan2} also saw indications of muon neutrino deficiency with a flavour ratio of $0.72\pm0.19^{+0.05}_{-0.07}$ relative expectation. 
+In 1965 F. Reines\cite{reines_atmos} and C.V. Achar\cite{india_atmos_hint} first saw hints of atmospheric $\nu_\mu$ appearance in deep underground laboratories through $\nu_\mu(\bar{\nu}_\mu) + X \rightarrow \mu^\pm + X'$. The Irvine-Michigan-Brookhaven (IMB) experiment observed deficits of $\nu_\mu$ interactions in 1986\cite{imb}, and Kamiokande II in 1988\cite{kamiokande_atmos_hint} verified this and found muon-like events of $59\pm7\%$ the prediction, although good agreement of electron-like single-prong events. The Soudan-2 experiment\cite{soudan2} also saw indications of muon neutrino deficiency with a flavour ratio of $0.72\pm0.19^{+0.05}_{-0.07}$ relative to expectation. 
 
 When SK in 1998 published\cite{sk_disc} their high-statistics\footnote{4353 fully-contained and 301 partially-contained events} $\nu_\mu$ data, they found $R=\left( \mu/e \right)_\text{Data}/\left( \mu/e \right)_\text{MC} =0.65\pm0.05\pm0.08$. They additionally fitted the oscillation parameters, finding the data was well described by $\nu_\mu \leftrightarrow \nu_\tau$ rather than $\nu_\mu \leftrightarrow \nu_e$. The summary of flavour ratios for atmospheric neutrino is seen in \autoref{fig:atmos_ratio}, where the majority of the high precision data sits at $R=0.5-0.8$.
 \begin{figure}[h]
@@ -251,7 +251,7 @@ When SK in 1998 published\cite{sk_disc} their high-statistics\footnote{4353 full
 	\label{fig:atmos_ratio}
 \end{figure}
 
-Atmospheric neutrino observatories after the mid 2000s have focussed on measuring $\nu_\mu\rightarrow\nu_\mu$ to increasing precision. Furthermore, by isolating regions of specific zenith angle (and so baseline $L$), the extent of the matter effects are also studied, which may resolve the ordering of the mass states. This is largely the focus of IceCube\cite{icecube}, ANTARES\cite{antares}, SNO+ and SK's atmospheric neutrino programme. SK has also made attempts at isolating $\nu_\tau$ events\cite{superk_tau}, claiming $4.6\sigma$ discovery of $\nu_\tau$ appearance in 2017. A summary of some recent results including complementary long baseline accelerator neutrino experiments can be seen in \autoref{fig:atmos_data}.
+Atmospheric neutrino observatories after the mid 2000s have focussed on measuring $\nu_\mu\rightarrow\nu_\mu$ to increasing precision. Furthermore, by isolating regions of specific zenith angle (and so baseline $L$), the extent of the matter effects are also studied, which may resolve the ordering of the mass states. This is largely the focus of the atmospheric neutrino programmes at IceCube\cite{icecube}, ANTARES\cite{antares}, SNO+ and SK. The latter has also made attempts at isolating $\nu_\tau$ events\cite{superk_tau}, claiming $4.6\sigma$ discovery of $\nu_\tau$ appearance in 2017. A summary of some recent results including complementary long baseline accelerator neutrino experiments can be seen in \autoref{fig:atmos_data}.
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/icecube_comp}
 	\caption{Measured atmospheric oscillation parameters from recent atmospheric and long baseline accelerator neutrino experiments, assuming normal ordering. Figure from \cite{icecube}.}
@@ -261,7 +261,7 @@ Atmospheric neutrino observatories after the mid 2000s have focussed on measurin
 \subsection{Accelerator Neutrinos}
 Accelerator neutrinos are similar to atmospheric neutrinos in energy, baseline and production mechanism. The neutrinos are made by impinging protons from accelerators on targets, producing a flurry of mesons which decay into neutrinos, amongst others. Experiments often have the ability to deflect and/or focus mesons after the target, enabling sign and thus $\nu_\mu$ vs $\bar{\nu}_\mu$ selection. In contrast to atmospheric neutrinos, accelerator neutrinos are primarily ($\sim90\%$) muon flavoured.
 
-The driver behind the accelerator programme was the atmospheric neutrino oscillations outlined above. Since the neutrino energy and baseline are tuned and chosen for an accelerator experiment, the oscillation dip can be bombarded with statistics. Furthermore, the dependence on the atmospheric flux simulation is removed\cite{lbnl_review}. The disadvantage is the reduced total flux at the far-detector, generally forcing the baseline to $L<1000\text{ km}$ which limits the impact of the matter effect and sensitivity to the mass ordering. The majority of long baseline accelerator neutrino experiments include a near detector which samples the beam before any long baseline oscillations have taken place.
+The atmospheric neutrino oscillations outlined above, became the driver behind the accelerator programme in the late 1990s. Since the neutrino energy and baseline are tuned and chosen for an accelerator experiment, the oscillation dip can be bombarded with statistics. Furthermore, the dependence on the atmospheric flux simulation is removed\cite{lbnl_review}. The disadvantage is the reduced total flux at the far-detector, generally forcing the baseline to $L<1000\text{ km}$ which limits the impact of the matter effect and sensitivity to the mass ordering. The majority of long baseline accelerator neutrino experiments include a near detector which samples the beam before any long baseline oscillations have taken place.
 
 The short-baseline ($L\sim 1\text{ km}$) accelerator neutrino experiments, such as MiniBooNE\cite{mb_design}, MINER$\nu$A\cite{minerva_design}, and the upcoming SBND programme\cite{sbnd}, are generally intended to measure neutrino cross-sections and perform short baseline oscillation searches. They may also serve as neutrino beam monitors for other experiments. The interaction measurements are used to inform neutrino event generators\cite{neut,genie,NuWro}, aiding in reducing systematic uncertainties for neutrino cross-section and oscillation experiments.
 
@@ -286,7 +286,7 @@ Similarly to accelerator neutrinos, the reactors can be split by baseline. Short
 	\label{fig:13_sector}
 \end{figure}
 
-The only medium baseline experiment ($L\sim50\text{ km}$) under construction is JUNO\cite{juno}. The RENO collaboration has proposed\cite{reno_50} building a far detector site for RENO, equivalent to JUNO, although groundbreaking has not yet commenced. The medium baseline aims to measure the neutrino mass ordering by separating the oscillations into fast and slow parts from $\Delta m^2_{23}$ and $\Delta m^2_{12}$, and improve measurements of $\sin^2 \theta_{12}$.
+The only medium baseline experiment ($L\sim50\text{ km}$) under construction is JUNO\cite{juno}. The medium baseline aims to measure the neutrino mass ordering by separating the oscillations into fast and slow parts from $\Delta m^2_{23}$ and $\Delta m^2_{12}$, and improve measurements of $\sin^2 \theta_{12}$.
 
 KamLAND is the only long baseline ($L\sim180\text{ km}$) reactor anti-neutrino experiment. It measured $\bar{\nu}_e$s from 56 Japanese nuclear power reactors with good sensitivity to $\Delta m^2_{21}$. Additionally, combining KamLAND with SNO and SK solar data reduces uncertainties on $\Delta m^2_{21}$ and $\tan^2\theta_{12}$, as shown in \autoref{fig:21_sector}. These results are used as priors in the T2K oscillation analyses.
 \begin{figure}[h]
