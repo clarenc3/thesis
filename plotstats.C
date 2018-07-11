@@ -23,7 +23,7 @@ void plotstats() {
   int X0 = T0.Convert();
   TDatime T1(2018,04,01,00,00,00);  // lowest
   int X1 = T1.Convert()-X0;
-  TDatime T2(2018,06,10,00,00,00);  // highest
+  TDatime T2(2018,07,10,00,00,00);  // highest
   int X2 = T2.Convert()-X0;
 
   // Set plotting style

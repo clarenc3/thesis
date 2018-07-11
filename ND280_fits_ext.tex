@@ -2668,3 +2668,73 @@ The propagation to SK in $E_{rec}$ is shown in \autoref{fig:sk_2018_nd280param},
 \end{figure}
 
 In conclusion, the parameterisation of ND280 detector systematics has an effect on oscillations at T2K. The effect is mostly contained within the $1\sigma$ uncertainty from systematics, but should be improved upon in the future.
+
+
+\chapter{Future Sensitivity of the Framework}
+This brief chapter reports on the achievable constraints from ND280 data using the full 7.8E21 POT. For this study, the run 2-8 POT (1.78E21 total with 1.15E21 FHC, 6.28E20 RHC) is scaled up to the full T2K POT of 7.8E21, which roughly assumes 75\% FHC and 25\% RHC running.
+
+The model is identical to that of the 2018 analysis in \autoref{chap:nd280_2018} and the posterior predictive method is used to create the event rates and their uncertainties. The data is the Asimov data, defined as being the prediction of the model when its parameters are set to their priors.
+
+Comparing the ND280 post-fit event rates in \autoref{tab:postfit_eventrate_2018_future} to the 2017 equivalent in \autoref{tab:postfit_eventrate_2018}, the uncertainties halve from approximately quadrupling the POT. The total event rates for \numu are $\sim 280,000$ 0$\pi$  events, $\sim 60,000$ 1$\pi$ events, and $\sim 60,000$ Other events. For the RHC selection there are $\sim 60,000$ 0$\pi$ events, $\sim 5,000$ 1$\pi$ events, and $8,000$ Other events. The uncertainties on \numu selections fall below 0.6\% and the 0$\pi$ \numubar selection sits at half a percent. The largest uncertainties, owing to the lowest event rates, are in the RHC $1\pi$ and Other selections.
+\begin{table}[h]
+	\centering
+	\begin{tabular}{ l | c c }
+		\hline
+		\hline
+		Sample 			& Event rate & $\delta N/N$ (\%) \\
+		\hline
+		FGD1 0$\pi$ 	& $138182.4\pm363.0$ & 0.26 \\ 
+		FGD1 1$\pi$ 	& $35054.6\pm171.7$ & 0.49 \\ 
+		FGD1 Other 		& $29785.4\pm151.9$ & 0.51\\ 
+		\hline
+		FGD2 0$\pi$ 	& $138917.4\pm364.2$ & 0.26\\ 
+		FGD2 1$\pi$ 	& $28137.5\pm153.5$ & 0.55 \\ 
+		FGD2 Other 		& $28712.2\pm157.3$ & 0.55 \\ 
+		\hline
+		FGD1 \numubar 0$\pi$ 	& $27909.1\pm153.1$ & 0.55	\\ 
+		FGD1 \numubar 1$\pi$ 	& $2344.1\pm44.9$ & 1.92	\\ 
+		FGD1 \numubar Other 	& $4478.1\pm63.3$ & 1.41	\\ 
+		\hline
+		FGD2 \numubar 0$\pi$ 	& $27508.1 \pm154.0$ & 0.56	\\ 
+		FGD2 \numubar 1$\pi$ 	& $2118.2\pm43.7$ & 2.06	\\ 
+		FGD2 \numubar Other 	& $4131.7\pm60.7$ & 1.47	\\ 
+		\hline
+		FGD1 \numu RHC 0$\pi$ 	& $10957.9\pm94.8$ & 0.87	\\ 
+		FGD1 \numu RHC 1$\pi$ 	& $3719.1\pm58.8$ & 1.58	\\ 
+		FGD1 \numu RHC Other 	& $3502.9\pm56.6$ & 1.62	\\ 
+		\hline
+		FGD2 \numu RHC 0$\pi$ 	& $11187.7\pm95.2$	& 0.85 \\ 
+		FGD2 \numu RHC 1$\pi$ 	& $2935.3\pm52.1$ & 1.77	\\ 
+		FGD2 \numu RHC Other 	& $3427.9\pm55.4$ & 1.62	\\ 
+		\hline
+		Total 				& $503010.7\pm705.4$ & 0.14 \\
+		% Prior predictive updated, posterior also
+		\hline
+		\hline
+	\end{tabular}
+	\caption{ND280 posterior predictive event rates using Asimov data for the full projected 7.8E21 POT}
+	\label{tab:postfit_eventrate_2018_future}
+\end{table}
+
+The constraints from the fit to ND280 Asimov data is propagated to SK using either the run 2-8 POT or the full POT at SK. The oscillation parameters in \autoref{tab:osc_pars} are applied and the posterior predictive method is used to make the central values and their uncertainties. 
+
+The results in \autoref{tab:sk_evt_rates_future} shows uncertainties of 1.6-1.85\% percent for the $1\text{R}\mu$ and 3-3.25\% for the $1\text{R}e$ selections at SK. This is a reduction of almost a percent, coming purely from the statistical update. In reality, model developments between now and when the full T2K POT is achieved\footnote{Likely in 2021\cite{t2k_ii}} will undoubtedly change the central values and their uncertainties, as will updated fitting methods. However, it is encouraging to see that the required DUNE and Hyper-K sensitivities of 1-2\% are achievable with this framework.
+\begin{table}[h]
+	\begin{tabular}{l | c c | c c }
+		\hline
+		\hline
+		Sample  & \multicolumn{2}{c|}{Event rate} & \multicolumn{2}{c}{$\delta N/N$ (\%)} \\
+		& ND280 & ND280+SK & ND280 & ND280+SK \\
+		\hline
+		$1\text{R}\mu$ & $235.20\pm3.86$ & $530.23\pm9.73$ & 1.64 & 1.84 \\
+		$1\text{R}e$  & $62.54\pm2.09$ & $142.40\pm4.40$ & 3.34 & 3.09 \\
+		$1\text{R}e \text{ 1d}e$ & $7.26\pm0.27$ & $16.41\pm0.45$ & 3.72 & 2.74 \\
+		
+		$1\text{R}\mu \text{ RHC}$  & $56.60\pm1.04$ & $252.02\pm4.26$ & 1.84 & 1.69 \\
+		$1\text{R}e \text{ RHC}$ & $6.98\pm0.24$ & $31.39\pm1.01$ & 3.44 & 3.22 \\
+		\hline
+		\hline
+	\end{tabular}
+	\caption{T2K-SK event rates and uncertainties from flux and interaction systematics, using Asimov data for the full projected 7.8E21 POT. ``ND280'' refers to using full POT at ND280 and run 2-8 POT at SK, and ``ND280+SK'' refers to using the full POT at both ND280 and SK.}
+	\label{tab:sk_evt_rates_future}
+\end{table}
