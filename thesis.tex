@@ -16,6 +16,7 @@
 
 %% Put package includes etc. into preamble.tex for convenience
 \input{preamble}
+\usepackage[colorlinks=false,bookmarks=true,plainpages=false]{hyperref}
 \setlength{\textfloatsep}{5pt}
 
 %% You can set the line spacing this way
@@ -48,13 +49,17 @@
 
 %% Doc-specific PDF metadata
 \makeatletter
-\@ifpackageloaded{hyperref}{
 \hypersetup{
   pdftitle = {Minimising systematic uncertainties in the T2K experiment by use of near-detector and external data},
   pdfsubject = {Clarence Wret, Ph.D. thesis},
   pdfkeywords = {T2K, neutrino physics, neutrino oscillations},
-  pdfauthor = {\textcopyright\ Clarence Wret}
-}}{}
+  pdfauthor = {\textcopyright\ Clarence Wret},
+  colorlinks = false,
+  % For printing we might want the border black
+  linkbordercolor = {black},
+  % And the links to 
+  hidelinks
+}
 \makeatother
 
 %% Start the document

@@ -110,7 +110,8 @@
 
 % Use hyperref package (with decent options)
 \DeclareOption{hyper}{
-  \def\@requirehyper{yes}}
+  \def\@requirehyper{yes}
+}
 
 % Use hyperref package (with decent options) only if output is PDF
 \DeclareOption{hyperpdf}{
@@ -489,7 +490,7 @@
 
   %%   Hyperlinks (optional, has to come late in the package list)
   \ifx\@requirehyper\@empty\else%
-  \RequirePackage[colorlinks=true,bookmarks=true,plainpages=false]{hyperref}%
+  \RequirePackage[bookmarks=true,plainpages=false]{hyperref}%
   % pdfpagemode=None, FullScreen, UseThumbs, UseOutlines
   \fi
 }
