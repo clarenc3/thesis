@@ -72,7 +72,7 @@ In \autoref{fig:flux_parents} we trace back each neutrino's parent meson. The $\
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/beam/nuebar_sk_parents}
 	\end{subfigure}
-	\caption{Simulated right-sign neutrino fluxes at SK, showing parents}
+	\caption{Simulated right-sign neutrino fluxes at SK, showing the neutrino's parent}
 	\label{fig:flux_parents}
 \end{figure}
 
@@ -89,18 +89,18 @@ For a chosen $\cos \theta_{\pi,\nu}$ there is a maximum pion energy of $E_\pi^\t
 \noindent which maximises when $\pi$ and $\nu$ approach collinearity, and as $\theta$ increases the allowed neutrino energy spectrum becomes smaller. The calculated flux at SK with the neutrino oscillation probability is shown in \autoref{fig:off-axis}. The off-axis angle is chosen to maximise the flux in the primary oscillation dip at $E_\nu \sim 0.6\text{ GeV}$.
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/oaeffect_pnue_pnumu_flux}
-	\caption{Effect of off-axis (OA) angle on the SK neutrino flux}
+	\caption{Effect of off-axis (OA) angle on the SK neutrino flux prediction, overlaid with the neutrino oscillation spectrum}
 	\label{fig:off-axis}
 \end{figure}
 
-The delivered beam power and accumulated POT has been steadily increasing from run 1 in 2010 to run 9 in 2019. Run 9 concluded with $\sim500\text{ kW}$ beam power, accumulating a total POT of $\sim3.16\times 10^{21}$\footnote{Or 5.28 mg of protons}: $1.51\times 10^{21}$ in FHC and $1.65\times 10^{21}$ in RHC modes.
+The delivered beam power and accumulated POT has been steadily increasing from run 1 in 2010 to run 9 in 2019. Run 9 concluded with $\sim500\text{ kW}$ beam power, having accumulated a total POT of $\sim3.16\times 10^{21}$\footnote{Or 5.28 mg of protons}: $1.51\times 10^{21}$ in FHC and $1.65\times 10^{21}$ in RHC modes, shown in \autoref{fig:t2k_pot}.
 \begin{figure}[h]
-	\includegraphics[width=0.5\textwidth, trim= {7mm 40mm 7mm 12mm}, clip]{{figures/pow_t2k_all_toRun77full}}
+	\includegraphics[width=0.8\textwidth, trim= {7mm 42mm 7mm 12mm}, clip]{{figures/pow_t2k_all_toRun77full}}
 	\caption{T2K protons on target and beam power for run 1-9}
 	\label{fig:t2k_pot}
 \end{figure}
 
-The final simulated neutrino fluxes for run 2 to 8 at ND280 are shown in \autoref{fig:flux_1to8}. The wrong-sign background in FHC is $\sim18\%$ at the flux peak which reduces further due to the lower anti-neutrino interaction cross-section, and the \nue component is less than 1\% in the flux peak. The right-sign flux in RHC is similar to the \numu in FHC, and the majority of the contamination of \numu events in RHC mode comes from the higher \numu cross-section rather than the flux.
+The final simulated neutrino fluxes for run 2 to 8 at ND280 are shown in \autoref{fig:flux_1to8}. The wrong-sign background in FHC is $\sim18\%$ at the flux peak which reduces due to the lower anti-neutrino interaction cross-section, and the \nue component is less than 1\% in the flux peak. The \numubar flux in RHC is similar to the \numu flux in FHC, and the large contamination of \numu events in RHC mode comes from the higher \numu cross-section rather than the flux.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.45\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/beam/nd5_alltunedflux_run1-8_zoomed_13a}
@@ -116,49 +116,49 @@ The final simulated neutrino fluxes for run 2 to 8 at ND280 are shown in \autore
 
 \section{The Interactive Neutrino GRID}
 \label{sec:ingrid}
-Using the off-axis technique introduces the need for precise determination of the neutrino beam direction, as a 1 mrad uncertainty on the beam direction is followed by a 2-3\% uncertainty on the neutrino energy scale\cite{t2k_det}. Furthermore, sudden discontinuities of the beam or any of its subcomponents (e.g. magnetic horns or target) directly affect the neutrino flux, so measurements of the beam direction are made on a spill-by-spill basis.
+The off-axis technique introduces the need for precise determination of the neutrino beam direction, as a 1 mrad uncertainty on the beam direction produces a 2-3\% uncertainty on the neutrino energy scale\cite{t2k_det}. Furthermore, sudden discontinuities in the beam or any of its subcomponents (e.g. magnetic horns or target) directly affect the neutrino flux, so measurements of the beam direction are made on a spill-by-spill basis.
 
-The Interactive Neutrino GRID (INGRID) detector sits on-axis, 280 m downstream of the production target. It was designed to measure the neutrino beam profile to accurately predict the off-axis angle of ND280 and SK, and make inclusive neutrino cross-section measurements\cite{t2k_ingrid_xsec}. It has a cross shaped geometry and extends 10 m vertically and horizontally, shown in \autoref{fig:ingrid_det}. The cross consists of 14 identical modules and two off-axis detectors which measure the asymmetry of the neutrino beam. Each INGRID module has nine iron plates and 11 tracking scintillator plates, which are surrounded by veto planes on all sides to reject cosmic background\cite{t2k_ingrid}. Each module has a fiducial mass of iron at 7.1 tonnes, and the total cross spans roughly $1\sigma$ of the expected beam profile.
+The Interactive Neutrino GRID (INGRID) detector sits on-axis, 280 m downstream of the production target. It was designed to measure the neutrino beam profile to accurately predict the off-axis angle and flux at ND280 and SK, and make inclusive neutrino cross-section measurements\cite{t2k_ingrid_xsec}. It has a cross shaped geometry and extends 10 m vertically and horizontally, shown in \autoref{fig:ingrid_det}. The cross consists of 14 identical modules and two off-axis detectors which measure the asymmetry of the neutrino beam. Each INGRID module has nine iron plates and 11 tracking scintillator plates, which are surrounded by veto planes on all sides to reject cosmic backgrounds\cite{t2k_ingrid}. Each module has a fiducial iron mass of 7.1 tonnes, and the total cross spans roughly $1\sigma$ of the expected beam profile.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.47\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/ingrid/ingrid}
-		\caption{Beam-view of INGRID}
+		\caption{Downstream beam-view of the INGRID detector}
 	\end{subfigure}	
 	\begin{subfigure}[t]{0.47\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 50mm}, clip,page=1]{figures/det_chap/ingrid/ingrid_module}
-		\caption{An INGRID module}
+		\caption{An INGRID module, showing the iron plates and scintillator planes alongside the veto planes}
 	\end{subfigure}
-	\caption{The INGRID experiment}
+	\caption{The INGRID experiment, used for neutrino beam monitoring of event rates and direction at T2K}
 	\label{fig:ingrid_det}
 \end{figure}
-INGRID also has a second type of module---the proton module---designed to measure neutrino interactions on plastic scintillator. It consists of 34 tracking plates, similar to those in the INGRID modules but with different dimensions, surrounded by the same veto planes\cite{t2k_ingrid_proton}.
+INGRID also has a second type of module---the proton module---designed to measure neutrino interactions on plastic scintillator. It consists of 34 tracking plates, similar to those in the INGRID modules but with different dimensions, surrounded by the same veto planes\cite{t2k_ingrid_proton}. Some T2K runs have also added an INGRID water module to measure neutrino interactions on water.
 
-INGRID has measured the neutrino event rates within 2\% of expected, with a precision on the directionality of 0.2 mrad, all in agreement with expectation\cite{t2k_2015}, giving the neutrino beam center within 5 cm. The historical event rate and beam direction from MUMON and INGRID over the full beam period used in this thesis can be seen in \autoref{fig:ingrid_monitoring}. Generally, INGRID and MUMON agree within 0.2 mrad in both vertical and horizontal directions, and the neutrino event rate agrees with expectation.
+INGRID has measured the neutrino event rates within 2\% of the expected\cite{t2k_2015}, with a precision on the beam directionality of 0.2 mrad---resolving the neutrino beam center to 5 cm. The historical event rate and beam direction from MUMON and INGRID over the full beam period used in this thesis can be seen in \autoref{fig:ingrid_monitoring}. Generally, INGRID and MUMON agree within 0.2 mrad in both vertical and horizontal directions, and the neutrino event rate at INGRID agrees with expectation from MUMON and the beam simulation.
 \begin{figure}[h]
-	\includegraphics[width=0.8\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/ingrid/INGRID_official_plot_until74}
+	\includegraphics[width=0.9\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/ingrid/INGRID_official_plot_until74}
 	\caption{Beam characteristics measured by the INGRID and MUMON detectors over the T2K runs 1 through 8, used in this thesis.}
 	\label{fig:ingrid_monitoring}
 \end{figure}
 
 \section{The Near Detector at 280 m}
 \label{sec:nd280}
-The off-axis near detector for T2K is called ND280, and its neutrino-nucleus interaction data is the subject of this thesis. In contrast to INGRID, ND280 was designed to accurately reconstruct and track particles emanating from a neutrino scattering vertex at its center.
+The off-axis near detector for T2K is called ND280, and its neutrino-nucleus interaction data is the subject of this thesis. In contrast to INGRID, ND280 was designed to accurately reconstruct and track particles emanating from a primary neutrino scattering vertex at its central region.
 
-ND280 surrounds its inner target sub-detectors, the two fine grained detectors (FGDs), by three time projection chambers (TPCs). This inner region is referred to as the ``tracker'' and it is enclosed by a lead-scintillator sampling electromagnetic calorimeter (ECal) on all but the upstream side, at which a dedicated $\pi^0$ detector, the P0D, is placed. The whole detector is bathed in a 0.2 T magnetic field to enable accurate sign selection and momentum measurements with the TPCs. The magnet yoke is in turn interleaved with a side muon range detector (SMRD) made of plastic scintillator strips which enable high angle tracking of $\mu$ and provides a cosmic tagger. The exploded detector view is shown in \autoref{fig:nd280_expl}.
+ND280 surrounds its inner target sub-detectors, the two fine grained detectors (FGDs), by three time projection chambers (TPCs). This inner region is referred to as the ``tracker'' and it is enclosed by a lead-scintillator sampling electromagnetic calorimeter (ECal) on all but the upstream side, at which a dedicated $\pi^0$ detector, the P0D, is placed. The whole detector sits in a 0.2 T magnetic field to enable accurate sign selection and momentum measurements with the TPCs. The magnet yoke is interleaved with a side muon range detector (SMRD) made of plastic scintillator strips which enable high angle tracking of $\mu$ and provides a cosmic trigger. The exploded detector view is shown in \autoref{fig:nd280_expl}.
 \begin{figure}[h]
-	\includegraphics[width=0.6\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/view/ND280Exploded-Text-Transparent-Large}
-	\caption{The ND280 detector with its sub-detectors}
+	\includegraphics[width=0.7\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/view/ND280Exploded-Text-Transparent-Large}
+	\caption{The ND280 detector with its sub-detectors, showing the central tracker region (P0D, TPC, FGD) surrounded by the ECALs and the UA1 magnet with the interleaved SMRD}
 	\label{fig:nd280_expl}
 \end{figure}
 
-Since signal at SK is limited to the single ring $\mu$ and $e$ selections---vetoing any secondary rings from e.g. pions or high energy protons---the detector is designed around low multiplicity cross-section measurements. It also provides information on the single $\pi^0$ cross-sections, a major background for oscillation searches looking for $\nu_\mu \rightarrow \nu_e$.
+Since signal at SK is limited to the single ring $\mu$ and $e$ selections---vetoing any secondary rings from e.g. pions or high energy protons---the detector is designed for low multiplicity cross-section measurements. ND280 also provides information on the single $\pi^0$ cross-sections, a major background for oscillation searches looking for $\nu_\mu \rightarrow \nu_e$.
 
-The analyses presented in this thesis only use the FGDs and TPCs for particle detection and ID. Future analyses envisage using the ECal for high and backwards going selections and the P0D for forward-going events going through the first TPC.
+The analyses presented in this thesis only use the FGDs and TPCs for particle detection and ID. Future analyses of ND280 data for oscillation analyses envisage using the ECal for PID, and the P0D for forward-going events going through at least the first TPC.
 
 \subsection{Fine Grained Detectors}
-The two fine grained detectors (FGDs)\cite{t2k_fgd} are the central targets for ND280, providing measurements of flux, energy spectrum and electron neutrino contamination at the off-axis angle of SK ($2.5\deg$). Each FGD supply 1.1 tonnes of target material and extends $186.4\times186.4\times2.02\text{ cm}$ per scintillator plane. FGD1 sits most upstream of the two and is composed of 15 plastic scintillator XY planes, each plane having $2\times192$ bars. FGD2 provides a hybrid water-scintillator target, in which seven plastic scintillator XY planes identical to FGD1 are alternated with six 2.54 cm thick layers of water. The two FGDs thus measure interactions on both plastic CH---a common target in external neutrino scattering data---and $\text{H}_2\text{O}$---the target in SK.
+The two fine grained detectors (FGDs)\cite{t2k_fgd} are the central targets for ND280, providing measurements of flux, energy spectrum and electron neutrino contamination at the off-axis angle of SK ($2.5^\circ$). Each FGD supplies 1.1 tonnes of target material and extends $186.4\text{ cm}\times186.4\text{ cm}\times2.02\text{ cm}$ per scintillator plane. FGD1 sits most upstream of the two and is composed of 15 plastic scintillator XY planes, each plane having $2\times192$ bars. FGD2 provides a hybrid water-scintillator target, in which seven plastic scintillator XY planes---identical to those in FGD1---are alternated with six 2.54 cm thick layers of water. The two FGDs thus measure interactions on both plastic CH---a common target in external neutrino scattering data---and $\text{H}_2\text{O}$---the target in SK.
 
-The FGDs have the ability to reconstruct features of an event independent of the TPCs for contained particles. Isolated tracks are generally of lower momentum and deposit significant energy per unit track length. Summing the total deposited energy of an isolated FGD track provides a means to distinguish protons from minimally ionising particles. Furthermore, stopped pions may give rise to a delayed Michel $e$, which is searched for in the FGD reconstruction with an efficiency above 90\%\cite{thesis_christine}. Additionally, tracks with hits in the TPC are required to match FGD tracks to determine the interaction vertex. The FGD is also used to measure time-of-flight (ToF) of tracks to distinguish forward-going positive particles from backward-going negative particles, and vice versa, with a fast timing resolution of 3 ns.
+The FGDs have the ability to reconstruct features of an event independent of the TPCs for contained particles. Isolated tracks are generally of lower momentum and deposit significant energy per unit track length. Summing the total deposited energy of an isolated FGD track provides a means to distinguish protons from minimally ionising particles. Furthermore, stopped pions may give rise to a delayed Michel $e$, which is searched for in the FGD reconstruction with an efficiency above 90\%\cite{thesis_christine}. Additionally, tracks with hits in the TPC are required to match FGD tracks to determine the interaction vertex. The FGD is also used to measure time-of-flight (ToF) of tracks to distinguish forward-going positive particles from backward-going negative particles, and vice versa, with a timing resolution of 3 ns.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.47\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/fgd/fgd_byrange}
@@ -168,25 +168,25 @@ The FGDs have the ability to reconstruct features of an event independent of the
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/numu/Cuts/pull_secondarytrack_FGD_all_fullycontained}
 		\caption{Particle pulls}
 	\end{subfigure}	
-	\caption{Parts of the FGD particle identification, using energy deposited with track length}
+	\caption{Parts of the FGD particle identification, using the energy deposited per track length}
 	\label{fig:fgd_reco}
 \end{figure}
 
-The measured track length and particle pulls for the pion hypothesis are shown in \autoref{fig:fgd_reco}. The three dominant distributions (electron/positron, pion and proton) are well separated in the pulls, agreeing relatively well with data.
+The measured track length and particle pulls for the pion hypothesis are shown in \autoref{fig:fgd_reco}. The three dominant distributions (electron/positron, pion and proton) are well separated in the pulls, agreeing relatively well with the data.
 
-The FGD is used for daily checks of the neutrino event rates and vertex distributions. It also acts as a cosmic trigger for stopping muons, whose selection is used to determine Michel $e$ efficiencies.
+The FGD is used for daily checks of the neutrino event rates and vertex distributions. It also acts as a cosmic trigger for stopping muons, whose selection is used to determine Michel $e$ tagging efficiencies.
 
 \subsection{Time Projection Chambers}
-The three time projection chambers (TPCs)\cite{t2k_tpc} provide the majority of the tracking, energy loss, particle identification and momentum measurements in the ND280 detector. Each TPC is composed of an inner and an outer ``box''. The inner provides the field cage and the outer the ground potential. The inner box measures $1808\times2230\times850\text{ mm}$ and the outer box measures $2302\times2400\times974\text{ mm}$.  All TPCs use an $\text{Ar}:\text{CF}_4$:$\text{C}_4\text{H}_{10}$ mixture at 95:3:2, which ionises when charged particles pass through. The ionisation electrons are drifted toward bulk micromegas detectors\cite{micromegas_1, micromegas_2}, amplifying the charge. The maximum drift distance from central cathode to micromegas is 897 mm, and with the nominal cathode voltage at $-25\text{ kV}$ and micromegas at $-350\text{ kV}$, the drift field is $\sim 275\text{ V/cm}$. \autoref{fig:tpc_sys} provides a schematic of the TPC design.
+The three time projection chambers (TPCs)\cite{t2k_tpc} provide the majority of the tracking, energy loss, particle identification and momentum measurements in the ND280 detector. Each TPC is composed of an inner and an outer ``box''. The inner provides the field cage and the outer the ground potential. The inner box measures $1808\text{ mm}\times2230\text{ mm}\times850\text{ mm}$ and the outer box measures $2302\text{ mm}\times2400\text{ mm}\times974\text{ mm}$.  All TPCs use an $\text{Ar}_{40}$:$\text{CF}_4$:$\text{C}_4\text{H}_{10}$ mixture at 95:3:2, which ionises when charged particles pass through. The ionisation electrons are drifted toward bulk micromegas detectors\cite{micromegas_1, micromegas_2}, amplifying the charge. The maximum drift distance from central cathode to Micromegas is 897 mm, and with the nominal cathode voltage at $-25\text{ kV}$ and micromegas at $-350\text{ kV}$, the drift field is $\sim 275\text{ V/cm}$. \autoref{fig:tpc_sys} provides a schematic of the TPC design.
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/tpc/tpc_1}
-	\caption{The ND280 TPC design, figure from \cite{t2k_tpc}.}
+	\caption{The ND280 TPC design, showing the central cathodes, inner and outer walls, field cages, $\vec{E}$, and $\vec{B}$ fields, and the readout Micromegas and Front End Boards, figure from \cite{t2k_tpc}.}
 	\label{fig:tpc_sys}
 \end{figure}
 
-The bending of tracks in the magnetic field determines the momentum, and the readout provides a 3D image of the paths of traversing charged particles. Since two TPCs surround each FGD, they provide good tracking and multiplicity measurements of backward and forwards-going tracks. Furthermore, neutrino interaction cross-sections are generally highest for forward-going muons and pions, and a track traversing multiple TPCs gives an improved reconstruction.
+The readout provides a 3D image of the tracks from traversing charged particles, where the bending in the magnetic field determines track momentum. Since two TPCs surround each FGD, they provide good tracking and multiplicity measurements of backward and forwards-going tracks. Furthermore, neutrino interactions produce predominantly forward-going muons and pions which leave tracks in multiple TPCs, giving an improved particle reconstruction.
 
-The energy loss as a function of momentum in one TPC is shown in \autoref{fig:tpc_reco} for negatively and positively charged particles. Muon/electron distinction is achieved, and MIP resolution is $7.8\pm0.2\%$. Using the particle hypotheses outlined later in \autoref{sec:numu_sel}, the probability of assigning a muon to an electron hypothesis is 0.2\% for tracks below 1 GeV/c\cite{thesis_tpc}. There is also excellent ability to identify proton tracks with $p < 0.8 \text{ GeV}$.
+The energy loss as a function of momentum in one TPC is shown in \autoref{fig:tpc_reco} for negatively and positively charged particles. Muon/electron distinction is achieved, and the MIP resolution is $7.8\pm0.2\%$. Using the particle hypotheses outlined in \autoref{sec:numu_sel}, the probability of assigning a muon to an electron hypothesis is 0.2\% for tracks below $p_{true}=1 \text{ GeV/c}$. There is also excellent ability to identify proton tracks with $p_{true} < 0.8 \text{ GeV/c}$\cite{thesis_tpc}.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.47\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/numu/TPC_PID_neg}
@@ -196,38 +196,42 @@ The energy loss as a function of momentum in one TPC is shown in \autoref{fig:tp
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/numu/TPC_PID_pos}
 		\caption{Positive particles}
 	\end{subfigure}	
-	\caption{The energy loss in the TPC as a function of reconstructed momentum}
+	\caption{The energy loss in one of the T2K TPCs as a function of reconstructed momentum}
 	\label{fig:tpc_reco}
 \end{figure}
-
-\subsection{Electromagnetic Calorimeter}
-The ND280 electromagnetic calorimeter (ECal)\cite{t2k_ecal} is designed to complement the tracker in full event reconstruction due to its near hermetic coverage of the tracker and P0D regions. It measures photon showers' energy and directions, and is used to distinguish electrons from muons from pions by shower shape. Its primary purpose is to tag and reconstruct $\pi^0$s from the tracker.
-
-The ECal has three main sections: 1) the barrel ECal, surrounding the inner tracking detectors, 2) the downstream ECal, sitting after the last TPC, and 3) the P0D Ecal. The tracker (barrel+downstream) ECal was designed as a tracking calorimeter and reconstructs electromagnetic showers, complementing the TPC where high-angle particles may leave few hits. The P0D-ECal was designed to tag escaping energy and perform photon/muon separation, since the P0D performs its own shower reconstruction. The ECals are all made of scintillating polystyrene bars $40\times10\text{ mm}$ which are adhered to $1.75\text{ mm}$ lead sheets. The ECal design was based on good detection efficiency of $\pi^0$s emanating from the tracker region. The barrel-ECal has 31 layers and the downstream has 34 layers, corresponding to 10 and 11 electron radiation lengths, required to ensure $\sim50\%$ of the energy from photo showers from a $\pi^0$ decays is contained. The P0D-ECal has six scintillator layers with 4 mm thick lead sheets.
-
-The downstream ECal is $2300\times2300\times500\text{ mm}$ with 50 $2000\text{ mm}$ long scintillator bars. The four barrel ECal top and bottom modules are $4140\times1676\times462\text{ mm}$ and the two side barrel ECals are $4140\times2500\times462\text{ mm}$. The top and bottom ECals have $1520\text{ mm}$ bars, and the side have $2280\text{ mm}$ bars, perpendicular to the beam direction, and 15 $3840\text{ mm}$ bars parallel to the beam. The P0D ECal is 155 mm deep, with the top and bottom modules being $1584\text{ mm}$ wide and the sides being $2898\text{ mm}$ wide, with $2454\text{ mm}$ length.
 
 \subsection{Pi-zero Detector}
 The pi-zero detector (P0D)\cite{t2k_p0d} was designed to measure the NC1$\pi^0$ production cross-section, a large systematic for \nue appearance.
 
-The design of the P0D is shown in \autoref{fig:nd280_p0d}. The central water target, consisting of 13 alternating scintillator-water bags-brass sheet planes, is surrounded by an upstream and downstream ECal which is void of water and seven planes each. The entire P0D consists of 40 modules, each being two perpendicular arrays of triangular scintillator bars. Each vertical bar (134 per P0D module) is 2200 mm long, and the horizontal bars are 2340 mm long (126 per P0D module)\footnote{Originally designed for the MINER$\nu$A experiment\cite{minerva_design}}. The active target of the P0D is $2103\times2239\times2400\text{ mm}$ and the mass with (without) water is 16.1 (13.3) tonnes.
+The design of the P0D is shown in \autoref{fig:nd280_p0d}. The water target consists of an upstream and central section. The upstream (central) water target---consisting of 12 (13) alternating scintillator-water bag (28 mm)-brass sheet planes (1.28 mm)---is surrounded by an upstream and downstream ECal (not to be confused with the P0D-ECal).
+
+The ECals maintain the triangular scintillator bars but have the brass and water layers replaced by a 4.5mm thick lead sheet and is seven planes each. The entire P0D consists of 40 modules, each being two perpendicular arrays of triangular scintillator bars. Each vertical bar (134 per P0D module) is 2200 mm long, and the horizontal bars are 2340 mm long (126 per P0D module)\footnote{Originally designed for the MINER$\nu$A experiment\cite{minerva_design}}. The active target of the P0D is $2103\text{ mm}\times2239\text{ mm}\times2400\text{ mm}$ and the mass with (without) water is 15.8 (12.9) tonnes.
 \begin{figure}[h]
 	\includegraphics[width=0.6\textwidth, trim={0mm 110mm 0mm 0mm}, clip,page=1]{figures/det_chap/p0d/p0d.pdf}
 	\caption{The ND280 P0D side-view}
 	\label{fig:nd280_p0d}
 \end{figure}
 
-\subsection{The UA1/NOMAD Magnet and Side Muon Range Detectors}
-The entirety of the above detector system (FGD+TPC+ECal+P0D) is placed inside the refurbished UA1/NOMAD dipole magnet. It is operated at 2.7 kA to produce a uniform horizontal magnetic field of 0.2 T. The  yoke is split into two sections, each made of eight C-shaped flux return yokes. The inner volume of the magnet is $7.0\times3.5\times3.6\text{ m}$, placing the main spatial limitations on ND280.
+\subsection{Electromagnetic Calorimeter}
+The ND280 electromagnetic calorimeter (ECal)\cite{t2k_ecal} is designed to complement the tracker in full event reconstruction due to its near hermetic coverage of the tracker and P0D regions. It measures photon showers' energy and directions, and is used to distinguish electrons from muons from pions by shower shape. Its primary purpose is to tag and reconstruct $\pi^0$s from the tracker.
 
-The side muon range detector (SMRD)\cite{t2k_smrd} sits in the innermost gaps of the UA1 magnet return yoke, surrounding the entire ECal, P0D and tracker. It was designed to measure muons which escape the tracker at high angles, punching through the FGD, ECal and SMRD but leaving few or no TPC hits. The momentum can be inferred from range in the iron and SMRD and the tracks can be reconstructed using FGD-ECal-SMRD matching with $\sim70\%$ efficiency. The SMRD additionally provides a cosmic trigger.
+The ECal has three main sections: 1) the barrel ECal, surrounding the inner tracking detectors, 2) the downstream ECal, sitting after the last TPC, and 3) the P0D Ecal. The tracker (barrel+downstream) ECal was designed as a tracking calorimeter and reconstructs electromagnetic showers, complementing the TPC where high-angle particles may leave few hits.  The ECals are all made of scintillating polystyrene bars $40\text{ mm}\times10\text{ mm}$ which are adhered to $1.75\text{ mm}$ lead sheets. The ECal design was based on good detection efficiency of $\pi^0$s emanating from the tracker region. The barrel-ECal has 31 layers and the downstream has 34 layers, corresponding to between 10 and 11 electron radiation lengths. This is required to ensure $\sim50\%$ of the energy given to photon showers from a $\pi^0$ decay is contained. 
+
+The downstream ECal is $2300\text{ mm}\times2300\text{ mm}\times500\text{ mm}$ with 1700 $2000\text{ mm}$ long scintillator bars (50 per layer). The four barrel ECal top and bottom modules are $4140\text{ mm}\times1676\text{ mm}\times462\text{ mm}$ and the two side barrel ECals are\newline$4140\text{ mm}\times2500\text{ mm}\times462\text{ mm}$. The top and bottom ECals have $1520\text{ mm}$ bars, and the sides have $2280\text{ mm}$ bars, perpendicular to the beam direction, and 15 $3840\text{ mm}$ bars parallel to the beam. 
+
+The P0D-ECal is slightly different in design since the P0D performs its own shower reconstruction. The ECal is instead present to tag escaping energy and distinguish photon showers from muon deposits at high angles. It instead has six scintillator layers with thicker 4.0 mm lead sheets. It is 155 mm deep, with the top and bottom modules being $1584\text{ mm}$ wide and the sides being $2898\text{ mm}$ wide, with $2454\text{ mm}$ length.
+
+\subsection{The UA1/NOMAD Magnet and Side Muon Range Detectors}
+The entirety of the above detector system (FGD+TPC+ECal+P0D) is placed inside the refurbished UA1/NOMAD dipole magnet. It is operated at 2.7 kA to produce a uniform horizontal magnetic field of 0.2 T. The yoke is split into two sections, each made of eight C-shaped flux return yokes. The inner volume of the magnet is $7.0\text{ m}\times3.5\text{ m}\times3.6\text{ m}$, placing the main spatial limitations on ND280.
+
+The side muon range detector (SMRD)\cite{t2k_smrd} sits in the innermost gaps of the UA1 magnet return yoke, surrounding the entire ECal, P0D and tracker. It was designed to measure muons which escape the tracker at high angles---punching through the FGD, ECal and SMRD---leaving few or no TPC hits. The momentum can be inferred from range in the iron and the SMRD, and the tracks can be reconstructed using FGD-ECal-SMRD matching with $\sim70\%$ efficiency. The SMRD additionally provides a cosmic trigger.
 \begin{figure}[h]
 	\includegraphics[width=0.4\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/smrd/ua1_smrd}
-	\caption{A section of the UA1 magnet yoke, side-view}
+	\caption{A side-view section of the UA1 magnet yoke showing the interleaved SMRD}
 	\label{fig:nd280_ua1}
 \end{figure}
 
-Shown in \autoref{fig:nd280_ua1}, there are 16 iron plates in the magnet yoke, each 48mm thick and separated by 17 mm spacers, leaving space for 15 layers of scintillator. The SMRD consists of 192 horizontal and 248 vertical modules in total. The modules measure $9\times686\times955\text{ mm}$ and $9\times892\times955\text{ mm}$ for horizontal and vertical modules respectively. Each horizontal module has four scintillation counters $7\times167\times875\text{ mm}$ and vertical modules have five $7\times175\times875\text{ mm}$, totalling 768 horizontal and 1240 vertical counters. There are three layers of modules in the yoke on the upstream sides, and four layers for the 6th downstream yoke, with six layers for the two most downstream yokes.
+Shown in \autoref{fig:nd280_ua1}, there are 16 iron plates in the magnet yoke, each 48 mm thick and which are separated by 17 mm spacers, leaving space for 15 layers of scintillator. The SMRD consists of 192 horizontal and 248 vertical modules in total. The modules measure $9\text{ mm}\times686\text{ mm}\times955\text{ mm}$ and $9\text{ mm}\times892\text{ mm}\times955\text{ mm}$ for horizontal and vertical modules respectively. Each horizontal module has four $7\text{ mm}\times167\text{ mm}\times875\text{ mm}$ scintillation counters and vertical modules have five\newline $7\text{ mm}\times175\text{ mm}\times875\text{ mm}$, totalling 768 horizontal and 1240 vertical counters. Going downstream, there are three layers of modules in the 1st to 5th yokes, four layers in the 6th downstream yoke, and six layers in the 7th and 8th yokes.
 
 \section{Super-Kamiokande}
 \label{sec:sk}
@@ -238,7 +242,7 @@ The Super-Kamiokande (SK)\cite{t2k_sk, t2k_sk2, t2k_sk3} detector has served to 
 	\label{fig:sk_schematic}
 \end{figure}
 
-The detector consists of 50,000 (25,000 fiducial) tonnes of ultra-pure water in a $41.4\times39.3\text{ m}$ cylindrical tank. It is split into an inner (ID) and outer (OD) detector with inner dimension $36.2\times33.8\text{ m}$, where the OD surrounds the ID. The ID and OD are separated by a Tyvek and ``blacksheet'' barrier, and the ID has 11,146 inward-facing 20-inch PMTs, and the OD---providing a veto and shielding for the inner detector---has 1,885 8-inch PMTs facing outwards. The ID has approximately 40\% photo-coverage and provides excellent $\mu/e$ separation, crucial to differentiate muon neutrino disappearance from electron neutrino appearance.
+The detector consists of 50,000 (25,000 fiducial) tonnes of ultra-pure water in a $41.4\text{ m}\times39.3\text{ m}$ cylindrical tank. It is split into an inner (ID) and outer (OD) detector with inner dimension $36.2\text{ m}\times33.8\text{ m}$, where the OD surrounds the ID. The ID and OD are separated by a Tyvek and ``blacksheet'' barrier, and the ID has 11,146 inward-facing 20-inch PMTs, and the OD---providing a veto and shielding for the inner detector---has 1,885 8-inch PMTs facing outwards. The ID has approximately 40\% photo-coverage and provides excellent $\mu/e$ separation, crucial to differentiate muon neutrino disappearance from electron neutrino appearance.
 
 Particle detection in SK happens primarily through production of Cherenkov light. The muon/electron separation occurs primarily by ring ``fuzziness'', indicating the amount of rescattering of the charged particle. Muons and pions are generally highly penetrating whereas electrons rescatter often and shower at T2K energies. The former produces sharp rings whereas electrons produce fuzzy rings. The number of delayed Michel $e$ is also used to identify contained muons and pions, and tracks with kinked trajectories are used to discern rescattered pions.
 \begin{figure}[h]
