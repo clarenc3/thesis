@@ -235,16 +235,16 @@ Shown in \autoref{fig:nd280_ua1}, there are 16 iron plates in the magnet yoke, e
 
 \section{Super-Kamiokande}
 \label{sec:sk}
-The Super-Kamiokande (SK)\cite{t2k_sk, t2k_sk2, t2k_sk3} detector has served to measure proton decay, solar and atmospheric neutrino oscillations since 1996 with SK-I. Starting with K2K in 1999\cite{k2k_design}, Super-Kamiokande has also been serving as a far detector for long baseline accelerator neutrino oscillation searches, and continues to do so for T2K with SK-IV. The detector is placed 295 km from the production target in the Kamioka mine in Ikenoyama, located in Gifu, Japan. The mine provides roughly 1 km rock overburden---or 2.7 km equivalent water overburden---drastically reducing cosmogenic backgrounds. A sketch of the detector in the mine is shown in \autoref{fig:sk_schematic}.
+The Super-Kamiokande (SK)\cite{t2k_sk, t2k_sk2, t2k_sk3} detector has served to constrain proton decay and measure solar and atmospheric neutrino oscillations since 1996 with SK-I. Starting with K2K in 1999\cite{k2k_design}, Super-Kamiokande has also been serving as a far detector for long baseline accelerator neutrino oscillation searches in Japan, and continues to do so for T2K with SK-IV and beyond. The detector is placed 295 km from the production target in the Kamioka mine in Ikenoyama, located in Gifu, Japan. The mine provides roughly 1 km of rock overburden---or 2.7 km water equivalent overburden---drastically reducing cosmogenic backgrounds. A sketch of the detector in the mine is shown in \autoref{fig:sk_schematic}.
 \begin{figure}[h]
 	\includegraphics[width=0.6\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/det_chap/sk/sk.pdf}
 	\caption{The Super-Kamiokande detector in Ikenoyama}
 	\label{fig:sk_schematic}
 \end{figure}
 
-The detector consists of 50,000 (25,000 fiducial) tonnes of ultra-pure water in a $41.4\text{ m}\times39.3\text{ m}$ cylindrical tank. It is split into an inner (ID) and outer (OD) detector with inner dimension $36.2\text{ m}\times33.8\text{ m}$, where the OD surrounds the ID. The ID and OD are separated by a Tyvek and ``blacksheet'' barrier, and the ID has 11,146 inward-facing 20-inch PMTs, and the OD---providing a veto and shielding for the inner detector---has 1,885 8-inch PMTs facing outwards. The ID has approximately 40\% photo-coverage and provides excellent $\mu/e$ separation, crucial to differentiate muon neutrino disappearance from electron neutrino appearance.
+The detector consists of 50,000 (25,000 fiducial) tonnes of ultra-pure water in a $41.4\text{ m}\times39.3\text{ m}$ cylindrical tank. It is split into an inner (ID) and outer (OD) detector with inner dimension $36.2\text{ m}\times33.8\text{ m}$, where the OD surrounds the ID. The ID and OD are separated by a Tyvek and ``blacksheet'' barrier, and the ID has 11,146 inward-facing 20-inch PMTs and the OD has 1,885 8-inch PMTs facing outwards---providing veto and shielding for the inner detector. The ID has approximately 40\% photo-coverage and provides excellent $\mu/e$ separation, crucial to differentiate muon neutrino disappearance from electron neutrino appearance.
 
-Particle detection in SK happens primarily through production of Cherenkov light. The muon/electron separation occurs primarily by ring ``fuzziness'', indicating the amount of rescattering of the charged particle. Muons and pions are generally highly penetrating whereas electrons rescatter often and shower at T2K energies. The former produces sharp rings whereas electrons produce fuzzy rings. The number of delayed Michel $e$ is also used to identify contained muons and pions, and tracks with kinked trajectories are used to discern rescattered pions.
+Particle detection in SK happens primarily through production of Cherenkov light. The muon/electron separation is primarily achieved by measuring ring ``fuzziness'', indicating the amount of scattering of the charged particle emanating from the initial neutrino scattering vertex in the ID. Muons and pions are generally highly penetrating whereas electrons scatter often and give rise to electromagnetic showers at T2K energies. Consequently, the former produces sharp rings whereas the latter produce fuzzy rings. The number of delayed Michel $e$ is also used to identify contained muons and pions, and tracks with kinked trajectories are used to discern rescattered pions from muons.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.48\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 3mm}, clip,page=1]{figures/det_chap/sk/elike.pdf}
@@ -256,11 +256,11 @@ Particle detection in SK happens primarily through production of Cherenkov light
 	\end{subfigure}
 \end{figure}
 
-SK is currently closed for upgrades---consisting of doping the detector with gadolinium to add neutron tagging capabilities---and will resume collecting data in early 2019\cite{superk_upgrade}.
+SK is currently closed to prepare it for gadolinium which will add neutron tagging capabilities. Data collection will resume in spring 2019\cite{superk_upgrade}.
 
 \section{Simulation}
-The three detectors (INGRID, ND280 and SK) share neutrino interaction Monte-Carlo, namely NEUT\cite{neut}. NEUT is an interaction generator written for the (Hyper, Super)-Kamiokande experiments, with large contributions from K2K and T2K collaborators.
+The three detectors (INGRID, ND280 and SK) are modelled using the same neutrino interaction Monte-Carlo, namely NEUT\cite{neut}. NEUT is an interaction generator written for the (Hyper, Super)-Kamiokande experiments, with large contributions from K2K and T2K collaborators.
 
-ND280 and INGRID are simulated with GEANT4\cite{t2k_det,geant4}, and the ND280 electronics use a custom package called ElecSim. The beamline simulation consists of FLUKA2011 \cite{fluka2008_1, fluka2008_2, fluka2011} which simulates hadronic interactions in target and baffle, JNUBEAM (GEANT3-based \cite{geant3}) which simulates the geometry and handles particle tracking, and GCALOR \cite{gcalor} which simulates hadronic re-interactions and is used as a cross-check for FLUKA\cite{t2k_beam, t2k_tn_flux}. The SK detector uses a custom package, SKDETSIM\cite{t2k_sk}, based on GEANT3\cite{geant3}.
+ND280 and INGRID are simulated with GEANT4\cite{t2k_det,geant4}, and the ND280 electronics are simulated with a custom package called ElecSim. The beamline simulation consists of FLUKA2011 \cite{fluka2008_1, fluka2008_2, fluka2011} which simulates hadronic interactions in target and baffle, JNUBEAM (GEANT3-based \cite{geant3}) which simulates the geometry and handles particle tracking, and GCALOR \cite{gcalor} which simulates hadronic re-interactions and is used as a cross-check for FLUKA\cite{t2k_beam, t2k_tn_flux}. The SK detector is simulated with a custom package, SKDETSIM\cite{t2k_sk}, based on GEANT3\cite{geant3}.
 
-The systematics treatment from the detectors are detailed in \autoref{sec:syst}.
+The systematics treatment from detector effects are detailed in \autoref{sec:syst}.

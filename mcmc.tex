@@ -3,13 +3,13 @@
 
 \epigraph{There are three kinds of lies: lies, damned lies, and statistics}{Mark Twain}
 
-The analysis presented in this thesis employs a Bayesian view of statistics, in which the end result is a posterior probability distribution $P(\vec{\theta}|D)$ for the model $\vec{\theta}$ given the observed data $D$. It is is built from the joint probability distributions of observing data $D$ given the model $\vec{\theta}$, $P(D|\vec{\theta})$, provided some prior information on $\vec{\theta}$, $P(\vec{\theta})$. These are related through Bayes' theorem,
+The analysis presented in this thesis employs a Bayesian view of statistics, in which the end result is a posterior probability distribution $P(\vec{\theta}|D)$ for the model $\vec{\theta}$ given the observed data $D$. It is built from the joint probability distribution of observing data $D$ given the model $\vec{\theta}$, $P(D|\vec{\theta})$, provided some prior information on $\vec{\theta}$, $P(\vec{\theta})$. These quantities are related through Bayes' theorem,
 
 \begin{equation}
 P(\vec{\theta}|D) = \frac{P(D|\vec{\theta})P(\vec{\theta})}{\int P(D|\vec{\theta})P(\vec{\theta})d\vec{\theta}}
 \label{eq:bayes}
 \end{equation}
-which is conditional on the full model space. The $P(D|\vec{\theta})$ from the event distributions are modelled with a Poisson probability distribution for the data $n$ being a fluctuation of the simulation $\lambda(\vec{\theta})$ which is dependent on the model $\vec{\theta}$. The $P(\vec{\theta})$ is the knowledge of the model $\vec{\theta}$ from data not used in this analysis (e.g. external hadron scattering data, cosmic data at ND280) and is modelled using a multivariate Gaussian probability distribution. Each parameter $i$ has a central value $\mu_i$ which is varied to $X_i$ during the sampling and is related with parameter $j$ through the covariance matrix $\mathbf{V}_{ij}$. This is formally expressed as
+which is conditional on the full model space. The $P(D|\vec{\theta})$ from the event distributions are modelled with a Poisson probability distribution for the data $n$ being a fluctuation of the simulation $\lambda(\vec{\theta})$ which is dependent on the model $\vec{\theta}$. The $P(\vec{\theta})$ is the prior knowledge of the model $\vec{\theta}$ from data not used in this analysis (e.g. external hadron scattering data, cosmic data at ND280) and is modelled using a multivariate Gaussian probability distribution. Each parameter $i$ has a central value $\mu_i$ which is varied to $X_i$ during the MCMC sampling and is related to parameter $j$ through the covariance matrix $\mathbf{V}_{ij}$. This is formally expressed as
 
 \begin{equation}
 	P(D|\vec{\theta}) P(\vec{\theta}) = \prod \mathcal{L}_\text{Total} = \prod \left(\mathcal{L}_\text{Samples} \times \mathcal{L}_\text{Systematics}\right)
