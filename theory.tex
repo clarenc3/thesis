@@ -32,7 +32,6 @@ This echoes that of quark mixing proposed by Cabbibo\cite{cabbibo}, Kobayashi an
 \begin{equation}
 P(\nu_\alpha \rightarrow \nu_\beta) = |\braket{\nu_\beta|\nu_\alpha(t)}|^2 = \sum_{k,j} U^*_{\alpha k} U_{\beta k} U^*_{\alpha j} U_{\beta j} \exp{ \left( -i\frac{\Delta m^2_{i j} L}{2E} \right)}
 \end{equation}
-
 Then using the squared unitarity relation we finally get\cite{boris_mixing},
 \begin{align}
 P(\nu_\alpha \rightarrow \nu_\beta) = \delta_{\alpha \beta} &- 4\sum_{i>j} Re\left(U^*_{\alpha i} U_{\beta i} U_{\alpha j} U^*_{\beta j}\right)  \sin^2 ( \Delta m^2_{ij}\frac{L}{4E} ) \\
@@ -225,7 +224,7 @@ R. Davis and J. Bachall continued their 1964 measurements\cite{davis} of the sol
 
 The Sudbury Neutrino Observatory (SNO) put the nail in the coffin in 2002\cite{sno_solar} by measuring solar neutrinos from $^{8}\text{B}$ in three channels: $\nu_e + d \rightarrow p+p+e^-$ (CC), $\nu_x + d\rightarrow p+ n + \nu_x$ (NC) and $\nu_x + e^- \rightarrow \nu_x+e^-$ (ES). The measured neutrino rates had a $\nu_e$ component consistent with previous measurements, a strong non-$\nu_e$ component 5.3$\sigma$ above zero, and a NC component consistent with predictions from solar models.
 
-Additionally, the low threshold, low background, Borexino experiment detected solar neutrinos from the $^{8}\text{B}$, $^{7}\text{Be}$, $pep$, and $pp$ processes\cite{borexino_summary}. The final stages of Borexino aims to measure the CNO cycle and the next-generation SNO experiment, SNO+, aims to confirm and improve these measurements, and make detailed measurements of the MSW effect, solar metallicity and luminosity\TODO{CITE SNO+}
+Additionally, the low threshold, low background, Borexino experiment detected solar neutrinos from the $^{8}\text{B}$, $^{7}\text{Be}$, $pep$, and $pp$ processes\cite{borexino_summary}. The final stages of Borexino aims to measure the CNO cycle and the next-generation SNO+ experiment aims to confirm and improve these measurements, and make detailed measurements of the MSW effect, solar metallicity and luminosity\cite{sno_plus}.
 
 Although the solar neutrino oscillation parameters $\Delta m^2_{21}$ and $\theta_{12}$ are considered well-constrained, there is $\sim 2\sigma$ tension on $\Delta m^2_{21}$ between the solar neutrino measurements at SK and SNO (which are internally compatible), and the long baseline reactor anti-electron-neutrino experiment, KamLAND\cite{m2_tension}, measuring the same oscillation process but with a different neutrino source.
 
@@ -238,20 +237,20 @@ Atmospheric neutrinos are emitted when cosmic rays interact with nuclei in the e
 giving rise to a total of three neutrinos. The atmospheric neutrino flux calculations from Honda\cite{honda_flux} is shown in \autoref{fig:atmos_flux}, which peaks in the 1-10 GeV region, notably higher than the solar neutrinos.
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/honda_flux}
-	\caption{Atmospheric neutrino flux from \cite{honda_flux}.}
+	\caption{Atmospheric neutrino flux from Honda et al. \cite{honda_flux}.}
 	\label{fig:atmos_flux}
 \end{figure}
 
 In 1965 F. Reines\cite{reines_atmos} and C.V. Achar\cite{india_atmos_hint} first saw hints of atmospheric $\nu_\mu$ disappearance in deep underground laboratories through $\nu_\mu(\bar{\nu}_\mu) + X \rightarrow \mu^\pm + X'$. The Irvine-Michigan-Brookhaven (IMB) experiment observed deficits of $\nu_\mu$ interactions in 1986\cite{imb}, and Kamiokande II in 1988\cite{kamiokande_atmos_hint} verified this and found muon-like events of $59\pm7\%$ the prediction, although good agreement of electron-like single-prong events. The Soudan-2 experiment\cite{soudan2} also saw muon neutrino deficiency with a flavour ratio of $0.72\pm0.19^{+0.05}_{-0.07}$ relative the expectation. 
 
 When SK in 1998 published\cite{sk_disc} their high-statistics\footnote{4353 fully-contained and 301 partially-contained events} $\nu_\mu$ data, they found $R=\left( \mu/e \right)_\text{Data}/\left( \mu/e \right)_\text{MC} =0.65\pm0.05\pm0.08$. They additionally fitted the oscillation parameters, finding the data well described by $\nu_\mu \leftrightarrow \nu_\tau$ rather than $\nu_\mu \leftrightarrow \nu_e$ oscillations. The summary of flavour ratios for atmospheric neutrinos is seen in \autoref{fig:atmos_ratio}, where the majority of the high precision data sits at $R=0.5-0.8$.
-\begin{figure}[h]s
+\begin{figure}[h]
 	\includegraphics[width=0.7\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/flavour_ratio}
-	\caption{Measured flavour ratios for various atmospheric neutrino experiments. Figure from \cite{kajita_summary}.}
+	\caption{Measured flavour ratios for various historic atmospheric neutrino experiments. Figure from \cite{kajita_summary}.}
 	\label{fig:atmos_ratio}
 \end{figure}
 
-Atmospheric neutrino observatories after the mid 2000s have focussed on measuring $\nu_\mu\rightarrow\nu_\mu$ with increasing precision. Furthermore, by isolating regions of specific zenith angle (and therefore baseline $L$), the extent of the matter effects are also studied, which may resolve the ordering of the mass states. This is largely the focus of the atmospheric neutrino programmes at IceCube\cite{icecube}, ANTARES\cite{antares}, SNO+\TODO{does SNO+ have atmospheric programme?}and SK. The latter has also made attempts at isolating $\nu_\tau$ events\cite{superk_tau}, claiming $4.6\sigma$ discovery of $\nu_\tau$ appearance in 2017. A summary of some recent results including complementary long baseline accelerator neutrino experiments can be seen in \autoref{fig:atmos_data}.
+Atmospheric neutrino observatories after the mid 2000s have focussed on measuring $\nu_\mu\rightarrow\nu_\mu$ with increasing precision. Furthermore, by isolating regions of specific zenith angle (and therefore baseline $L$), the extent of the matter effects are also studied, which may resolve the ordering of the mass states. This is largely the focus of the atmospheric neutrino programmes at IceCube\cite{icecube}, ANTARES\cite{antares}, SNO \cite{sno_atmos} and SK\cite{superk}. The latter has also made attempts at isolating $\nu_\tau$ events\cite{superk_tau}, claiming $4.6\sigma$ discovery of $\nu_\tau$ appearance in 2017. A summary of some recent results including complementary long baseline accelerator neutrino experiments can be seen in \autoref{fig:atmos_data}.
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/icecube_comp}
 	\caption{Measured atmospheric oscillation parameters from recent atmospheric and long baseline accelerator neutrino experiments, assuming normal ordering. Figure from \cite{icecube}.}
