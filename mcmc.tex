@@ -152,7 +152,7 @@ The three methods are used to flag when posteriors have non-Gaussian shapes, sin
 In \autoref{fig:point_estimate} we note asymmetric errors in the case of the asymmetric HPD method and different estimates of the central value. Importantly, none of the methods are de-facto wrong, and in many cases the one dimensional posterior has to be investigated further for e.g. marginalisation effects with other non-Gaussian parameters. Unless otherwise stated, the arithmetic mean and RMS are used due to their simplicity.
 
 \subsection{Covariance Estimates}
-In the case of estimating covariances a similar method is used. We marginalise the high-dimensional posterior onto the two parameters whose covariance we wish to calculate. The marginal posterior is binned and the covariance is calculated arithmetically without assuming a shape of the posterior. \autoref{fig:cov_2d_posterior} shows two example two-dimensional marginal posteriors between beam and interaction parameters, one of which results in a strong correlation and the other doesn't.
+We marginalise the high-dimensional posterior onto the two parameters whose covariance we wish to calculate. The marginal posterior is binned and the covariance is calculated arithmetically without assuming a shape of the posterior. \autoref{fig:cov_2d_posterior} shows two example two-dimensional marginal posteriors between beam and interaction parameters, one of which results in a strong correlation and the other doesn't.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.40\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/example_corr}

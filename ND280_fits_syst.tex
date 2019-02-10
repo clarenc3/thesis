@@ -1,17 +1,17 @@
 \section{Systematics}
 \label{sec:syst}
 
-\epigraph{``The garbage of the past often becomes the treasure of the present (and vice versa)''}{Alexander Markovich Polyakov at Gauge Fields and Strings, London, 1987}
+\epigraph{``The garbage of the past often becomes the treasure of the present (and vice versa)''}{A. M. Polyakov at Gauge Fields and Strings, London, 1987}
 
-The fit's main goal is to minimise impact of systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between ND280 and SK are the neutrino flux parameters (since T2K and SK are in the same neutrino ``beamline''), and neutrino-nucleus interaction parameters. The ``nuisance parameters'' can be considered as the ND280 detector parameters and cross-section parameters that are parametrised as only effective on Carbon. As such, there are many ``parameters of interest'', which the following section covers.
+The fit aims to constrain systematic parameters for T2K-SK oscillation analyses by using near-detector data. The shared parameters between ND280 and SK are the neutrino flux parameters, and neutrino-nucleus interaction parameters. The nuisance parameters can be considered as the ND280 detector parameters and cross-section parameters that are parametrised as effective on Carbon only. As such, there are many parameters of interest in this analysis, which this section covers.
 
-The sources of systematics enter the fit by changing the prediction by shape and/or normalisation, and in most cases the fit incurs a likelihood penalty for moving parameters away from their priors. The penalty takes two forms: either Gaussian or a constant. In the case where there is firm reason to believe a parameter is constrained from other sources, the Gaussian penalty is imposed. When external data and/or recent model developments indicate lacking or conflicting knowledge of a parameter, a flat prior is chosen.
+The systematics enter the fit by changing the predicted event distributions by shape and/or normalisation, which often incur a likelihood penalty for moving parameters away from their prior central values. The penalty takes two forms: either Gaussian or constant. In the case where there is firm reason to believe a parameter is constrained from other sources than ND280 data, the Gaussian penalty is imposed. When external data and/or recent model developments indicate lacking or conflicting knowledge of a parameter, a flat prior is chosen.
 
 For the Gaussian penalty we have
 \begin{equation}
 	-2\log\mathcal{L}_\text{Penalty} = (X_i-\mu_i) \left(\mathbf{V}\right)^{-1}_{i,j} (X_j-\mu_j)
 \end{equation}
-for parameter $i$, with current fit values $X_i$, priors $\mu_i$ and covariance matrix $\mathbf{V}$. For a flat penalty we have
+for parameter $i$, with current value $X_i$, constant priors $\mu_i$ and covariance matrix $\mathbf{V}$. For a flat penalty instead
 \begin{equation}
 	-2\log\mathcal{L}_\text{Penalty} = C
 \end{equation}
@@ -19,7 +19,7 @@ where $C$ is a constant.
 
 \subsection{The Beamline and Neutrino Flux}
 \label{subsec:syst_flux}
-The flux systematics contain uncertainties from all sources entering the neutrino flux prediction. They are split into six categories:
+The flux systematics are split into six categories:
 \begin{itemize}
 	\item Hadron interaction uncertainties
 	\item Proton beam profile and off-axis angle
@@ -28,10 +28,9 @@ The flux systematics contain uncertainties from all sources entering the neutrin
 	\item Materials modelling
 	\item Number of protons on target
 \end{itemize}
-
 The simulations are updated each year to improve the modelling, often taking new data in to account. An example is using the dedicated NA61/SHINE T2K replica target data \cite{NA61_pions_rep} to tune the hadron production model at the T2K beam target, and including results from the HARP experiment \cite{harp}.
 
-The fractional errors for the ND280 neutrino flux prediction are shown in \autoref{fig:flux_uncert_fhc} for FHC running and \autoref{fig:flux_uncert_rhc} for RHC running. The uncertainties are $\sim10\%$ in the flux peak region and are dominated by hadron interaction uncertainties, which in turn consist primarily of multiplicity, pion rescattering and interaction length uncertainties. The proton beam profile and off-axis angle become important shortly after the flux peak at about 1 GeV for the right-sign component of the flux.
+The fractional errors for the ND280 neutrino flux prediction are shown in \autoref{fig:flux_uncert_fhc} for FHC running and \autoref{fig:flux_uncert_rhc} for RHC running. The uncertainties are $\sim10\%$ in the flux peak region and are dominated by hadron interaction uncertainties, which arise primarily from multiplicity, pion rescattering and interaction length uncertainties. The proton beam profile and off-axis angle become important shortly after the flux peak at about 1 GeV for the right-sign component of the flux.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.42\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/total_err_nd5_numode_numu}
@@ -107,11 +106,9 @@ In addition to the variation systematics above, there is also a nominal flux cor
 
 \subsection{The ND280 Detector}
 \label{subsec:syst_nd280}
-The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics---such as the TPC PID, FGD PID, and TPC Momentum scale---and study the impact on the number of predicted events in each \pmu \cosmu bin. 
+The treatment of ND280 detector systematic uncertainties consists of varying the underlying detector systematics---such as the TPC PID, FGD PID, and TPC Momentum scale---and study the impact on the number of predicted events in each \pmu, \cosmu bin. 
 
-The parameterisation of near detector systematics are categorised as systematics that purely weight an event as the value changes and systematics that vary the observed event topology. The event weighting can be broken down further into efficiencies (with shapes) and normalisation parameters. When FGD-related systematics are concerned---such as pion tagging by Michel electron identification---the two FGDs have separate implementations to account for geometrical and compositional differences.
-
-The different sources of systematics, their variation type and assumed probability distribution function (PDF) are shown in \autoref{tab:nd280_systs}.
+The parameterisation of near detector systematics are categorised into pure event or selection-changing. The event weighting can be broken down further into efficiencies (with shapes) and normalisation parameters. When FGD-related systematics are concerned---such as pion tagging by Michel electron identification---the two FGDs have separate implementations to account for geometric and compositional differences. The different sources of systematics, their variation type and assumed probability distribution function (PDF) are shown in \autoref{tab:nd280_systs}.
 \begin{table}[h]
 	\begin{tabular}{l | c c}
 	\hline
@@ -179,7 +176,7 @@ There are two methods with which the smearing is applied:
 	\end{equation}
 \end{itemize}
 
-Additionally uncertainties from the magnetic field has special cases of the above:
+Additionally uncertainties from the magnetic field are special cases of the above:
 \begin{itemize}
 	\item The TPC laser calibration corrections are used on-top of the B-field mapping corrections, where the latter is applied during reconstruction and the former is treated as an uncertainty. The reconstructed variable is then
 	\begin{equation}
@@ -221,7 +218,7 @@ w_{Ineff} = \frac{1-\epsilon_{Data}'}{1-\epsilon_{MC}}
 to propagate the weight systematics on an event-by-event basis.
 
 \paragraph{Normalisation Systematics}
-These systematics are simple one-time weights which change the overall event numbers. The FGD mass error is an example of such a systematics: if the mass of the FGD is larger than the nominal, the overall number of observed events in MC should be increased. The weight $w$ is applied as
+These systematics are simple one-time weights which change the overall event numbers. The FGD mass error is an example of such a systematic: if the mass of the FGD is larger than the nominal, the overall number of observed events in MC should be increased. The weight $w$ is applied as
 \begin{equation}
 w = 1+\alpha \cdot \delta e
 \end{equation}
@@ -275,7 +272,7 @@ The largest contribution to the total error is pion secondary interactions, maki
 
 \autoref{tab:nd280_syst_error_nubar} shows the error table for the RHC selections. The tracking related systematics for the FGD (Michel electron tagging, PID, hybrid tracking) are not present because the number of tracks in the event---defining the 1Trk or NTrk selection---is solely based on the number of TPC tracks present, so has no impact.
 
-As for the FHC selections, the largest systematic by far is the pion secondary modelling (90+\%). The impact is larger than for FHC selections since the source of pions are \numu interactions (typically higher in $E_\nu$ so also higher in multiplicity) and the larger uncertainties on $\pi^-$ re-interaction probabilities. The FGD mass is the second largest systematic for CC0$\pi$, although for the CCNTrk selection the TPC tracking efficiency comes in second, followed by the TPC PID, followed by the FGD mass.
+The largest systematic by far is the pion secondary modelling (90+\%), as is also the case for FHC selections. The impact is larger than for FHC selections since the source of pions are \numu interactions (typically higher in $E_\nu$ so also higher in multiplicity) and the larger uncertainties on $\pi^-$ re-interaction probabilities. The FGD mass is the second largest systematic for CC0$\pi$, although for the CCNTrk selection the TPC tracking efficiency comes in second, followed by the TPC PID, followed by the FGD mass.
 \begin{table}[h]
 	\begin{tabular}{l | c c}
 		\hline
@@ -316,9 +313,9 @@ As for the FHC selections, the largest systematic by far is the pion secondary m
 \end{table}
 
 \paragraph{Parameterisation of ND280 Systematics}
-The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an event-by-event basis. In practice this is unfeasible because: 1) the event selection framework is not sufficiently optimised to guarantee fast reweighting below 0.1 s per systematics reconfigure; 2) some values of variation systematics gave rise to discontinuous test-statistics as events migrated from one topology to another. Whereas the former is purely computational, the latter causes problems for finding minima with gradient descent algorithms, employed by the other ND280 fitting group (BANFF). 
+The systematics in \autoref{tab:nd280_systs} could theoretically be varied on an event-by-event basis. In practice this is unfeasible because: 1) the event selection framework is not sufficiently optimised to guarantee fast reweighting; 2) some values of variation systematics gave rise to discontinuous test-statistics as events migrated from one topology to another. Whereas the former is purely computational, the latter causes problems for finding minima with gradient descent algorithms, employed by the other ND280 fitting group (BANFF). 
 
-The systematics are instead parameterised similarly to the flux systematics, which ensures both smoothness and fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event basis and 500 random variations are chosen according to the prior covariances, and the number of events are binned in the fit-binning from \autoref{sec:binning_2017}. The content of each bin is then a normalisation parameter, and is highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the differences in Martini and Nieves' 1p1h model to the NEUT CCQE model are added\cite{t2k_2015}. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
+The systematics are instead parameterised similarly to the flux systematics, which ensures both smoothness and fast reweighting. The systematics listed in \autoref{tab:nd280_systs} are varied on an event-by-event basis and 500 random variations are chosen according to the prior covariances, and the number of events are binned in the fit-binning from \autoref{sec:binning_2017}. The content of each bin is then treated as a normalisation parameter which is highly correlated with adjacent bins through a covariance matrix. Finally, an MC statistical covariance matrix and a covariance matrix shifting the MC reconstructed lepton momentum of CCQE events by 20 MeV to roughly emulate the differences in Martini and Nieves' 1p1h model to the NEUT CCQE model are added\cite{t2k_2015}. The central value and uncertainty on the number of events in a bin comes from a the arithmetic mean and the central value is the rms, and a cross-check with a Gaussian fit is done.
 
 Using the fit binning in \pmu \cosmu yields 1624 ND280 parameters, which was reduced to 556 by merging bins with similar features in the underlying bin-by-bin event distributions. The final ND280 detector matrix binning was chosen to be
 \begin{itemize}
@@ -385,46 +382,11 @@ The final covariance matrix is seen in \autoref{fig:nd280_cov}, where the majori
 \label{fig:nd280_corr}
 \end{figure}
 
-% Table with interaction parameters
-%\begin{table}
-%	\centering
-%	\begin{tabular}{ l | c | c }
-%		\hline
-%		Parameter & Fit binning & Similar syst. merge \\
-%		\hline
-%		\hline
-%		FSI INEL LO & $0.0 \pm 0.202$ & $0.0\pm0.200$ \\
-%		FSI INEL HI & $0.0 \pm 0.235$ & $0.0\pm0.233$ \\
-%		FSI PI PROD & $0.0 \pm 0.347$ & $0.0\pm0.344$ \\
-%		FSI CEX LO  & $0.0 \pm 0.416$ & $0.0\pm0.412$ \\
-%		FSI CEX HI  & $0.0 \pm 0.193$ & $0.0\pm0.191$ \\
-%		$M_A^{QE}$  & $1.2 \pm 0.0517$ & $1.2\pm0.0512$ \\
-%		$p_F^{C}$   & $217 \pm 36.96$ & $217\pm36.021$ \\
-%		2p2h norm C & $100 \pm 30.79$ & $100\pm30.56$ \\
-%		$E_B^{C}$   & $25.0 \pm 8.57$ & $25.0\pm8.56$ \\
-%		$p_F^{O}$   & $225 \pm 57.61$  & $225\pm56.16$ \\
-%		2p2h norm O & $100 \pm 277.98$ & $0.0\pm272.62$ \\
-%		$E_B^{C}$   & $27.0 \pm 9.00$ & $27.0\pm9.00$ \\
-%		$C_5^A$		& $1.01 \pm 0.066$ & $1.01\pm0.064$ \\
-%		$M_A^{1\pi}$ & $0.95 \pm 0.060$ & $0.95\pm0.059$ \\
-%		$I_{1/2}$ non-res & $1.30 \pm 0.180$ & $1.30\pm0.180$ \\
-%		CC $\nu_e$ norm & $1.00 \pm 0.030$ & $1.00\pm0.030$ \\
-%		DIS Shape	& $0.00 \pm 0.208$ & $0.0\pm0.208$ \\
-%		CC Coherent norm & $1.0 \pm 0.258$ & $1.0\pm0.257$ \\
-%		NC Coherent norm & $1.0 \pm 0.299$ & $1.0\pm0.299$ \\
-%		NC Other & $1.0 \pm 0.182$ & $1.0\pm0.181$ \\
-%		2p2h $\bar{\nu}$ & $1.0 \pm 0.332$ & $1.0\pm0.329$ \\
-%		\hline
-%	\end{tabular}
-%	\caption{Cross-section parameter results from comparisons using fit binning and a merged binning for the 2015 cross-section model.}
-%\label{fig:2017_rebin_asimov}
-%\end{table}
-
 \subsection{The Neutrino-Matter Interaction}
 \label{subsec:syst_xsec}
 The parameterisation of the interaction systematics is frequently updated in T2K analyses to account for new theoretical calculations. This includes nuclear in-medium effects such as RPA and 2p2h corrections\cite{nieves1,nieves2}, initial state models such as Local Fermi Gases \cite{lfg} and Spectral Functions \cite{benhar}, and parameter tunes of existing models\cite{ccqe_tuning}.
 
-The T2K and SK experiments both use the custom interaction library NEUT 5.3.3\cite{neut} as their primary neutrino event generator, with cross-checks with GENIE\cite{genie} and NuWro\cite{NuWro}. Hence the interaction parameterisation deals with the models implemented in NEUT and are outlined here. 
+The T2K and SK experiments both use the custom interaction library NEUT 5.3.3\cite{neut} as their primary neutrino event generator, with cross-checks through GENIE\cite{genie} and NuWro\cite{NuWro}. Hence the interaction parameterisation deals with the models implemented in NEUT and are outlined here. 
 
 \paragraph{CCQE and CC0$\pi$}
 The nominal model is generated with a Spectral Function (SF) from Benhar and others\cite{benhar} and a 2-particle-2-hole (2p2h) excitation \cite{nieves1,nieves2} for the CCQE/CC0$\pi$ model. An alternative model uses the Llewellyn-Smith model\cite{llewelyn-smith} with a dipole axial form factor and BBBA05 vector form factors\cite{bbba05} coupled to a Smith-Moniz Relativistic Fermi Gas (RFG)\cite{Smith-Moniz}. 
@@ -433,9 +395,9 @@ When selecting the default CCQE model for T2K analyses, it was found\cite{ccqe_t
 
 In the selected CCQE model we have three free parameters to vary: $M_A^{QE}$, the axial mass in the dipole form factor parameterisation in the Llewelyn-Smith model, and $p_F$, the Fermi surface momentum, for $^{12}\text{C}$ and $^{16}\text{O}$ coming from the Smith-Moniz model\footnote{The binding energy term was found to have a negligible effect in 2015 analyses so was removed}.
 
-The 2p2h effects first have normalisation parameters separated for neutrino and anti-neutrino, and one for $^{12}\text{C}\rightarrow^{16}\text{O}$ scaling. Secondly, there is a 2p2h shape parameter separated for $^{12}\text{C}$ and $^{16}\text{O}$ which is parameterised as a multiplicative weight applied on an event-by-event basis, taking an event's $E_\nu, q_0, q_3$, where $E_\nu$ is the true neutrino energy, $q_0$ is the energy and $q_3$ is the momentum components of $Q = k_\nu - k_\mu = (q_0, q_3)$. The 2p2h model can be parameterised as having terms with and without pion exchange and the interference between these terms. At a value of -1 the shape uncertainty assigns all the 2p2h to $\Delta$-like and at +1 to non$\Delta$-like 2p2h, and an interference term soaking up the lost or gained cross-section is included, so the systematic have no net effect on the normalisation of 2p2h events.
+The 2p2h effects first have normalisation parameters separated for neutrino and anti-neutrino, and one for $^{12}\text{C}\rightarrow^{16}\text{O}$ scaling. Secondly, there is a 2p2h shape parameter separated for $^{12}\text{C}$ and $^{16}\text{O}$ which is parameterised as a multiplicative weight applied on an event-by-event basis, taking an event's $E_\nu, q_0, q_3$, where $E_\nu$ is the true neutrino energy, $q_0$ is the energy and $q_3$ is the momentum components of $Q = k_\nu - k_\mu = (q_0, q_3)$. The 2p2h model can be parameterised as having terms with and without pion exchange and the interference between these terms. At a value of -1 the shape uncertainty assigns all the 2p2h to $\Delta$-like and at +1 to non$\Delta$-like 2p2h, and an interference term soaking up the lost or gained cross-section is included. The systematic has no net effect on the normalisation of 2p2h events.
 
-The net effect of the parameter on NEUT Monte-Carlo events generated with an ND280 flux on a $^{12}\text{C}$ target in $q_0, q_3$ (integrated over ND280 $E_\nu$) is shown in \autoref{fig:2p2h_shape_q0q3}. The $\sim300\text{ MeV}$ shift in $q_0$ from $m_\Delta-m_N$ is evident for the extreme parameter values, whereas the nominal (``Tweak Value = 0'') populates both regions.
+The net effect of the 2p2h shape parameter on NEUT Monte-Carlo events generated with an ND280 flux on a $^{12}\text{C}$ target in $q_0, q_3$ is shown in \autoref{fig:2p2h_shape_q0q3}. The $\sim300\text{ MeV}$ shift in $q_0$ from $m_\Delta-m_N$ is evident for the extreme parameter values, whereas the nominal (``Tweak Value = 0'') populates both regions.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -544,12 +506,11 @@ The strength of the coherent interaction is allowed to vary in the fit as normal
 \paragraph{Multi-$\pi$ and DIS}
 In NEUT the structure functions are taken from the GRV98 parton distribution functions\cite{grv98} with Bodek-Yang corrections\cite{bodek_yang}. The details of the transition can be found in\cite{neut} and is inspired by external bubble chamber data on pion multiplicity. The DIS model is directly from PYTHIA 5.7 and JETSET 7.4\cite{pythia}.
 
-The multi-pi/DIS uncertainties come from measurements by MINOS\cite{minos_mult} on DIS interactions. At $E_\nu = 4.0 \text{ GeV}$ the uncertainties should be $\sim 10\%$, increasing with decreasing $E_\nu$ and is parametersied as 
+The multi-pi/DIS uncertainties come from measurements by MINOS\cite{minos_mult} of DIS interactions on an iron target at higher energies. At $E_\nu = 4.0 \text{ GeV}$ the uncertainties should be $\sim 10\%$, increasing with decreasing $E_\nu$ and is parametersied as 
 \begin{equation}
 \delta\left(\sigma_\text{CC DIS}\right) = \frac{0.4}{E_\nu}
 \end{equation}
-
-NC DIS events do not receive this systematic and are instead controlled by an overall normalisation parameter including other NC interaction modes, explained further down.
+NC DIS events do not receive this systematic and are instead controlled by an overall normalisation parameter including other NC interaction modes, explained later.
 
 \paragraph{Subdominant Interactions}
 The interaction modes with smaller cross-sections and/or small effects on 0$\pi$ selections are controlled by normalisation parameters.
@@ -613,8 +574,7 @@ An example of three interaction parameters that are parameterised as splines is 
 	\caption{Interaction covariance matrix provided as the prior}
 	\label{fig:xsec_cov_matrix_prior}
 \end{figure}
-
-The errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}$ and $p_F$ and that BeRPA U is fixed. Furthermore, the errors are relative the priors: e.g. the error on $M_A^{RES}$ is not 0.16 GeV but rather $0.95\times0.16=0.152\text{ GeV}$, where the nominal value is 0.16.
+The errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}$ and $p_F$ and that BeRPA U is fixed. Furthermore, the errors are expressed as relative their priors: e.g. the error on $M_A^{RES}$ is not 0.16 GeV but rather $0.95\times0.16=0.152\text{ GeV}$, where the nominal value is 0.16.
 
 A summary of the interaction parameters applied in this analysis is provided in \autoref{tab:xsec_params}.
 \begin{table}

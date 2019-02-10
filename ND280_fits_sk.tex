@@ -1,7 +1,7 @@
 \section{Impact on T2K Oscillation Analyses}
-The parameter set from the data fit is now used to gauge the impact on the oscillated $E_{rec}$ spectrum at SK. The high dimensional posterior distribution sampled by the MCMC after burn-in, containing 50 flux and 23 interaction parameters, is propagated without assumptions on the shape of the probability distribution function.
+The parameter set from the data fit is used to gauge the impact on the oscillated $E^\nu_{rec}$ spectrum at SK. The high dimensional posterior distribution sampled by the MCMC running on ND280 data, containing 50 flux and 23 interaction parameters, is propagated without assumptions on the shape of the underlying probability distribution function.
 
-Using the oscillation parameters in \autoref{tab:osc_pars}, the posterior predictive distribution is formed by taking 10,000 random draws from the ND280-only MCMC to data, presented in \autoref{sec:datafit}. The oscillation parameters and SK detector parameters are fixed to their prior values and are not varied.
+Using the oscillation parameters in \autoref{tab:osc_pars}, the posterior predictive distribution is formed by taking 10,000 random draws from the ND280-only MCMC running on data, presented in \autoref{sec:datafit}. The oscillation parameters and SK detector parameters are fixed to their prior values and are not varied.
 \begin{table}[h]
 	\begin{tabular}{l | c}
 		\hline
@@ -24,7 +24,7 @@ Using the oscillation parameters in \autoref{tab:osc_pars}, the posterior predic
 \label{tab:osc_pars}
 \end{table}
 
-The integrated event rates is shown in \autoref{tab:sk_evt_rates_2017}. As for the ND280 event rates in \autoref{tab:postfit_eventrate}, the impact of the ND280 posterior compared to the prior is dramatic, reducing uncertainty by 60-80\% for all SK selections.
+The integrated event rates are shown in \autoref{tab:sk_evt_rates_2017}. As for the ND280 event rates in \autoref{tab:postfit_eventrate}, the impact of the ND280 posterior compared to the prior is dramatic, reducing uncertainties by 60-80\% for all SK selections.
 % from /tmp/ts-out.2tydjK on heppc105, June 1, 10,000 throws
 \begin{table}[h]
 	\begin{tabular}{l | c c | c c}
@@ -46,9 +46,9 @@ The integrated event rates is shown in \autoref{tab:sk_evt_rates_2017}. As for t
 \label{tab:sk_evt_rates_2017}
 \end{table}
 
-The $E_{rec}$ spectrum using the prior and posterior distributions for each SK selection is shown in \autoref{fig:sk_2017}. The $1\text{R}\mu$ distributions are consistent for FHC and RHC , in which there is an enhancement at low $E_{rec}$ up until the oscillation dip, followed by a prediction much in agreement with the prior after $E_{rec}\sim0.6\text{ GeV}$. This impacts $\Delta m^2$ and $\sin^2\theta_{23}$, since both the depth and slope of the dip changes. 
+The $E^\nu_{rec}$ spectrum using the prior and posterior distributions for each SK selection is shown in \autoref{fig:sk_2017}. The $1\text{R}\mu$ distributions are consistent for FHC and RHC, in which there is an enhancement at low $E_{rec}$ up until the oscillation dip, followed by a prediction much in agreement with the prior after $E^\nu_{rec}\sim0.6\text{ GeV}$. This impacts $\Delta m^2$ and $\sin^2\theta_{23}$, since both the depth and slope of the dip changes. 
 
-The fit has little effect on the central value of the $1\text{R}e$ RHC selection but reduces the uncertainty by more than 50\% above the oscillation dip. The two FHC $1\text{R}e$ selections show opposite behaviour: $1\text{R}e$ is enhanced throughout the spectrum, sitting approximately on the $1\sigma$ of the uncertainty band of the prior, with increasing agreement with the prior with increasing $E_{rec}$. The 1d$e$ selection is instead reduced throughout $E_{rec}$, largely due to the ND280 1$\pi$ selections being overestimated when using the prior values.
+The fit has little effect on the central value of the $1\text{R}e$ RHC selection but reduces the uncertainty by more than 50\% above the oscillation dip. The two FHC $1\text{R}e$ selections show opposite behaviour: $1\text{R}e$ is enhanced throughout the spectrum, sitting approximately on the $1\sigma$ of the uncertainty band of the prior, with increasing agreement with the prior with increasing $E^\nu_{rec}$. The 1R$e$1d$e$ selection is instead reduced throughout $E^\nu_{rec}$, largely due to the ND280 1$\pi$ selections being overestimated when using the prior values.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1]{figures/mach3/data/prior_error_1june_try_2017_fit_on_sk_spectra}
