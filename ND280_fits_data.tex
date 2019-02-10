@@ -210,11 +210,11 @@ To understand why BeRPA is heavily distorted from the nominal form, we look at t
 
 		\begin{subfigure}[t]{0.49\textwidth}
 			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 6mm}, clip,page=15]{figures/mach3/Asimov/2017b_NewDet_3Xsec_4Det_5Flux_NewXSecTune_Asimov_0_PostFit_5_4_rootstack}
-			\caption{Pre-fit, BeRPA A effect}
+			\caption{Effect of BeRPA A after the fit to Asimov data}
 		\end{subfigure}
 		\begin{subfigure}[t]{0.49\textwidth}
 			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 6mm}, clip,page=15]{figures/mach3/data/postfit/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_PostFit_5_4_rootstack}
-			\caption{Post-fit, BeRPA B effect}
+			\caption{Effect of BeRPA B after the fit to data}
 		\end{subfigure}
 		\caption{FGD1 CC$0\pi$ in $Q^2_{rec}$after the fit to data, showing impact of the BeRPA parameters}
 		\label{fig:fgd1_cc0pi_q2_berpa}
@@ -440,7 +440,7 @@ The one-dimensional p-values are shown in \autoref{fig:posterior_pred_data_1d}, 
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 14mm}, clip,page=1]{figures/mach3/data/postpred/PriorPredictive_Hybrid}
 		\caption{Prior predictive hybrid, $p=0.10$}
 	\end{subfigure}
-	\caption{One-dimensional p-value calculations, applying statistical fluctuations}
+	\caption{One-dimensional p-value calculations, applying statistical fluctuations. The fraction above the red curve relative the total denotes the p-value. The red line is the realised p-value of the data-fit and the distribution is the statistically fluctuated reference distributions.}
 	\label{fig:posterior_pred_data_1d}
 \end{figure}
 
@@ -876,4 +876,4 @@ Looking at the correlations, there are strong relations between $M_A^{QE}$, 2p2h
 A number of alternative studies were performed for the 2017 analysis, comparing subruns in data and MC, change of model parameters and their priors, investigating effects of removing runs, and comparing FGD1 and FGD2. The largest impact was found in the FHC versus RHC data fit, and the FGD1 vs FGD2 data fit, with some parameters outside the $1\sigma$ range of the full fit to data. The posteriors from these two fits---and a fit using a 2015-like model with BeRPA and 2p2h shape fixed---were propagated to SK and event spectra comparisons were made. Generally, there were negligible ($<1\sigma$) differences with little impact on oscillation analyses. These studies are found in \autoref{sec:data_alt_studies}.
 
 \section{Cross-group Validations}
-Comparisons were made to the frequentist ``BANFF'' group to further validate the implementation and results of the ND280-only fits. The validation saw differences to this analysis in all of the flux parameters, and some of the interaction parameters. All were due to marginalisation effects when providing the point estimates from the MCMC. The posterior predictive distributions from the MCMC compared to the ``best-fit'' distributions from the global minimum agreed well and validation tests were satisfactory. \autoref{chap:banff_valid} details this procedure and the results
+Comparisons were made to the frequentist ``BANFF'' group to further validate the implementation and results of the ND280-only fits. The validation saw differences to this analysis in all of the flux parameters, and some of the interaction parameters. All were due to marginalisation effects when providing the point estimates from the MCMC. The posterior predictive distributions from the MCMC compared to the ``best-fit'' distributions from the global minimum agreed well and the validation tests were passed satisfactorily. \autoref{chap:banff_valid} details this procedure and the results

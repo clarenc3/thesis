@@ -1,11 +1,9 @@
 \chapter{Updating the Fit to ND280 Data for 2018 and Beyond}
 \label{chap:nd280_2018}
-The official 2017 analysis presented in \autoref{chap:ND280} used data from T2K runs 2 through 6, which was collected between 2010 and 2015. The analysis was largely developed for the 2015-2017 analyses\cite{t2k_2015,t2k_2017}, with an inconsistent choice of selection of 0$\pi$, 1$\pi$ and Other selection for \numu in FHC, and 1Track and NTrack for \numubar and \numu in RHC. Due to low statistics and the use of coarse 1Track/NTrack selections, the posterior predictive p-values for the anti-neutrino samples were generally uninformative---centered around 0.5---implying not much could be said about the quality of T2K anti-neutrino modelling.
-
-For the upcoming 2018+ analyses, the ND280 treatment has a multitude of updates which goes further on informing T2K-SK analysers, which will be presented in full in this chapter. 
+The official 2017 near detector data analysis presented in \autoref{chap:ND280} used data from T2K runs 2 through 6, which was collected between 2010 and 2015. It was largely developed for the 2015-2017 oscillation analyses\cite{t2k_2015,t2k_2017}, with an inconsistent selection for \numu in FHC (of 0$\pi$, 1$\pi$ and Other selection), and in RHC (1Track and NTrack for \numubar and \numu). The coarse 1Track/NTrack selections and low statistics of the RHC samples led to an uninformative posterior predictive p-values---implying not much could be said about the quality of T2K anti-neutrino modelling. The upcoming 2018 analyses and beyond, presented in this chapter, sees a multitude of updates.
 
 \section{Adding Run 7 and 8 Data}
-Adding to the run 2 to 6 data, T2K has been collecting POT steadily since 2015, making it possible to refine the selections and update the binning for increased parameter sensitivity. As previously shown in \autoref{fig:t2k_pot}, almost twice the POT were accumulated in run 7 (RHC) and 8 (FHC) thanks to excellent beam performance, culminating at nearly 500 kW.
+T2K has been steadily collecting POT since 2015 on top of run 2 to 6 data, making it possible to refine the selections and update the binning for increased parameter sensitivity. As previously shown in \autoref{fig:t2k_pot}, almost twice the POT were accumulated in run 7 (RHC) and 8 (FHC) thanks to excellent beam performance, culminating at nearly 500 kW and 2E21 POT.
 
 \autoref{tab:pot_2018} shows the run-by-run POT breakdown of the data and generated Monte-Carlo, directly comparable to the 2017 analysis' equivalent for run 2 to 6 in \autoref{tab:pot_2017}. The amount of FHC POT increased by 99\% and RHC by 63\%.
 \begin{table}[h]
@@ -55,7 +53,7 @@ Adding to the run 2 to 6 data, T2K has been collecting POT steadily since 2015, 
 \end{table}
 
 \section{Selections}
-The RHC selections are updated from 1Track/NTrack to 0$\pi$, 1$\pi$ and Other to match the FHC selections. The FHC selections remain identical to what was presented in \autoref{sec:numu_sel}. The pion counting for the RHC sample agrees with that of \autoref{sec:numu_sel}, using either the TPC, FGD Michel electron or FGD isolated track reconstruction for the pion tags.
+The RHC selections are updated from 1Track/NTrack to 0$\pi$, 1$\pi$ and Other to match the FHC selections. The FHC selections remain identical to what was presented in \autoref{sec:numu_sel}. The pion counting for the RHC sample is the same as in \autoref{sec:numu_sel}, using either the TPC, FGD Michel electron or FGD isolated track reconstruction for the pion tags.
 
 The only difference in the likelihood cuts from \autoref{sec:ND280:sel} is for the $\mu^+$ selection, which in \autoref{sec:numubar_sel} required $0.1 < \mathcal{L}_\mu < 0.7$. The upper bound at 0.7 was present to reject low energy $\mu^-$ from \numu RHC interactions, which was discarded for this analysis after it gave a 4\% increase in efficiency with negligible purity change. The $\mu^-$ criteria for the \numu in RHC selection did not change and still requires a MIP-like track with $0.1 < \mathcal{L}_\mu < 0.8$.
 
@@ -101,10 +99,9 @@ A summary of the 2018 analysis' selection efficiencies and purities is shown in 
 \end{table}
 
 \section{Binning the Selections}
-With the large increase in statistics from using run 7 and 8 data, a re-binning of the event observables \pmu and \cosmu is due. As was the case in \autoref{sec:binning_2017}, the binning is based on requiring $\sim20$ raw MC events per bin, which is roughly equivalent to 1-2 data events. The approximate momentum resolution of ND280 is $\sim50\text{ MeV}$ and the angular resolution $\sim2\degree$.
+With the large increase in statistics from run 7 and 8 data, a re-binning of the event observables \pmu and \cosmu was due. The binning is based on requiring $\sim20$ raw MC events per bin, which is roughly equivalent to 1-2 data events. The approximate momentum resolution of ND280 is $\sim50\text{ MeV}$ and the angular resolution $\sim2\degree$, seen in \autoref{appendix:detector_resolution}.
 
-All selections for 2018 analysis are rebinned using the above criteria, leading to a drastic increase in the number of bins from the 2017 analysis, which was 1624. The total number of bins is now 4238, of which 2942 are FHC (six selections) and 1188 are RHC (12 selections). The CC0$\pi$ binning alone is more bins than was present in total for 2017 ((1682 vs 1624).
-
+All selections for the 2018 analysis are rebinned using the above criteria, leading to a drastic increase in the number of bins from the 2017 analysis, which had 1624. The total number of bins is now 4238, of which 2942 are FHC (six selections) and 1188 are RHC (12 selections). The CC0$\pi$ binning alone is more bins than was present in total for 2017 (1682 vs 1624).
 \begin{itemize}
 	\item FGD1+2 CC0$\pi$: 841 fit bins\\
 	$p_\mu$ (MeV/c) = 0, 200, 300, 400, 450, 500, 550, 600, 650, 700, 750, 800, 850, 900, 950, 1000, 1050, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 2000, 2500, 3000, 5000, 30000.\\
@@ -145,15 +142,15 @@ All selections for 2018 analysis are rebinned using the above criteria, leading 
 
 \section{Systematics}
 \label{sec:syst_2018}
-The 2018 iteration of the fits to ND280 data was intended primarily as a statistics and reconstruction update, including run 7 and 8 data, and a suitable update to the RHC selections to match the FHC selections. There was therefore comparably few updates to the treatment of systematics.
+The 2018 iteration of the fits to ND280 data was intended primarily as a statistics and reconstruction update, including run 7 and 8 data, and a suitable update to the RHC selections to match the FHC selections. There were therefore comparably few updates to the treatment of systematics.
 
 \subsection{The Beamline and Neutrino Flux}
 The flux systematics saw no change and follows that prescribed in the 2017 analysis, detailed in  \autoref{subsec:syst_flux}.
 
 \subsection{The ND280 Detector}
-The same set of systematics in \autoref{subsec:syst_nd280} are used again in the 2018 analysis. One more systematic was added to the detector response: the proton secondary interaction systematic. It is analogous to the pion secondary interaction but applies to protons instead, so allows proton tracks to be modified in the reconstruction. Since the proton ID is excellent when $p < 1.4\text{ GeV}$, this systematic is only important for anti-neutrino selections with $p > 1.4\text{ GeV}$, where there is a risk of the proton being assigned as the lepton candidate.
+The same set of systematics in \autoref{subsec:syst_nd280} are used again in the 2018 analysis. One more systematic was added to the detector response: the proton secondary interaction systematic. It is analogous to the pion secondary interaction but applies to protons, so allows proton tracks to be modified in the reconstruction. Since the proton ID is excellent when $p < 1.4\text{ GeV}$, this systematic mostly affects anti-neutrino selections with $p > 1.4\text{ GeV}$, where there is a risk of the proton being assigned as the lepton candidate.
 
-The parameterisation of the systematics is also unchanged to \autoref{subsec:syst_nd280}---correlated normalisation parameters are assigned to each \pmu\cosmu bin, merging similar responses when possible. A new ND280 covariance matrix was generated since the number of selections increased from 14 to 18 and the number of bins increased from 1624 to 4238. The number of bins increase by $\sim2.6$: making the equivalent increase in detector parameters would bring the number of ND280 parameters to $\sim1500$, so a more aggressive bin merging was applied. A parameterisation of ND280 with identical covariance matrix binning to the analysis binning (4238 ND280 parameters) was also tested and is presented throughout this analysis as a reference.
+The parameterisation of the systematics is also unchanged to \autoref{subsec:syst_nd280}---applying correlated normalisation parameters to each \pmu\cosmu bin, merging similar responses when possible. A new ND280 covariance matrix was generated since the number of selections increased from 14 to 18 and the number of bins increased from 1624 to 4238. The number of bins increase by $\sim2.6$: the equivalent increase in detector parameters would bring the number of ND280 parameters to $\sim1500$, so a more aggressive bin merging was applied. A parameterisation of ND280 with identical covariance matrix binning to the analysis binning (4238 ND280 parameters) was also tested and is presented throughout this analysis as a reference.
 
 The bin merging was approached in two ways: bins were merged if 1) there was a <5\% difference in effect from ND280 systematics, or 2) the effect of the systematics was >5\%  but the bin content was less than one and the effect of the systematics on the bin was to change the number of events by less than one. This bin strategy merges bins with weak response to the ND280 systematics and bins of low statistics. 
 
@@ -196,16 +193,16 @@ The number of final ND280 detector parameters decreased from 4238 to 1076 and fa
 	$\cos\theta_\mu$: -1, 0.7, 1.
 \end{itemize}
 
-The underlying systematic parameters are varied and produce event distributions in each \pmu \cosmu bin. The content is with with a Gaussian and the $\chi^2/\text{nbins}$ for that fit is shown in \autoref{fig:det_chi2_ndof}. There are clear outliers which follow a repeating pattern: this is the lowest momentum bin which often has bimodal distributions due to pions entering and exciting the selection from variation systematics. In most cases the difference in the $\sigma$ between the distribution and the fitted Gaussian is < 0.1 events, although modelling the distribution as a Gaussian is not ideal.
+The underlying systematic parameters are varied and produce event distributions in each \pmu \cosmu bin. The content is fit with a Gaussian and the $\chi^2/\text{nbins}$ for the fit is shown in \autoref{fig:det_chi2_ndof}. There are clear outliers which follow a repeating pattern: the lowest momentum bin often has bimodal distributions due to pions being reconstructed or not, causing the entire event to enter and exit the selection. In most cases the difference in the 1$\sigma$ between the distribution and the fitted Gaussian is < 0.1 events, although modelling the distribution as a Gaussian is not ideal.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.7\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fhc_v7_chi2ndof}
-		\caption{FHC}
+		\caption{FHC selections}
 	\end{subfigure}
 
 	\begin{subfigure}[t]{0.7\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/rhc_v7_chi2ndof}
-		\caption{RHC}
+		\caption{RHC selections}
 	\end{subfigure}
 \caption{$\chi^2/\text{nbins}$ for the reduced detector covariance matrix bins when fitting the bin's content distribution to a Gaussian}
 \label{fig:det_chi2_ndof}
@@ -236,7 +233,7 @@ The underlying systematic parameters are varied and produce event distributions 
 	\label{fig:det_binbybin}
 \end{figure}
 
-The new ND280 covariance matrix is shown in \autoref{fig:nd280_cov_2018} and \autoref{fig:nd280_corr_2018}\footnote{The matrices are not directly comparable to the 2017 matrices in \autoref{fig:nd280_cov} and \autoref{fig:nd280_corr} because the dominant parameter switched from \pmu to \cosmu so parameters now run $\{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^1,p_\mu^2\},...\{\cos\theta_\mu^1,p_\mu^N\}$ instead of $\{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^2,p_\mu^1\},...\{\cos\theta_\mu^N,p_\mu^1\}$}. There are many similarities with the 2017 matrices: the largest systematics are $\sim50\%$, notably in the high-momentum bins. FGD1 and FGD2 are correlated as expected, and the selections in each FGD is correlated more.
+The new ND280 covariance matrix is shown in \autoref{fig:nd280_cov_2018} and \autoref{fig:nd280_corr_2018}\footnote{The matrices are not directly comparable to the 2017 matrices in \autoref{fig:nd280_cov} and \autoref{fig:nd280_corr} because the dominant parameter switched from \pmu to \cosmu. Hence parameters now run $\{\cos\theta_\mu^i,p_\mu^j\} = \{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^1,p_\mu^2\},...\{\cos\theta_\mu^1,p_\mu^N\}$ instead of $\{\cos\theta_\mu^i,p_\mu^j\} = \{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^2,p_\mu^1\},...\{\cos\theta_\mu^N,p_\mu^1\}$}. There are many similarities with the 2017 matrices: the largest systematics are $\sim50\%$, notably in the high-momentum bins. FGD1 and FGD2 are correlated as expected, and the selections in each FGD is correlated more.
 \begin{figure}[h]
 	\includegraphics[width=0.7\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
 	\caption{$\sqrt{\text{Covariance}}$ for the reduced ND280 parameterisation}
@@ -250,10 +247,10 @@ The new ND280 covariance matrix is shown in \autoref{fig:nd280_cov_2018} and \au
 \end{figure}
 
 \subsection{The Neutrino-Matter Interaction}
-The interaction systematics are similar to \autoref{subsec:syst_xsec} with two changes: a new FSI tune was developed, and an uncertainty on radiative corrections was applied.
+The interaction systematics are similar to \autoref{subsec:syst_xsec} with two changes: a new FSI tune was developed, and an uncertainty from radiative corrections was applied.
 
 \paragraph{Pion Final State Interactions}
-The new FSI tune\cite{thesis_elder} did not change the underlying model, but applied a more robust fitting method, extending the scattering data to heavier targets such as oxygen, aluminium, iron and lead, including fresh data from the dedicated DUET experiment\cite{duet}. It also removes the high energy charge exchange pion final state parameter. The new constraints are shown in \autoref{tab:pion_fsi_2018}, and is a reduction for the quasi-elastic and charge exchange parameters, but is otherwise an inflation. The inelastic and quasi-elastic high energy probabilities double in uncertainty. The absorption and charge exchange central values move by $\sim1\sigma$ from the old recommendation. However, the correlations are now fully evaluated and the expectation is to reduce the systematics by $\sim50\%$.
+The new FSI tune\cite{thesis_elder} did not change the underlying model, but applied a more robust fitting method, extending the scattering data to heavier targets such as oxygen, aluminium, iron and lead, including new data from the dedicated DUET experiment\cite{duet}. It also removed the high energy charge exchange pion final state parameter. The new constraints are shown in \autoref{tab:pion_fsi_2018}, and is a reduction for the quasi-elastic and charge exchange parameters, but is otherwise an inflation. The inelastic and quasi-elastic high energy probabilities double in uncertainty. The absorption and charge exchange central values move by $\sim1\sigma$ from the old recommendation. However, the correlations are now fully evaluated and the expectation is to reduce the systematics by about 50\%.
 \begin{table}[h]
 	\begin{tabular}{l | c c}
 		\hline
@@ -268,12 +265,12 @@ The new FSI tune\cite{thesis_elder} did not change the underlying model, but app
 		\hline
 		\hline
 	\end{tabular}
-\caption{New pion final state interaction central values and uncertainties introduced for 2018 analyses}
+\caption{New pion final state interaction central values and uncertainties introduced for 2018 analyses.}
 \label{tab:pion_fsi_2018}
 \end{table}
 
 \paragraph{Coulomb Corrections}
-As the anti-neutrino statistics increased, a systematic was included to account for the Coulomb effect of a lepton leaving the interaction nucleon and nucleus. $\mu^+/e^+$ receive a repulsive force and $\mu^-/e^-$ an attractive force, and is simply modelled by shifting the true lepton momentum by a fixed amount, dependent on the target nucleus\cite{coulomb1, coulomb2}. The shifts are shown in \autoref{tab:coulomb_shifts}.
+As the anti-neutrino statistics increased, a systematic uncertainty was included to account for the Coulomb effect of a lepton leaving the interaction nucleon and nucleus. $\mu^+/e^+$ receive a repulsive force and $\mu^-/e^-$ an attractive force, and is simply modelled by shifting the true lepton momentum by a fixed amount, dependent on the target nucleus\cite{coulomb1, coulomb2}. The shifts are shown in \autoref{tab:coulomb_shifts}.
 \begin{table}[h]
 	\begin{tabular}{l | c c}
 		\hline
@@ -288,11 +285,10 @@ As the anti-neutrino statistics increased, a systematic was included to account 
 		\caption{Lepton momentum shifts as a result of Coulomb corrections}
 		\label{tab:coulomb_shifts}
 \end{table}
-
-Since the relative effect of the Coulomb shift is smaller at higher momentum, a correlated 3\% total uncertainty (2\% on $\nu$, 1\% on $\bar{\nu}$ negatively correlated with each other) is applied to CC inclusive $\nu$ and $\bar{\nu}$ with $0.4 < E_\nu < 0.6 \text{ GeV}$.
+Since the relative effect of the Coulomb shift is smaller at higher momentum the systematic is only applied to CC inclusive $\nu$ and $\bar{\nu}$ with $0.4 < E_\nu < 0.6 \text{ GeV}$. A correlated 3\% total uncertainty (2\% on $\nu$, 1\% on $\bar{\nu}$ negatively correlated with each other) is imposed.
 
 \paragraph{Covariance Matrix}
-The new covariance and correlation matrices for the interaction systematics are presented in \autoref{fig:xsec_cov_corr_2018}. As previously noted, the pion FSI parameters (upper right corner) are now fully correlated which gives rise to smaller overall pion FSI systematics. The new CC normalisation from uncertainties in the Coulomb correction is shown in the middle of the matrix.
+The new covariance and correlation matrices for the interaction systematics are presented in \autoref{fig:xsec_cov_corr_2018}. As previously noted, the pion FSI parameters (upper right corner) are now fully correlated which gives rise to smaller overall pion FSI systematics. The new CC normalisation from uncertainties in the Coulomb correction are visible in the middle of the matrix.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/niwg/xsec_covariance_2018a_NOMINAL_v11_xseccov}
@@ -309,7 +305,7 @@ The new covariance and correlation matrices for the interaction systematics are 
 \section{Nominal Model Prediction}
 Using the nominal model and applying the multiplicative nominal weights, the event rates in \autoref{tab:detailed_eventrate_2018} are obtained.
 
-As expected from the large increase in POT, run 7 and 8 almost doubles the data for the FHC and RHC selections. There are now 67,000 FHC \numu, 13,000 RHC \numubar, and 5,000 RHC \numu CC0$\pi$ events, totalling 82,000. The FGD1 and FGD2 equivalent selections are consistent, and CC0$\pi$ selections are generally underestimated by 0-6\%, CC1$\pi$ overestimated by the same amount, and CCOther underestimated by 9-26\% for all FGDs and beam running modes. Averaging over all the selections, the nominal model underestimates the data by 6\%.
+As expected from the large increase in POT, run 7 and 8 almost doubles the data for the FHC and RHC selections. There are now 82,000 CC0$\pi$events---67,000 FHC \numu, 13,000 RHC \numubar, and 5,000 RHC \numu. The FGD1 and FGD2 selections are consistent and CC0$\pi$ selections are generally underestimated by 0-6\%, CC1$\pi$ overestimated by the same amount, and CCOther underestimated by 9-26\% for all FGDs and beam running modes. Averaging over all the selections, the nominal model underestimates the data by 6\%.
 
 % Full matrix
 %\begin{table}[h]
@@ -388,21 +384,21 @@ As expected from the large increase in POT, run 7 and 8 almost doubles the data 
     \hline
     \hline
   \end{tabular}
-  \caption{Observed and predicted event rates for the different ND280 selections for the 2018 analysis}
+  \caption{Observed and predicted event counts for the different ND280 selections for the 2018 analysis}
   \label{tab:detailed_eventrate_2018}
 \end{table}
 
-The 2D \pmu \cosmu distributions are found in \autoref{chap:nominal_mc_2018}. The nominal 2D distributions are projected onto \pmu and \cosmu separately, showing their mode contributions in the nominal model. The distributions for FGD1 FHC \numu selections are shown in \autoref{fig:nominal1D_pmu_fhc_2018}. For CC0$\pi$ sees the same behaviour as in 2017 (\autoref{fig:nominal1D_pmu}), with the low momentum underestimated until the event peak at 500 MeV, which after 1 GeV is mostly well modelled. The CC1$\pi$ distributions look marginally more consistent with data compared to 2017, but there is still a consistent overestimation in $0.5 < p_\mu < 1\text{ GeV}$, with a slight underestimation at the event peak. The CCOther distributions are again grossly underestimated throughout $p_\mu$ between 10 and 20\%. FGD2 looks particularly like a normalisation effect.
+The 2D \pmu \cosmu distributions are found in \autoref{chap:nominal_mc_2018}. The nominal 2D distributions are projected onto \pmu and \cosmu separately, showing their mode contributions in the nominal model. The distributions for FGD1 FHC \numu selections are shown in \autoref{fig:nominal1D_pmu_fhc_2018}. CC0$\pi$ sees the same behaviour as in 2017 (\autoref{fig:nominal1D_pmu}), with the low momentum underestimated until the event peak at 500 MeV, which after 1 GeV is mostly well modelled. The CC1$\pi$ distributions look marginally more consistent with data compared to 2017, but there is a consistent overestimation in $0.5 < p_\mu < 1\text{ GeV}$, with a slight underestimation at the event peak. The CCOther distributions are again grossly underestimated throughout $p_\mu$ between 10 and 20\%. FGD2 looks particularly like a normalisation effect.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=55,trim={0mm 125mm 40mm 0mm},clip]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
 	\end{subfigure}
-\begin{subfigure}[t]{0.2\textwidth}
-\includegraphics[width=\textwidth,page=55,trim={0mm 55mm 40mm 70mm},clip]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-\end{subfigure}
-\begin{subfigure}[t]{0.2\textwidth}
-\includegraphics[width=\textwidth,page=55,trim={0mm 0mm 40mm 140mm},clip]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
-\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=55,trim={0mm 55mm 40mm 70mm},clip]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=55,trim={0mm 0mm 40mm 140mm},clip]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
+	\end{subfigure}
 
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=56]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
@@ -533,7 +529,7 @@ Turning attention to the \cosmu projections of the FHC \numu selections in \auto
 	\label{fig:nominal1D_cosmu_fhc_2018}
 \end{figure}
 
-The RHC \numubar selection's \cosmu projections are shown in \autoref{fig:nominal1D_cosmu_rhc_numubar_2018}, where the CC0$\pi$ echoes the \numu equivalent: underestimation at high angles up to \cosmu= 0.85, above which FGD1 oscillates between over and under estimate, and FGD2 consistently underestimates at 10\%, just within the statistical error of the data. As for the \pmu projection, the 1$\pi$ selections are mostly within statistical error except for the most forward-going bin, which sees an underestimate for FGD1 and an overestimate for FGD2. The CCOther distributions are both almost consistently underestimated with the exception of three bins in total, although each of the three are within statistical error of the data. 
+The RHC \numubar selections' \cosmu projections are shown in \autoref{fig:nominal1D_cosmu_rhc_numubar_2018}, where the CC0$\pi$ echoes the \numu equivalent: underestimation at high angles up to \cosmu= 0.85, above which FGD1 oscillates between over and under estimate, and FGD2 consistently underestimates at 10\%, just within the statistical error of the data. As for the \pmu projection, the 1$\pi$ selections are mostly within statistical error except for the most forward-going bin, which sees an underestimate for FGD1 and an overestimate for FGD2. The CCOther distributions are both almost consistently underestimated with the exception of three bins in total, although each of the three are within statistical error of the data. 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=55,trim={0mm 125mm 40mm 0mm},clip]{{figures/mach3/2018/Selection/2018_RedNDmatrix_rebin_verbose_may_noweights_ND280_nom}}
@@ -642,13 +638,13 @@ The summary of each mode contribution to the selections is shown in \autoref{tab
 		\hline
 		\hline
 	\end{tabular}
-	\caption{Percentage mode breakdown for the binned nominal \textbf{scaled} Monte-Carlo samples, \textbf{boldface} indicates interactions targeted by specific selections. Directly comparable to 2017 results in \autoref{tab:nominal_mode_afterscale}.}
+	\caption{Percentage mode breakdown for the binned nominal scaled Monte-Carlo samples, boldface indicates interactions targeted by specific selections. Directly comparable to 2017 results in \autoref{tab:nominal_mode_afterscale}.}
 	\label{tab:nominal_mode_afterscale_2018}
 \end{table}
 
 \autoref{tab:detailed_eventrate_2018} shows the effect on the overall event rate in applying the different classes of weights.
 \begin{sidewaystable}
-  \resizebox{\textwidth}{!}{%
+	\centering
     \begin{tabular}{ l | c | c | c | c | c | c | c }
     \hline
     \hline
@@ -681,14 +677,13 @@ The summary of each mode contribution to the selections is shown in \autoref{tab
       \hline
       \hline
     \end{tabular}
-        }
-        \caption{Event rates broken by type of weight applied}
+    \caption{Event rates broken by type of weight applied}
   \label{tab:detailed_eventrate_2018}
 \end{sidewaystable}
 
 \section{Fitting Asimov Data}
 \label{sec:asimov_2018}
-In this section the nominal model predictions outlined above are set to the data. Closure tests and expected sensitivity studies are made, as was done in \autoref{sec:asimov} for the 2017 analysis.
+In this section the nominal model predictions outlined above are set to be the data. Closure tests and expected sensitivity studies are made, as was done in \autoref{sec:asimov} for the 2017 analysis.
 
 \subsection{Log-Likelihood Scans}
 Since new selections, double the data and finer binning have been added in the 2018 analysis, relatively large increases in sensitivity to many parameters are expected in the likelihood scans.
@@ -788,10 +783,9 @@ To facilitate direct comparisons between 2017 and 2018 analyses, the likelihood 
 	\caption{Asimov likelihood scans for 2017 and 2018 analyses}
 	\label{fig:llh_2017_vs_2018}
 \end{figure}
+Finally the effect coming from the new data versus the new data with rebinning and new selections is shown in \autoref{fig:llh_multitrack_vs_multipi}. The flux parameters all varied less than 5\%, whereas some interaction parameters see larger changes. The amount of data is clearly the larger contributor to the increased sensitivity compared to the binning and selection.
 
-Finally the effect coming from the new data versus the new data with rebinning and new selections is shown in \autoref{fig:llh_multitrack_vs_multipi}. The flux parameters all varied less than 5\%, whereas many interaction parameters see large changes. 
-
-Most of the parameters change by approximately a normalisation whereas the pion final state parameters and 2p2h shape parameters change shape. A clear example of this is the pion final-state-interaction parameters in \autoref{fig:llh_multitrack_vs_multipi_fsi}. They all see the largest increase in response, often with a complex shape. This is somewhat expected since the RHC selections in 2017 only had one selection per FGD with reconstructed pions (NTrack) but had two per FGD for the FHC selections (1$\pi$ and Other). Many of the FSI parameters get stronger constraints from using both $\pi^+$ and $\pi^-$ data, which is better satisfied with the new RHC selections.
+However, the pion final state parameters and 2p2h shape parameters change shape considerably, and see increased sensitivity by $\times1.5-2.0$. A clear example of this is the pion final-state-interaction parameters in \autoref{fig:llh_multitrack_vs_multipi_fsi}. They all see the largest increase in response, often with a complex shape. This is somewhat expected since the RHC selections in 2017 only had one selection per FGD with reconstructed pions (NTrack) but had two per FGD for the FHC selections (1$\pi$ and Other). Many of the FSI parameters get stronger constraints from using both $\pi^+$ and $\pi^-$ data, which is better satisfied with the new RHC selections.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.32\textwidth}
@@ -829,9 +823,7 @@ Most of the parameters change by approximately a normalisation whereas the pion 
 \end{figure}
 
 \subsection{Prior Predictive Spectrum}
-As was done in \autoref{sec:Asimov_prior} the prior's predictive power on the Asimov data set is checked. The predictive spectrum is expected to largely agree with the Asimov data and produce large uncertainties and thereby p-values around 0.5.
-
-\autoref{fig:prior_predictive_asimov_2018} shows the resulting two-dimensional p-value, agreeing with the expectation.
+As was done in \autoref{sec:Asimov_prior} the prior's predictive power on the Asimov data set is checked. The predictive spectrum is expected to largely agree with the Asimov data and produce large uncertainties and thereby p-values around 0.5. \autoref{fig:prior_predictive_asimov_2018} shows the resulting two-dimensional p-value, agreeing with the expectation.
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/2018/asimov/pred/17May_MultiPi_CovFix_Final_pospred_PriorPred_procs.pdf}
@@ -843,28 +835,28 @@ As was done in \autoref{sec:Asimov_prior} the prior's predictive power on the As
 	\label{fig:prior_predictive_asimov_2018}
 \end{figure}
 
-\autoref{tab:asimov_prior_pred_2018} shows the event rates after making correlated throws of the systematics with the test-statistic to Asimov data. Comparing to the 2017 equivalent in \autoref{tab:asimov_prior_pred} there is a similar level of uncertainty as expected. As in 2017, the prior predictive on Asimov data produces an 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. There is a consistent skew in the prior predictive ``best-fit'' where it overestimates the Asimov data set, likely due to missing covariance matrices between cross-section, flux and ND280 parameters. The contribution to the test-statistic is much larger compared to 2017, primarily due to many more bins in each selection.
+\autoref{tab:asimov_prior_pred_2018} shows the event rates after making correlated throws of the systematics with the test-statistic against Asimov data. Comparing to the 2017 equivalent in \autoref{tab:asimov_prior_pred} there is a similar level of uncertainty as expected. As in 2017, the prior predictive on Asimov data produces an 11\% uncertainty on the total event rate, with 13\% on the CC0$\pi$, 11\% on CC1$\pi$ and 13\% on CCOther. There is a consistent skew in the prior predictive ``best-fit'' where it overestimates the Asimov data set, likely due to missing covariance matrices between cross-section, flux and ND280 parameters. The contribution to the test-statistic is much larger compared to 2017, primarily due to the many more bins in each selection.
 \begin{table}
 	\begin{tabular} {l | c c | c}
 		\hline
 		\hline
 		Sample 			& Nominal	& Prior Pred.	& $-2\log\mathcal{L}_S$ \\
 		\hline
-		FGD1 0$\pi$             & 31529.3   & $32347.8\pm4135.7$  & 26.1   \\
-		FGD1 1$\pi$             & 7998.1    & $8106.6\pm8899.4$   & 2.1   \\
-		FGD1 Other              & 6793.7   & $6894.1\pm858.4$   & 3.1 \\
+		FGD1 0$\pi$             & 31529.3   & $32347.8\pm4135.7$  & 26.1   	\\
+		FGD1 1$\pi$             & 7998.1    & $8106.6\pm8899.4$   & 2.1   	\\
+		FGD1 Other              & 6793.7   & $6894.1\pm858.4$   & 3.1 		\\
 		\hline
-		FGD2 0$\pi$             & 31734.1  & $32572.8\pm4012.8$  & 26.5   \\
+		FGD2 0$\pi$             & 31734.1  & $32572.8\pm4012.8$  & 26.5  \\
 		FGD2 1$\pi$             & 6419.0   & $6511.2\pm702.4$   & 2.0    \\
 		FGD2 Other              & 6562.8   & $6652.8\pm786.4$    & 3.0   \\
 		\hline
 		FGD1 \numubar 0$\pi$    & 6371.3   & $6541.9\pm847.5$   & 7.7   \\
 		FGD1 \numubar 1$\pi$    & 533.3   	& $530.5\pm115.5$    & 4.6  \\
-		FGD1 \numubar Other     & 1023.4   & $1037.4\pm191.1$    & 0.8   \\
+		FGD1 \numubar Other     & 1023.4   & $1037.4\pm191.1$    & 0.8  \\
 		\hline
 		FGD2 \numubar 0$\pi$    & 6283.4   & $6444.7\pm830.5$   & 8.4   \\
 		FGD2 \numubar 1$\pi$    & 483.5   	& $486.8\pm102.3$    & 0.6  \\
-		FGD2 \numubar Other     & 944.0   	& $953.2\pm204.1$    & 0.6   \\
+		FGD2 \numubar Other     & 944.0   	& $953.2\pm204.1$    & 0.6  \\
 		\hline
 		FGD1 \numu RHC 0$\pi$   & 2485.5   & $2543.8\pm429.5$   & 3.3   \\
 		FGD1 \numu RHC 1$\pi$   & 855.9   	& $861.9\pm107.7$     & 0.5  \\
@@ -885,9 +877,9 @@ As was done in \autoref{sec:Asimov_prior} the prior's predictive power on the As
 
 \subsection{Fitting to Asimov Data}
 \label{sec:asimov_fit_2018}
-The model is now fit to the Asimov data to estimate the sensitivity and perform closure tests. Fits using different ND280 covariance matrices are also done, comparing results using the nominal binned multi-track to the binned multi-$\pi$ RHC selections, and fitting without any detector parameters.
+The model is fit to the Asimov data to estimate the sensitivity and perform closure tests. Fits using different ND280 covariance matrices are also done, comparing results using the nominal binned multi-track to the binned multi-$\pi$ RHC selections, and fitting without any detector parameters.
 
-The MCMC parameter for the different studies are shown in \autoref{tab:mcmc_asimov_2018}. The primary reason behind the low acceptance for the ``Full cov'' (using the full ND280 covariance matrix) is the 4238 parameters being fit simultaneously.
+The MCMC parameters for the different studies are shown in \autoref{tab:mcmc_asimov_2018}. The primary reason behind the low acceptance for the ``Full cov'' (using the full ND280 covariance matrix) is the 4238 parameters being fit simultaneously, making MCMC parameter tuning cumbersome.
 \begin{table}[h]
 	\begin{tabular}{l | c c c}
 		\hline
@@ -906,9 +898,7 @@ The MCMC parameter for the different studies are shown in \autoref{tab:mcmc_asim
 \end{table}
 
 \subsubsection{Full and Reduced ND280 Detector Systematics Parameterisation}
-Simultaneous with checking the performance of the parameterisation, a fit to the Asimov data using the reduced ND280 covariance matrix (1076 ND280 detector parameters) is compared to one using the full ND280 covariance matrix (4238 ND280 detector parameters).
-
-\autoref{fig:asimov_fit_2018_full_red_beam_fhc} and \autoref{fig:asimov_fit_2018_full_red_beam_rhc} show the flux parameters after the fit to Asimov data using the two matrices. There is a consistent bias in all flux parameters for both ND280 and SK, which appear to be a normalisation offset by 1-2\% for the reduced parameterisation, and 5\% for the full parameterisation. The ND280 and SK parameters follow the same pattern throughout, and the uncertainties are approximately halved compared to the prior, similar to the 2017 fit to Asimov data.
+A fit to the Asimov data using the reduced ND280 covariance matrix (1076 ND280 detector parameters) is compared to one using the full ND280 covariance matrix (4238 ND280 detector parameters). \autoref{fig:asimov_fit_2018_full_red_beam_fhc} and \autoref{fig:asimov_fit_2018_full_red_beam_rhc} show the flux parameters after the fit to Asimov data using the two matrices. There is a consistent bias in all flux parameters for both ND280 and SK, which appear to be a normalisation offset by 1-2\% for the reduced parameterisation, and 5\% for the full parameterisation. The ND280 and SK parameters follow the same pattern throughout, and the uncertainties are approximately halved compared to the prior, similar to the 2017 fit to Asimov data.
 \begin{figure}[h]
 	\centering
 \begin{subfigure}[t]{0.1\textwidth}
@@ -1005,7 +995,7 @@ Simultaneous with checking the performance of the parameterisation, a fit to the
 
 Looking at the cross-section parameters after the fit to Asimov data in \autoref{fig:asimov_fit_2018_full_red_xsec}, the pattern is much the same as in 2017. $p_F$, 2p2h normalisation $\bar{\nu}$, 2p2h shape, BeRPA A and BeRPA E appear biased from the Asimov parameter value, whereas the rest seem to find it satisfactorily. 
 
-The reduction in parameter uncertainties from the doubling of data is particularly noticeable for 2p2h normalisation $\nu$, which is reduced to 10\% from 20\%, $M_A^{QE}$ which now has a similar uncertainty to fits from bubble chamber data, the 2p2h shape parameters which now have 20\% uncertainty, and the BeRPA B parameter, whose uncertainty more than halves compared to the prior. Single pion production and pion FSI parameters also see reduced uncertainties by between 1/2 to 1/4 of the prior.
+The reduction in parameter uncertainties from doubling of data is particularly noticeable for 2p2h normalisation which is reduced to 10\% from 20\%, $M_A^{QE}$ which now has a similar uncertainty to fits from bubble chamber data, the 2p2h shape parameters which now have 20\% uncertainty, and the BeRPA B parameter, whose uncertainty more than halves compared to the prior. Single pion production and pion FSI parameters also see reduced uncertainties by between 1/2 to 1/4 of the prior.
 
 The two ND280 covariance matrices are compatible for the interaction parameters.
 \begin{figure}[h]
@@ -1038,11 +1028,9 @@ The two ND280 covariance matrices are compatible for the interaction parameters.
 \end{figure}
 
 \subsubsection{Comparing to the Multi-Track Selection}
-As with the likelihood scan, the impact of selection is now made. The results from using the updated selections for the 2018 analysis are compared to the selection and binning of 2017 (RHC multi-track, no rebinning), including the new run 7 and 8 data for both.
+As with the likelihood scan, the impact of the selection is studied. Results from using the updated selections for the 2018 analysis are compared to the selection and binning of 2017 (RHC multi-track, no rebinning), including the new run 7 and 8 data for both.
 
-In the light of the biases in the flux parameters from using the multi-$\pi$ samples, and the biases observed in the 2017 analysis' Asimov study (\autoref{sec:asimov_fit}), it is particularly interesting to see the flux parameters largely unbiased for the multi-track selection in \autoref{fig:asimov_fit_2018_mpi_mtrack_fhc} and \autoref{fig:asimov_fit_2018_mpi_mtrack_rhc}. The two selections follow a similar pattern, although the fit using the multi-$\pi$ is offset by 1-2\%. The ND280 and SK flux parameters echo each other and are compatible.
-
-Comparing the size of the errors from the two selections, there is a marginally smaller error for the multi-$\pi$ selection for the flux parameters, although barely discernible.
+In the light of the biases in the flux parameters from using the multi-$\pi$ samples, and the biases observed in the 2017 analysis' Asimov study (\autoref{sec:asimov_fit}), it is particularly interesting to see the flux parameters largely unbiased for the multi-track selection in \autoref{fig:asimov_fit_2018_mpi_mtrack_fhc} and \autoref{fig:asimov_fit_2018_mpi_mtrack_rhc}. The two selections follow a similar pattern, although the fit using the multi-$\pi$ is offset by 1-2\%. The ND280 and SK flux parameters echo each other and are compatible. Comparing the size of the errors from the two selections, there is a marginally smaller error for the multi-$\pi$ selection for the flux parameters, although barely discernible.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.1\textwidth}
@@ -1170,7 +1158,7 @@ The interaction parameters in \autoref{fig:asimov_fit_2018_mpi_mtrack_xsec} are 
 \subsubsection{Asimov Without Varying ND280 Detector Parameters}
 To investigate the biases in the flux parameters seen in the fit to Asimov data for both the new ND280 covariance matrices for the multi-$\pi$ selections, a fit to the Asimov data is made without varying the ND280 parameters. This should help answer if there are issues related to dimensionality in the new fit, since the new parameterisation fits approximately double the number of parameters (1307 vs 781) with a large increase in number of bins (4238 vs 1624).
 
-\autoref{fig:asimov_fit_2018_nodet_fhc} presents the FHC flux parameters without varying the ND280 systematics, showing the central values and errors evaluated with the arithmetic mean, a Gaussian fit and the highest-posterior-density. All of the biases seen in the previous Asimov fit are gone. The uncertainties are reduced due to the marginalisation over the ND280 systematics are essentially delta functions at their nominal values. The same is true for the RHC parameters in \autoref{fig:asimov_fit_2018_nodet_rhc}.
+\autoref{fig:asimov_fit_2018_nodet_fhc} presents the FHC flux parameters without varying the ND280 systematics. All of the biases seen in the previous Asimov fit are gone. The uncertainties are reduced due since the ND280 systematics are not varied. The same is true for the RHC parameters in \autoref{fig:asimov_fit_2018_nodet_rhc}.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.1\textwidth}
@@ -1310,7 +1298,7 @@ In conclusion, it appears that the bias in the flux parameters come from the ND2
 \subsection{Covariance Matrix from the Asimov Fit}
 The fit to Asimov data is here used to deduce the parameter correlations.
 
-\autoref{fig:asimov_full_corr_2018} shows the full $\sqrt{}$ covariance and correlation matrix for the flux (bottom left corner) and cross-section (upper right corner) parameters. Many patterns are repeated from the 2017 case (\autoref{fig:asimov_full_corr}): the flux parameters are internally correlated where the cross-section parameters are mostly separated into categories of correlations (e.g. CC0$\pi$-CC0$\pi$ correlations are strong, CC0$\pi$-CC1$\pi$ are not).
+\autoref{fig:asimov_full_corr_2018} shows the full $\sqrt{}$ covariance and correlation matrix for the flux (bottom left corner) and cross-section (upper right corner) parameters. Many patterns are repeated from the 2017 case (\autoref{fig:asimov_full_corr}): the flux parameters are internally correlated and the cross-section parameters are mostly separated into categories of correlations (e.g. CC0$\pi$-CC0$\pi$ correlations are strong, CC0$\pi$-CC1$\pi$ are not).
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/2018/asimov/corr/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_drawCorr}
@@ -1324,9 +1312,9 @@ The fit to Asimov data is here used to deduce the parameter correlations.
 	\label{fig:asimov_full_corr_2018}
 \end{figure}
 
-Looking at the more digestible version, excluding the SK flux parameters, in \autoref{fig:asimov_nd_corr_2018}, the strongest correlations between the flux and interaction parameters are for the CC DIS parameter and the $M_A^{QE}$, BeRPA A, BeRPA B and $C_5^A$ parameter in which the latter group are especially strong around the flux peak.
+Looking at the more digestible version in \autoref{fig:asimov_nd_corr_2018}---which excludes the SK flux parameters---the strongest correlations between the flux and interaction parameters are for the CC DIS parameter and the $M_A^{QE}$, BeRPA A, BeRPA B and $C_5^A$ parameter in which the latter group are especially strong around the flux peak.
 
-For the flux parameters, the largest uncertainties are seen for the high energy wrong-sign \nue parameters, since there barely is any data to constrain it. Furthermore, the production processes leading to such neutrinos are only weakly correlated with the lower energy right-sign processes, which is why it is weakly constrained by the prior covariance.
+For the flux parameters, the largest uncertainties are seen for the high energy wrong-sign \nue parameters, since there is barely any data to constrain it. Furthermore, the production processes leading to such neutrinos are only weakly correlated with the lower energy right-sign processes, which is why it is weakly constrained by the prior covariance.
 
 The largest interaction uncertainties are the 2p2h normalisations, BeRPA E, CC coherent normalisations and the NC parameters, which again is expected since the lack of data of such processes and $Q^2$, compatible with the 2017 fit.
 \begin{figure}[h]
@@ -1380,9 +1368,7 @@ Finally comparing the cross-section correlation matrix from the fit to Asimov da
 \end{figure}
 
 \subsection{Posterior Predictive Spectrum}
-The posterior predictive \pmu \cosmu spectrum and p-values are calculated using the MCMC with the reduced covariance matrix outlined above. The calculation proceeds the same as in \autoref{sec:asimov_pospred} using 20,000 randomly chosen steps after a conservative 1/4 burn-in (corresponding to 975,000 steps). 
-
-The expectation for the p-values is close to 1.0 since the post-fit constraints are small relative statistical fluctuations, as was the case in the 2017 analysis. \autoref{fig:postpred_asimov_2018} shows the two p-values, which both are exactly 1.0. 
+The posterior predictive \pmu \cosmu spectrum and p-values are calculated using the MCMC with the reduced covariance matrix outlined above. The calculation proceeds as described in \autoref{sec:asimov_pospred} using 20,000 randomly chosen steps after a conservative 1/4 burn-in (corresponding to 975,000 steps). The expectation for the p-values is close to 1.0 since the post-fit constraints are small relative statistical fluctuations, as was the case in the 2017 analysis. \autoref{fig:postpred_asimov_2018} shows the two p-values, which both are exactly 1.0. 
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 11mm}, clip,page=1]{figures/mach3/2018/asimov/pred/2018a_MultiPi_Binningv6_NewCov_Asimov_merge_PostPredStore_SampLLH_procs}
@@ -1394,7 +1380,7 @@ The expectation for the p-values is close to 1.0 since the post-fit constraints 
 	\label{fig:postpred_asimov_2018}
 \end{figure}
 
-Moving attention to the posterior predictive spectrum's event rates in \autoref{tab:asimov_posterior_pred_2018}, the reduction in the post-fit event rate uncertainty compared to the prior predictive is large: from 12411.1 to 340.9 overall, 4245.4 to 168.3 for CC0$\pi$, 891.8 to 76.6 for CC1$\pi$ and 827.6 to 76.2 for CCOther. The reduction in uncertainty is comparable to 2017, and overall doubling the statistics has the effect of moving the percentage uncertainty from 0.40\% to 0.30\%. The CC0$\pi$ uncertainty moves from 0.70\% to 0.53\%, CC1$\pi$ from 1.3\% to 0.96\%, CCOther from 1.4\% to 1.1\%. The anti-neutrino selections CC0$\pi$ moves from 1.5\% to 1.1\%.
+Moving attention to the posterior predictive spectrum's event rates in \autoref{tab:asimov_posterior_pred_2018}, the reduction in the post-fit event rate uncertainty compared to the prior predictive is large: from 12411.1 to 340.9 overall, 4245.4 to 168.3 for CC0$\pi$, 891.8 to 76.6 for CC1$\pi$ and 827.6 to 76.2 for CCOther. The reduction in uncertainty is comparable to 2017, and overall doubling the statistics has the effect of moving the percentage uncertainty from 0.40\% to 0.30\%. The CC0$\pi$ uncertainty moves from 0.70\% to 0.53\%, CC1$\pi$ from 1.3\% to 0.96\%, CCOther from 1.4\% to 1.1\%. The anti-neutrino CC0$\pi$ selections moves from 1.5\% to 1.1\%.
 \begin{table}[h]
 	\begin{tabular} {l | c c | c}
 		\hline
@@ -1437,7 +1423,7 @@ Moving attention to the posterior predictive spectrum's event rates in \autoref{
 \label{sec:data_2018}
 The Asimov fit stumbled upon one main issue: the 1-2\% flux normalisation bias when using the multi-$\pi$ selection. With this in mind the multi-track selection (which showed no bias) is fit to data, as is the multi-$\pi$ selection with the reduced ND280 covariance matrix, and the multi-$\pi$ selection with the full ND280 covariance matrix.
 
-The details for the MCMC that were obtained for the different fits are shown in \autoref{tab:mcmc_data_2018}. The lower acceptance probability is a direct result of the number of ND280 parameters being fit: the multi-track fit has 556, the nominal covariance has 1076 and the full covariance has 4238 ND280 parameters. All chains were monitored for stability and often converged within 1/8th of the total steps requested. For the parameter plots a conservative burn-in of 1/4 the total is used.
+The details for the MCMC that were obtained for the different fits are shown in \autoref{tab:mcmc_data_2018}. The lower acceptance probability is a direct result of the number of ND280 parameters being fit: the multi-track fit has 556, the nominal covariance has 1076 and the full covariance has 4238 ND280 parameters. All chains were monitored for stability and often converged within 1/8th of the total steps requested. For the parameter plots a conservative burn-in of 1/4 is used.
 \begin{table}[h]
 	\begin{tabular}{l | c c c}
 		\hline
@@ -1454,9 +1440,9 @@ The details for the MCMC that were obtained for the different fits are shown in 
 	\label{tab:mcmc_data_2018}
 \end{table}
 
-The summary for the data predictive distributions are shown in \autoref{tab:postfit_eventrate_2018} using the reduced ND280 covariance matrix. In contrast to the 2017 analysis, the prior predictive distribution predicts the RHC 1$\pi$ and Other distributions relatively well. This is reflected in the marginal decrease in the test-statistic, e.g. 42.7 to 40.0 for FGD2 \numubar $1\pi$. The same distribution barely sees a change in the prediction from the prefit to the postfit, although the uncertainties are effectively reduced ($542.7\pm127.2$ to $542.9\pm21.6$). However, the prior predictive distributions do a poor job predicting the central values of the data of the high statistics FHC distributions, although often inside the 1$\sigma$ uncertainties from the priors.
+The summary for the predictive distributions against data are shown in \autoref{tab:postfit_eventrate_2018} using the reduced ND280 covariance matrix. In contrast to the 2017 analysis, the prior predictive distribution predicts the RHC 1$\pi$ and Other distributions relatively well. This is reflected in the marginal decrease in the test-statistic after the fit, e.g. 42.7 to 40.0 for FGD2 \numubar $1\pi$. The same distribution barely sees a change in the prediction from the prefit to the postfit, although the uncertainties are effectively reduced ($542.7\pm127.2$ to $542.9\pm21.6$). However, the prior predictive distributions do a poor job predicting the central values of the data of the high statistics FHC distributions, although often inside the 1$\sigma$ uncertainties from the priors.
 
-Inspecting the sample test-statistic, the $-2\log\mathcal{L}_S/\text{nBins}$ goes from 1.50 to 1.12, a deterioration from the 2017 value of 1.07. The fit is driven by the FHC 0$\pi$ distributions (35.9\% of statistic) and the 1$\pi$, Other and RHC 0$\pi$ making up between 10-15\% for both FGDs. The new RHC 1$\pi$ and Other distributions have a small contribution to the statistic in total. Interestingly, the test statistics of FGD1 \numubar 1$\pi$ and Other both increase by one unit after the fit.
+Inspecting the sample test-statistic, the $-2\log\mathcal{L}_S/\text{nBins}$ goes from 1.50 to 1.12, a deterioration from the 2017 value of 1.07. The fit is driven by the FHC 0$\pi$ distributions (35.9\% of the statistic) and the 1$\pi$, Other and RHC 0$\pi$ making up between 10-15\% for both FGDs. The new RHC 1$\pi$ and Other distributions make small contributions to the statistic in total. Interestingly, the test statistics of FGD1 \numubar 1$\pi$ and Other both increase by one unit after the fit, implying the prior model is similar to the posterior model in these studies.
 \begin{sidewaystable}
 	\centering
 	\begin{tabular}{ l | c c c | c c }
@@ -1498,11 +1484,9 @@ Inspecting the sample test-statistic, the $-2\log\mathcal{L}_S/\text{nBins}$ goe
 	\label{tab:postfit_eventrate_2018}
 \end{sidewaystable}
 
-\autoref{tab:2018_syst_uncertain} shows the fit uncertainties broken down by sample and systematic source. As in 2017, the fit reduces the uncertainties on the total event rate by at least one order of magnitude; from 9.9\% to 0.3\% for the total, 11.7\% to 0.5\% for 0$\pi$, 1.7\% to 1.0\% for 1$\pi$, 12.2\% to 1.0\% for Other. For the new RHC selections there are reductions of 12.9\% to 1.1\% for 0$\pi$, 23.1\% to 4.0\% for 1$\pi$ and 16.3\% to 2.8\% for Other.
+\autoref{tab:2018_syst_uncertain} shows the fit uncertainties broken down by sample and systematic source. As in 2017, the fit reduces the uncertainties on the total event rate by at least one order of magnitude; from 9.9\% to 0.3\% for the total, 11.7\% to 0.5\% for 0$\pi$, 1.7\% to 1.0\% for 1$\pi$, 12.2\% to 1.0\% for Other. For the new RHC selections there are reductions of 12.9\% to 1.1\% for 0$\pi$, 23.1\% to 4.0\% for 1$\pi$ and 16.3\% to 2.8\% for Other. Comparing to the 2017 result in \autoref{tab:postfit_eventrate}, the overall uncertainty on the event rate moves from 0.39\% to 0.3\% for the total event rate, 0.7\% to 0.5\% for FGD1 0$\pi$, 1.3\% to 1.0\% for 1$\pi$ and 1.4\% to 1.0\% for Other.
 
-Comparing to the 2017 result in \autoref{tab:postfit_eventrate}, the overall uncertainty on the event rate moves from 0.39\% to 0.3\% for the total event rate, 0.7\% to 0.5\% for FGD1 0$\pi$, 1.3\% to 1.0\% for 1$\pi$ and 1.4\% to 1.0\% for Other.
-
-The largest systematic for the FHC selections is flux and interactions at 8-10\%, which generally agrees with cross-section measurements (e.g. \cite{MIN_pion_2016,miniboone_nu_ccqe}). After the fit to ND280 data the impact on the uncertainty of the event rate more than halves. For the RHC selections with one or more pions, the detector systematics are the dominant systematic in the prior model: e.g. for FGD1 \numubar 1$\pi$ the prior detector uncertainty is 21\% whereas the FHC equivalent is 5.3\%. This is primarily due to the larger wrong-sign background in RHC and the proton background in selecting the lepton candidate. After the fit these selections are still dominated by detector systematics, albeit it at a 5\% level. For the FHC selections the ND280 uncertainties lay around 1.5-3\%, and are instead controlled equally by flux and interaction systematics.
+Before fitting to data, the largest systematic for the FHC selections is flux and interactions at 8-10\%, which generally agrees with cross-section measurements (e.g. \cite{MIN_pion_2016,miniboone_nu_ccqe}). After the fit to ND280 data the impact on the uncertainty of the event rate more than halves. For the RHC selections with one or more pions, the detector systematics are the dominant systematic in the prior model: e.g. for FGD1 \numubar 1$\pi$ the prior detector uncertainty is 21\% whereas the FHC equivalent is 5.3\%. This is primarily due to the larger wrong-sign background in RHC and the proton background in selecting the lepton candidate. After the fit these selections are still dominated by detector systematics, albeit it at a 5\% level. For the FHC selections the ND280 uncertainties lay around 1.5-3\%, and are instead controlled equally by flux and interaction systematics.
 \begin{table}
 	\begin{tabular}{l | c c | c c | c c | c c}
 		\hline
@@ -1540,14 +1524,14 @@ The largest systematic for the FHC selections is flux and interactions at 8-10\%
 	\label{tab:2018_syst_uncertain}
 \end{table}
 
-Finally, varying the combined full parameter set has a much greater impact on the event rate uncertainties due to the very strong correlations between the flux, interaction and ND280 parameters: e.g. the FGD1 FHC 0$\pi$ event rate uncertainty from the flux is 3.6\%, ND280 is 1.7\% and interaction is 3.4\% but put together they amount to 0.5\%.
+Varying the combined full parameter set has a much greater impact on reducing the event rate uncertainties due to the very strong correlations between the flux, interaction and ND280 parameters: e.g. the FGD1 FHC 0$\pi$ event rate uncertainty from the flux is 3.6\%, ND280 is 1.7\% and interaction is 3.4\% but put together they amount to 0.5\%.
 
 \subsection{Full and Reduced ND280 Systematic Parameterisation}
-As for the Asimov case in \autoref{sec:asimov_fit_2018}, the data fit is here compared to results using the full and reduced ND280 covariance. Similar results are expected for the two fits, as only small difference were found in the fit to Asimov data.
+As for the Asimov case in \autoref{sec:asimov_fit_2018}, the data fit is here compared to results using the full and reduced ND280 covariance. Similar results are expected for the two fits, as only small differences were found in the fit to Asimov data.
 
-\autoref{fig:data_full_red_rhc} shows the FHC flux parameters for the two fits, which are compatibile for the two fits. The divergence happens at higher energies, where it's likely that the reduced covariance matrix (which was binned to mostly ignore shapes at higher energies) is missing freedom to vary events which the full ND280 matrix fit can.
+\autoref{fig:data_full_red_rhc} shows the FHC flux parameters for the two fits, which are compatible. The divergence happens at higher energies, where it's likely that the reduced covariance matrix (which was binned to mostly ignore shapes at higher energies) is missing freedom to vary events which the full ND280 parameterisation can.
 
-Looking at the shape of the FHC flux parameters, there is a tendency towards the nominal at higher energies and the majority of the shape change happens below 1 GeV. The shape below 1 GeV increases the flux by 10\% below 0.5 GeV, sitting at nominal at the flux peak of 0.6 GeV, and then decreases the flux by 7\% at 0.7 GeV up until 1.5 GeV. A similar shape was observed in the 2017 analysis in \autoref{fig:flux_data_fhc}, although these results are slightly shifted upwards.
+Looking at the shape of the FHC flux parameters, there is a tendency towards the nominal at higher energies and the majority of the shape change happens below 1 GeV. The shape below 1 GeV increases the flux by 10\% below 0.5 GeV, sitting at nominal at the flux peak of 0.6 GeV, and then decreases the flux by 7\% at 0.7 GeV up until 1.5 GeV. A similar shape was observed in the 2017 analysis in \autoref{fig:flux_data_fhc}, although the results are slightly shifted upwards relative the 2017 analysis.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.1\textwidth}
@@ -1597,9 +1581,7 @@ Looking at the shape of the FHC flux parameters, there is a tendency towards the
 
 For the RHC flux parameters in \autoref{fig:data_full_red_rhc} there is good agreement using the two covariance matrices. However, an entirely different shape of the flux is present in the RHC parameters compared to the FHC parameters. The low energy normalisation is nominal, falling to 95\% below 0.5 GeV and then sharply increasing to 10\% above 1 GeV, which then sinks to nominal at 3 GeV. The wrong-sign flux is however increased at low energies, similar to the FHC flux parameters.
 
-Additionally, ND280 and SK see a slightly different behaviour around 2 GeV, where ND280 prefers a 10\% increased normalisation and the SK parameters sits at nominal. Otherwise the parameters are well mirrored.
-
-The two detector parametrisations are only visually different for the \nuebar portion of the flux and the 0.7-1.0 GeV \numubar bin.
+Additionally, ND280 and SK see a slightly different behaviour around 2 GeV, where ND280 prefers a 10\% increased normalisation and the SK parameters sits at nominal. Otherwise the parameters are well mirrored. The two detector parametrisations are only visually different for the \nuebar portion of the flux and the 0.7-1.0 GeV \numubar bin.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.1\textwidth}
@@ -1649,9 +1631,9 @@ The two detector parametrisations are only visually different for the \nuebar po
 
 \autoref{fig:data_full_red_xsec} shows the interaction parameters which are mostly compatible. Interestingly, $M_A^{QE}$ is pulled even further than in 2017, now fully compatible with bubble chamber results ($M_A^{QE}=1.04\pm0.06\text{ GeV}$). The 2p2h $\nu$ normalisation parameter is decreased relative 2017 ($1.64\pm0.21$ to $1.31\pm0.17$), whereas the $\bar{\nu}$ parameter increases ($0.80\pm0.26$ to $0.91\pm0.23$). Importantly, the 2p2h normalisation parameter for $\bar{\nu}$ is the largest difference for using the two ND280 covariance matrices, just outside of each other's $1\sigma$ uncertainty. The 2p2h shape parameters now fit very similar values for $^{12}\text{C}$ and $^{16}\text{O}$ and are not pushed towards any boundaries. The BeRPA A parameter is much closer to the nominal compared to the 2017 result, although the opposite is true for BeRPA B, which now sits 2-3$\sigma$ from the prior central value.
 
-The single pion parameters largely agree with 2017, albeit with smaller parameter errors. $C_5^A$ decreases slightly but still agrees with the prior uncertainty. The non-resonant $I_{1/2}$ background increases outside the 1$\sigma$ range but still has a large associated error. The CC DIS parameter moves away from the prior---which would be expected if the poor CC Other disagreement still exists. The NC other parameter remains at the upper boundary of the prior 1$\sigma$ uncertainty.
+The single pion parameters largely agree with 2017, albeit with smaller parameter errors. $C_5^A$ decreases slightly but still agrees with the prior uncertainty. The non-resonant $I_{1/2}$ background increases outside the 1$\sigma$ range but has a large associated error. The CC DIS parameter moves away from the prior---which would be expected if the poor CC Other disagreement still exists. The NC other parameter remains at the upper boundary of the prior 1$\sigma$ uncertainty.
 
-The pion FSI---which received new priors for this analysis---interestingly sit close to their fitted values in 2017. The reduction in uncertainty is the most dramatic for the pion FSI parameters, just like in the Asimov case.
+The pion FSI---which received new priors for this analysis---interestingly depart from their priors and are close to their fitted values in the 2017 analysis. The reduction in uncertainty is the most dramatic for the pion FSI parameters, also observed in the Asimov fit.
 
 The two detector parameterisations are mostly compatible, consistently within 1$\sigma$ of each other.
 \begin{figure}[h]
@@ -1691,11 +1673,9 @@ The two detector parameterisations are mostly compatible, consistently within 1$
 \end{figure}
 
 \subsection{Comparing to the Multi-Track Selection}
-A fit to data using the old multi-track selection with the 2017 binning using the run 2 to 8 data was made. Experiences gained from the fit to Asimov data showed less bias in the flux parameters for the multi-track selection, although the likelihood scans showed the new selection with updated binning to be more sensitive to parameters.
+A fit to data using the old multi-track selection with the 2017 binning using the run 2 to 8 data was made. The fit to Asimov data in \autoref{sec:asimov_fit} showed less bias in the flux parameters for the multi-track selection, although the likelihood scans showed the new selection with updated binning to be more sensitive to parameters.
 
-\autoref{fig:data_multitrack_multipi_fhc} shows the FHC flux parameters after the data fit. For FHC \numu, the multi-track selection sits closer to the priors and does not display the ``wavy'' oscillation between 0 and 1 GeV, seen when using the multi-$\pi$ selection. The multi-track FHC \numu flux parameters do however increase to $\sim108\%$ above 1.5 GeV, whereas the multi-$\pi$ is closer to nominal. The SK FHC \numu parameters echo this behaviour.
-
-Looking at the other parameters (\nue, \numubar, \nuebar), there is a trend for the first multi-$\pi$ bin to have a 10\% normalisation---likely driven by the low $E_\nu$ \numu parameters---, which then sits $\mathcal{O}(1\%)$ below the multi-track parameter value. However, for \nue there is a flip at 2.5 GeV, where multi-$\pi$ again is higher.
+\autoref{fig:data_multitrack_multipi_fhc} shows the FHC flux parameters after the data fit. For FHC \numu, the multi-track selection sits closer to the priors and does not display the ``wavy'' oscillation between 0 and 1 GeV, seen when using the multi-$\pi$ selection. The multi-track FHC \numu flux parameters do however increase to $\sim108\%$ above 1.5 GeV, whereas the multi-$\pi$ is closer to nominal. The SK FHC \numu parameters echo this behaviour. Looking at the other flux parameters (\nue, \numubar, \nuebar), there is a trend for the first bin in the multi-$\pi$ fit to have a 10\% normalisation---likely driven by the low $E_\nu$ \numu parameters---, which then sits $\mathcal{O}(1\%)$ below the multi-track parameter value. However, for \nue there is a flip at 2.5 GeV, where multi-$\pi$ fits a higher flux.
 \begin{figure}[h]
 	\centering
 \begin{subfigure}[t]{0.1\textwidth}
@@ -1743,7 +1723,7 @@ Looking at the other parameters (\nue, \numubar, \nuebar), there is a trend for 
 	\label{fig:data_multitrack_multipi_fhc}
 \end{figure}
 
-Inspecting the \numubar RHC parameters in \autoref{fig:data_multitrack_multipi_rhc}, a similar pattern emerges: the ``wavy'' nature at low energy is slightly stronger for multi-$\pi$. Above 1 GeV, the multi-track sits close to the prior throughout, and the multi-$\pi$ follows a similar shape but with more extreme corrections. For \nuebar the multi-$\pi$ is closer to the nominal.
+Inspecting the \numubar RHC parameters in \autoref{fig:data_multitrack_multipi_rhc}, a similar pattern emerges: the ``wavy'' nature at low energy is slightly stronger for multi-$\pi$. Above 1 GeV, the multi-track sits close to the prior throughout, and the multi-$\pi$ follows a similar shape but with more extreme parameter values. For \nuebar flux parameters the multi-$\pi$ is closer to the nominal.
 
 For the wrong-sign component, the multi-$\pi$ is again enhanced at low $E_\nu$, moving towards the nominal and the multi-track parameter values with increasing $E_\nu$. Again, the two fits consistently sit (just) within 1$\sigma$ of the prior uncertainty and each other's uncertainties.
 \begin{figure}[h]
@@ -1795,15 +1775,11 @@ For the wrong-sign component, the multi-$\pi$ is again enhanced at low $E_\nu$, 
 
 Finally the cross-section parameters in \autoref{fig:data_multitrack_multipi_xsec} show consistent behaviour up until 2p2h normalisation for $\bar{\nu}$. The multi-$\pi$ selection prefers a normalisation in line with the prior and has a reduced uncertainty, where the multi-track agrees more with the value of the 2p2h normalisation for $\nu$. Compared to the 2017 value of $\sim0.8$, the multi-$\pi$ selection seems more compatible. The 2p2h $^{12}\text{C}\rightarrow^{16}\text{O}$ normalisation parameter shows a preference for the nominal in the multi-track, whereas the multi-$\pi$ pushes it half-way down the prior.
 
-The 2p2h shape C parameter sits close to the upper boundary for multi-track, similar to in 2017, within 1$\sigma$ of the multi-$\pi$ selection's central value. The 2p2h shape O parameter shows a similar level of disagreement, with the multi-track sitting on the prior value, whereas the multi-$\pi$ selection shows a similar value to the carbon parameter. 
+The 2p2h shape C parameter sits close to the upper boundary for multi-track---similar to results in the 2017 fit---within 1$\sigma$ of the multi-$\pi$ selection's central value. The 2p2h shape O parameter shows a similar level of disagreement, with the multi-track sitting on the prior value, whereas the multi-$\pi$ selection shows a similar value to the carbon parameter. 
 
 The BeRPA parameters are particularly interesting: the multi-track selection is very similar to the 2017 values, whereas the multi-$\pi$ sees a ``softening'' of the effect at low $Q^2$ (BeRPA A), but a larger move from the prior for BeRPA B, even higher than in 2017 in \autoref{fig:berpa_weight_2018}. This is likely tied to the difference in flux parameters seen previously in \autoref{fig:data_multitrack_multipi_rhc} and how in 2017 fixing BeRPA to nominal caused a flux increase $\mathcal{O}(10\%)$ in \autoref{sec:data_alt_studies}.
 
-The single pion parameters are entirely compatible and similar to 2017, with the small exception of the non-resonant $I_{1/2}$ background which increases outside the prior. The CC coherent normalisations are similar to 2017 from the multi-track, sitting just on the 1$\sigma$ boundary, whereas the multi-$\pi$ agrees with the nominal.
-
-Of the NC parameters, only NC other (encompassing NC1$\pi$ and NC DIS) see differences: the multi-track fit prefers a value in agreement with the prior's central value, whereas the multi-$\pi$ selection pulls outside the prior uncertainty.
-
-The pion FSI parameters are expected to show large differences, as was the case in the Asimov studies of the fit and likelihood scans. This comes both from a rebinning of the FHC 1$\pi$ samples and the splitting of the NTrack into $1\pi$ and Other for RHC selections. The parameters are largely compatible, and the multi-$\pi$ consistently sits close to the prior value. Both fits still sit within the 1$\sigma$ uncertainty of the prior.
+The single pion parameters are entirely compatible and similar to 2017, with the small exception of the non-resonant $I_{1/2}$ background which increases outside the prior. The CC coherent normalisations are similar to 2017 from the multi-track, sitting just on the 1$\sigma$ boundary, whereas the multi-$\pi$ agrees with the nominal. Of the NC parameters, only NC other (encompassing NC1$\pi$ and NC DIS) sees a difference: the multi-track fit prefers a value in agreement with the prior's central value, whereas the multi-$\pi$ selection pulls outside the prior uncertainty. The pion FSI parameters are expected to show large differences, as was the case in the Asimov studies of the fit and likelihood scans. This comes both from a rebinning of the FHC 1$\pi$ samples and the splitting of the NTrack into $1\pi$ and Other for RHC selections. The parameters are largely compatible, and the multi-$\pi$ consistently sits close to the prior value. Both fits still sit within the 1$\sigma$ uncertainty of the prior.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.1\textwidth}
@@ -2020,7 +1996,7 @@ FGD2 \numubar 0$\pi$ in \autoref{fig:data_multipi_det_fdg2_cc0pi_nubar} follows 
 	\caption{FGD2 \numubar 0$\pi$ detector parameters}
 	\label{fig:data_multipi_det_fdg2_cc0pi_nubar}
 \end{figure}
-The \numubar 1$\pi$ and other selections for FGD1 in \autoref{fig:data_multipi_det_fdg1_cc1piOth_nubar} have parameters mostly consistent with the prior and well within 1$\sigma$. Notably, the high momentum bins are well constrained because the bin aggressive merging strategy. 
+The \numubar 1$\pi$ and other selections for FGD1 in \autoref{fig:data_multipi_det_fdg1_cc1piOth_nubar} have parameters mostly consistent with the prior and well within 1$\sigma$. Notably, the high momentum bins are well constrained because the aggressive bin-merging strategy. 
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.1\textwidth}
@@ -2062,7 +2038,7 @@ The FGD2 equivalent selection in \autoref{fig:data_multipi_det_fdg2_cc1piOth_nub
 	\caption{FGD2 \numubar 1$\pi$ and Other selections detector parameters}
 	\label{fig:data_multipi_det_fdg2_cc1piOth_nubar}
 \end{figure}
-The FGD1 \numu RHC 0$\pi$ selections in \autoref{fig:data_multipi_det_fdg1_numuRHC} are again consistent with the previous 0$\pi$ selections, in which the low \cosmu, low \pmu regions have a decreased normalisation, moving upward with \pmu and resetting for the next \cosmu bin. Overall, the normalisation effect prefers a value less than the prior. The highest \cosmu, \pmu bin is very well constrained after the fit due to the relatively high statistics in this region. The parameters are all consistent with 1$\sigma$, although excursions of that size happens twice. The 1$\pi$ and Other distributions are consistent with the prior and the data barely constrains the parameters.
+The FGD1 \numu RHC 0$\pi$ selections in \autoref{fig:data_multipi_det_fdg1_numuRHC} are again consistent with the previous 0$\pi$ selections, in which the low \cosmu, low \pmu regions have a decreased normalisation, moving upward with \pmu and resetting for the next \cosmu bin. Overall, the normalisation effect prefers a value less than the prior. The highest \cosmu, \pmu bin is very well constrained after the fit due to the relatively high statistics in this region. The parameters are all consistent with 1$\sigma$, although excursions exceeding that happen twice. The 1$\pi$ and Other distributions are consistent with the prior and the data barely constrains the parameters.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.1\textwidth}
@@ -2112,7 +2088,6 @@ Finally the FGD2 \numu RHC parameters in \autoref{fig:data_multipi_det_fdg2_numu
 	\caption{FGD2 \numu RHC selections detector parameters}
 	\label{fig:data_multipi_det_fdg2_numuRHC}
 \end{figure}
-
 In conclusion, the ND280 parameter plots in this section showed that:
 \begin{itemize}
 	\item In the low \cosmu region, the 0$\pi$ selections uniformly prefer a normalisation less than the prior for low \pmu, moving to a larger normalisation at higher \pmu. This behaviour ceases around \cosmu=0.9 for all 0$\pi$ selections
@@ -2191,9 +2166,7 @@ In 2017 the prior model was deemed entirely incompatible with the data (\autoref
 The p-values are in agreement with the 2017 values in \autoref{tab:data_pre_pvalue}, and the statistics increase of anti-neutrino data has brought the 1Trk (aka 0$\pi$) p-value to zero.
 
 \subsection{Posterior Predictive Spectrum}
-The posterior predictive p-values are shown by sample in \autoref{tab:data_post_pvalue_2018}. Four selections have bad p-values: FGD1 CCOther, FGD2 CCOther, FGD2 \numubar CC0$\pi$, and FGD2 \numu RHC 1$\pi$. Whereas the first was expected from the 2017 results in \autoref{tab:data_post_pvalue}, the two latter are new. We also see a low p-value $\sim1\%$ for the FGD1 \numubar 0$\pi$ selection. The \numubar 0$\pi$ selections are particularly worrying---in 2017 these were 0.515 and 0.265 respectively.
-
-There is a large differences between FGD1 and FGD2 p-values, e.g. FHC CC0$\pi$ for FGD1 is 0.215 whereas for FGD2 is 0.072, or FGD1 \numubar Other is 0.271 whereas FGD2 is 0.041.
+The posterior predictive p-values are shown by sample in \autoref{tab:data_post_pvalue_2018}. Four selections have bad p-values: FGD1 CCOther, FGD2 CCOther, FGD2 \numubar CC0$\pi$, and FGD2 \numu RHC 1$\pi$. Whereas the first was expected from the 2017 results in \autoref{tab:data_post_pvalue}, the two latter are new. We also see a low p-value ($\sim1\%$) for the FGD1 \numubar 0$\pi$ selection. The \numubar 0$\pi$ selections are particularly worrying---in 2017 these were 0.515 and 0.265 respectively. There are large differences between FGD1 and FGD2 p-values, e.g. FHC CC0$\pi$ for FGD1 is 0.215 whereas for FGD2 is 0.072, or FGD1 \numubar Other is 0.271 whereas FGD2 is 0.041.
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c }
@@ -2269,7 +2242,7 @@ The RHC 1Trk selections are all well described with p-values of 0.156 (FGD1) and
 
 Looking at the p-values from using the full detector covariance matrix in \autoref{tab:data_post_pvalue_fullcov_2018}, FGD1 CCOther, FGD2 CCOther, FGD2 \numubar 0$\pi$ and FGD2 \numu RHC 1$\pi$ have the lowest p-values although FGD2 CCOther and FGD2 \numu RHC 1$\pi$ are acceptable. The p-values are roughly $2\sim4$ of those from the reduced detector matrix in \autoref{tab:data_post_pvalue_2018}, with similar relative strengths. 
 
-This indicates that the ND280 parameterisations for both the reduced and multi-track versions fail to capture the nuances required in the simulation to adequately describe the data. However, increasing the dimensionality is problematic, as convergence times for the full detector matrix parameterisation are an order of magnitude longer, making such fits unfeasible for joint ND280+SK fits. 
+This indicates that the ND280 parametrisations for both the reduced and multi-track versions fail to capture the nuances required in the simulation to adequately describe the data. However, increasing the dimensionality is problematic, as convergence times for the full detector matrix parametrisation are an order of magnitude longer, making such fits unfeasible for joint ND280+SK fits. 
 \begin{table}[h]
 	\centering
 	\begin{tabular}{l | c c }
@@ -2386,7 +2359,7 @@ The contributions to the sample test-statistic by \pmu \cosmu is shown in \autor
 \label{fig:llh_dist_fullred_2018}
 \end{figure}
 
-The one-dimensional p-values are calculated and the results are shown in \autoref{fig:1d_pval_2018}. The calculation confirms the two dimensional p-values: using the full parameterisation appears a good representation of the data with p values between $p=0.400-0.428$ depending on method. The reduced parameterisation has $p=0.000$, and lies in the very tail of the two distributions.
+The one-dimensional p-values are calculated and the results are shown in \autoref{fig:1d_pval_2018}. The calculation confirms the two dimensional p-values: using the full parameterisation appears a good representation of the data with $p=0.400-0.428$ depending on method. The reduced parameterisation has $p=0.000$, and lies in the very tail of the two distributions.
 \begin{figure}[h]
 	\centering
 	\begin{subfigure}[t]{0.49\textwidth}
@@ -2879,9 +2852,9 @@ The 1$\pi$ distributions in \pmu are compatible before and after the fit, but du
 	\label{fig:fhc_postfit_other_numuRHC_2018}
 \end{figure}
 
-In summary, the likelihood contributions and projected \pmu, \cosmu distributions confirm much of what was seen in the 2017 analysis. An inadequate description of the CCOther sample, especially in the very forward region, is present in the prior model and the post-fit model attempts to correct for this as much as possible. The 0$\pi$ and 1$\pi$ post-fit model struggles in the most forward going region, and improves significantly after the fit, especially in \pmu. The FGDs are mostly consistent, although FGD2 0$\pi$ has more scattered likelihood contributions than FGD1, and vice verse for the 1$\pi$ selection.
+In summary, the likelihood contributions and projected \pmu, \cosmu distributions confirm much of what was seen in the 2017 analysis. An inadequate description of the CCOther sample, especially in the very forward region, is present in the prior model and the post-fit model attempts to correct for this as much as possible. The 0$\pi$ and 1$\pi$ post-fit model struggles in the most forward going region, and improves significantly after the fit, especially in \pmu. The FGDs are mostly consistent, although FGD2 0$\pi$ has more scattered likelihood contributions than FGD1, and vice versa for the 1$\pi$ selection.
 
-For the new RHC samples, the prior model does an adequate job of describing the projections and the deficiency present in FHC selections at \pmu= 0.6 GeV is not observed. This may hint at different neutrino/anti-neutrino modelling being required. The shape of the post-fit distributions is not necessarily improved after the fit, although it lessens the errors significantly. The most forward-going bin is problematic for both 0 and 1$\pi$ selections in FGD2, whereas it is well modelled in FGD1. Interestingly, the underestimation of the FHC Other samples is not present in the RHC equivalent selections, and the data is well described by the prior and posterior model.
+The new RHC samples, the prior model does an adequate job of describing the projections and the deficiency present in FHC selections at \pmu= 0.6 GeV is not observed. This may hint at different neutrino/anti-neutrino modelling being required. The shape of the post-fit distributions is not necessarily improved after the fit, although it lessens the errors significantly. The most forward-going bin is problematic for both 0$\pi$ and 1$\pi$ selections in FGD2, whereas it is well modelled in FGD1. Interestingly, the underestimation of the FHC Other samples is not present in the RHC equivalent selections, and the data is well described by the prior and posterior model.
 
 The \numu RHC samples appear to uniformly suffer from poor description in the very forward region for all selections. This is somewhat corrected in the post-fit, although still 1-2$\sigma$ of the statistical error on the data. The \pmu distributions are binned fairly coarsely, but the prefit and postfit model appear to describe the data adequately.
 
@@ -2891,7 +2864,7 @@ Two alternative studies were performed for this analysis: neutrino versus anti-n
 \section{Impact on T2K Oscillation Analyses}
 Using the oscillation parameters listed in \autoref{tab:osc_pars}, the posterior predictive spectrum at SK is calculated with the 2018 analysis, and is compared to the results using only the prior information and the 2017 posterior.
 
-\autoref{tab:sk_evt_rates_2018} shows the integrated event rates for the SK selections before and after the fit, with a comparison to the 2017 result in \autoref{tab:sk_evt_rates_2017}. The 1$\text{R}\mu$ selection sees the largest improvement, reducing the systematics by another 22\% compared to the 2017 fit. For the statistics limited $1\text{R}e$ selections the effect is between 0-12\%, and barely has an impact on reducing the $1\text{R}e$ FHC selection. The central value also shifts considerably for the $1\text{R}\mu$ selections.
+\autoref{tab:sk_evt_rates_2018} shows the integrated event rates for the SK selections before and after the fit, with a comparison to the 2017 result in \autoref{tab:sk_evt_rates_2017}. The 1$\text{R}\mu$ selection sees the largest improvement, reducing the uncertainty by another 22\% compared to the 2017 fit. For the statistics limited $1\text{R}e$ selections the effect is between 0-12\%, and barely has an impact on reducing the uncertainty of the $1\text{R}e$ FHC selection. The central value also shifts considerably for the $1\text{R}\mu$ selections.
 \begin{table}
 	\begin{tabular}{l | c c | c c | c}
 		\hline
@@ -2939,9 +2912,7 @@ The SK $E_{rec}$ distributions are shown in \autoref{fig:sk_2018} where the incr
 \end{figure}
 
 \subsection{Impact of ND280 Systematics Parameterisation}
-The full fit to data in \autoref{sec:data_2018} highlighted the importance of the parameterisation of ND280 systematics, in which the resulting parameters sometimes lay outside 1$\sigma$ of each other. 
-
-The effect of the reduced and full parameterisation on the integrated event rate at SK is shown in \autoref{tab:sk_evt_rates_2018_nd280}. There is noticeable shift in the central value for the reduced parameterisation for $1\text{R}\mu$, although the $1\text{R}e$ samples all agree well. The full parameterisation delivers the smallest uncertainties, with the multi-track being worse than the 2017 result. 
+The full fit to data in \autoref{sec:data_2018} highlighted the importance of the parameterisation of ND280 systematics, in which the resulting parameters sometimes lie outside 1$\sigma$ of each other. The effect of the reduced and full parameterisation on the integrated event rate at SK is shown in \autoref{tab:sk_evt_rates_2018_nd280}. There is noticeable shift in the central value for the reduced parameterisation for $1\text{R}\mu$, although the $1\text{R}e$ samples all agree well. The full parameterisation delivers the smallest uncertainties, with the multi-track being worse than the 2017 result. 
 \begin{table}
 	\begin{tabular}{l | c c c | c c c }
 		\hline
@@ -2988,13 +2959,10 @@ The propagation to SK in $E_{rec}$ is shown in \autoref{fig:sk_2018_nd280param},
 	\label{fig:sk_2018_nd280param}
 \end{figure}
 
-In conclusion, the parameterisation of ND280 detector systematics has an effect on oscillations at T2K. The effect is mostly contained within the $1\sigma$ uncertainty from systematics, but should be improved upon in the future.
-
+In conclusion, the parameterisation of ND280 detector systematics has an effect on the extraction of oscillation parameters at T2K. The effect is mostly contained within the $1\sigma$ uncertainty from systematics, but should be improved upon in future studies outside of this work.
 
 \chapter{Future Sensitivity of the Framework}
-This brief chapter reports on the achievable constraints from ND280 data using the full 7.8E21 POT. For this study, the run 2-8 POT (1.78E21 total with 1.15E21 FHC, 6.28E20 RHC) is scaled up to the full T2K POT of 7.8E21, which roughly assumes 75\% FHC and 25\% RHC running.
-
-The model is identical to that of the 2018 analysis in \autoref{chap:nd280_2018} and the posterior predictive method is used to create the event rates and their uncertainties. The data is the Asimov data, defined as being the prediction of the model when its parameters are set to their priors.
+This brief chapter reports on the achievable constraints from ND280 data using the full 7.8E21 POT. For this study, the run 2-8 POT (1.78E21 total with 1.15E21 FHC, 6.28E20 RHC) is scaled up to the full T2K POT of 7.8E21, which roughly assumes 75\% FHC and 25\% RHC running. The model is identical to that of the 2018 analysis in \autoref{chap:nd280_2018} and the posterior predictive method is used to create the event rates and their uncertainties. The data is the Asimov data, defined as being the prediction of the model when its parameters are set to their priors.
 
 Comparing the ND280 post-fit event rates in \autoref{tab:postfit_eventrate_2018_future} to the 2017 equivalent in \autoref{tab:postfit_eventrate_2018}, the uncertainties halve from approximately quadrupling the POT. The total event rates for \numu are $\sim 280,000$ 0$\pi$  events, $\sim 60,000$ 1$\pi$ events, and $\sim 60,000$ Other events. For the RHC selection there are $\sim 60,000$ 0$\pi$ events, $\sim 5,000$ 1$\pi$ events, and $8,000$ Other events. The uncertainties on \numu selections fall below 0.6\% and the 0$\pi$ \numubar selection sits at half a percent. The largest uncertainties, owing to the lowest event rates, are in the RHC $1\pi$ and Other selections.
 \begin{table}[h]
@@ -3039,7 +3007,7 @@ Comparing the ND280 post-fit event rates in \autoref{tab:postfit_eventrate_2018_
 
 The constraints from the fit to ND280 Asimov data is propagated to SK using either the run 2-8 POT or the full POT at SK. The oscillation parameters in \autoref{tab:osc_pars} are applied and the posterior predictive method is used to make the central values and their uncertainties. 
 
-The results in \autoref{tab:sk_evt_rates_future} shows uncertainties of 1.6-1.85\% percent for the $1\text{R}\mu$ and 3-3.25\% for the $1\text{R}e$ selections at SK. This is a reduction of almost a percent, coming purely from the statistical update. In reality, model developments between now and when the full T2K POT is achieved\footnote{Likely in 2021\cite{t2k_ii}} will undoubtedly change the central values and their uncertainties, as will updated fitting methods. However, it is encouraging to see that the required DUNE and Hyper-K sensitivities of 1-2\% are achievable with this framework.
+The results in \autoref{tab:sk_evt_rates_future} show uncertainties of 1.6-1.85\% for the $1\text{R}\mu$ and 3-3.25\% for the $1\text{R}e$ selections at SK. This is a reduction of almost a percent over the 2018 analysis, coming purely from the statistical update. In reality, model developments between now and when the full T2K POT is achieved\footnote{Likely in 2021\cite{t2k_ii}.} will undoubtedly change the central values and their uncertainties. However, it is encouraging to see that the required DUNE and Hyper-K sensitivities of 1-2\% are achievable with this framework.
 \begin{table}[h]
 	\begin{tabular}{l | c c | c c }
 		\hline

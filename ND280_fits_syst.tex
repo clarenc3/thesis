@@ -69,7 +69,7 @@ The fractional errors for the ND280 neutrino flux prediction are shown in \autor
 
 Importantly, the hadronic interaction uncertainties are reducible by improved modelling and tuning to hadron production data. An example is the black dashed line and the black solid line in \autoref{fig:flux_uncert_fhc}, which shows the reduction in flux uncertainty from 2014 to 2015 analyses. Additionally, new in-situ beam profile monitors aid in reducing the proton beam profile and off-axis angle contributions.
 
-The flux systematics enter the near-detector and oscillation analyses as bin-by-bin normalisations in true neutrino energy, $E_\nu^{true}$, for four different neutrino species (\numu, \numubar, \nue, \nuebar), for each running mode (FHC, RHC), for each detector (ND280, SK). The binning is chosen to reflect the magnitude of the neutrino flux and the changing shape but simultaneously keeping the number of parameters relatively low. The right-sign and wrong-sign species have the same binning, so ND280 FHC \numu is binned the same as ND280 RHC \numubar:
+The flux systematics enter the near-detector and oscillation analyses as bin-by-bin normalisations in true neutrino energy, $E_\nu^{true}$ (GeV), for four different neutrino species (\numu, \numubar, \nue, \nuebar), for each running mode (FHC, RHC), for each detector (ND280, SK). The binning is chosen to reflect the magnitude of the neutrino flux and the changing shape but simultaneously keeping the number of parameters relatively low. The right-sign and wrong-sign species have the same binning, so ND280 FHC \numu is binned the same as ND280 RHC \numubar:
 \begin{itemize}
 	\item ND280, SK FHC \numu; ND280, SK RHC \numubar, :\\
 	$E_\nu^{true}$: 0, 0.4, 0.5, 0.6, 0.7, 1, 1.5, 2.5, 3.5, 5, 7, 30
@@ -170,7 +170,7 @@ There are two methods with which the smearing is applied:
 	\begin{equation}
 		x'_{reco} = x^{MC}_{reco}+ \Delta\bar{x} + \alpha \delta \Delta \bar{x}
 	\end{equation}
-	where $\Delta\bar{x} = \bar{x}^{data}_{reco}-\bar{x}^{MC}_{reco}$,$\bar{x}_{reco}$ is the mean value of the variable $x$, $\alpha$ is a random variable, and $\delta \Delta \bar{x}$ is the associated uncertainty from the reconstructed data and MC discrepancy,
+	where $\Delta\bar{x} = \bar{x}^{data}_{reco}-\bar{x}^{MC}_{reco}$ and $\bar{x}_{reco}$ is the mean value of the variable $x$, $\alpha$ is a random variable, and $\delta \Delta \bar{x}$ is the associated uncertainty from the reconstructed data and MC discrepancy,
 	\begin{equation}
 		\delta \Delta \bar{x} = \sqrt{\Delta\bar{x}^2 + \left(\delta \bar{x}^{data}_{reco}\right)^2  + \left(\delta \bar{x}^{MC}_{reco}\right)^2}
 	\end{equation}
@@ -180,7 +180,7 @@ Additionally uncertainties from the magnetic field are special cases of the abov
 \begin{itemize}
 	\item The TPC laser calibration corrections are used on-top of the B-field mapping corrections, where the latter is applied during reconstruction and the former is treated as an uncertainty. The reconstructed variable is then
 	\begin{equation}
-		x'_{reco} = x^{MC}_{reco} + \alpha \left(x_{reco}^{New}-x_{reco}^MC\right)
+		x'_{reco} = x^{MC}_{reco} + \alpha \left(x_{reco}^{New}-x_{reco}^{MC}\right)
 	\end{equation}
 	where $\alpha$ is the random variable and $x_{reco}^{New}$ is the reconstructed momentum after the updated mapping is applied. This applies to the magnetic field distortion systematic.
 	\item If the observable depends on a scale $s$ that is easy to extract from in-situ measurements
@@ -361,7 +361,7 @@ in which we note a large first momentum bin for many selections. This is primari
 		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/good_bin2}
 		\caption{FGD2 CCNTrk, 0-700, 0.93-0.98}
 	\end{subfigure}
-	\caption{Number of events in selected detector bins with uncertainties from ND280 systematics}
+	\caption{Number of events in various bins used for parametrising the ND280 detector systematics, using the full suite of uncertainties from the ND280 systematics. The population is representative of the uncertainty, and the conservative uncertainties on the distribution is shown in red and green. The populations are fit with a Gaussian for reference (black).}
 	\label{fig:det_var}
 \end{figure}
 The result of the detector systematics procedure is shown in \autoref{fig:det_var} for a selection of bins. In FGD1 CC0$\pi$ the worst overall example is the \pmu=1250-2000, \cosmu=0.6-0.7 bin, which has a double Gaussian bimodal behaviour. This is likely from events migrating in and out of the \{\pmu, \cosmu, sample\} combination due to pion secondary interactions. Although a simple fit to the bin content chooses one of the peaks, the covariance matrix entry sits in between the two with an error that covers the bimodality.
@@ -473,7 +473,7 @@ The magnitude and uncertainty of $A, B, D$ and $E$ are then chosen to match the 
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/erpa_40percentE_throws}
 		\caption{BeRPA E}
 	\end{subfigure}
-	\caption{BeRPA uncertainties for each separate parameter. The dashed line represents the theoretical uncertainties}
+	\caption{BeRPA uncertainties for each separate parameter. The dashed line represents the theoretical uncertainties\cite{nieves2}.}
 	\label{fig:berpa_throws}
 \end{figure}
 
