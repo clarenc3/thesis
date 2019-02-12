@@ -110,7 +110,7 @@ Since the initial parameters $\vec{\theta}$ aren't necessarily in a region of hi
 	\label{fig:2p2h_shape_mcmc}
 \end{figure}
 
-The chains appear to converge after 30,000 steps, which indicates the approximate burn-in. The auto-correlations are also checked, along with a random subset of other parameters. The total test-statistic in \autoref{eq:test_stat} is also checked over steps, and in this case results in \autoref{fig:llh_step}. The test-statistic initially walks towards the minimum and reaches it after about 800 steps for all the six chains. The chains then globally step out of the minimum and explore the area around it, which appears stable after 15-20,000 steps.
+The chains appear to converge after about 20,000 steps, which indicates the approximate burn-in. This judgement is largely made by monitoring chain stability and chain-to-chain variation. The auto-correlations are also checked, along with a random subset of systematic parameters' stability with step. The total test-statistic in \autoref{eq:test_stat} is also checked over steps, and in this case results in \autoref{fig:llh_step}. The test-statistic initially walks towards the minimum and reaches it after about 800 steps for all the six chains. The chains then globally step out of the minimum and explore the area around it, which appears stable after 15-20,000 steps.
 \begin{figure}[h]
 	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mcmc/logl_step0}
 	\caption{Test-statistic evolution with MCMC steps for six separate chains running on data}
@@ -202,7 +202,7 @@ To construct the p-value in the two-dimensional case we need to compare the resu
 	\item Calculate the test-statistic between the observed data and the drawn histogram, denoted $\chi^2_{\text{Data, Draw}}$.
 	\item Fill a two dimensional histogram of the two test-statistics
 \end{itemize}
-The predictive spectrum is formed by taking the mean in each bin as the central number of events, and the error is calculated by using the RMS. Hence the posterior predictive distribution is not observed from one MCMC draw but is rather the distribution representative of the posterior after sampling. The two-dimensional posterior predictive p-value is then finally
+The predictive spectrum is formed by taking the mean in each bin as the central number of events, and the error is estimated by using the RMS. Hence the posterior predictive distribution is not observed from one MCMC draw but is rather the distribution representative of the posterior after sampling. The two-dimensional posterior predictive p-value is then finally
 \begin{equation}
 p = \frac{N\left(\chi^2_{\text{Data, Draw}} < \chi^2_{\text{Draw, Draw Fluc}}\right)}{N\left(\text{Total}\right)}
 \end{equation}

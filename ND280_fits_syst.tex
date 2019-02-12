@@ -85,7 +85,7 @@ The flux systematics enter the near-detector and oscillation analyses as bin-by-
 \end{itemize}
 This procedure brings the total number of flux parameters to 100: 50 for ND280 and 50 for SK. The SK flux parameters are not directly constrained in the ND280-only analysis: the strong correlation between the flux at ND280 and SK indirectly moves SK flux parameters when the ND280 flux parameters move. Hence, all 100 parameters are included in the ND280-only analysis. The flux parameters are highly correlated so the likelihood penalties are evaluated with a covariance matrix, shown in \autoref{fig:flux_cov}.
 \begin{figure}[h]
-	\includegraphics[width=0.6\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/inputs/flux_covariance_banff_13av2}
+	\includegraphics[width=1.0\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/inputs/flux_covariance_banff_13av2}
 	\caption{13av2 neutrino flux covariance matrix, used in this analysis}
 	\label{fig:flux_cov}
 \end{figure}
@@ -100,7 +100,7 @@ In addition to the variation systematics above, there is also a nominal flux cor
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/run5b_enu_nd5_13av2_numubar_rat}
 		\caption{5b \numubar}
 	\end{subfigure}
-	\caption{Nominal flux corrections applied to events in the ND5 (tracker) plane at ND280}
+	\caption{Nominal flux corrections applied to events interacting in the ND5 (ND280 tracker) plane}
 	\label{fig:flux_ratio}
 \end{figure}
 
@@ -368,14 +368,14 @@ The result of the detector systematics procedure is shown in \autoref{fig:det_va
 
 The final covariance matrix is seen in \autoref{fig:nd280_cov}, where the majority of bins are highly correlated. The correlation matrix is shown in \autoref{fig:nd280_corr}. We particularly see high correlations for the high-momentum bins (towards the end of each selection). The anti-correlations enter mostly for RHC selections, where bins at low \pmu correlate negatively with bins at high \pmu. There are also anti-correlations in FGD1 vs FGD2 selections.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.70\textwidth}
+	\begin{subfigure}[t]{\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/numu/syst/nd280_syst_cov.pdf}
 	\end{subfigure}
 \caption{$\text{sgn(}V_{i,j}\text{)}\times\sqrt{V_{i,j}}$ for the ND280 systematic parameters}
 \label{fig:nd280_cov}
 \end{figure}
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.70\textwidth}
+	\begin{subfigure}[t]{\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/numu/syst/nd280_syst_cov.pdf}
 	\end{subfigure}
 \caption{Correlation matrix for the ND280 systematic parameters}
@@ -456,24 +456,24 @@ in which $w(Q^2)$ is the weight from the RPA variation applied to CCQE events, $
 The magnitude and uncertainty of $A, B, D$ and $E$ are then chosen to match the uncertainties provided in \cite{nieves2}. \autoref{fig:berpa_throws} shows the uncertainty bands from each parameter for the final values, showing how BeRPA A controls low $Q^2$, BeRPA B intermediate $Q^2$, BeRPA D medium $Q^2$ and BeRPA E high $Q^2$.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/erpa_20percentA_throws}
 		\caption{BeRPA A}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/erpa_20percentB_throws}
 		\caption{BeRPA B}
 	\end{subfigure}
 
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/erpa_15percentD_throws}
 		\caption{BeRPA D}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/niwg/erpa_40percentE_throws}
 		\caption{BeRPA E}
 	\end{subfigure}
-	\caption{BeRPA uncertainties for each separate parameter. The dashed line represents the theoretical uncertainties\cite{nieves2}.}
+	\caption{BeRPA uncertainties for each separate BeRPA parameter. The dashed line represents the theoretical uncertainties\cite{nieves2}, and the correction is applied to CCQE events as a function of $Q^2$.}
 	\label{fig:berpa_throws}
 \end{figure}
 
@@ -562,16 +562,14 @@ An example of three interaction parameters that are parameterised as splines is 
 \paragraph{Covariance Matrix}
 \autoref{fig:xsec_cov_matrix_prior} shows the final $\sqrt{\textbf{V}}$ covariance and correlation matrix. Only a few parameters are correlated in the prior covariance matrix: the 2p2h shape C and O parameters (+0.55), the single pion production parameters (-0.8 to 0.10), the \nue(\nuebar)/\numu(\numubar) (-0.71), the CC coherent parameters (+1.00), and the pion FSI parameters (-1.00 to 1.00).
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1] {figures/niwg/xsec_covariance_2017b_NOMINAL_v1_xseccov}
-		\caption{$\sqrt{\text{Covariance}}$}
+		\includegraphics[width=0.8\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1] {figures/niwg/xsec_covariance_2017b_NOMINAL_v1_xseccov}
+		\caption{Interaction covariance matrix provided as the prior, $\sqrt{\text{covariance}}$}
 		\label{fig:xsec_cov_matrix_vij}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.49\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=2] {figures/niwg/xsec_covariance_2017b_NOMINAL_v1_xseccov}
-		\caption{Correlation}
-	\end{subfigure}
-	\caption{Interaction covariance matrix provided as the prior}
+\end{figure}
+
+\begin{figure}[h]
+		\includegraphics[width=.8\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=2] {figures/niwg/xsec_covariance_2017b_NOMINAL_v1_xseccov}
+	\caption{Interaction covariance matrix provided as the prior, correlation}
 	\label{fig:xsec_cov_matrix_prior}
 \end{figure}
 The errors in \autoref{fig:xsec_cov_matrix_vij} do not include the flat priors on $M_A^{QE}$ and $p_F$ and that BeRPA U is fixed. Furthermore, the errors are expressed as relative their priors: e.g. the error on $M_A^{RES}$ is not 0.16 GeV but rather $0.95\times0.16=0.152\text{ GeV}$, where the nominal value is 0.16.
