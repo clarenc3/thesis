@@ -5,7 +5,6 @@ As outlined in \autoref{chap:ND280}, T2K has two near-detector fitters: one Mark
 The validation procedure is not expected to entirely agree at all stages due to numerous technical and statistical differences. As covered earlier, a gradient descent minimiser is designed to find a global minimum of the test-statistic whereas a MCMC samples to build up a posterior distribution in high dimension. Comparing parameter values between the two is not a trivial exercise, and differences are expected. 
 
 An example of a technical difference is MaCh3 evaluates the weights from cross-section parameter variations on GPGPUs\footnote{General Purpose Graphics Processing Units}, which involves floating point operations in 32 (float) rather than 64 bits (double). The effect of this on 35,000 events from run 3c is shown in \autoref{fig:cpu_vs_gpu_weight}, where we observe weight differences on the 1E-7 scale per event, which agrees well with the float vs double precision. Hence we expect small differences in event rates, although too small to notice in a likelihood evaluation.
-
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.45\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 20mm 0mm 0mm}, clip, page=1]{figures/mach3/Asimov/fsi_inel_hi_diff}
@@ -412,4 +411,19 @@ We now compare the post-fit \pmu distributions from BANFF and MaCh3. The BANFF p
 	\end{subfigure}
 	\caption{FGD2 selections in \pmu with data, prefit, BANFF postfit and MaCh3 postfit}
 	\label{fig:mach3_banff_postfit_fgd2}
+\end{figure}
+
+\section{SK prediction}
+The BANFF central values and MaCh3 MCMC were used to make predictions in reconstructed neutrino energy, shown in \autoref{fig:mach3_banff_postfit_sk}. The curves agree well within 1$\sigma$ (considering the BANFF line is missing the uncertainty band), and were deemed consistent.
+\begin{figure}
+\begin{subfigure}[t]{0.49\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1]{figures/mach3/banff/1ReFHCPP}
+	\caption{1R$e$}
+\end{subfigure}
+\begin{subfigure}[t]{0.49\textwidth}
+	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1]{figures/mach3/banff/1RmuFHCPP}
+	\caption{1R$\mu$}
+\end{subfigure}
+\caption{Super-Kamiokande event predictions using BANFF and MaCh3}
+\label{fig:mach3_banff_postfit_sk}
 \end{figure}
