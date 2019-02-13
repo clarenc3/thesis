@@ -147,7 +147,7 @@ Comparing the predictive distributions from the fit to data in \autoref{tab:post
 
 The shift in $M_A^{QE}$ is expected since the ``prior'' central value is from tunes to nuclear data\cite{ccqe_tuning}. $M_A^{QE}$ is historically inflated\cite{k2k_ccqe_carbon,k2k_ccqe_oxygen,minos_ccqe_iron,miniboone_nu_ccqe} when not using adequate nuclear effects, such as RPA or 2p2h, which leads to it becoming an effective parameter instead. Using a flat prior on $M_A^{QE}$ leads toward values obtained from fits to nucleon data, $M_A^{QE}=1.069\pm0.016\text{ GeV}$ \cite{maqe_fit}. The post-fit value here in real units is $M_A^{QE}=1.12\pm0.07\text{ GeV}$.
 
-The shifts in BeRPA are more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties, indicating that the ND280 data has more events than the Monte-Carlo at low $Q^2$, forcing a shape that isn't ``RPA-like''\footnote{In the sense that it distorts the $Q^2$ correction beyond Nieves'\cite{Nieves2} work.}. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape of the RPA correction is heavily distorted in the data fit, in which an increased cross-section at low $Q^2$ is strongly favoured. The weaker constraints above $Q^2=0.5\text{ GeV}^2$ reflect lacking data in the region.
+The shifts in BeRPA are more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties, indicating that the ND280 data has more events than the Monte-Carlo at low $Q^2$, forcing a shape that isn't ``RPA-like''\footnote{In the sense that it distorts the $Q^2$ correction beyond Nieves'\cite{nieves2} work.}. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape of the RPA correction is heavily distorted in the data fit, in which an increased cross-section at low $Q^2$ is strongly favoured. The weaker constraints above $Q^2=0.5\text{ GeV}^2$ reflect lacking data in the region.
 
 The $M_A^{RES}$ parameter is pushed far from the bubble chamber tuned values (from $M_A^{RES}=1.07\pm0.15\text{ GeV}$ to $0.806\pm0.04\text{ GeV}$), whereas the other single pion production parameters are compatible with the prior. The may indicate sweeping up unmodelled nuclear effects (often approximately a function of $Q^2$) into the $M_A^{RES}$ parameter.
 
@@ -534,12 +534,13 @@ For CC0$\pi$, there is some tension between FGD1 and FGD2 in the third \pmu bin 
 
 For CC1$\pi$, there is acceptable description in \pmu before the fit except in the first bin. In the 500-1000 MeV region there is consistent over-estimation of the events which gets mostly corrected in the fit. The highest bin is well described for FGD1 and less so for FGD2. The \cosmu distributions pre-fit distribution is much worse than \pmu, notably in the 0.8-0.98 region and especially present for FGD1. In the post-fit this is mostly corrected, although the 0.8-0.92 region is approximately 1$\sigma$ off.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 	\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 \end{subfigure}
 	
@@ -612,12 +613,13 @@ For CC1$\pi$, there is acceptable description in \pmu before the fit except in t
 
 \autoref{fig:fhc_postfit_other} shows the projections for FGD1 and FGD2 CCOther before and after the fit. The \pmu distributions are consistent between FGD1 and FGD2, which is underestimated around the maximum. The fit attempts to correct for this but it often settles somewhere in between the two. The \cosmu distributions are good up until \cosmu=0.85, where the prefit starts to underestimate the data. This underestimation is present after the fit too, and it appears the freedom in \cosmu is not sufficient to cover the data. 
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
 
@@ -660,12 +662,13 @@ For CC1$\pi$, there is acceptable description in \pmu before the fit except in t
 
 For the CCNTrk distributions the uncertainty from statistics are similar in error to the systematics and the prediction is generally good in \pmu pre-fit and post-fit; again the primary effect of the fit is to reduce the error rather than moving the central value. The \cosmu distribution is similarly well described pre-fit, although the second highest \cosmu bin is overestimated in FGD1 and the highest \cosmu bin is overestimated in FGD2. Post-fit, FGD1 is well described but FGD2 appears consistently over-estimated above \cosmu= 0.96, and the highest \cosmu bin is poorly described.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
 
@@ -740,12 +743,13 @@ For the CCNTrk distributions the uncertainty from statistics are similar in erro
 
 The NTrk distributions tell a similar story: the \pmu distributions are well-described by the prior model and are mildly improved by the post-fit model. For the \cosmu distribution the most forward-going bins are problematic for both FGD1 and FGD2, which the simulation underestimates.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
 
