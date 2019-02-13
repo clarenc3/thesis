@@ -33,7 +33,7 @@ The detailed selection criteria for the CC-inclusive sample is:
 	\begin{equation}
 	C_T^{exp} = \frac{53.87 \text{ ADC}}{\beta^{2.283}} \left( 5.551 - \beta^{2.283} - \log\left[0.001913 + \frac{1}{\left(\beta\gamma\right)^{1.249}}\right]\right)
 	\end{equation}
-	$C_T^{obs}$ is the observed energy loss and $\sigma^{exp}$ is the deposited energy resolution of the TPC. ADC refers to the analog to digital counts read out from the detector, indicative of the charge deposited. $\beta=v/c$ and $\gamma = 1/\sqrt{1-\beta^2}$ are the relativistic variables of the track. The likelihoods $\mathcal{L}_i$ are then defined as
+	$C_T^{obs}$ is the observed energy loss and $\sigma^{exp}$ is the deposited energy resolution of the TPC. ADC refers to the analog to digital counts read out from the detector, indicative of the energy deposited by the particle. $\beta=v/c$ and $\gamma = 1/\sqrt{1-\beta^2}$ are the relativistic variables of the track. The likelihoods $\mathcal{L}_i$ are then defined as
 	\begin{equation}
 	\label{eq:tpc_track_likelihood}
 		\mathcal{L}_i = \frac{e^{-\delta^2_i}}{\sum_n e^{-\delta^2_n}}
@@ -112,7 +112,7 @@ The selection criteria proceeds to split the CC-inclusive sample into the three 
 		\mathcal{L}_\pi > 0.3
 	\end{equation}
 	
-	When there is no particle track in the TPC, the FGD PID is used to count the number of charged pions. However, it can not be used for neutral pions because there is currently no electron or positron reconstruction available. The FGD pion PID proceeds either by:
+	When there is no particle track in the TPC, the FGD PID is used to count the number of charged pions. However, it can not be used for neutral pions because there is currently no electron or positron reconstruction available in the FGD. The FGD pion PID proceeds either by:
 	\begin{itemize}
 		\item \textbf{Michel electron tag}: A search for a Michel electron tag is made for low-momentum tracks that fail to leave enough hits for track reconstruction. It looks for a time-delayed FGD hit cluster out of time with a beam bunch window. A Michel candidate is found if the number of hits in the delayed time bin is greater than six for FGD1 and five for FGD2\footnote{Roughly corresponding to 200 photoelectrons, which can't be used as a criteria in FGD2 due to the water layers}. Since there is no measurement of the track, the pion has no associated momentum or angle.
 		

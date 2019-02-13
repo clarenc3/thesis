@@ -57,16 +57,16 @@ Comparing the predictive distributions from the fit to data in \autoref{tab:post
 
 \autoref{fig:flux_data_fhc} shows the FHC flux parameters after the fit to data for the different chains. As expected and seen in the Asimov studies, the SK parameters closely follow the ND280 parameters. The parameters mostly sit within 1$\sigma$ of the prior, with the largest deviation around $E_\nu \sim 0.6-1.0\text{ GeV}$, where the flux normalisation drops sharply to 0.88 and returns to around nominal at $E_\nu\sim1.5\text{ GeV}$. At higher energies the flux normalisation decreases again to around 0.94. The parameters all sit within one sigma of the central value of the prior.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 150mm 50mm 0mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth, trim={0mm 100mm 50mm 50mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth, trim={0mm 50mm 50mm 100mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth, trim={0mm 0mm 50mm 150mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 \end{subfigure}
 	
@@ -101,16 +101,16 @@ Comparing the predictive distributions from the fit to data in \autoref{tab:post
 
 \autoref{fig:flux_data_rhc} shows the RHC flux parameters post-fit. There is a decrease of \numubar for low energies to approximately 0.96, which increases to the nominal at $E_\nu=0.6\text{ GeV}$. At higher energies the normalisations go back to around 0.96. The only increase observed are the \nuebar parameters around 0.6 GeV. No parameters leave the 1$\sigma$ prior.
 \begin{figure}[h]	
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 150mm 50mm 0mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 100mm 50mm 50mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 50mm 50mm 100mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 50mm 150mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
 
@@ -147,22 +147,22 @@ Comparing the predictive distributions from the fit to data in \autoref{tab:post
 
 The shift in $M_A^{QE}$ is expected since the ``prior'' central value is from tunes to nuclear data\cite{ccqe_tuning}. $M_A^{QE}$ is historically inflated\cite{k2k_ccqe_carbon,k2k_ccqe_oxygen,minos_ccqe_iron,miniboone_nu_ccqe} when not using adequate nuclear effects, such as RPA or 2p2h, which leads to it becoming an effective parameter instead. Using a flat prior on $M_A^{QE}$ leads toward values obtained from fits to nucleon data, $M_A^{QE}=1.069\pm0.016\text{ GeV}$ \cite{maqe_fit}. The post-fit value here in real units is $M_A^{QE}=1.12\pm0.07\text{ GeV}$.
 
-The shifts in BeRPA are more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties, indicating that the ND280 data has more events than the Monte-Carlo at low $Q^2$, possibly forcing a shape that isn't ``RPA-like''. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape of the RPA correction is heavily distorted in the data fit, in which an increased cross-section at low $Q^2$ is strongly favoured. The weaker constraints above $Q^2=0.5\text{ GeV}^2$ reflect lacking data in the region.
+The shifts in BeRPA are more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties, indicating that the ND280 data has more events than the Monte-Carlo at low $Q^2$, forcing a shape that isn't ``RPA-like''\footnote{In the sense that it distorts the $Q^2$ correction beyond Nieves'\cite{Nieves2} work.}. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape of the RPA correction is heavily distorted in the data fit, in which an increased cross-section at low $Q^2$ is strongly favoured. The weaker constraints above $Q^2=0.5\text{ GeV}^2$ reflect lacking data in the region.
 
 The $M_A^{RES}$ parameter is pushed far from the bubble chamber tuned values (from $M_A^{RES}=1.07\pm0.15\text{ GeV}$ to $0.806\pm0.04\text{ GeV}$), whereas the other single pion production parameters are compatible with the prior. The may indicate sweeping up unmodelled nuclear effects (often approximately a function of $Q^2$) into the $M_A^{RES}$ parameter.
 
 We note interesting 2p2h normalisations, in which the $\nu$ normalisation is 1.6, whereas $\bar{\nu}$ normalisation is 0.8, indicating some $\nu$ vs $\bar{\nu}$ tension in the nominal 2p2h model. The 2p2h shape parameters are pushed against their upper boundary, preferring a ``delta-like'' $q_0-q_3$ phase space, again indicating the 2p2h model does not agree with ND280 data.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 150mm 50mm 0mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 100mm 50mm 50mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 50mm 50mm 100mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 50mm 150mm}, clip,page=1]{figures/mach3/data/2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0_2017b_June_NewDet_merge_2017b_NewDet_June_Long_0}
 	\end{subfigure}
 

@@ -229,21 +229,47 @@ The underlying systematic parameters are varied and produce event distributions 
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/fgd2_numubkg_ccoth_good}
 	\end{subfigure}
-	\caption{Bin-by-bin event distributions with fitted Gaussians for the reduced ND280 systematic parameterisation}
+	\caption{Number of events in various bins used for parametrising the ND280 detector systematics, using the full suite of uncertainties from the ND280 systematics. Each histogram is representative of the uncertainty in the bin due to detector systematics, and the conservative uncertainties on the distribution are shown (red, green).}
 	\label{fig:det_binbybin}
 \end{figure}
 
 The new ND280 covariance matrix is shown in \autoref{fig:nd280_cov_2018} and \autoref{fig:nd280_corr_2018}\footnote{The matrices are not directly comparable to the 2017 matrices in \autoref{fig:nd280_cov} and \autoref{fig:nd280_corr} because the dominant parameter switched from \pmu to \cosmu. Hence parameters now run $\{\cos\theta_\mu^i,p_\mu^j\} = \{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^1,p_\mu^2\},...\{\cos\theta_\mu^1,p_\mu^N\}$ instead of $\{\cos\theta_\mu^i,p_\mu^j\} = \{\cos\theta_\mu^1,p_\mu^1\}, \{\cos\theta_\mu^2,p_\mu^1\},...\{\cos\theta_\mu^N,p_\mu^1\}$}. There are many similarities with the 2017 matrices: the largest systematics are $\sim50\%$, notably in the high-momentum bins. FGD1 and FGD2 are correlated as expected, and the selections in each FGD is correlated more.
 \begin{figure}[h]
 	\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
-	\caption{$\sqrt{\text{Covariance}}$ for the reduced ND280 parameterisation}
+	\caption{$\sqrt{\text{Covariance}}$ for the reduced ND280 parameterisation, showing all selections. The covariance split by FHC and RHC are shown in \autoref{fig:nd280_cov_2018_split}, also giving the order of RHC selections}
 	\label{fig:nd280_cov_2018}
 \end{figure}
 
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth,page=2, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
+		\caption{FHC selections}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth,page=3, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
+		\caption{RHC selections}
+	\end{subfigure}
+	\caption{$\sqrt{\text{Covariance}}$ for the reduced ND280 parameterisation, split into FHC and RHC selections}
+	\label{fig:nd280_cov_2018_split}
+\end{figure}
+
+\begin{figure}[h]
 	\includegraphics[width=\textwidth,page=4, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
-	\caption{Correlation for the reduced ND280 parameterisation}
+	\caption{Correlation for the reduced ND280 parameterisation, showing all selections. The correlation split by FHC and RHC are shown in \autoref{fig:nd280_corr_2018_split}, also giving the order of RHC selections}
 	\label{fig:nd280_corr_2018}
+\end{figure}
+
+\begin{figure}[h]
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth,page=5, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
+		\caption{FHC selections}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.49\textwidth}
+		\includegraphics[width=\textwidth,page=6, trim={0mm 0mm 0mm 0mm}, clip]{figures/det/2018_detmatrix}
+		\caption{RHC selections}
+	\end{subfigure}
+\caption{Correlation for the reduced ND280 parameterisation, split into FHC and RHC selections}
+\label{fig:nd280_corr_2018_split}
 \end{figure}
 
 \subsection{The Neutrino-Matter Interaction}
@@ -901,13 +927,13 @@ The MCMC parameters for the different studies are shown in \autoref{tab:mcmc_asi
 A fit to the Asimov data using the reduced ND280 covariance matrix (1076 ND280 detector parameters) is compared to one using the full ND280 covariance matrix (4238 ND280 detector parameters). \autoref{fig:asimov_fit_2018_full_red_beam_fhc} and \autoref{fig:asimov_fit_2018_full_red_beam_rhc} show the flux parameters after the fit to Asimov data using the two matrices. There is a consistent bias in all flux parameters for both ND280 and SK, which appear to be a normalisation offset by 1-2\% for the reduced parameterisation, and 5\% for the full parameterisation. The ND280 and SK parameters follow the same pattern throughout, and the uncertainties are approximately halved compared to the prior, similar to the 2017 fit to Asimov data.
 \begin{figure}[h]
 	\centering
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 	\includegraphics[width=\textwidth,page=1, trim={0mm 135mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 	\includegraphics[width=\textwidth,page=1, trim={0mm 70mm 30mm 60mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 	\includegraphics[width=\textwidth,page=1, trim={0mm 5mm 30mm 140mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 \end{subfigure}
 
@@ -948,13 +974,13 @@ A fit to the Asimov data using the reduced ND280 covariance matrix (1076 ND280 d
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 135mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 70mm 30mm 60mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 5mm 30mm 140mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 	\end{subfigure}
 
@@ -1000,13 +1026,13 @@ The reduction in parameter uncertainties from doubling of data is particularly n
 The two ND280 covariance matrices are compatible for the interaction parameters.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 135mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 70mm 30mm 60mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 5mm 30mm 140mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_FullCov_Mpi_Asimov_merg_2018a_FixedCov_RedCov_Mpi_Asimov_merge}
 	\end{subfigure}
 
@@ -1033,13 +1059,13 @@ As with the likelihood scan, the impact of the selection is studied. Results fro
 In the light of the biases in the flux parameters from using the multi-$\pi$ samples, and the biases observed in the 2017 analysis' Asimov study (\autoref{sec:asimov_fit}), it is particularly interesting to see the flux parameters largely unbiased for the multi-track selection in \autoref{fig:asimov_fit_2018_mpi_mtrack_fhc} and \autoref{fig:asimov_fit_2018_mpi_mtrack_rhc}. The two selections follow a similar pattern, although the fit using the multi-$\pi$ is offset by 1-2\%. The ND280 and SK flux parameters echo each other and are compatible. Comparing the size of the errors from the two selections, there is a marginally smaller error for the multi-$\pi$ selection for the flux parameters, although barely discernible.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 135mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 	\end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth,page=1, trim={0mm 70mm 30mm 60mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth,page=1, trim={0mm 5mm 30mm 140mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 \end{subfigure}
 	
@@ -1080,13 +1106,13 @@ In the light of the biases in the flux parameters from using the multi-$\pi$ sam
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 135mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 70mm 30mm 60mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 5mm 30mm 140mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 	\end{subfigure}
 
@@ -1128,13 +1154,13 @@ In the light of the biases in the flux parameters from using the multi-$\pi$ sam
 The interaction parameters in \autoref{fig:asimov_fit_2018_mpi_mtrack_xsec} are entirely compatible and neither of the two fits show unexpected biases. Comparing the size of the errors on the parameters the multi-$\pi$ selection and rebinning has a larger impact than on the flux parameters. Many parameters reduce by as much as 20-30\%, as expected from the earlier likelihood scans. The 2p2h and pion FSI parameters see the largest reductions.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 135mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 70mm 30mm 60mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 5mm 30mm 140mm}, clip]{figures/mach3/2018/asimov/2018a_FixedCov_RedCov_Mpi_Asimov_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_merge}
 	\end{subfigure}
 
@@ -1161,16 +1187,16 @@ To investigate the biases in the flux parameters seen in the fit to Asimov data 
 \autoref{fig:asimov_fit_2018_nodet_fhc} presents the FHC flux parameters without varying the ND280 systematics. All of the biases seen in the previous Asimov fit are gone. The uncertainties are reduced due since the ND280 systematics are not varied. The same is true for the RHC parameters in \autoref{fig:asimov_fit_2018_nodet_rhc}.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 \end{subfigure}
 	
@@ -1212,16 +1238,16 @@ To investigate the biases in the flux parameters seen in the fit to Asimov data 
 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
 
@@ -1263,16 +1289,16 @@ To investigate the biases in the flux parameters seen in the fit to Asimov data 
 The interaction parameters in \autoref{fig:asimov_fit_2018_nodet_xsec} are similarly less biased than in the full fit, although the effect is less extreme than for the flux parameters.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/2018/asimov/2018a_MultiPi_Binningv6_NewCov_Asimov_NoDet_merge_drawPar}
 	\end{subfigure}
 
@@ -1534,13 +1560,13 @@ As for the Asimov case in \autoref{sec:asimov_fit_2018}, the data fit is here co
 Looking at the shape of the FHC flux parameters, there is a tendency towards the nominal at higher energies and the majority of the shape change happens below 1 GeV. The shape below 1 GeV increases the flux by 10\% below 0.5 GeV, sitting at nominal at the flux peak of 0.6 GeV, and then decreases the flux by 7\% at 0.7 GeV up until 1.5 GeV. A similar shape was observed in the 2017 analysis in \autoref{fig:flux_data_fhc}, although the results are slightly shifted upwards relative the 2017 analysis.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 130mm 40mm 0mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 	\end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth,page=1, trim={0mm 65mm 40mm 70mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 \includegraphics[width=\textwidth,page=1, trim={0mm 0mm 40mm 140mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 \end{subfigure}
 	
@@ -1584,13 +1610,13 @@ For the RHC flux parameters in \autoref{fig:data_full_red_rhc} there is good agr
 Additionally, ND280 and SK see a slightly different behaviour around 2 GeV, where ND280 prefers a 10\% increased normalisation and the SK parameters sits at nominal. Otherwise the parameters are well mirrored. The two detector parametrisations are only visually different for the \nuebar portion of the flux and the 0.7-1.0 GeV \numubar bin.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 130mm 40mm 0mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 65mm 40mm 70mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 40mm 140mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 	\end{subfigure}
 
@@ -1638,13 +1664,13 @@ The pion FSI---which received new priors for this analysis---interestingly depar
 The two detector parameterisations are mostly compatible, consistently within 1$\sigma$ of each other.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 130mm 40mm 0mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 65mm 40mm 70mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 40mm 140mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_FullCov_Mpi_Data_merg_2018a_FixedCov_RedCov_Mpi_Data_merge}
 	\end{subfigure}
 
@@ -1678,13 +1704,13 @@ A fit to data using the old multi-track selection with the 2017 binning using th
 \autoref{fig:data_multitrack_multipi_fhc} shows the FHC flux parameters after the data fit. For FHC \numu, the multi-track selection sits closer to the priors and does not display the ``wavy'' oscillation between 0 and 1 GeV, seen when using the multi-$\pi$ selection. The multi-track FHC \numu flux parameters do however increase to $\sim108\%$ above 1.5 GeV, whereas the multi-$\pi$ is closer to nominal. The SK FHC \numu parameters echo this behaviour. Looking at the other flux parameters (\nue, \numubar, \nuebar), there is a trend for the first bin in the multi-$\pi$ fit to have a 10\% normalisation---likely driven by the low $E_\nu$ \numu parameters---, which then sits $\mathcal{O}(1\%)$ below the multi-track parameter value. However, for \nue there is a flip at 2.5 GeV, where multi-$\pi$ fits a higher flux.
 \begin{figure}[h]
 	\centering
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 	\includegraphics[width=\textwidth,page=1, trim={0mm 130mm 40mm 0mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 	\includegraphics[width=\textwidth,page=1, trim={0mm 65mm 40mm 70mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 \end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
+\begin{subfigure}[t]{0.2\textwidth}
 	\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 40mm 140mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 \end{subfigure}
 	
@@ -1728,13 +1754,13 @@ Inspecting the \numubar RHC parameters in \autoref{fig:data_multitrack_multipi_r
 For the wrong-sign component, the multi-$\pi$ is again enhanced at low $E_\nu$, moving towards the nominal and the multi-track parameter values with increasing $E_\nu$. Again, the two fits consistently sit (just) within 1$\sigma$ of the prior uncertainty and each other's uncertainties.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 130mm 40mm 0mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 65mm 40mm 70mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 40mm 140mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
 
@@ -1782,13 +1808,13 @@ The BeRPA parameters are particularly interesting: the multi-track selection is 
 The single pion parameters are entirely compatible and similar to 2017, with the small exception of the non-resonant $I_{1/2}$ background which increases outside the prior. The CC coherent normalisations are similar to 2017 from the multi-track, sitting just on the 1$\sigma$ boundary, whereas the multi-$\pi$ agrees with the nominal. Of the NC parameters, only NC other (encompassing NC1$\pi$ and NC DIS) sees a difference: the multi-track fit prefers a value in agreement with the prior's central value, whereas the multi-$\pi$ selection pulls outside the prior uncertainty. The pion FSI parameters are expected to show large differences, as was the case in the Asimov studies of the fit and likelihood scans. This comes both from a rebinning of the FHC 1$\pi$ samples and the splitting of the NTrack into $1\pi$ and Other for RHC selections. The parameters are largely compatible, and the multi-$\pi$ consistently sits close to the prior value. Both fits still sit within the 1$\sigma$ uncertainty of the prior.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 130mm 40mm 0mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 65mm 40mm 70mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 40mm 140mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merg_2018a_NewDetMatrix_OrderSwitched_Data2to8_ActualData_merge}
 	\end{subfigure}
 
@@ -1815,12 +1841,12 @@ In this section the fitted ND280 detector parameters are inspected in detail to 
 \autoref{fig:data_multipi_det_fdg1_cc0pi} shows the FGD1 0$\pi$ parameters, which all sit within the 1$\sigma$ of the prior uncertainty. There's a general trend to increase the normalisation with \pmu up until \cosmu= 0.965. Additionally, most of the parameter uncertainties are approximately 2/3 of their prior uncertainties. In the most forward-going region the parameters all favour their prior value. Low \cosmu, high \pmu have the largest prior uncertainties of 25-60\% up until \cosmu= 0.88, where the uncertainties become approximately similar throughout \pmu at 5-10\%.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-\begin{subfigure}[t]{0.1\textwidth}
-	\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
-\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
+	\end{subfigure}
 	
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth,page=22, trim={0mm 0mm 0mm 0mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
@@ -1847,10 +1873,10 @@ In this section the fitted ND280 detector parameters are inspected in detail to 
 Looking at FGD2 in \autoref{fig:data_multipi_det_fdg2_cc0pi} the patterns of FGD1 are essentially repeated.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -1879,10 +1905,10 @@ Looking at FGD2 in \autoref{fig:data_multipi_det_fdg2_cc0pi} the patterns of FGD
 The FGD1 1$\pi$ parameters in \autoref{fig:data_multipi_det_fdg1_cc1pi} don't show the same increase with \pmu and no clear pattern is visible. The parameters sit within 1$\sigma$ of the prior and the postfit uncertainty is again roughly 2/3 of the prior. The low \cosmu, high \pmu events again dominate the prior uncertainty up until \cosmu= 0.90, similar to the 0$\pi$ selection.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -1901,10 +1927,10 @@ The FGD1 1$\pi$ parameters in \autoref{fig:data_multipi_det_fdg1_cc1pi} don't sh
 The FGD2 1$\pi$ selection in \autoref{fig:data_multipi_det_fdg2_cc1pi} shares most features with FGD1, although a pattern of increasing normalisation with \pmu in the low \cosmu region is evident, similar to the 0$\pi$ selections. Otherwise the parameters appear well behaved.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 	
@@ -1923,10 +1949,10 @@ The FGD2 1$\pi$ selection in \autoref{fig:data_multipi_det_fdg2_cc1pi} shares mo
 The FGD1 Other parameters are shown in \autoref{fig:data_multipi_det_fdg1_ccoth}, which show the largest difference to the prior of the detector parameters. This is anticipated due to the poor prior model description of the data, also seen in 2017. The model generally underestimated the data, and so the detector parameters are often pushed to +1$\sigma$ and beyond.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -1942,10 +1968,10 @@ The FGD1 Other parameters are shown in \autoref{fig:data_multipi_det_fdg1_ccoth}
 The FGD2 Other selection in \autoref{fig:data_multipi_det_fdg2_ccoth} sees a similar pattern to FGD1, although less pushed to +1$\sigma$.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -1961,10 +1987,10 @@ The FGD2 Other selection in \autoref{fig:data_multipi_det_fdg2_ccoth} sees a sim
 The FGD1 RHC 0$\pi$ parameters presented in \autoref{fig:data_multipi_det_fdg1_cc0pi_nubar}, show similar behaviour to their FHC counterparts: large uncertainties at low \cosmu, high \pmu; high normalisation at high \pmu; and a forward-going region which largely agrees with the prior. 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -1980,10 +2006,10 @@ The FGD1 RHC 0$\pi$ parameters presented in \autoref{fig:data_multipi_det_fdg1_c
 FGD2 \numubar 0$\pi$ in \autoref{fig:data_multipi_det_fdg2_cc0pi_nubar} follows the FGD1 equivalent, although some priors have different central value, notably at high \pmu.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -1999,10 +2025,10 @@ FGD2 \numubar 0$\pi$ in \autoref{fig:data_multipi_det_fdg2_cc0pi_nubar} follows 
 The \numubar 1$\pi$ and other selections for FGD1 in \autoref{fig:data_multipi_det_fdg1_cc1piOth_nubar} have parameters mostly consistent with the prior and well within 1$\sigma$. Notably, the high momentum bins are well constrained because the aggressive bin-merging strategy. 
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -2020,10 +2046,10 @@ The \numubar 1$\pi$ and other selections for FGD1 in \autoref{fig:data_multipi_d
 The FGD2 equivalent selection in \autoref{fig:data_multipi_det_fdg2_cc1piOth_nubar} shows quite different behaviour to FGD1, with 1$\sigma$ excursions common for both 1$\pi$ and Other selections.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -2041,10 +2067,10 @@ The FGD2 equivalent selection in \autoref{fig:data_multipi_det_fdg2_cc1piOth_nub
 The FGD1 \numu RHC 0$\pi$ selections in \autoref{fig:data_multipi_det_fdg1_numuRHC} are again consistent with the previous 0$\pi$ selections, in which the low \cosmu, low \pmu regions have a decreased normalisation, moving upward with \pmu and resetting for the next \cosmu bin. Overall, the normalisation effect prefers a value less than the prior. The highest \cosmu, \pmu bin is very well constrained after the fit due to the relatively high statistics in this region. The parameters are all consistent with 1$\sigma$, although excursions exceeding that happen twice. The 1$\pi$ and Other distributions are consistent with the prior and the data barely constrains the parameters.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -2066,10 +2092,10 @@ The FGD1 \numu RHC 0$\pi$ selections in \autoref{fig:data_multipi_det_fdg1_numuR
 Finally the FGD2 \numu RHC parameters in \autoref{fig:data_multipi_det_fdg2_numuRHC} show consistency with FGD1 both in the prefit and the postfit.
 \begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 120mm 40mm 20mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.1\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth,page=1, trim={0mm 20mm 40mm 120mm}, clip]{figures/mach3/2018/data/2018a_FixedCov_RedCov_Mpi_Data_merge_drawPar_withDet}
 	\end{subfigure}
 
@@ -2478,12 +2504,13 @@ For a more digestible breakdown of the post-fit results the one dimensional proj
 
 The 1$\pi$ selections \pmu are consistently overestimated between 400-550 MeV, which continues up to 900 MeV for FGD1. As \pmu increases, the disagreements sit within 1$\sigma$ of the data. The \cosmu distributions are less well-described, with many points outside the 1$\sigma$ range. Both FGDs are over-predicted until $\cos\theta_\mu\sim0.9$ and there is inconsistent behaviour above that with the data points sitting at roughly $\pm1\sigma$ of the prediction. The prefit distribution appears to roughly cover the data in both \pmu and \cosmu.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
 
@@ -2556,12 +2583,13 @@ The 1$\pi$ selections \pmu are consistently overestimated between 400-550 MeV, w
 
 \autoref{fig:fhc_postfit_other_2018} shows the FHC Other distributions. The prefit clearly underestimates the data in both \pmu and \cosmu by 1-3$\sigma$ in every bin, compatible with the 2017 results. The post-fit distributions in \pmu pulls the distributions more in-line with data although mis-models the high \pmu behaviour. The \cosmu distributions are similarly under-predicted much of the time, and poorly modelled above $\cos\theta_\mu \sim 0.9$. The uncertainties clearly decrease for the prediction, although contrary to the 0$\pi$ and 1$\pi$ selections the post-fit description does not lay close to the data.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
 	
@@ -2604,12 +2632,13 @@ The 1$\pi$ selections \pmu are consistently overestimated between 400-550 MeV, w
 
 It is more difficult to draw conclusions about the 1$\pi$ distributions due to the lacking statistical power of the samples. The prior model appears to describe the data well, which is also the case for the post-fit. The \cosmu distributions are similar to the 0$\pi$, where behaviour is mostly good and the worst modelling happens in the most forward-going bin in FGD2.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
 	
@@ -2682,12 +2711,13 @@ It is more difficult to draw conclusions about the 1$\pi$ distributions due to t
 
 The RHC \numubar CCOther selections are shown in \autoref{fig:fhc_postfit_other_nubar_2018}. In contrast to the FHC distributions, the description of the Other selections appear adequate both before and after the fit. FGD1 and FGD2 are inconsistent, with FGD1 underestimated in all \pmu bins and in the first five \cosmu bins, whereas FGD2 oscillates more. The fit does little to move the parameters but reduce the uncertainties significantly. 
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 90mm 0mm 0mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.15\textwidth}
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 45mm 0mm 50mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
-	\end{subfigure}	\begin{subfigure}[t]{0.15\textwidth}
+	\end{subfigure}	
+	\begin{subfigure}[t]{0.2\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 100mm}, clip,page=1]{figures/mach3/1D_legend_Data_Posterior_Prior}
 	\end{subfigure}
 	

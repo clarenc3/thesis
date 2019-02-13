@@ -13,8 +13,17 @@ To investigate the compatibility between neutrino and anti-neutrino data at T2K,
 
 \autoref{fig:flux_data_nd280_nuvsnubar} shows the ND280 flux parameters after the fit with the prefit uncertainty band in red. As expected, the anti-neutrino fit barely moves the central values for the FHC parameters, and the small movements are due to the covariance matrix penalty tying the FHC and RHC flux together. The full fit often settles between the two separate fits' central values, but in cases of extreme pulls the full fit sits closer to the neutrino fit. The neutrino-only fit pulls the extreme cases a little further (e.g. e.g. FHC \numu $\sim1\text{ GeV}$, high $E_\nu$ \numu and \numubar), highlighting the slight tension with the prior covariance matrix. Generally the flux parameters are compatible throughout and often well within $1\sigma$ of each other.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.10\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
 	\end{subfigure}
 	
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -50,6 +59,19 @@ To investigate the compatibility between neutrino and anti-neutrino data at T2K,
 
 Interestingly, the 2p2h norm $\bar{\nu}$ parameter is fitted higher in the RHC fit than it is in the joint fit, likely due to correlations with the flux parameters. We also note a smaller $M_A^{QE}$ value for the anti-neutrino fit ($M_A^{QE} = 1.04\pm0.12 \text{ GeV}$), almost identical to the bubble chamber value\cite{maqe_fit}. Larger tensions are present in the single-pion parameters, where the two fits seem to pull $M_A^{RES}$ and $I_{1/2}$ in opposite directions from the central value. Again, the RHC fit barely has enough statistics to pull 1$\sigma$ from the prior, and more data is likely needed to draw conclusions.
 \begin{figure}[h]
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+\end{subfigure}
+	
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_Run2to4_Data_merge_2017b_Run56_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
 	\end{subfigure}
@@ -98,7 +120,6 @@ This study highlights the importance of collecting similar numbers of $\nu$ and 
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=6]{figures/mach3/data/alt/try_2017_fit_on_sk_spectra_posterior_sk_error_run2to4_spectra_posterior_sk_error_run5to6_spectra}
 	\end{subfigure}
-	
 	\caption{Impact of FHC vs RHC fit on SK spectra compared to full fit}
 	\label{fig:sk_fhcvsrhc}
 \end{figure}
@@ -108,8 +129,17 @@ Reading off \autoref{tab:event_rates_2017} the ratio of FGD1 to FGD2 data is rou
 
 \autoref{fig:flux_data_nd280_fdg1vsfgd2} shows the ND280 flux parameters after the fit, in which we mostly similar results for the dominant parameters (correct-sign \numu and \nue). The largest differences happen above $E_\nu=3\text{ GeV}$, where the two fits diverge: FGD2 favouring a much lower flux normalisation at higher energies. The full fit then settles roughtly in between the two fits with an uncertainty covering each individual FGD fit's extreme 1$\sigma$ uncertainty. Interestingly, FGD2 prefers a nominal flux weight at higher $E_\nu$, whereas FGD1 pulls to 0.84. This pattern is repeated for all flux parameters.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.10\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
 	\end{subfigure}
 	
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -145,6 +175,19 @@ Reading off \autoref{tab:event_rates_2017} the ratio of FGD1 to FGD2 data is rou
 
 The CC1$\pi$ parameters are mostly the same with small differences in $C_5^A$ and the coherent normalisation parameters, although they overlap well within eachother's 1$\sigma$ uncertainty. For the FSI parameters, the full data fit tends towards the FGD2 result, and we note slightly larger errors on the FGD1, e.g. for FSI Inel lo.
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_FGD1_Data_merge_2017b_FGD2_Data_merge_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
 	\end{subfigure}
@@ -197,8 +240,14 @@ The data fit showed a generally good description of the ND280 selections with ac
 The ND280 flux parameters in \autoref{fig:flux_data_nd280_nofgd1ccoth} are almost identical to the full 2017 fit and we note barely any differences: the largest change is 0.015 in the highest $E_\nu$ normalisation of FHC \numu.
 
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.10\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 30mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 30mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 30mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
 	\end{subfigure}
 	
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -232,6 +281,16 @@ The ND280 flux parameters in \autoref{fig:flux_data_nd280_nofgd1ccoth} are almos
 
 The interaction parameters in \autoref{fig:xsec_data_nofgd1ccoth} shows slightly more change in the single and multi-pion related parameters, although the CC0$\pi$ parameters remain unchanged. The changes happen in the poorly constrained non-resonant $I_{1/2}$ background parameter, the CC DIS parameter, and some of the FSI parameters. All the differences are however well within the full data fit result.
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 30mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 30mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 30mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_NoFGD1CCOth_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0}
 	\end{subfigure}
@@ -322,10 +381,16 @@ A straight-forward implementation of the 2015 cross-section model is therefore t
 \autoref{fig:2015_fluxND280comp_fhc} and \autoref{fig:2015_fluxND280comp_rhc} shows the ND280 flux parameters for the two fits, including the result from 2015. \cite{t2k_2015}. The 2015-like fit result replicates the main feature of the 2015 fit: the notably high normalisation of $\sim10-20\%$ throughout the flux parameters. However, it does not perfectly replicate the parameter results, as the dip for the 2017 result for FHC \numu around $E_\nu = 0.8-1.0\text{ GeV}$ is also present in the 2015-like fit, but not in the actual 2015 fit. The RHC parameters for the 2015-like fit in \autoref{fig:2015_fluxND280comp_rhc} agree more with the 2015 result with the key features replicated.
 
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.10\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 30mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
 	\end{subfigure}
-	
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 30mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 30mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{\textwidth}
 		\begin{subfigure}[t]{0.24\textwidth}
 			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
@@ -363,6 +428,16 @@ A straight-forward implementation of the 2015 cross-section model is therefore t
 \end{figure}
 
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 30mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 30mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 30mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{\textwidth}
 		\begin{subfigure}[t]{0.24\textwidth}
 			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=6]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
@@ -400,6 +475,16 @@ A straight-forward implementation of the 2015 cross-section model is therefore t
 
 \autoref{fig:xsec_data_2015like} show the interaction parameters, in which we note a similar values for the directly comparable parameters, e.g. $M_A^{QE}$, $p_F$, $C_5^A$, CC DIS, NC other.  We also note the difference in the CC DIS parameter, which moves from nominal (2015 and 2015-like) to roughly its upper $1\sigma$. Since the CC DIS parameter is heavily connected to an event's $E_\nu$ (since the parameter is $0.4/E_\nu$), this is likely a reflection of the central values of the fluxes shifting from $\sim1.1$ to $\sim1.0$ in moving from the 2015 to 2017 analysis.
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 30mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 30mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 30mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{\textwidth}
 		\begin{subfigure}[t]{0.24\textwidth}
 			\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2015like__2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
@@ -433,9 +518,18 @@ From the initial likelihood scans and 1$\sigma$ variations to the Asimov data se
 
 \autoref{fig:2015like_berpa_2p2h_comp_flux} shows the flux parameters after the fits for the different variations and confirms suspicions that the BeRPA parameters are causing the shift in flux parameters. Fixing 2p2h shape to their nominal values has a minor impact on the flux parameters and narrowly replicates the 2015-like fit.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.1\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
-	\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
 	
 	\begin{subfigure}[t]{0.24\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=2]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
@@ -468,6 +562,19 @@ From the initial likelihood scans and 1$\sigma$ variations to the Asimov data se
 
 \autoref{fig:2015like_berpa_2p2h_comp_xsec} shows the cross-section parameters for the 2015-like variations and we notice much the same pattern. All the observable differences are in 2p2h normalisations, $C_5^A$ and CC DIS all come from the difference in the flux parameter's central values.
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.2\textwidth}
+		\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
 	\end{subfigure}
@@ -492,15 +599,18 @@ The 2015-like parameterisation fixed 2p2h shape and BeRPA to their prior values 
 
 \autoref{fig:sk_2015like} shows the $E_{reco}$ distributions for the five samples at Super-Kamiokande. We note the largest difference in spectrum is in the $1\text{R}\mu$ sample between $0.2 < E_{rec} < 0.5\text{ GeV}$: the region which is sensitive to oscillation parameters (mostly $\theta_{23}$ and $\Delta m^2_{23}$ or $\Delta m^2_{32}$). The shift is less than 1$\sigma$ of the full data fit. The $1\text{R}e$ selection has a consistently lower event rate for the 2015-like fit, which has an impact on $\theta_{13}$ primarily, and the effect on the $1\text{R}e1\text{d}e$ selection is opposite. The RHC selections are entirely consistent and see no deviations from each other.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=1]{figures/mach3/data/alt/try_2017_fit_on_sk_spectra_posterior_sk_error_2015like_spectra}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=2]{figures/mach3/data/alt/try_2017_fit_on_sk_spectra_posterior_sk_error_2015like_spectra}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.32\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=3]{figures/mach3/data/alt/try_2017_fit_on_sk_spectra_posterior_sk_error_2015like_spectra}
-	\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 150mm 30mm 0mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 100mm 30mm 50mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 50mm 30mm 100mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
+\begin{subfigure}[t]{0.2\textwidth}
+	\includegraphics[width=\textwidth,page=1, trim={0mm 0mm 30mm 150mm}, clip]{figures/mach3/data/alt/2017b_NewData_NewDet_hpc_2p2hshapeFix_0_2017b_NewData_NewDet_hpc_BeRPAfix_0_2017b_NewData_NewDet_hpc_2015like_0.pdf}
+\end{subfigure}
 	
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip, page=4]{figures/mach3/data/alt/try_2017_fit_on_sk_spectra_posterior_sk_error_2015like_spectra}
@@ -523,8 +633,14 @@ Fits were done of the NEUT generator's CCQE model with the NUISANCE package to A
 
 \autoref{fig:maqe_prior_flux} shows the ND280 flux parameters for the two models. A moderately higher flux normalisation is seen for all flux parameters: most noticeable for FHC \numu at $E_\nu < 0.6\text{ GeV}$. and RHC \numubar between $0.8<E_\nu<5\text{ GeV}$. However, the differences are relatively small and maximally 0.05 in normalisation.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.1\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 0mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 0mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
 	\end{subfigure}
 	
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -558,6 +674,16 @@ Fits were done of the NEUT generator's CCQE model with the NUISANCE package to A
 
 The interaction parameters for the two $M_A^{QE}$ priors are found in \autoref{fig:maqe_prior_xsec}, where very little difference is observed. Since $M_A^{QE}$ is fit to $1.12\pm0.07\text{ GeV}$ (equivalent to 0.93 relative the nominal 1.2 GeV) and the prior is $M_A^{QE}=1.03\pm0.05$, we expect the ND280 data to pull $M_A^{QE}$ up from the bubble chamber prior, and roughly land in between, which indeed is observed: the post-fit value for the fit with the prior is $M_A^{QE}=1.07\pm0.04\text{ GeV}$. We note small shifts in the CC0$\pi$ parameters (most in BeRPA D, which controls high $Q^2$ and $M_A^{QE}$ strongly constrains), and the largest shifts happen in pion-related parameters: the $C_5^A$ parameter almost halves in uncertainty, and $M_A^{RES}$ shifts slightly. This is expected from the single pion contamination in the CC0$\pi$ samples. The CC DIS parameter also shifts closer to nominal, likely due to the correlations with the flux again.
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 0mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 0mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_MAQEBC_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
 	\end{subfigure}
@@ -586,8 +712,14 @@ The data fit in \autoref{sec:datafit} showed $M_A^{RES}$ and the non-resonant $I
 
 \autoref{fig:1pi_prior_flux} shows the ND280 flux parameters for the two fits and the change is minimal, similar to the effect of the $M_A^{QE}$ prior. The shape of the 2017 data fit is largely maintained with a slightly larger normalisation on a 0.01 scale (1\%).
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.1\textwidth}
-		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 0mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 0mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
 	\end{subfigure}
 	
 	\begin{subfigure}[t]{0.24\textwidth}
@@ -621,6 +753,16 @@ The data fit in \autoref{sec:datafit} showed $M_A^{RES}$ and the non-resonant $I
 
 The CC0$\pi$ interaction parameters in \autoref{fig:1pi_prior_xsec} also show a minimal difference to the full fit. The only substantial shift is in the single pion parameters whose priors are now ignored. $C_5^A$ shifts from the nominal value down by half a sigma of the original prior, but maintains the same size for the uncertainty. $M_A^{RES}$ shifts slightly downward (away from the prior), although it is minimal---indicating the prior is already largely over-run by the ND280 data in the 2017 reference fit. We also note a slightly larger uncertainty due to the likelihood contribution now only coming from the samples. The non-resonant $I_{1/2}$ parameter also moves further from the prior, although just on the top of the 1$\sigma$ uncertainty that the prior would provide had it been applied. We see small shifts in the coherent normalisations, due to correlations coming from the 1$\pi$ and Other selections\footnote{CC coherent has an identical final state to CC1$\pi$ but without the nucleon---however no nucleons are required in the ND280 selection.}.
 \begin{figure}[h]
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 135mm 0mm 0mm}, clip,page=1]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 70mm 0mm 60mm}, clip,page=1]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.20\textwidth}
+		\includegraphics[width=\textwidth, trim={0mm 5mm 0mm 140mm}, clip,page=1]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
+	\end{subfigure}
+
 	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=18]{figures/mach3/data/alt/2017b_FlatPion_Data_merg_2017b_NewData_NewDet_UpdXsecStep_2Xsec_4Det_5Flux_0.pdf}
 	\end{subfigure}

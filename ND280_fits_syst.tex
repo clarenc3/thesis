@@ -92,15 +92,15 @@ This procedure brings the total number of flux parameters to 100: 50 for ND280 a
 
 In addition to the variation systematics above, there is also a nominal flux correction applied to each event as a function of its run period (e.g. run 2a), neutrino specie (e.g. \numubar) and $E_\nu^{true}$ (e.g. 0.8 GeV); this is present to correct the nominal flux model with updated measurements. An example of the corrections from run 4a and run 5b is shown in \autoref{fig:flux_ratio}.
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/run4_enu_nd5_13av2_numu_rat}
 		\caption{4a \numu}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/flux/run5b_enu_nd5_13av2_numubar_rat}
 		\caption{5b \numubar}
 	\end{subfigure}
-	\caption{Nominal flux corrections applied to events interacting in the ND5 (ND280 tracker) plane}
+	\caption{Neutrino flux corrections that are applied to events interacting in the ND5 (ND280 tracker) plane. 13a tuning denotes the latest tuning, 11a nominal denotes the reference neutrino flux which was used in the simulation}
 	\label{fig:flux_ratio}
 \end{figure}
 
@@ -344,24 +344,24 @@ Using the fit binning in \pmu \cosmu yields 1624 ND280 parameters, which was red
 in which we note a large first momentum bin for many selections. This is primarily because the pion secondary interaction systematic is by far dominant, which generally becomes larger at higher \pmu (which in turn correlates with higher $E_\nu$), leading to enough energy to create a pion. Reducing the ND280 detector systematic binning had no discernible effect for flux or interaction parameters in a fit to mock data.
 
 \begin{figure}[h]
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/bad_bin}
-		\caption{FGD1 CC0$\pi$, 1250-2000, 0.6-0.7}
+		\caption{FGD1 CC0$\pi$ selection, $p_\mu=1250-2000 \text{ MeV/c}$, $\cos\theta_\mu=0.6-0.7$}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/decent_bin}
-		\caption{FGD1 CC1Trk, 0-400, 0.97-0.98}
+		\caption{FGD1 CC1Trk selection, $p_\mu=0-400\text{ MeV/c}$, $\cos\theta_\mu=0.97-0.98$}
 	\end{subfigure}
 
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/good_bin}
-		\caption{FGD1 CC1$\pi$, 300-1250, 0.9-0.92}
+		\caption{FGD1 CC1$\pi$ selection, $p_\mu=300-1250\text{ MeV/c}$, $\cos\theta_\mu=0.9-0.92$}
 	\end{subfigure}
-	\begin{subfigure}[t]{0.42\textwidth}
+	\begin{subfigure}[t]{0.49\textwidth}
 		\includegraphics[width=\textwidth, trim={4mm 3mm 2mm 2mm}, clip,page=1]{figures/numu/syst/good_bin2}
-		\caption{FGD2 CCNTrk, 0-700, 0.93-0.98}
+		\caption{FGD2 CCNTrk selection, $p_\mu=0-700\text{ MeV/c}$, $\cos\theta_\mu=0.93-0.98$}
 	\end{subfigure}
-	\caption{Number of events in various bins used for parametrising the ND280 detector systematics, using the full suite of uncertainties from the ND280 systematics. The population is representative of the uncertainty, and the conservative uncertainties on the distribution is shown in red and green. The populations are fit with a Gaussian for reference (black).}
+	\caption{Number of events in various bins used for parametrising the ND280 detector systematics, using the full suite of uncertainties from the ND280 systematics. Each histogram is representative of the uncertainty in the bin due to detector systematics, and the conservative uncertainties on the distribution are shown (red, green). The populations are also fit with a Gaussian for comparison (black).}
 	\label{fig:det_var}
 \end{figure}
 The result of the detector systematics procedure is shown in \autoref{fig:det_var} for a selection of bins. In FGD1 CC0$\pi$ the worst overall example is the \pmu=1250-2000, \cosmu=0.6-0.7 bin, which has a double Gaussian bimodal behaviour. This is likely from events migrating in and out of the \{\pmu, \cosmu, sample\} combination due to pion secondary interactions. Although a simple fit to the bin content chooses one of the peaks, the covariance matrix entry sits in between the two with an error that covers the bimodality.
@@ -527,7 +527,7 @@ The hadronic pion final state interactions are handled by a cascade implementati
 
 The systematics are parameterised as the scattering probabilities for the different interaction processes at each microscopic step in the cascade. These are divided into absorption, pion production, quasi-elastic and charge exchange. Furthermore, the two latter are split into low and high energy regions, above and below the model transition at $p_\pi = 500\text{ MeV}$. For oscillation analyses using the 0$\pi$ topology, the absorption and elastic probabilities are most important since they can significantly bias energy reconstruction by removing pions from the reconstructed event. The prior values and uncertainties come from tuning to world scattering data: $\pi^+-^{12}\text{C}$ for the low energy and $\pi^\pm - ^{12}\text{C}$ for the high energy parameters.
 
-Importantly, the pion rescattering probabilities are assumed to be independent, which is technically incorrect. An extreme variation in the absorption probability will cause a pion to be absorbed, so the effect of the other parameters should be nothing. Such effects are unaccounted for as it was found to have a $\sim1\%$ effect on T2K run 2-4 data.
+Importantly, the pion rescattering probabilities are assumed to be independent, which is technically incorrect: an extreme value of the pion absorption probability causes a pion to always be absorbed in FSI, so the effect of the remaining pion FSI parameters should be nothing since there is no longer a pion in the event. Such effects are unaccounted for as it was found to have a $\sim1\%$ effect on T2K run 2-4 data.
 
 The nucleon final state interactions are modelled using the Bertini model in GEANT4\cite{geant4} and are neglected since for water Cherenkov detector such as SK, the nucleon detection threshold is rarely reached. However, when nucleons interact to produce pions these pions are propagated through the simulation and are subject to the above systematics.
 
