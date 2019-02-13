@@ -76,9 +76,25 @@ P(\nu_\alpha \rightarrow \nu_\beta) = \delta_{\alpha \beta} -(+) \sin^2 \left( 2
 where the positive sign is picked up when $\beta \neq \alpha$. The sinusoidal oscillation of the neutrino flavour states in \autoref{eq:two_flavour} has a period controlled by the parameter $\Delta m^2$ and amplitude by the mixing angle $\theta$. The maximum oscillation probability for a fixed mixing angle $\theta$ is at $L/E \sim 1.25/\Delta m^2$, which for $\Delta m^2 \sim 2.5\times10^{-3}\text{ eV}^2$ and $L\sim300\text{ km}$ means $E=0.6\text{ GeV}$---placing an experiment like T2K ($L=295\text{ km}, E = 0.6\text{ GeV}$) near the maximum.
 
 The final ingredient in the oscillation probability is to account for effects from traversing matter rather than vacuum, often referred to as the Mikheyev-Smirnov-Wolfenstein (MSW) effect\cite{barger,parke,wolfenstein,msw}. The effect sets electron neutrinos apart from muon and tau neutrinos, since they have an additional weak interaction with electrons in matter, shown in \autoref{fig:msw_effect}.
+%\begin{figure}[h]
+%	\includegraphics[width=0.8\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/msw_effect}
+%	\caption{Interaction diagrams with matter for different neutrino flavours}
+%	\label{fig:msw_effect}
+%\end{figure}
 \begin{figure}[h]
-	\includegraphics[width=0.8\textwidth, trim={0mm 0mm 0mm 0mm}, clip,page=1]{figures/theory/msw_effect}
-	\caption{Interaction diagrams with matter for different neutrino flavours}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=0.8\textwidth, clip,page=1]{figures/theory/feynmp_crop}
+		\caption{$\nu_e$ on $e^-$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=0.8\textwidth, clip,page=3]{figures/theory/feynmp_crop}
+		\caption{$\nu_{e,\mu,\tau}$ on $e,p,n$}
+	\end{subfigure}
+	\begin{subfigure}[t]{0.32\textwidth}
+		\includegraphics[width=0.8\textwidth, clip,page=2]{figures/theory/feynmp_crop}
+		\caption{$\bar{\nu}_e$ on $e^-$}
+	\end{subfigure}
+	\caption{Interaction diagrams with matter for different neutrino flavours, highlighting (anti-)electron neutrino differences giving rise to different matter-effects for (anti-)electron neutrinos.}
 	\label{fig:msw_effect}
 \end{figure}
 

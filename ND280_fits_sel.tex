@@ -33,12 +33,14 @@ The detailed selection criteria for the CC-inclusive sample is:
 	\begin{equation}
 	C_T^{exp} = \frac{53.87 \text{ ADC}}{\beta^{2.283}} \left( 5.551 - \beta^{2.283} - \log\left[0.001913 + \frac{1}{\left(\beta\gamma\right)^{1.249}}\right]\right)
 	\end{equation}
-	$C_T^{obs}$ is the observed energy loss and $\sigma^{exp}$ is the deposited energy resolution of the TPC. ADC refers to the analog to digital counts read out from the detector, indicative of the energy deposited by the particle. $\beta=v/c$ and $\gamma = 1/\sqrt{1-\beta^2}$ are the relativistic variables of the track. The likelihoods $\mathcal{L}_i$ are then defined as
+	$C_T^{obs}$ is the observed energy loss and $\sigma^{exp}$ is the deposited energy resolution of the TPC. ADC refers to the analog to digital counts read out from the detector, indicative of the energy deposited by the particle. $\beta=v/c$ and $\gamma = 1/\sqrt{1-\beta^2}$ are the relativistic variables of the track. The TPC pulls after preselection are shown in \autoref{fig:numu_pulls}
+	
+	The likelihoods $\mathcal{L}_i$ are then defined as
 	\begin{equation}
 	\label{eq:tpc_track_likelihood}
 		\mathcal{L}_i = \frac{e^{-\delta^2_i}}{\sum_n e^{-\delta^2_n}}
 	\end{equation}
-	where the denominator is summed over the particle types $n=\mu,\pi,e,p$. In the PID algorithm, electrons are rejected by requiring a MIP likelihood
+	where the denominator is summed over the particle types $n=\mu,\pi,e,p$. The likelihoods are shown in \autoref{fig:numu_likelihoods}. In the PID algorithm, electrons are rejected by requiring a MIP likelihood
 	\begin{equation}
 		\label{eq:tpc_track_mip}
 		\mathcal{L}_{MIP} = \frac{\mathcal{L}_\mu + \mathcal{L}_\pi}{1-\mathcal{L}_p} > 0.8
@@ -48,9 +50,7 @@ The detailed selection criteria for the CC-inclusive sample is:
 	\label{eq:tpc_track_mu}
 		\mathcal{L}_\mu > 0.05
 	\end{equation}
-	The constants 0.8, 0.05 and 500 MeV/c are chosen from particle gun studies in the TPC and test-beam data\cite{t2k_tpc,thesis_tpc, thesis_christine}, and the impact on the selection is shown in \autoref{fig:numu_likelihoods}. The TPC pulls after preselection are shown in \autoref{fig:numu_pulls}, and the energy loss in the TPC from which pulls are derived are shown in \autoref{fig:TPC_dedx}.
-	
-	Importantly, TPC segments need to pass the TPC track quality cut to contribute to the likelihood: bad quality tracks do not. If a track passes through multiple TPCs all TPC tracks are taken into account.
+	The constants 0.8, 0.05 and 500 MeV/c are chosen from particle gun studies in the TPC and test-beam data\cite{t2k_tpc,thesis_tpc, thesis_christine}. The energy loss in the TPC from which the pulls are derived are shown in \autoref{fig:TPC_dedx}. Importantly, TPC segments need to pass the TPC track quality cut to contribute to the likelihood: bad quality tracks do not. If a track passes through multiple TPCs all TPC tracks are taken into account.
 \end{itemize}
 
 \begin{figure}[h]
@@ -82,17 +82,17 @@ The detailed selection criteria for the CC-inclusive sample is:
 \begin{figure}[h]
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth]{figures/numu/Cuts/numu/Elepull_run12}
-		\caption{$\delta_e$}
+		\caption{$\delta_e$---the electron ID pull}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}	
 		\includegraphics[width=\textwidth]{figures/numu/Cuts/numu/Protpull_run12}
-		\caption{$\delta_p$}
+		\caption{$\delta_p$---the proton ID pull}
 	\end{subfigure}
 	\begin{subfigure}[t]{0.32\textwidth}
 		\includegraphics[width=\textwidth]{figures/numu/Cuts/numu/Mulikelihood_run2}
-		\caption{$\delta_\mu$}
+		\caption{$\delta_\mu$---the muon ID pull}
 	\end{subfigure}
-	\caption{Pull distributions after selection showing data and MC for \numu analysis}
+	\caption{Pull distributions for particle hypotheses after selection showing data and MC for \numu analysis}
 	\label{fig:numu_pulls}
 \end{figure}
 
