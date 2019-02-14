@@ -147,7 +147,7 @@ Comparing the predictive distributions from the fit to data in \autoref{tab:post
 
 The shift in $M_A^{QE}$ is expected since the ``prior'' central value is from tunes to nuclear data\cite{ccqe_tuning}. $M_A^{QE}$ is historically inflated\cite{k2k_ccqe_carbon,k2k_ccqe_oxygen,minos_ccqe_iron,miniboone_nu_ccqe} when not using adequate nuclear effects, such as RPA or 2p2h, which leads to it becoming an effective parameter instead. Using a flat prior on $M_A^{QE}$ leads toward values obtained from fits to nucleon data, $M_A^{QE}=1.069\pm0.016\text{ GeV}$ \cite{maqe_fit}. The post-fit value here in real units is $M_A^{QE}=1.12\pm0.07\text{ GeV}$.
 
-The shifts in BeRPA are more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties, indicating that the ND280 data has more events than the Monte-Carlo at low $Q^2$, forcing a shape that isn't ``RPA-like''\footnote{In the sense that it distorts the $Q^2$ correction beyond Nieves'\cite{nieves2} work.}. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape of the RPA correction is heavily distorted in the data fit, in which an increased cross-section at low $Q^2$ is strongly favoured. The weaker constraints above $Q^2=0.5\text{ GeV}^2$ reflect lacking data in the region.
+The shifts in BeRPA are more worrisome. The low $Q^2$ parameters BeRPA A and BeRPA B are being pushed above their pre-fit $1\sigma$ uncertainties. This is likely due to ND280 data having more events than the Monte-Carlo at low $Q^2$, forcing a shape that isn't ``RPA-like''\footnote{In the sense that it distorts the $Q^2$ correction beyond Nieves'\cite{nieves2} work.}. \autoref{fig:berpa_data} shows the BeRPA weight being applied for every step in the data and Asimov chains: the nominal shape of the RPA correction is heavily distorted in the data fit, in which an increased cross-section at low $Q^2$ is strongly favoured. The weaker constraints above $Q^2=0.5\text{ GeV}^2$ reflect lacking data in the region. This feature may indicate unmodelled nuclear effects being absorbed by the RPA parameters.
 
 The $M_A^{RES}$ parameter is pushed far from the bubble chamber tuned values (from $M_A^{RES}=1.07\pm0.15\text{ GeV}$ to $0.806\pm0.04\text{ GeV}$), whereas the other single pion production parameters are compatible with the prior. The may indicate sweeping up unmodelled nuclear effects (often approximately a function of $Q^2$) into the $M_A^{RES}$ parameter.
 
@@ -440,7 +440,7 @@ The one-dimensional p-values are shown in \autoref{fig:posterior_pred_data_1d}, 
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 14mm}, clip,page=1]{figures/mach3/data/postpred/PriorPredictive_Hybrid}
 		\caption{Prior predictive hybrid, $p=0.10$}
 	\end{subfigure}
-	\caption{One-dimensional p-value calculations, applying statistical fluctuations. The fraction above the red curve relative the total denotes the p-value. The red line is the realised p-value of the data-fit and the distribution is the statistically fluctuated reference distributions.}
+	\caption{One-dimensional p-value calculations, applying statistical fluctuations. Toys refer to toy experiments, which here are statistical fluctuations of the simulated distribution. The fraction above the red curve relative the total denotes the p-value. The red line is the realised p-value of the data-fit.}
 	\label{fig:posterior_pred_data_1d}
 \end{figure}
 
@@ -454,7 +454,7 @@ The two-dimensional p-values for the FGD1 CCOther selection in \autoref{tab:data
 		\includegraphics[width=\textwidth, trim={0mm 0mm 0mm 14mm}, clip,page=1]{figures/mach3/data/postpred/prior_pred_fgd1ccother}
 		\caption{Prior predictive hybrid, $p=0.00$}
 	\end{subfigure}
-	\caption{One-dimensional p-value calculations for FGD1 CCOther}
+	\caption{One-dimensional p-value calculations for FGD1 CCOther, applying statistical fluctuations. Toys refer to toy experiments, which here are statistical fluctuations of the simulated distribution. The fraction above the red curve relative the total denotes the p-value. The red line is the realised p-value of the data-fit.}
 	\label{fig:posterior_pred_data_1d_ccother}
 \end{figure}
 
